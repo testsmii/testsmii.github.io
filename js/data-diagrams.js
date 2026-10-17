@@ -120,7 +120,7 @@ D.push({ sec: "t2-civil", h4: "Deformaciones térmicas", cap: "Con un apoyo desl
   <path class="ln" stroke="#c2413b" d="M60 30H20" marker-end="url(#arR)"/><path class="ln" stroke="#c2413b" d="M140 30H180" marker-end="url(#arR)" transform="rotate(180 160 30)"/>
   ${T(100, 70, "Hiperestática: N de compresión", "tb", "middle")}</g>
   <g transform="translate(330,40)"><rect class="box" x="0" y="0" width="170" height="120" rx="10"/>${T(85, 30, "Ejemplo de los apuntes", "tb", "middle")}
-  ${T(85, 55, "L = 100 m, α = 10⁻⁵ ºC⁻¹", "small2", "middle")}${T(85, 75, "ΔT = 40 ºC", "small2", "middle")}${T(85, 97, "ΔL = 0,04 m", "tb", "middle")}${T(85, 113, "ε_m = −0,0004", "small2", "middle")}</g>`, "Efecto térmico en estructuras isostáticas e hiperestáticas") });
+  ${T(85, 55, "L = 100 m, α = 10⁻⁵ ºC⁻¹", "small2", "middle")}${T(85, 75, "ΔT = 40 ºC", "small2", "middle")}${T(85, 97, "ΔL = 0,04 m", "tb", "middle")}${T(85, 113, "ε<tspan baseline-shift='sub' font-size='8'>m</tspan> = −0,0004", "small2", "middle")}</g>`, "Efecto térmico en estructuras isostáticas e hiperestáticas") });
 
 D.push({ sec: "t2-ind", h4: null, cap: "Viga triangulada biapoyada con carga centrada. Si las diagonales bajan hacia el centro (tipo Pratt) trabajan a tracción; si suben hacia el centro (tipo Howe), a compresión. En la Warren se alternan. Es la idea de la pregunta 18 del examen PA1 2025.",
   svg: W("0 0 560 230", `

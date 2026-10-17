@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 96" role="img" aria-label="Estructuras ETSII"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2563eb"/><stop offset="1" stop-color="#1e3a8a"/></linearGradient></defs>
+  <g transform="translate(8,8) scale(1.25)"><rect width="64" height="64" rx="15" fill="url(#g)"/>
+  <g fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M24 46L17.5 46" stroke-width="0"/>
+    <path d="M17.5 27.3V46M24 21.2V46M32 19.0V46M40 21.2V46M46.5 27.3V46" stroke-width="1.7" opacity=".9"/>
+    <path d="M17.5 46L24 21.2M24 46L32 19.0M40 21.2L32 46M46.5 27.3L40 46" stroke-width="1.4" opacity=".6"/>
+    <path d="M11 46 C 15 10, 49 10, 53 46" stroke-width="3.6"/>
+    <path d="M7 46H57" stroke-width="3.6"/>
+    <path d="M15 46v7M49 46v7M11 53h8M45 53h8" stroke-width="2.6"/>
+  </g></g>
+  <text x="104" y="50" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="38" font-weight="800" fill="#0f1f3d" letter-spacing="-1">Estructuras</text>
+  <text x="106" y="78" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="700" fill="#2563eb" letter-spacing="5">ETSII · UPM</text>
+</svg>

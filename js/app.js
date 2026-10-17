@@ -29,13 +29,14 @@ const ICON = {
   play: '<path d="M8 5v14l11-7z"/>',
   arrow: '<path d="M5 12h14M13 6l6 6-6 6"/>',
   back: '<path d="M19 12H5M11 6l-6 6 6 6"/>',
+  split: '<path d="M12 3v18M4 7h5M4 12h5M15 12h5M15 17h5M4 17h5M15 7h5"/>',
   lock: '<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>'
 };
 const ic = (k, cls = "") => `<svg class="ico ${cls}" viewBox="0 0 24 24">${ICON[k]}</svg>`;
 
 /* ---------- persistencia ---------- */
 const LS_KEY = "cde_estructuras_v1";
-const blank = () => ({ qs: {}, failed: {}, history: [], sessions: [], exam: null, quiz: null, lessons: {}, cards: {}, days: {}, rev: null });
+const blank = () => ({ qs: {}, failed: {}, history: [], sessions: [], exam: null, quiz: null, lessons: {}, cards: {}, days: {}, rev: null, drills: {} });
 let S = blank();
 try { const raw = localStorage.getItem(LS_KEY); if (raw) S = Object.assign(blank(), JSON.parse(raw)); } catch (e) { /* almacenamiento no disponible */ }
 function save() { try { localStorage.setItem(LS_KEY, JSON.stringify(S)); } catch (e) { /* ignorar */ } }
@@ -139,7 +140,7 @@ function route() {
   const md = $("#modal"); if (!md.hidden && !md.dataset.keep) { md.hidden = true; md.innerHTML = ""; } delete md.dataset.keep;
   const parts = (location.hash.replace(/^#\/?/, "") || "").split("/").map(decodeURIComponent);
   const [p0, p1, p2] = parts;
-  const nav = { "": "home", aprender: "aprender", tema: "aprender", leccion: "aprender", tarjetas: "aprender", repaso: "aprender", practicar: "aprender", falladas: "aprender", quiz: S.quiz && S.quiz.fromExam ? "examenes" : "aprender", examenes: "examenes", examen: "examenes", resultado: "examenes", progreso: "progreso" }[p0 || ""];
+  const nav = { "": "home", aprender: "aprender", tema: "aprender", leccion: "aprender", tarjetas: "aprender", repaso: "aprender", diferenciar: "aprender", ejercicio: "aprender", practicar: "aprender", falladas: "aprender", quiz: S.quiz && S.quiz.fromExam ? "examenes" : "aprender", examenes: "examenes", examen: "examenes", resultado: "examenes", progreso: "progreso" }[p0 || ""];
   $$("[data-nav]").forEach(a => a.classList.toggle("active", a.dataset.nav === nav));
   try {
     switch (p0 || "") {
@@ -149,6 +150,8 @@ function route() {
       case "leccion": viewLesson(p1, +(p2 || 0)); break;
       case "tarjetas": viewCards(); break;
       case "repaso": viewReview(); break;
+      case "diferenciar": viewDrills(); break;
+      case "ejercicio": viewDrill(p1); break;
       case "practicar": viewPracticeSetup(p1); break;
       case "quiz": viewQuiz(); break;
       case "falladas": viewFailed(); break;
@@ -257,6 +260,8 @@ function planItems() {
   const rq = reviewQueue().length, nf = failedIds().length;
   if (rq) items.push({ icon: "cards", title: `Repasar ${rq} tarjeta${rq > 1 ? "s" : ""}`, sub: "Repetición espaciada · unos " + Math.max(1, Math.round(rq * 0.25)) + " min", href: "#/repaso", run: startReview });
   if (nl) items.push({ icon: "book", title: `Lección: ${nl.title.replace(/^[\d.]+\s*/, "")}`, sub: `Tema ${topicById(nl.tema).num} · ${nl.steps.length} pasos y ${Math.min(5, nl.qids.length)} preguntas`, href: `#/leccion/${nl.id}` });
+  const dr = DRILLS.find(d => S.lessons[d.sec] && S.lessons[d.sec].done && !(S.drills[d.id] && S.drills[d.id].best >= 80));
+  if (dr && items.length < 2) items.push({ icon: "split", title: `Diferenciar: ${dr.title}`, sub: dr.type === "match" ? "Relaciona parejas · 1-2 min" : "Clasifica afirmaciones · 2 min", href: "#/ejercicio/" + dr.id });
   if (nf) items.push({ icon: "redo", title: `Corregir ${nf} pregunta${nf > 1 ? "s" : ""} fallada${nf > 1 ? "s" : ""}`, sub: "Hasta que las aciertes", run: startFailedQuiz });
   if (!nl && !rq) items.push({ icon: "exam", title: "Simulacro de examen", sub: "40 minutos · versión al azar", run: () => startExam(EXAMS[Math.floor(Math.random() * EXAMS.length)].id, "sim") });
   return items.slice(0, 3);
@@ -283,9 +288,10 @@ function viewHome() {
     <div class="card"><div class="card-h"><h3>Actividad</h3><span class="small muted">${Object.values(S.days).reduce((a, b) => a + b, 0)} respuestas</span></div>${heatmap(12)}</div>
   </div>
   <div class="grid g2 mt">
-    <a class="card mode" href="#/aprender"><span class="ic-sq">${ic("book")}</span><div><h3>Aprendizaje</h3><p class="muted small mb0">${LESSONS.length} lecciones guiadas con diagramas, ${CARDS.length} tarjetas y ${LEARN.length} preguntas.</p></div>${ic("arrow", "chev")}</a>
+    <a class="card mode" href="#/aprender"><span class="ic-sq">${ic("book")}</span><div><h3>Aprendizaje</h3><p class="muted small mb0">${LESSONS.length} lecciones con ${DIAGRAMS.length} esquemas, ${DRILLS.length} ejercicios para diferenciar, ${CARDS.length} tarjetas y ${LEARN.length} preguntas.</p></div>${ic("arrow", "chev")}</a>
     <a class="card mode" href="#/examenes"><span class="ic-sq">${ic("exam")}</span><div><h3>Exámenes anteriores</h3><p class="muted small mb0">PA1 2025 (4 versiones) con solución oficial, simulacro de 40 min y revisión.</p></div>${ic("arrow", "chev")}</a>
-  </div>`;
+  </div>
+  <footer class="about"><img src="img/logo-full.svg" alt="Estructuras ETSII" width="210" height="48"><span class="tiny muted">App de estudio no oficial basada en los apuntes y exámenes de la asignatura. El progreso se guarda en este dispositivo.</span></footer>`;
   $$("[data-plan]").forEach(a => a.onclick = () => plan[+a.dataset.plan].run());
   $("#h-go").onclick = () => { const p = plan[0]; if (!p) return go("#/aprender"); p.run ? p.run() : go(p.href); };
 }
@@ -294,7 +300,7 @@ function viewHome() {
    APRENDIZAJE: ruta de lecciones
    ===================================================================== */
 function learnTabs(active) {
-  return `<div class="seg">${[["aprender", "Lecciones"], ["tarjetas", "Tarjetas"], ["practicar", "Test libre"]].map(([k, l]) => `<a class="${k === active ? "on" : ""}" href="#/${k}">${l}</a>`).join("")}</div>`;
+  return `<div class="seg">${[["aprender", "Lecciones"], ["tarjetas", "Tarjetas"], ["diferenciar", "Diferenciar"], ["practicar", "Test libre"]].map(([k, l]) => `<a class="${k === active ? "on" : ""}" href="#/${k}">${l}</a>`).join("")}</div>`;
 }
 function lessonRow(l, i) {
   const done = S.lessons[l.id] && S.lessons[l.id].done, m = lessonMastery(l), isNext = nextLesson() === l;
@@ -319,12 +325,22 @@ function viewLearn() {
 function viewTopic(tid, tab) {
   const t = topicById(tid); if (!t) return go("#/aprender");
   const th = THEORY[tid], ls = LESSONS.filter(l => l.tema === tid);
-  const tabs = [["lecciones", "Lecciones"], ["resumen", "Resumen"], ["temario", "Temario completo"], ["confusiones", "Confusiones"]];
+  const tabs = [["lecciones", "Lecciones"], ["esquemas", "Esquemas"], ["resumen", "Resumen"], ["temario", "Temario completo"], ["confusiones", "Confusiones"]];
   let body = "";
   if (tab === "lecciones") {
     body = `<div class="card"><div class="lpath">${ls.map((l, i) => lessonRow(l, i)).join("")}</div></div>
     <div class="card mt"><div class="card-h"><h3>Dominio por lección</h3></div>${hbars(ls.map(l => ({ label: l.title.replace(/^[\d.]+\s*/, "").slice(0, 26), value: lessonMastery(l), color: t.color })), { labelW: 190 })}
-    <button class="btn soft mt" id="t-prac">Practicar todo el tema</button></div>`;
+    <button class="btn soft mt" id="t-prac">Practicar todo el tema</button></div>
+    <div class="card mt"><div class="card-h"><h3>Ejercicios para diferenciar</h3></div><div class="drill-grid">${DRILLS.filter(d => d.tema === tid).map(drillCard).join("")}</div></div>`;
+  } else if (tab === "esquemas") {
+    body = `<p class="muted small">Todos los esquemas y figuras del tema. Úsalos para repasar de un vistazo.</p>
+    <div class="gallery">${th.sections.map(sct => { const ds = DIAGRAMS.filter(d => d.sec === sct.id); return ds.length ? `<h3 class="gal-h">${esc(sct.title)}</h3>${ds.map(figHtml).join("")}` : ""; }).join("")}</div>
+    <div class="section-title"><h2>Cuadros comparativos</h2></div>
+    ${DRILLS.filter(d => d.tema === tid && d.type === "classify").map(d => `<div class="card mt"><div class="card-h"><h3>${esc(d.title)}</h3><a class="small" href="#/ejercicio/${d.id}">Ponerte a prueba</a></div>
+      <div class="cmp-grid" style="--n:${d.cats.length}">${d.cats.map((c, ci) => `<div class="cmp-col"><div class="cmp-h">${esc(c)}</div><ul>${d.items.filter(it => it[1] === ci).map(it => `<li>${esc(it[0])}</li>`).join("")}</ul></div>`).join("")}</div></div>`).join("")}
+    ${DRILLS.filter(d => d.tema === tid && d.type === "match").map(d => `<div class="card mt"><div class="card-h"><h3>${esc(d.title)}</h3><a class="small" href="#/ejercicio/${d.id}">Ponerte a prueba</a></div>
+      <table class="tbl" style="display:table"><tbody>${d.pairs.map(pr => `<tr><td><b>${esc(pr[0])}</b></td><td>${esc(pr[1])}</td></tr>`).join("")}</tbody></table></div>`).join("")}
+    <div class="card mt"><div class="card-h"><h3>Trucos para recordar</h3></div>${ls.map(l => MNEMO[l.id] ? `<div class="mn-sec"><b>${esc(l.title.replace(/^[\d.]+\s*/, ""))}</b>${mnemoBox(MNEMO[l.id], true)}</div>` : "").join("")}</div>`;
   } else if (tab === "resumen") {
     body = `<div class="card"><ol class="summary-list">${th.summary.map(s => `<li>${s}</li>`).join("")}</ol></div>`;
   } else if (tab === "temario") {
@@ -355,6 +371,7 @@ function viewLesson(id, step) {
     <div class="eyebrow">Paso ${step + 1} de ${n}</div>
     <h2>${st.title}</h2>
     <div class="theory">${st.html}</div>
+    ${last && MNEMO[id] ? mnemoBox(MNEMO[id]) : ""}
   </article>
   <div class="lesson-nav">
     ${step > 0 ? `<a class="btn ghost" href="#/leccion/${id}/${step - 1}">${ic("back")} Anterior</a>` : `<span></span>`}
@@ -411,6 +428,93 @@ function viewReview() {
     S.cards[c.id] = s; R.n++; if (r > 0) R.ok++; bump();
     if (r === 0) R.ids.push(c.id);
     R.i++; R.flip = false; save(); viewReview(); renderMath(app);
+  });
+}
+
+/* ---------- trucos de memoria y ejercicios de diferenciación ---------- */
+function mnemoBox(list, plain) {
+  return `<div class="mnemo${plain ? " plain" : ""}">${plain ? "" : `<div class="mn-h">💡 Para recordar <span class="tiny muted">(trucos de la app, no están en los apuntes)</span></div>`}<ul>${list.map(x => `<li>${x}</li>`).join("")}</ul></div>`;
+}
+const drillsFor = sec => DRILLS.filter(d => d.sec === sec);
+const drillChip = d => `<a class="chip" href="#/ejercicio/${d.id}">${d.type === "match" ? "🔗" : "⇄"} ${esc(d.title)}</a>`;
+function drillCard(d) {
+  const st = S.drills[d.id], t = topicById(d.tema);
+  return `<a class="drill-card" href="#/ejercicio/${d.id}" style="--c:${t.color}"><span class="dk">${d.type === "match" ? "Relacionar" : "Clasificar"}</span><b>${esc(d.title)}</b>
+  <small>${d.type === "match" ? d.pairs.length + " parejas" : d.items.length + " afirmaciones · " + d.cats.length + " categorías"}</small>
+  <span class="score-line">${st ? `<span class="minibar"><i style="width:${st.best}%;background:${st.best >= 80 ? "var(--ok)" : "var(--brand-2)"}"></i></span><span>${st.best}%</span>` : `<span class="muted">Sin hacer</span>`}</span></a>`;
+}
+function viewDrills() {
+  const done = DRILLS.filter(d => S.drills[d.id]).length;
+  app.innerHTML = `<h1>Aprendizaje</h1>${learnTabs("diferenciar")}
+  <div class="card hero-card"><div><div class="eyebrow">Entender y diferenciar</div><h2 class="mb0">Ejercicios rápidos de 1-2 minutos</h2>
+  <p class="muted small mb0"><b>Clasificar</b>: decide a qué concepto pertenece cada afirmación y termina con una tabla comparativa. <b>Relacionar</b>: une cada término con su significado o su valor.</p></div>
+  ${donut(pct(DRILLS.filter(d => S.drills[d.id] && S.drills[d.id].best >= 80).length, DRILLS.length), "dominados", "", "#0f8a5f", 120)}</div>
+  ${TOPICS.map(t => `<div class="section-title"><h2 style="color:${t.color}">Tema ${t.num} · ${esc(t.short)}</h2></div><div class="drill-grid">${DRILLS.filter(d => d.tema === t.id).map(drillCard).join("")}</div>`).join("")}
+  <p class="tiny muted mt">${done} de ${DRILLS.length} ejercicios hechos. Un ejercicio cuenta como dominado a partir del 80 %.</p>`;
+}
+let DR = null;
+function viewDrill(id) {
+  const d = DRILLS.find(x => x.id === id); if (!d) return go("#/diferenciar");
+  if (!DR || DR.id !== id || DR.fresh) {
+    DR = d.type === "classify" ? { id, i: 0, order: shuffle(d.items.map((_, k) => k)), ans: {}, fresh: false }
+      : { id, left: shuffle(d.pairs.map((_, k) => k)), right: shuffle(d.pairs.map((_, k) => k)), done: {}, sel: null, err: 0, fresh: false, bad: null };
+  }
+  const t = topicById(d.tema);
+  const head = `<div class="crumbs"><a href="#/diferenciar">Diferenciar</a> › Tema ${t.num}</div><h1>${esc(d.title)}</h1>`;
+  if (d.type === "classify") return runClassify(d, head);
+  return runMatch(d, head);
+}
+function finishDrill(d, score) {
+  const st = S.drills[d.id] || { best: 0, n: 0 }; st.best = Math.max(st.best, score); st.n++; st.last = score; st.t = Date.now(); S.drills[d.id] = st; bump(); save();
+}
+function runClassify(d, head) {
+  const n = d.order ? 0 : 0, R = DR, total = d.items.length;
+  if (R.i >= total) {
+    const ok = Object.values(R.ans).filter(a => a.ok).length, sc = pct(ok, total);
+    if (!R.saved) { finishDrill(d, sc); R.saved = true; }
+    app.innerHTML = `${head}<div class="card center-card">${donut(sc, "aciertos", "", sc >= 80 ? "#0f8a5f" : "#2563eb", 130)}<h2>${ok} de ${total}</h2>
+    <div class="row center"><button class="btn primary big" id="d-again">Repetir</button><a class="btn ghost" href="#/diferenciar">Otros ejercicios</a></div></div>
+    <div class="card mt"><div class="card-h"><h3>Tabla comparativa</h3><span class="small muted">✗ = la que fallaste</span></div>
+    <div class="cmp-grid" style="--n:${d.cats.length}">${d.cats.map((c, ci) => `<div class="cmp-col"><div class="cmp-h">${esc(c)}</div><ul>${d.items.map((it, k) => it[1] === ci ? `<li class="${R.ans[k] && !R.ans[k].ok ? "miss" : ""}">${esc(it[0])}${R.ans[k] && !R.ans[k].ok ? " ✗" : ""}</li>` : "").join("")}</ul></div>`).join("")}</div>
+    ${d.general ? `<p class="tiny muted mb0">La clasificación de acciones procede de la normativa (tema 4, sin apuntes adjuntos): conocimiento general.</p>` : ""}</div>`;
+    $("#d-again").onclick = () => { DR.fresh = true; viewDrill(d.id); };
+    return;
+  }
+  const k = R.order[R.i], it = d.items[k], a = R.ans[k];
+  app.innerHTML = `${head}<div class="quiz-head"><a class="small muted" href="#/diferenciar">✕ Salir</a><div class="bar"><i style="width:${pct(R.i + (a ? 1 : 0), total)}%"></i></div><span class="small muted">${R.i + 1}/${total}</span></div>
+  <div class="qcard cls-card"><div class="eyebrow">¿A qué corresponde?</div><div class="cls-stmt">${esc(it[0])}</div>
+  <div class="cls-cats" style="--n:${d.cats.length}">${d.cats.map((c, ci) => `<button class="cls-btn ${a ? (ci === it[1] ? "correct" : ci === a.pick ? "wrong" : "dim") : ""}" data-c="${ci}" ${a ? "disabled" : ""}>${esc(c)}</button>`).join("")}</div>
+  ${a ? `<div class="feedback ${a.ok ? "ok" : "ko"}">${a.ok ? "¡Correcto!" : "Es: " + esc(d.cats[it[1]])}</div>` : ""}</div>
+  ${a ? `<div class="lesson-nav"><span></span><button class="btn primary big" id="d-next">Siguiente ${ic("arrow")}</button></div>` : ""}`;
+  $$(".cls-btn").forEach(b => b.onclick = () => {
+    const pick = +b.dataset.c; R.ans[k] = { pick, ok: pick === it[1] }; runClassify(d, head);
+    if (pick === it[1]) setTimeout(() => { if (DR === R && R.order[R.i] === k) { R.i++; runClassify(d, head); } }, 650);
+  });
+  const nx = $("#d-next"); if (nx) nx.onclick = () => { R.i++; runClassify(d, head); };
+}
+function runMatch(d, head) {
+  const R = DR, n = d.pairs.length, nDone = Object.keys(R.done).length;
+  if (nDone === n) {
+    const sc = pct(n, n + R.err);
+    if (!R.saved) { finishDrill(d, sc); R.saved = true; }
+    app.innerHTML = `${head}<div class="card center-card">${donut(sc, "precisión", "", sc >= 80 ? "#0f8a5f" : "#2563eb", 130)}<h2>${R.err ? R.err + " error" + (R.err > 1 ? "es" : "") : "¡Sin errores!"}</h2>
+    <div class="row center"><button class="btn primary big" id="d-again">Repetir</button><a class="btn ghost" href="#/diferenciar">Otros ejercicios</a></div></div>
+    <div class="card mt"><div class="card-h"><h3>Resumen</h3></div><table class="tbl" style="display:table"><tbody>${d.pairs.map(p => `<tr><td><b>${esc(p[0])}</b></td><td>${esc(p[1])}</td></tr>`).join("")}</tbody></table></div>`;
+    $("#d-again").onclick = () => { DR.fresh = true; viewDrill(d.id); };
+    return;
+  }
+  app.innerHTML = `${head}<p class="muted small">Toca un término de la izquierda y después su pareja de la derecha.</p>
+  <div class="quiz-head"><a class="small muted" href="#/diferenciar">✕ Salir</a><div class="bar"><i style="width:${pct(nDone, n)}%"></i></div><span class="small muted">${nDone}/${n} · ${R.err} errores</span></div>
+  <div class="match">
+    <div class="m-col">${R.left.map(k => `<button class="m-item ${R.done[k] ? "ok" : R.sel === k ? "sel" : ""}" data-l="${k}" ${R.done[k] ? "disabled" : ""}>${esc(d.pairs[k][0])}</button>`).join("")}</div>
+    <div class="m-col">${R.right.map(k => `<button class="m-item r ${R.done[k] ? "ok" : R.bad === k ? "bad" : ""}" data-r="${k}" ${R.done[k] ? "disabled" : ""}>${esc(d.pairs[k][1])}</button>`).join("")}</div>
+  </div>`;
+  $$("[data-l]").forEach(b => b.onclick = () => { R.sel = +b.dataset.l; R.bad = null; runMatch(d, head); });
+  $$("[data-r]").forEach(b => b.onclick = () => {
+    if (R.sel == null) return;
+    const k = +b.dataset.r;
+    if (k === R.sel) { R.done[k] = true; R.sel = null; R.bad = null; } else { R.err++; R.bad = k; }
+    runMatch(d, head);
   });
 }
 
@@ -529,6 +633,7 @@ function viewQuizSummary() {
       ${Z.lesson ? (nl ? `<a class="btn primary big" href="#/leccion/${nl.id}">Siguiente lección ${ic("arrow")}</a>` : `<a class="btn primary big" href="#/aprender">Ver la ruta</a>`) : wrongIds.length ? `<button class="btn primary big" id="s-wrong">Repetir las ${wrongIds.length} falladas</button>` : `<a class="btn primary big" href="${Z.fromExam ? "#/examenes" : "#/"}">Continuar</a>`}
     </div>
     ${Z.lesson && wrongIds.length ? `<a class="small" href="#/leccion/${Z.lesson}">Volver a leer la lección</a>` : ""}
+    ${Z.lesson && drillsFor(Z.lesson).length ? `<div class="drill-suggest">${drillsFor(Z.lesson).map(drillChip).join("")}</div>` : ""}
   </div>
   ${Object.keys(byAp).length > 1 ? `<div class="card mt"><div class="card-h"><h3>Por apartado</h3></div>${hbars(Object.entries(byAp).map(([k, r]) => ({ label: k.slice(0, 24), value: pct(r.ok, r.n), color: topicById(r.tema).color, tip: `${r.ok}/${r.n}` })), { labelW: 180 })}</div>` : ""}
   <details class="card mt"><summary class="sum-h">Revisar las ${Z.ids.length} preguntas</summary>
@@ -703,6 +808,8 @@ function viewProgress() {
     <div class="card"><div class="card-h"><h3>Notas de examen</h3></div>${hist.length ? lineChart(hist.map(h => h.grade), 10, hist.map(h => h.examId.slice(-2)), "", 5) : `<div class="empty">Aún no hay exámenes.</div>`}</div>
     <div class="card"><div class="card-h"><h3>Aciertos en tus últimos test</h3></div>${sess.length ? lineChart(sess.map(s => pct(s.ok, s.n)), 100, sess.map(s => s.title), "%") : `<div class="empty">Aún no hay test completados.</div>`}</div>
   </div>
+  <div class="card mt"><div class="card-h"><h3>Ejercicios para diferenciar</h3><a class="small" href="#/diferenciar">Ver todos</a></div>
+    ${Object.keys(S.drills).length ? hbars(DRILLS.filter(d => S.drills[d.id]).map(d => ({ label: d.title, value: S.drills[d.id].best, color: topicById(d.tema).color, tip: S.drills[d.id].n + " intentos" })), { labelW: 220 }) : `<div class="empty">Aún no has hecho ningún ejercicio.</div>`}</div>
   <div class="card mt"><div class="card-h"><h3>Actividad</h3></div>${heatmap(window.innerWidth < 600 ? 10 : 20)}</div>
   ${ap.length ? `<div class="card mt"><div class="card-h"><h3>Apartados para reforzar</h3><span class="small muted">Toca para practicar</span></div>
     ${hbars(ap.map(r => ({ label: r.apartado.slice(0, 24), value: r.p, color: topicById(r.tema).color, tip: `${r.ok}/${r.n}` })), { labelW: 180 })}
