@@ -39,7 +39,7 @@ const LS_KEY = "cde_estructuras_v1";
 const blank = () => ({ qs: {}, failed: {}, history: [], sessions: [], exam: null, quiz: null, lessons: {}, cards: {}, days: {}, rev: null, drills: {} });
 let S = blank();
 try { const raw = localStorage.getItem(LS_KEY); if (raw) S = Object.assign(blank(), JSON.parse(raw)); } catch (e) { /* almacenamiento no disponible */ }
-function save() { try { localStorage.setItem(LS_KEY, JSON.stringify(S)); } catch (e) { /* ignorar */ } }
+function save() { try { localStorage.setItem(LS_KEY, JSON.stringify(S)); } catch (e) { /* ignorar */ } if (window.CLOUD) CLOUD.onSave(S); }
 const bump = () => { const k = dayKey(); S.days[k] = (S.days[k] || 0) + 1; };
 
 /* ---------- bancos de preguntas ---------- */
@@ -191,7 +191,7 @@ function route() {
   const md = $("#modal"); if (!md.hidden && !md.dataset.keep) { md.hidden = true; md.innerHTML = ""; } delete md.dataset.keep;
   const parts = (location.hash.replace(/^#\/?/, "") || "").split("/").map(decodeURIComponent);
   const [p0, p1, p2] = parts;
-  const nav = { "": "home", aprender: "aprender", tema: "aprender", leccion: "aprender", tarjetas: "aprender", repaso: "aprender", diferenciar: "aprender", ejercicio: "aprender", practicar: "aprender", falladas: "aprender", quiz: S.quiz && S.quiz.fromExam ? "examenes" : "aprender", examenes: "examenes", examen: "examenes", resultado: "examenes", progreso: "progreso" }[p0 || ""];
+  const nav = { "": "home", aprender: "aprender", tema: "aprender", leccion: "aprender", tarjetas: "aprender", repaso: "aprender", diferenciar: "aprender", ejercicio: "aprender", practicar: "aprender", falladas: "aprender", quiz: S.quiz && S.quiz.fromExam ? "examenes" : "aprender", examenes: "examenes", examen: "examenes", resultado: "examenes", progreso: "progreso", cuenta: "progreso", ranking: "progreso", admin: "progreso" }[p0 || ""];
   $$("[data-nav]").forEach(a => a.classList.toggle("active", a.dataset.nav === nav));
   try {
     switch (p0 || "") {
@@ -210,7 +210,7 @@ function route() {
       case "examen": viewExamRunner(); break;
       case "resultado": viewResult(p1); break;
       case "progreso": viewProgress(); break;
-      default: viewHome();
+      default: if (!(window.CLOUD && CLOUD.view(p0, p1))) viewHome();
     }
   } catch (err) { console.error(err); app.innerHTML = `<div class="card"><h2>Se ha producido un error</h2><p class="muted">${esc(err.message)}</p><a class="btn" href="#/">Volver al inicio</a></div>`; }
   updateBanner(); renderMath(app);
@@ -321,6 +321,7 @@ function viewHome() {
   const g = globalStats(), plan = planItems(), st = streak();
   const doneL = LESSONS.filter(l => S.lessons[l.id] && S.lessons[l.id].done).length;
   app.innerHTML = `
+  ${window.CLOUD ? CLOUD.homeBanner() : ""}
   <section class="today">
     <div class="today-main">
       <div class="eyebrow">${new Date().toLocaleDateString("es-ES", { weekday: "long", day: "numeric", month: "long" })}${st ? ` · 🔥 ${st} día${st > 1 ? "s" : ""} seguidos` : ""}</div>
@@ -803,7 +804,7 @@ function submitExam(auto) {
   if (!ex.official && keyed) total = total * qs.length / keyed;
   const dur = E.mode === "sim" ? Math.min((Date.now() - E.start) / 1000, (E.deadline - E.start) / 1000) : (Date.now() - E.start) / 1000;
   const h = { id: "h" + Date.now(), examId: E.examId, mode: E.mode, t: Date.now(), grade: Math.round(total * 1000) / 1000, ok, ko, partial, blank: blankN, nokey, official: ex.official, dur: Math.round(dur), ans: E.ans, auto: !!auto };
-  S.history.push(h); S.exam = null; save();
+  S.history.push(h); S.exam = null; save(); if (window.CLOUD) CLOUD.recordAttempt(h, exById(h.examId));
   go("#/resultado/" + h.id);
   if (auto) setTimeout(() => confirmBox("Tiempo agotado", "Se acabaron los 40 minutos y el examen se ha entregado automáticamente.", "Ver resultado", () => {}, { noCancel: true }), 50);
 }
@@ -874,5 +875,8 @@ function viewProgress() {
 }
 
 /* arranque */
+window.APP = { get S() { return S; }, set S(v) { S = Object.assign(blank(), v); try { localStorage.setItem(LS_KEY, JSON.stringify(S)); } catch (e) { } },
+  route, go, esc, ic, confirmBox, donut, hbars, globalStats, streak, fmt1, fmtDate, topicStats, lessonsDone: () => LESSONS.filter(l => S.lessons[l.id] && S.lessons[l.id].done).length, nLessons: LESSONS.length, exById, TOPICS };
+if (window.CLOUD) CLOUD.init();
 if (S.exam && S.exam.mode === "sim" && Date.now() > S.exam.deadline) submitExam(true); else route();
 })();
