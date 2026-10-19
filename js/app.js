@@ -616,7 +616,7 @@ function startQuiz({ ids, title, fromExam, lesson }) {
 }
 function startFailedQuiz() { const ids = failedIds(); if (!ids.length) return go("#/aprender"); startQuiz({ ids: shuffle(ids).slice(0, 20), title: "Corregir falladas" }); }
 const explainHtml = q => `${q.official ? `<div class="official">${q.official}</div>` : ""}${q.bank === "exam" ? `<b>${q.official ? "Comentario" : "Explicación orientativa (no oficial)"}:</b> ` : ""}${esc(q.exp)}
-  <div class="src">${q.bank === "exam" ? (q.unofficial ? (q.noKey ? "<b>Sin solución oficial ni propuesta</b> · " : "<b>Solución PROPUESTA por la app (no oficial): " + esc(q.keyText) + "</b> · ") : "Solución oficial: " + esc(q.keyText) + " · ") : ""}${esc(q.src)}${q.sec && lessonById(q.sec) ? ` · <a href="#/leccion/${q.sec}">Repasar la lección</a>` : ""}</div>${slideButtons(q)}`;
+  <div class="src">${q.bank === "exam" ? (q.unofficial ? (q.noKey ? "<b>Sin solución oficial ni propuesta</b> · " : "<b>Solución PROPUESTA por IA (no oficial): " + esc(q.keyText) + " · confianza " + esc(q.conf) + "</b> · ") : "Solución oficial: " + esc(q.keyText) + " · ") : ""}${esc(q.src)}${q.sec && lessonById(q.sec) ? ` · <a href="#/leccion/${q.sec}">Repasar la lección</a>` : ""}</div>${slideButtons(q)}`;
 function viewQuiz() {
   const Z = S.quiz;
   if (!Z) return go("#/aprender");
@@ -727,7 +727,7 @@ function viewExams() {
   app.innerHTML = `<h1>Exámenes anteriores</h1>
   <p class="muted">Preguntas originales y corrección con la hoja oficial. Cada pregunta vale 0,5; en las de varias respuestas, 0,5 × máx(0, (correctas − incorrectas marcadas)/nº de correctas).</p>
   ${Object.entries(EXAM_SETS).map(([sk, st]) => `<div class="section-title"><h2>${esc(st.title)} · ${esc(st.date)}</h2>${st.official ? `<span class="tag ok">Solución oficial</span>` : `<span class="tag warn">Sin solución oficial</span>`}</div>
-  ${st.official ? "" : `<p class="small muted">No hay hoja de soluciones de este examen. La app corrige con una <b>solución propuesta (no oficial)</b> en las preguntas en que es fiable; las demás quedan sin corregir y la nota es solo una estimación.</p>`}
+  ${st.official ? "" : `<p class="small muted">No hay hoja de soluciones de este examen. La app corrige con una <b>solución propuesta por IA (no oficial)</b>, razonada en cada pregunta y con su nivel de confianza (alta, media o baja). La nota es solo una estimación.</p>`}
   <div class="grid g4">${EXAMS.filter(e => e.set === sk).map(e => { const att = hist.filter(h => h.examId === e.id), best = att.length ? Math.max(...att.map(h => h.grade)) : null;
     return `<button class="card exam-tile" data-ex="${e.id}"><span class="v-badge">${e.version}</span><b>${esc(st.short)} · ${e.version}</b><small>20 preguntas · 40 min</small>
     <span class="score-line">${best != null ? `<span class="minibar"><i style="width:${best * 10}%;background:${best >= 5 ? "var(--ok)" : "var(--ko)"}"></i></span><span>${fmt1(best)}${st.official ? "" : "*"}</span>` : `<span class="muted">Sin intentos</span>`}</span></button>`; }).join("")}</div>`).join("")}
