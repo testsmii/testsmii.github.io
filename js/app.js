@@ -86,6 +86,53 @@ const theoryWithDiagrams = s => {
   return h;
 };
 
+/* ---------- diapositivas originales de los apuntes ---------- */
+const DECKS = { "T1": { dir: "T1", pages: 29, name: "Tema 1 · Introducción y objetivos" }, "T2.1": { dir: "T2", pages: 91, name: "Tema 2.1 · Tipologías estructurales" },
+  "T2.3": { dir: "T23", pages: 34, name: "Tema 2.3 · Cimentaciones" }, "T3": { dir: "T3", pages: 52, name: "Tema 3 · Materiales" } };
+const TEMA_DECK = { T1: "T1", T2: "T2.1", T23: "T2.3", T3: "T3" };
+const SEC_SLIDES = { "t1-proyecto": [2, 3], "t1-requisitos": [4, 13], "t1-metodos": [14, 22], "t1-el": [22, 28], "t2-intro": [2, 6], "t2-clasif": [7, 9], "t2-mono": [10, 21], "t2-bi": [22, 41], "t2-edif": [42, 57], "t2-civil": [58, 75], "t2-ind": [76, 90],
+  "t23-sup": [2, 21], "t23-prof": [22, 26], "t23-cont": [27, 33], "t3-intro": [2, 9], "t3-acero": [10, 17], "t3-horm": [18, 33], "t3-arm": [34, 38], "t3-suelo": [39, 51] };
+const slideSrc = (deck, n) => `slides/${DECKS[deck].dir}/p-${String(n + 1).padStart(2, "0")}.jpg`;
+function slideRefs(text) {
+  const out = [], seen = new Set();
+  const re = /(T1|T2\.1|T2\.3|T3)\s*,\s*diap(?:s)?\.\s*([\d\s,y–\-]+)/g; let m;
+  while ((m = re.exec(text || ""))) {
+    const deck = m[1];
+    m[2].split(/,|\by\b/).forEach(part => {
+      const r = part.trim().match(/^(\d+)(?:\s*[-–]\s*(\d+))?/); if (!r) return;
+      const a = Math.max(1, +r[1]), b = Math.min(r[2] ? +r[2] : a, DECKS[deck].pages - 1), k = deck + "|" + a + "|" + b;
+      if (a <= b && !seen.has(k)) { seen.add(k); out.push({ deck, a, b }); }
+    });
+  }
+  return out.slice(0, 4);
+}
+function slideButtons(q) {
+  const refs = slideRefs([q.ref, q.exp, q.official].join(" "));
+  if (!refs.length) return "";
+  return `<div class="slide-btns">${refs.map(r => `<button class="btn sm soft" data-slide="${r.deck}|${r.a}|${r.b}">📄 Ver diapositiva original · ${r.deck} diap. ${r.a}${r.b > r.a ? "–" + r.b : ""}</button>`).join("")}</div>`;
+}
+function openSlide(deck, n, range) {
+  const m = $("#modal"), D = DECKS[deck];
+  const lo = range ? range[0] : 1, hi = range ? range[1] : D.pages - 1;
+  n = Math.max(lo, Math.min(hi, n));
+  m.innerHTML = `<div class="box slidebox" role="dialog" aria-modal="true" aria-label="Diapositiva original">
+    <div class="sb-h"><div><b>${esc(D.name)}</b> <span class="muted small">· diapositiva ${n}${range ? ` (${lo}–${hi})` : ""}</span></div><button class="linkbtn" id="sb-x" aria-label="Cerrar">✕ Cerrar</button></div>
+    <div class="sb-img"><img src="${slideSrc(deck, n)}" alt="Diapositiva ${n} de los apuntes: ${esc(D.name)}"></div>
+    <div class="sb-nav"><button class="btn sm" id="sb-p" ${n <= lo ? "disabled" : ""}>${ic("back")} Anterior</button><span class="small muted">Captura de los apuntes originales</span><button class="btn sm" id="sb-n" ${n >= hi ? "disabled" : ""}>Siguiente ${ic("arrow")}</button></div></div>`;
+  m.hidden = false;
+  const close = () => { m.hidden = true; m.innerHTML = ""; document.removeEventListener("keydown", key); };
+  const key = e => { if (e.key === "Escape") close(); if (e.key === "ArrowLeft" && n > lo) { document.removeEventListener("keydown", key); openSlide(deck, n - 1, range); } if (e.key === "ArrowRight" && n < hi) { document.removeEventListener("keydown", key); openSlide(deck, n + 1, range); } };
+  document.addEventListener("keydown", key);
+  $("#sb-x").onclick = close; m.onclick = e => { if (e.target === m) close(); };
+  $("#sb-p").onclick = () => { document.removeEventListener("keydown", key); openSlide(deck, n - 1, range); };
+  $("#sb-n").onclick = () => { document.removeEventListener("keydown", key); openSlide(deck, n + 1, range); };
+}
+document.addEventListener("click", e => {
+  const b = e.target.closest("[data-slide]"); if (b) { e.preventDefault(); const [d, x, y] = b.dataset.slide.split("|"); openSlide(d, +x, +y > +x ? [+x, +y] : null); return; }
+  const r = e.target.closest("[data-slides]"); if (r) { e.preventDefault(); const sec = r.dataset.slides, t = LESSONS.find(l => l.id === sec), rg = SEC_SLIDES[sec]; openSlide(TEMA_DECK[t.tema], rg[0], rg); }
+});
+const secSlidesBtn = (sec, label) => SEC_SLIDES[sec] ? `<button class="btn sm ghost" data-slides="${sec}">📄 ${label || "Ver diapositivas originales"} (${SEC_SLIDES[sec][0]}–${SEC_SLIDES[sec][1]})</button>` : "";
+
 /* ---------- puntuación (sistema oficial del examen) ---------- */
 function scoreQ(q, sel) {
   sel = sel || [];
@@ -348,7 +395,7 @@ function viewTopic(tid, tab) {
   } else if (tab === "resumen") {
     body = `<div class="card"><ol class="summary-list">${th.summary.map(s => `<li>${s}</li>`).join("")}</ol></div>`;
   } else if (tab === "temario") {
-    body = `<div class="theory">${th.sections.map((s, i) => `<details class="sec" ${i === 0 ? "open" : ""}><summary>${esc(s.title)}</summary><div class="body">${theoryWithDiagrams(s)}</div></details>`).join("")}</div>
+    body = `<div class="theory">${th.sections.map((s, i) => `<details class="sec" ${i === 0 ? "open" : ""}><summary>${esc(s.title)}</summary><div class="body"><div class="mb-s">${secSlidesBtn(s.id)}</div>${theoryWithDiagrams(s)}</div></details>`).join("")}</div>
     <p class="tiny muted">Los recuadros amarillos («Ampliación») son conocimiento general que no aparece en tus apuntes.</p>`;
   } else {
     body = `<div class="card">${th.confusions.map(c => `<div class="conf"><div>${c[0]}</div><div>${c[1]}</div></div>`).join("")}</div>`;
@@ -372,7 +419,7 @@ function viewLesson(id, step) {
   <div class="lesson-head"><h1>${esc(l.title.replace(/^[\d.]+\s*/, ""))}</h1>
   <div class="steps">${l.steps.map((_, i) => `<a href="#/leccion/${id}/${i}" class="${i < step ? "past" : i === step ? "cur" : ""}" aria-label="Paso ${i + 1}"></a>`).join("")}<span class="sq ${last ? "" : ""}" title="Comprobación final">✓</span></div></div>
   <article class="card lesson">
-    <div class="eyebrow">Paso ${step + 1} de ${n}</div>
+    <div class="row between"><div class="eyebrow">Paso ${step + 1} de ${n}</div>${secSlidesBtn(id, "Diapositivas originales")}</div>
     <h2>${st.title}</h2>
     <div class="theory">${st.html}</div>
     ${last && MNEMO[id] ? mnemoBox(MNEMO[id]) : ""}
@@ -569,7 +616,7 @@ function startQuiz({ ids, title, fromExam, lesson }) {
 }
 function startFailedQuiz() { const ids = failedIds(); if (!ids.length) return go("#/aprender"); startQuiz({ ids: shuffle(ids).slice(0, 20), title: "Corregir falladas" }); }
 const explainHtml = q => `${q.official ? `<div class="official">${q.official}</div>` : ""}${q.bank === "exam" ? `<b>${q.official ? "Comentario" : "Explicación orientativa (no oficial)"}:</b> ` : ""}${esc(q.exp)}
-  <div class="src">${q.bank === "exam" ? (q.unofficial ? (q.noKey ? "<b>Sin solución oficial ni propuesta</b> · " : "<b>Solución PROPUESTA por la app (no oficial): " + esc(q.keyText) + "</b> · ") : "Solución oficial: " + esc(q.keyText) + " · ") : ""}${esc(q.src)}${q.sec && lessonById(q.sec) ? ` · <a href="#/leccion/${q.sec}">Repasar la lección</a>` : ""}</div>`;
+  <div class="src">${q.bank === "exam" ? (q.unofficial ? (q.noKey ? "<b>Sin solución oficial ni propuesta</b> · " : "<b>Solución PROPUESTA por la app (no oficial): " + esc(q.keyText) + "</b> · ") : "Solución oficial: " + esc(q.keyText) + " · ") : ""}${esc(q.src)}${q.sec && lessonById(q.sec) ? ` · <a href="#/leccion/${q.sec}">Repasar la lección</a>` : ""}</div>${slideButtons(q)}`;
 function viewQuiz() {
   const Z = S.quiz;
   if (!Z) return go("#/aprender");
