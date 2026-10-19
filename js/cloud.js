@@ -5,7 +5,14 @@
    de Firebase en FIREBASE_CONFIG. Mientras sea null, la app funciona
    igual que antes (progreso guardado solo en el navegador).
    ===================================================================== */
-const FIREBASE_CONFIG = null; /* ← pegar aquí el objeto firebaseConfig */
+const FIREBASE_CONFIG = {
+  apiKey: "AIzaSyCP6k5K7i4RK7tqPAbwKBEYP6u5g3KkaqM",
+  authDomain: "estudio-etsii.firebaseapp.com",
+  projectId: "estudio-etsii",
+  storageBucket: "estudio-etsii.firebasestorage.app",
+  messagingSenderId: "1021129059968",
+  appId: "1:1021129059968:web:1b1b1463e065a72b2a0065"
+};
 // Cada asignatura guarda su progreso en campos y ranking propios (Estructuras conserva los nombres originales)
 const SID = (window.SUBJECT && SUBJECT.id) || "est", SFX = SID === "est" ? "" : "_" + SID;
 const PROG = "progress" + SFX, STATS = "stats" + SFX, RANK = "ranking" + SFX;
