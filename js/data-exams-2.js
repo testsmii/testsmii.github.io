@@ -195,7 +195,7 @@ const CANON_EF2_2025 = {
     q: "¿Cuál de las siguientes afirmaciones es correcta?",
     o: { a: "Normalmente se emplean modelos nolineales en las comprobaciones frente a estados límite de servicio.", b: "Los factores parciales de seguridad para las acciones son siempre mayores que 0,5.", c: "El valor característico de una acción es el producto del valor de cálculo y el coeficiente de simultaneidad.", d: "Ninguna de las otras respuestas." },
     exp: "En los ELS se suele usar cálculo lineal. Para acciones variables favorables, γ puede ser 0. El valor representativo es ψ por el valor característico. Por tanto ninguna de las anteriores. (Conocimiento general normativo.)" },
-  C18: { tema: "T1", apartado: "Acciones", prop: "d", conf: "media",
+  C18: { tema: "T1", apartado: "Acciones", part: "P2", prop: "d", conf: "media",
     q: "¿Cuál de las siguientes afirmaciones es correcta?",
     o: { a: "La rugosidad del terreno no influye en el perfil vertical del viento.", b: "La velocidad básica del viento en el litoral español es 35 m/s.", c: "El coeficiente de exposición depende de la forma y orientación de la superficie respecto al viento.", d: "Las normas sólo contienen coeficientes eólicos de edificios con geometrías convencionales." },
     exp: "Resolución razonada (IA, no oficial; normativa de viento, tema 4, sin apuntes adjuntos). • a es falsa: la rugosidad del terreno sí influye en el perfil vertical del viento, a través del coeficiente de exposición. • b es falsa: en el CTE DB-SE-AE la velocidad básica es de 26, 27 o 29 m/s según la zona; 35 m/s no figura. • c es falsa: el coeficiente de exposición depende de la altura y del grado de aspereza del entorno; lo que depende de la forma y la orientación es el coeficiente eólico o de presión. • d es la correcta: las normas solo recogen coeficientes eólicos para formas habituales y remiten a ensayos o bibliografía especializada para geometrías singulares." },
@@ -209,17 +209,90 @@ const CANON_EF2_2025 = {
     exp: "Los coeficientes de las acciones valen 1 en ELS y pueden ser menores que 1 para acciones permanentes favorables. Las otras afirmaciones son correctas. (Conocimiento general.)" }
 };
 
+/* ------------------------- EF2 · 06/07/2026 (con SOLUCIONES oficiales) ------------------------- */
+const CANON_EF2_2026 = {
+  C1: { tema: "T2", apartado: "Clasificación", q: "El elemento estructural plano que se ilustra en la figura está sometido a las tensiones que se indican en la misma. ¿De qué tipo de elemento estructural se trata?",
+    fig: "img/ef2-2026-laja.png", figAlt: "Elemento plano cuadrado con tensiones normales (70 y 32 MPa) y tangenciales (24 MPa) contenidas en su plano z1-z2.",
+    o: { a: "De una laja", b: "De una placa", c: "De una membrana", d: "De una lámina" },
+    exp: "Es un elemento plano, sin curvatura, con tensiones contenidas en su plano medio (Nx, Ny, Nxy): una laja (T2.1, diap. 7). La placa trabaja a flexión; la membrana y la lámina son curvas." },
+  C2: { tema: "T2", apartado: "Naves", q: "Considérese una estructura metálica triangulada de nudos articulados sometida a una serie de cargas. Señalar cuál de las siguientes afirmaciones es correcta.",
+    o: { a: "Todas las barras estarán sometidas únicamente a axiles independientemente de dónde se apliquen las cargas.", b: "Todas las barras estarán sometidas únicamente a axiles si las cargas se aplican sólo en los nudos.", c: "Todas las barras estarán sometidas a axiles, cortantes y momentos independientemente de dónde se apliquen las cargas.", d: "Todas las barras estarán sometidas únicamente a axiles si las cargas se aplican en puntos intermedios de las barras que no sean los nudos." },
+    exp: "En una estructura triangulada articulada las barras solo trabajan a axil si las cargas actúan en los nudos (T2.1, diap. 79). Una carga aplicada entre nudos flecta la barra que la recibe." },
+  C3: { tema: "T2", apartado: "Naves industriales: pórticos", q: "En la figura se muestran dos pórticos, (a) y (b), de una nave industrial los cuales están sometidos a cargas laterales y a cargas gravitatorias. En la figura los círculos representan articulaciones perfectas. Indica cuál de las afirmaciones siguientes es correcta.",
+    fig: "img/ef2-2026-porticos.png", figAlt: "Dos pórticos con dintel triangulado. (a): articulación en el pilar a la altura del cordón inferior (sección A-A'), pilares empotrados en la base (B-B'). (b): articulaciones en los extremos del cordón superior.",
+    o: { a: "En la solución (b) la sección A-A’ del pilar está sometida sólo a cortantes y axiles, y la sección B-B’ a cortantes, axiles y momentos.", b: "Tanto en la solución (a) como en la solución (b), ambas secciones A-A’ y B-B’ del pilar están sometidas a momentos, cortantes y axiles.", c: "Ni en la solución (a) ni en la solución (b), las secciones A-A’ y B-B’ del pilar están sometidas a momentos.", d: "En la solución (a) la sección A-A’ del pilar está sometida sólo a cortantes y axiles, y la sección B-B’ a cortantes, axiles y momentos." },
+    exp: "En (a) la sección A-A’ coincide con una articulación, donde el momento es nulo: solo hay axil y cortante. La base B-B’ está empotrada y bajo carga lateral tiene momento. En (b) las articulaciones están en el cordón superior, así que A-A’ sí transmite momento." },
+  C4: { tema: "T2", apartado: "Edificación", q: "En una estructura porticada de nudos rígidos sometida a cargas horizontales, la deformación global por cortante del pórtico se debe a:",
+    o: { a: "las deformaciones axiles de los pilares", b: "las deformaciones a flexión en doble curvatura de los pilares y de las vigas", c: "las deformaciones axiles de las vigas", d: "las deformaciones a nivel de cada barra (pilares y vigas) que provocan los esfuerzos cortantes" },
+    exp: "Apuntes T2.1, diap. 47: la deformación global por cortante del pórtico se debe a la flexión de las barras (doble curvatura de pilares y vigas). La deformación global por flexión, en cambio, se debe al alargamiento y acortamiento axil de los pilares." },
+  C5: { tema: "T2", apartado: "Entramados", q: "La figura muestra un entramado rectangular apoyado sometido a una carga vertical P aplicada en la sección central de las barras. En una dirección la longitud es el doble que en la dirección perpendicular. La barra de menor longitud tiene una rigidez a flexión EI1 (donde E es el módulo de Young e I1 la inercia). La barra de mayor longitud tiene una rigidez a flexión EI2 (donde I2 es la inercia). Las uniones entre las barras no son rígidas, pero están unidas entre sí de forma que en su intersección experimentan igual deformación vertical. La relación entre carga P y flecha d, en una viga biapoyada horizontal sometida a una carga puntual vertical P aplicada en el centro del vano vale P/d=(48EI/L3), donde I es la inercia y L la luz. Se pide seleccionar cuál debe ser la relación de rigideces de las barras (EI1/EI2) para que las reacciones en la viga de menor longitud sean 10 veces superiores a las reacciones en la viga de mayor longitud.",
+    fig: "img/ef2-2026-entramado.png", figAlt: "Dos vigas cruzadas, de luces L y 2L, con carga P en el cruce; reacciones P1 en la corta y P2 en la larga.",
+    o: { a: "(EI1/EI2) = 10/4", b: "(EI1/EI2) = 8/10", c: "(EI1/EI2) = 10/8", d: "(EI1/EI2) = 4/10" },
+    official: "<b>Resolución oficial:</b> compatibilidad d = d1 = d2; equilibrio P = P1 + P2; P1/d1 = 48EI1/L1³ y P2/d2 = 48EI2/L2³. Por tanto EI1/EI2 = (P1·L1³·d2)/(d1·P2·L2³) = (10P2·L³)/(P2·(2L)³) = 10/8.",
+    exp: "Es el reparto de carga en emparrillados con unión no rígida (T2.1, diap. 22)." },
+  C6: { tema: "T23", apartado: "Excentricidad", multiNote: true, q: "Indicar para una zapata rígida de dimensiones Lx = 3.3 m y Ly = 2.4 m, qué solicitaciones sobre el centro de la base del cimiento (N, Mx, My) implican que el punto de aplicación de la carga equivalente se encuentra dentro del núcleo central.\n(Nota: puede haber más de una solución)",
+    o: { a: "N = 30 tn\nMx = -6 m·tn\nMy = -3 m·tn", b: "N = 20 tn\nMx = 6 m·tn\nMy = -6 m·tn", c: "N = 10 tn\nMx = -3 m·tn\nMy = 4 m·tn", d: "N = 40 tn\nMx = 12 m·tn\nMy = 4 m·tn" },
+    official: "<b>Resolución oficial:</b> ex = Mx/N y ey = My/N. a) ex = −0,2, ey = −0,1 → <b>dentro</b>. b) 0,3; −0,3 → fuera. c) −0,3; 0,4 → fuera. d) 0,3; 0,1 → <b>dentro</b>. Se comprueba con el rombo del núcleo central |ex|/(Lx/6) + |ey|/(Ly/6) ≤ 1, con Lx/6 = 0,55 m y Ly/6 = 0,4 m.",
+    exp: "Núcleo central de una zapata rectangular (T2.3, diap. 12-14)." },
+  C7: { tema: "T23", apartado: "Contención", q: "Selecciona la respuesta correcta. El empuje que ejerce el terreno sobre un muro …",
+    o: { a: "tiene el signo contrario en la situaciones activa y pasiva", b: "cuando se provoca la rotura del suelo, es superior en magnitud en la situación pasiva frente a la activa", c: "en situación de equilibrio no provoca desplazamiento del muro", d: "Ninguna de las anteriores" },
+    exp: "En la rotura, el empuje pasivo (máximo) es mucho mayor que el activo (mínimo): Ka < K0 < Kp (T2.3, diap. 30). El empuje actúa siempre contra el muro, así que no cambia de signo." },
+  C8: { tema: "T3", apartado: "Hormigón: reológicas", q: "¿Cuál de las siguientes afirmaciones es verdadera?",
+    o: { a: "La retracción en el hormigón se produce en fases avanzadas", b: "La retracción por secado produce tensiones que el hormigón no es capaz de aguantar y dan lugar a fisuras", c: "Las fisuras por retracción se producen cuando el hormigón tiene exceso de áridos", d: "Las fisuras por retracción se producen cuando el hormigón se cura en ambientes húmedos" },
+    exp: "Apuntes T3, diap. 26: la armadura se opone a la contracción por retracción, lo que provoca fisuración superficial y tensiones internas. La retracción empieza en la fase plástica, al inicio del fraguado." },
+  C9: { tema: "T3", apartado: "Hormigón: designación", q: "En un hormigón designado como HA–25/P/20/I, la letra “P” hace referencia a:",
+    o: { a: "Tipo de cemento empleado en su fabricación.", b: "Tipo de árido empleado en su fabricación.", c: "Consistencia en estado fresco.", d: "Ninguna de las otras tres respuestas es verdadera" },
+    exp: "Designación T-R/C/TM/A: C es la consistencia (S, P, B, F); P = plástica (T3, diap. 33). El ambiente «I» es la notación antigua de la EHE." },
+  C10: { tema: "T3", apartado: "Hormigón: componentes", q: "Se podría definir un mortero como:",
+    o: { a: "Una mezcla de agua, grava fina y cemento", b: "Una mezcla de conglomerante, arena y árido", c: "Una mezcla de conglomerante, arena y agua", d: "Una mezcla de pasta más grava" },
+    exp: "La hoja oficial da la a. Ojo: la definición más habitual de mortero (conglomerante + arena + agua, conocimiento general) coincide también con la c. La «grava fina» de la a se refiere al árido fino. En el examen, la respuesta que puntúa es la oficial." },
+  C11: { tema: "T3", apartado: "Hormigón: reológicas", q: "En una estructura hiperestática de hormigón armado",
+    o: { a: "La fluencia puede producir variaciones de las reacciones en los apoyos", b: "La retracción no produce ninguna redistribución de tensiones", c: "Es fundamental utilizar hormigones de consistencia muy elevada", d: "Ninguna de las anteriores" },
+    exp: "En estructuras hiperestáticas las deformaciones diferidas (fluencia y retracción) están coaccionadas y redistribuyen esfuerzos y reacciones. Es la misma idea que la de los efectos térmicos (T2.1, diap. 68)." },
+  C12: { tema: "T1", apartado: "Cálculo elástico y plástico", q: "Cuando se llega al agotamiento de la sección de una viga constituida por un material elastoplástico …",
+    o: { a: "No se cumple el Estado Límite de Servicio", b: "La viga a la cual pertenece colapsa", c: "Se forma un mecanismo", d: "Ninguna de las anteriores" },
+    exp: "El agotamiento de una sección forma una rótula plástica, pero la viga solo colapsa cuando se forman suficientes rótulas para convertirla en mecanismo. Por ejemplo, en una viga hiperestática hay reserva por redistribución (T2.1, diap. 20-21; T1, diap. 9)." },
+  C13: { tema: "T3", apartado: "Suelos: fases", q: "Indicar cuál de las siguientes relaciones para determinar el peso específico saturado (γsat) de un suelo en condiciones de saturación es incorrecta.",
+    o: { a: "(Gs+e) γw / (1+e)\nGs: gravedad específica\ne: índice de huecos\nγw: peso espec. agua", b: "(1+w) γd\nw: humedad\nγd: peso espec. seco", c: "γd + e γw\ne: índice de huecos\nγd: peso espec. seco\nγw: peso espec. agua", d: "n (1+w) γw / w\nn: porosidad\nw: humedad\nγw: peso espec. agua" },
+    official: "<b>Resolución oficial:</b> γsat = (Ws + Vh·γw)/Vm. a) (Gs + e)γw/(1 + e) → correcto. b) (1 + w)γd = (Ws + Ww)/Vm → correcto. c) γd + e·γw → <b>incorrecto</b>; lo correcto es γd + n·γw. d) n(1 + w)γw/w = (Ws + Ww)/Vm → correcto.",
+    exp: "Relaciones entre índices de fase (T3, diap. 43-44)." },
+  C14: { tema: "T3", apartado: "Suelos", q: "El índice de plasticidad de un suelo",
+    o: { a: "depende del contenido de agua que tiene la muestra del suelo que se analiza", b: "define diferencia de índices de huecos para los estados denso y suelto del suelo", c: "define la amplitud de humedades cuando el suelo se encuentra en estado plástico", d: "es la humedad del suelo cuando llega a un estado semi-sólido" },
+    exp: "IP = LL − LP: es el intervalo de humedad en el que el suelo se comporta como plástico, según los límites de Atterberg (T3, diap. 41)." },
+  C15: { tema: "T3", apartado: "Consolidación", multiNote: true, q: "La consolidación unidimensional (en un medio homogéneo semi-infinito):\n(indicar TODAS las afirmaciones correctas)",
+    o: { a: "las presiones neutras permanecen constantes en el tiempo y la variación de las tensiones efectivas provoca el cambio en las tensiones totales", b: "las tensiones efectivas permanecen constantes en el tiempo y la variación de la presión neutra provoca el cambio en las tensiones totales", c: "el cociente entre las tensiones efectivas y totales se mantienen constante", d: "la suma de las presiones neutras y tensiones efectivas se mantiene constante" },
+    exp: "Con carga constante la tensión total no cambia: σ = σ′ + u se mantiene, mientras u se disipa y σ′ crece en el tiempo (T3, diap. 46 y 50)." },
+  C16: { tema: "T1", apartado: "Coeficientes parciales", q: "¿Cuál de las siguientes afirmaciones es correcta?",
+    o: { a: "El valor característico de un parámetro del terreno no depende del estado límite considerado.", b: "El valor característico de una acción es siempre menor que el valor de cálculo.", c: "El valor característico de una acción es el producto del valor representativo y el coeficiente de simultaneidad.", d: "Ninguna de las anteriores." },
+    exp: "Ninguna es cierta. El característico del terreno puede depender del estado límite. Con acciones favorables el valor de cálculo puede ser menor que el característico. Y el valor representativo es ψ por el característico, no al revés (T1, diap. 20-21)." },
+  C17: { tema: "T1", apartado: "Proyecto estructural", q: "¿Cuál de las siguientes afirmaciones es correcta?",
+    o: { a: "Sólo el proyecto de ejecución contiene un presupuesto.", b: "Si existe un anteproyecto tipo B no hace falta realizar un proyecto básico.", c: "En lo que se refiere a dimensiones, tienen prioridad los documentos del proyecto sobre los planos.", d: "Ninguna de las anteriores." },
+    exp: "Ninguna es correcta. El proyecto básico también incluye presupuesto (estimado). El anteproyecto no sustituye al proyecto básico. En dimensiones prevalecen los planos (conocimiento general sobre documentos de proyecto; fases en T1, diap. 3)." },
+  C18: { tema: "T1", apartado: "Fiabilidad", q: "¿Cuál de las siguientes afirmaciones es correcta?",
+    o: { a: "Un índice de fiabilidad β alto corresponde a una fiabilidad R alta.", b: "Como resultado de la aplicación de un método de nivel 1 se obtiene un valor numérico para la fiabilidad.", c: "En el cálculo estructural se considera 0.1 como probabilidad de fallo muy baja.", d: "Ninguna de las anteriores." },
+    exp: "A mayor β, menor pf y mayor fiabilidad R = 1 − pf (T1, diap. 17). El nivel 1 no da un valor numérico de fiabilidad (diap. 18), y 0,1 sería una probabilidad de fallo altísima." },
+  C19: { tema: "T1", apartado: "Requisitos", multiNote: true, q: "¿Cuál de las siguientes afirmaciones es correcta?\n(NOTA: puede haber más de una solución)",
+    o: { a: "Un edificio industrial con una vida útil nominal de 15 años se considera estructura de carácter temporal.", b: "Según el Código Técnico de la Edificación hay que tener en cuenta los efectos dinámicos del viento si la esbeltez de la estructura supera un cierto valor.", c: "Un fallo frágil se caracteriza por producirse pocas o nulas deformaciones plásticas antes del fallo.", d: "Ninguna de las anteriores." },
+    exp: "c: el fallo frágil se produce casi sin deformación plástica y sin aviso (T1, diap. 7). b: el CTE obliga a considerar efectos dinámicos del viento en estructuras esbeltas (normativa, conocimiento general). a: las estructuras temporales tienen una vida útil de unos 10 años o menos." },
+  C20: { tema: "T1", apartado: "Acciones", part: "P2", q: "¿Cuál de las siguientes afirmaciones es correcta?",
+    o: { a: "El asiento de una zapata es una acción directa.", b: "Las normas obligan a comprobar sólo una parte de todas las posibles combinaciones de estados de carga.", c: "Un cálculo sísmico según la norma NCSE-02 tiene por objetivo garantizar que la estructura no sufra daños independientemente de la magnitud del terremoto.", d: "Ninguna de las anteriores." },
+    exp: "Las normas definen combinaciones representativas, no todas las posibles. El asiento es una acción indirecta (deformación impuesta). La NCSE-02 admite daños ante sismos fuertes y busca evitar el colapso. (Normativa de acciones: contenido de la segunda parte de la asignatura.)" }
+};
+const KEYS_EF2_2026 = { T1: ["a", "b", "d", "b", "c", "a, d", "b", "b", "c", "a", "a", "d", "c", "c", "d", "d", "d", "a", "b, c", "b"] };
+
 /* Registro de conjuntos de examen */
 const EXAM_SETS = {
   "PA1-2025": { canon: EXAM_CANON, order: EXAM_ORDER, keys: EXAM_KEYS_2025, variant: { "T3|C4|X": EXAM_VARIANT_T3_C4c }, official: true,
-    title: "Prueba adelantada PA1", date: "11 de noviembre de 2025", short: "PA1 2025" },
+    title: "Prueba adelantada PA1", date: "11 de noviembre de 2025", short: "PA1 2025", kind: "PEC1" },
   "PA1-2024": { canon: CANON_2024, order: ORDER_2024, keys: EXAM_KEYS_2024, official: true,
-    title: "Prueba anticipada PA1", date: "12 de noviembre de 2024", short: "PA1 2024" },
+    title: "Prueba anticipada PA1", date: "12 de noviembre de 2024", short: "PA1 2024", kind: "PEC1" },
   "EF2-2025": { canon: CANON_EF2_2025, order: { T1: Object.keys(CANON_EF2_2025).map(c => [c, "abcd"]) }, keys: null, official: false,
-    title: "Examen final extraordinario EF2", date: "4 de julio de 2025", short: "EF2 2025" }
+    title: "Examen final extraordinario EF2", date: "4 de julio de 2025", short: "EF2 2025", kind: "Final" },
+  "EF2-2026": { canon: CANON_EF2_2026, order: { T1: Object.keys(CANON_EF2_2026).map(c => [c, "abcd"]) }, keys: KEYS_EF2_2026, official: true,
+    title: "Examen final extraordinario EF2", date: "6 de julio de 2026", short: "EF2 2026", kind: "Final" }
 };
 EXAMS.length = 0;
-["PA1-2025", "EF2-2025", "PA1-2024"].forEach(set => Object.keys(EXAM_SETS[set].order).forEach(v => EXAMS.push({ id: set + "-" + v, set, year: +set.slice(-4), conv: EXAM_SETS[set].title + " · " + EXAM_SETS[set].date, short: EXAM_SETS[set].short, version: v, time: 40, official: EXAM_SETS[set].official })));
+["PA1-2025", "PA1-2024", "EF2-2026", "EF2-2025"].forEach(set => Object.keys(EXAM_SETS[set].order).forEach(v => EXAMS.push({ id: set + "-" + v, set, year: +set.slice(-4), conv: EXAM_SETS[set].title + " · " + EXAM_SETS[set].date, short: EXAM_SETS[set].short, version: v, time: 40, official: EXAM_SETS[set].official, kind: EXAM_SETS[set].kind })));
 
 function buildExamQuestions(exam) {
   const S = EXAM_SETS[exam.set], order = S.order[exam.version];
@@ -234,7 +307,7 @@ function buildExamQuestions(exam) {
       q: c.q, o: opts, a: ans, multi: ans.length > 1 || !!c.multi || !!c.multiNote,
       fig: c.fig, figAlt: c.figAlt, exp: c.exp, official: c.official,
       src: "Examen real · " + exam.conv + " · Versión " + exam.version + " · Pregunta " + (i + 1),
-      keyText, conf: c.conf || "alta", unofficial: !S.keys, noKey: !S.keys && !c.prop
+      keyText, part: c.part || "P1", conf: c.conf || "alta", unofficial: !S.keys, noKey: !S.keys && !c.prop
     };
   });
 }

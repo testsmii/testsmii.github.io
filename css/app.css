@@ -462,3 +462,12 @@ details.more summary{cursor:pointer;color:var(--brand-2);font-weight:600;font-si
 .rank .nm{flex:1}
 .toast{position:fixed;left:50%;bottom:96px;transform:translateX(-50%) translateY(20px);background:#0f1f3d;color:#fff;padding:10px 16px;border-radius:12px;font-size:.9rem;opacity:0;transition:all .25s;z-index:60;pointer-events:none}
 .toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+
+.news{border:1.5px solid #f3c96b;background:linear-gradient(90deg,#fff8e6,#fff);margin-bottom:16px}
+.news-h{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.news-h .linkbtn{margin-left:auto;color:var(--ink-3)}
+.news-badge{background:#f59e0b;color:#fff;font-weight:800;font-size:.75rem;padding:3px 9px;border-radius:999px;text-transform:uppercase;letter-spacing:.04em}
+.news ul{margin:6px 0 8px;padding-left:20px;font-size:.93rem}
+.kind-h{margin:30px 0 4px;padding-top:6px;border-top:2px solid var(--line)}
+.kind-h h2{margin-bottom:2px}
+.tag.p2{background:#f1f5f9;color:#475569;border:1px dashed #94a3b8}
