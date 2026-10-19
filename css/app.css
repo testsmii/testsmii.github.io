@@ -418,3 +418,5 @@ details.more summary{cursor:pointer;color:var(--brand-2);font-weight:600;font-si
 .m-item.bad{background:var(--ko-soft);border-color:var(--ko);animation:shake .3s}
 @keyframes shake{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
 .about{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px;padding-top:18px;border-top:1px solid var(--line)}
+.qgrid button.r-nokey{background:#f1f5f9;border-color:#94a3b8;color:#64748b}
+.qfig img{width:auto;max-width:100%;max-height:380px;margin:0 auto}

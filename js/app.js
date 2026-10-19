@@ -47,7 +47,9 @@ const QMAP = {};
 LEARN.forEach(q => { q.bank = "learn"; q.src = "Banco de aprendizaje · " + q.ref; QMAP[q.id] = q; });
 const EXAM_Q = {};
 EXAMS.forEach(ex => { EXAM_Q[ex.id] = buildExamQuestions(ex); EXAM_Q[ex.id].forEach(q => { q.bank = "exam"; q.examId = ex.id; QMAP[q.id] = q; }); });
-const EXAM_POOL = EXAM_Q["PA1-2025-T1"].map(q => q.id).concat(["PA1-2025-T3-P1"]);
+const EXAM_POOL = EXAM_Q["PA1-2025-T1"].map(q => q.id).concat(["PA1-2025-T3-P1"], EXAM_Q["PA1-2024-T1"].map(q => q.id), EXAM_Q["EF2-2025-T1"].filter(q => !q.noKey).map(q => q.id));
+const exById = id => EXAMS.find(e => e.id === id);
+const exLabel = q => { const e = exById(q.examId); return e.short + " " + e.version; };
 const inPool = q => q.bank === "learn" || EXAM_POOL.includes(q.id);
 const fixedOrder = q => q.bank === "exam" || q.o.some(o => /anteriores|Alguna de/i.test(o));
 
@@ -58,7 +60,7 @@ const SEC_RULES = {
   T23: [[/Profundas/, "t23-prof"], [/Contención|contención/, "t23-cont"], [/./, "t23-sup"]],
   T3: [[/Introducción/, "t3-intro"], [/Acero/, "t3-acero"], [/Hormigón/, "t3-horm"], [/Armaduras/, "t3-arm"], [/./, "t3-suelo"]]
 };
-Object.values(QMAP).forEach(q => { q.sec = SEC_RULES[q.tema].find(([re]) => re.test(q.apartado))[1]; });
+Object.values(QMAP).forEach(q => { q.sec = SEC_RULES[q.tema].find(([re]) => new RegExp(re.source, "i").test(q.apartado))[1]; });
 
 /* ---------- lecciones (secciones del temario troceadas por subtítulos) ---------- */
 const figHtml = d => `<figure class="dgfig">${d.svg}<figcaption>${d.cap}</figcaption></figure>`;
@@ -88,11 +90,13 @@ const theoryWithDiagrams = s => {
 function scoreQ(q, sel) {
   sel = sel || [];
   if (!sel.length) return { score: 0, status: "blank" };
+  if (!q.a.length) return { score: 0, status: "nokey" };
   const c = sel.filter(i => q.a.includes(i)).length, w = sel.length - c;
   const score = 0.5 * Math.max(0, (c - w) / q.a.length);
   return { score, status: score >= 0.5 - 1e-9 ? "ok" : score > 0 ? "partial" : "ko" };
 }
 function recordAnswer(q, status) {
+  if (status === "nokey") return;
   const st = S.qs[q.id] || (S.qs[q.id] = { n: 0, ok: 0, last: null });
   st.n++; if (status === "ok") st.ok++; st.last = status; st.t = Date.now();
   if (status === "ok") delete S.failed[q.id]; else if (status !== "blank") S.failed[q.id] = Date.now();
@@ -118,7 +122,7 @@ function globalStats() {
   let n = 0, ok = 0, seen = 0;
   Object.values(S.qs).forEach(st => { n += st.n; ok += st.ok; seen++; });
   const all = Object.values(QMAP).filter(inPool);
-  return { n, ok, seen, p: pct(ok, n), m: mastery(all), failed: failedIds().length, best: S.history.length ? Math.max(...S.history.map(h => h.grade)) : null, exams: S.history.length };
+  return { n, ok, seen, p: pct(ok, n), m: mastery(all), failed: failedIds().length, best: S.history.filter(h => h.official !== false).length ? Math.max(...S.history.filter(h => h.official !== false).map(h => h.grade)) : null, exams: S.history.length };
 }
 const failedIds = () => Object.keys(S.failed).filter(id => QMAP[id]);
 function streak() { let s = 0, t = Date.now(); if (!S.days[dayKey(t)]) t -= DAY; while (S.days[dayKey(t)]) { s++; t -= DAY; } return s; }
@@ -289,7 +293,7 @@ function viewHome() {
   </div>
   <div class="grid g2 mt">
     <a class="card mode" href="#/aprender"><span class="ic-sq">${ic("book")}</span><div><h3>Aprendizaje</h3><p class="muted small mb0">${LESSONS.length} lecciones con ${DIAGRAMS.length} esquemas, ${DRILLS.length} ejercicios para diferenciar, ${CARDS.length} tarjetas y ${LEARN.length} preguntas.</p></div>${ic("arrow", "chev")}</a>
-    <a class="card mode" href="#/examenes"><span class="ic-sq">${ic("exam")}</span><div><h3>Exámenes anteriores</h3><p class="muted small mb0">PA1 2025 (4 versiones) con solución oficial, simulacro de 40 min y revisión.</p></div>${ic("arrow", "chev")}</a>
+    <a class="card mode" href="#/examenes"><span class="ic-sq">${ic("exam")}</span><div><h3>Exámenes anteriores</h3><p class="muted small mb0">PA1 2025 y PA1 2024 (4 versiones cada una) con solución oficial y EF2 de julio de 2025. Simulacro de 40 min y revisión.</p></div>${ic("arrow", "chev")}</a>
   </div>
   <footer class="about"><img src="img/logo-full.svg" alt="Estructuras ETSII" width="210" height="48"><span class="tiny muted">App de estudio no oficial basada en los apuntes y exámenes de la asignatura. El progreso se guarda en este dispositivo.</span></footer>`;
   $$("[data-plan]").forEach(a => a.onclick = () => plan[+a.dataset.plan].run());
@@ -565,7 +569,7 @@ function startQuiz({ ids, title, fromExam, lesson }) {
 }
 function startFailedQuiz() { const ids = failedIds(); if (!ids.length) return go("#/aprender"); startQuiz({ ids: shuffle(ids).slice(0, 20), title: "Corregir falladas" }); }
 const explainHtml = q => `${q.official ? `<div class="official">${q.official}</div>` : ""}${q.bank === "exam" ? `<b>${q.official ? "Comentario" : "Explicación orientativa (no oficial)"}:</b> ` : ""}${esc(q.exp)}
-  <div class="src">${q.bank === "exam" ? "Solución oficial: " + esc(q.keyText) + " · " : ""}${esc(q.src)}${q.sec && lessonById(q.sec) ? ` · <a href="#/leccion/${q.sec}">Repasar la lección</a>` : ""}</div>`;
+  <div class="src">${q.bank === "exam" ? (q.unofficial ? (q.noKey ? "<b>Sin solución oficial ni propuesta</b> · " : "<b>Solución PROPUESTA por la app (no oficial): " + esc(q.keyText) + "</b> · ") : "Solución oficial: " + esc(q.keyText) + " · ") : ""}${esc(q.src)}${q.sec && lessonById(q.sec) ? ` · <a href="#/leccion/${q.sec}">Repasar la lección</a>` : ""}</div>`;
 function viewQuiz() {
   const Z = S.quiz;
   if (!Z) return go("#/aprender");
@@ -582,7 +586,7 @@ function viewQuiz() {
   let fb = "";
   if (answered) {
     const s = answered.status, showExp = Z.showExp != null ? Z.showExp : s !== "ok";
-    fb = `<div class="feedback ${s}">${s === "ok" ? ic("check") + " ¡Correcta!" : s === "partial" ? "Parcialmente correcta · " + fmt1(answered.score) + " / 0,5" : "Incorrecta"}
+    fb = `<div class="feedback ${s === "nokey" ? "partial" : s}">${s === "nokey" ? "Esta pregunta no tiene solución oficial ni propuesta" : s === "ok" ? ic("check") + " ¡Correcta!" : s === "partial" ? "Parcialmente correcta · " + fmt1(answered.score) + " / 0,5" : "Incorrecta"}${q.unofficial && !q.noKey ? " · según la solución propuesta (no oficial)" : ""}
       <button class="linkbtn" id="z-exp">${showExp ? "Ocultar explicación" : "Ver explicación"}</button></div>
       ${showExp ? `<div class="explain">${explainHtml(q)}</div>` : ""}`;
   }
@@ -590,7 +594,7 @@ function viewQuiz() {
   <div class="quiz-head"><a class="small muted" href="javascript:void 0" id="z-end">✕ ${Object.keys(Z.ans).length ? "Terminar" : "Salir"}</a><div class="bar"><i style="width:${pct(Z.i + (answered ? 1 : 0), Z.ids.length)}%"></i></div><span class="small muted">${Z.i + 1}/${Z.ids.length}</span></div>
   <article class="qcard">
     <div class="qmeta"><span class="tag" style="background:${t.color}1a;color:${t.color}">Tema ${t.num} · ${esc(q.apartado)}</span>
-    ${q.bank === "exam" ? `<span class="tag brand">Examen real ${esc(q.examId.slice(-2))} · P${q.n}</span>` : `<span class="tag">${DIFF[q.d]}</span>`}${q.multi ? `<span class="tag warn">Varias respuestas</span>` : ""}</div>
+    ${q.bank === "exam" ? `<span class="tag brand">Examen real ${esc(exLabel(q))} · P${q.n}</span>${q.unofficial ? `<span class="tag warn">Sin solución oficial</span>` : ""}` : `<span class="tag">${DIFF[q.d]}</span>`}${q.multi ? `<span class="tag warn">Varias respuestas</span>` : ""}</div>
     <div class="qtext">${esc(q.q)}</div>
     ${q.fig ? `<figure class="qfig"><img src="${q.fig}" alt="${esc(q.figAlt || "Figura")}" loading="lazy"><figcaption>Figura original del examen</figcaption></figure>` : ""}
     <div class="opts">${optHtml}</div>
@@ -643,7 +647,7 @@ function viewQuizSummary() {
 function reviewItem(q, sel, n, order) {
   sel = sel || []; order = order || q.o.map((_, i) => i);
   const r = scoreQ(q, sel);
-  const tag = { ok: `<span class="tag ok">Correcta · ${fmt1(r.score)}</span>`, ko: `<span class="tag ko">Incorrecta · 0,00</span>`, partial: `<span class="tag warn">Parcial · ${fmt1(r.score)}</span>`, blank: `<span class="tag">En blanco · 0,00</span>` }[r.status];
+  const tag = { ok: `<span class="tag ok">Correcta · ${fmt1(r.score)}</span>`, ko: `<span class="tag ko">Incorrecta · 0,00</span>`, partial: `<span class="tag warn">Parcial · ${fmt1(r.score)}</span>`, blank: `<span class="tag">En blanco · 0,00</span>`, nokey: `<span class="tag warn">Sin solución</span>` }[q.noKey && r.status === "blank" ? "nokey" : r.status];
   return `<div class="review-item"><div class="rh"><b>Pregunta ${n}</b>${tag}</div>
   <div style="font-weight:600;margin-bottom:8px;white-space:pre-line">${esc(q.q)}</div>
   ${q.fig ? `<figure class="qfig"><img src="${q.fig}" alt="${esc(q.figAlt || "Figura")}" loading="lazy"></figure>` : ""}
@@ -675,29 +679,26 @@ function viewExams() {
   const hist = S.history.slice();
   app.innerHTML = `<h1>Exámenes anteriores</h1>
   <p class="muted">Preguntas originales y corrección con la hoja oficial. Cada pregunta vale 0,5; en las de varias respuestas, 0,5 × máx(0, (correctas − incorrectas marcadas)/nº de correctas).</p>
-  <div class="section-title"><h2>PA1 · 11 de noviembre de 2025</h2><span class="tag ok">Solución oficial</span></div>
-  <div class="grid g4">${EXAMS.map(e => { const att = hist.filter(h => h.examId === e.id), best = att.length ? Math.max(...att.map(h => h.grade)) : null;
-    return `<button class="card exam-tile" data-ex="${e.id}"><span class="v-badge">${e.version}</span><b>Versión ${e.version}</b><small>20 preguntas · 40 min</small>
-    <span class="score-line">${best != null ? `<span class="minibar"><i style="width:${best * 10}%;background:${best >= 5 ? "var(--ok)" : "var(--ko)"}"></i></span><span>${fmt1(best)}</span>` : `<span class="muted">Sin intentos</span>`}</span></button>`; }).join("")}</div>
-  <p class="tiny muted">Las cuatro versiones tienen las mismas 20 preguntas en distinto orden.</p>
+  ${Object.entries(EXAM_SETS).map(([sk, st]) => `<div class="section-title"><h2>${esc(st.title)} · ${esc(st.date)}</h2>${st.official ? `<span class="tag ok">Solución oficial</span>` : `<span class="tag warn">Sin solución oficial</span>`}</div>
+  ${st.official ? "" : `<p class="small muted">No hay hoja de soluciones de este examen. La app corrige con una <b>solución propuesta (no oficial)</b> en las preguntas en que es fiable; las demás quedan sin corregir y la nota es solo una estimación.</p>`}
+  <div class="grid g4">${EXAMS.filter(e => e.set === sk).map(e => { const att = hist.filter(h => h.examId === e.id), best = att.length ? Math.max(...att.map(h => h.grade)) : null;
+    return `<button class="card exam-tile" data-ex="${e.id}"><span class="v-badge">${e.version}</span><b>${esc(st.short)} · ${e.version}</b><small>20 preguntas · 40 min</small>
+    <span class="score-line">${best != null ? `<span class="minibar"><i style="width:${best * 10}%;background:${best >= 5 ? "var(--ok)" : "var(--ko)"}"></i></span><span>${fmt1(best)}${st.official ? "" : "*"}</span>` : `<span class="muted">Sin intentos</span>`}</span></button>`; }).join("")}</div>`).join("")}
+  <p class="tiny muted">En cada convocatoria, las versiones T1–T4 tienen las mismas preguntas en distinto orden. * Nota estimada con solución no oficial.</p>
   <div class="grid g2 mt">
     <div class="card"><div class="card-h"><h3>Evolución de tus notas</h3><span class="small muted">${hist.length} intento${hist.length === 1 ? "" : "s"}</span></div>
-    ${hist.length ? lineChart(hist.slice(-15).map(h => h.grade), 10, hist.slice(-15).map(h => h.examId.slice(-2) + " " + new Date(h.t).toLocaleDateString("es-ES", { day: "numeric", month: "numeric" })), "", 5) : `<div class="empty">Haz un examen para ver tu evolución.</div>`}</div>
+    ${hist.length ? lineChart(hist.slice(-15).map(h => h.grade), 10, hist.slice(-15).map(h => exById(h.examId).short + " " + exById(h.examId).version), "", 5) : `<div class="empty">Haz un examen para ver tu evolución.</div>`}</div>
     <div class="card"><div class="card-h"><h3>Preguntas de examen por tema</h3></div>
     ${hbars(TOPICS.map(t => { const qs = EXAM_POOL.map(id => QMAP[id]).filter(q => q.tema === t.id); return { label: t.num + ". " + t.short + " (" + qs.length + ")", value: mastery(qs), color: t.color }; }), { labelW: 170 })}
     <div class="chips mt">${TOPICS.map(t => `<a class="chip" href="javascript:void 0" data-et="${t.id}">Practicar ${t.num}</a>`).join("")}</div></div>
   </div>
-  ${hist.length ? `<div class="section-title"><h2>Últimos intentos</h2></div><div class="card"><ul class="list">${hist.slice().reverse().slice(0, 8).map(h => `<li class="clickable" data-h="${h.id}"><span><b>${fmt1(h.grade)}</b> <span class="muted small">· Versión ${h.examId.slice(-2)} · ${h.mode === "sim" ? "simulacro" : "sin tiempo"} · ${fmtDate(h.t)}</span></span><span class="small muted">${h.ok}✓ ${h.ko}✗ ${h.partial ? h.partial + "◐ " : ""}${h.blank}○ ${ic("arrow", "chev")}</span></li>`).join("")}</ul></div>` : ""}
-  <details class="card mt"><summary class="sum-h">PA1 · 12 de noviembre de 2024 <span class="tag warn">Sin enunciados</span></summary>
-  <p class="small muted">Solo está disponible la hoja oficial de soluciones; los enunciados no se adjuntaron, así que estas preguntas no se pueden responder.</p>
-  <div style="overflow-x:auto"><table class="keytbl"><thead><tr><th>P</th><th>Test 1</th><th>Test 2</th><th>Test 3</th><th>Test 4</th></tr></thead><tbody>
-  ${EXAM_KEYS_2024.T1.map((_, i) => `<tr><td>${i + 1}</td>${["T1", "T2", "T3", "T4"].map(v => `<td>${esc(EXAM_KEYS_2024[v][i])}</td>`).join("")}</tr>`).join("")}</tbody></table></div></details>
+  ${hist.length ? `<div class="section-title"><h2>Últimos intentos</h2></div><div class="card"><ul class="list">${hist.slice().reverse().slice(0, 8).map(h => `<li class="clickable" data-h="${h.id}"><span><b>${fmt1(h.grade)}${h.official === false ? "*" : ""}</b> <span class="muted small">· ${esc(exById(h.examId).short)} ${exById(h.examId).version} · ${h.mode === "sim" ? "simulacro" : "sin tiempo"} · ${fmtDate(h.t)}</span></span><span class="small muted">${h.ok}✓ ${h.ko}✗ ${h.partial ? h.partial + "◐ " : ""}${h.blank}○ ${ic("arrow", "chev")}</span></li>`).join("")}</ul></div>` : ""}
   ${hist.length ? `<button class="linkbtn danger mt" id="h-clear">Borrar historial de exámenes</button>` : ""}`;
-  $$("[data-ex]").forEach(b => b.onclick = () => { const id = b.dataset.ex, v = id.slice(-2);
-    chooseBox("Versión " + v, "Prueba adelantada PA1 · 11/11/2025 · 20 preguntas", [
+  $$("[data-ex]").forEach(b => b.onclick = () => { const id = b.dataset.ex, ex = exById(id), v = ex.version;
+    chooseBox(ex.short + " · " + v, esc(ex.conv) + " · 20 preguntas" + (ex.official ? "" : " · <b>sin solución oficial</b>"), [
       { icon: "exam", title: "Simulacro de examen", sub: "40 minutos, se entrega solo al acabar el tiempo", run: () => startExam(id, "sim") },
       { icon: "book", title: "Examen sin tiempo", sub: "Respondes todo y corriges al entregar", run: () => startExam(id, "full") },
-      { icon: "check", title: "Pregunta a pregunta", sub: "Corrección inmediata con explicación", run: () => startQuiz({ ids: EXAM_Q[id].map(q => q.id), title: "PA1 2025 " + v, fromExam: true }) }]); });
+      { icon: "check", title: "Pregunta a pregunta", sub: "Corrección inmediata con explicación", run: () => startQuiz({ ids: EXAM_Q[id].map(q => q.id), title: ex.short + " " + v, fromExam: true }) }]); });
   $$("[data-et]").forEach(b => b.onclick = () => startQuiz({ ids: shuffle(EXAM_POOL.filter(id => QMAP[id].tema === b.dataset.et)), title: "Examen · Tema " + topicById(b.dataset.et).num, fromExam: true }));
   $$("[data-h]").forEach(li => li.onclick = () => go("#/resultado/" + li.dataset.h));
   const hc = $("#h-clear"); if (hc) hc.onclick = () => confirmBox("Borrar historial", "Se eliminarán todos los intentos de examen guardados.", "Borrar", () => { S.history = []; save(); route(); }, { danger: true });
@@ -713,7 +714,7 @@ function viewExamRunner() {
   const ex = EXAMS.find(e => e.id === E.examId), qs = EXAM_Q[E.examId];
   const q = qs[E.cur], sel = E.ans[q.n] || [];
   const nAns = qs.filter(x => (E.ans[x.n] || []).length).length;
-  app.innerHTML = `<div class="exam-top"><span class="small"><b>PA1 2025 · ${ex.version}</b> <span class="muted">${E.mode === "sim" ? "simulacro" : "sin límite"}</span></span>
+  app.innerHTML = `<div class="exam-top"><span class="small"><b>${esc(ex.short)} · ${ex.version}</b> <span class="muted">${E.mode === "sim" ? "simulacro" : "sin límite"}</span></span>
     <span class="timer" id="e-timer">--:--</span><button class="btn primary sm" id="e-submit">Entregar</button></div>
   <div class="exam-layout"><div>
     <article class="qcard">
@@ -749,10 +750,12 @@ function viewExamRunner() {
 function submitExam(auto) {
   const E = S.exam; if (!E) return;
   const qs = EXAM_Q[E.examId];
-  let total = 0, ok = 0, ko = 0, partial = 0, blankN = 0;
-  qs.forEach(q => { const r = scoreQ(q, E.ans[q.n]); total += r.score; if (r.status === "ok") ok++; else if (r.status === "ko") ko++; else if (r.status === "partial") partial++; else blankN++; recordAnswer(q, r.status); });
+  let total = 0, ok = 0, ko = 0, partial = 0, blankN = 0, nokey = 0;
+  qs.forEach(q => { const r = scoreQ(q, E.ans[q.n]); total += r.score; if (q.noKey) nokey++; else if (r.status === "ok") ok++; else if (r.status === "ko") ko++; else if (r.status === "partial") partial++; else blankN++; recordAnswer(q, r.status); });
+  const ex = exById(E.examId), keyed = qs.length - nokey;
+  if (!ex.official && keyed) total = total * qs.length / keyed;
   const dur = E.mode === "sim" ? Math.min((Date.now() - E.start) / 1000, (E.deadline - E.start) / 1000) : (Date.now() - E.start) / 1000;
-  const h = { id: "h" + Date.now(), examId: E.examId, mode: E.mode, t: Date.now(), grade: Math.round(total * 1000) / 1000, ok, ko, partial, blank: blankN, dur: Math.round(dur), ans: E.ans, auto: !!auto };
+  const h = { id: "h" + Date.now(), examId: E.examId, mode: E.mode, t: Date.now(), grade: Math.round(total * 1000) / 1000, ok, ko, partial, blank: blankN, nokey, official: ex.official, dur: Math.round(dur), ans: E.ans, auto: !!auto };
   S.history.push(h); S.exam = null; save();
   go("#/resultado/" + h.id);
   if (auto) setTimeout(() => confirmBox("Tiempo agotado", "Se acabaron los 40 minutos y el examen se ha entregado automáticamente.", "Ver resultado", () => {}, { noCancel: true }), 50);
@@ -763,17 +766,17 @@ function viewResult(hid) {
   const ex = EXAMS.find(e => e.id === h.examId), qs = EXAM_Q[h.examId];
   const filt = viewResult.filter || "all";
   const show = qs.filter(q => { const st = scoreQ(q, h.ans[q.n]).status; return filt === "all" || (filt === "wrong" ? (st === "ko" || st === "partial") : filt === st); });
-  const byT = {}; qs.forEach(q => { const r = scoreQ(q, h.ans[q.n]); const b = byT[q.tema] || (byT[q.tema] = { s: 0, n: 0 }); b.s += r.score; b.n += 0.5; });
+  const byT = {}; qs.filter(q => !q.noKey).forEach(q => { const r = scoreQ(q, h.ans[q.n]); const b = byT[q.tema] || (byT[q.tema] = { s: 0, n: 0 }); b.s += r.score; b.n += 0.5; });
   app.innerHTML = `<div class="crumbs"><a href="#/examenes">Exámenes</a> › Resultado</div>
   <div class="card result-hero">
     ${donut(Math.round(h.grade * 10), "", "", h.grade >= 5 ? "#0f8a5f" : "#c2413b", 150).replace(/>\d+%<\/text>/, `>${fmt1(h.grade)}</text>`).replace('class="d-l"></text>', 'class="d-l">sobre 10</text>')}
-    <div class="rh-main"><div class="eyebrow">PA1 2025 · Versión ${ex.version} · ${h.mode === "sim" ? "simulacro" : "sin tiempo"} · ${fmtTime(h.dur)}${h.auto ? " · entregado automáticamente" : ""}</div>
-      <h2>${h.grade >= 5 ? "Aprobado" : "Suspenso"} · ${fmt1(h.grade)}</h2>
-      <div class="kpis"><div class="kpi ok"><b>${h.ok}</b><span>aciertos</span></div><div class="kpi ko"><b>${h.ko}</b><span>errores</span></div><div class="kpi partial"><b>${h.partial}</b><span>parciales</span></div><div class="kpi"><b>${h.blank}</b><span>en blanco</span></div></div>
-      <div class="qgrid res">${qs.map(q => { const st = scoreQ(q, h.ans[q.n]).status; return `<button class="r-${st}" data-jump="${q.n}" title="Pregunta ${q.n}">${q.n}</button>`; }).join("")}</div></div></div>
+    <div class="rh-main"><div class="eyebrow">${esc(ex.short)} · Versión ${ex.version} · ${h.mode === "sim" ? "simulacro" : "sin tiempo"} · ${fmtTime(h.dur)}${h.auto ? " · entregado automáticamente" : ""}</div>
+      <h2>${h.official === false ? "Nota estimada" : h.grade >= 5 ? "Aprobado" : "Suspenso"} · ${fmt1(h.grade)}</h2>
+      <div class="kpis"><div class="kpi ok"><b>${h.ok}</b><span>aciertos</span></div><div class="kpi ko"><b>${h.ko}</b><span>errores</span></div><div class="kpi partial"><b>${h.partial}</b><span>parciales</span></div><div class="kpi"><b>${h.blank}</b><span>en blanco</span></div></div>${h.nokey ? `<p class="tiny muted mb0">${h.nokey} preguntas sin solución (no puntúan). Nota estimada con solución no oficial.</p>` : ""}
+      <div class="qgrid res">${qs.map(q => { const st = q.noKey ? "nokey" : scoreQ(q, h.ans[q.n]).status; return `<button class="r-${st}" data-jump="${q.n}" title="Pregunta ${q.n}">${q.n}</button>`; }).join("")}</div></div></div>
   <div class="grid g2 mt">
     <div class="card"><div class="card-h"><h3>Puntos obtenidos por tema</h3></div>${hbars(Object.entries(byT).map(([t, b]) => ({ label: topicById(t).num + ". " + topicById(t).short, value: pct(b.s, b.n), color: topicById(t).color, tip: fmt1(b.s) + " de " + fmt1(b.n) + " puntos" })), { labelW: 150 })}</div>
-    <div class="card"><div class="card-h"><h3>¿Y ahora?</h3></div><p class="small muted">Corrección con la hoja oficial de soluciones (11/11/2025).</p>
+    <div class="card"><div class="card-h"><h3>¿Y ahora?</h3></div><p class="small muted">${ex.official ? "Corrección con la hoja oficial de soluciones (" + esc(EXAM_SETS[ex.set].date) + ")." : "<b>Nota estimada</b> con la solución propuesta por la app (no oficial). " + qs.filter(q => q.noKey).length + " preguntas sin clave no puntúan; la nota se escala sobre las demás."}</p>
       <div class="row">${h.ko + h.partial ? `<button class="btn primary" id="r-wrong">Practicar las falladas</button>` : ""}<button class="btn soft" id="r-retry">Repetir examen</button></div></div>
   </div>
   <div class="section-title"><h2>Revisión</h2></div>
@@ -805,7 +808,7 @@ function viewProgress() {
   <div class="grid g2 mt">
     <div class="card"><div class="card-h"><h3>Dominio por tema</h3></div>${hbars(TOPICS.map(t => { const s = topicStats(t.id); return { label: t.num + ". " + t.short, value: s.m, color: t.color, tip: `${s.seen}/${s.total} vistas · ${s.p}% aciertos` }; }))}</div>
     <div class="card"><div class="card-h"><h3>Aciertos por dificultad</h3></div>${hbars(byD.map(r => ({ label: DIFF[r.d], value: pct(r.ok, r.n), color: SEQ[r.d + 1], tip: `${r.ok}/${r.n} respuestas` })), { labelW: 110 })}</div>
-    <div class="card"><div class="card-h"><h3>Notas de examen</h3></div>${hist.length ? lineChart(hist.map(h => h.grade), 10, hist.map(h => h.examId.slice(-2)), "", 5) : `<div class="empty">Aún no hay exámenes.</div>`}</div>
+    <div class="card"><div class="card-h"><h3>Notas de examen</h3></div>${hist.length ? lineChart(hist.map(h => h.grade), 10, hist.map(h => exById(h.examId).short + " " + exById(h.examId).version), "", 5) : `<div class="empty">Aún no hay exámenes.</div>`}</div>
     <div class="card"><div class="card-h"><h3>Aciertos en tus últimos test</h3></div>${sess.length ? lineChart(sess.map(s => pct(s.ok, s.n)), 100, sess.map(s => s.title), "%") : `<div class="empty">Aún no hay test completados.</div>`}</div>
   </div>
   <div class="card mt"><div class="card-h"><h3>Ejercicios para diferenciar</h3><a class="small" href="#/diferenciar">Ver todos</a></div>

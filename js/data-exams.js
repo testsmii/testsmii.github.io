@@ -208,21 +208,3 @@ const EXAMS = [
   { id: "PA1-2025-T4", year: 2025, conv: "Prueba adelantada PA1 · 11/11/2025", version: "T4", time: 40 }
 ];
 
-/* Construye las preguntas de cada versión a partir del banco canónico */
-function buildExamQuestions(exam) {
-  const order = EXAM_ORDER[exam.version];
-  const keys = EXAM_KEYS_2025[exam.version];
-  return order.map(([cid, perm], i) => {
-    const c = EXAM_CANON[cid];
-    const opts = perm.split("").map(l => l === "X" ? EXAM_VARIANT_T3_C4c : c.o[l]);
-    const ans = keys[i].split(",").map(s => "abcd".indexOf(s.trim()));
-    const nCorrect = ans.length;
-    return {
-      id: exam.id + "-P" + (i + 1), n: i + 1, canon: cid, tema: c.tema, apartado: c.apartado,
-      q: c.q, o: opts, a: ans, multi: nCorrect > 1 || !!c.multi,
-      fig: c.fig, figAlt: c.figAlt, exp: c.exp, official: c.official,
-      src: "Examen real · " + exam.conv + " · Versión " + exam.version + " · Pregunta " + (i + 1),
-      keyText: keys[i]
-    };
-  });
-}
