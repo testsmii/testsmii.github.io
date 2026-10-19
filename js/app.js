@@ -48,7 +48,7 @@ LEARN.forEach(q => { q.bank = "learn"; q.src = "Banco de aprendizaje · " + q.re
 const EXAM_Q = {};
 EXAMS.forEach(ex => { EXAM_Q[ex.id] = buildExamQuestions(ex); EXAM_Q[ex.id].forEach(q => { q.bank = "exam"; q.examId = ex.id; QMAP[q.id] = q; }); });
 // Pool de práctica (sin duplicar versiones): solo preguntas de la PEC1 (part P1) con clave
-const EXAM_POOL = EXAM_Q["PA1-2025-T1"].map(q => q.id).concat(["PA1-2025-T3-P1"], EXAM_Q["PA1-2024-T1"].map(q => q.id), EXAM_Q["EF2-2026-T1"].filter(q => q.part !== "P2").map(q => q.id), EXAM_Q["EF2-2025-T1"].filter(q => !q.noKey && q.part !== "P2").map(q => q.id));
+const EXAM_POOL = EXAM_Q["PA1-2025-T1"].map(q => q.id).concat(["PA1-2025-T3-P1"], EXAM_Q["PA1-2024-T1"].map(q => q.id), EXAM_Q["EF2-2026-T1"].filter(q => q.part !== "P2").map(q => q.id), EXAM_Q["EF2-2025-T1"].filter(q => !q.noKey && q.part !== "P2").map(q => q.id), EXAM_Q["EF1-2024-T1"].filter(q => q.part !== "P2").map(q => q.id));
 const exById = id => EXAMS.find(e => e.id === id);
 const exLabel = q => { const e = exById(q.examId); return e.short + " " + e.version; };
 const inPool = q => q.bank === "learn" || EXAM_POOL.includes(q.id);
@@ -57,6 +57,7 @@ const fixedOrder = q => q.bank === "exam" || q.o.some(o => /anteriores|Alguna de
 /* ---------- novedades de contenido ---------- */
 function updateQids(u) { return u.exams.flatMap(id => (EXAM_Q[id] || []).filter(q => EXAM_POOL.includes(q.id)).map(q => q.id)); }
 function pendingUpdates() {
+  if (!UPDATES_ENABLED) { if (!S.seenUpdates || S.seenUpdates.length !== UPDATES.length) { S.seenUpdates = UPDATES.map(u => u.id); save(); } return []; }
   if (S.seenUpdates == null) { // usuario nuevo: no tiene sentido avisarle; usuario previo: sí
     const used = Object.keys(S.qs).length || S.history.length || Object.keys(S.lessons).length;
     S.seenUpdates = used ? [] : UPDATES.map(u => u.id); save();
