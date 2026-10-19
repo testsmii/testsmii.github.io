@@ -11,7 +11,7 @@ const SUBJECTS = [
     scripts: ["js/data-theory.js", "js/data-diagrams.js", "js/data-diagrams-2.js", "js/data-cards.js", "js/data-drills.js", "js/data-updates.js", "js/data-exams.js", "js/data-exams-2.js", "js/data-learn-1.js", "js/data-learn-2.js", "js/est-config.js"] },
   { id: "fe", name: "Fuentes de Energía", short: "Energía", color: "#0f766e", icon: "img/logo-fe.svg",
     desc: "Biomasa, biogás, fósiles, fisión, fusión, solar, eólica e hidráulica. Examen de 2018 con solución propuesta. Temas en preparación: se van añadiendo.",
-    scripts: ["js/fe/base.js", "js/fe/biomasa.js", "js/fe/biogas.js", "js/fe/fosiles-fision.js", "js/fe/fusion-hidro.js", "js/fe/solar.js", "js/fe/eolica.js", "js/fe/general.js", "js/fe/exam-2018.js", "js/fe/config.js"] }
+    scripts: ["js/fe/base.js", "js/fe/biomasa.js", "js/fe/valorizacion.js", "js/fe/biogas.js", "js/fe/fosiles-fision.js", "js/fe/fusion-hidro.js", "js/fe/solar.js", "js/fe/eolica.js", "js/fe/general.js", "js/fe/exam-2018.js", "js/fe/config.js"] }
 ];
 const KEY = "testsmii_subject";
 const get = () => { try { return localStorage.getItem(KEY); } catch (e) { return null; } };
