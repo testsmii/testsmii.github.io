@@ -6,6 +6,9 @@
    igual que antes (progreso guardado solo en el navegador).
    ===================================================================== */
 const FIREBASE_CONFIG = null; /* ← pegar aquí el objeto firebaseConfig */
+// Cada asignatura guarda su progreso en campos y ranking propios (Estructuras conserva los nombres originales)
+const SID = (window.SUBJECT && SUBJECT.id) || "est", SFX = SID === "est" ? "" : "_" + SID;
+const PROG = "progress" + SFX, STATS = "stats" + SFX, RANK = "ranking" + SFX;
 
 /* Administración: hash SHA-256 del correo de la administradora (no se publica el correo). */
 const ADMIN_EMAIL_SHA256 = ["1b267aaeeeee67c0122d9a5868c26896fac11a690b6d40fe3b29a319226376ad"];
@@ -54,7 +57,7 @@ async function pull() {
     const cloud = snap.exists ? snap.data() : null;
     profile = cloud ? cloud.profile || {} : {};
     let state = A().S;
-    if (cloud && cloud.progress) state = merge(state, JSON.parse(cloud.progress));
+    if (cloud && cloud[PROG]) state = merge(state, JSON.parse(cloud[PROG]));
     A().S = state;
     await push(true);
     A().route();
@@ -70,9 +73,9 @@ async function push(now) {
       profile = Object.assign({ alias: defaultAlias(), ranking: false }, profile || {});
       await db.collection("users").doc(user.uid).set({
         profile: Object.assign({}, profile, { name: user.displayName || "", email: user.email || "", lastSeen: Date.now(), createdAt: profile.createdAt || Date.now() }),
-        stats: sum, progress: JSON.stringify(A().S)
+        [STATS]: sum, [PROG]: JSON.stringify(A().S)
       }, { merge: true });
-      const rref = db.collection("ranking").doc(user.uid);
+      const rref = db.collection(RANK).doc(user.uid);
       if (profile.ranking) await rref.set({ alias: profile.alias, best: sum.best, mastery: sum.mastery, streak: sum.streak, lessons: sum.lessons, updated: Date.now() });
       else await rref.delete().catch(() => {});
       lastSync = Date.now(); paintBadge();
@@ -172,7 +175,7 @@ async function viewRanking() {
   try {
     const cfg = await db.collection("config").doc("ranking").get();
     if (cfg.exists && cfg.data().enabled === false) { app.innerHTML = `<h1>Ranking</h1><div class="card empty">El ranking está desactivado por la administradora.</div>`; return; }
-    const snap = await db.collection("ranking").get();
+    const snap = await db.collection(RANK).get();
     const rows = snap.docs.map(d => Object.assign({ uid: d.id }, d.data()));
     const tab = (title, key, fmt) => { const r = rows.filter(x => x[key] != null).sort((a, b) => b[key] - a[key]).slice(0, 20);
       return `<div class="card"><div class="card-h"><h3>${title}</h3></div>${r.length ? `<ol class="rank">${r.map((x, i) => `<li class="${x.uid === user.uid ? "me" : ""}"><span class="pos">${i < 3 ? ["🥇", "🥈", "🥉"][i] : i + 1}</span><span class="nm">${esc(x.alias || "Anónimo")}</span><b>${fmt(x[key])}</b></li>`).join("")}</ol>` : `<div class="empty">Aún no hay nadie.</div>`}</div>`; };
@@ -186,7 +189,7 @@ async function viewAdmin() {
   app.innerHTML = `<h1>Panel de administración</h1><div class="card"><div class="empty">Cargando usuarios…</div></div>`;
   try {
     const [us, at, cfg] = await Promise.all([db.collection("users").get(), db.collection("attempts").orderBy("t", "desc").limit(300).get(), db.collection("config").doc("ranking").get()]);
-    const users = us.docs.map(d => Object.assign({ uid: d.id }, d.data().profile || {}, { stats: d.data().stats || {} })).sort((a, b) => (b.lastSeen || 0) - (a.lastSeen || 0));
+    const users = us.docs.map(d => Object.assign({ uid: d.id }, d.data().profile || {}, { stats: d.data()[STATS] || {} })).sort((a, b) => (b.lastSeen || 0) - (a.lastSeen || 0));
     const atts = at.docs.map(d => d.data());
     const enabled = !(cfg.exists && cfg.data().enabled === false);
     const avg = k => { const v = users.map(u => u.stats[k]).filter(x => x != null); return v.length ? Math.round(v.reduce((a, b) => a + b, 0) / v.length) : 0; };
@@ -240,7 +243,7 @@ window.CLOUD = {
   recordAttempt(h, ex) {
     if (!user || !db) return;
     push(true);
-    db.collection("attempts").add({ uid: user.uid, name: user.displayName || (profile && profile.alias) || "", email: user.email || "", examId: h.examId, exam: ex ? ex.short + " " + ex.version : h.examId, official: h.official !== false, mode: h.mode, grade: h.grade, ok: h.ok, ko: h.ko, partial: h.partial, blank: h.blank, dur: h.dur, t: h.t, auto: !!h.auto, answers: JSON.stringify(h.ans) }).catch(e => console.error(e));
+    db.collection("attempts").add({ subject: SID, uid: user.uid, name: user.displayName || (profile && profile.alias) || "", email: user.email || "", examId: h.examId, exam: ex ? ex.short + " " + ex.version : h.examId, official: h.official !== false, mode: h.mode, grade: h.grade, ok: h.ok, ko: h.ko, partial: h.partial, blank: h.blank, dur: h.dur, t: h.t, auto: !!h.auto, answers: JSON.stringify(h.ans) }).catch(e => console.error(e));
   },
   homeBanner() {
     if (user) return "";

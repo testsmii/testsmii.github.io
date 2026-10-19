@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 262 52" role="img" aria-label="Estudio ETSII · Máster en Ingeniería Industrial">
+  <svg x="0" y="2" width="48" height="48" viewBox="0 0 64 64"><defs><linearGradient id="gef" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1e40af"/><stop offset="1" stop-color="#0b1f4d"/></linearGradient></defs>
+  <rect width="64" height="64" rx="15" fill="url(#gef)"/>
+  <!-- birrete (máster) -->
+  <path d="M32 6L50 13.5L32 21L14 13.5Z" fill="#fff"/>
+  <path d="M21 16.5v5c3 2.6 7 3.6 11 3.6s8-1 11-3.6v-5L32 21z" fill="#fff" opacity=".85"/>
+  <path d="M48 14.5v8" stroke="#fbbf24" stroke-width="1.8" stroke-linecap="round"/><circle cx="48" cy="23.5" r="1.9" fill="#fbbf24"/>
+  <!-- edificio de la escuela: torre central con cúpula y dos alas con arcos -->
+  <g fill="none" stroke="#fff" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M8 52H56" stroke-width="2.6"/>
+    <path d="M10 52V38H24V52M40 52V38H54V52" stroke-width="2"/>
+    <path d="M25 52V33H39V52" stroke-width="2"/>
+    <path d="M27.5 33V30.5H36.5V33M29 30.5c0-3 1.4-4.2 3-4.2s3 1.2 3 4.2" stroke-width="1.8"/>
+    <path d="M13 52v-6a2 2 0 0 1 4 0v6M18.5 52v-6a2 2 0 0 1 4 0v6M41.5 52v-6a2 2 0 0 1 4 0v6M47 52v-6a2 2 0 0 1 4 0v6" stroke-width="1.5" opacity=".8"/>
+    <path d="M29 52v-8a3 3 0 0 1 6 0v8" stroke-width="1.7"/>
+    <path d="M10 41.5H24M40 41.5H54M25 38H39" stroke-width="1.2" opacity=".6"/>
+  </g>
+</svg>
+  <text x="58" y="28" font-family="Inter, system-ui, sans-serif" font-weight="800" font-size="24" fill="#0f1f3d">Estudio <tspan fill="#2563eb">ETSII</tspan></text>
+  <text x="59" y="44" font-family="Inter, system-ui, sans-serif" font-weight="600" font-size="9.5" letter-spacing="1.2" fill="#64748b">MÁSTER ING. INDUSTRIAL · UPM</text>
+</svg>

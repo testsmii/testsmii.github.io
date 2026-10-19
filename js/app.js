@@ -1,5 +1,7 @@
 /* =====================================================================
-   Cálculo y Diseño de Estructuras · App de estudio (SPA sin dependencias)
+   App de estudio (SPA sin dependencias) · varias asignaturas.
+   Los datos y la configuración de cada asignatura (window.SUBJECT) se
+   cargan antes desde js/subjects.js.
    v2: plan diario, lecciones guiadas con diagramas, tarjetas con
    repetición espaciada, test, exámenes reales y panel de gráficas.
    ===================================================================== */
@@ -35,7 +37,8 @@ const ICON = {
 const ic = (k, cls = "") => `<svg class="ico ${cls}" viewBox="0 0 24 24">${ICON[k]}</svg>`;
 
 /* ---------- persistencia ---------- */
-const LS_KEY = "cde_estructuras_v1";
+const SUBJ = window.SUBJECT;
+const LS_KEY = SUBJ.lsKey;
 const blank = () => ({ qs: {}, failed: {}, history: [], sessions: [], exam: null, quiz: null, lessons: {}, cards: {}, days: {}, rev: null, drills: {}, seenUpdates: null });
 let S = blank();
 try { const raw = localStorage.getItem(LS_KEY); if (raw) S = Object.assign(blank(), JSON.parse(raw)); } catch (e) { /* almacenamiento no disponible */ }
@@ -48,7 +51,7 @@ LEARN.forEach(q => { q.bank = "learn"; q.src = "Banco de aprendizaje · " + q.re
 const EXAM_Q = {};
 EXAMS.forEach(ex => { EXAM_Q[ex.id] = buildExamQuestions(ex); EXAM_Q[ex.id].forEach(q => { q.bank = "exam"; q.examId = ex.id; QMAP[q.id] = q; }); });
 // Pool de práctica (sin duplicar versiones): solo preguntas de la PEC1 (part P1) con clave
-const EXAM_POOL = EXAM_Q["PA1-2025-T1"].map(q => q.id).concat(["PA1-2025-T3-P1"], EXAM_Q["PA1-2024-T1"].map(q => q.id), EXAM_Q["EF2-2026-T1"].filter(q => q.part !== "P2").map(q => q.id), EXAM_Q["EF2-2025-T1"].filter(q => !q.noKey && q.part !== "P2").map(q => q.id), EXAM_Q["EF1-2024-T1"].filter(q => q.part !== "P2").map(q => q.id));
+const EXAM_POOL = SUBJ.examPool(EXAM_Q);
 const exById = id => EXAMS.find(e => e.id === id);
 const exLabel = q => { const e = exById(q.examId); return e.short + " " + e.version; };
 const inPool = q => q.bank === "learn" || EXAM_POOL.includes(q.id);
@@ -57,6 +60,7 @@ const fixedOrder = q => q.bank === "exam" || q.o.some(o => /anteriores|Alguna de
 /* ---------- novedades de contenido ---------- */
 function updateQids(u) { return u.exams.flatMap(id => (EXAM_Q[id] || []).filter(q => EXAM_POOL.includes(q.id)).map(q => q.id)); }
 function pendingUpdates() {
+  if (typeof UPDATES_ENABLED === "undefined") return [];
   if (!UPDATES_ENABLED) { if (!S.seenUpdates || S.seenUpdates.length !== UPDATES.length) { S.seenUpdates = UPDATES.map(u => u.id); save(); } return []; }
   if (S.seenUpdates == null) { // usuario nuevo: no tiene sentido avisarle; usuario previo: sí
     const used = Object.keys(S.qs).length || S.history.length || Object.keys(S.lessons).length;
@@ -81,13 +85,8 @@ function wireUpdates() {
 }
 
 /* apartado → lección (sección del temario) */
-const SEC_RULES = {
-  T1: [[/Proyecto estructural/, "t1-proyecto"], [/Requisitos|Modos de fallo|elástico y plástico|Estabilidad|Fuego|Medio ambiente|Vida de servicio/, "t1-requisitos"], [/Estados límite|Parámetros/, "t1-el"], [/./, "t1-metodos"]],
-  T2: [[/Introducción|Escala|Geometría|Proyecto/, "t2-intro"], [/Clasificación/, "t2-clasif"], [/Cables|Arcos|Compresión|Vigas/, "t2-mono"], [/Entramados|Losas|Láminas|Membranas/, "t2-bi"], [/Edificación|Estructuras$/, "t2-edif"], [/Puentes|Térmica|térmicas|Túneles/, "t2-civil"], [/./, "t2-ind"]],
-  T23: [[/Profundas/, "t23-prof"], [/Contención|contención/, "t23-cont"], [/./, "t23-sup"]],
-  T3: [[/Introducción/, "t3-intro"], [/Acero/, "t3-acero"], [/Hormigón/, "t3-horm"], [/Armaduras/, "t3-arm"], [/./, "t3-suelo"]]
-};
-Object.values(QMAP).forEach(q => { q.sec = SEC_RULES[q.tema].find(([re]) => new RegExp(re.source, "i").test(q.apartado))[1]; });
+const SEC_RULES = SUBJ.secRules || {};
+Object.values(QMAP).forEach(q => { if (!q.sec) q.sec = SEC_RULES[q.tema].find(([re]) => new RegExp(re.source, "i").test(q.apartado))[1]; });
 
 /* ---------- lecciones (secciones del temario troceadas por subtítulos) ---------- */
 const figHtml = d => `<figure class="dgfig">${d.svg}<figcaption>${d.cap}</figcaption></figure>`;
@@ -114,20 +113,22 @@ const theoryWithDiagrams = s => {
 };
 
 /* ---------- diapositivas originales de los apuntes ---------- */
-const DECKS = { "T1": { dir: "T1", pages: 29, name: "Tema 1 · Introducción y objetivos" }, "T2.1": { dir: "T2", pages: 91, name: "Tema 2.1 · Tipologías estructurales" },
-  "T2.3": { dir: "T23", pages: 34, name: "Tema 2.3 · Cimentaciones" }, "T3": { dir: "T3", pages: 52, name: "Tema 3 · Materiales" } };
-const TEMA_DECK = { T1: "T1", T2: "T2.1", T23: "T2.3", T3: "T3" };
-const SEC_SLIDES = { "t1-proyecto": [2, 3], "t1-requisitos": [4, 13], "t1-metodos": [14, 22], "t1-el": [22, 28], "t2-intro": [2, 6], "t2-clasif": [7, 9], "t2-mono": [10, 21], "t2-bi": [22, 41], "t2-edif": [42, 57], "t2-civil": [58, 75], "t2-ind": [76, 90],
-  "t23-sup": [2, 21], "t23-prof": [22, 26], "t23-cont": [27, 33], "t3-intro": [2, 9], "t3-acero": [10, 17], "t3-horm": [18, 33], "t3-arm": [34, 38], "t3-suelo": [39, 51] };
-const slideSrc = (deck, n) => `slides/${DECKS[deck].dir}/p-${String(n + 1).padStart(2, "0")}.jpg`;
+const DECKS = SUBJ.decks, TEMA_DECK = SUBJ.temaDeck || {};
+// rango de diapositivas de cada sección: { deck, a, b }
+const SEC_SLIDES = {};
+Object.entries(SUBJ.secSlides || {}).forEach(([sec, r]) => { const l = LESSONS.find(x => x.id === sec); if (l) SEC_SLIDES[sec] = { deck: TEMA_DECK[l.tema], a: r[0], b: r[1] }; });
+TOPICS.forEach(t => THEORY[t.id].sections.forEach(s => { if (s.slides && DECKS[s.slides[0]]) SEC_SLIDES[s.id] = { deck: s.slides[0], a: s.slides[1], b: s.slides[2] }; }));
+const slideSrc = (deck, n) => `${SUBJ.slideDir}${DECKS[deck].dir}/p-${String(n + DECKS[deck].off).padStart(2, "0")}.jpg`;
+const deckLabel = d => DECKS[d].label || d;
+const DECK_RE = new RegExp("(" + Object.keys(DECKS).sort((a, b) => b.length - a.length).map(k => k.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|") + ")\\s*,\\s*diap(?:s)?\\.\\s*([\\d\\s,y–\\-]+)", "g");
 function slideRefs(text) {
   const out = [], seen = new Set();
-  const re = /(T1|T2\.1|T2\.3|T3)\s*,\s*diap(?:s)?\.\s*([\d\s,y–\-]+)/g; let m;
+  const re = new RegExp(DECK_RE.source, "g"); let m;
   while ((m = re.exec(text || ""))) {
     const deck = m[1];
     m[2].split(/,|\by\b/).forEach(part => {
       const r = part.trim().match(/^(\d+)(?:\s*[-–]\s*(\d+))?/); if (!r) return;
-      const a = Math.max(1, +r[1]), b = Math.min(r[2] ? +r[2] : a, DECKS[deck].pages - 1), k = deck + "|" + a + "|" + b;
+      const a = Math.max(1, +r[1]), b = Math.min(r[2] ? +r[2] : a, DECKS[deck].pages - DECKS[deck].off), k = deck + "|" + a + "|" + b;
       if (a <= b && !seen.has(k)) { seen.add(k); out.push({ deck, a, b }); }
     });
   }
@@ -136,11 +137,11 @@ function slideRefs(text) {
 function slideButtons(q) {
   const refs = slideRefs([q.ref, q.exp, q.official].join(" "));
   if (!refs.length) return "";
-  return `<div class="slide-btns">${refs.map(r => `<button class="btn sm soft" data-slide="${r.deck}|${r.a}|${r.b}">📄 Ver diapositiva original · ${r.deck} diap. ${r.a}${r.b > r.a ? "–" + r.b : ""}</button>`).join("")}</div>`;
+  return `<div class="slide-btns">${refs.map(r => `<button class="btn sm soft" data-slide="${r.deck}|${r.a}|${r.b}">📄 Ver diapositiva original · ${esc(deckLabel(r.deck))} diap. ${r.a}${r.b > r.a ? "–" + r.b : ""}</button>`).join("")}</div>`;
 }
 function openSlide(deck, n, range) {
   const m = $("#modal"), D = DECKS[deck];
-  const lo = range ? range[0] : 1, hi = range ? range[1] : D.pages - 1;
+  const lo = range ? range[0] : 1, hi = range ? range[1] : D.pages - D.off;
   n = Math.max(lo, Math.min(hi, n));
   m.innerHTML = `<div class="box slidebox" role="dialog" aria-modal="true" aria-label="Diapositiva original">
     <div class="sb-h"><div><b>${esc(D.name)}</b> <span class="muted small">· diapositiva ${n}${range ? ` (${lo}–${hi})` : ""}</span></div><button class="linkbtn" id="sb-x" aria-label="Cerrar">✕ Cerrar</button></div>
@@ -156,15 +157,16 @@ function openSlide(deck, n, range) {
 }
 document.addEventListener("click", e => {
   const b = e.target.closest("[data-slide]"); if (b) { e.preventDefault(); const [d, x, y] = b.dataset.slide.split("|"); openSlide(d, +x, +y > +x ? [+x, +y] : null); return; }
-  const r = e.target.closest("[data-slides]"); if (r) { e.preventDefault(); const sec = r.dataset.slides, t = LESSONS.find(l => l.id === sec), rg = SEC_SLIDES[sec]; openSlide(TEMA_DECK[t.tema], rg[0], rg); }
+  const r = e.target.closest("[data-slides]"); if (r) { e.preventDefault(); const rg = SEC_SLIDES[r.dataset.slides]; openSlide(rg.deck, rg.a, [rg.a, rg.b]); }
 });
-const secSlidesBtn = (sec, label) => SEC_SLIDES[sec] ? `<button class="btn sm ghost" data-slides="${sec}">📄 ${label || "Ver diapositivas originales"} (${SEC_SLIDES[sec][0]}–${SEC_SLIDES[sec][1]})</button>` : "";
+const secSlidesBtn = (sec, label) => SEC_SLIDES[sec] ? `<button class="btn sm ghost" data-slides="${sec}">📄 ${label || "Ver diapositivas originales"} (${SEC_SLIDES[sec].deck === TEMA_DECK[lessonById(sec).tema] ? "" : esc(deckLabel(SEC_SLIDES[sec].deck)) + " "}${SEC_SLIDES[sec].a}–${SEC_SLIDES[sec].b})</button>` : "";
 
 /* ---------- puntuación (sistema oficial del examen) ---------- */
 function scoreQ(q, sel) {
   sel = sel || [];
   if (!sel.length) return { score: 0, status: "blank" };
   if (!q.a.length) return { score: 0, status: "nokey" };
+  if (q.pts != null && !q.multi) return q.a.includes(sel[0]) ? { score: q.pts, status: "ok" } : { score: -q.pen, status: "ko" };
   const c = sel.filter(i => q.a.includes(i)).length, w = sel.length - c;
   const score = 0.5 * Math.max(0, (c - w) / q.a.length);
   return { score, status: score >= 0.5 - 1e-9 ? "ok" : score > 0 ? "partial" : "ko" };
@@ -218,7 +220,7 @@ function route() {
   const md = $("#modal"); if (!md.hidden && !md.dataset.keep) { md.hidden = true; md.innerHTML = ""; } delete md.dataset.keep;
   const parts = (location.hash.replace(/^#\/?/, "") || "").split("/").map(decodeURIComponent);
   const [p0, p1, p2] = parts;
-  const nav = { "": "home", aprender: "aprender", tema: "aprender", leccion: "aprender", tarjetas: "aprender", repaso: "aprender", diferenciar: "aprender", ejercicio: "aprender", practicar: "aprender", falladas: "aprender", quiz: S.quiz && S.quiz.fromExam ? "examenes" : "aprender", examenes: "examenes", examen: "examenes", resultado: "examenes", progreso: "progreso", cuenta: "progreso", ranking: "progreso", admin: "progreso" }[p0 || ""];
+  const nav = { "": "home", aprender: "aprender", tema: "aprender", leccion: "aprender", tarjetas: "aprender", repaso: "aprender", diferenciar: "aprender", ejercicio: "aprender", practicar: "aprender", falladas: "aprender", quiz: S.quiz && S.quiz.fromExam ? "examenes" : "aprender", examenes: "examenes", examen: "examenes", resultado: "examenes", progreso: "progreso", cuenta: "progreso", ranking: "progreso", admin: "progreso", consulta: "consulta" }[p0 || ""];
   $$("[data-nav]").forEach(a => a.classList.toggle("active", a.dataset.nav === nav));
   try {
     switch (p0 || "") {
@@ -237,6 +239,8 @@ function route() {
       case "examen": viewExamRunner(); break;
       case "resultado": viewResult(p1); break;
       case "progreso": viewProgress(); break;
+      case "asignatura": window.showSubjectPicker(); break;
+      case "consulta": viewAsk(); break;
       default: if (!(window.CLOUD && CLOUD.view(p0, p1))) viewHome();
     }
   } catch (err) { console.error(err); app.innerHTML = `<div class="card"><h2>Se ha producido un error</h2><p class="muted">${esc(err.message)}</p><a class="btn" href="#/">Volver al inicio</a></div>`; }
@@ -341,7 +345,7 @@ function planItems() {
   const dr = DRILLS.find(d => S.lessons[d.sec] && S.lessons[d.sec].done && !(S.drills[d.id] && S.drills[d.id].best >= 80));
   if (dr && items.length < 2) items.push({ icon: "split", title: `Diferenciar: ${dr.title}`, sub: dr.type === "match" ? "Relaciona parejas · 1-2 min" : "Clasifica afirmaciones · 2 min", href: "#/ejercicio/" + dr.id });
   if (nf) items.push({ icon: "redo", title: `Corregir ${nf} pregunta${nf > 1 ? "s" : ""} fallada${nf > 1 ? "s" : ""}`, sub: "Hasta que las aciertes", run: startFailedQuiz });
-  if (!nl && !rq) items.push({ icon: "exam", title: "Simulacro de examen", sub: "40 minutos · versión al azar", run: () => startExam(EXAMS[Math.floor(Math.random() * EXAMS.length)].id, "sim") });
+  if (!nl && !rq) items.push({ icon: "exam", title: "Simulacro de examen", sub: "Con tiempo real · versión al azar", run: () => startExam(EXAMS[Math.floor(Math.random() * EXAMS.length)].id, "sim") });
   return items.slice(0, 3);
 }
 function viewHome() {
@@ -369,9 +373,9 @@ function viewHome() {
   </div>
   <div class="grid g2 mt">
     <a class="card mode" href="#/aprender"><span class="ic-sq">${ic("book")}</span><div><h3>Aprendizaje</h3><p class="muted small mb0">${LESSONS.length} lecciones con ${DIAGRAMS.length} esquemas, ${DRILLS.length} ejercicios para diferenciar, ${CARDS.length} tarjetas y ${LEARN.length} preguntas.</p></div>${ic("arrow", "chev")}</a>
-    <a class="card mode" href="#/examenes"><span class="ic-sq">${ic("exam")}</span><div><h3>Exámenes anteriores</h3><p class="muted small mb0">PA1 2025 y PA1 2024 (4 versiones cada una) con solución oficial y EF2 de julio de 2025. Simulacro de 40 min y revisión.</p></div>${ic("arrow", "chev")}</a>
+    <a class="card mode" href="#/examenes"><span class="ic-sq">${ic("exam")}</span><div><h3>Exámenes anteriores</h3><p class="muted small mb0">${SUBJ.examsBlurb}</p></div>${ic("arrow", "chev")}</a>
   </div>
-  <footer class="about"><img src="img/logo-full.svg" alt="Estructuras ETSII" width="210" height="48"><span class="tiny muted">App de estudio no oficial basada en los apuntes y exámenes de la asignatura. El progreso se guarda en este dispositivo.</span></footer>`;
+  <footer class="about"><img src="img/logo-estudio-full.svg" alt="Estudio ETSII" width="262" height="52"><span class="tiny muted">App de estudio no oficial basada en los apuntes y exámenes de ${esc(SUBJ.name)}. El progreso se guarda en este dispositivo. <a href="#/asignatura">Cambiar de asignatura</a></span></footer>`;
   wireUpdates();
   $$("[data-plan]").forEach(a => a.onclick = () => plan[+a.dataset.plan].run());
   $("#h-go").onclick = () => { const p = plan[0]; if (!p) return go("#/aprender"); p.run ? p.run() : go(p.href); };
@@ -601,7 +605,7 @@ function runMatch(d, head) {
 
 /* ---------- test libre ---------- */
 function viewPracticeSetup() {
-  const cfg = Object.assign({ temas: TOPICS.map(t => t.id), bank: "both", diff: "all", n: "20", filter: "all" }, JSON.parse(localStorage.getItem("cde_cfg") || "null") || {});
+  const cfg = Object.assign({ temas: TOPICS.map(t => t.id), bank: "both", diff: "all", n: "20", filter: "all" }, JSON.parse(localStorage.getItem(LS_KEY + "_cfg") || "null") || {});
   const chip = (name, val, label, on) => `<label class="chip ${on ? "on" : ""}"><input type="${name === "temas" ? "checkbox" : "radio"}" name="${name}" value="${val}" ${on ? "checked" : ""}>${label}</label>`;
   const nf = failedIds().length;
   app.innerHTML = `<h1>Aprendizaje</h1>${learnTabs("practicar")}
@@ -632,7 +636,7 @@ function viewPracticeSetup() {
     $("#c-go").disabled = !p.length;
   };
   $("#cfg").addEventListener("change", refresh);
-  $("#c-go").onclick = () => { const c = read(); localStorage.setItem("cde_cfg", JSON.stringify(c)); const p = shuffle(pool(c)); startQuiz({ ids: p.slice(0, c.n === "all" ? p.length : +c.n).map(q => q.id), title: "Test libre" }); };
+  $("#c-go").onclick = () => { const c = read(); localStorage.setItem(LS_KEY + "_cfg", JSON.stringify(c)); const p = shuffle(pool(c)); startQuiz({ ids: p.slice(0, c.n === "all" ? p.length : +c.n).map(q => q.id), title: "Test libre" }); };
   refresh();
 }
 
@@ -724,7 +728,7 @@ function viewQuizSummary() {
 function reviewItem(q, sel, n, order) {
   sel = sel || []; order = order || q.o.map((_, i) => i);
   const r = scoreQ(q, sel);
-  const tag = { ok: `<span class="tag ok">Correcta · ${fmt1(r.score)}</span>`, ko: `<span class="tag ko">Incorrecta · 0,00</span>`, partial: `<span class="tag warn">Parcial · ${fmt1(r.score)}</span>`, blank: `<span class="tag">En blanco · 0,00</span>`, nokey: `<span class="tag warn">Sin solución</span>` }[q.noKey && r.status === "blank" ? "nokey" : r.status];
+  const tag = { ok: `<span class="tag ok">Correcta · ${fmt1(r.score)}</span>`, ko: `<span class="tag ko">Incorrecta · ${fmt1(r.score)}</span>`, partial: `<span class="tag warn">Parcial · ${fmt1(r.score)}</span>`, blank: `<span class="tag">En blanco · 0,00</span>`, nokey: `<span class="tag warn">Sin solución</span>` }[q.noKey && r.status === "blank" ? "nokey" : r.status];
   return `<div class="review-item"><div class="rh"><b>Pregunta ${n}</b>${tag}</div>
   <div style="font-weight:600;margin-bottom:8px;white-space:pre-line">${esc(q.q)}</div>
   ${q.fig ? `<figure class="qfig"><img src="${q.fig}" alt="${esc(q.figAlt || "Figura")}" loading="lazy"></figure>` : ""}
@@ -755,15 +759,15 @@ function viewFailed() {
 function viewExams() {
   const hist = S.history.slice();
   app.innerHTML = `<h1>Exámenes anteriores</h1>
-  <p class="muted">Preguntas originales y corrección con la hoja oficial. Cada pregunta vale 0,5; en las de varias respuestas, 0,5 × máx(0, (correctas − incorrectas marcadas)/nº de correctas).</p>
+  <p class="muted">${SUBJ.examIntro}</p>
   ${updatesBanner()}
-  ${[["PEC1", "PEC1 · Pruebas de la primera parte", "Corresponden a los temas de las diapositivas de clase (1, 2.1, 2.3 y 3)."], ["Final", "Exámenes finales (toda la asignatura)", "Incluyen sobre todo preguntas de la PEC1. Las de la <b>2ª parte</b> están marcadas y no cuentan para tu preparación de la PEC1."]].map(([kind, kt, kd]) => `<div class="kind-h"><h2>${kt}</h2><p class="small muted mb0">${kd}</p></div>` +
+  ${SUBJ.examKinds.map(([kind, kt, kd]) => `<div class="kind-h"><h2>${kt}</h2><p class="small muted mb0">${kd}</p></div>` +
   Object.entries(EXAM_SETS).filter(([, st]) => st.kind === kind).map(([sk, st]) => `<div class="section-title"><h3 class="mb0">${esc(st.title)} · ${esc(st.date)}</h3>${st.official ? `<span class="tag ok">Solución oficial</span>` : `<span class="tag warn">Sin solución oficial</span>`}</div>
   ${st.official ? "" : `<p class="small muted">No hay hoja de soluciones de este examen. La app corrige con una <b>solución propuesta por IA (no oficial)</b>, razonada en cada pregunta y con su nivel de confianza (alta, media o baja). La nota es solo una estimación.</p>`}
   <div class="grid g4">${EXAMS.filter(e => e.set === sk).map(e => { const att = hist.filter(h => h.examId === e.id), best = att.length ? Math.max(...att.map(h => h.grade)) : null;
-    return `<button class="card exam-tile" data-ex="${e.id}"><span class="v-badge">${e.version}</span><b>${esc(st.short)} · ${e.version}</b><small>20 preguntas · 40 min</small>
+    return `<button class="card exam-tile" data-ex="${e.id}"><span class="v-badge">${e.version}</span><b>${esc(st.short)} · ${e.version}</b><small>${EXAM_Q[e.id].length} preguntas · ${e.time} min</small>
     <span class="score-line">${best != null ? `<span class="minibar"><i style="width:${best * 10}%;background:${best >= 5 ? "var(--ok)" : "var(--ko)"}"></i></span><span>${fmt1(best)}${st.official ? "" : "*"}</span>` : `<span class="muted">Sin intentos</span>`}</span></button>`; }).join("")}</div>`).join("")).join("")}
-  <p class="tiny muted">En cada convocatoria, las versiones T1–T4 tienen las mismas preguntas en distinto orden. * Nota estimada con solución no oficial.</p>
+  <p class="tiny muted">${SUBJ.examFoot}</p>
   <div class="grid g2 mt">
     <div class="card"><div class="card-h"><h3>Evolución de tus notas</h3><span class="small muted">${hist.length} intento${hist.length === 1 ? "" : "s"}</span></div>
     ${hist.length ? lineChart(hist.slice(-15).map(h => h.grade), 10, hist.slice(-15).map(h => exById(h.examId).short + " " + exById(h.examId).version), "", 5) : `<div class="empty">Haz un examen para ver tu evolución.</div>`}</div>
@@ -775,11 +779,11 @@ function viewExams() {
   ${hist.length ? `<button class="linkbtn danger mt" id="h-clear">Borrar historial de exámenes</button>` : ""}`;
   wireUpdates();
   $$("[data-ex]").forEach(b => b.onclick = () => { const id = b.dataset.ex, ex = exById(id), v = ex.version;
-    chooseBox(ex.short + " · " + v, esc(ex.conv) + " · 20 preguntas" + (ex.official ? "" : " · <b>sin solución oficial</b>"), [
-      { icon: "exam", title: "Simulacro de examen", sub: "40 minutos, se entrega solo al acabar el tiempo", run: () => startExam(id, "sim") },
+    chooseBox(ex.short + " · " + v, esc(ex.conv) + " · " + EXAM_Q[id].length + " preguntas" + (ex.official ? "" : " · <b>sin solución oficial</b>"), [
+      { icon: "exam", title: "Simulacro de examen", sub: ex.time + " minutos, se entrega solo al acabar el tiempo", run: () => startExam(id, "sim") },
       { icon: "book", title: "Examen sin tiempo", sub: "Respondes todo y corriges al entregar", run: () => startExam(id, "full") },
       { icon: "check", title: "Pregunta a pregunta", sub: "Corrección inmediata con explicación", run: () => startQuiz({ ids: EXAM_Q[id].map(q => q.id), title: ex.short + " " + v, fromExam: true }) }]
-      .concat(ex.kind === "Final" ? [{ icon: "split", title: "Solo las preguntas de la PEC1", sub: EXAM_Q[id].filter(q => q.part !== "P2").length + " preguntas, corrección inmediata", run: () => startQuiz({ ids: EXAM_Q[id].filter(q => q.part !== "P2").map(q => q.id), title: ex.short + " · PEC1", fromExam: true }) }] : [])); });
+      .concat(SUBJ.p2 && ex.kind === "Final" ? [{ icon: "split", title: "Solo las preguntas de la PEC1", sub: EXAM_Q[id].filter(q => q.part !== "P2").length + " preguntas, corrección inmediata", run: () => startQuiz({ ids: EXAM_Q[id].filter(q => q.part !== "P2").map(q => q.id), title: ex.short + " · PEC1", fromExam: true }) }] : [])); });
   $$("[data-et]").forEach(b => b.onclick = () => startQuiz({ ids: shuffle(EXAM_POOL.filter(id => QMAP[id].tema === b.dataset.et)), title: "Examen · Tema " + topicById(b.dataset.et).num, fromExam: true }));
   $$("[data-h]").forEach(li => li.onclick = () => go("#/resultado/" + li.dataset.h));
   const hc = $("#h-clear"); if (hc) hc.onclick = () => confirmBox("Borrar historial", "Se eliminarán todos los intentos de examen guardados.", "Borrar", () => { S.history = []; save(); route(); }, { danger: true });
@@ -834,12 +838,13 @@ function submitExam(auto) {
   let total = 0, ok = 0, ko = 0, partial = 0, blankN = 0, nokey = 0;
   qs.forEach(q => { const r = scoreQ(q, E.ans[q.n]); total += r.score; if (q.noKey) nokey++; else if (r.status === "ok") ok++; else if (r.status === "ko") ko++; else if (r.status === "partial") partial++; else blankN++; recordAnswer(q, r.status); });
   const ex = exById(E.examId), keyed = qs.length - nokey;
+  if (ex.neg) total = Math.max(0, total);
   if (!ex.official && keyed) total = total * qs.length / keyed;
   const dur = E.mode === "sim" ? Math.min((Date.now() - E.start) / 1000, (E.deadline - E.start) / 1000) : (Date.now() - E.start) / 1000;
   const h = { id: "h" + Date.now(), examId: E.examId, mode: E.mode, t: Date.now(), grade: Math.round(total * 1000) / 1000, ok, ko, partial, blank: blankN, nokey, official: ex.official, dur: Math.round(dur), ans: E.ans, auto: !!auto };
   S.history.push(h); S.exam = null; save(); if (window.CLOUD) CLOUD.recordAttempt(h, exById(h.examId));
   go("#/resultado/" + h.id);
-  if (auto) setTimeout(() => confirmBox("Tiempo agotado", "Se acabaron los 40 minutos y el examen se ha entregado automáticamente.", "Ver resultado", () => {}, { noCancel: true }), 50);
+  if (auto) setTimeout(() => confirmBox("Tiempo agotado", "Se acabaron los " + exById(h.examId).time + " minutos y el examen se ha entregado automáticamente.", "Ver resultado", () => {}, { noCancel: true }), 50);
 }
 function viewResult(hid) {
   const h = S.history.find(x => x.id === hid);
@@ -847,7 +852,7 @@ function viewResult(hid) {
   const ex = EXAMS.find(e => e.id === h.examId), qs = EXAM_Q[h.examId];
   const filt = viewResult.filter || "all";
   const show = qs.filter(q => { const st = scoreQ(q, h.ans[q.n]).status; return filt === "all" || (filt === "wrong" ? (st === "ko" || st === "partial") : filt === st); });
-  const byT = {}; qs.filter(q => !q.noKey).forEach(q => { const r = scoreQ(q, h.ans[q.n]); const b = byT[q.tema] || (byT[q.tema] = { s: 0, n: 0 }); b.s += r.score; b.n += 0.5; });
+  const byT = {}; qs.filter(q => !q.noKey).forEach(q => { const r = scoreQ(q, h.ans[q.n]); const b = byT[q.tema] || (byT[q.tema] = { s: 0, n: 0 }); b.s += Math.max(0, r.score); b.n += q.pts != null ? q.pts : 0.5; });
   app.innerHTML = `<div class="crumbs"><a href="#/examenes">Exámenes</a> › Resultado</div>
   <div class="card result-hero">
     ${donut(Math.round(h.grade * 10), "", "", h.grade >= 5 ? "#0f8a5f" : "#c2413b", 150).replace(/>\d+%<\/text>/, `>${fmt1(h.grade)}</text>`).replace('class="d-l"></text>', 'class="d-l">sobre 10</text>')}
@@ -902,14 +907,117 @@ function viewProgress() {
     <p class="small muted">El progreso se guarda en este navegador. Puedes exportarlo e importarlo en otro dispositivo.</p>
     <div class="row"><button class="btn" id="p-exp">Exportar</button><label class="btn" style="cursor:pointer">Importar<input type="file" id="p-imp" accept="application/json" hidden></label><button class="btn ghost danger" id="p-reset">Reiniciar todo</button></div></details>`;
   $$("[data-wk]").forEach(b => b.onclick = () => { const r = ap[+b.dataset.wk]; startQuiz({ ids: shuffle(Object.values(QMAP).filter(q => q.tema === r.tema && q.apartado === r.apartado && inPool(q)).map(q => q.id)), title: "Refuerzo: " + r.apartado }); });
-  $("#p-exp").onclick = () => { const blob = new Blob([JSON.stringify(S)], { type: "application/json" }); const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "progreso-estructuras.json"; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 2000); };
+  $("#p-exp").onclick = () => { const blob = new Blob([JSON.stringify(S)], { type: "application/json" }); const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "progreso-" + SUBJ.id + ".json"; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 2000); };
   $("#p-imp").onchange = e => { const f = e.target.files[0]; if (!f) return; const rd = new FileReader(); rd.onload = () => { try { const d = JSON.parse(rd.result); if (!d || typeof d !== "object" || !d.qs) throw new Error(); S = Object.assign(blank(), d); save(); route(); } catch (err) { confirmBox("Archivo no válido", "No se ha podido leer el archivo.", "Aceptar", () => {}, { noCancel: true }); } }; rd.readAsText(f); };
   $("#p-reset").onclick = () => confirmBox("Reiniciar progreso", "Se borrará todo: estadísticas, lecciones, tarjetas, falladas e historial. No se puede deshacer.", "Borrar todo", () => { S = blank(); save(); route(); }, { danger: true });
+}
+
+/* =====================================================================
+   CONSULTA: buscador en los apuntes + IA gratuita opcional (Gemini)
+   ===================================================================== */
+const norm = t => String(t || "").replace(/<[^>]+>/g, " ").replace(/\$[^$]*\$/g, " ").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+const STOP = new Set("el la los las un una unos unas de del al a en y o u e que es son se por para con sin su sus lo como mas mas muy ya le les este esta estos estas ese esa eso cual cuales quien donde cuando sobre entre hay ser tiene tienen puede pueden porque pero tambien no si me mi tu te nos que explica explicame dime significa".split(" "));
+const toks = t => norm(t).split(/[^a-z0-9ñ.,]+/).map(w => w.replace(/[.,]+$/, "")).filter(w => w.length > 1 && !STOP.has(w));
+const stem = w => w.length > 5 ? w.replace(/(aciones|acion|amientos|amiento|mente|ciones|cion|idades|idad|ismos|ismo|istas|ista|ores|ora|or|es|as|os|s|a|o|e)$/, "") : w;
+let ASKIDX = null;
+function askIndex() {
+  if (ASKIDX) return ASKIDX;
+  const docs = [];
+  LESSONS.forEach(l => l.steps.forEach((st, i) => docs.push({ kind: "teoria", title: st.title, sub: "Tema " + topicById(l.tema).num + " · " + l.title.replace(/^[\d.]+\s*/, ""), html: st.html.replace(/<figure[\s\S]*?<\/figure>/g, ""), href: `#/leccion/${l.id}/${i}`, sec: l.id, tema: l.tema })));
+  TOPICS.forEach(t => (THEORY[t.id].confusions || []).forEach(c => docs.push({ kind: "confusion", title: c[0].replace(/<[^>]+>/g, ""), sub: "Confusiones frecuentes · Tema " + t.num, html: c[1], href: `#/tema/${t.id}/confusiones`, tema: t.id })));
+  CARDS.forEach(c => docs.push({ kind: "tarjeta", title: c.f.replace(/<[^>]+>/g, ""), sub: "Tarjeta · Tema " + topicById(c.tema).num, html: c.b, tema: c.tema, sec: c.sec }));
+  Object.values(QMAP).forEach(q => { if (q.bank === "exam" && !EXAM_POOL.includes(q.id)) return; docs.push({ kind: q.bank === "exam" ? "examen" : "pregunta", title: q.q, sub: q.bank === "exam" ? "Examen real " + exLabel(q) + " · P" + q.n : "Pregunta del banco · " + q.apartado, html: "<b>Respuesta:</b> " + q.a.map(i => esc(q.o[i])).join(" · ") + "<br>" + (q.official ? q.official + "<br>" : "") + esc(q.exp), extra: q.o.join(" "), q, tema: q.tema }); });
+  const df = {};
+  docs.forEach(d => { d.terms = toks(d.title + " " + d.title + " " + d.html + " " + (d.extra || "")).map(stem); d.text = norm(d.title + " " + d.html + " " + (d.extra || "")).replace(/[^a-z0-9ñ]+/g, " "); new Set(d.terms).forEach(w => df[w] = (df[w] || 0) + 1); });
+  ASKIDX = { docs, df, N: docs.length };
+  return ASKIDX;
+}
+function askSearch(query) {
+  const { docs, df, N } = askIndex();
+  const qt = [...new Set(toks(query).map(stem))]; if (!qt.length) return [];
+  const qn = norm(query).replace(/[¿?¡!]/g, "").trim();
+  const words = qn.split(/[^a-z0-9ñ]+/).filter(Boolean);
+  return docs.map(d => {
+    let sc = 0, hit = 0;
+    qt.forEach(w => { const tf = d.terms.filter(x => x === w).length; if (tf) { hit++; sc += (1 + Math.log(tf)) * Math.log(1 + N / (df[w] || 1)); } });
+    if (!hit) return null;
+    sc *= hit / qt.length;
+    for (let i = 0; i + 1 < words.length; i++) if (!(STOP.has(words[i]) && STOP.has(words[i + 1])) && d.text.includes(" " + words[i] + " " + words[i + 1] + " ")) sc *= 1.8;
+    if (qn.length > 6 && d.text.includes(qn.replace(/[^a-z0-9ñ]+/g, " ").trim())) sc *= 2;
+    if (d.kind === "teoria") sc *= 1.25; else if (d.kind === "examen") sc *= 1.1;
+    return { d, sc };
+  }).filter(Boolean).sort((a, b) => b.sc - a.sc).slice(0, 12).map(x => x.d);
+}
+const AI_LS = "testsmii_ai_key";
+const aiKey = () => { try { return localStorage.getItem(AI_LS) || window.AI_KEY || null; } catch (e) { return window.AI_KEY || null; } };
+async function askAI(question, ctx) {
+  const context = ctx.slice(0, 8).map((d, i) => `[${i + 1}] (${d.sub}) ${d.title}${d.q ? "\nOpciones: " + d.q.o.join(" | ") : ""}\n${d.html.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").slice(0, 1400)}`).join("\n\n");
+  const sys = `Eres un profesor de la asignatura «${SUBJ.name}» (Máster en Ingeniería Industrial, ETSII-UPM). Responde SIEMPRE en español de España, claro y breve (máximo unas 180 palabras). Apóyate SOBRE TODO en los fragmentos de los apuntes y exámenes que te doy y cítalos como [1], [2]… Si la respuesta no está en los fragmentos, dilo expresamente y responde con conocimiento general avisando de que no está en los apuntes. No inventes datos, cifras ni normativa.`;
+  const user = `Fragmentos de los apuntes y exámenes:\n${context || "(ninguno)"}\n\nPregunta del alumno: ${question}`;
+  const key = aiKey();
+  if (key) {
+    for (const m of [window.AI_MODEL || "gemini-flash-latest", "gemini-2.5-flash", "gemini-2.0-flash"]) {
+      const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${m}:generateContent?key=${encodeURIComponent(key)}`, { method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ systemInstruction: { parts: [{ text: sys }] }, contents: [{ role: "user", parts: [{ text: user }] }], generationConfig: { temperature: 0.3, maxOutputTokens: 800 } }) }).catch(() => null);
+      if (!r || r.status === 404) continue;
+      const j = await r.json().catch(() => ({}));
+      if (!r.ok) break; // si falla Gemini, se prueba la IA gratuita sin clave
+      const parts = (((j.candidates || [])[0] || {}).content || {}).parts;
+      const t = (parts || []).map(p => p.text || "").join("").trim(); if (t) return { text: t, by: "Gemini (Google)" };
+    }
+  }
+  const r = await fetch("https://text.pollinations.ai/openai", { method: "POST", headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ model: "openai", temperature: 0.3, messages: [{ role: "system", content: sys }, { role: "user", content: user }] }) });
+  const j = await r.json().catch(() => ({}));
+  if (!r.ok) { const e = new Error((j.error && (j.error.message || j.error)) || "HTTP " + r.status); e.status = r.status; throw e; }
+  const t = ((((j.choices || [])[0] || {}).message || {}).content || "").trim();
+  if (!t) throw new Error("respuesta vacía");
+  return { text: t, by: "IA gratuita (Pollinations · " + (j.model || "código abierto") + ")" };
+}
+const mdLite = t => esc(t).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>").replace(/(^|\n)\s*[-*] (.+)/g, "$1• $2").replace(/\[(\d+)\]/g, '<sup class="cite">[$1]</sup>').replace(/\n/g, "<br>");
+function askCard(d, i) {
+  const slides = d.q ? slideButtons(d.q) : d.sec && SEC_SLIDES[d.sec] && d.kind === "teoria" ? `<div class="slide-btns">${secSlidesBtn(d.sec)}</div>` : "";
+  const t = topicById(d.tema);
+  return `<div class="ask-hit"><div class="ah-h"><span class="ah-n">${i + 1}</span><span class="tag" style="background:${t.color}1a;color:${t.color}">${esc(d.sub)}</span></div>
+  <b class="ah-t">${esc(d.title.length > 220 ? d.title.slice(0, 220) + "…" : d.title)}</b>
+  ${d.q ? `<ul class="ah-opts">${d.q.o.map((o, k) => `<li class="${d.q.a.includes(k) ? "ok" : ""}">${esc(o)}${d.q.a.includes(k) ? " ✓" : ""}</li>`).join("")}</ul>` : ""}
+  <div class="ah-b theory">${d.q ? d.html.replace(/^<b>Respuesta:<\/b>[^<]*<br>/, "") : d.html}</div>
+  <div class="row">${d.href ? `<a class="btn sm soft" href="${d.href}">Abrir en la app</a>` : ""}${d.q ? `<button class="btn sm soft" data-askq="${d.q.id}">Responder esta pregunta</button>` : ""}</div>${slides}</div>`;
+}
+let ASK = { q: "", hits: [], ai: null, err: null, busy: false };
+function viewAsk() {
+  const key = aiKey();
+  app.innerHTML = `<h1>Consulta</h1>
+  <p class="muted small">Pregunta lo que quieras de ${esc(SUBJ.name)}: se busca en tus apuntes, las tarjetas y los exámenes, y una IA gratuita te lo explica con esos fragmentos.</p>
+  <form class="card ask-box" id="ask-f"><textarea id="ask-q" rows="2" placeholder="Por ejemplo: ¿qué es un anteproyecto tipo B?" aria-label="Tu pregunta">${esc(ASK.q)}</textarea>
+  <div class="row between"><span class="tiny muted">IA gratuita + tus apuntes · Intro para enviar</span><button class="btn primary" ${ASK.busy ? "disabled" : ""}>${ASK.busy ? "Pensando…" : "Preguntar"}</button></div></form>
+  ${ASK.q ? `${ASK.ai ? `<div class="card ask-ai"><div class="eyebrow">Respuesta de la IA <span class="tiny muted">· ${esc(ASK.ai.by)} · puede equivocarse: compruébala con los fragmentos de abajo</span></div><div class="ai-txt">${mdLite(ASK.ai.text)}</div></div>` : ""}
+    ${ASK.err ? `<div class="notice">${ASK.err}</div>` : ""}
+    ${ASK.busy ? `<div class="card empty">La IA está redactando la respuesta…</div>` : ""}
+    <div class="section-title"><h2>${ASK.hits.length ? "Lo que dicen tus apuntes" : "Sin resultados"}</h2></div>
+    ${ASK.hits.length ? ASK.hits.slice(0, 6).map(askCard).join("") : `<div class="card empty">No he encontrado nada parecido. Prueba con otras palabras (por ejemplo, el término técnico).</div>`}` : ""}
+  <details class="card mt"><summary class="sum-h">Sobre la IA ${key ? "· Gemini activado ✓" : ""}</summary>
+    <p class="small muted">Por defecto se usa una IA gratuita y sin registro (Pollinations, con un modelo de código abierto). La pregunta se envía junto con los fragmentos de los apuntes encontrados, así que no escribas datos personales. Si quieres respuestas de más calidad, puedes usar Gemini de Google, también gratis: crea una clave en <a href='https://aistudio.google.com/apikey' target='_blank' rel='noopener'>aistudio.google.com/apikey</a> (con tu cuenta de Google y sin tarjeta) y pégala aquí. Se guarda solo en este navegador.</p>
+    ${window.AI_KEY ? "" : `<div class="row"><input id="ai-k" class="inp" type="password" placeholder="Clave de Gemini (AIza…)" value="${esc(localStorage.getItem(AI_LS) || "")}"><button class="btn" id="ai-s">Guardar</button></div>`}</details>`;
+  const f = $("#ask-f"), ta = $("#ask-q");
+  ta.onkeydown = e => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); f.requestSubmit(); } };
+  f.onsubmit = async e => {
+    e.preventDefault(); const q = ta.value.trim(); if (!q || ASK.busy) return;
+    ASK = { q, hits: askSearch(q), ai: null, err: null, busy: true }; viewAsk(); renderMath(app);
+    try { ASK.ai = await askAI(q, ASK.hits); }
+    catch (err) { ASK.err = err.status === 429 ? "La IA gratuita está saturada ahora mismo; inténtalo en un minuto. Abajo tienes lo que dicen los apuntes." : "No se ha podido contactar con la IA (" + esc(err.message) + "). Abajo tienes lo que dicen los apuntes."; }
+    ASK.busy = false; if (/^#\/consulta/.test(location.hash)) { viewAsk(); renderMath(app); }
+  };
+  $$("[data-askq]").forEach(b => b.onclick = () => startQuiz({ ids: [b.dataset.askq], title: "Consulta" }));
+  const ks = $("#ai-s"); if (ks) ks.onclick = () => { const v = $("#ai-k").value.trim(); try { v ? localStorage.setItem(AI_LS, v) : localStorage.removeItem(AI_LS); } catch (e) { } viewAsk(); };
+  if (!ASK.q) ta.focus();
 }
 
 /* arranque */
 window.APP = { get S() { return S; }, set S(v) { S = Object.assign(blank(), v); try { localStorage.setItem(LS_KEY, JSON.stringify(S)); } catch (e) { } },
   route, go, esc, ic, confirmBox, donut, hbars, globalStats, streak, fmt1, fmtDate, topicStats, lessonsDone: () => LESSONS.filter(l => S.lessons[l.id] && S.lessons[l.id].done).length, nLessons: LESSONS.length, exById, TOPICS };
+document.title = SUBJ.brand + " ETSII · " + SUBJ.name;
+$("#brand-n").textContent = SUBJ.brand; $("#brand-logo").src = SUBJ.logo || "img/logo.svg"; $("#brand-s").textContent = SUBJ.sub; $("#subj-sw").hidden = false;
 if (window.CLOUD) CLOUD.init();
 if (S.exam && S.exam.mode === "sim" && Date.now() > S.exam.deadline) submitExam(true); else route();
 })();

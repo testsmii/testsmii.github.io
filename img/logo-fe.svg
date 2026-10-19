@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Fuentes de Energía ETSII"><defs><linearGradient id="gf" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#14b8a6"/><stop offset="1" stop-color="#0f5f58"/></linearGradient></defs>
+  <rect width="64" height="64" rx="15" fill="url(#gf)"/>
+  <g fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="20" cy="20" r="6" stroke-width="2.6"/>
+    <path d="M20 8v3M20 29v3M8 20h3M29 20h3M11.5 11.5l2 2M26.5 26.5l2 2M11.5 28.5l2-2M26.5 13.5l2-2" stroke-width="2"/>
+    <path d="M42 54V30" stroke-width="2.8"/>
+    <path d="M42 30l-1.5-15M42 30l13 7.5M42 30l-11.5 9" stroke-width="3.2"/>
+    <circle cx="42" cy="30" r="2.4" fill="#fff" stroke="none"/>
+    <path d="M10 54h44" stroke-width="3"/>
+    <path d="M17 54l4-10 3 6 3-7 4 11" stroke-width="2.2" opacity=".85"/>
+  </g>
+</svg>
