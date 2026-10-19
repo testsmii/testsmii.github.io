@@ -12,401 +12,758 @@ function L(t, s, d, q, o, a, e, r) {
 }
 
 /* ============================ TEMA 1 ============================ */
-L("T1","Proyecto estructural",1,"¿Qué fase del proyecto desarrolla la determinación completa de detalles y especificaciones de todos los materiales, elementos, sistemas constructivos y equipos?",
-["Anteproyecto","Proyecto básico","Proyecto de ejecución","Plan de mantenimiento"],2,
-"El proyecto de ejecución desarrolla el proyecto básico con la determinación completa de detalles y especificaciones. El anteproyecto solo expone los aspectos fundamentales, y el básico define las características generales con soluciones concretas y su justificación.","Apuntes T1, diap. 3");
-L("T1","Proyecto estructural",1,"El documento que expone los aspectos fundamentales y las características generales de la intervención es:",
-["El proyecto de ejecución","El anteproyecto","El proyecto básico","El catálogo de soluciones de reparación"],1,
-"Según los apuntes, el anteproyecto «expone los aspectos fundamentales y las características generales de la intervención».","Apuntes T1, diap. 3");
-L("T1","Proyecto estructural",2,"¿Cuál de las siguientes asociaciones entre etapa de la construcción y tipo de gestión es correcta?",
-["Proyecto → gestión de la demolición","Uso → gestión durante su vida de servicio","Construcción → gestión de la calidad del proyecto","Demolición → gestión de la calidad de los productos"],1,
-"La etapa de uso se asocia a la gestión durante la vida de servicio. Las demás asociaciones correctas son: proyecto con calidad del proyecto, construcción con calidad de los productos y de la ejecución, y demolición con gestión de la demolición y deconstrucción.","Apuntes T1, diap. 2");
-L("T1","Requisitos",1,"Según los apuntes, ¿cuál NO es uno de los requisitos de seguridad y funcionalidad estructural?",
-["Resistencia y estabilidad","Aptitud al servicio","Robustez y redundancia","Estética de la fachada"],3,
-"Los requisitos de seguridad y funcionalidad son: resistencia y estabilidad, aptitud al servicio (rigidez), robustez y redundancia, y durabilidad. La estética no es un requisito estructural.","Apuntes T1, diap. 5");
-L("T1","Requisitos",1,"El requisito de que un evento extraordinario no produzca consecuencias desproporcionadas respecto a la causa original se denomina:",
-["Durabilidad","Aptitud al servicio","Robustez y redundancia","Estabilidad"],2,
-"La robustez y la redundancia buscan que un evento extraordinario no provoque consecuencias desproporcionadas respecto a su causa.","Apuntes T1, diap. 5");
-L("T1","Requisitos",1,"La aptitud al servicio se relaciona principalmente con:",
-["La rigidez: deformaciones admisibles, confort y ausencia de fisuras inaceptables","La carga de colapso de la estructura","La protección activa contra incendios","El reciclaje de materiales tras la demolición"],0,
-"En los apuntes la aptitud al servicio aparece como «rigidez»: deformaciones admisibles, confortabilidad de los usuarios y que no se produzcan degradaciones o fisuras inaceptables.","Apuntes T1, diap. 5");
-L("T1","Requisitos",2,"La durabilidad, como requisito estructural, consiste en:",
-["Resistir cualquier carga sin deformarse","Alcanzar la vida útil nominal manteniendo todos los requisitos","Evitar la fatiga en materiales dúctiles","Que la estructura sea desmontable y reutilizable"],1,
-"Los apuntes definen la durabilidad como «alcanzar la vida útil nominal manteniendo todos los requisitos».","Apuntes T1, diap. 5");
-L("T1","Requisitos",2,"Según los apuntes, la resistencia y la estabilidad deben garantizarse frente a las acciones previsibles…",
-["solo durante el uso","solo en situaciones persistentes","en fase de ejecución, uso y desmontaje","solo durante la ejecución"],2,
-"Los apuntes indican que no deben generarse riesgos inadmisibles por las acciones previsibles «en fase de ejecución, uso y desmontaje».","Apuntes T1, diap. 5");
-L("T1","Requisitos",2,"Señalar las respuestas correctas (puede haber más de una). Son exigencias según la normativa recogidas en los apuntes:",
-["Seguridad y funcionalidad estructural","Seguridad en caso de incendio","Higiene, salud y protección del medio ambiente","Rentabilidad económica máxima del promotor"],[0,1,2],
-"Los apuntes recogen tres exigencias normativas: seguridad y funcionalidad estructural, seguridad en caso de incendio, e higiene, salud y protección del medio ambiente. Las exigencias del cliente se mencionan aparte como pregunta abierta.","Apuntes T1, diap. 4");
-L("T1","Modos de fallo",1,"¿Qué ventaja tiene la rotura dúctil frente a la frágil?",
-["Se produce con deformaciones muy pequeñas","Permite reajustes de tensiones y advierte del peligro","Elimina el riesgo de fatiga","Hace innecesarios los coeficientes de seguridad"],1,
-"La rotura dúctil, con grandes deformaciones, permite reajustar tensiones que descargan la zona peligrosa y en último caso advierte del peligro.","Apuntes T1, diap. 7");
-L("T1","Modos de fallo",2,"Sobre el uso de materiales dúctiles como el acero en régimen plástico, es cierto que:",
-["Los estados plásticos son totalmente reversibles","Admiten sin problema la alternancia de cargas","No admiten repeticiones o alternancia de cargas sin riesgo de fatiga","La fatiga solo aparece con tensiones superiores a la resistencia"],2,
-"Los estados plásticos son menos reversibles y no admiten repeticiones ni alternancia de cargas: aparece la fatiga, que es la rotura tras cierto número de ciclos con tensiones muy por debajo de la resistencia estática.","Apuntes T1, diap. 7");
-L("T1","Modos de fallo",2,"La fatiga es:",
-["La rotura tras un número de repeticiones de carga con tensiones muy inferiores a la resistencia con carga no repetitiva","La pérdida de resistencia del hormigón bajo carga lenta","La deformación del hormigón bajo carga constante","El pandeo de barras esbeltas comprimidas"],0,
-"Es la definición de los apuntes. La pérdida de resistencia bajo carga lenta es el cansancio del hormigón y la deformación bajo carga constante es la fluencia; los dos se ven en el T3.","Apuntes T1, diap. 7");
-L("T1","Cálculo elástico y plástico",1,"Al diseñar el mismo elemento con teoría plástica (rotura) frente a teoría elástica, se obtienen:",
-["Mayores dimensiones y cuantía","Menores dimensiones y cuantía de material","Las mismas dimensiones","Dimensiones mayores solo en acero"],1,
-"Según los apuntes, el diseño a rotura da dimensiones y cuantías menores, porque mantener el material en el rango elástico ante el mismo esfuerzo exige más material.","Apuntes T1, diap. 9");
-L("T1","Cálculo elástico y plástico",2,"En el cálculo plástico:",
-["Los elementos deben permanecer en el rango elástico","Se determinan las cargas y mecanismos de colapso","Los esfuerzos se calculan en régimen lineal","No se considera el diagrama momento-curvatura"],1,
-"En el caso plástico se permite entrar en el rango plástico y se determinan las cargas y los mecanismos de colapso. Lo demás describe el cálculo elástico.","Apuntes T1, diap. 8-9");
-L("T1","Fuego",1,"La pintura intumescente es un ejemplo de:",
-["Sistema activo de protección contra el fuego","Sistema pasivo de protección contra el fuego","Sistema de evacuación","Sector de incendio"],1,
-"Los sistemas pasivos protegen el elemento (pintura intumescente, mortero ignífugo, placa rígida). Los activos detectan, controlan y extinguen el incendio (sprinklers).","Apuntes T1, diap. 11");
-L("T1","Fuego",1,"Un sistema de sprinklers es:",
-["Protección pasiva","Protección activa","Un sector de incendio","Una condición de ventilación"],1,
-"Los sistemas activos están diseñados para detectar, controlar y extinguir el incendio; el ejemplo de los apuntes son los sprinklers.","Apuntes T1, diap. 11");
-L("T1","Medio ambiente",2,"Según los apuntes, en relación con los residuos el enfoque debe ponerse en:",
-["El reciclaje antes que la reutilización","La reutilización y no en el reciclaje","El vertido controlado","La incineración"],1,
-"Los apuntes indican: «Foco en la reutilización y no en el reciclaje (mínimos residuos en fabricación ~10 % de reutilización y 95 % de reciclaje)».","Apuntes T1, diap. 12");
-L("T1","Medio ambiente",2,"La modularidad, como criterio de diseño recogido en los apuntes, implica:",
-["Máximo trabajo en obra y mínimo en taller","Máximo trabajo en taller y mínimo en obra","Usar siempre piezas de hormigón in situ","Evitar uniones atornilladas"],1,
-"La modularidad significa máximo trabajo en taller y mínimo en obra, junto con ligereza y sencillez de detalles.","Apuntes T1, diap. 12");
-L("T1","Vida de servicio",2,"¿Qué documento forma parte de los criterios generales para la reparación de estructuras?",
-["El catálogo de daños y el mapa de daños","El anteproyecto","El cálculo plástico","La ficha de combinaciones de acciones"],0,
-"La reparación incluye la clasificación de deterioros, el catálogo y mapa de daños, el catálogo de soluciones, el proyecto de reparación y el plan de inspección y mantenimiento.","Apuntes T1, diap. 13");
-L("T1","Métodos",1,"El método de tensiones admisibles tiene base:",
-["Probabilista de nivel 2","Determinista","Probabilista de nivel 1","Semiprobabilista con coeficientes parciales"],1,
-"Es el método clásico de base determinista. Los estados límite tienen base probabilista y se aplican como nivel 1.","Apuntes T1, diap. 14-15");
-L("T1","Métodos",2,"En el método de tensiones admisibles se verifica:",
-["σ ≥ σmat·FS","σ ≤ σmat / FS","σ ≤ σmat · FS","Rd ≥ Sd con coeficientes parciales"],1,
-"Se verifica σ ≤ σadm = σmat/FS, donde FS es el factor de seguridad.","Apuntes T1, diap. 15");
-L("T1","Métodos",2,"Señalar las respuestas correctas (puede haber más de una). Consecuencias del método de tensiones admisibles según los apuntes:",
-["Mayor desaprovechamiento de la capacidad resistente del material","No da información sobre el margen de seguridad hasta rotura","Conduce a estructuras más caras e inciertas en cuanto a seguridad","Considera explícitamente la readaptación plástica"],[0,1,2],
-"El método no considera la readaptación plástica; precisamente por eso desaprovecha el material. Tampoco informa del margen hasta la rotura, por lo que da estructuras más caras e inciertas.","Apuntes T1, diap. 15");
-L("T1","Métodos",2,"Una barra se diseñó con un factor de seguridad inicial FS. Si la tensión de trabajo se duplica y el material no cambia, el nuevo factor de seguridad es:",
-["2·FS","FS","FS/2","FS²"],2,
-"FS = σadm/σ. Si σ se duplica, FS se reduce a la mitad. Es el mismo planteamiento que el «ejercicio factor de seguridad» de la hoja oficial de 2025, donde FSfinal/FSinicial = σinicial/σfinal = 0,5.","Apuntes T1, diap. 15 · Hoja de soluciones 2025");
-L("T1","Métodos",2,"El método de los estados límite permite tener en cuenta de forma sencilla el carácter aleatorio de:",
-["Solo las acciones","Las acciones, las propiedades de los materiales y los datos geométricos","Solo las propiedades del material","Solo la geometría"],1,
-"Permite considerar el carácter aleatorio de las variables de solicitación (acciones), de resistencia (materiales) y dimensionales (geometría).","Apuntes T1, diap. 14");
-L("T1","Fiabilidad",1,"La fiabilidad de una estructura se define como:",
-["pf","1 − pf","1/pf","β·pf"],1,
-"Los apuntes la definen como 1 − pf, donde pf es la probabilidad de fallo.","Apuntes T1, diap. 17");
-L("T1","Fiabilidad",2,"En los métodos probabilistas de nivel 2:",
-["Se usan solo valores característicos y coeficientes parciales","Las variables de carga y resistencia se representan por sus funciones estadísticas de distribución","No se considera la variabilidad","Se usa un único factor de seguridad global"],1,
-"Nivel 2: distribuciones estadísticas de las variables. El nivel 1 simplifica con valores característicos y coeficientes parciales.","Apuntes T1, diap. 18");
-L("T1","Fiabilidad",2,"¿En qué nivel de métodos probabilistas se basan el CE, el CTE y los Eurocódigos?",
-["Nivel 3","Nivel 2","Nivel 1","En ninguno: son deterministas"],2,
-"Los apuntes indican que el CE, el CTE, los EC y casi todos los códigos se basan en el nivel 1 de diseño.","Apuntes T1, diap. 18");
-L("T1","Fiabilidad",3,"Señalar las respuestas correctas (puede haber más de una). Características de los métodos de nivel 1:",
-["Engloban las incertidumbres en dos factores: resistencia (R) y acciones (S)","Sustituyen las funciones de distribución por valores característicos","Ponderan esos valores con coeficientes parciales definidos para una fiabilidad dada","Proporcionan como resultado el valor numérico de pf de la estructura"],[0,1,2],
-"Las tres primeras son literales de los apuntes. El nivel 1 no calcula pf: verifica estados límite con coeficientes calibrados.","Apuntes T1, diap. 18");
-L("T1","Fiabilidad",3,"En el caso fundamental (R y S normales e independientes), si aumenta la desviación típica de la resistencia y no cambia nada más, la probabilidad de fallo:",
-["Disminuye","Aumenta","No cambia","Depende del valor de γm"],1,
-"Con β = (μR − μS)/√(σR² + σS²) y μR > μS, aumentar σR aumenta el denominador y reduce β, así que pf = Φ(−β) aumenta. (Desarrollo de conocimiento general; los apuntes solo presentan la idea gráfica con β·s.)","General · coherente con T1, diap. 16-17");
-L("T1","Fiabilidad",3,"Para R con media 235 MPa y desviación 14 MPa, y S con media 118,6 MPa y desviación 26,36 MPa, el índice de fiabilidad β vale aproximadamente:",
-["1,2","2,5","3,9","8,3"],2,
-"μM = 235 − 118,6 = 116,4 MPa; σM = √(14² + 26,36²) = 29,85 MPa; β = 116,4/29,85 ≈ 3,9. Es el ejercicio de fiabilidad resuelto en la hoja oficial de soluciones de 2024.","Hoja de soluciones PA1 2024");
-L("T1","Acciones",1,"Según los apuntes, una acción es:",
-["Solo una fuerza exterior","Cualquier causa (fuerza o deformación) capaz de producir o modificar estados tensionales","Solo el peso propio","El valor de cálculo de un esfuerzo"],1,
-"Es la definición literal de los apuntes. Las acciones pueden ser permanentes, variables o accidentales, y libres o fijas en el espacio.","Apuntes T1, diap. 19");
-L("T1","Acciones",2,"Según su variación en el tiempo, las acciones se clasifican en:",
-["Libres y fijas","Permanentes, variables y accidentales","Estáticas y dinámicas solamente","Favorables y desfavorables"],1,
-"En el tiempo: permanentes, variables o accidentales. En el espacio: libres o fijas.","Apuntes T1, diap. 19");
-L("T1","Situaciones",2,"En las situaciones relativas a la rigidez, la situación de corta duración e irreversible se denomina:",
-["Frecuente","Casi permanente","Poco frecuente","Fundamental"],2,
-"Rigidez: poco frecuente (corta duración e irreversible), frecuente (corta duración y reversible) y casi permanente (larga duración).","Apuntes T1, diap. 19");
-L("T1","Situaciones",2,"En las situaciones relativas a la resistencia, los apuntes distinguen:",
-["Frecuente y casi permanente","Fundamental (permanente o transitoria) y extraordinaria","Poco frecuente y frecuente","Elástica y plástica"],1,
-"Para la resistencia, las situaciones son fundamental (permanente o transitoria) y extraordinaria.","Apuntes T1, diap. 19");
-L("T1","Valores característicos",1,"El valor característico de la resistencia es aquel para el cual existe una probabilidad del 5 % de que existan valores…",
-["más altos","más bajos","iguales","nulos"],1,
-"Resistencia: un 5 % de valores más bajos. Acción: un 5 % de valores más altos.","Apuntes T1, diap. 20");
-L("T1","Valores característicos",1,"El valor característico de una acción es aquel con una probabilidad del 5 % de que existan valores…",
-["más bajos","más altos","negativos","iguales a la media"],1,
-"En las acciones el lado inseguro son los valores altos: el característico deja un 5 % de valores superiores.","Apuntes T1, diap. 20");
-L("T1","Coeficientes parciales",1,"El coeficiente γm es un coeficiente de:",
-["Mayoración de acciones","Minoración de resistencias","Combinación de acciones","Simultaneidad"],1,
-"γm minora las resistencias y γf mayora las acciones.","Apuntes T1, diap. 21");
-L("T1","Coeficientes parciales",2,"La determinación de los coeficientes parciales de seguridad es un compromiso entre:",
-["El coste de construcción y conservación, que aumenta con el coeficiente, y el coste de los daños potenciales, que disminuye al aumentarlo","La resistencia a tracción y la de compresión","El peso propio y la sobrecarga","Los ELS y la estética"],0,
-"Es el compromiso económico que recogen los apuntes.","Apuntes T1, diap. 21");
-L("T1","Coeficientes parciales",2,"Aplicando los coeficientes parciales de seguridad sobre los valores característicos se obtienen:",
-["Valores medios","Valores de cálculo","Valores de servicio","Valores frecuentes"],1,
-"Los valores de cálculo resultan de aplicar γ a los valores característicos.","Apuntes T1, diap. 21");
-L("T1","Estados límite",1,"Los estados límite de servicio se relacionan con:",
-["El colapso total o parcial","La funcionalidad, estética y durabilidad","La rotura por fatiga","El vuelco de la estructura"],1,
-"Los ELS son situaciones de riesgo relativas a la funcionalidad: funcionalidad, estética y durabilidad.","Apuntes T1, diap. 23");
-L("T1","Estados límite",2,"En los ELU se utilizan combinaciones de carga con ___ probabilidad de ocurrencia y los parámetros de control son ___.",
-["alta / desplazamientos","baja / esfuerzos o tensiones","alta / esfuerzos","baja / aceleraciones"],1,
-"ELU: baja probabilidad y control de esfuerzos o tensiones. ELS: alta probabilidad y control de desplazamientos y aceleraciones.","Apuntes T1, diap. 23-25");
-L("T1","Estados límite",2,"La comprobación general de un estado límite de servicio se expresa como:",
-["Rd ≥ Sd","Cd ≥ Ed","σ ≤ σmat/FS","Ed ≥ Cd"],1,
-"ELS: Cd (valor límite admisible) ≥ Ed (valor de cálculo del efecto). ELU: Rd ≥ Sd.","Apuntes T1, diap. 24");
-L("T1","Estados límite",2,"Señalar las respuestas correctas (puede haber más de una). Son estados límite últimos según los apuntes:",
-["Equilibrio","Pandeo","Fatiga","Vibraciones"],[0,1,2],
-"ELU: equilibrio, agotamiento, pandeo, fatiga y adherencia. Las vibraciones son un ELS.","Apuntes T1, diap. 24-26");
-L("T1","Estados límite",2,"¿Cuál de los siguientes es un estado límite de servicio según los apuntes?",
-["Adherencia","Deslizamiento de tornillos","Agotamiento","Equilibrio"],1,
-"El esquema de ELS incluye flechas, vibraciones (verticales y horizontales) y otros, como el deslizamiento de tornillos. Adherencia, agotamiento y equilibrio son ELU.","Apuntes T1, diap. 24");
-L("T1","Estados límite",2,"Las situaciones de proyecto «transitorias» se refieren a:",
-["Condiciones de uso normal","Condiciones temporales como la ejecución o la reparación","Fuego o impacto","Sismo"],1,
-"Persistentes: uso normal. Transitorias: condiciones temporales (ejecución o reparación). Accidentales: fuego, impacto o fallo localizado. Sísmicas.","Apuntes T1, diap. 22");
-L("T1","Estados límite",3,"Un forjado presenta una flecha excesiva que fisura la tabiquería, pero no hay riesgo de colapso. Se ha superado un:",
-["Estado límite último de agotamiento","Estado límite de servicio","Estado límite último de equilibrio","Estado límite de fatiga"],1,
-"Afecta a la funcionalidad y la durabilidad (deformación no admisible) pero no a la seguridad frente al colapso: es un ELS de flechas.","Apuntes T1, diap. 23-24");
-L("T1","Estados límite",3,"Si una estructura vuelca como sólido rígido sin que ningún elemento se agote, el estado límite superado es:",
-["ELS de inclinación","ELU de equilibrio","ELU de agotamiento","ELU de adherencia"],1,
-"La pérdida de equilibrio estático del conjunto es un ELU de equilibrio, distinto del agotamiento resistente de las secciones.","Apuntes T1, diap. 10 y 26");
-L("T1","Parámetros de diseño",1,"Según los apuntes, los parámetros de diseño estructural se deben principalmente a:",
-["Materiales; tipos, formas y dimensiones resistentes; proceso constructivo","Solo el material","Solo la normativa","Solo el presupuesto"],0,
-"Es la lista de los apuntes; se indica que el proceso constructivo no forma parte de la asignatura.","Apuntes T1, diap. 28");
-L("T1","Métodos",3,"¿Cuál es el orden correcto del proceso de cálculo mediante estados límite?",
-["Respuesta → estructura → acción → aceptación","Acción normalizada → estructura (idealización) → respuesta → ¿cumple criterios? → aceptación o modificación","Aceptación → acción → respuesta","Estructura → aceptación → acción"],1,
-"Es el diagrama de flujo de los apuntes. Si no se cumplen los criterios, se modifica la estructura y se repite.","Apuntes T1, diap. 27");
-L("T1","Estabilidad",1,"El requisito de estabilidad consiste en que:",
-["La estructura no se desmorone por inestabilidad total o parcial","No haya fisuras","Se alcance la vida útil","No se superen las flechas"],0,
-"Es la definición de los apuntes. Se distinguen equilibrio estable, inestable y sin equilibrio.","Apuntes T1, diap. 10");
+L("T1","Proyecto estructural",2,"Señalar la respuesta correcta respecto a las fases del proyecto recogidas en los apuntes.",
+["El anteproyecto define de modo preciso las características generales de la intervención mediante la adopción de soluciones concretas y su justificación.",
+ "El proyecto básico desarrolla el anteproyecto con la determinación completa de detalles y especificaciones de todos los materiales, elementos y sistemas constructivos.",
+ "El proyecto de ejecución desarrolla el proyecto básico con la determinación completa de detalles y especificaciones de todos los materiales, elementos, sistemas constructivos y equipos.",
+ "Ninguna de las anteriores."],2,
+"La definición del proyecto de ejecución es literal de los apuntes. La primera afirmación atribuye al anteproyecto lo que corresponde al proyecto básico (el anteproyecto solo «expone los aspectos fundamentales y las características generales»). La segunda atribuye al proyecto básico la determinación completa de detalles, que es propia del proyecto de ejecución.","Apuntes T1, diap. 3");
+L("T1","Proyecto estructural",2,"Un documento define de modo preciso las características generales de una intervención adoptando soluciones concretas y justificándolas, pero todavía no especifica en detalle todos los materiales, elementos y equipos. Según los apuntes, corresponde a:",
+["El anteproyecto, que expone los aspectos fundamentales de la intervención.",
+ "El proyecto básico, que define las características generales con soluciones concretas.",
+ "El proyecto de ejecución, que desarrolla las soluciones con todos sus detalles.",
+ "El proyecto de reparación, que define las soluciones concretas de la intervención."],1,
+"«Definir de modo preciso con soluciones concretas y su justificación» es la definición del proyecto básico. El anteproyecto se queda en los aspectos fundamentales y no adopta soluciones concretas; el de ejecución añade la determinación completa de detalles y especificaciones. El proyecto de reparación pertenece a la gestión durante la vida de servicio, no a las fases del proyecto.","Apuntes T1, diap. 3");
+L("T1","Proyecto estructural",2,"¿Cuál de las siguientes afirmaciones sobre el planteamiento del problema (construir) recogido en los apuntes es falsa?",
+["El conjunto de actividades de construcción tiene por objeto dar un servicio y garantizar su uso durante el periodo de vida.",
+ "El cambio de uso y el mantenimiento se incluyen dentro de la etapa de uso.",
+ "Las molestias y el precio aparecen asociados a la etapa de demolición.",
+ "La gestión de la calidad de los productos se asocia a la etapa de proyecto, junto con las especificaciones, el análisis y el dimensionamiento."],3,
+"La etapa de proyecto se asocia a la gestión de la calidad del proyecto. La calidad de los productos (y de la ejecución) corresponde a la etapa de construcción: fabricación, montaje y medios auxiliares. Las otras tres afirmaciones reproducen el esquema de los apuntes.","Apuntes T1, diap. 2");
+L("T1","Requisitos",3,"Señalar la respuesta incorrecta. Entre los requisitos de seguridad y funcionalidad recogidos en los apuntes…",
+["la resistencia y estabilidad exige que no se generen riesgos inadmisibles como consecuencia de las acciones previsibles en fase de ejecución, uso y desmontaje.",
+ "la aptitud al servicio se identifica con la rigidez: deformaciones admisibles, confortabilidad de los usuarios y ausencia de degradaciones o fisuras inaceptables.",
+ "la robustez y redundancia exige que la estructura resista sin daños cualquier evento extraordinario, sea cual sea su magnitud.",
+ "la durabilidad exige alcanzar la vida útil nominal manteniendo todos los requisitos."],2,
+"La robustez y redundancia no pide que no haya daños, sino que un evento extraordinario «no produzca consecuencias desproporcionadas respecto a la causa original». Se admite daño local, pero no un colapso desproporcionado. Las otras tres definiciones son las de la diapositiva.","Apuntes T1, diap. 5");
+L("T1","Requisitos",2,"Una explosión de gas destruye un único pilar de planta baja y, como consecuencia, colapsa todo el edificio. ¿Qué requisito de seguridad y funcionalidad no se ha cumplido principalmente?",
+["La aptitud al servicio, porque se han producido deformaciones no admisibles en la estructura.",
+ "La robustez y redundancia, porque las consecuencias son desproporcionadas respecto a la causa original.",
+ "La durabilidad, porque la estructura no ha alcanzado la vida útil nominal prevista en el proyecto.",
+ "La resistencia y estabilidad frente a las acciones previsibles en fase de ejecución, uso y desmontaje."],1,
+"Una explosión es un evento extraordinario, y la pérdida de un solo pilar ha provocado un colapso total: las consecuencias son desproporcionadas respecto a la causa. Eso es justo lo que la robustez y redundancia debe evitar. La resistencia y estabilidad se refiere a las acciones previsibles; la aptitud al servicio, a deformaciones y confort; y la durabilidad, a mantener los requisitos a lo largo del tiempo.","Apuntes T1, diap. 5");
+L("T1","Requisitos",1,"Un forjado cumple holgadamente todas las comprobaciones resistentes, pero vibra de forma molesta para los usuarios al paso de personas. ¿Qué requisito de seguridad y funcionalidad no satisface?",
+["Resistencia y estabilidad","Aptitud al servicio (rigidez)","Robustez y redundancia","Durabilidad"],1,
+"La aptitud al servicio (rigidez) incluye las deformaciones admisibles, la confortabilidad de los usuarios y la ausencia de degradaciones o fisuras inaceptables. Las vibraciones molestas afectan al confort, no a la resistencia ni a la robustez, y no tienen que ver con la vida útil.","Apuntes T1, diap. 5");
+L("T1","Requisitos",1,"Según los apuntes, el requisito de durabilidad (garantizada) consiste en:",
+["Alcanzar la vida útil nominal manteniendo todos los requisitos.",
+ "Alcanzar la vida útil nominal manteniendo al menos la resistencia y la estabilidad.",
+ "Que no se produzcan degradaciones o fisuras inaceptables durante el uso.",
+ "Que ninguna degradación produzca consecuencias desproporcionadas respecto a su causa."],0,
+"La definición literal es «alcanzar la vida útil nominal manteniendo todos los requisitos», no solo los resistentes. La ausencia de degradaciones o fisuras inaceptables forma parte de la aptitud al servicio, y las consecuencias desproporcionadas son el criterio de la robustez.","Apuntes T1, diap. 5");
+L("T1","Requisitos",1,"Según los apuntes, el requisito de resistencia y estabilidad exige que no se generen riesgos inadmisibles como consecuencia de las acciones e influencias previsibles…",
+["en fase de uso, que es la que define la vida útil nominal.",
+ "en fase de ejecución y uso, pero no durante el desmontaje.",
+ "en fase de ejecución, uso y desmontaje.",
+ "en fase de proyecto, ejecución y uso."],2,
+"La diapositiva lo dice entre paréntesis: «en fase de ejecución, uso y desmontaje». El desmontaje está incluido, y el proyecto no es una fase en la que actúen cargas sobre la estructura.","Apuntes T1, diap. 5");
+L("T1","Requisitos",3,"Señalar las respuestas correctas (puede haber más de una). Según las exigencias de la normativa recogidas en los apuntes:",
+["La seguridad y funcionalidad estructural consiste en reducir a límites aceptables el riesgo de un comportamiento mecánico inadecuado frente a las acciones previsibles durante la construcción y el uso previsto, considerando la totalidad de su vida útil.",
+ "La seguridad en caso de incendio consiste en reducir a límites aceptables el riesgo de que los usuarios sufran daños derivados de un incendio de origen accidental.",
+ "La seguridad en caso de incendio consiste en garantizar que la estructura no sufra daños derivados de un incendio, cualquiera que sea su origen.",
+ "La exigencia de higiene, salud y protección del medio ambiente recomienda priorizar los materiales de primer uso frente a los secundarios y reciclados."],[0,1],
+"Las dos primeras son prácticamente literales de la diapositiva. La exigencia de incendio se refiere a los usuarios y a un incendio de origen accidental, y habla de «reducir a límites aceptables», no de garantizar ausencia de daños. La de medio ambiente recomienda justo lo contrario: procurar el uso de materiales secundarios y reciclados, y la reutilización y reciclabilidad tras la demolición.","Apuntes T1, diap. 4");
+L("T1","Modos de fallo",2,"Señalar la respuesta correcta. Según los apuntes, la rotura dúctil con grandes deformaciones…",
+["permite reajustes de tensiones que descargan la zona peligrosa cuando es pequeña y, en último caso, advierte del peligro.",
+ "permite reajustes de tensiones que descargan la zona peligrosa cualquiera que sea su tamaño, por lo que impide el colapso.",
+ "permite utilizar el material en régimen plástico con repeticiones y alternancia de cargas sin riesgo de fatiga.",
+ "se produce con tensiones muy por debajo de la resistencia con carga no repetitiva."],0,
+"Los apuntes matizan que el reajuste descarga la zona peligrosa «cuando es pequeña» y que, en último caso, la deformación advierte del peligro: no garantiza que no haya colapso. El régimen plástico precisamente no admite alternancia de cargas (fatiga), y la rotura con tensiones muy por debajo de la resistencia estática es la definición de fatiga.","Apuntes T1, diap. 7");
+L("T1","Modos de fallo",2,"Marcar la frase que sea verdadera.",
+["Los materiales dúctiles como el acero admiten su utilización en régimen plástico, y esos estados son plenamente reversibles siempre que no se alcance la tensión de rotura.",
+ "Los materiales dúctiles como el acero admiten su utilización en régimen plástico, pero esos estados son menos reversibles y no admiten repeticiones o alternancia de cargas.",
+ "Los materiales dúctiles como el acero no admiten su utilización en régimen plástico, porque sufren fatiga en cuanto se supera el límite elástico.",
+ "Ninguna de las anteriores."],1,
+"Es la frase de los apuntes: el acero permite el régimen plástico, pero esos estados son menos reversibles y no admiten repeticiones o alternancia de cargas, porque aparece la fatiga. Los estados plásticos no son plenamente reversibles (queda deformación remanente), y el acero sí admite el régimen plástico: lo que no admite es la alternancia de cargas en ese régimen.","Apuntes T1, diap. 7");
+L("T1","Modos de fallo",2,"Según los apuntes, la fatiga consiste en la rotura…",
+["al cabo de un cierto número de repeticiones, con tensiones muy por debajo de la resistencia con carga no repetitiva.",
+ "al cabo de un cierto número de repeticiones, con tensiones que superan la resistencia con carga no repetitiva.",
+ "bajo una carga constante mantenida en el tiempo, con tensiones muy por debajo de la resistencia instantánea.",
+ "tras grandes deformaciones plásticas, cuando se alcanza la tensión máxima σu del diagrama tensión-deformación."],0,
+"Lo característico de la fatiga es que la rotura llega con tensiones muy inferiores a la resistencia estática, tras muchas repeticiones. Una carga constante mantenida describe fenómenos diferidos (cansancio o fluencia del hormigón, tema 3), y alcanzar σu tras grandes deformaciones es la rotura dúctil estática.","Apuntes T1, diap. 7");
+L("T1","Cálculo elástico y plástico",1,"Señalar la respuesta correcta. Al diseñar un mismo elemento con teoría elástica y con teoría plástica (a rotura)…",
+["el diseño elástico conduce a menores dimensiones, porque no admite deformaciones plásticas que obliguen a sobredimensionar la sección.",
+ "el diseño a rotura conduce a menores dimensiones y cuantía de material, porque mantener el material en rango elástico ante el mismo esfuerzo exige más material.",
+ "ambos conducen a las mismas dimensiones y cuantía de material, porque el esfuerzo de cálculo es el mismo en los dos casos.",
+ "el diseño a rotura conduce a mayores dimensiones y cuantía, porque debe garantizar que se forme el mecanismo de colapso."],1,
+"Es la conclusión literal de la diapositiva. Aunque el esfuerzo sea el mismo, el cálculo plástico aprovecha la sección hasta MP, mientras que el elástico la limita a MY, así que necesita más material.","Apuntes T1, diap. 9");
+L("T1","Cálculo elástico y plástico",3,"En la viga biapoyada de acero de los apuntes, se analiza la sección central al aumentar la carga. Señalar la respuesta correcta.",
+["Cuando el momento alcanza MY, la fibra extrema llega a σY y el resto de la sección sigue en régimen elástico.",
+ "Cuando el momento alcanza MY, toda la sección está plastificada y se forma la rótula plástica.",
+ "Para momentos entre MY y MP, la sección se comporta linealmente y el diagrama momento-curvatura sigue siendo recto.",
+ "El cálculo elástico admite momentos hasta MP, mientras que el cálculo plástico se limita a MY."],0,
+"Con M2 = MY la deformación de la fibra extrema es εY y su tensión σY; el resto sigue en régimen elástico. Entre MY y MP la plastificación avanza desde los bordes y el diagrama momento-curvatura deja de ser recto. La sección plastifica por completo al acercarse a MP, no en MY. El cálculo elástico es el que se limita a MY.","Apuntes T1, diap. 8-9");
+L("T1","Fuego",2,"Señalar la respuesta correcta en relación con la protección contra el incendio.",
+["La pintura intumescente y el mortero ignífugo son sistemas activos, porque reaccionan al aumentar la temperatura.",
+ "Los sistemas activos están diseñados para detectar, controlar y extinguir el incendio, como un sistema de sprinklers.",
+ "La placa rígida es un sistema activo, porque limita la propagación del fuego entre sectores de incendio.",
+ "Los sprinklers son un sistema pasivo, porque actúan automáticamente sin intervención de los usuarios."],1,
+"Los apuntes definen los sistemas activos como los que detectan, controlan y extinguen el incendio (sprinklers). La pintura intumescente, el mortero ignífugo y la placa rígida son sistemas pasivos: protegen el elemento, aunque la pintura «reaccione» con el calor. Que un sistema sea automático no lo hace pasivo.","Apuntes T1, diap. 11");
+L("T1","Fuego",3,"Señalar las respuestas correctas (puede haber más de una). Según los apuntes, entre los aspectos que intervienen en los requisitos de seguridad contra el fuego figuran:",
+["Las condiciones de ventilación: entrada de aire y evacuación de humo.",
+ "El sector de incendio, caracterizado por la carga de fuego, la duración y la severidad del fuego.",
+ "La seguridad del equipo de rescate y bomberos, y el riesgo para los edificios adyacentes.",
+ "La protección anticorrosiva con pinturas con garantía de 5 años."],[0,2],
+"La ventilación, la seguridad de bomberos y el riesgo para edificios adyacentes están en la lista. El sector de incendio se caracteriza por tipo, tamaño y geometría; la carga de fuego, la duración y la severidad pertenecen al riesgo de incendio. La protección anticorrosiva (pinturas con garantía de 5 años) aparece en los requisitos de higiene, seguridad y medio ambiente.","Apuntes T1, diap. 11");
+L("T1","Medio ambiente",3,"Según los apuntes, en el diseño con criterios de higiene, seguridad y medio ambiente el foco debe ponerse en…",
+["la reutilización y no en el reciclaje (mínimos residuos en fabricación: ~10 % de reutilización y 95 % de reciclaje).",
+ "el reciclaje y no en la reutilización (mínimos residuos en fabricación: ~10 % de reciclaje y 95 % de reutilización).",
+ "el reciclaje y no en la reutilización (mínimos residuos en fabricación: ~10 % de reutilización y 95 % de reciclaje).",
+ "la reutilización y no en el reciclaje (mínimos residuos en fabricación: ~95 % de reutilización y 10 % de reciclaje)."],0,
+"La frase de los apuntes es «foco en la reutilización y no en el reciclaje (mínimos residuos en fabricación ~10 % de reutilización y 95 % de reciclaje)». Las otras opciones invierten el foco, las cifras o ambas cosas.","Apuntes T1, diap. 12");
+L("T1","Medio ambiente",2,"Señalar la respuesta incorrecta. Entre los criterios «otros» de higiene, seguridad y medio ambiente, los apuntes recogen:",
+["Modularidad (máximo trabajo en taller y mínimo en obra), ligereza y simplicidad de detalles.",
+ "Protección anticorrosiva y contra el fuego (pinturas con garantías de 5 años).",
+ "Aislamientos térmicos y acústicos adecuados, y plan de mantenimiento.",
+ "Modularidad (máximo trabajo en obra y mínimo en taller), para reducir el transporte de piezas."],3,
+"La modularidad busca lo contrario: máximo trabajo en taller y mínimo en obra. Las otras tres opciones están en la diapositiva.","Apuntes T1, diap. 12");
+L("T1","Vida de servicio",2,"Según los apuntes, ¿en qué apartado de la gestión de las estructuras durante su vida de servicio se incluyen el catálogo de daños y el mapa de daños?",
+["Evaluación de estructuras existentes",
+ "Criterios generales para la reparación",
+ "Criterios generales para el refuerzo de estructuras",
+ "Plan y programa de inspección y mantenimiento"],1,
+"Los criterios generales para la reparación incluyen la clasificación de deterioros, el catálogo y mapa de daños, el catálogo de soluciones, el proyecto de reparación y el plan de inspección y mantenimiento. La evaluación de estructuras existentes comprende la documentación del proyecto y los ensayos no destructivos; el refuerzo, los procedimientos y el proyecto de refuerzo.","Apuntes T1, diap. 13");
+L("T1","Métodos",3,"Señalar la respuesta correcta según el esquema de los apuntes sobre tensiones admisibles y estados límite.",
+["Los métodos deterministas se asocian al cálculo clásico y a la evaluación de solicitaciones en tensiones admisibles.",
+ "Los métodos deterministas se asocian al método de los estados límite y a los métodos de cálculo en rotura.",
+ "Los métodos probabilistas se asocian al cálculo clásico y a la evaluación de solicitaciones en tensiones admisibles.",
+ "Los métodos probabilistas se asocian al método de los estados límite y a la evaluación de solicitaciones en tensiones admisibles."],0,
+"En el esquema, la fila determinista enlaza con el cálculo clásico y los métodos en tensiones admisibles; la fila probabilista, con el método de los estados límite (CE, CTE, EC…) y los métodos de cálculo en rotura. Las demás opciones cruzan las dos filas.","Apuntes T1, diap. 14-15");
+L("T1","Métodos",2,"En el método de tensiones admisibles se calcula la tensión σ en la sección más solicitada y se verifica:",
+["σ ≤ σadm = σmat / FS, siendo FS un factor de seguridad cuyo objetivo es disminuir la posibilidad de fallo.",
+ "σ ≤ σadm = σmat · FS, siendo FS un factor de seguridad cuyo objetivo es disminuir la posibilidad de fallo.",
+ "σ · FS ≥ σmat, siendo σmat la resistencia máxima útil del material.",
+ "σ ≤ σadm = σmat / FS, siendo FS un coeficiente parcial distinto para cada acción."],0,
+"La resistencia útil se divide por un único factor de seguridad: σadm = σmat/FS. Multiplicarla por FS aumentaría la tensión admisible, y la tercera expresión invierte la desigualdad. Los coeficientes parciales distintos para acciones y resistencias son propios de los estados límite, no de este método.","Apuntes T1, diap. 15");
+L("T1","Métodos",3,"Señalar las respuestas correctas (puede haber más de una). Según los apuntes, el método en tensiones admisibles:",
+["desaprovecha la capacidad resistente de los materiales, porque no considera su capacidad de readaptación plástica.",
+ "no da información sobre el margen de seguridad de la estructura, es decir, cuánta más carga puede recibir hasta su rotura.",
+ "conduce a estructuras más económicas, aunque inciertas en cuanto a seguridad.",
+ "tiene base probabilista, ya que el factor FS se calibra para una probabilidad de fallo dada."],[0,1],
+"Las dos primeras son las consecuencias que enumeran los apuntes. La tercera conclusión es que las estructuras resultan más caras (no más económicas) e inciertas en cuanto a seguridad. El método es de base determinista; los coeficientes definidos para una fiabilidad dada pertenecen al nivel 1 probabilista.","Apuntes T1, diap. 15");
+L("T1","Métodos",3,"Una barra trabaja con una tensión σ y tiene un factor de seguridad FS = σmat/σ. Se sustituye su acero por otro con σmat un 50 % mayor y, a la vez, la carga (y por tanto σ) aumenta un 20 %. El nuevo factor de seguridad respecto al inicial vale:",
+["1,25·FS","1,80·FS","0,80·FS","1,30·FS"],0,
+"FS es proporcional a σmat e inversamente proporcional a σ: FSfinal/FSinicial = 1,5/1,2 = 1,25. Multiplicar los dos factores (1,5·1,2 = 1,8) o invertir el cociente (1,2/1,5 = 0,8) es un error frecuente, igual que restar porcentajes (1,5 − 0,2 = 1,3). Es el mismo razonamiento del «ejercicio factor de seguridad» de la hoja de 2025, donde FSfinal/FSinicial = σinicial/σfinal.","Apuntes T1, diap. 15 · Hoja de soluciones 2025");
+L("T1","Métodos",3,"Según los apuntes, el método de los estados límite permite tener en cuenta de manera sencilla el carácter aleatorio de las variables…",
+["de solicitación (acciones) y de resistencia (propiedades de los materiales), considerando deterministas los datos geométricos.",
+ "de resistencia (propiedades de los materiales) únicamente, ya que las acciones vienen fijadas por la normativa.",
+ "de solicitación (acciones), de resistencia y temporales (variación de las propiedades con la edad), pero no las geométricas.",
+ "Ninguna de las anteriores."],3,
+"La diapositiva incluye tres grupos: variables de solicitación (acciones), de resistencia (propiedades de los materiales) y dimensionales (datos geométricos). Todas las opciones dejan fuera alguno de ellos, en particular las variables geométricas, así que ninguna es correcta.","Apuntes T1, diap. 14");
+L("T1","Fiabilidad",3,"Señalar la respuesta correcta respecto a la base probabilista del proyecto estructural.",
+["La fiabilidad se define como 1 − pf, y pf es el área bajo la función de densidad de la variable resistencia − solicitación a la izquierda del cero.",
+ "La fiabilidad se define como pf, y pf es el área bajo la función de densidad de la variable resistencia − solicitación a la derecha del cero.",
+ "La fiabilidad se define como 1 − pf, y pf es el área de solape entre las curvas de densidad de la solicitación y de la capacidad.",
+ "La fiabilidad se define como 1/pf, y pf es el cociente entre el valor medio de la solicitación y el de la capacidad."],0,
+"En la diapositiva, pf es la parte de la función de densidad de la variable resistencia − solicitación que queda por debajo de cero (la solicitación supera a la resistencia), y la fiabilidad es 1 − pf. El área de solape entre las dos curvas no es la probabilidad de fallo, aunque sea una confusión habitual.","Apuntes T1, diap. 17");
+L("T1","Fiabilidad",2,"Señalar la respuesta correcta respecto a los métodos probabilistas de proyecto estructural.",
+["En los métodos de nivel 1 las variables de carga y resistencia se representan por sus funciones estadísticas de distribución.",
+ "En los métodos de nivel 2 las variables de carga y resistencia se representan por sus funciones estadísticas de distribución.",
+ "Los métodos de nivel 2 se obtienen realizando simplificaciones sobre los métodos de nivel 1.",
+ "En los métodos de nivel 2 las distribuciones se sustituyen por valores característicos ponderados con coeficientes parciales."],1,
+"El nivel 2 trabaja con las funciones de distribución completas. El nivel 1 es el que se obtiene simplificando el nivel 2: sustituye las distribuciones por valores característicos y los pondera con coeficientes parciales. Las demás opciones intercambian los niveles.","Apuntes T1, diap. 18");
+L("T1","Fiabilidad",2,"Según los apuntes, el CE, el CTE, los EC y casi todos los códigos técnicos se basan en el nivel 1 de diseño y, además, definen…",
+["las acciones con una serie de situaciones (combinaciones predeterminadas) y las comprobaciones a realizar (estados límite).",
+ "las funciones de distribución de cada variable de carga y resistencia, y la probabilidad de fallo admisible de cada elemento.",
+ "un único factor de seguridad global que se aplica a la resistencia máxima útil del material.",
+ "las acciones con sus valores medios y las comprobaciones a realizar en tensiones admisibles."],0,
+"Es la última línea de la diapositiva. Las funciones de distribución son propias del nivel 2, el factor global único corresponde a tensiones admisibles, y el nivel 1 usa valores característicos, no medios.","Apuntes T1, diap. 18");
+L("T1","Fiabilidad",3,"Señalar las respuestas incorrectas (puede haber más de una). Los métodos probabilistas de nivel 1…",
+["engloban los efectos de las diferentes causas de incertidumbre en dos factores: resistencia de los materiales (R) y valores de las acciones (S).",
+ "sustituyen las funciones de distribución de R y S por sus valores medios.",
+ "ponderan los valores característicos con coeficientes parciales de seguridad definidos para una fiabilidad dada.",
+ "proporcionan como resultado el valor numérico de la probabilidad de fallo de la estructura."],[1,3],
+"Las distribuciones se sustituyen por valores característicos, no por valores medios. Además, un método de nivel 1 no da un valor numérico de pf: verifica estados límite con coeficientes calibrados para una fiabilidad dada. La primera y la tercera afirmación son literales de los apuntes.","Apuntes T1, diap. 18");
+L("T1","Fiabilidad",3,"En el caso fundamental de fiabilidad (R y S normales e independientes, con μR > μS), la probabilidad de fallo siempre disminuye…",
+["si aumenta la desviación típica de la resistencia y los demás parámetros no cambian.",
+ "si aumenta el valor medio de la carga y los demás parámetros no cambian.",
+ "si disminuye la desviación típica de la carga y los demás parámetros no cambian.",
+ "si aumentan a la vez el valor medio y la desviación típica de la resistencia y los parámetros de la carga no cambian."],2,
+"Con β = (μR − μS)/√(σR² + σS²) y pf = Φ(−β): si σS disminuye, baja el denominador, β aumenta y pf disminuye. Aumentar σR hace lo contrario, y aumentar μS reduce el numerador, así que ambas aumentan pf. Si suben a la vez μR y σR, el resultado depende de cuánto cambie cada uno, así que no es «siempre». (Desarrollo de conocimiento general; los apuntes solo presentan la idea gráfica.)","General · coherente con T1, diap. 16-17");
+L("T1","Fiabilidad",3,"Para R con media 235 MPa y desviación típica 14 MPa, y S con media 118,6 MPa y desviación típica 26,36 MPa (normales e independientes), el índice de fiabilidad β vale aproximadamente:",
+["3,90","2,88","4,42","8,31"],0,
+"μM = 235 − 118,6 = 116,4 MPa y σM = √(14² + 26,36²) = 29,85 MPa, así que β = 116,4/29,85 ≈ 3,90 (hoja oficial de 2024: 3,899). Sumar las desviaciones típicas (116,4/40,36 ≈ 2,88), usar solo la de la carga (116,4/26,36 ≈ 4,42) o solo la de la resistencia (116,4/14 ≈ 8,31) son errores frecuentes.","Hoja de soluciones PA1 2024");
+L("T1","Acciones",2,"Según los apuntes, una acción es…",
+["cualquier causa (fuerza o deformación) capaz de producir o modificar estados tensionales en una estructura.",
+ "cualquier fuerza exterior aplicada sobre la estructura; las deformaciones impuestas se tratan como efectos de las acciones.",
+ "el valor de cálculo del efecto de las cargas sobre la estructura, obtenido aplicando los coeficientes parciales.",
+ "cualquier causa (fuerza o deformación) capaz de producir desplazamientos en una estructura, aunque no modifique su estado tensional."],0,
+"La definición incluye fuerzas y deformaciones (por ejemplo, la temperatura o un asiento) y se refiere a producir o modificar estados tensionales. El valor de cálculo del efecto (Ed o Sd) es otra cosa: el resultado de la acción ponderada.","Apuntes T1, diap. 19");
+L("T1","Acciones",2,"Según los apuntes, las acciones pueden ser…",
+["permanentes, variables en el tiempo o accidentales y, además, libres o fijas en el espacio.",
+ "libres, variables o accidentales en el tiempo y, además, permanentes o fijas en el espacio.",
+ "permanentes, variables en el tiempo o accidentales y, además, estáticas o dinámicas en el espacio.",
+ "persistentes, transitorias o accidentales en el tiempo y, además, libres o fijas en el espacio."],0,
+"Por su variación en el tiempo, las acciones son permanentes, variables o accidentales; en el espacio, libres o fijas. «Persistentes, transitorias, accidentales» es la clasificación de las situaciones de proyecto, no de las acciones.","Apuntes T1, diap. 19");
+L("T1","Situaciones",1,"En las situaciones relativas a la RIGIDEZ, los apuntes definen la situación «frecuente» como la de…",
+["corta duración e irreversible.",
+ "corta duración y reversible.",
+ "larga duración.",
+ "carácter fundamental, permanente o transitoria."],1,
+"Rigidez: poco frecuente (corta duración e irreversible), frecuente (corta duración y reversible) y casi permanente (larga duración). «Fundamental, permanente o transitoria» se refiere a las situaciones relativas a la resistencia.","Apuntes T1, diap. 19");
+L("T1","Situaciones",3,"Señalar la respuesta correcta respecto a las situaciones definidas en las bases de cálculo.",
+["Para la resistencia se distinguen las situaciones poco frecuente, frecuente y casi permanente.",
+ "Para la rigidez se distinguen la situación fundamental (permanente o transitoria) y la extraordinaria.",
+ "Para la resistencia se distinguen la situación fundamental (permanente o transitoria) y la extraordinaria.",
+ "Para la rigidez, la situación casi permanente es la de corta duración e irreversible."],2,
+"Resistencia: fundamental (permanente o transitoria) y extraordinaria. Rigidez: poco frecuente, frecuente y casi permanente. La casi permanente es la de larga duración; la de corta duración e irreversible es la poco frecuente.","Apuntes T1, diap. 19");
+L("T1","Valores característicos",2,"La resistencia de un acero sigue una distribución normal. Su valor característico es el valor…",
+["con un 5 % de probabilidad de que existan valores más bajos de resistencia, por lo que es inferior al valor medio.",
+ "con un 5 % de probabilidad de que existan valores más altos de resistencia, por lo que es superior al valor medio.",
+ "con un 95 % de probabilidad de que existan valores más bajos de resistencia, por lo que es inferior al valor medio.",
+ "con un 5 % de probabilidad de que existan valores más bajos de resistencia, por lo que coincide con su valor de cálculo."],0,
+"Para la resistencia, el lado inseguro son los valores bajos: el característico deja un 5 % por debajo y queda a la izquierda de la media. El 5 % de valores más altos corresponde a las acciones. El valor de cálculo se obtiene después, dividiendo el característico por γm.","Apuntes T1, diap. 20");
+L("T1","Valores característicos",2,"Señalar la respuesta correcta. El valor característico de una acción Sk…",
+["deja un 5 % de probabilidad de que existan valores más altos de la acción, por lo que es mayor que su valor medio.",
+ "deja un 5 % de probabilidad de que existan valores más bajos de la acción, igual que el valor característico de la resistencia.",
+ "coincide con el valor medio de la acción, y el margen de seguridad lo aporta el coeficiente γf.",
+ "deja un 5 % de probabilidad de que existan valores más altos de la acción y ya incluye el coeficiente de mayoración γf."],0,
+"En las acciones el lado inseguro son los valores altos, así que Sk deja un 5 % por encima y es mayor que la media. El criterio es el opuesto al de la resistencia. El característico no incluye γf: al aplicarlo se obtiene el valor de cálculo.","Apuntes T1, diap. 20");
+L("T1","Coeficientes parciales",3,"Señalar la respuesta correcta. Según los apuntes, los coeficientes parciales de seguridad γm y γf se definen de forma que…",
+["γm minora las resistencias y γf mayora las acciones, de modo que el riesgo de fallo estructural sea tolerable.",
+ "γm mayora las acciones y γf minora las resistencias, de modo que el riesgo de fallo estructural sea nulo.",
+ "γm minora las resistencias y γf mayora las acciones, de modo que el riesgo de fallo estructural sea nulo.",
+ "γm mayora las resistencias y γf minora las acciones, de modo que el riesgo de fallo estructural sea tolerable."],0,
+"γm (material) minora resistencias y γf (fuerza) mayora acciones. El objetivo que fija la diapositiva es que el riesgo de fallo sea tolerable: un riesgo nulo no existe en un planteamiento probabilista.","Apuntes T1, diap. 21");
+L("T1","Coeficientes parciales",3,"Según los apuntes, la determinación de los coeficientes parciales de seguridad debe ser un compromiso entre…",
+["el coste de construcción y conservación, que aumenta con el coeficiente de seguridad, y el coste de los daños potenciales, que disminuye al aumentarlo.",
+ "el coste de construcción y conservación, que disminuye con el coeficiente de seguridad, y el coste de los daños potenciales, que aumenta al aumentarlo.",
+ "el coste de construcción, que aumenta con el coeficiente de seguridad, y el coste de conservación, que disminuye al aumentarlo.",
+ "la probabilidad de fallo, que aumenta con el coeficiente de seguridad, y la fiabilidad, que disminuye al aumentarlo."],0,
+"Un coeficiente mayor encarece la construcción y la conservación, pero reduce el coste de los daños potenciales del riesgo asumido. La segunda opción invierte los dos sentidos. En la cuarta, al aumentar el coeficiente la probabilidad de fallo baja y la fiabilidad sube.","Apuntes T1, diap. 21");
+L("T1","Coeficientes parciales",2,"Con Xd = Xk/γm y Fd = γf·Fk (γm y γf mayores que 1 en ELU), aplicando los coeficientes parciales sobre los valores característicos se obtienen…",
+["los valores de cálculo, menores que los característicos en las resistencias y mayores en las acciones.",
+ "los valores de cálculo, mayores que los característicos en las resistencias y menores en las acciones.",
+ "los valores medios, que son los que se utilizan en los métodos de nivel 1.",
+ "los valores de servicio, que solo se utilizan en las comprobaciones de estados límite de servicio."],0,
+"Aplicar γ sobre los valores característicos da los valores de cálculo: dividir por γm > 1 reduce la resistencia y multiplicar por γf > 1 aumenta la acción, los dos del lado de la seguridad. El nivel 1 parte de valores característicos, no medios.","Apuntes T1, diap. 21");
+L("T1","Estados límite",2,"Señalar la respuesta correcta. Los estados límite de servicio…",
+["se relacionan con la funcionalidad, estética y durabilidad, y se comprueban con combinaciones de carga de alta probabilidad de ocurrencia.",
+ "se relacionan con la funcionalidad, estética y durabilidad, y se comprueban con combinaciones de carga de baja probabilidad de ocurrencia.",
+ "se relacionan con la seguridad frente al colapso parcial, y se comprueban con combinaciones de alta probabilidad de ocurrencia.",
+ "se relacionan con la funcionalidad y la estética, mientras que la durabilidad se comprueba en estados límite últimos."],0,
+"Los ELS son situaciones de riesgo relativas a la funcionalidad (funcionalidad, estética y durabilidad) y usan combinaciones de alta probabilidad, porque deben cumplirse en el día a día. La baja probabilidad y el colapso total o parcial son propios de los ELU.","Apuntes T1, diap. 23");
+L("T1","Estados límite",2,"Señalar la respuesta correcta respecto a la clasificación de los estados límite.",
+["En los ELU se utilizan combinaciones de baja probabilidad de ocurrencia y los parámetros de control son los desplazamientos y aceleraciones.",
+ "En los ELS se utilizan combinaciones de alta probabilidad de ocurrencia y los parámetros de control son los esfuerzos y tensiones.",
+ "En los ELU se utilizan combinaciones de baja probabilidad de ocurrencia y los parámetros de control son los esfuerzos y tensiones.",
+ "Ninguna de las anteriores."],2,
+"ELU: baja probabilidad, control de esfuerzos y tensiones. ELS: alta probabilidad, control de desplazamientos y aceleraciones. La primera y la segunda afirmación cruzan los parámetros de control.","Apuntes T1, diap. 23-25");
+L("T1","Estados límite",2,"La comprobación de un estado límite de servicio se formula como Cd ≥ Ed, donde…",
+["Cd es el valor límite admisible para el estado límite a comprobar y Ed el valor de cálculo obtenido por el efecto de la acción.",
+ "Cd es la capacidad de respuesta de la estructura y Ed el valor característico del efecto de la acción.",
+ "Cd es el valor de cálculo obtenido por el efecto de la acción y Ed el valor límite admisible.",
+ "Cd es el valor límite admisible y Ed la resistencia de cálculo del material minorada con γm."],0,
+"Es la definición de la diapositiva. La «capacidad de respuesta de la estructura» es Rd, propia de la comprobación de ELU (Rd ≥ Sd). Ed es un efecto de las acciones (por ejemplo, una flecha), no una resistencia.","Apuntes T1, diap. 24");
+L("T1","Estados límite",3,"Señalar las respuestas correctas (puede haber más de una). Según la clasificación de los apuntes:",
+["La fatiga y la adherencia son estados límite últimos.",
+ "El deslizamiento de tornillos es un estado límite último de agotamiento de la unión.",
+ "Las vibraciones horizontales son un estado límite de servicio.",
+ "El pandeo es un estado límite de servicio cuando no llega a producir el colapso."],[0,2],
+"ELU: equilibrio, agotamiento, pandeo, fatiga y adherencia. ELS: flechas y vibraciones (verticales y horizontales) y otros, como el deslizamiento de tornillos. El pandeo figura siempre entre los ELU, y el deslizamiento de tornillos está en la rama «otros» de los ELS.","Apuntes T1, diap. 24-26");
+L("T1","Estados límite",2,"Según el esquema de los apuntes, los estados límite de servicio se clasifican en…",
+["flechas (verticales y horizontales), vibraciones (verticales y horizontales) y otros (deslizamiento de tornillos).",
+ "flechas (verticales), vibraciones (verticales y horizontales) y otros (fisuración y adherencia).",
+ "flechas (verticales y horizontales), vibraciones (verticales) y otros (fatiga de las uniones).",
+ "equilibrio, agotamiento, pandeo, fatiga y adherencia."],0,
+"Es el árbol de la diapositiva. La adherencia y la fatiga son ELU, y la última opción es justo la lista de ELU.","Apuntes T1, diap. 24");
+L("T1","Estados límite",1,"Según los apuntes, la fase de ejecución de una estructura, o una reparación, corresponde a una situación de proyecto…",
+["persistente","transitoria","accidental","extraordinaria"],1,
+"Persistentes: uso normal. Transitorias: condiciones temporales, como la ejecución o la reparación. Accidentales: fuego, impacto o fallo localizado. «Extraordinaria» es una de las situaciones relativas a la resistencia de la diapositiva 19, no una situación de proyecto.","Apuntes T1, diap. 22");
+L("T1","Estados límite",3,"Un forjado de oficinas no presenta riesgo de colapso, pero su flecha bajo las cargas habituales fisura la tabiquería y sus vibraciones resultan molestas. Según los apuntes:",
+["Se ha superado un estado límite de servicio, que se comprueba con Cd ≥ Ed usando desplazamientos y aceleraciones como parámetros de control.",
+ "Se ha superado un estado límite último, porque la fisuración de elementos no estructurales supone un colapso parcial.",
+ "Se ha superado un estado límite de servicio, que se comprueba con Rd ≥ Sd usando esfuerzos y tensiones como parámetros de control.",
+ "No se ha superado ningún estado límite, porque estos solo se refieren a la seguridad frente al colapso."],0,
+"Flechas y vibraciones son ELS (funcionalidad, estética y durabilidad). Se comprueban con Cd ≥ Ed y se controlan desplazamientos y aceleraciones. Rd ≥ Sd y el control de esfuerzos corresponden a los ELU, y la fisuración de la tabiquería no es un colapso de la estructura.","Apuntes T1, diap. 23-24");
+L("T1","Estados límite",3,"Una viga apoyada en dos puntos, con un vuelo cargado en su extremo, gira como sólido rígido y se levanta del apoyo más alejado sin que ninguna sección alcance su resistencia. Según los apuntes, se trata de:",
+["Un estado límite último de equilibrio: la estructura no cumple el requisito de equilibrio estático.",
+ "Un estado límite último de agotamiento, porque una reacción de apoyo supera su capacidad.",
+ "Un estado límite de servicio de flechas, porque el extremo del vuelo se desplaza verticalmente.",
+ "Un estado límite último de pandeo, porque la pérdida de equilibrio es una forma de inestabilidad."],0,
+"Es el ejemplo «sin equilibrio» de la diapositiva 10: la pérdida de equilibrio estático como sólido rígido es un ELU de equilibrio. No hay agotamiento, porque ninguna sección llega a su resistencia, ni pandeo, que es la inestabilidad de elementos comprimidos. Tampoco es una simple flecha: hay colapso.","Apuntes T1, diap. 10 y 26");
+L("T1","Parámetros de diseño",1,"Según los apuntes, los parámetros de diseño estructural se deben principalmente a los materiales, a los tipos, formas y dimensiones resistentes y…",
+["al proceso constructivo, aunque este no forma parte de la asignatura.",
+ "a la normativa de aplicación, que se estudia en el capítulo 5.",
+ "al cálculo estructural, que se estudia en el capítulo 4.",
+ "al proceso constructivo, que se estudia en el capítulo 3 junto con los materiales."],0,
+"El tercer parámetro es el proceso constructivo, con la indicación «no de esta asignatura». En la estructura del curso, el capítulo 3 trata los materiales, el 4 los aspectos normativos y el 5 el cálculo estructural.","Apuntes T1, diap. 28");
+L("T1","Métodos",2,"En el diagrama de flujo del cálculo mediante estados límite de los apuntes, si la respuesta obtenida no cumple los criterios…",
+["se modifica la estructura (idealización estructural) y se vuelve a obtener la respuesta.",
+ "se modifica la acción normalizada hasta que la respuesta cumpla los criterios.",
+ "se acepta la estructura y se compensa aumentando los coeficientes parciales de seguridad.",
+ "se recalculan los esfuerzos con un método plástico y, si cumple, se da por terminado el proceso."],0,
+"El flujo es acción normalizada → estructura (idealización) → respuesta (esfuerzos, desplazamientos) → ¿cumple criterios? Si no cumple, la flecha «MODIFICA» vuelve a la estructura. La acción normalizada viene dada por la norma y no se ajusta para que la estructura cumpla.","Apuntes T1, diap. 27");
+L("T1","Estabilidad",2,"Señalar la respuesta correcta respecto a los requisitos de estabilidad.",
+["Una estructura en equilibrio es siempre estable, por lo que para cumplir el requisito basta con comprobar el equilibrio estático del conjunto.",
+ "El requisito consiste en que la estructura no se desmorone por inestabilidad total o parcial; se distinguen configuraciones estables, inestables y sin equilibrio.",
+ "Una viga isostática correctamente apoyada no puede quedarse sin equilibrio bajo ningún estado de cargas, por lo que no requiere esta comprobación.",
+ "El requisito de estabilidad se refiere solo al pandeo de las barras comprimidas, y no al comportamiento del conjunto de la estructura."],1,
+"Es la definición de la diapositiva, que dibuja una estructura estable, otra inestable (en equilibrio, pero que se desmorona con una perturbación) y otra sin equilibrio. Por eso estar en equilibrio no basta. El ejemplo de la viga sobre dos apoyos que vuelca muestra que una estructura isostática también puede quedarse sin equilibrio, y el requisito abarca el conjunto, no solo el pandeo.","Apuntes T1, diap. 10");
 
 /* ============================ TEMA 2.1 ============================ */
-L("T2","Introducción",1,"Según Torroja, el tipo estructural es:",
-["El material empleado en la estructura","El conjunto de elementos resistentes capaz de mantener sus formas y cualidades a lo largo del tiempo bajo las cargas y agentes exteriores","La geometría exterior del edificio","El método de cálculo empleado"],1,
-"Es la definición de Torroja que recogen los apuntes.","Apuntes T2.1, diap. 2");
-L("T2","Escala",2,"Si se multiplican por 2 todas las dimensiones de una estructura (semejanza geométrica), su peso propio se multiplica por ___ y la sección resistente por ___.",
-["2 / 2","4 / 8","8 / 4","8 / 2"],2,
-"El peso crece con el volumen (λ³ = 8) y la sección con el área (λ² = 4). Por eso, al crecer la escala el peso propio penaliza cada vez más.","Apuntes T2.1, diap. 3");
-L("T2","Escala",2,"Cuando el peso propio es muy importante, al aumentar la escala de una estructura:",
-["Se puede mantener la semejanza geométrica sin problemas","Se pierde la semejanza geométrica, salvo que se usen mejores materiales","La resistencia crece con el cubo de las dimensiones","El peso crece con el cuadrado"],1,
-"Es la conclusión de Galileo (1638) recogida en los apuntes.","Apuntes T2.1, diap. 3");
-L("T2","Geometría",2,"Una superficie desarrollable es aquella que:",
-["Tiene las dos curvaturas principales del mismo signo","Tiene una curvatura principal nula y la otra del mismo signo en todos los puntos","Tiene curvaturas principales de signo opuesto","Tiene alabeo en todos sus puntos"],1,
-"Las superficies desarrollables (se pueden aplanar sin cortarlas) tienen una curvatura principal nula y la otra de signo constante.","Apuntes T2.1, diap. 4");
-L("T2","Geometría",2,"El alabeo de una superficie se define como:",
-["La curvatura máxima en un punto","La diferencia de pendientes entre lados opuestos de su geometría","El espesor de la lámina","La flecha relativa al vano"],1,
-"El alabeo es la diferencia de pendientes entre lados opuestos. Un rectángulo con lados paralelos a las direcciones principales de curvatura no tiene alabeo.","Apuntes T2.1, diap. 4");
-L("T2","Geometría",3,"Señalar la respuesta incorrecta sobre direcciones principales:",
-["Las direcciones principales de curvatura dependen solo de la geometría","Las direcciones principales de tensión dependen de las cargas y condiciones de contorno","Las envolventes de las direcciones principales de tensión forman las líneas isostáticas","Las direcciones principales de curvatura y de tensión coinciden siempre"],3,
-"Los apuntes advierten expresamente de no confundirlas: unas dependen solo de la geometría y las otras también de las cargas y del contorno, así que no coinciden en general.","Apuntes T2.1, diap. 6");
-L("T2","Geometría",1,"¿Qué esfuerzos «filtra» la geometría de una viga cajón, según los apuntes?",
-["Solo tracciones","Flexiones y torsiones","Solo compresiones","Solo cortantes"],1,
-"Los apuntes ponen como ejemplos que el cable solo resiste tracciones y la viga cajón flexiones y torsiones.","Apuntes T2.1, diap. 5");
-L("T2","Proyecto",1,"Señalar las respuestas correctas (puede haber más de una). Los tres aspectos que han de considerarse en el proyecto y cálculo de una estructura son:",
-["Equilibrio","Resistencia","Estabilidad","Estética"],[0,1,2],
-"Equilibrio (inmovilidad respecto al cimiento), resistencia (cada volumen elemental soporta sus fuerzas internas) y estabilidad (evitar el pandeo o la inestabilidad global).","Apuntes T2.1, diap. 5");
-L("T2","Clasificación",1,"Una losa en la que solo aparecen esfuerzos contenidos en su plano medio (Nx, Ny, Nxy) se denomina:",
-["Placa","Laja","Lámina a flexión pura","Bóveda"],1,
-"Laja: solo esfuerzos del Grupo 1. Placa: solo esfuerzos del Grupo 2 (momentos y cortantes).","Apuntes T2.1, diap. 7");
-L("T2","Clasificación",1,"Una placa se caracteriza por presentar:",
-["Solo esfuerzos Nx, Ny, Nxy","Solo esfuerzos Mx, My, Mxy, Myx, Vx, Vy","Solo tracciones","Esfuerzos de ambos grupos y curvatura"],1,
-"La placa solo tiene esfuerzos perpendiculares al plano medio (Grupo 2).","Apuntes T2.1, diap. 7");
-L("T2","Clasificación",2,"Una membrana es un elemento bidimensional curvo que desarrolla:",
-["Solo esfuerzos del Grupo 2","Solo esfuerzos en el plano tangente (Nx, Ny, Nxy)","Flexión pura","Esfuerzos de ambos grupos"],1,
-"Membrana: caso particular de lámina con solo esfuerzos del Grupo 1.","Apuntes T2.1, diap. 8 y 33");
-L("T2","Clasificación",2,"Las láminas de doble curvatura con curvaturas de diferente signo se denominan:",
-["Sinclásticas","Anticlásticas","Desarrollables","Plegadas"],1,
-"Mismo signo: sinclásticas, como la cúpula esférica. Diferente signo: anticlásticas, como la silla de montar.","Apuntes T2.1, diap. 8");
-L("T2","Clasificación",2,"Un arco es, según la clasificación geométrica de los apuntes, un elemento:",
-["Bidimensional sin curvatura","Monodimensional de simple curvatura","Bidimensional de doble curvatura","Monodimensional sin curvatura"],1,
-"Las láminas de simple curvatura incluyen los arcos (monodimensionales) y las bóvedas (bidimensionales).","Apuntes T2.1, diap. 8");
-L("T2","Clasificación",2,"Según la dirección de transmisión de la carga, un arco funicular es un elemento de transferencia:",
-["Bidireccional con curvatura","Unidireccional de directriz no recta","Unidireccional de directriz recta","Bidireccional sin curvatura"],1,
-"Unidireccional de directriz no recta: arco y arco funicular. De directriz recta: cable, barra y viga.","Apuntes T2.1, diap. 9");
-L("T2","Clasificación",2,"¿Cuál de los siguientes elementos transfiere la carga de forma bidireccional y sin curvatura?",
-["Cúpula","Entramado (emparrillado)","Arco","Cable"],1,
-"Bidireccional sin curvatura: entramados, lajas, placas o losas y estructuras espaciales. Bidireccional con curvatura: láminas, bóvedas, cúpulas y paraboloides.","Apuntes T2.1, diap. 9");
-L("T2","Cables",1,"La principal ventaja de los cables es:",
-["Su rigidez frente a cargas móviles","El uso completo de la sección, con eficiencia y economía","Que resisten compresiones","Que no necesitan anclajes"],1,
-"Ventaja: uso completo de la sección. Inconveniente: se adaptan a las cargas cambiantes y eso los hace inestables.","Apuntes T2.1, diap. 10");
-L("T2","Cables",2,"En un puente colgante, las armaduras que cuelgan del cable deben, además de sostener la calzada:",
-["Aumentar el peso propio","Conferir rigidez a los cables frente a cargas cambiantes o móviles","Trabajar a compresión","Sustituir a las torres"],1,
-"Como el cable es inestable frente a cargas cambiantes, el tablero y sus armaduras deben rigidizarlo.","Apuntes T2.1, diap. 10");
-L("T2","Cables",2,"La flecha óptima (mínimo volumen de cable) para un cable con una única carga vertical y una distancia horizontal D es:",
-["D/3","D/2","D/4","D"],1,
-"Con una carga vertical la flecha óptima es D/2; en la parábola y la catenaria es D/3 o aproximadamente D/3.","Apuntes T2.1, diap. 11");
-L("T2","Cables",2,"Si un cable soporta muchas cargas iguales separadas horizontalmente la misma distancia, su curva funicular es:",
-["Una catenaria","Una parábola","Una circunferencia","Una elipse"],1,
-"Cargas iguales con la misma separación horizontal dan una parábola. Cargas iguales distribuidas a lo largo del cable dan una catenaria.","Apuntes T2.1, diap. 12");
-L("T2","Cables",2,"Un cable que soporta únicamente su propio peso adopta la forma de:",
-["Parábola","Catenaria","Polígono funicular de un solo vértice","Recta"],1,
-"El peso propio es una carga uniforme a lo largo del cable, que da una catenaria. Con la flecha óptima es muy parecida a la parábola.","Apuntes T2.1, diap. 12");
-L("T2","Cables",1,"La configuración de equilibrio de un cable con varias cargas verticales, con lados rectos entre cargas, se llama:",
-["Catenaria","Polígono funicular","Isostática","Línea de articulación"],1,
-"Es el polígono funicular, «la forma natural de soportar cargas por tracción».","Apuntes T2.1, diap. 11");
-L("T2","Compresión y pandeo",2,"La carga de pandeo de una barra comprimida depende de:",
-["Solo del material","Del material, la longitud, la sección transversal y las restricciones de los extremos","Solo de la longitud","De la carga aplicada"],1,
-"Es la enumeración literal de los apuntes.","Apuntes T2.1, diap. 13");
-L("T2","Arcos",2,"El arco funicular se obtiene:",
-["Invirtiendo la curva que toma un cable bajo las mismas cargas","Uniendo dos voladizos","Con una sección en I","Sumando acción de viga y de cable"],0,
-"Al invertir el polígono o la curva del cable se obtiene una forma que, con esas cargas, solo trabaja a compresión.","Apuntes T2.1, diap. 14");
-L("T2","Arcos",3,"Para que un arco de fábrica trabaje solo a compresión basta, según la idea de los apuntes, con que:",
-["El arco sea parabólico exacto","El antifunicular de las cargas esté contenido en el espesor del arco","El arco sea de acero","La flecha sea D/2"],1,
-"Los apuntes muestran el «antifunicular contenido en el espesor»: no hace falta que el eje coincida exactamente con el antifunicular. Es la idea del análisis de Poleni de la cúpula vaticana.","Apuntes T2.1, diap. 14-15");
-L("T2","Vigas",1,"El mecanismo resistente de una viga (acción de viga) implica:",
-["Solo tracción","Combinación de flexión y cortante","Solo torsión","Solo compresión"],1,
-"Acción de viga: flexión más cortante. Con los extremos inmovilizados longitudinalmente se suma la acción de cable.","Apuntes T2.1, diap. 18");
-L("T2","Vigas",2,"En un perfil I sometido a flexión simple:",
-["Las alas resisten fundamentalmente el cortante y el alma la flexión","Las alas resisten fundamentalmente la flexión y el alma el cortante","Todo el material trabaja a la tensión máxima","El alma no trabaja"],1,
-"Llevar el material a las alas aumenta la eficiencia a flexión; el alma resiste el cortante.","Apuntes T2.1, diap. 19");
-L("T2","Vigas",2,"El pandeo lateral por flexión-torsión de un perfil I se produce porque:",
-["El ala traccionada se curva en su plano vertical","El ala comprimida se curva en su plano horizontal y la sección gira","El alma se alarga","La viga está biempotrada"],1,
-"El ala comprimida pandea en su plano horizontal (el alma le impide hacerlo en vertical) y la sección rota.","Apuntes T2.1, diap. 19");
-L("T2","Vigas",3,"El pandeo local del alma de un perfil I puede deberse al cortante porque:",
-["El cortante genera tracciones longitudinales","Las tensiones tangenciales equivalen a tracciones y compresiones a 45º, y estas compresiones pueden pandear el alma","El cortante es nulo en el alma","El alma solo resiste flexión"],1,
-"Es la explicación de los apuntes: el estado de cortante equivale a tensiones principales a ±45º.","Apuntes T2.1, diap. 19");
-L("T2","Vigas",2,"La sección rectangular es poco eficiente a flexión porque:",
-["Pesa poco","La mayoría de las fibras no trabajan a la tensión máxima, solo las extremas","No resiste cortante","Tiene demasiada inercia"],1,
-"Solo las fibras extremas alcanzan la tensión máxima; el perfil I mejora esto llevando material a los extremos.","Apuntes T2.1, diap. 19");
-L("T2","Vigas",3,"Una viga biapoyada con ambos extremos inmovilizados longitudinalmente ha formado suficientes rótulas plásticas para convertirse en mecanismo. Según los apuntes:",
-["Ya no puede soportar ninguna carga adicional","Puede seguir soportando carga por acción de cable","Pasa a trabajar por acción de placa","Se comporta como un arco"],1,
-"Agotada la acción de viga, la viga con extremos inmovilizados puede seguir resistiendo por acción de cable, gracias a las tracciones de la fibra media.","Apuntes T2.1, diap. 21");
-L("T2","Entramados",2,"Dos vigas perpendiculares biapoyadas, unidas no rígidamente en su cruce, reparten una carga en ese cruce:",
-["A partes iguales siempre","Según su rigidez a flexión","Toda a la viga más larga","Según su peso"],1,
-"Como sufren igual desplazamiento en la intersección, cada una toma carga en proporción a su rigidez (48EI/L³ para carga centrada).","Apuntes T2.1, diap. 22");
-L("T2","Entramados",3,"En un emparrillado con dos vigas perpendiculares de distinta longitud, para conseguir un reparto similar de la carga en las dos direcciones:",
-["La viga más corta debe tener mayor inercia","La viga más larga debe tener mayor inercia","Ambas deben tener la misma inercia","No influye la inercia"],1,
-"La rigidez es 48EI/L³; al ser L mayor, hace falta más I para igualar rigideces.","Apuntes T2.1, diap. 22");
-L("T2","Entramados",3,"Una viga A de luz L y otra B de luz 2L, biapoyadas, perpendiculares y con la misma EI, se cruzan en su punto medio, donde actúa una carga P (unión no rígida). ¿Qué fracción de P toma la viga A?",
-["1/2","2/3","8/9","1/9"],2,
-"Las rigideces son kA = 48EI/L³ y kB = 48EI/(8L³), así que kA = 8kB. La carga se reparte en proporción a la rigidez: A toma 8/9 de P.","Apuntes T2.1, diap. 22 (cálculo)");
-L("T2","Entramados",2,"Con entramados de unión rígida se alcanzan económicamente relaciones canto/luz de:",
-["1/10 a 1/24","1/30 a 1/40","1/5 a 1/8","1/100"],1,
-"Entramados: 1/30 a 1/40. Sistemas convencionales unidireccionales: 1/10 a 1/24.","Apuntes T2.1, diap. 24");
-L("T2","Entramados",2,"En un entramado con uniones rígidas entre vigas, la flexión de una viga genera en la perpendicular:",
-["Tracción pura","Torsión, que aumenta la rigidez del conjunto","Compresión pura","Ningún efecto"],1,
-"La unión rígida introduce torsión en la viga perpendicular. Esto aumenta la rigidez, reduce los desplazamientos y permite transmitir parte de la carga.","Apuntes T2.1, diap. 24");
-L("T2","Losas",2,"En una placa cuadrada, la acción de torsión transfiere aproximadamente:",
-["El 5 % de la carga","El 50 % de la carga","El 100 % de la carga","Nada"],1,
-"Los apuntes indican que la torsión transfiere un % importante de la carga, el 50 % en placas cuadradas.","Apuntes T2.1, diap. 25");
-L("T2","Losas",2,"Señalar las respuestas correctas (puede haber más de una). Las fuentes de reserva de resistencia de una losa son:",
-["Redistribución de tensiones (líneas de articulación)","Acción de membrana","Acción de corte por alabeo de los apoyos","Pandeo lateral"],[0,1],
-"Los apuntes indican dos fuentes separadas: redistribución de tensiones y acción de membrana.","Apuntes T2.1, diap. 26");
-L("T2","Losas",3,"Sobre la acción de membrana en losas es FALSO que:",
-["Aparece porque la deformada es una superficie no desarrollable","Solo se produce si los lados de la losa están impedidos de moverse","Es mucho mayor cuando los bordes están impedidos","Es el equivalente bidimensional de la acción de cable"],1,
-"La acción de membrana se produce incluso con los lados libres, aunque es mucho mayor si están impedidos.","Apuntes T2.1, diap. 26");
-L("T2","Losas",2,"En una losa cuadrada simplemente apoyada con carga uniforme, en las esquinas:",
-["Los momentos son nulos","Se invierte la curvatura (inversión de momentos)","Se forma una rótula plástica inicial","No hay isostáticas"],1,
-"Los apuntes señalan que en las esquinas se invierte la curvatura.","Apuntes T2.1, diap. 27");
-L("T2","Losas",1,"El objetivo de las losas nervadas y de los forjados reticulares es:",
-["Aumentar el peso","Disponer la mayor cantidad de material lejos del plano medio para aumentar la eficiencia","Eliminar la flexión","Trabajar solo a tracción"],1,
-"Los nervios alejan el material del plano neutro, como el perfil I en las vigas.","Apuntes T2.1, diap. 28");
-L("T2","Láminas plegadas",2,"La acción de placa plegada es una combinación de:",
-["Acción de cable y acción de corte","Viga transversal (franja apoyada en los pliegues) y viga longitudinal (pares de placas en ángulo)","Arco y tirante","Torsión y pandeo"],1,
-"La franja transversal se apoya en los pliegues con reacciones R, que los pares de placas en ángulo llevan longitudinalmente a los apoyos extremos.","Apuntes T2.1, diap. 29-30");
-L("T2","Membranas",2,"En una membrana, la acción de cable en la dirección principal de mayor relación flecha/luz:",
-["Absorbe menos carga","Absorbe más carga que la de menor relación","No absorbe carga","Solo absorbe cortante"],1,
-"La dirección con mayor curvatura (mayor r = flecha/luz) absorbe más carga.","Apuntes T2.1, diap. 33");
-L("T2","Membranas",2,"En una membrana, la acción de corte se debe a:",
-["La curvatura","El alabeo de su geometría","El peso propio","La torsión de los bordes"],1,
-"La acción de cable se debe a la curvatura y la de corte al alabeo (diferencia de pendientes entre lados opuestos).","Apuntes T2.1, diap. 33");
-L("T2","Membranas",3,"En una membrana cilíndrica apoyada en dos generatrices rectas y sometida a su propio peso:",
-["Las generatrices absorben la mayor parte de la carga por acción cable","Toda la carga se absorbe por acción de cable según las líneas perpendiculares al eje","La acción de corte absorbe la mitad de la carga","Se comporta como una placa"],1,
-"Las generatrices rectas no tienen curvatura ni alabeo, así que no absorben carga. Toda va por acción de cable en las directrices.","Apuntes T2.1, diap. 34");
-L("T2","Láminas",2,"El paraboloide hiperbólico puede generarse como superficie:",
-["Solo de revolución","De traslación y también reglada","Solo compleja","Desarrollable"],1,
-"Los apuntes lo incluyen entre las superficies de traslación (2) y entre las regladas (3).","Apuntes T2.1, diap. 35");
-L("T2","Láminas",2,"En una superficie en forma de «silla de montar»:",
-["Las dos direcciones trabajan a compresión","Una dirección trabaja como catenaria a tracción y la otra como arco a compresión","Las dos trabajan a tracción","No hay esfuerzos de membrana"],1,
-"Es la ilustración de los apuntes para la superficie anticlástica.","Apuntes T2.1, diap. 36");
-L("T2","Láminas",2,"El toro es una superficie de revolución que se obtiene al girar una curva plana alrededor de un eje vertical:",
-["Que la corta","Que no la corta","Contenido en la curva","Horizontal"],1,
-"Las superficies de revolución se obtienen girando una curva alrededor de un eje que la corta (cono, esfera…) o que no la corta (toro).","Apuntes T2.1, diap. 35");
-L("T2","Edificación",1,"La acción diafragma de los forjados consiste en:",
-["Resistir el punzonamiento","Repartir las acciones horizontales entre los pórticos o pantallas actuando como grandes vigas horizontales","Transmitir la carga vertical a los pilares","Aislar acústicamente"],1,
-"Los forjados trabajan como grandes vigas horizontales que reparten las cargas horizontales.","Apuntes T2.1, diap. 47");
-L("T2","Edificación",2,"En un pórtico sometido a cargas horizontales, la deformación por flexión global (alargamiento y acortamiento de pilares) es:",
-["Siempre la dominante","Irrelevante salvo en edificios altos y esbeltos","Nula","Igual a la de cortante"],1,
-"Los apuntes señalan que es irrelevante salvo en edificios altos y esbeltos; en los pórticos domina la deformación por cortante.","Apuntes T2.1, diap. 47");
-L("T2","Edificación",2,"En un sistema de pantallas con forjados, los desplazamientos horizontales se deben fundamentalmente a:",
-["Deformación por cortante de las barras","Deformación por flexión de la pantalla","Alargamiento de las vigas","Torsión de los forjados"],1,
-"La pantalla trabaja como gran viga vertical en voladizo y se deforma sobre todo por flexión, salvo pantallas muy poco esbeltas.","Apuntes T2.1, diap. 48");
-L("T2","Edificación",3,"En un pórtico con triangulaciones, la estructura será más dúctil cuando las fuerzas horizontales se conducen predominantemente:",
-["Por axiles en las diagonales","Por flexión en las barras del pórtico","Por la cimentación","Por el diafragma"],1,
-"Según los apuntes, según predomine el camino de flexión o el de axiles la estructura será más o menos dúctil, respectivamente.","Apuntes T2.1, diap. 50");
-L("T2","Edificación",3,"Disponer los arriostramientos en el mismo vano en todas las plantas de un edificio muy alto puede:",
-["Reducir las reacciones en cimentación","Generar reacciones excesivas en la cimentación","Eliminar el efecto P-Δ","Anular la acción diafragma"],1,
-"Los apuntes lo advierten. Repartir las triangulaciones en distintos vanos reduce esas reacciones.","Apuntes T2.1, diap. 50-51");
-L("T2","Edificación",3,"Señalar las respuestas correctas (puede haber más de una). Con los pórticos excéntricos (shear links) se busca:",
-["Plastificar zonas muy concretas de las vigas y concentrar en ellas el daño","Reducir la rigidez lateral","Que las diagonales concurran al centro del nudo","Evitar toda plastificación"],[0,1],
-"Los apuntes indican ambos objetivos. Por definición la diagonal no concurre al nudo sino a un punto intermedio de la viga.","Apuntes T2.1, diap. 52");
-L("T2","Edificación",2,"Las vigas de acoplamiento en un sistema de pantallas acopladas se proyectan para:",
-["Ser muy rígidas y frágiles","Tener elevada capacidad de deformación en régimen plástico","No trabajar ante sismo","Transmitir solo axiles"],1,
-"Son soluciones antisísmicas que concentran la disipación de energía en las vigas de acoplamiento y en el arranque de los muros.","Apuntes T2.1, diap. 53");
-L("T2","Edificación",2,"El efecto «shear lag» en estructuras tubo consiste en:",
-["Una distribución uniforme de tensiones en las caras","Una fuerte concentración de esfuerzos en las esquinas del tubo por las deformaciones a cortante","El pandeo del núcleo","La pérdida de la acción diafragma"],1,
-"El tubo se comporta como un perfil tubular de pared delgada y las deformaciones por cortante concentran los esfuerzos en las esquinas.","Apuntes T2.1, diap. 55");
-L("T2","Edificación",2,"Según la EHE-08 citada en los apuntes, para considerar un forjado como diafragma rígido se requiere, entre otros:",
-["Espesor ≥ 50 mm, mallazo y L/h ≤ 4","Espesor ≥ 300 mm","Sin armadura","L/h ≥ 10"],0,
-"Los apuntes citan: espesor ≥ 50 mm, mallazo y (L/h) ≤ 4.","Apuntes T2.1, diap. 56");
-L("T2","Edificación",3,"El efecto P-Δ requiere una «reserva» de rigidez lateral k′ igual a:",
-["Ptot·h","Ptot/h","Vtot/Δ","h/Ptot"],1,
-"Ptot·Δ = Vi′·h, así que k′ = Vi′/Δ = Ptot/h.","Apuntes T2.1, diap. 57");
-L("T2","Edificación",2,"Las placas sobre pilares aislados:",
-["Requieren uniones articuladas","Son adecuadas para grandes luces y dan libertad para organizar los pilares en planta","Solo transmiten la carga en una dirección","No pueden ser aligeradas"],1,
-"Combinan pilares y placas macizas o aligeradas con unión rígida y transmisión bidireccional.","Apuntes T2.1, diap. 46");
-L("T2","Puentes",1,"En un puente, la superestructura está formada por:",
-["Pilas y estribos","Tablero y sistema primario","Solo las cimentaciones","Tablero y estribos"],1,
-"Tablero + sistema primario = superestructura. Las pilas y estribos con sus cimentaciones son la subestructura.","Apuntes T2.1, diap. 59");
-L("T2","Puentes",2,"En un puente arco, las cargas llegan a los apoyos:",
-["Solo como carga vertical","Por compresión del arco, transformándose en una carga horizontal y una vertical","Por tracción del arco","Solo como momento"],1,
-"El arco trabaja a compresión y en los apoyos genera componentes horizontal (empuje) y vertical.","Apuntes T2.1, diap. 61");
-L("T2","Puentes",2,"En un puente atirantado, los tirantes:",
-["No transmiten fuerzas al tablero","Introducen importantes fuerzas horizontales en el tablero que deben ser absorbidas por éste","Son siempre verticales","Cuelgan de un cable principal"],1,
-"Es una característica clave del atirantado. Las péndolas verticales colgadas de un cable principal son propias del colgante.","Apuntes T2.1, diap. 66");
-L("T2","Puentes",2,"Las disposiciones típicas de los tirantes en un puente atirantado son:",
-["En arpa o en abanico","En arco o en ménsula","Solo verticales","En celosía Warren"],0,
-"Los apuntes citan las variantes «en arpa» y «en abanico».","Apuntes T2.1, diap. 66");
-L("T2","Puentes",2,"En un puente colgante, el tablero suele resolverse con una estructura de acero reticulada que tiene entre sus funciones:",
-["Comprimir los cables","Estabilizar los cables","Sustituir las torres","Anclar los estribos"],1,
-"Así se indica en los apuntes, coherente con la inestabilidad de los cables frente a cargas cambiantes.","Apuntes T2.1, diap. 65");
-L("T2","Puentes",1,"El puente de Forth (Escocia) es un ejemplo de puente:",
-["Colgante","Atirantado","En voladizo (ménsula)","Arco de tablero inferior"],2,
-"Es el ejemplo de puente en voladizo de los apuntes.","Apuntes T2.1, diap. 67");
-L("T2","Puentes",2,"En los puentes de tablero sobre pilas, el apoyo del sistema primario sobre las pilas se realiza normalmente mediante:",
-["Empotramientos rígidos","Dispositivos que permiten el desplazamiento horizontal (elastómeros)","Soldadura","Pilotes inclinados"],1,
-"Permiten resolver los problemas de dilataciones y sismo.","Apuntes T2.1, diap. 60");
-L("T2","Térmica",2,"Un tablero isostático de 50 m con α = 10⁻⁵ ºC⁻¹ sufre un aumento de temperatura de 30 ºC. Su alargamiento libre es:",
-["1,5 mm","15 mm","150 mm","0,15 mm"],1,
-"ΔL = L·α·ΔT = 50·10⁻⁵·30 = 0,015 m = 15 mm.","Apuntes T2.1, diap. 68 (cálculo)");
-L("T2","Térmica",2,"En una estructura isostática, un cambio uniforme de temperatura produce:",
-["Tensiones pero no movimientos","Movimientos pero no tensiones","Ni movimientos ni tensiones","Tensiones y movimientos siempre"],1,
-"Isostática: movimientos sin tensiones, absorbidos por juntas de dilatación. Hiperestática: puede haber tensiones y movimientos.","Apuntes T2.1, diap. 68");
-L("T2","Térmica",3,"Si se impide totalmente el alargamiento de un tablero con α = 10⁻⁵ ºC⁻¹ y ΔT = 40 ºC, la deformación mecánica necesaria es:",
-["+0,0004 (tracción)","−0,0004 (compresión)","−0,004","0"],1,
-"ε = εT + εm = 0, así que εm = −α·ΔT = −0,0004, una deformación de compresión. Para comparar, el máximo del hormigón está en ≈ 0,002.","Apuntes T2.1, diap. 68");
-L("T2","Túneles",1,"Las partes estructurales de un túnel son:",
-["Bóveda, hastiales y contrabóveda o solera","Tablero, pilas y estribos","Zapata, fuste y punta","Cordón superior, inferior y diagonales"],0,
-"Los hastiales son los muros laterales y la contrabóveda o solera es la parte inferior.","Apuntes T2.1, diap. 69");
-L("T2","Túneles",2,"La subsidencia es:",
-["La deformación en superficie producida por sobrecargas aplicadas en dicha superficie","La deformación en superficie originada por alteraciones del equilibrio interno del terreno, no por sobrecargas en superficie","La rotura de las dovelas","El hinchamiento de arcillas"],1,
-"Es la definición de los apuntes. En túneles metropolitanos se han medido asientos de hasta 20 cm.","Apuntes T2.1, diap. 70");
-L("T2","Túneles",2,"En el sostenimiento con dovelas prefabricadas, la dovela de clave o llave es:",
-["La primera que se coloca","La que va en la solera","La última pieza en ser colocada","Una junta circunferencial"],2,
-"La dovela de clave o llave es la última que se coloca y cierra el anillo.","Apuntes T2.1, diap. 72");
-L("T2","Túneles",2,"Las juntas entre dovelas en un sostenimiento prefabricado:",
-["Aumentan la rigidez del sistema","Reducen la rigidez (presión/deformación radial) del sistema","No influyen","Impiden la inyección de mortero"],1,
-"Según los apuntes, las juntas reducen la rigidez del sostenimiento.","Apuntes T2.1, diap. 72");
-L("T2","Túneles",2,"La gunita se aplica en varias capas de espesor máximo aproximado de 10 cm para:",
-["Ahorrar cemento","Evitar problemas de adherencia","Aumentar la porosidad","Facilitar la excavación"],1,
-"Las capas se limitan a unos 10 cm para evitar problemas de adherencia; la primera es de sellado.","Apuntes T2.1, diap. 73");
-L("T2","Túneles",2,"Las cerchas metálicas de sostenimiento de túneles:",
-["Se emplean en roca de excelente calidad sin otros elementos","Se suelen emplear en macizos de calidad media y deben arriostrarse con tresillones","No requieren acuñado","Sustituyen a las dovelas en tuneladoras"],1,
-"Además, su rigidez depende mucho del material de acuñado (madera o acero).","Apuntes T2.1, diap. 75");
-L("T2","Naves",2,"En una estructura metálica porticada de nudos rígidos, la transmisión de cargas hasta la cimentación moviliza fundamentalmente:",
-["Esfuerzos axiles","Esfuerzos de flexión en las barras","Solo torsión","Solo cortante"],1,
-"Pórticos de nudos rígidos: flexión. Estructuras trianguladas articuladas: axiles.","Apuntes T2.1, diap. 77 y 79");
-L("T2","Naves",2,"La rigidez lateral perpendicular al plano de los pórticos de una nave se consigue:",
-["Con el propio pórtico","Arriostrando uno o más vanos con barras diagonales o muros","Aumentando la sección de los dinteles","Con cartelas en los nudos"],1,
-"En su plano, la rigidez la da el pórtico. Fuera de su plano hay que arriostrar.","Apuntes T2.1, diap. 77");
-L("T2","Naves",2,"El principal inconveniente de las estructuras trianguladas de nudos articulados es:",
-["El mal aprovechamiento de la sección","La inestabilidad (pandeo) de las barras comprimidas","La flexión de las barras","El peso excesivo"],1,
-"Ventaja: buen aprovechamiento de la sección. Inconveniente: pandeo de las barras comprimidas.","Apuntes T2.1, diap. 79");
-L("T2","Naves",1,"Las cartelas en los nudos de pórticos metálicos se disponen para:",
-["Reducir el peso","Mejorar la rigidez y la capacidad resistente del nudo","Permitir el giro libre","Arriostrar la cubierta"],1,
-"Aumentan la sección de los nudos para mejorar su rigidez y su capacidad resistente.","Apuntes T2.1, diap. 77");
-L("T2","Torres eléctricas",2,"Según su función, las torres eléctricas «desequilibradas» son:",
-["Alineación y ángulo","Amarre y fin de línea","Solo las de alineación","Las de hormigón"],1,
-"Los apoyos de alineación y ángulo son equilibrados; los de amarre y fin de línea, desequilibrados. El amarre se relaciona con el efecto dominó.","Apuntes T2.1, diap. 86");
-L("T2","Torres eléctricas",2,"El reglamento vigente sobre líneas eléctricas de alta tensión citado en los apuntes es:",
-["Decreto 3151/1968","Real Decreto 223/2008","EHE-08","CTE DB-SE-AE"],1,
-"El RD 223/2008, de 15 de febrero. El Decreto 3151/1968 es el reglamento antiguo de líneas aéreas.","Apuntes T2.1, diap. 84");
-L("T2","Torres eléctricas",2,"Señalar las respuestas correctas (puede haber más de una). Acciones a considerar en torres eléctricas:",
-["Sobrecargas debidas al hielo","Desequilibrios de tracciones","Efectos longitudinales por rotura de conductores","Empuje pasivo del terreno"],[0,1,2],
-"Las tres primeras están en la lista de los apuntes, junto con las cargas permanentes, el viento, el hielo con viento y la resultante de ángulo.","Apuntes T2.1, diap. 87");
-L("T2","Estructuras",1,"Según los apuntes, las presas son ejemplo de estructuras formadas por:",
-["Elementos lineales","Elementos superficiales","Macizos de tres dimensiones comparables","Cables"],2,
-"Los apuntes distinguen elementos lineales (pórticos), superficiales (estructuras abovedadas) y macizos 3D (presas).","Apuntes T2.1, diap. 42");
+L("T2","Introducción",2,"Señalar la respuesta incorrecta respecto a la introducción a las tipologías estructurales.",
+["Según Torroja, el tipo estructural es el conjunto de elementos resistentes capaz de mantener sus formas y cualidades a lo largo del tiempo, bajo la acción de las cargas y agentes exteriores.",
+ "Fijados el material y el proceso constructivo, la escala fija la relación entre las acciones actuantes, las resistencias y las rigideces necesarias.",
+ "Una misma geometría y una misma carga con diferentes rigideces y resistencias producen diferente distribución de esfuerzos y desplazamientos.",
+ "Fijadas la geometría y las cargas, existe una única solución estructural óptima, independiente del material y del proceso constructivo."],3,
+"Los apuntes subrayan que «no hay solución única» y que en el tipo estructural influyen el material, los procesos constructivos y la geometría. Las otras tres afirmaciones son literales de la diapositiva.","Apuntes T2.1, diap. 2");
+L("T2","Escala",3,"Si se multiplican por 3 todas las dimensiones de una estructura manteniendo la semejanza geométrica, la tensión que produce el peso propio en su sección resistente (peso/área) se multiplica por:",
+["3","9","27","1, porque peso y sección crecen igual"],0,
+"El peso crece con el volumen (λ³ = 27) y la sección resistente con el área (λ² = 9), así que la tensión debida al peso propio crece con λ³/λ² = λ = 3. Por eso, cuando el peso propio es importante, no se puede aumentar la forma proporcionalmente. 9 y 27 son los factores de la sección y del peso por separado.","Apuntes T2.1, diap. 3");
+L("T2","Escala",2,"Señalar la respuesta correcta. Según los apuntes (Galileo, 1638), cuando el peso propio de una estructura es muy importante…",
+["no se puede incrementar la forma proporcionalmente: se pierde la semejanza geométrica, a menos que se usen mejores materiales.",
+ "se puede incrementar la forma proporcionalmente, porque la resistencia y el peso crecen ambos con el cubo de las dimensiones.",
+ "no se puede incrementar la forma proporcionalmente, porque la resistencia crece con el cubo y el peso con el cuadrado de las dimensiones.",
+ "se puede incrementar la forma proporcionalmente siempre que se aumente la rigidez, que crece con el cubo de las dimensiones."],0,
+"El peso crece con λ³ y la resistencia y la rigidez con λ² (área de la sección). Al crecer la escala, el peso aumenta más deprisa que la capacidad para soportarlo, así que hay que engrosar las proporciones (se pierde la semejanza) o usar mejores materiales. La tercera opción invierte los exponentes.","Apuntes T2.1, diap. 3");
+L("T2","Geometría",3,"Según los apuntes, una superficie desarrollable (que se puede aplanar sin cortarla) es aquella que tiene…",
+["una curvatura principal nula y la otra del mismo signo en todos los puntos.",
+ "las dos curvaturas principales del mismo signo en todos los puntos.",
+ "las dos curvaturas principales de distinto signo, como la silla de montar.",
+ "una curvatura principal máxima y la otra mínima, con independencia de su signo."],0,
+"Es la definición de los apuntes (por ejemplo, el cilindro). Las curvaturas del mismo signo describen superficies sinclásticas y las de distinto signo, anticlásticas: ninguna de las dos es desarrollable. Que haya una curvatura máxima y otra mínima ocurre en cualquier superficie: es la definición de direcciones principales de curvatura.","Apuntes T2.1, diap. 4");
+L("T2","Geometría",3,"Señalar la respuesta correcta respecto al alabeo de una superficie.",
+["Es la diferencia de pendientes entre lados opuestos de su geometría, y un elemento rectangular con lados paralelos a las direcciones principales de curvatura no tiene alabeo.",
+ "Es la diferencia de pendientes entre puntos de un mismo lado de su geometría, y un elemento rectangular con lados paralelos a las direcciones principales de curvatura no tiene alabeo.",
+ "Es la diferencia de pendientes entre lados opuestos de su geometría, y un elemento rectangular con lados paralelos a las direcciones principales de curvatura tiene alabeo máximo.",
+ "Es la diferencia de pendientes entre puntos de un mismo lado de su geometría, y solo aparece en superficies desarrollables."],0,
+"El alabeo es la diferencia de pendientes entre lados opuestos, y un rectángulo orientado según las direcciones principales de curvatura no tiene alabeo. La «diferencia de pendientes entre puntos de un mismo lado» es como los apuntes describen la curvatura (diap. 33). La tercera opción invierte la conclusión.","Apuntes T2.1, diap. 4");
+L("T2","Geometría",3,"Marcar la frase que sea verdadera.",
+["Las direcciones principales de curvatura y las de tensiones coinciden en cualquier superficie, porque ambas dependen solo de la geometría.",
+ "Las direcciones principales de tensiones dependen solo de la geometría, mientras que las de curvatura dependen también de las cargas y de las condiciones de contorno.",
+ "En cada punto hay tres orientaciones perpendiculares entre sí en las que la tensión es normal al plano, y sus envolventes forman la red de líneas isostáticas.",
+ "Ninguna de las anteriores."],2,
+"La tercera frase resume la diapositiva: direcciones y tensiones principales, cuyas envolventes son las isostáticas. Los apuntes advierten de no confundir las direcciones principales de curvatura, que dependen solo de la geometría, con las de tensiones, que dependen también de las cargas y del contorno. La segunda frase invierte justo eso, y la primera dice que coinciden, que tampoco es cierto en general.","Apuntes T2.1, diap. 6");
+L("T2","Geometría",1,"Según los apuntes, la geometría a veces es fundamental para «filtrar» esfuerzos. Los ejemplos que se citan son:",
+["El cable, que solo soporta tracciones, y la viga cajón, que soporta flexiones y torsiones.",
+ "El arco, que solo soporta compresiones, y la viga cajón, que soporta flexiones y cortantes.",
+ "El cable, que solo soporta tracciones, y el perfil I, que soporta flexiones y torsiones.",
+ "El cable, que solo soporta tracciones, y la viga cajón, que solo soporta torsiones."],0,
+"La diapositiva cita exactamente esos dos ejemplos. El perfil I abierto es poco eficiente a torsión, por eso el ejemplo es la viga cajón, y esta resiste flexiones y torsiones, no solo torsiones.","Apuntes T2.1, diap. 5");
+L("T2","Proyecto",2,"Señalar las respuestas correctas (puede haber más de una). Según los apuntes, al abordar el proyecto y cálculo de los elementos estructurales y de la estructura en su conjunto:",
+["El equilibrio exige asegurar la inmovilidad de la estructura en conjunto y de cada una de sus partes por separado respecto al cimiento que la sustenta.",
+ "La resistencia exige que el material, en todos sus volúmenes elementales, soporte las fuerzas internas debidas al estado de carga general y a las acciones locales de cada fuerza exterior.",
+ "La estabilidad exige limitar las deformaciones para garantizar el confort de los usuarios.",
+ "El equilibrio exige que la estructura sea isostática, para que las reacciones se obtengan por estática."],[0,1],
+"Las dos primeras definiciones son citas de la diapositiva. La estabilidad, según los apuntes, consiste en evitar el pandeo o la inestabilidad global; limitar deformaciones por confort es aptitud al servicio. El equilibrio no exige que la estructura sea isostática.","Apuntes T2.1, diap. 5");
+L("T2","Clasificación",1,"Una losa plana está cargada exclusivamente en su plano medio, de modo que solo aparecen los esfuerzos Nx, Ny y Nxy. Según los apuntes, es:",
+["una laja","una placa","una membrana","una lámina a flexión pura"],0,
+"La laja es la losa con solo esfuerzos del Grupo 1 (contenidos en el plano medio). La placa tiene solo esfuerzos del Grupo 2. La membrana tiene también solo esfuerzos del Grupo 1, pero es un elemento curvo; aquí la losa es plana.","Apuntes T2.1, diap. 7");
+L("T2","Clasificación",3,"Señalar la respuesta correcta respecto a los esfuerzos en losas.",
+["El Grupo 1 está formado por Mx, My, Mxy, Myx, Vx y Vy, y la placa solo tiene esfuerzos del Grupo 1.",
+ "El Grupo 2 está formado por Nx, Ny y Nxy, y la laja solo tiene esfuerzos del Grupo 2.",
+ "El Grupo 2 está formado por Mx, My, Mxy, Myx, Vx y Vy, y la placa solo tiene esfuerzos del Grupo 2.",
+ "El Grupo 1 está formado por Nx, Ny y Nxy, y la placa solo tiene esfuerzos del Grupo 1."],2,
+"Grupo 1: esfuerzos contenidos en el plano medio (Nx, Ny, Nxy). Grupo 2: perpendiculares al plano medio (momentos y cortantes). La laja solo tiene Grupo 1 y la placa solo Grupo 2. Las demás opciones intercambian los grupos o los elementos.","Apuntes T2.1, diap. 7");
+L("T2","Clasificación",3,"Marcar la frase que sea verdadera.",
+["Una membrana es un caso particular de lámina con solo esfuerzos del Grupo 2 (Mx, My, Mxy, Myx, Vx, Vy).",
+ "Una lámina a flexión pura es un caso particular de lámina con solo esfuerzos del Grupo 1 (Nx, Ny, Nxy).",
+ "Una lámina general se caracteriza porque solo desarrolla esfuerzos del Grupo 1 en el plano tangente a cada punto.",
+ "Ninguna de las anteriores."],3,
+"La membrana solo tiene esfuerzos del Grupo 1 (Nx, Ny, Nxy) y la lámina a flexión pura solo del Grupo 2: las dos primeras frases los intercambian. La lámina general desarrolla esfuerzos de ambos grupos. Por tanto, ninguna frase es verdadera.","Apuntes T2.1, diap. 8 y 33");
+L("T2","Clasificación",2,"Las láminas de doble curvatura se clasifican según el signo de sus curvaturas. Señalar la respuesta correcta.",
+["Sinclásticas: curvaturas del mismo signo (p. ej. cúpula esférica). Anticlásticas: de distinto signo (p. ej. silla de montar).",
+ "Sinclásticas: curvaturas de distinto signo (p. ej. silla de montar). Anticlásticas: del mismo signo (p. ej. cúpula esférica).",
+ "Sinclásticas: una curvatura nula (p. ej. bóveda cilíndrica). Anticlásticas: de distinto signo (p. ej. silla de montar).",
+ "Sinclásticas: curvaturas del mismo signo (p. ej. cúpula esférica). Anticlásticas: una curvatura nula (p. ej. bóveda cilíndrica)."],0,
+"Mismo signo: sinclásticas. Distinto signo: anticlásticas. Una curvatura nula corresponde a las láminas de simple curvatura (bóvedas y arcos), que no son de doble curvatura.","Apuntes T2.1, diap. 8");
+L("T2","Clasificación",2,"Según la clasificación geométrica de los apuntes, los arcos y las bóvedas son:",
+["láminas de simple curvatura: los arcos monodimensionales y las bóvedas bidimensionales.",
+ "láminas de doble curvatura sinclástica: los arcos monodimensionales y las bóvedas bidimensionales.",
+ "láminas de simple curvatura: los arcos bidimensionales y las bóvedas monodimensionales.",
+ "elementos sin curvatura de directriz no recta: los arcos monodimensionales y las bóvedas bidimensionales."],0,
+"Las láminas de simple curvatura (curvatura nula en una dirección principal) comprenden los arcos (monodimensionales) y las bóvedas (bidimensionales). «Directriz no recta» pertenece a otra clasificación, la de la dirección de transmisión de la carga.","Apuntes T2.1, diap. 8");
+L("T2","Clasificación",2,"Según la clasificación por la dirección de transmisión de la carga, ¿qué agrupación es correcta?",
+["Unidireccional de directriz recta: cable, barra a tracción o compresión y viga.",
+ "Unidireccional de directriz recta: cable, viga y arco funicular.",
+ "Bidireccional sin curvatura: entramados, lajas, placas y bóvedas.",
+ "Bidireccional con curvatura: láminas, cúpulas, paraboloides y estructuras espaciales."],0,
+"Unidireccional de directriz recta: cable, barra y viga. El arco funicular es de directriz no recta. Las bóvedas son bidireccionales con curvatura, y las estructuras espaciales, bidireccionales sin curvatura.","Apuntes T2.1, diap. 9");
+L("T2","Clasificación",2,"Señalar las respuestas correctas (puede haber más de una). Según los apuntes, transfieren la carga de forma bidireccional y sin curvatura:",
+["Los entramados (emparrillados)","Las estructuras espaciales","Las bóvedas","Los arcos funiculares"],[0,1],
+"Bidireccional sin curvatura: entramados, lajas, placas o losas y estructuras espaciales. Las bóvedas son bidireccionales con curvatura y los arcos funiculares, unidireccionales de directriz no recta.","Apuntes T2.1, diap. 9");
+L("T2","Cables",2,"Señalar la respuesta correcta respecto a los cables.",
+["Su ventaja es el uso completo de la sección, y su inconveniente que su adaptabilidad a las cargas cambiantes los hace inestables.",
+ "Su ventaja es la rigidez frente a cargas cambiantes, y su inconveniente que solo aprovechan parte de la sección.",
+ "Su ventaja es el uso completo de la sección, y su inconveniente que pueden pandear bajo cargas cambiantes.",
+ "Su ventaja es que resisten tanto tracciones como compresiones, y su inconveniente la necesidad de anclajes."],0,
+"El cable trabaja a tracción con toda la sección (eficiencia y economía), pero cambia de forma con cada estado de carga, lo que lo hace inestable. No pandea, porque no trabaja a compresión, y no resiste compresiones.","Apuntes T2.1, diap. 10");
+L("T2","Cables",2,"En los puentes colgantes, según los apuntes, las armaduras que cuelgan del cable, además de sostener la calzada, deben…",
+["conferir rigidez a los cables frente a movimientos debidos a cargas cambiantes o móviles.",
+ "introducir fuerzas horizontales en el tablero que equilibren la tracción de los cables.",
+ "comprimir los cables para evitar que pierdan tensión bajo cargas móviles.",
+ "transmitir directamente las cargas del tráfico a las torres, sin pasar por el cable."],0,
+"Como el cable se adapta a las cargas cambiantes y es inestable, el tablero y sus armaduras deben rigidizarlo. Las fuerzas horizontales importantes en el tablero son propias del puente atirantado, y un cable no puede comprimirse.","Apuntes T2.1, diap. 10");
+L("T2","Cables",3,"Un cable de luz horizontal D soporta una única carga vertical P en su centro. Con la flecha óptima de los apuntes (mínimo volumen de cable), la tracción en cada tramo vale aproximadamente:",
+["0,707·P","0,5·P","P","1,41·P"],0,
+"La flecha óptima con una carga es D/2, así que cada tramo forma 45° con la horizontal. Cada tramo lleva una componente vertical P/2, de modo que T = (P/2)/sen 45° ≈ 0,707·P, y la componente horizontal es H = P/2 (es la figura de la diapositiva). 0,5·P es solo la componente H o la vertical, no la tracción total.","Apuntes T2.1, diap. 11");
+L("T2","Cables",2,"Un cable soporta un número elevado de cargas verticales iguales, separadas horizontalmente la misma distancia. Según los apuntes, su curva funicular y su flecha óptima son:",
+["una parábola, con flecha óptima D/3.",
+ "una catenaria, con flecha óptima aproximadamente D/3.",
+ "una parábola, con flecha óptima D/2.",
+ "una catenaria, con flecha óptima D/2."],0,
+"Cargas iguales con la misma separación horizontal dan una parábola, con flecha óptima D/3. La catenaria aparece cuando las cargas se reparten a distancias iguales a lo largo del cable (flecha óptima ≈ D/3). D/2 es la flecha óptima con una única carga.","Apuntes T2.1, diap. 12");
+L("T2","Cables",3,"Señalar la respuesta incorrecta respecto a la curva funicular de un cable con un número elevado de cargas.",
+["Si las cargas son iguales y se distribuyen a distancias iguales a lo largo del cable, la curva funicular es una catenaria.",
+ "Si las cargas son iguales y están separadas horizontalmente la misma distancia, la curva funicular es una parábola.",
+ "Para la flecha óptima, la parábola y la catenaria son muy parecidas.",
+ "Para la flecha óptima, la parábola y la catenaria difieren mucho, y la flecha óptima de la catenaria es D/2."],3,
+"Los apuntes indican que, para la flecha óptima (D/3 en la parábola y ≈ D/3 en la catenaria), las dos curvas son muy parecidas. D/2 es la flecha óptima con una sola carga. Un cable bajo su propio peso es el caso típico de catenaria, porque es una carga uniforme a lo largo del cable.","Apuntes T2.1, diap. 12");
+L("T2","Cables",1,"Un cable sometido a varias cargas verticales adopta una configuración de equilibrio con lados rectos entre cargas y cambios de dirección en sus puntos de aplicación, que los apuntes denominan:",
+["polígono funicular, la forma natural de soportar cargas por tracción.",
+ "curva funicular, que con cargas iguales en horizontal es una parábola.",
+ "antifunicular, la forma natural de soportar cargas por compresión.",
+ "catenaria, que con la flecha óptima es muy parecida a la parábola."],0,
+"Con pocas cargas, el cable forma tramos rectos: es el polígono funicular. La curva funicular aparece con un número elevado de cargas, y el antifunicular es la forma invertida, que trabaja a compresión (arcos).","Apuntes T2.1, diap. 11");
+L("T2","Compresión y pandeo",2,"Señalar la respuesta correcta respecto a las barras comprimidas.",
+["Al alcanzar la carga de pandeo la barra, además de acortarse, se curva; esa carga depende del material, la longitud, la sección transversal y las restricciones de los extremos.",
+ "Al alcanzar la carga de pandeo la barra se acorta sin curvarse; esa carga depende solo de la resistencia del material y del área de la sección transversal.",
+ "Al alcanzar la carga de pandeo la barra se curva; esa carga depende del material, la longitud y la sección transversal, pero no de las restricciones de los extremos.",
+ "El pandeo afecta sobre todo a las barras esbeltas traccionadas; en las comprimidas la carga máxima depende solo del material y de la sección transversal."],0,
+"Es el contenido de la diapositiva: al llegar a la carga de pandeo la barra esbelta se curva, generándose flexiones inducidas, y la carga depende de cuatro factores, incluidas las restricciones de los extremos. El pandeo es un fenómeno de compresión, no de tracción.","Apuntes T2.1, diap. 13");
+L("T2","Arcos",2,"Según los apuntes, el arco funicular se obtiene…",
+["invirtiendo el polígono o la curva parabólica que toma un cable bajo cargas iguales distribuidas uniformemente en horizontal, y con ese tipo de carga solo desarrolla compresiones.",
+ "invirtiendo la catenaria que toma un cable bajo su peso propio, y bajo cualquier tipo de carga que actúe sobre él solo desarrolla compresiones.",
+ "invirtiendo el polígono que toma un cable bajo cargas iguales en horizontal, y con ese tipo de carga desarrolla compresiones y flexiones.",
+ "sumando la acción de viga y la acción de cable en una pieza de directriz curva, de modo que trabaja a flexión y a tracción a la vez."],0,
+"El arco funicular invierte la parábola del cable y solo trabaja a compresión con esa carga concreta. Con otra carga distinta deja de ser funicular y aparecen flexiones, por eso la frase «bajo cualquier tipo de carga» es falsa.","Apuntes T2.1, diap. 14");
+L("T2","Arcos",3,"Señalar la respuesta correcta respecto a los arcos de fábrica y el antifunicular de las cargas.",
+["Para que trabajen solo a compresión es imprescindible que su directriz coincida exactamente con el antifunicular de las cargas.",
+ "Basta con que el antifunicular de las cargas quede contenido en el espesor del arco, idea que ilustra el estudio de Poleni (1748) sobre la seguridad de la cúpula vaticana.",
+ "Basta con que el antifunicular de las cargas quede contenido en el espesor del arco, idea que ilustra el estudio de Gaudí (1748) sobre la seguridad de la cúpula vaticana.",
+ "Un arco de fábrica solo puede trabajar a compresión si es parabólico, porque la parábola es el antifunicular de cualquier carga."],1,
+"Los apuntes muestran el «antifunicular contenido en el espesor»: no hace falta que el eje coincida con el antifunicular. El ejemplo de la cúpula vaticana es de Poleni (1748); las maquetas antifuniculares son de Gaudí, que es otro ejemplo. La parábola solo es el antifunicular de cargas uniformes en horizontal.","Apuntes T2.1, diap. 14-15");
+L("T2","Vigas",2,"Señalar la respuesta correcta respecto al mecanismo resistente de las vigas.",
+["Implica una combinación de flexión y cortante (acción de viga) y, si los extremos tienen impedido el desplazamiento longitudinal, se desarrollan también tracciones (acción de cable).",
+ "Implica una combinación de flexión y cortante (acción de viga) y, si los extremos tienen impedido el desplazamiento longitudinal, se desarrollan también compresiones (acción de arco).",
+ "Implica una combinación de flexión y torsión (acción de viga) y, si los extremos tienen impedido el desplazamiento longitudinal, se desarrollan también tracciones (acción de cable).",
+ "Implica solo flexión; el cortante solo es relevante cuando los extremos tienen impedido el desplazamiento longitudinal."],0,
+"Acción de viga = flexión + cortante. Si los extremos no pueden separarse, la flexión obliga a alargar la fibra media y aparecen tracciones (acción de cable), no compresiones.","Apuntes T2.1, diap. 18");
+L("T2","Vigas",1,"En un perfil I sometido a flexión simple, según los apuntes…",
+["las alas resisten fundamentalmente la flexión y el alma el cortante.",
+ "las alas resisten fundamentalmente el cortante y el alma la flexión.",
+ "las alas y el alma resisten por igual la flexión, y el cortante se reparte en proporción a su área.",
+ "el alma resiste la flexión y la torsión, y las alas el cortante."],0,
+"El perfil I lleva el material a los extremos (alas), donde las tensiones de flexión son máximas, y el alma resiste el cortante. La segunda opción es la inversión típica.","Apuntes T2.1, diap. 19");
+L("T2","Vigas",3,"Señalar la respuesta correcta respecto al pandeo lateral por flexión-torsión de un perfil I en voladizo.",
+["El ala traccionada se curva en su propio plano horizontal y la sección gira.",
+ "El ala comprimida se curva en su propio plano vertical, porque el alma le impide hacerlo en el horizontal, y la sección gira.",
+ "El ala comprimida se curva en su propio plano horizontal, porque el alma le impide hacerlo en el vertical, y la sección experimenta una rotación.",
+ "Se debe a que el cortante equivale a compresiones a 45º que hacen pandear el alma."],2,
+"El ala que pandea es la comprimida. El alma la sujeta en el plano vertical, así que se curva en su plano horizontal y arrastra la sección a girar. La segunda opción invierte los planos. Las compresiones a 45º debidas al cortante causan el pandeo local del alma, que es otro fenómeno.","Apuntes T2.1, diap. 19");
+L("T2","Vigas",2,"Las tensiones tangenciales que genera el cortante en el alma de un perfil I…",
+["equivalen a tracciones y compresiones en direcciones ortogonales a 45º con la dirección del cortante, y estas compresiones pueden provocar el pandeo local del alma.",
+ "equivalen a tracciones y compresiones en la dirección del eje de la viga, y estas compresiones pueden provocar el pandeo lateral por flexión-torsión.",
+ "equivalen a tracciones puras a 45º con la dirección del cortante, por lo que el alma no puede pandear por cortante.",
+ "equivalen a compresiones perpendiculares a la dirección del cortante, y estas pueden provocar el pandeo local del ala comprimida."],0,
+"Un estado de cortante puro equivale a tensiones principales de tracción y compresión a ±45º. Las compresiones diagonales pueden abollar un alma delgada (pandeo local del alma). El pandeo lateral se debe a la compresión de flexión en el ala, no al cortante.","Apuntes T2.1, diap. 19");
+L("T2","Vigas",1,"Señalar la respuesta incorrecta respecto a la eficiencia a flexión de las vigas.",
+["La sección rectangular es poco eficiente a flexión porque la mayoría de sus fibras no trabaja a la tensión máxima, solo las extremas.",
+ "Se puede aumentar la eficiencia disponiendo la mayor parte del material en los extremos, como en el perfil I.",
+ "Si el alma o el ala comprimida del perfil I son demasiado delgadas, pueden pandear.",
+ "La sección rectangular es la más eficiente a flexión, porque todas sus fibras alcanzan simultáneamente la tensión máxima."],3,
+"En flexión la tensión varía linealmente desde el eje neutro, así que en la sección rectangular solo las fibras extremas llegan a la tensión máxima. Por eso es poco eficiente y conviene llevar el material a los extremos (perfil I). Las otras tres afirmaciones son de los apuntes.","Apuntes T2.1, diap. 19");
+L("T2","Vigas",3,"Una viga biapoyada con ambos extremos inmovilizados longitudinalmente se carga hasta que se forman suficientes rótulas plásticas para convertirla en un mecanismo. Según los apuntes:",
+["Ya no puede soportar cargas mayores ni por acción de viga ni por acción de cable.",
+ "Es incapaz de soportar mayores cargas por acción de viga, pero puede seguir haciéndolo por acción de cable, gracias a las tracciones que genera el alargamiento de la fibra media.",
+ "Puede seguir soportando mayores cargas por acción de viga, porque las rótulas plásticas redistribuyen los momentos.",
+ "Es incapaz de soportar mayores cargas por acción de viga, pero puede seguir haciéndolo por acción de arco, gracias a las compresiones de la fibra media."],1,
+"Con los extremos inmovilizados, la flexión requiere un alargamiento e de la fibra media (L′ = L + e), que genera tracciones. Formado el mecanismo, la acción de viga está agotada, pero la acción de cable sigue dando reserva de resistencia. Con un extremo libre solo habría acción de viga.","Apuntes T2.1, diap. 21");
+L("T2","Entramados",2,"Dos vigas perpendiculares apoyadas en sus extremos y unidas entre sí no rígidamente, de forma que en su intersección sufran igual deformación, transmiten a los apoyos una carga aplicada en el cruce…",
+["repartiéndosela según su rigidez a flexión.",
+ "repartiéndosela según su rigidez a torsión.",
+ "a partes iguales, porque el desplazamiento en el cruce es el mismo para las dos.",
+ "repartiéndosela en proporción a su longitud, de modo que la viga más larga toma más carga."],0,
+"Si el desplazamiento en el cruce es igual, cada viga toma una carga proporcional a su rigidez a flexión (48EI/L³ para carga centrada). Solo se reparte a partes iguales si las rigideces son iguales. La torsión aparece con uniones rígidas, y la viga más larga es más flexible, así que toma menos carga.","Apuntes T2.1, diap. 22");
+L("T2","Entramados",2,"En un entramado con vigas de distinta longitud y unión no rígida, para obtener una transmisión eficiente (similar) de la carga en las dos direcciones, según los apuntes:",
+["la viga más larga debe tener mayor inercia.",
+ "la viga más corta debe tener mayor inercia.",
+ "las dos vigas deben tener la misma inercia, porque sufren igual deformación en el cruce.",
+ "la viga más larga debe tener menor inercia, para que no absorba más carga."],0,
+"La rigidez es 48EI/L³, así que la viga larga es mucho más flexible. Para igualar rigideces hay que darle más inercia. Con la misma inercia, la viga corta se lleva casi toda la carga.","Apuntes T2.1, diap. 22");
+L("T2","Entramados",3,"Una viga A de luz L y otra B de luz 2L, biapoyadas, perpendiculares y con la misma EI, se cruzan en su punto medio, donde actúa una carga P (unión no rígida). ¿Qué fracción de P toma la viga larga B?",
+["1/9","8/9","1/2","1/3"],0,
+"kA = 48EI/L³ y kB = 48EI/(2L)³ = kA/8. Con igual desplazamiento, la carga se reparte en proporción a la rigidez: A toma 8/9 y B, 1/9 (la figura de los apuntes da reacciones de 8/18·P en la viga corta y 1/18·P en la larga). 1/3 resultaría de repartir en proporción inversa a la luz, y 8/9 es la fracción de la viga corta.","Apuntes T2.1, diap. 22 (cálculo)");
+L("T2","Entramados",2,"Según los apuntes, con entramados se puede llegar de forma económica a relaciones espesor/luz de…",
+["1/30 o 1/40, frente a 1/10 a 1/24 en sistemas convencionales con transmisión unidireccional.",
+ "1/10 a 1/24, frente a 1/30 o 1/40 en sistemas convencionales con transmisión unidireccional.",
+ "1/30 o 1/40, frente a 1/50 a 1/60 en sistemas convencionales con transmisión unidireccional.",
+ "1/24 a 1/30, frente a 1/10 en sistemas convencionales con transmisión unidireccional."],0,
+"El entramado, al trabajar en dos direcciones y con torsión, permite cantos menores (1/30 a 1/40) que los sistemas unidireccionales (1/10 a 1/24). La segunda opción invierte las cifras.","Apuntes T2.1, diap. 24");
+L("T2","Entramados",3,"Señalar la respuesta correcta respecto a los entramados con unión rígida entre vigas.",
+["La flexión de una viga genera torsiones (alabeo) en las secciones de la viga perpendicular, y esta acción aumenta la rigidez del conjunto y reduce los desplazamientos.",
+ "La flexión de una viga genera torsiones en la viga perpendicular, y esta acción reduce la rigidez del conjunto, aunque permite transmitir parte de la carga.",
+ "Con unión rígida la carga se reparte solo según la rigidez a flexión, igual que con unión no rígida.",
+ "La loseta superior que completa el entramado elimina la torsión, porque da monolitismo al conjunto."],0,
+"La unión rígida introduce una nueva acción, la torsión de la viga perpendicular, que aumenta la rigidez y permite transmitir parte de la carga. La loseta superior da monolitismo y aumenta las ventajas de la acción bidireccional; no elimina la torsión.","Apuntes T2.1, diap. 24");
+L("T2","Losas",1,"Según los apuntes, la acción de placa equivale a una acción de viga en dos direcciones más una acción de torsión distribuida uniformemente. En placas cuadradas, la acción de torsión transfiere…",
+["el 50 % de la carga aplicada.",
+ "el 25 % de la carga aplicada.",
+ "el 10 % de la carga aplicada, por lo que suele despreciarse.",
+ "el 100 % de la carga aplicada, porque la flexión se anula por simetría."],0,
+"Los apuntes indican que la torsión transfiere un porcentaje importante de la carga: el 50 % en placas cuadradas. No es despreciable, y la flexión en dos direcciones sigue existiendo.","Apuntes T2.1, diap. 25");
+L("T2","Losas",3,"Señalar las respuestas correctas (puede haber más de una). Según los apuntes, la reserva de resistencia de una losa procede de:",
+["La redistribución de tensiones: la fluencia plástica forma líneas de articulación hasta alcanzar la carga máxima (formación de mecanismo).",
+ "La acción de membrana: al deformarse en superficies no desarrollables, el plano medio se estira y aparecen tracciones.",
+ "La acción de membrana: al deformarse en superficies desarrollables, el plano medio se acorta y aparecen compresiones.",
+ "La acción de corte por alabeo, que solo se produce si los bordes de la losa están impedidos."],[0,1],
+"Las dos fuentes separadas son la redistribución de tensiones (líneas de articulación) y la acción de membrana. Esta aparece porque la deformada es no desarrollable, lo que estira el plano medio y genera tracciones, no compresiones. La acción de corte por alabeo es un mecanismo de las membranas y láminas, no la reserva de las losas.","Apuntes T2.1, diap. 26");
+L("T2","Losas",3,"Señalar la respuesta incorrecta respecto a la acción de membrana en losas.",
+["Se debe a que, en casi todos los casos, la losa deformada adopta superficies no desarrollables.",
+ "Se produce incluso cuando los lados de la losa pueden moverse libremente.",
+ "Es mucho mayor cuando los lados de la losa están impedidos.",
+ "Es el equivalente bidimensional de la acción de viga."],3,
+"La acción de membrana es el equivalente bidimensional de la acción de cable (tracciones en el plano medio), no de la acción de viga. Las otras tres afirmaciones son literales: existe aunque los bordes sean libres, pero es mucho mayor si están impedidos.","Apuntes T2.1, diap. 26");
+L("T2","Losas",2,"En una losa cuadrada simplemente apoyada en sus lados con carga uniforme, según los apuntes:",
+["la red de isostáticas da el recorrido de las tensiones normales debidas a la flexión, y en las esquinas se invierte la curvatura (inversión de momentos).",
+ "la red de isostáticas da el recorrido de las tensiones tangenciales debidas al cortante, y en las esquinas los momentos son nulos.",
+ "la red de isostáticas da el recorrido de las tensiones normales debidas a la flexión, y en las esquinas se forman las primeras rótulas plásticas.",
+ "las isostáticas son paralelas a los lados en toda la losa, y en las esquinas se invierte la curvatura."],0,
+"Las isostáticas (direcciones principales) dan el recorrido de las tensiones normales de flexión. La diapositiva señala que en las esquinas se invierte la curvatura. Las isostáticas no son paralelas a los lados: giran hacia las diagonales.","Apuntes T2.1, diap. 27");
+L("T2","Losas",2,"Según los apuntes, la eficiencia de una losa se puede aumentar mediante nervaturas…",
+["disponiendo la mayor cantidad de material a cierta distancia del plano medio (neutro), en una, dos (forjados reticulares) o más direcciones.",
+ "disponiendo la mayor cantidad de material en el plano medio (neutro), en una, dos (forjados reticulares) o más direcciones, p. ej. siguiendo las isostáticas.",
+ "en una sola dirección, porque las nervaturas en dos direcciones (forjados reticulares) anulan la acción de placa de la losa.",
+ "siguiendo las líneas de articulación de la losa, para retrasar la formación del mecanismo de rotura."],0,
+"Igual que en el perfil I, conviene alejar el material del plano neutro. Los nervios pueden ir en una, dos (forjados reticulares) o más direcciones, por ejemplo siguiendo las isostáticas, como en la sala de Nervi del ejemplo de los apuntes.","Apuntes T2.1, diap. 28");
+L("T2","Láminas plegadas",3,"Señalar la respuesta correcta respecto a la acción de placa plegada.",
+["Una franja ideal se comporta como viga transversal continua apoyada en los pliegues, y las reacciones R se llevan a los pórticos o muros extremos a través de pares de placas en ángulo que trabajan como vigas longitudinales.",
+ "Una franja ideal se comporta como viga longitudinal apoyada en los pórticos extremos, y sus reacciones se llevan a los pliegues a través de pares de placas que trabajan como vigas transversales.",
+ "Cada placa trabaja de forma independiente como losa apoyada en los pórticos extremos, sin colaboración entre placas en ángulo.",
+ "Dos placas en ángulo se asimilan a un arco equivalente que lleva la carga por compresión hasta los pliegues."],0,
+"La acción de placa plegada combina una viga transversal (la franja continua apoyada en los pliegues, con reacciones R) y una viga longitudinal (cada par de placas en ángulo, asimilable a una viga rectangular equivalente, que lleva R a los extremos). La segunda opción invierte el orden del recorrido de la carga.","Apuntes T2.1, diap. 29-30");
+L("T2","Membranas",2,"En una membrana, según los apuntes, la acción de cable en la dirección principal de mayor relación r = flecha/luz (mayor curvatura)…",
+["absorbe más carga que la dirección de menor r.",
+ "absorbe menos carga que la dirección de menor r, porque es más deformable.",
+ "absorbe la misma carga que la de menor r, porque ambas son direcciones principales.",
+ "no absorbe carga, que se transmite íntegramente por acción de corte."],0,
+"Es literal de la diapositiva: la dirección de mayor curvatura (mayor r) absorbe más carga. En los cables, más flecha supone menos tracción para la misma carga, así que esa dirección es la más eficaz.","Apuntes T2.1, diap. 33");
+L("T2","Membranas",3,"Señalar la respuesta correcta respecto a los mecanismos resistentes de una membrana.",
+["La acción de cable se debe al alabeo (diferencia de pendientes entre lados opuestos) y la acción de corte, a la curvatura (diferencia de pendientes en un mismo lado).",
+ "La acción de cable se debe a la curvatura (diferencia de pendientes entre puntos de un mismo lado) y la acción de corte, al alabeo (diferencia de pendientes entre lados opuestos).",
+ "La acción de cable actúa en dos direcciones ortogonales cualesquiera y la acción de corte, en las direcciones principales de curvatura, debido al alabeo.",
+ "Ninguna de las anteriores."],1,
+"La acción de cable, en dos direcciones ortogonales que son las direcciones principales de tensiones, se debe a la curvatura. La acción de corte, dentro de la superficie, se debe al alabeo. La primera opción intercambia las causas, y la tercera es falsa porque las direcciones de la acción de cable no son cualesquiera.","Apuntes T2.1, diap. 33");
+L("T2","Membranas",3,"Una membrana cilíndrica se apoya en dos generatrices rectas y está sometida a su propio peso. Según los apuntes:",
+["Las generatrices no absorben carga, ni por acción de cable (no tienen curvatura) ni por acción de corte (no tienen alabeo): toda va por acción de cable en las directrices.",
+ "Las generatrices rectas absorben la carga por acción de corte, porque tienen alabeo, y el resto se absorbe por acción de cable en las directrices curvas.",
+ "Las generatrices rectas absorben la carga por acción de cable, porque están apoyadas, y las directrices curvas la absorben por acción de corte.",
+ "La carga se reparte por igual entre generatrices y directrices, porque ambas son líneas principales de curvatura de la superficie cilíndrica."],0,
+"La generatriz recta no tiene curvatura, así que no hay acción de cable en esa dirección, y el rectángulo orientado según las direcciones principales no tiene alabeo, así que tampoco hay acción de corte. Toda la carga se absorbe por acción de cable en las directrices curvas, perpendiculares al eje.","Apuntes T2.1, diap. 34");
+L("T2","Láminas",2,"Señalar las respuestas correctas (puede haber más de una). Según la clasificación geométrica de los apuntes, el paraboloide hiperbólico es una superficie:",
+["de traslación","reglada","de revolución","desarrollable"],[0,1],
+"Los apuntes lo incluyen entre las superficies de traslación (curva plana trasladada sobre otra) y entre las regladas (segmento recto desplazado sobre dos curvas). No es de revolución, y tampoco desarrollable, porque sus curvaturas principales son de distinto signo (anticlástica).","Apuntes T2.1, diap. 35");
+L("T2","Láminas",2,"En una superficie en forma de «silla de montar» (paraboloide hiperbólico) bajo carga gravitatoria, según los apuntes…",
+["una dirección trabaja como catenaria a tracción y la perpendicular como arco a compresión.",
+ "las dos direcciones trabajan como arcos a compresión, porque la superficie es anticlástica.",
+ "las dos direcciones trabajan como catenarias a tracción, porque la superficie es reglada.",
+ "una dirección trabaja como catenaria a tracción y la perpendicular como viga a flexión."],0,
+"Al tener curvaturas de signo opuesto, la dirección cóncava hacia arriba cuelga como una catenaria (tracción) y la convexa trabaja como un arco (compresión). Así lo dibuja la diapositiva.","Apuntes T2.1, diap. 36");
+L("T2","Láminas",3,"Señalar la respuesta incorrecta respecto a la clasificación geométrica de las láminas.",
+["Las superficies de revolución se obtienen girando una curva plana alrededor de un eje vertical que la corta (cono, esfera…) o que no la corta (toro).",
+ "Las superficies de traslación se obtienen trasladando una curva plana sobre otra curva plana (cilindro, paraboloide elíptico, paraboloide hiperbólico…).",
+ "Las superficies regladas se obtienen desplazando un segmento de recta sobre dos curvas separadas (cilindro, cono, conoide, hiperboloide de una hoja…).",
+ "Las superficies complejas se obtienen girando una superficie reglada alrededor de un eje, como el hiperboloide de una hoja."],3,
+"Las superficies complejas se obtienen combinando las anteriores (por ejemplo, cilindros cruzados). El hiperboloide de una hoja aparece en los apuntes como superficie reglada. Las otras tres definiciones son las de la diapositiva.","Apuntes T2.1, diap. 35");
+L("T2","Edificación",1,"En un edificio de pórticos y forjados sometido a cargas horizontales, la acción diafragma consiste en que…",
+["los forjados funcionan como grandes vigas horizontales que reparten las acciones horizontales entre los pórticos.",
+ "los forjados funcionan como grandes vigas verticales en voladizo que resisten las acciones horizontales por flexión.",
+ "los forjados transmiten las cargas verticales a los pilares en dos direcciones.",
+ "los pilares funcionan como diagonales que llevan por axil las acciones horizontales a la cimentación."],0,
+"Es la definición de los apuntes. La «gran viga vertical en voladizo» es la pantalla, y la transmisión bidireccional de cargas verticales es la acción de placa.","Apuntes T2.1, diap. 47");
+L("T2","Edificación",3,"Los desplazamientos horizontales de un edificio de pórticos y forjados bajo cargas laterales son la suma de dos tipos de deformación global. Según los apuntes:",
+["La deformación por flexión se debe al alargamiento y acortamiento de los pilares y es irrelevante salvo en edificios altos y esbeltos; la deformación por cortante se debe a la flexión/cortante de las barras.",
+ "La deformación por cortante se debe al alargamiento y acortamiento de los pilares y es irrelevante salvo en edificios altos y esbeltos; la deformación por flexión se debe a la flexión de las barras.",
+ "La deformación por flexión se debe a la flexión de las barras y es siempre la dominante; la deformación por cortante solo importa en edificios bajos.",
+ "Las dos deformaciones son del mismo orden en cualquier edificio, por lo que la altura no influye en cuál domina."],0,
+"En el pórtico, la «flexión global» es el giro del conjunto como voladizo por alargamiento y acortamiento de pilares, irrelevante salvo en edificios altos y esbeltos. La «deformación por cortante» del pórtico procede de la flexión de vigas y pilares. Los nombres engañan: la segunda opción los intercambia.","Apuntes T2.1, diap. 47");
+L("T2","Edificación",3,"Señalar la respuesta correcta respecto a los sistemas de pantallas y forjados frente a acciones horizontales.",
+["Las pantallas trabajan como grandes vigas verticales en voladizo, y los desplazamientos se deben fundamentalmente a su deformación por flexión, salvo en pantallas muy poco esbeltas.",
+ "Las pantallas trabajan como grandes vigas verticales biempotradas, y los desplazamientos se deben fundamentalmente a su deformación por cortante.",
+ "Son eficientes solo si las cargas horizontales no son excesivas y la altura del edificio no es elevada.",
+ "Las pantallas trabajan como grandes vigas verticales en voladizo, y los desplazamientos se deben fundamentalmente a su deformación por cortante, salvo en pantallas muy esbeltas."],0,
+"Es el contenido de la diapositiva. La cuarta opción invierte el tipo de deformación y la excepción. La tercera describe los pórticos con forjados; las pantallas son eficientes precisamente para cargas horizontales importantes o edificios altos.","Apuntes T2.1, diap. 48");
+L("T2","Edificación",3,"En un pórtico con triangulaciones, el camino de las fuerzas horizontales hasta la cimentación es doble. Según los apuntes:",
+["Si predomina la flexión en las barras del pórtico, la estructura es más dúctil; si predominan los axiles en las barras inclinadas, menos dúctil.",
+ "Si predominan los axiles en las barras inclinadas, la estructura es más dúctil; si predomina la flexión en las barras del pórtico, menos dúctil.",
+ "La ductilidad no depende del camino de las fuerzas, sino solo del material de las diagonales.",
+ "Si predomina la flexión en las barras del pórtico, la estructura es menos dúctil, porque se forman rótulas plásticas en los nudos."],0,
+"Los apuntes dicen que, según predomine el camino (i) (flexión en el pórtico) o el (ii) (axiles en las diagonales), la estructura será más o menos dúctil, respectivamente. La flexión permite formar rótulas plásticas con gran capacidad de deformación, y eso es precisamente ductilidad. La segunda opción invierte la relación.","Apuntes T2.1, diap. 50");
+L("T2","Edificación",3,"Señalar la respuesta correcta respecto a la distribución de triangulaciones en el alzado de edificios muy altos.",
+["Disponer los arriostramientos en el mismo vano en todas las plantas reduce las reacciones en la cimentación, porque concentra la rigidez lateral en un único plano.",
+ "Repartirlos en distintos vanos puede reducir las reacciones en cimentación, y las grandes vigas horizontales cada cierto número de plantas hacen colaborar a las columnas exteriores frente al vuelco.",
+ "Disponer los arriostramientos en distintos vanos aumenta en todos los casos las deformaciones globales por flexión del edificio, aunque reduce las reacciones.",
+ "Las grandes vigas horizontales dispuestas cada cierto número de plantas sirven para concentrar el momento de vuelco en las columnas interiores del núcleo."],1,
+"Arriostrar siempre el mismo vano puede generar reacciones excesivas en la cimentación; repartirlo en distintos vanos las reduce. Algunas soluciones de vanos distintos reducen además las deformaciones globales por flexión, y en ellas las grandes vigas horizontales hacen colaborar a las columnas exteriores, no a las interiores.","Apuntes T2.1, diap. 50-51");
+L("T2","Edificación",3,"Señalar las respuestas correctas (puede haber más de una). En los pórticos excéntricos:",
+["El eje de la diagonal no concurre al centro del nudo viga-pilar sino a un punto intermedio de la viga, dejando un tramo corto e sometido a fuertes cortantes (shear link).",
+ "Se busca plastificar zonas muy concretas de las vigas y concentrar en ellas los daños estructurales.",
+ "Se busca aumentar la rigidez lateral del pórtico frente a los terremotos.",
+ "El tramo corto e se proyecta para trabajar fundamentalmente a axil, como el resto de la diagonal."],[0,1],
+"La definición y el primer objetivo son literales de los apuntes. El segundo objetivo es reducir la rigidez lateral, no aumentarla. El shear link trabaja sobre todo a cortante, como indica su nombre.","Apuntes T2.1, diap. 52");
+L("T2","Edificación",3,"Señalar la respuesta correcta respecto a las pantallas acopladas.",
+["Las vigas de acoplamiento se proyectan y arman para tener una elevada capacidad de deformación en régimen plástico, y la disipación de energía se concentra en ellas y en el arranque de los muros.",
+ "Las vigas de acoplamiento se proyectan para permanecer en régimen elástico, de modo que la disipación de energía se concentre en los forjados.",
+ "Las pantallas se conectan mediante vigas articuladas para que trabajen de forma independiente frente al sismo.",
+ "Las vigas de acoplamiento se proyectan para tener una elevada capacidad de deformación plástica, y la disipación de energía se concentra en ellas y en la coronación de los muros."],0,
+"Las pantallas se conectan rígidamente con vigas de acoplamiento muy deformables en régimen plástico, y la disipación se concentra en esas vigas y en el arranque (la base) de los muros, no en su coronación. Es una solución frente a terremotos.","Apuntes T2.1, diap. 53");
+L("T2","Edificación",2,"El efecto «shear lag» en las estructuras tubo consiste en…",
+["una fuerte concentración de esfuerzos en las esquinas del tubo, por efecto de las deformaciones debidas al esfuerzo cortante.",
+ "una fuerte concentración de esfuerzos en el centro de las caras del tubo, por efecto de las deformaciones debidas al momento flector.",
+ "un reparto uniforme de los axiles en las caras perpendiculares a la fuerza lateral, como en un perfil de sección maciza.",
+ "un retraso en la transmisión del cortante entre forjados que anula la acción diafragma."],0,
+"El tubo funciona como un perfil tubular de pared delgada: las deformaciones por cortante hacen que los axiles se concentren en las esquinas en lugar de repartirse uniformemente, que sería lo propio de un perfil macizo.","Apuntes T2.1, diap. 55");
+L("T2","Edificación",3,"Según los apuntes (EHE-08), un forjado puede considerarse diafragma rígido si la unión es monolítica, el espesor es ≥ 50 mm, lleva mallazo y (L/h) ≤ 4. Si el diafragma NO es rígido, el reparto de las acciones horizontales…",
+["debe hacerse considerando el forjado como una viga horizontal sobre apoyos elásticos en los planos estructurales verticales.",
+ "puede hacerse considerando el forjado como un sólido rígido que se traslada y gira sin deformarse en su plano.",
+ "se hace a partes iguales entre todos los planos estructurales verticales.",
+ "no es necesario, porque las acciones horizontales las resisten directamente los forjados por flexión perpendicular a su plano."],0,
+"Es la segunda viñeta de la diapositiva: sin diafragma rígido, el forjado se modeliza como viga horizontal sobre resortes ki. El sólido rígido que se traslada y gira en su plano es precisamente el caso de diafragma rígido.","Apuntes T2.1, diap. 56");
+L("T2","Edificación",3,"Una planta de altura h = 3,5 m soporta una carga gravitatoria total Ptot = 7000 kN. Según el planteamiento de los apuntes, la «reserva» de rigidez lateral k′ que debe tener la estructura para compensar el efecto P-Δ es:",
+["2000 kN/m","24 500 kN","0,0005 m/kN","7000 kN/m"],0,
+"De Ptot·Δ = Vi′·h se obtiene k′ = Vi′/Δ = Ptot/h = 7000/3,5 = 2000 kN/m. Multiplicar (Ptot·h = 24 500) no da una rigidez, y h/Ptot es su inversa (una flexibilidad).","Apuntes T2.1, diap. 57");
+L("T2","Edificación",2,"Señalar la respuesta correcta respecto a las placas sobre pilares aislados.",
+["Combinan pilares y placas macizas o aligeradas que transmiten la carga bidireccionalmente, con unión rígida entre ambos, y dan libertad para organizar los pilares en planta.",
+ "Combinan pilares y placas que transmiten la carga unidireccionalmente, con unión articulada entre ambos, y obligan a alinear los pilares en pórticos.",
+ "Combinan pilares y placas siempre macizas, con unión rígida entre ambos, y obligan a disponer los pilares en una retícula regular en planta.",
+ "Son adecuadas solo para luces pequeñas, porque la unión rígida entre pilar y placa impide que la carga se transmita de forma bidireccional."],0,
+"Según los apuntes, las placas pueden ser macizas o aligeradas, la transmisión es bidireccional, la unión es rígida y el sistema es adecuado para grandes luces, con libertad para colocar los pilares en planta.","Apuntes T2.1, diap. 46");
+L("T2","Puentes",1,"Según los apuntes, en un puente convencional…",
+["el tablero y el sistema primario forman la superestructura, y las pilas y estribos con sus cimentaciones forman la subestructura.",
+ "el sistema primario y las pilas forman la superestructura, y los estribos con sus cimentaciones forman la subestructura.",
+ "el tablero recibe las sobrecargas del tráfico y las transmite directamente a la subestructura, sin sistema primario.",
+ "el tablero y los estribos forman la superestructura, y las pilas con sus cimentaciones forman la subestructura."],0,
+"Tablero + sistema primario = superestructura. Las pilas y los estribos, con sus cimentaciones, son la subestructura. El sistema primario (vigas, arcos…) es el que soporta el tablero y lleva las cargas a los apoyos.","Apuntes T2.1, diap. 59");
+L("T2","Puentes",2,"Señalar la respuesta correcta respecto a los puentes arco.",
+["Las cargas se transmiten por compresión del arco hasta los apoyos, donde se transforman en una carga horizontal y una vertical; el tablero puede ser inferior, intermedio o superior.",
+ "Las cargas se transmiten por compresión del arco hasta los apoyos, donde se transforman solo en una carga vertical; el tablero siempre se apoya sobre el arco.",
+ "Las cargas se transmiten por tracción del arco hasta los apoyos, donde se transforman en una carga horizontal y una vertical; el tablero cuelga siempre del arco.",
+ "El sistema primario es un arco empotrado en las pilas intermedias, del que el tablero cuelga mediante tirantes inclinados que lo comprimen horizontalmente."],0,
+"El arco trabaja a compresión y en los arranques produce un empuje horizontal H además de la vertical V. Los apuntes distinguen tablero inferior, intermedio y superior. La reacción horizontal es lo que exige un buen terreno o un tirante.","Apuntes T2.1, diap. 61");
+L("T2","Puentes",2,"Marcar la frase que sea verdadera.",
+["En los puentes atirantados, el tablero se suspende de un cable principal apoyado en torres mediante tirantes verticales.",
+ "En los puentes colgantes, los tirantes introducen importantes fuerzas horizontales en el tablero que deben ser absorbidas por éste.",
+ "En los puentes atirantados, los tirantes introducen importantes fuerzas horizontales en el tablero que deben ser absorbidas por éste.",
+ "Ninguna de las anteriores."],2,
+"Los tirantes inclinados de un atirantado tienen componente horizontal que comprime el tablero. El cable principal con tirantes verticales describe el puente colgante, donde las péndolas verticales no introducen esas fuerzas horizontales.","Apuntes T2.1, diap. 66");
+L("T2","Puentes",2,"Señalar las respuestas correctas (puede haber más de una). Según los apuntes, los puentes atirantados admiten variantes como:",
+["Tirantes dispuestos en «arpa» o en «abanico».",
+ "Torres que se inician en el tablero, formando un conjunto tablero-torres-tirantes apoyado sobre pilas convencionales.",
+ "Uno o dos planos de atirantamiento, con torres de una o dos pilas, en forma de A, de H o de Y invertida.",
+ "Tirantes verticales colgados de un cable principal apoyado en las torres."],[0,1,2],
+"Las tres primeras variantes están en la lista de la diapositiva, junto con una o dos torres y tirantes muy o poco espaciados. Los tirantes verticales colgados de un cable principal son propios del puente colgante.","Apuntes T2.1, diap. 66");
+L("T2","Puentes",1,"En un puente colgante, según los apuntes, el tablero suele resolverse con una estructura de acero reticulada que tiene entre sus funciones…",
+["la de estabilizar los cables.",
+ "la de absorber las importantes fuerzas horizontales que introducen los tirantes.",
+ "la de transmitir las cargas por compresión hasta los estribos, como un arco.",
+ "la de anclar el cable principal en sus extremos."],0,
+"Como los cables son inestables frente a cargas cambiantes, el tablero reticulado aporta la rigidez que los estabiliza. Absorber fuerzas horizontales de los tirantes es característico del atirantado.","Apuntes T2.1, diap. 65");
+L("T2","Puentes",1,"Según los apuntes, en los puentes en voladizo (p. ej. el puente Forth, en Escocia)…",
+["la estructura principal la forman grandes voladizos que se proyectan desde las pilas, y sus extremos pueden servir de apoyo a tramos suspendidos.",
+ "la estructura principal la forma un cable principal del que cuelgan los voladizos, y los tramos suspendidos se apoyan en las torres.",
+ "la estructura principal la forman tirantes en abanico que sostienen los voladizos desde las pilas.",
+ "la estructura principal la forman arcos de tablero superior empotrados en las pilas."],0,
+"Es la definición de la diapositiva: brazos cantilever desde las pilas, brazos de anclaje y un tramo suspendido central apoyado en los extremos de los voladizos.","Apuntes T2.1, diap. 67");
+L("T2","Puentes",2,"En los puentes de tablero sobre soportes o muros, según los apuntes, el apoyo del sistema primario sobre pilas y estribos…",
+["se realiza normalmente mediante dispositivos que permiten el desplazamiento horizontal (elastómeros…), para resolver problemas de dilataciones y sísmicos.",
+ "se realiza normalmente mediante empotramientos, para que la estructura sea hiperestática y absorba las dilataciones sin moverse.",
+ "se realiza mediante dispositivos que impiden todo desplazamiento horizontal, para resistir el sismo.",
+ "se realiza mediante elastómeros cuya función es repartir la carga vertical, no permitir desplazamientos."],0,
+"Los apoyos que permiten el desplazamiento horizontal dejan dilatar el tablero sin generar tensiones y mejoran el comportamiento sísmico. Empotrar el tablero haría que la temperatura generara tensiones.","Apuntes T2.1, diap. 60");
+L("T2","Térmica",2,"Un tablero isostático de 80 m con α = 10⁻⁵ ºC⁻¹ sufre un aumento de temperatura de 25 ºC. Su alargamiento libre es:",
+["20 mm","2 mm","200 mm","0 mm, porque es isostático"],0,
+"ΔL = L·α·ΔT = 80·10⁻⁵·25 = 0,02 m = 20 mm. Que sea isostático significa que puede alargarse libremente sin tensiones, no que no se alargue.","Apuntes T2.1, diap. 68 (cálculo)");
+L("T2","Térmica",2,"Marcar la frase que sea verdadera.",
+["En estructuras isostáticas los cambios de temperatura generan tensiones pero no movimientos, y las juntas de dilatación sirven para absorber esas tensiones.",
+ "En estructuras hiperestáticas los cambios de temperatura generan movimientos pero nunca tensiones.",
+ "En estructuras isostáticas los cambios de temperatura no generan tensiones ni movimientos, por lo que no requieren juntas de dilatación.",
+ "Ninguna de las anteriores."],3,
+"Según los apuntes, en las isostáticas la temperatura no genera tensiones pero sí movimientos, que se absorben con juntas de dilatación; en las hiperestáticas puede generar tensiones y movimientos. Cada una de las tres primeras frases altera alguna parte de esa idea, así que ninguna es verdadera.","Apuntes T2.1, diap. 68");
+L("T2","Térmica",3,"En el tablero de un puente con α = 10⁻⁵ ºC⁻¹ se impide totalmente el alargamiento y la temperatura sube 60 ºC. Según el planteamiento de los apuntes, la deformación mecánica εm necesaria es:",
+["−0,0006 (compresión)","+0,0006 (tracción)","−0,006 (compresión)","0, porque la deformación total es nula"],0,
+"ε = εT + εm = 0, así que εm = −α·ΔT = −10⁻⁵·60 = −0,0006: el tablero se comprime para no alargarse. Lo nulo es la deformación total, no la mecánica. Como referencia, el máximo de la ley tensión-deformación del hormigón está en torno a 0,002 de compresión.","Apuntes T2.1, diap. 68");
+L("T2","Túneles",3,"Señalar la respuesta correcta respecto a la sección transversal de un túnel.",
+["Consta de tres superficies: línea de excavación total, línea de sostenimiento (cara exterior) y línea de revestimiento (cara interior); sus partes estructurales son bóveda, hastiales y contrabóveda o solera.",
+ "Consta de tres superficies: línea de excavación total, línea de revestimiento (cara exterior) y línea de sostenimiento (cara interior); sus partes estructurales son bóveda, hastiales y contrabóveda o solera.",
+ "Consta de dos superficies, sostenimiento y revestimiento; sus partes estructurales son clave, hastiales y dovelas.",
+ "Consta de tres superficies: excavación, sostenimiento y revestimiento; los hastiales son la parte inferior y la solera, los muros laterales."],0,
+"El sostenimiento es la cara exterior (contra el terreno) y el revestimiento la interior. Los hastiales son los muros laterales y la contrabóveda o solera, la parte inferior.","Apuntes T2.1, diap. 69");
+L("T2","Túneles",3,"Señalar la respuesta incorrecta respecto a la subsidencia inducida por túneles.",
+["Son las deformaciones producidas en superficie, originadas por alteraciones del equilibrio interno del terreno y no por sobrecargas aplicadas en dicha superficie.",
+ "En túneles metropolitanos de ferrocarril se han medido asientos de hasta 20 cm.",
+ "Simplificadamente, son desplazamientos con carácter radial hacia el centro del túnel.",
+ "Afecta solo a edificios con cimentaciones superficiales, porque los movimientos en el interior del terreno no pueden afectar a cimentaciones profundas."],3,
+"Los apuntes advierten que, aunque la subsidencia afecta a las cimentaciones superficiales, los movimientos en el interior del terreno, que pueden ser importantes, pueden afectar también a las cimentaciones profundas. Las otras tres afirmaciones son de la diapositiva.","Apuntes T2.1, diap. 70");
+L("T2","Túneles",2,"En el sostenimiento con dovelas prefabricadas, según los apuntes…",
+["la dovela de clave o llave es la última pieza en ser colocada, y la de solera se coloca en la parte inferior del túnel.",
+ "la dovela de clave o llave es la primera pieza en ser colocada, y la de solera se coloca en la parte superior del túnel.",
+ "la dovela de contrallave es la última pieza en ser colocada, y la de clave se coloca en la parte inferior del túnel.",
+ "las dovelas se colocan una vez terminado el revestimiento, y después se inyecta mortero en el intradós."],0,
+"La llave cierra el anillo y es la última pieza; la de solera va abajo. Las dovelas se colocan inmediatamente detrás de la máquina y la inyección de mortero se hace en el trasdós (contra el terreno), no en el intradós.","Apuntes T2.1, diap. 72");
+L("T2","Túneles",3,"Señalar la respuesta correcta respecto a las juntas en el sostenimiento con dovelas prefabricadas.",
+["Las juntas radiales son lisas con rebaje y se unen con tornillos de acero, las circunferenciales se encajan por la presión de la tuneladora, y las juntas reducen la rigidez del sistema.",
+ "Las juntas circunferenciales son lisas con rebaje y se unen con tornillos de acero, las radiales se encajan por la presión de la tuneladora, y las juntas reducen la rigidez del sistema.",
+ "Las juntas radiales se unen con tornillos de acero y las circunferenciales por la presión de la tuneladora, y las juntas aumentan la rigidez del sistema.",
+ "Las juntas entre dovelas no influyen en la rigidez del sistema, porque el mortero inyectado en el trasdós las sella."],0,
+"Juntas radiales: lisas con rebaje, unidas con tornillos de acero. Circunferenciales: entre anillos consecutivos, encajadas por la presión de la tuneladora. Los apuntes indican que las juntas reducen la rigidez (presión/deformación radial) del sostenimiento.","Apuntes T2.1, diap. 72");
+L("T2","Túneles",2,"Señalar la respuesta correcta respecto al sostenimiento con hormigón gunitado.",
+["Se suele aplicar en varias capas de espesor máximo aproximado de 10 cm para evitar problemas de adherencia, y la primera es una capa de sellado.",
+ "Se suele aplicar en una única capa de al menos 10 cm para evitar juntas entre capas.",
+ "Se suele aplicar en varias capas de espesor mínimo de 10 cm para garantizar la adherencia, y la última es una capa de sellado.",
+ "Solo puede proyectarse por vía húmeda y no admite armado con fibras metálicas."],0,
+"Las capas se limitan a unos 10 cm como máximo para evitar problemas de adherencia, y la primera es de sellado. Se puede proyectar por vía seca, semihúmeda o húmeda, y armar con mallazo o con fibras metálicas.","Apuntes T2.1, diap. 73");
+L("T2","Túneles",3,"Señalar la respuesta incorrecta respecto al sostenimiento con cerchas metálicas.",
+["Se suelen emplear en macizos rocosos de calidad media y pueden ser ligeras, medias o pesadas.",
+ "Deben arriostrarse con tresillones.",
+ "Su rigidez depende mucho de las características del material de acuñado (madera o acero).",
+ "En macizos de muy mala calidad se combinan con bulones que cosen los estratos para formar una bóveda natural."],3,
+"Los apuntes indican que, en macizos de muy mala calidad, las cerchas se combinan con forros de entibación (chapas continuas o pequeñas tablestacas) o con mallazos. Los bulones son otro sistema de sostenimiento. Las otras tres afirmaciones son literales.","Apuntes T2.1, diap. 75");
+L("T2","Naves",1,"Señalar la respuesta correcta respecto a las naves con estructura metálica.",
+["En las porticadas de nudos rígidos la transmisión de cargas hasta la cimentación moviliza fundamentalmente flexión en las barras; en las trianguladas de nudos articulados, esfuerzos axiles.",
+ "En las porticadas de nudos rígidos se movilizan fundamentalmente esfuerzos axiles en las barras; en las trianguladas de nudos articulados, esfuerzos de flexión.",
+ "En ambas se movilizan fundamentalmente esfuerzos axiles, porque las cargas de cubierta son verticales y los pilares las llevan directamente a la cimentación.",
+ "En las porticadas de nudos rígidos se movilizan fundamentalmente torsiones en los nudos reforzados con cartelas; en las trianguladas, flexión en los cordones."],0,
+"Los nudos rígidos transmiten momentos y las barras trabajan a flexión. Con nudos articulados y triangulación, las barras solo trabajan a axil. La segunda opción es la inversión típica.","Apuntes T2.1, diap. 77 y 79");
+L("T2","Naves",2,"Una nave de pórticos metálicos de nudos rígidos debe resistir el viento sobre su fachada frontal, es decir, en dirección perpendicular al plano de los pórticos. Según los apuntes, la rigidez lateral en esa dirección se consigue…",
+["arriostrando uno o más vanos con barras diagonales o muros.",
+ "con el propio pórtico, gracias a la rigidez de sus nudos.",
+ "aumentando la sección de los nudos con cartelas.",
+ "aumentando la inercia de los dinteles en el plano del pórtico."],0,
+"El pórtico solo da rigidez en su propio plano. En la dirección perpendicular hay que arriostrar uno o más vanos (cruces de San Andrés o muros). Las cartelas y la inercia de los dinteles mejoran el comportamiento en el plano del pórtico.","Apuntes T2.1, diap. 77");
+L("T2","Naves",2,"Según los apuntes, en las estructuras metálicas trianguladas de nudos articulados (pilares + cerchas)…",
+["la ventaja es el buen aprovechamiento de la sección y el inconveniente, la inestabilidad (pandeo) de las barras comprimidas.",
+ "la ventaja es la ausencia de pandeo, porque las barras solo trabajan a axil, y el inconveniente, la flexión en los nudos.",
+ "la ventaja es la rigidez lateral en su plano sin necesidad de arriostrar, y el inconveniente, el mal aprovechamiento de la sección.",
+ "la ventaja es el buen aprovechamiento de la sección y el inconveniente, la inestabilidad (pandeo) de las barras traccionadas."],0,
+"Al trabajar a axil, la sección se aprovecha bien, pero las barras comprimidas pueden pandear. Las traccionadas no pandean, y en los nudos articulados no hay flexión.","Apuntes T2.1, diap. 79");
+L("T2","Naves",1,"En las estructuras metálicas porticadas de nudos rígidos es frecuente aumentar la sección de los nudos con cartelas para…",
+["mejorar su rigidez y capacidad resistente.",
+ "permitir el giro de los nudos y reducir los momentos.",
+ "proporcionar rigidez lateral perpendicular al plano del pórtico.",
+ "transformar la flexión de las barras en esfuerzos axiles."],0,
+"Las cartelas refuerzan el nudo, donde los momentos son máximos, y mejoran su rigidez y su capacidad resistente. La rigidez fuera del plano se consigue con arriostramientos.","Apuntes T2.1, diap. 77");
+L("T2","Torres eléctricas",3,"Según la clasificación de las torres eléctricas por su función recogida en los apuntes:",
+["los apoyos de alineación figuran como equilibrados y los de fin de línea, como desequilibrados.",
+ "los apoyos de fin de línea figuran como equilibrados y los de alineación, como desequilibrados.",
+ "los apoyos de amarre se asocian a la resultante de ángulo, y los especiales, al efecto dominó.",
+ "todos los apoyos son equilibrados salvo los especiales, que soportan la rotura de conductores."],0,
+"En el esquema de los apuntes, la alineación aparece como equilibrada, el ángulo y el fin de línea como desequilibrados, y el amarre asociado al efecto dominó (el apoyo de amarre corta la propagación de un fallo). En un fin de línea las tracciones de los conductores llegan por un solo lado, y por eso está desequilibrado.","Apuntes T2.1, diap. 86");
+L("T2","Torres eléctricas",2,"Según los apuntes, el reglamento sobre condiciones técnicas y garantías de seguridad en líneas eléctricas de alta tensión fue aprobado por…",
+["el Real Decreto 223/2008, de 15 de febrero.",
+ "el Decreto 3151/1968, de 28 de noviembre.",
+ "el Real Decreto 3151/2008, de 15 de febrero.",
+ "el Decreto 223/1968, de 28 de noviembre."],0,
+"El reglamento de 2008 (RD 223/2008, de 15 de febrero) es el de condiciones técnicas y garantías de seguridad en líneas de alta tensión. El Decreto 3151/1968, de 28 de noviembre, aprobó el antiguo reglamento de líneas aéreas. Las otras dos opciones mezclan números y fechas.","Apuntes T2.1, diap. 84");
+L("T2","Torres eléctricas",3,"Señalar las respuestas correctas (puede haber más de una). Según los apuntes, en torres eléctricas:",
+["Entre las acciones a considerar figuran la acción combinada hielo-viento y los efectos longitudinales por rotura de conductores.",
+ "Entre las comprobaciones de seguridad figuran las vibraciones, que se controlan con amortiguadores y separadores.",
+ "Entre las acciones a considerar figura el empuje pasivo del terreno sobre la cimentación de la torre.",
+ "Entre las comprobaciones de seguridad no figura la inestabilidad, porque las barras de celosía trabajan solo a tracción."],[0,1],
+"Las acciones son: cargas permanentes, viento, hielo, hielo-viento, desequilibrios de tracciones, rotura de conductores y resultante de ángulo. Las comprobaciones incluyen la rotura de cables, las vibraciones (con amortiguadores y separadores), las flechas, la rotura de herrajes y aisladores, la resistencia de la torre y la inestabilidad local y global. El empuje del terreno no está en la lista, y una celosía tiene barras comprimidas que pueden pandear.","Apuntes T2.1, diap. 87");
+L("T2","Estructuras",1,"Según los apuntes, las estructuras pueden estar formadas por elementos lineales, elementos superficiales o macizos. Señalar la asociación correcta.",
+["Macizos de tres dimensiones comparables: presas.",
+ "Elementos superficiales: pórticos.",
+ "Elementos lineales: estructuras abovedadas.",
+ "Macizos de tres dimensiones comparables: estructuras abovedadas."],0,
+"Los ejemplos de los apuntes son: elementos lineales (barras), los pórticos; superficiales, las estructuras abovedadas; macizos, las presas. Las demás opciones cambian los ejemplos de grupo.","Apuntes T2.1, diap. 42");
