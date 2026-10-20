@@ -7,7 +7,7 @@
    ===================================================================== */
 const FIREBASE_CONFIG = {
   apiKey: "AIzaSyCP6k5K7i4RK7tqPAbwKBEYP6u5g3KkaqM",
-  authDomain: "estudio-etsii.firebaseapp.com",
+  authDomain: location.hostname === "testsmii.github.io" ? "testsmii.github.io" : "estudio-etsii.firebaseapp.com", // Safari/iPhone: el asistente de login se sirve desde la propia web (__/auth/)
   projectId: "estudio-etsii",
   storageBucket: "estudio-etsii.firebasestorage.app",
   messagingSenderId: "1021129059968",
