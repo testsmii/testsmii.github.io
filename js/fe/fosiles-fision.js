@@ -979,3 +979,432 @@ THEORY.FIS = {
     ["<b>Ciclo abierto</b> vs <b>cerrado</b>", "Abierto: el combustible gastado va al almacenamiento final sin tratar. Cerrado: se reprocesa para recuperar U y Pu y se vitrifica el resto; el avanzado añade separación y transmutación."]
   ]
 };
+
+/* ---------- FIS · Preguntas ---------- */
+L("FIS", "fis-mundo", "Parque nuclear mundial", 1, "Según la base de datos de la World Nuclear Association recogida en los apuntes, hay…",
+  ["441 reactores operables y 79 en construcción", "441 reactores operables y 179 en construcción", "541 reactores operables y 79 en construcción", "404 reactores operables y 78 en construcción"],
+  0, "441 reactores operables (404.125 MWe) y 79 en construcción (78.211 MWe). 404 y 78 son los miles de MWe, no el número de reactores.", "Apuntes FIS, diap. 10");
+L("FIS", "fis-mundo", "Cuota de la electricidad", 2, "Según la World Nuclear Association, la nuclear aporta a la generación eléctrica mundial…",
+  ["≈ 9 %, unos 2.667 TWh en 2024", "≈ 17 %, unos 2.667 TWh en 2024", "≈ 9 %, unos 26.670 TWh en 2024", "≈ 5 %, unos 2.667 TWh en 2024"],
+  0, "9 % y 2.667.383 GWh (≈ 2.667 TWh) en 2024. El ≈ 17 % fue su cuota a mediados de los noventa; el ≈ 5 % es su peso en la energía primaria.", "Apuntes FIS, diap. 10 y 16");
+L("FIS", "fis-mundo", "Capacidad por países", 3, "Según el gráfico de capacidad neta operable (top 10) de los apuntes…",
+  ["los tres primeros son EE. UU., China y Francia, y España ocupa el 10.º puesto",
+   "los tres primeros son EE. UU., Francia y China, y España ocupa el 10.º puesto",
+   "los tres primeros son China, EE. UU. y Francia, y España no figura entre los diez primeros",
+   "los tres primeros son EE. UU., China y Francia, y España ocupa el 7.º puesto"],
+  0, "Orden: EE. UU., China, Francia, Japón, Rusia, Corea del Sur, Ucrania, Canadá, India y España. China y Francia están muy igualadas, con China ligeramente por delante.", "Apuntes FIS, diap. 11");
+L("FIS", "fis-mundo", "Reactores en construcción", 2, "Según el gráfico de capacidad en construcción (top 10), el país con más potencia nuclear en construcción es…",
+  ["China, con muchísima diferencia sobre el segundo (India)", "India, seguida muy de cerca por China", "Rusia, seguida de Turquía y Egipto", "Ninguna de las otras opciones"],
+  0, "China domina con enorme diferencia; detrás vienen India, Corea del Sur, Rusia, Turquía, Egipto, Reino Unido, Japón, Bangladés y Brasil.", "Apuntes FIS, diap. 12");
+L("FIS", "fis-mundo", "Evolución por países", 3, "Sobre la generación nuclear por países y regiones (gráficos 1965-2025), ¿cuál de las siguientes afirmaciones es FALSA?",
+  ["China genera ya más electricidad nuclear que Rusia y que Corea del Sur",
+   "Alemania ha reducido su generación nuclear prácticamente a cero",
+   "La generación nuclear de la UE en 2025 supera su máximo de mediados de los 2000",
+   "Emiratos Árabes Unidos empezó a generar electricidad nuclear en torno a 2020"],
+  2, "La UE llegó a ≈ 930 TWh a mediados de los 2000 y en 2025 ronda los 650 TWh. China (≈ 490 TWh) supera a Rusia (≈ 220) y Corea (≈ 185); Alemania llega a cero; EAU arranca hacia 2020.", "Apuntes FIS, diap. 7-8");
+L("FIS", "fis-mundo", "Conexiones recientes", 2, "Entre las conexiones a red más recientes de la tabla de los apuntes figura Flamanville 3, que es…",
+  ["un EPR de 1.630 MWe conectado en diciembre de 2024 en Francia",
+   "un EPR de 1.630 MWe conectado en diciembre de 2024 en Finlandia",
+   "un Hualong One de 1.126 MWe conectado en noviembre de 2024 en Francia",
+   "un VVER-TOI de 1.200 MWe conectado en diciembre de 2025 en Francia"],
+  0, "Flamanville 3: EPR, PWR, 1.630 MWe, 21-12-2024, Francia. Los Hualong One son chinos (Zhangzhou 1, 1.126 MWe) y el VVER-TOI es Kursk 2-1 (Rusia).", "Apuntes FIS, diap. 13");
+L("FIS", "fis-mundo", "Producción de uranio", 2, "Según la tabla de producción de uranio de mina, los tres primeros productores en 2024 son…",
+  ["Kazajistán (23.270 tU), Canadá (14.309) y Namibia (7.333)",
+   "Kazajistán (23.270 tU), Australia (14.309) y Canadá (7.333)",
+   "Canadá (23.270 tU), Kazajistán (14.309) y Namibia (7.333)",
+   "Kazajistán (23.270 tU), Canadá (14.309) y Níger (7.333)"],
+  0, "Kazajistán 23.270, Canadá 14.309, Namibia 7.333, Australia 4.598 y Uzbekistán 4.000 tU. Níger cae a 962 tU.", "Apuntes FIS, diap. 18");
+L("FIS", "fis-mundo", "Producción de uranio", 3, "A partir de la tabla de producción de uranio 2015-2024, ¿qué afirmaciones son correctas? (Puede haber varias correctas)",
+  ["Canadá tocó un mínimo en 2020 (3.885 tU) y se ha recuperado hasta superar su producción de 2015",
+   "Níger produjo en 2024 menos de una cuarta parte que en 2015",
+   "EE. UU. produjo en 2024 más uranio que en 2015",
+   "Namibia superó en 2024 a Australia"],
+  [0, 1, 3], "Canadá: 13.325 → 3.885 (2020) → 14.309. Níger: 4.116 → 962 (menos del 25 %). EE. UU.: 1.256 → 260, menos que en 2015. Namibia 7.333 frente a Australia 4.598.", "Apuntes FIS, diap. 18");
+L("FIS", "fis-mundo", "Seguridad", 2, "Según los apuntes, la tasa de mortalidad de la nuclear por unidad de electricidad (accidentes y contaminación) es…",
+  ["0,03 muertes/TWh, del orden de la eólica (0,04) y la solar (0,02), incluidos Chernóbil y Fukushima",
+   "0,3 muertes/TWh, del orden de la hidráulica (1,3), incluidos Chernóbil y Fukushima",
+   "0,03 muertes/TWh, del orden de la eólica y la solar, pero sin contar Chernóbil ni Fukushima",
+   "2,8 muertes/TWh, del orden del gas natural, incluidos Chernóbil y Fukushima"],
+  0, "Nuclear 0,03 (la infografía indica que incluye Chernóbil y Fukushima), eólica 0,04, solar 0,02. Gas 2,8; hidráulica 1,3; carbón 24,6.", "Apuntes FIS, diap. 20-21");
+L("FIS", "fis-mundo", "Emisiones de ciclo de vida", 3, "Según la infografía de fuentes más limpias, el orden de emisiones de ciclo de vida (t CO<sub>2</sub>-eq/GWh), de menor a mayor, es…",
+  ["nuclear (3) &lt; eólica (4) &lt; solar (5) &lt; hidráulica (34)",
+   "eólica (3) &lt; nuclear (4) &lt; solar (5) &lt; hidráulica (34)",
+   "solar (3) &lt; nuclear (4) &lt; eólica (5) &lt; hidráulica (34)",
+   "nuclear (3) &lt; solar (4) &lt; eólica (5) &lt; biomasa (34)"],
+  0, "Nuclear 3, eólica 4, solar 5, hidráulica 34, biomasa 78-230, gas 490, petróleo 720, carbón 820 t CO<sub>2</sub>-eq/GWh.", "Apuntes FIS, diap. 21");
+L("FIS", "fis-mundo", "Emisiones de ciclo de vida", 3, "Con los datos de ciclo de vida de los apuntes, ¿cuántas veces más GEI emite el carbón que la nuclear por GWh?",
+  ["≈ 273 veces", "≈ 820 veces", "≈ 27 veces", "≈ 1.230 veces"],
+  0, "820 / 3 ≈ 273 (la infografía lo indica así). 1.230 es el cociente de muertes por TWh entre el carbón y la solar.", "Apuntes FIS, diap. 21");
+
+L("FIS", "fis-espana", "Tipos de reactor", 1, "¿Cuál es el único reactor de agua en ebullición (BWR) en funcionamiento en España?",
+  ["Cofrentes", "Trillo I", "Almaraz II", "Vandellós II"],
+  0, "Cofrentes (Valencia) es un BWR de General Electric; los otros seis reactores son PWR.", "Apuntes FIS, diap. 24");
+L("FIS", "fis-espana", "Suministradores", 2, "Según el cuadro de centrales españolas, el reactor de Trillo I fue suministrado por…",
+  ["Siemens-KWU", "Westinghouse", "General Electric", "Framatome"],
+  0, "Trillo I: PWR de Siemens-KWU. Almaraz I-II, Ascó I-II y Vandellós II: PWR de Westinghouse. Cofrentes: BWR de General Electric.", "Apuntes FIS, diap. 24");
+L("FIS", "fis-espana", "Potencia instalada", 3, "Sumando la potencia eléctrica bruta actual de los siete reactores españoles del cuadro de los apuntes, se obtiene aproximadamente…",
+  ["7.399 MW", "6.677 MW", "8.399 MW", "7.092 MW"],
+  0, "1.049,4 + 1.044,5 + 1.032,5 + 1.027,2 + 1.092,0 + 1.066,0 + 1.087,1 ≈ 7.398,7 MW. 6.677 MW es la suma de las potencias iniciales.", "Apuntes FIS, diap. 24");
+L("FIS", "fis-espana", "Centrales españolas", 3, "Sobre las centrales nucleares españolas en funcionamiento, ¿cuál de las siguientes afirmaciones es FALSA?",
+  ["Ascó I pertenece al 100 % a Endesa",
+   "Cofrentes pertenece al 100 % a Iberdrola",
+   "Almaraz I es la que lleva más tiempo en explotación comercial (desde septiembre de 1983)",
+   "Vandellós II es la última en haber entrado en explotación comercial"],
+  3, "Vandellós II empezó en marzo de 1988, pero Trillo I lo hizo después, en agosto de 1988. Las demás afirmaciones son ciertas.", "Apuntes FIS, diap. 24");
+L("FIS", "fis-espana", "Centrales cerradas", 2, "Según el mapa de centrales nucleares en España, las centrales cerradas o en proceso de cierre son…",
+  ["Santa María de Garoña, José Cabrera (Zorita) y Vandellós II",
+   "Santa María de Garoña, José Cabrera (Zorita) y Vandellós I",
+   "Santa María de Garoña, Trillo y Vandellós I",
+   "Ninguna de las otras opciones"],
+  1, "Cerradas: Garoña (Burgos), José Cabrera-Zorita (Guadalajara) y Vandellós I (Tarragona). Vandellós II y Trillo siguen en funcionamiento.", "Apuntes FIS, diap. 23");
+L("FIS", "fis-espana", "Ubicación", 2, "¿Qué provincia acoge tres de los siete reactores españoles en funcionamiento?",
+  ["Tarragona", "Cáceres", "Guadalajara", "Valencia"],
+  0, "Tarragona: Ascó I, Ascó II y Vandellós II. Cáceres tiene dos (Almaraz I y II), Guadalajara uno en funcionamiento (Trillo) y Valencia uno (Cofrentes).", "Apuntes FIS, diap. 23-24");
+L("FIS", "fis-espana", "Uranio comprado", 3, "Según el cuadro de procedencia de los concentrados de uranio comprados por España, señale la afirmación correcta:",
+  ["En 2024 el primer origen fue China (37,5 %) y en 2025 Kazajistán (42,0 %)",
+   "En 2024 el primer origen fue Kazajistán (37,5 %) y en 2025 Canadá (42,0 %)",
+   "En 2024 el primer origen fue Canadá (31,4 %) y en 2025 Kazajistán (42,0 %)",
+   "En 2024 el primer origen fue China (37,5 %) y en 2025 Canadá (32,7 %)"],
+  0, "2024: China 37,5 %, Canadá 31,4 %, Kazajistán 25,7 %. 2025: Kazajistán 42,0 %, Canadá 32,7 %, Namibia 11,4 %.", "Apuntes FIS, diap. 25");
+L("FIS", "fis-espana", "Combustible ENUSA", 2, "Según el cuadro de producción de combustible nuclear de ENUSA, en 2025 se fabricaron…",
+  ["691 elementos, de los que 446 se exportaron",
+   "691 elementos, de los que 245 se exportaron",
+   "934 elementos, de los que 551 se exportaron",
+   "475 elementos, todos ellos de tipo PWR"],
+  0, "2025: 691 elementos (475 PWR + 216 BWR); 245 para centrales nacionales y 446 para exportación (251,2 tU). 934 y 551 son los datos de 2010.", "Apuntes FIS, diap. 26");
+
+L("FIS", "fis-fisica", "Número másico", 1, "En un nucleido $^{A}_{Z}X$, el número másico A…",
+  ["es el número total de nucleones: A = Z + N", "es el número de protones: A = Z", "es el número de neutrones: A = N", "es el exceso de neutrones: A = N − Z"],
+  0, "Z = número atómico (protones), N = número neutrónico y A = Z + N. Por ejemplo, el U-235 tiene 92 protones y 143 neutrones.", "Apuntes FIS, diap. 28");
+L("FIS", "fis-fisica", "Estabilidad nuclear", 2, "Según los apuntes, sobre la estabilidad nuclear se cumple que…",
+  ["los núcleos ligeros estables tienen Z ≈ N y los pesados Z &lt; N; demasiados neutrones los hacen inestables",
+   "los núcleos ligeros estables tienen Z &lt; N y los pesados Z ≈ N; demasiados protones los hacen inestables",
+   "los núcleos ligeros y pesados estables tienen Z ≈ N; la estabilidad no depende de la energía de ligadura",
+   "los núcleos pesados estables tienen Z &gt; N porque la interacción fuerte compensa la repulsión coulombiana"],
+  0, "Ligeros: Z ≈ N. Pesados: Z &lt; N (hacen falta más neutrones frente a la repulsión coulombiana). Demasiados neutrones dan núcleos inestables y la estabilidad depende de la energía de ligadura.", "Apuntes FIS, diap. 28");
+L("FIS", "fis-fisica", "Isóbaros", 3, "Según los apuntes, en una familia de isóbaros (mismo número másico A)…",
+  ["hay uno o dos nucleidos más estables y el resto tiende hacia ellos mediante desintegraciones β",
+   "hay uno o dos nucleidos más estables y el resto tiende hacia ellos mediante desintegraciones α",
+   "todos los nucleidos tienen el mismo Z y difieren en el número de neutrones",
+   "el nucleido más estable es siempre el de mayor número atómico Z"],
+  0, "Las desintegraciones β cambian Z sin cambiar A, así que mueven el núcleo dentro de su familia de isóbaros. Mismo Z y distinto N definen a los isótopos.", "Apuntes FIS, diap. 29");
+L("FIS", "fis-fisica", "Desintegración alfa", 2, "En la desintegración α de los apuntes ($^{210}_{84}Po \\rightarrow ^{206}_{82}Pb + ^{4}_{2}He$), el núcleo hijo tiene…",
+  ["un número másico 4 unidades menor y un número atómico 2 unidades menor",
+   "un número másico 2 unidades menor y un número atómico 4 unidades menor",
+   "el mismo número másico y un número atómico 1 unidad menor",
+   "un número másico 4 unidades menor y un número atómico 2 unidades mayor"],
+  0, "Se emite un núcleo de He-4: A baja 4 (210 → 206) y Z baja 2 (84 → 82). Con A constante y Z variando en 1 sería una desintegración β.", "Apuntes FIS, diap. 29");
+L("FIS", "fis-fisica", "Desintegración beta", 3, "Señale la descripción correcta de la desintegración β<sup>−</sup>:",
+  ["n → p + e<sup>−</sup> + antineutrino; Z aumenta en 1 y A no cambia",
+   "p → n + e<sup>+</sup> + neutrino; Z aumenta en 1 y A no cambia",
+   "n → p + e<sup>−</sup> + neutrino; Z disminuye en 1 y A no cambia",
+   "n → p + e<sup>−</sup> + antineutrino; Z aumenta en 1 y A aumenta en 1"],
+  0, "β<sup>−</sup>: un neutrón se convierte en protón con emisión de electrón y antineutrino. β<sup>+</sup>: p → n + e<sup>+</sup> + neutrino (Z baja 1). En ambas A se conserva.", "Apuntes FIS, diap. 29");
+L("FIS", "fis-fisica", "Actividad", 3, "Una fuente radiactiva tiene una actividad de 2 mCi. Expresada en bequerelios es…",
+  ["7,4·10<sup>7</sup> Bq", "7,4·10<sup>10</sup> Bq", "1,85·10<sup>7</sup> Bq", "7,4·10<sup>4</sup> Bq"],
+  0, "1 Ci = 3,7·10<sup>10</sup> Bq → 2·10<sup>−3</sup> × 3,7·10<sup>10</sup> = 7,4·10<sup>7</sup> Bq. 7,4·10<sup>10</sup> correspondería a 2 Ci.", "Apuntes FIS, diap. 30");
+L("FIS", "fis-fisica", "Actividad", 2, "Según la expresión de la actividad de los apuntes, si el número de núcleos radiactivos de una muestra se reduce a la mitad, su actividad…",
+  ["se reduce a la mitad, porque A = λN",
+   "no cambia, porque solo depende de la constante λ",
+   "se reduce a la cuarta parte, porque A es proporcional a N²",
+   "se duplica, porque A = λ/N"],
+  0, "A(t) = |dN/dt| = λN(t): la actividad es proporcional al número de núcleos presentes.", "Apuntes FIS, diap. 30");
+L("FIS", "fis-fisica", "Blindaje", 3, "Sobre el esquema de blindaje de radiación de los apuntes, ¿cuál de las siguientes afirmaciones es FALSA?",
+  ["Las partículas α se detienen con una hoja de papel",
+   "La radiación γ atraviesa el aluminio y se frena con plomo",
+   "Los neutrones se detienen con una lámina de plomo",
+   "Las partículas β atraviesan el papel pero no el aluminio"],
+  2, "En el esquema, los neutrones atraviesan el plomo y solo se detienen con hormigón. α: papel; β: atraviesan el papel y se paran antes del aluminio; γ: plomo.", "Apuntes FIS, diap. 32");
+L("FIS", "fis-fisica", "Unidades de dosis", 2, "La equivalencia correcta entre unidades de dosis absorbida es…",
+  ["1 Gy = 1 J/kg = 100 rad", "1 Gy = 1 J/kg = 0,01 rad", "1 Gy = 100 J/kg = 1 rad", "1 Gy = 1 erg/g = 100 rad"],
+  0, "1 rad = 100 erg/g = 0,01 J/kg, así que 1 Gy = 1 J/kg = 100 rad.", "Apuntes FIS, diap. 34");
+L("FIS", "fis-fisica", "Dosis efectiva", 3, "Según los apuntes, la magnitud empleada para establecer límites de dosis y su unidad son…",
+  ["la dosis efectiva, E = H·W<sub>T</sub>, en sievert",
+   "la dosis equivalente, H = D·W<sub>R</sub>, en sievert",
+   "la dosis absorbida, D, en gray",
+   "la dosis efectiva, E = D·W<sub>R</sub>, en gray"],
+  0, "D (Gy) → H = D·W<sub>R</sub> (factor de calidad de la radiación) → E = H·W<sub>T</sub> (radiosensibilidad del tejido). La efectiva, en Sv, es la de los límites.", "Apuntes FIS, diap. 34");
+L("FIS", "fis-fisica", "Dosis equivalente", 3, "Un tejido recibe una dosis absorbida de 2 mGy de una radiación cuyo factor de calidad suponemos W<sub>R</sub> = 20. Su dosis equivalente es…",
+  ["40 mSv", "0,1 mSv", "22 mSv", "2 mSv"],
+  0, "H = D·W<sub>R</sub> = 2 × 20 = 40 mSv. Dividir (2/20 = 0,1) o sumar (22) son errores típicos.", "Apuntes FIS, diap. 34");
+L("FIS", "fis-fisica", "Dosis media", 2, "Según el gráfico de exposición del público a la radiación ionizante, la dosis media por persona y año es de…",
+  ["3,6 mSv, de los que ≈ 82 % es de origen natural (el radón aporta ≈ 55 %)",
+   "3,6 mSv, de los que ≈ 82 % es de origen artificial (los rayos X médicos aportan ≈ 55 %)",
+   "36 mSv, de los que ≈ 82 % es de origen natural (el radón aporta ≈ 55 %)",
+   "3,6 mSv, de los que ≈ 55 % es de origen natural (el radón aporta ≈ 82 %)"],
+  0, "3,6 mSv/año; fuentes naturales 82 % (radón 55 %, interna 11 %, terrestre 8 %, cósmica 8 %) y artificiales 18 %.", "Apuntes FIS, diap. 35");
+L("FIS", "fis-fisica", "Fuentes de exposición", 2, "Según el gráfico de exposición a la radiación, ¿cuáles de las siguientes son fuentes artificiales? (Puede haber varias correctas)",
+  ["Los rayos X médicos", "La medicina nuclear", "Los productos de consumo", "La radiación interna del propio cuerpo"],
+  [0, 1, 2], "Artificiales (18 %): rayos X médicos 11 %, medicina nuclear 4 %, productos de consumo 3 % y otras &lt; 1 %. La radiación interna (11 %) es natural.", "Apuntes FIS, diap. 35");
+
+L("FIS", "fis-reacciones", "Reacciones neutrónicas", 2, "Según los apuntes, el tipo de reacción neutrónica que se produce, (n,γ), (n,α), (n,2n), (n,p), (n,fisión)…, depende de…",
+  ["la masa del núcleo blanco y la energía cinética del neutrón",
+   "la masa del neutrón y la temperatura del refrigerante",
+   "la carga del núcleo blanco y el número de neutrones del moderador",
+   "solo de la energía cinética del neutrón, no del núcleo blanco"],
+  0, "«Reacciones neutrónicas: dependen de la masa del núcleo blanco y de la energía cinética del neutrón».", "Apuntes FIS, diap. 38");
+L("FIS", "fis-reacciones", "Conservación en la fisión", 3, "En la fisión del esquema de los apuntes, $^{1}_{0}n + ^{235}_{92}U \\rightarrow ^{91}_{36}Kr + ^{142}_{56}Ba + x\\,^{1}_{0}n$, el número de neutrones emitidos x es…",
+  ["3", "2", "1", "4"],
+  0, "Conservación de A: 1 + 235 = 91 + 142 + x → x = 3. La carga se conserva: 92 = 36 + 56. El «≈ 2 neutrones por fisión» de la tabla de energías es un valor medio.", "Apuntes FIS, diap. 38");
+L("FIS", "fis-reacciones", "Fisión inducida", 1, "Según los apuntes, la fisión inducida por neutrones es, con diferencia, la más estudiada y la de mayor aplicación tecnológica porque…",
+  ["además de energía, produce más neutrones", "se produce sin ninguna intervención externa", "solo puede inducirse con neutrones rápidos", "no genera productos de fisión radiactivos"],
+  0, "«…debido a la producción de energía y de más neutrones», que permiten mantener la reacción en cadena. La fisión espontánea es la que ocurre sin intervención externa.", "Apuntes FIS, diap. 39");
+L("FIS", "fis-reacciones", "Escala temporal de la fisión", 3, "Según el esquema temporal de la fisión del U-236, señale la afirmación correcta:",
+  ["Los neutrones y γ inmediatos se emiten en ≈ 10<sup>−14</sup> s; la desintegración de los fragmentos (β, γ y neutrones diferidos) se extiende de ≈ 1 s a 10<sup>8</sup> s",
+   "Los neutrones y γ inmediatos se emiten entre ≈ 1 s y 10<sup>8</sup> s; la desintegración de los fragmentos ocurre en ≈ 10<sup>−14</sup> s",
+   "Los neutrones diferidos se emiten en ≈ 10<sup>−14</sup> s y los inmediatos al cabo de ≈ 10<sup>8</sup> s",
+   "Toda la energía de la fisión, incluidos los neutrones diferidos, se libera en menos de 10<sup>−13</sup> s"],
+  0, "Fase de fisión (n y γ inmediatos) en 10<sup>−14</sup>-10<sup>−13</sup> s; fase de desintegración (β, γ y n diferidos) de 1 s a 10<sup>8</sup> s, hasta núcleos estables como Pr-141 o Nb-93.", "Apuntes FIS, diap. 40");
+L("FIS", "fis-reacciones", "Energía por fisión", 1, "En media, la energía liberada en cada fisión del U-235 es de unos…",
+  ["200 MeV", "200 keV", "20 MeV", "2.000 MeV"],
+  0, "≈ 200 MeV, aunque depende del isótopo y de la energía del neutrón.", "Apuntes FIS, diap. 41");
+L("FIS", "fis-reacciones", "Reparto de la energía", 2, "De los ≈ 200 MeV liberados en una fisión del U-235, la mayor parte corresponde a…",
+  ["la energía cinética de los productos de fisión (≈ 165 MeV)",
+   "la energía cinética de los neutrones emitidos (≈ 165 MeV)",
+   "la radiactividad β y γ diferida (≈ 165 MeV)",
+   "la energía de los neutrinos (≈ 165 MeV)"],
+  0, "Productos de fisión 165 MeV; neutrones 5; γ inmediatos 6; radiactividad diferida 14; neutrinos 10.", "Apuntes FIS, diap. 41");
+L("FIS", "fis-reacciones", "Energía aprovechable", 3, "Con el reparto energético de los apuntes, ¿qué energía por fisión puede recuperarse como calor dentro del reactor?",
+  ["≈ 190 MeV", "≈ 200 MeV", "≈ 176 MeV", "≈ 165 MeV"],
+  0, "Todo menos los neutrinos, que escapan: 200 − 10 = 190 MeV. 176 MeV serían solo los inmediatos (165 + 5 + 6), olvidando los 14 MeV de radiactividad diferida.", "Apuntes FIS, diap. 41");
+L("FIS", "fis-reacciones", "Neutrones de fisión", 2, "Según la tabla de energía de la fisión, los neutrones emitidos son…",
+  ["≈ 2 por fisión y se llevan en total ≈ 5 MeV de energía cinética",
+   "≈ 2 por fisión y se llevan en total ≈ 165 MeV de energía cinética",
+   "≈ 3 por fisión y se llevan en total ≈ 14 MeV de energía cinética",
+   "≈ 2 por fisión y son la parte diferida, con ≈ 10 MeV"],
+  0, "«5 MeV energía cinética de los neutrones emitidos (2 por fisión aprox.)», inmediatos. 14 MeV son la radiactividad β y γ y 10 MeV, los neutrinos.", "Apuntes FIS, diap. 41");
+L("FIS", "fis-reacciones", "Criticidad", 2, "Según los apuntes, un reactor está crítico cuando…",
+  ["1 neutrón de cada reacción genera a su vez otra reacción",
+   "cada fisión provoca al menos dos nuevas fisiones",
+   "todos los neutrones emitidos producen nuevas fisiones",
+   "Ninguna de las otras opciones"],
+  0, "Criticidad: exactamente un neutrón de cada fisión provoca otra fisión, de modo que la población de neutrones se mantiene.", "Apuntes FIS, diap. 42");
+L("FIS", "fis-reacciones", "Moderador y enriquecimiento", 3, "Según los apuntes sobre criticidad y secciones eficaces, con uranio natural…",
+  ["la probabilidad de fisión es similar a la de absorción, y el moderador debe absorber mal los neutrones, lo que excluye el agua ligera",
+   "la probabilidad de fisión es muy superior a la de absorción, y por eso puede usarse agua ligera como moderador",
+   "la probabilidad de fisión es similar a la de absorción, y el moderador debe absorber bien los neutrones, como el agua ligera",
+   "no se puede alcanzar la criticidad con ningún moderador, por lo que es imprescindible enriquecer al ~20 %"],
+  0, "Con UN no sobran neutrones: el moderador no puede robarlos (fuera agua ligera; sí grafito o agua pesada). Con ~5 % se puede usar agua ligera; sin moderador hace falta ~20 %.", "Apuntes FIS, diap. 43");
+L("FIS", "fis-reacciones", "Sección eficaz del U-238", 3, "Según el gráfico de probabilidad de absorción frente a la energía del neutrón, el U-238…",
+  ["solo fisiona con neutrones de más de ≈ 1 MeV y presenta resonancias de captura (n,γ) entre ≈ 10 eV y 1 keV",
+   "fisiona sobre todo con neutrones térmicos y presenta resonancias de fisión entre ≈ 10 eV y 1 keV",
+   "solo fisiona con neutrones de más de ≈ 1 keV y presenta resonancias de captura por debajo de 1 eV",
+   "no fisiona con ninguna energía y solo captura neutrones térmicos"],
+  0, "La curva U-238(n,f) solo aparece por encima de ≈ 1 MeV; la U-238(n,γ) muestra picos de resonancia entre ≈ 10 eV y 1 keV. El U-235 fisiona preferentemente con neutrones lentos.", "Apuntes FIS, diap. 43");
+
+L("FIS", "fis-reactores", "Componentes", 1, "Según los apuntes, el sistema de control de un reactor emplea materiales como…",
+  ["B, Cd, Gd", "H, D, C", "U, Pu, Th", "H<sub>2</sub>O, D<sub>2</sub>O, CO<sub>2</sub>, He"],
+  0, "Control: B, Cd, Gd. Moderador: H, D, C. Combustible: U, Pu, Th. Refrigerante: H<sub>2</sub>O, D<sub>2</sub>O, CO<sub>2</sub>, He.", "Apuntes FIS, diap. 45");
+L("FIS", "fis-reactores", "Componentes", 2, "En un reactor nuclear, el reflector…",
+  ["evita las fugas de neutrones", "reduce la energía de los neutrones", "regula el número total de neutrones y de fisiones", "protege frente a la radiación γ y los neutrones"],
+  0, "Reflector: evita fugas. Moderador: frena los neutrones. Control: regula su número. Blindaje: protege frente a γ y neutrones.", "Apuntes FIS, diap. 45");
+L("FIS", "fis-reactores", "Combustible", 2, "Según la tabla de tipos de reactores, la composición del uranio natural (UN) y del enriquecido (UE) es…",
+  ["UN: 99,3 % U-238 y 0,7 % U-235; UE: 95 % U-238 y 5 % U-235",
+   "UN: 99,3 % U-235 y 0,7 % U-238; UE: 95 % U-235 y 5 % U-238",
+   "UN: 99,3 % U-238 y 0,7 % U-235; UE: 80 % U-238 y 20 % U-235",
+   "UN: 95 % U-238 y 5 % U-235; UE: 80 % U-238 y 20 % U-235"],
+  0, "UN: 0,7 % de U-235; UE (de los LWR): 5 % de U-235. El ~20 % es el enriquecimiento necesario sin moderador.", "Apuntes FIS, diap. 46");
+L("FIS", "fis-reactores", "Tipos de reactores", 3, "Según la tabla de tipos de reactores de los apuntes, señale la afirmación correcta:",
+  ["Los reactores de grafito-gas y los de agua pesada pueden usar UN; los de agua ligera necesitan UE",
+   "Los reactores de agua ligera y los de agua pesada pueden usar UN; los de grafito-gas necesitan UE",
+   "Solo los reactores rápidos pueden usar UN, porque no tienen moderador que absorba neutrones",
+   "Todos los reactores térmicos pueden usar UN, porque el moderador aumenta la probabilidad de fisión"],
+  0, "GCR/AGR/HTGR: UN o UE. HWR: UN o UE. LWR: solo UE. FBR (rápidos, sin moderador): UE o MOX.", "Apuntes FIS, diap. 46");
+L("FIS", "fis-reactores", "CANDU", 3, "¿Cuáles de las siguientes son características del reactor CANDU según los apuntes? (Puede haber varias correctas)",
+  ["Recarga continua", "Moderador y refrigerante separados", "Puede usar el ciclo del torio", "Combustible enriquecido al ~5 % en una vasija a presión"],
+  [0, 1, 2], "CANDU: UN o U ligeramente enriquecido (&lt; 2 %), agua pesada, recarga continua, combustible en tubos de presión (no en vasija), consume ≈ 50 % del Pu generado, moderador y refrigerante separados y posible ciclo del torio.", "Apuntes FIS, diap. 50");
+L("FIS", "fis-reactores", "CANDU", 3, "Según los apuntes, el reactor CANDU…",
+  ["usa UN o U ligeramente enriquecido (&lt; 2 %) y consume ≈ 50 % del plutonio generado",
+   "usa U enriquecido hasta el 5 % y consume ≈ 50 % del plutonio generado",
+   "usa UN o U ligeramente enriquecido (&lt; 2 %) y consume ≈ 20 % del plutonio generado",
+   "usa U enriquecido por encima del 20 % y consume todo el plutonio generado"],
+  0, "CANDU (Canadian Natural Deuterium Uranium): UN o &lt; 2 %, consumo de un 50 % del Pu generado. El 5 % es típico de los LWR y el &gt; 20 %, de los FBR.", "Apuntes FIS, diap. 50");
+L("FIS", "fis-reactores", "Reactores rápidos", 2, "Según los apuntes, los reactores rápidos reproductores (FBR)…",
+  ["no tienen moderador, usan combustible enriquecido por encima del 20 % y los que operan se refrigeran con sodio",
+   "usan grafito como moderador, combustible enriquecido por encima del 20 % y se refrigeran con sodio",
+   "no tienen moderador, usan uranio enriquecido al 5 % y se refrigeran con agua ligera a presión",
+   "no tienen moderador, usan uranio natural y se refrigeran con plomo-bismuto en todos los casos"],
+  0, "FBR: sin moderador, &gt; 20 %, U o MOX; refrigerante sodio en los actualmente en operación (también podría ser gas, plomo-bismuto o plomo).", "Apuntes FIS, diap. 51");
+L("FIS", "fis-reactores", "PWR y BWR", 2, "Comparando los esquemas de los apuntes, señale la diferencia correcta entre PWR y BWR:",
+  ["En el BWR el vapor se genera en la propia vasija y va directo a la turbina; el PWR tiene presionador y generador de vapor",
+   "En el PWR el vapor se genera en la propia vasija y va directo a la turbina; el BWR tiene presionador y generador de vapor",
+   "Ambos tienen generador de vapor, pero solo el BWR tiene presionador",
+   "En el BWR las barras de control entran por arriba y en el PWR por abajo"],
+  0, "PWR: circuito primario a presión (presionador) que cede calor al secundario en el generador de vapor. BWR: un solo circuito; además, sus barras de control entran por abajo.", "Apuntes FIS, diap. 47-48");
+L("FIS", "fis-reactores", "Reactor AGR", 2, "En el reactor avanzado refrigerado por gas (AGR) del esquema de los apuntes, el refrigerante y el moderador son…",
+  ["CO<sub>2</sub> y grafito", "Helio y agua pesada", "CO<sub>2</sub> y agua pesada", "Sodio y grafito"],
+  0, "AGR: CO<sub>2</sub> (impulsado por soplantes) y moderador de grafito, en una vasija de hormigón revestida de acero.", "Apuntes FIS, diap. 46 y 49");
+L("FIS", "fis-reactores", "Tendencias", 2, "En el cuadro de tendencias de los apuntes, ¿qué concepto se describe como «la mejor opción para construcción inmediata»?",
+  ["Los reactores modulares pequeños (SMR)", "Los microrreactores", "Los reactores de sales fundidas", "Los reactores de muy alta temperatura"],
+  0, "SMR: más seguridad, menor coste, escalabilidad; «best chance for immediate construction». Microrreactores: proyecto Iceworm. Sales fundidas: opción de la Fuerza Aérea de EE. UU.", "Apuntes FIS, diap. 52");
+
+L("FIS", "fis-residuos", "El Cabril", 1, "En España, el Centro de Almacenamiento «El Cabril» gestiona…",
+  ["los residuos de baja y media actividad", "el combustible gastado tras salir de la piscina", "los residuos de alta actividad vitrificados", "Ninguna de las otras opciones"],
+  0, "El Cabril: baja y media actividad. El combustible gastado va de la piscina al ATI y, a largo plazo, al AGP.", "Apuntes FIS, diap. 56");
+L("FIS", "fis-residuos", "Piscinas", 2, "Según los apuntes, el combustible gastado permanece en piscina…",
+  ["un mínimo de 5 años, por el alto calor residual de los elementos radiactivos como los productos de fisión",
+   "un mínimo de 5 años, porque el agua disuelve los núcleos pesados y facilita su tratamiento",
+   "un mínimo de 40 años, por el alto calor residual de los productos de fisión",
+   "un mínimo de 1 año, porque el agua actúa como moderador y detiene las fisiones"],
+  0, "Primera fase en piscina, mínimo 5 años, por el alto calor residual debido a los elementos radiactivos (como los productos de fisión).", "Apuntes FIS, diap. 57");
+L("FIS", "fis-residuos", "Secuencia de gestión", 2, "El orden de gestión del combustible gastado que muestran los apuntes es…",
+  ["piscina (≥ 5 años) → Almacenamiento Temporal Individualizado → Almacenamiento Geológico Profundo",
+   "Almacenamiento Temporal Individualizado → piscina (≥ 5 años) → Almacenamiento Geológico Profundo",
+   "piscina (≥ 5 años) → El Cabril → Almacenamiento Geológico Profundo",
+   "piscina (≥ 5 años) → Almacenamiento Geológico Profundo → Almacenamiento Temporal Individualizado"],
+  0, "Piscina (mínimo cinco años) → contenedores en el ATI → AGP como solución a largo plazo. El Cabril es para baja y media actividad.", "Apuntes FIS, diap. 57-59");
+L("FIS", "fis-residuos", "Barreras del AGP", 3, "En el esquema de barreras múltiples del Almacenamiento Geológico Profundo, la cápsula de acero al carbono…",
+  ["aísla completamente el residuo y establece un ambiente químico favorable",
+   "sirve solo para el transporte y se retira antes de depositar el residuo",
+   "es la barrera geológica principal y sustituye a la roca de las galerías",
+   "se usa únicamente para los residuos de baja y media actividad"],
+  0, "Barreras: elementos combustibles, cápsula de acero al carbono (aísla el residuo y crea un ambiente químico favorable), cápsula mixta acero-cobre o cápsula para residuos vitrificados, y la formación geológica.", "Apuntes FIS, diap. 59");
+L("FIS", "fis-residuos", "Barreras de El Cabril", 2, "Según el esquema de El Cabril, las tres barreras que aíslan los residuos de baja y media actividad son…",
+  ["físico-química, de ingeniería y geológica", "físico-química, biológica y geológica", "de ingeniería, hidráulica y geológica", "química, térmica y de ingeniería"],
+  0, "Barrera físico-química (residuo inmovilizado en el bidón), barrera de ingeniería (contenedores y celdas) y barrera geológica.", "Apuntes FIS, diap. 56");
+L("FIS", "fis-residuos", "Ciclos del combustible", 3, "Según el esquema de alternativas de gestión de residuos de alta actividad, señale la afirmación correcta:",
+  ["En el ciclo cerrado se reprocesa el combustible gastado para recuperar uranio y plutonio, y el resto se vitrifica",
+   "En el ciclo abierto se reprocesa el combustible gastado para recuperar uranio y plutonio, y el resto se vitrifica",
+   "En el ciclo cerrado el combustible gastado va directamente al almacenamiento final sin tratamiento",
+   "En el ciclo cerrado avanzado se vitrifica todo el combustible gastado sin separar isótopos"],
+  0, "Abierto: CG → almacenamiento final. Cerrado: reproceso (U y Pu a la fábrica de combustible) y vitrificado. Cerrado avanzado: separación de isótopos y transmutación.", "Apuntes FIS, diap. 60");
+L("FIS", "fis-residuos", "Almacenamiento temporal", 2, "En el esquema de alternativas de gestión, ¿qué formas de almacenamiento temporal del combustible gastado aparecen? (Puede haber varias correctas)",
+  ["Piscina", "Contenedor", "Silo", "Almacenamiento geológico profundo"],
+  [0, 1, 2], "Almacenamiento temporal de CG: piscina, contenedor y silo. El almacenamiento geológico es el almacenamiento final (CG y RAA).", "Apuntes FIS, diap. 60");
+
+C("FIS", "fis-mundo", "Parque nuclear mundial (WNA)", "441 reactores operables (404.125 MWe), 79 en construcción (78.211 MWe); 9 % de la electricidad mundial (2.667 TWh en 2024).");
+C("FIS", "fis-mundo", "Top de capacidad y de construcción", "Capacidad: EE. UU., China, Francia… España 10.ª. En construcción: China con muchísima diferencia, luego India y Corea del Sur.");
+C("FIS", "fis-mundo", "Uranio de mina (2024)", "Kazajistán 23.270 tU, Canadá 14.309, Namibia 7.333, Australia 4.598. Kazajistán ≈ 40 % del total.");
+C("FIS", "fis-mundo", "Muertes y emisiones de la nuclear", "<b>0,03 muertes/TWh</b> (incluye Chernóbil y Fukushima) y <b>3 t CO<sub>2</sub>-eq/GWh</b>; carbón: 24,6 y 820.");
+C("FIS", "fis-espana", "Reactores españoles en funcionamiento", "Almaraz I-II, Ascó I-II, Vandellós II, Trillo I (PWR) y Cofrentes (único BWR). ≈ 7.400 MW brutos.");
+C("FIS", "fis-espana", "Centrales españolas cerradas", "Santa María de Garoña (Burgos), José Cabrera-Zorita (Guadalajara) y Vandellós I (Tarragona).");
+C("FIS", "fis-espana", "Uranio comprado por España (2025)", "Kazajistán 42,0 %, Canadá 32,7 %, Namibia 11,4 %, Australia 6,1 %, Rusia 3,3 %. En 2024 el primero fue China (37,5 %).");
+C("FIS", "fis-fisica", "Estabilidad nuclear", "A = Z + N. Ligeros estables: Z ≈ N; pesados: Z &lt; N. Repulsión coulombiana frente a interacción fuerte residual.");
+C("FIS", "fis-fisica", "Desintegraciones β", "β<sup>−</sup>: n → p + e<sup>−</sup> + antineutrino. β<sup>+</sup>: p → n + e<sup>+</sup> + neutrino. A no cambia.");
+C("FIS", "fis-fisica", "Actividad y sus unidades", "A = λN. 1 Bq = 1 desintegración/s; 1 Ci = 3,7·10<sup>10</sup> Bq.");
+C("FIS", "fis-fisica", "Blindaje", "α: papel. β: pocos mm (se paran antes del aluminio). γ: plomo. Neutrones: hormigón.");
+C("FIS", "fis-fisica", "D, H y E", "D en Gy (1 Gy = 1 J/kg = 100 rad); H = D·W<sub>R</sub>; E = H·W<sub>T</sub> en Sv, la magnitud para fijar límites.");
+C("FIS", "fis-fisica", "Dosis media anual", "3,6 mSv/persona·año: 82 % natural (radón 55 %), 18 % artificial (rayos X médicos 11 %).");
+C("FIS", "fis-reacciones", "Reparto de los 200 MeV de la fisión", "Inmediatos: 165 (productos de fisión) + 5 (neutrones) + 6 (γ). Diferidos: 14 (β y γ) + 10 (neutrinos, escapan).");
+C("FIS", "fis-reacciones", "Criticidad", "1 neutrón de cada fisión provoca otra fisión. Se logra moderando los neutrones a energías térmicas para fisionar U-235.");
+C("FIS", "fis-reacciones", "Enriquecimiento y moderador", "UN: el moderador debe absorber poco (no vale agua ligera). ~5 %: vale agua ligera. Sin moderador: ~20 %.");
+C("FIS", "fis-reactores", "Componentes de un reactor", "Combustible (U, Pu, Th), moderador (H, D, C), control (B, Cd, Gd), refrigerante (H<sub>2</sub>O, D<sub>2</sub>O, CO<sub>2</sub>, He), blindaje y reflector.");
+C("FIS", "fis-reactores", "CANDU", "Agua pesada; UN o &lt; 2 %; recarga continua; tubos de presión; consume ≈ 50 % del Pu; moderador y refrigerante separados; ciclo del torio.");
+C("FIS", "fis-reactores", "FBR", "Sin moderador; combustible &gt; 20 % o MOX; refrigerante sodio (o gas, plomo-bismuto, plomo); buen uso del ciclo del combustible.");
+C("FIS", "fis-residuos", "Ruta del combustible gastado", "Piscina (≥ 5 años, por el calor residual) → ATI (contenedores) → AGP (barreras múltiples).");
+C("FIS", "fis-residuos", "Ciclo abierto, cerrado y cerrado avanzado", "Abierto: CG al almacenamiento final. Cerrado: reproceso (U y Pu) y vitrificado. Avanzado: separación de isótopos y transmutación.");
+
+DRILLS.push({ id: "fis-c-componentes", type: "classify", tema: "FIS", sec: "fis-reactores", title: "¿Qué papel cumple cada material en el reactor?", cats: ["Combustible", "Moderador", "Control", "Refrigerante"], items: [
+  ["Uranio", 0], ["Plutonio", 0], ["Torio", 0], ["Grafito (C)", 1], ["Deuterio (D)", 1], ["Hidrógeno (H)", 1],
+  ["Boro", 2], ["Cadmio", 2], ["Gadolinio", 2], ["CO<sub>2</sub>", 3], ["Helio", 3], ["Sodio (en los FBR)", 3] ] });
+DRILLS.push({ id: "fis-c-reactores", type: "classify", tema: "FIS", sec: "fis-reactores", title: "¿A qué tipo de reactor corresponde cada rasgo?", cats: ["PWR", "BWR", "CANDU", "FBR"], items: [
+  ["Presionador", 0], ["Generador de vapor y dos circuitos", 0], ["Almaraz, Ascó, Trillo", 0],
+  ["Vapor directo de la vasija a la turbina", 1], ["Barras de control por abajo", 1], ["Cofrentes", 1],
+  ["Recarga continua", 2], ["Tubos de presión", 2], ["UN o &lt; 2 %", 2],
+  ["Sin moderador", 3], ["Refrigerante de sodio", 3], ["Enriquecimiento &gt; 20 % o MOX", 3] ] });
+DRILLS.push({ id: "fis-m-unidades", type: "match", tema: "FIS", sec: "fis-fisica", title: "Magnitud ↔ unidad o valor", pairs: [
+  ["Actividad", "Bequerelio (Bq)"], ["1 curio", "3,7·10¹⁰ Bq"], ["Dosis absorbida", "Gray: 1 J/kg"], ["1 Gy", "100 rad"],
+  ["Dosis efectiva", "Sievert (Sv)"], ["Dosis media anual", "3,6 mSv"], ["Energía por fisión de U-235", "≈ 200 MeV"] ] });
+DRILLS.push({ id: "fis-m-espana", type: "match", tema: "FIS", sec: "fis-espana", title: "Central ↔ dato", pairs: [
+  ["Cofrentes", "Único BWR (General Electric)"], ["Trillo I", "PWR de Siemens-KWU"], ["Almaraz I", "La más antigua (1983)"],
+  ["Ascó I", "100 % Endesa"], ["Vandellós I", "Cerrada (Tarragona)"], ["Garoña", "Cerrada (Burgos)"] ] });
+
+MNEMO["fis-mundo"] = ["WNA «441-9-79»: reactores operables, % de la electricidad y reactores en construcción.", "Uranio «K-C-N»: Kazajistán, Canadá, Namibia.", "Nuclear «0,03 y 3»: muertes por TWh y t CO<sub>2</sub>-eq por GWh."];
+MNEMO["fis-espana"] = ["«Siete reactores, uno hierve»: Cofrentes es el único BWR.", "Tarragona tiene tres (Ascó I, Ascó II y Vandellós II); Cáceres, dos (Almaraz).", "Westinghouse en todas las PWR salvo Trillo (Siemens-KWU)."];
+MNEMO["fis-fisica"] = ["Blindaje «papel, piel, plomo, hormigón»: α, β, γ, neutrones.", "Dosis «D → H → E»: Gy, luego × W<sub>R</sub> y × W<sub>T</sub> hasta el Sv de los límites.", "«3,6 y radón»: 3,6 mSv al año y más de la mitad por radón."];
+MNEMO["fis-reacciones"] = ["Fisión «165-5-6 | 14-10»: inmediatos | diferidos (los neutrinos se escapan).", "Enriquecimiento «0,7 · 5 · 20»: natural, agua ligera, sin moderador."];
+MNEMO["fis-reactores"] = ["Control «B-Cd-Gd» (boro, cadmio, gadolinio); moderador «H-D-C».", "PWR = Presionador; BWR = Boiling (hierve en la vasija).", "CANDU «2-50»: &lt; 2 % de enriquecimiento y consume ≈ 50 % del Pu."];
+MNEMO["fis-residuos"] = ["«P-A-A»: Piscina (5 años), ATI, AGP.", "El Cabril = «Cabe lo bajo y medio».", "Barreras de El Cabril «F-I-G»: físico-química, ingeniería, geológica."];
+
+DIAGRAMS.push({ sec: "fis-mundo", h4: "Seguridad y emisiones por fuente", cap: "Muertes por TWh (accidentes y contaminación) y emisiones de ciclo de vida (t CO<sub>2</sub>-eq/GWh) de cada fuente, según la infografía de Our World in Data de los apuntes. La nuclear está entre las más seguras y limpias.", svg: `<svg class="dg" viewBox="0 0 540 270" role="img" aria-label="Muertes por TWh y emisiones por GWh de cada fuente">
+<text x="120" y="22" text-anchor="middle" class="tb">Muertes por TWh</text><text x="420" y="22" text-anchor="middle" class="tb">t CO₂-eq por GWh</text>
+<rect x="10" y="202" width="520" height="22" rx="4" fill="#ede9fe"/>
+<g class="small2">
+<text x="270" y="54" text-anchor="middle">Carbón</text><rect x="55" y="42" width="170" height="16" fill="#64748b"/><text x="51" y="54" text-anchor="end">24,6</text><rect x="315" y="42" width="190" height="16" fill="#64748b"/><text x="509" y="54">820</text>
+<text x="270" y="80" text-anchor="middle">Petróleo</text><rect x="98" y="68" width="127" height="16" fill="#c2413b"/><text x="94" y="80" text-anchor="end">18,4</text><rect x="315" y="68" width="167" height="16" fill="#c2413b"/><text x="486" y="80">720</text>
+<text x="270" y="106" text-anchor="middle">Biomasa</text><rect x="193" y="94" width="32" height="16" fill="#92400e"/><text x="189" y="106" text-anchor="end">4,6</text><rect x="315" y="94" width="53" height="16" fill="#92400e"/><text x="372" y="106">78-230</text>
+<text x="270" y="132" text-anchor="middle">Gas</text><rect x="206" y="120" width="19" height="16" fill="#7c3aed"/><text x="202" y="132" text-anchor="end">2,8</text><rect x="315" y="120" width="114" height="16" fill="#7c3aed"/><text x="433" y="132">490</text>
+<text x="270" y="158" text-anchor="middle">Hidráulica</text><rect x="216" y="146" width="9" height="16" fill="#0891b2"/><text x="212" y="158" text-anchor="end">1,3</text><rect x="315" y="146" width="8" height="16" fill="#0891b2"/><text x="327" y="158">34</text>
+<text x="270" y="184" text-anchor="middle">Eólica</text><rect x="223" y="172" width="2" height="16" fill="#1e40af"/><text x="219" y="184" text-anchor="end">0,04</text><rect x="315" y="172" width="2" height="16" fill="#1e40af"/><text x="321" y="184">4</text>
+<text x="270" y="210" text-anchor="middle" class="tb">Nuclear</text><rect x="223" y="198" width="2" height="16" fill="#0d9488"/><text x="219" y="210" text-anchor="end" class="tb">0,03</text><rect x="315" y="198" width="2" height="16" fill="#0d9488"/><text x="321" y="210" class="tb">3</text>
+<text x="270" y="236" text-anchor="middle">Solar</text><rect x="223" y="224" width="2" height="16" fill="#d97706"/><text x="219" y="236" text-anchor="end">0,02</text><rect x="315" y="224" width="2" height="16" fill="#d97706"/><text x="321" y="236">5</text>
+</g>
+<line x1="225" y1="36" x2="225" y2="244" class="ax"/><line x1="315" y1="36" x2="315" y2="244" class="ax"/>
+<text x="270" y="262" text-anchor="middle" class="small2 mut">Carbón: 1.230 veces más muertes que la solar y 273 veces más GEI que la nuclear</text>
+</svg>` });
+
+DIAGRAMS.push({ sec: "fis-espana", h4: "Centrales en funcionamiento y cerradas", cap: "Potencia eléctrica bruta de los siete reactores españoles: inicial (barra clara) y actual (barra oscura), según Foro Nuclear (datos a 31-5-2026). Solo Cofrentes es BWR.", svg: `<svg class="dg" viewBox="0 0 520 250" role="img" aria-label="Potencia de los reactores nucleares españoles">
+<text x="10" y="20" class="tb">Potencia bruta (MW): inicial → actual</text>
+<rect x="320" y="10" width="12" height="10" fill="#c4b5fd"/><text x="336" y="19" class="small2">inicial</text><rect x="390" y="10" width="12" height="10" fill="#7c3aed"/><text x="406" y="19" class="small2">actual</text>
+<line x1="118" y1="30" x2="118" y2="232" class="ax"/>
+<g class="small2">
+<text x="110" y="47" text-anchor="end">Almaraz I</text><rect x="118" y="34" width="288" height="18" fill="#7c3aed"/><rect x="118" y="34" width="255" height="18" fill="#c4b5fd"/><text x="412" y="47">930 → 1.049</text>
+<text x="110" y="75" text-anchor="end">Almaraz II</text><rect x="118" y="62" width="287" height="18" fill="#7c3aed"/><rect x="118" y="62" width="255" height="18" fill="#c4b5fd"/><text x="411" y="75">930 → 1.045</text>
+<text x="110" y="103" text-anchor="end">Ascó I</text><rect x="118" y="90" width="284" height="18" fill="#7c3aed"/><rect x="118" y="90" width="255" height="18" fill="#c4b5fd"/><text x="408" y="103">930 → 1.033</text>
+<text x="110" y="131" text-anchor="end">Ascó II</text><rect x="118" y="118" width="282" height="18" fill="#7c3aed"/><rect x="118" y="118" width="255" height="18" fill="#c4b5fd"/><text x="406" y="131">930 → 1.027</text>
+<text x="110" y="159" text-anchor="end" class="tb">Cofrentes (BWR)</text><rect x="118" y="146" width="300" height="18" fill="#0d9488"/><rect x="118" y="146" width="268" height="18" fill="#99f6e4"/><text x="424" y="159" class="tb">975 → 1.092</text>
+<text x="110" y="187" text-anchor="end">Trillo I</text><rect x="118" y="174" width="293" height="18" fill="#7c3aed"/><rect x="118" y="174" width="275" height="18" fill="#c4b5fd"/><text x="417" y="187">1.000 → 1.066</text>
+<text x="110" y="215" text-anchor="end">Vandellós II</text><rect x="118" y="202" width="299" height="18" fill="#7c3aed"/><rect x="118" y="202" width="270" height="18" fill="#c4b5fd"/><text x="423" y="215">982 → 1.087</text>
+</g>
+<text x="118" y="246" class="small2 mut">Total actual ≈ 7.399 MW · cerradas: Garoña, Zorita, Vandellós I</text>
+</svg>` });
+
+DIAGRAMS.push({ sec: "fis-fisica", h4: "Blindaje de radiación", cap: "Poder de penetración según el esquema de los apuntes: cada flecha termina en el material que detiene ese tipo de radiación.", svg: `<svg class="dg" viewBox="0 0 520 230" role="img" aria-label="Blindaje de los distintos tipos de radiación">
+<defs><marker id="fisAr1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0L10,5L0,10z" fill="#c2413b"/></marker></defs>
+<g class="small2" text-anchor="middle"><text x="150" y="32">Papel</text><text x="220" y="32">Cuerpo</text><text x="290" y="32">Aluminio</text><text x="360" y="32">Plomo</text><text x="440" y="32">Hormigón</text></g>
+<rect x="146" y="42" width="8" height="166" fill="#f1f5f9" stroke="#94a3b8"/>
+<rect x="212" y="42" width="16" height="166" fill="#fde68a" stroke="#d97706"/>
+<rect x="284" y="42" width="12" height="166" fill="#bfdbfe" stroke="#2563eb"/>
+<rect x="352" y="42" width="16" height="166" fill="#475569"/>
+<rect x="428" y="42" width="24" height="166" fill="#cbd5e1" stroke="#64748b"/>
+<g class="tb"><text x="20" y="74">α alfa</text><text x="20" y="114">β beta</text><text x="20" y="154">γ gamma</text><text x="20" y="194">neutrones</text></g>
+<g stroke="#c2413b" stroke-width="2.5" fill="none"><line x1="88" y1="70" x2="144" y2="70" marker-end="url(#fisAr1)"/><line x1="88" y1="110" x2="210" y2="110" marker-end="url(#fisAr1)"/><line x1="88" y1="150" x2="350" y2="150" marker-end="url(#fisAr1)"/><line x1="88" y1="190" x2="426" y2="190" stroke-dasharray="6 4" marker-end="url(#fisAr1)"/></g>
+</svg>` });
+
+DIAGRAMS.push({ sec: "fis-reacciones", h4: "Energía generada en la fisión", cap: "Reparto de los ≈ 200 MeV de una fisión del U-235 (a escala). Los neutrinos (10 MeV) escapan del reactor, así que se recuperan ≈ 190 MeV como calor.", svg: `<svg class="dg" viewBox="0 0 540 210" role="img" aria-label="Reparto de la energía de fisión">
+<g stroke="#64748b" fill="none"><polyline points="30,52 30,44 452,44 452,52"/><polyline points="454,52 454,44 510,44 510,52"/></g>
+<text x="240" y="38" text-anchor="middle" class="small2 tb">Inmediatos · 176 MeV</text><text x="482" y="38" text-anchor="middle" class="small2 tb">Diferidos</text>
+<rect x="30" y="58" width="396" height="36" fill="#7c3aed"/><text x="228" y="81" text-anchor="middle" class="small2 tb" style="fill:#fff">165 MeV · productos de fisión</text>
+<rect x="426" y="58" width="12" height="36" fill="#2563eb"/><rect x="438" y="58" width="14" height="36" fill="#0891b2"/><rect x="452" y="58" width="34" height="36" fill="#d97706"/><rect x="486" y="58" width="24" height="36" fill="#cbd5e1" stroke="#64748b" stroke-dasharray="3 2"/>
+<g class="small2">
+<rect x="30" y="120" width="12" height="12" fill="#7c3aed"/><text x="48" y="131">165 MeV: energía cinética de los productos de fisión</text>
+<rect x="30" y="142" width="12" height="12" fill="#2563eb"/><text x="48" y="153">5 MeV: neutrones (≈ 2 por fisión)</text>
+<rect x="30" y="164" width="12" height="12" fill="#0891b2"/><text x="48" y="175">6 MeV: fotones γ inmediatos</text>
+<rect x="300" y="142" width="12" height="12" fill="#d97706"/><text x="318" y="153">14 MeV: radiactividad β y γ</text>
+<rect x="300" y="164" width="12" height="12" fill="#cbd5e1" stroke="#64748b"/><text x="318" y="175">10 MeV: neutrinos (escapan)</text>
+</g>
+<text x="30" y="202" class="small2 mut">Total ≈ 200 MeV · recuperable en el reactor ≈ 190 MeV</text>
+</svg>` });
+
+DIAGRAMS.push({ sec: "fis-reactores", h4: "Tipos de reactores", cap: "Clasificación de los reactores según la energía de los neutrones y el moderador, con su refrigerante y su combustible (tabla de los apuntes).", svg: `<svg class="dg" viewBox="0 0 540 250" role="img" aria-label="Clasificación de los reactores nucleares">
+<rect x="210" y="8" width="120" height="30" rx="6" fill="#ede9fe" stroke="#7c3aed"/><text x="270" y="28" text-anchor="middle" class="tb">Reactores</text>
+<rect x="120" y="58" width="150" height="30" rx="6" class="box"/><text x="195" y="78" text-anchor="middle" class="small2 tb">Neutrones térmicos</text>
+<rect x="395" y="58" width="130" height="30" rx="6" class="box"/><text x="460" y="78" text-anchor="middle" class="small2 tb">Neutrones rápidos</text>
+<g stroke="#94a3b8" fill="none"><polyline points="270,38 270,48 195,48 195,58"/><polyline points="270,48 460,48 460,58"/><polyline points="70,113 70,100 320,100 320,113"/><line x1="195" y1="88" x2="195" y2="113"/><line x1="460" y1="88" x2="460" y2="113"/></g>
+<g class="small2" text-anchor="middle">
+<rect x="13" y="113" width="115" height="86" rx="6" fill="#fef3c7" stroke="#d97706"/><text x="70" y="131" class="tb">Grafito</text><text x="70" y="148">refrig.: CO₂, He</text><text x="70" y="164">UN o UE</text><text x="70" y="182" class="tb">GCR, AGR, HTGR</text>
+<rect x="138" y="113" width="115" height="86" rx="6" fill="#f1f5fd" stroke="#0891b2"/><text x="195" y="131" class="tb">Agua pesada</text><text x="195" y="148">refrig.: D₂O</text><text x="195" y="164">UN o UE</text><text x="195" y="182" class="tb">HWR (CANDU)</text>
+<rect x="263" y="113" width="115" height="86" rx="6" fill="#eef3fb" stroke="#2563eb"/><text x="320" y="131" class="tb">Agua ligera</text><text x="320" y="148">refrig.: H₂O</text><text x="320" y="164">solo UE</text><text x="320" y="182" class="tb">LWR: PWR, BWR</text>
+<rect x="403" y="113" width="115" height="86" rx="6" fill="#fee2e2" stroke="#c2413b"/><text x="460" y="131" class="tb">Sin moderador</text><text x="460" y="148">refrig.: sodio, gas</text><text x="460" y="164">UE (&gt; 20 %), MOX</text><text x="460" y="182" class="tb">FBR</text>
+</g>
+<text x="270" y="228" text-anchor="middle" class="small2 mut">UN: 0,7 % U-235 · UE: 5 % U-235 · MOX: óxidos mixtos de Pu y U</text>
+</svg>` });
+
+DIAGRAMS.push({ sec: "fis-residuos", h4: "Alternativas de gestión", cap: "Gestión del combustible gastado en España: piscina, ATI y, a largo plazo, AGP (ciclo abierto); en el ciclo cerrado se reprocesa para recuperar U y Pu y se vitrifica el resto. Los residuos de baja y media actividad van a El Cabril.", svg: `<svg class="dg" viewBox="0 0 540 240" role="img" aria-label="Gestión del combustible gastado y de los residuos radiactivos">
+<defs><marker id="fisAr2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0L10,5L0,10z" fill="#64748b"/></marker></defs>
+<g class="small2" text-anchor="middle">
+<rect x="10" y="28" width="110" height="48" rx="6" fill="#fef3c7" stroke="#d97706"/><text x="65" y="48">Combustible</text><text x="65" y="64">gastado (CG)</text>
+<rect x="145" y="28" width="115" height="48" rx="6" fill="#f1f5fd" stroke="#0891b2"/><text x="202" y="48">Piscina ≥ 5 años</text><text x="202" y="64">(calor residual)</text>
+<rect x="285" y="28" width="110" height="48" rx="6" class="box"/><text x="340" y="48">ATI</text><text x="340" y="64">(contenedores)</text>
+<rect x="420" y="28" width="110" height="48" rx="6" fill="#dcfce7" stroke="#0d9488"/><text x="475" y="48" class="tb">AGP</text><text x="475" y="64">barreras múltiples</text>
+<rect x="145" y="120" width="115" height="48" rx="6" fill="#ede9fe" stroke="#7c3aed"/><text x="202" y="140">Reproceso</text><text x="202" y="156">(ciclo cerrado)</text>
+<rect x="285" y="120" width="110" height="48" rx="6" class="box"/><text x="340" y="148">Vitrificado</text>
+<rect x="10" y="120" width="110" height="48" rx="6" class="box"/><text x="65" y="140">U y Pu → fábrica</text><text x="65" y="156">de combustible</text>
+<rect x="10" y="196" width="520" height="34" rx="6" fill="#fef3c7" stroke="#d97706"/><text x="270" y="218">Baja y media actividad → El Cabril (3 barreras: físico-química, ingeniería, geológica)</text>
+</g>
+<g stroke="#64748b" fill="none">
+<line x1="120" y1="52" x2="143" y2="52" marker-end="url(#fisAr2)"/><line x1="260" y1="52" x2="283" y2="52" marker-end="url(#fisAr2)"/><line x1="395" y1="52" x2="418" y2="52" marker-end="url(#fisAr2)"/>
+<line x1="202" y1="76" x2="202" y2="118" marker-end="url(#fisAr2)"/><line x1="145" y1="144" x2="122" y2="144" marker-end="url(#fisAr2)"/><line x1="260" y1="144" x2="283" y2="144" marker-end="url(#fisAr2)"/><polyline points="395,144 475,144 475,78" marker-end="url(#fisAr2)"/>
+</g>
+<text x="300" y="20" class="small2 mut">ciclo abierto: CG → ATI → AGP</text>
+</svg>` });
