@@ -502,3 +502,4 @@ body.picking .mainnav,body.picking .tabbar,body.picking #acct,body.picking .subj
 .ah-opts+.ah-b{border-top:1px dashed var(--line);padding-top:6px}
 .sp-logos{display:flex;gap:10px;justify-content:center;margin-bottom:8px}
 .sp-brand{font-size:1.5rem;font-weight:800;color:var(--ink);margin-bottom:6px}.sp-brand b{color:var(--brand-2)}
+.neg{color:var(--ko);font-weight:800;letter-spacing:.02em}

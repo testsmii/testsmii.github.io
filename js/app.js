@@ -649,6 +649,8 @@ function startQuiz({ ids, title, fromExam, lesson }) {
   save(); go("#/quiz");
 }
 function startFailedQuiz() { const ids = failedIds(); if (!ids.length) return go("#/aprender"); startQuiz({ ids: shuffle(ids).slice(0, 20), title: "Corregir falladas" }); }
+// Resalta las negaciones del enunciado («incorrecta», «falsa», «no»…) para que no se lean como «correcta»
+const qText = t => esc(t).replace(/\b(incorrectas?|falsas?|INCORRECTAS?|FALSAS?|NO es|no es|no son|NO|no corresponde|excepto|EXCEPTO)\b/g, m => `<b class="neg">${m.toUpperCase()}</b>`);
 const explainHtml = q => `${q.official ? `<div class="official">${q.official}</div>` : ""}${q.bank === "exam" ? `<b>${q.official ? "Comentario" : "Explicación orientativa (no oficial)"}:</b> ` : ""}${esc(q.exp)}
   <div class="src">${q.bank === "exam" ? (q.unofficial ? (q.noKey ? "<b>Sin solución oficial ni propuesta</b> · " : "<b>Solución PROPUESTA por IA (no oficial): " + esc(q.keyText) + " · confianza " + esc(q.conf) + "</b> · ") : "Solución oficial: " + esc(q.keyText) + " · ") : ""}${esc(q.src)}${q.sec && lessonById(q.sec) ? ` · <a href="#/leccion/${q.sec}">Repasar la lección</a>` : ""}</div>${slideButtons(q)}`;
 function viewQuiz() {
@@ -676,7 +678,7 @@ function viewQuiz() {
   <article class="qcard">
     <div class="qmeta"><span class="tag" style="background:${t.color}1a;color:${t.color}">Tema ${t.num} · ${esc(q.apartado)}</span>
     ${q.bank === "exam" ? `<span class="tag brand">Examen real ${esc(exLabel(q))} · P${q.n}</span>${q.unofficial ? `<span class="tag warn">Sin solución oficial</span>` : ""}${q.part === "P2" ? `<span class="tag p2">2ª parte · no entra en la PEC1</span>` : ""}` : `<span class="tag">${DIFF[q.d]}</span>`}${q.multi ? `<span class="tag warn">Varias respuestas</span>` : ""}</div>
-    <div class="qtext">${esc(q.q)}</div>
+    <div class="qtext">${qText(q.q)}</div>
     ${q.fig ? `<figure class="qfig"><img src="${q.fig}" alt="${esc(q.figAlt || "Figura")}" loading="lazy"><figcaption>Figura original del examen</figcaption></figure>` : ""}
     <div class="opts">${optHtml}</div>
     ${!answered && q.multi ? `<p class="tiny muted mt">Marca todas las que correspondan. Puntúa 0,5 × máx(0, (aciertos − fallos)/nº correctas).</p>` : ""}
@@ -730,7 +732,7 @@ function reviewItem(q, sel, n, order) {
   const r = scoreQ(q, sel);
   const tag = { ok: `<span class="tag ok">Correcta · ${fmt1(r.score)}</span>`, ko: `<span class="tag ko">Incorrecta · ${fmt1(r.score)}</span>`, partial: `<span class="tag warn">Parcial · ${fmt1(r.score)}</span>`, blank: `<span class="tag">En blanco · 0,00</span>`, nokey: `<span class="tag warn">Sin solución</span>` }[q.noKey && r.status === "blank" ? "nokey" : r.status];
   return `<div class="review-item"><div class="rh"><b>Pregunta ${n}</b>${tag}</div>
-  <div style="font-weight:600;margin-bottom:8px;white-space:pre-line">${esc(q.q)}</div>
+  <div style="font-weight:600;margin-bottom:8px;white-space:pre-line">${qText(q.q)}</div>
   ${q.fig ? `<figure class="qfig"><img src="${q.fig}" alt="${esc(q.figAlt || "Figura")}" loading="lazy"></figure>` : ""}
   ${order.map((oi, k) => { const isC = q.a.includes(oi), isS = sel.includes(oi);
     return `<div class="ropt ${isC ? "correct" : isS ? "wrong" : ""}"><span class="k">${LET[k]}</span><span style="white-space:pre-line">${esc(q.o[oi])}</span><span class="who">${isS ? "Tu respuesta" + (isC ? " ✓" : " ✗") : isC ? "Correcta" : ""}</span></div>`; }).join("")}
@@ -804,7 +806,7 @@ function viewExamRunner() {
   <div class="exam-layout"><div>
     <article class="qcard">
       <div class="qmeta"><span class="tag brand">Pregunta ${q.n} de ${qs.length}</span>${q.part === "P2" ? `<span class="tag p2">2ª parte · no entra en la PEC1</span>` : ""}${q.multi ? `<span class="tag warn">Puede haber más de una</span>` : ""}</div>
-      <div class="qtext">${esc(q.q)}</div>
+      <div class="qtext">${qText(q.q)}</div>
       ${q.fig ? `<figure class="qfig"><img src="${q.fig}" alt="${esc(q.figAlt || "Figura")}"><figcaption>Figura original del examen</figcaption></figure>` : ""}
       <div class="opts">${q.o.map((o, i) => `<button class="opt ${sel.includes(i) ? "sel" : ""}" data-i="${i}"><span class="k">${"abcd"[i]}</span><span class="t">${esc(o)}</span></button>`).join("")}</div>
       ${sel.length ? `<button class="linkbtn mt" id="e-clear">Dejar en blanco</button>` : ""}
