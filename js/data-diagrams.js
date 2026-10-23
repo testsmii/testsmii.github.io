@@ -186,16 +186,25 @@ D.push({ sec: "t23-cont", h4: "Estados de empuje", cap: "Coeficiente de empuje K
   ${T(140, 208, "← el muro se aleja del terreno", "small2", "middle")}${T(380, 208, "el muro empuja contra el terreno →", "small2", "middle")}${T(268, 28, "K", "tb")}`, "Coeficiente de empuje frente al desplazamiento") });
 
 /* ---------- T3 ---------- */
-D.push({ sec: "t3-acero", h4: "Diagrama tensión-deformación", cap: "Acero de dureza natural: zona elástica, escalón de fluencia, endurecimiento hasta σ<sub>max</sub> (= f<sub>u</sub>) y estricción. En el diagrama ingenieril la tensión de rotura σ<sub>r</sub> es menor que σ<sub>max</sub>; la tensión verdadera sigue creciendo.",
-  svg: W("0 0 520 240", `${arrowDefs}
-  <path class="ax" d="M50 210V20M50 210H500" marker-end="url(#ar)"/>
-  <path class="ln" d="M50 210L80 100L84 92L88 102L150 102 C 220 60, 300 48, 360 50 C 400 52, 430 70, 455 95"/>
-  <path class="ln3" stroke-dasharray="5 4" d="M150 102 C 220 58, 300 40, 360 36 C 400 30, 430 24, 455 18"/>
-  <circle cx="455" cy="95" r="4" fill="#c2413b"/>
-  <path class="dash" d="M50 49H360M50 95H455M50 102H88"/>
-  ${T(46, 53, "σ<tspan baseline-shift='sub' font-size='9'>max</tspan>", "tb", "end")}${T(46, 99, "σ<tspan baseline-shift='sub' font-size='9'>r</tspan>", "tb", "end")}${T(96, 90, "σ<tspan baseline-shift='sub' font-size='9'>e</tspan> / fluencia", "small2")}
-  ${T(62, 190, "elástica", "small2")}${T(118, 120, "fluencia", "small2", "middle")}${T(255, 90, "endurecimiento", "small2", "middle")}${T(420, 120, "estricción", "small2", "middle")}${T(440, 14, "tensión verdadera", "small2", "end")}
-  ${T(500, 228, "ε", "tb", "end")}${T(40, 26, "σ", "tb", "end")}`, "Diagrama tensión-deformación del acero") });
+D.push({ sec: "t3-acero", h4: "Diagrama tensión-deformación", cap: "Como en la diap. 11 de los apuntes: <b>OA</b> zona elástica lineal (hasta σ<sub>p</sub>), <b>AB</b> zona elástica (hasta σ<sub>e</sub>), <b>BCDG zona plástica</b>, que incluye el escalón de fluencia C–D (σ<sub>f</sub> y σ<sub>D</sub>) y el endurecimiento hasta σ<sub>max</sub>, y <b>GH</b> estricción y rotura (σ<sub>r</sub>). Si se descarga desde F, se baja paralelo a OA (rama O′F): la deformación plástica ε<sub>p</sub> queda y la elástica ε<sub>e</sub> se recupera.",
+  svg: W("0 0 540 306", `${arrowDefs}
+  <path class="ax" d="M50 230V18M50 230H520" marker-end="url(#ar)"/>
+  <path class="ln3" stroke-dasharray="6 4" d="M250 77 C 300 62, 360 48, 470 34"/>
+  <path class="ln" d="M50 230L76 135 C 79 124, 84 108, 92 104 C 101 100, 106 128, 118 130 C 170 134, 230 62, 330 60 C 390 60, 430 78, 465 102"/>
+  <path class="dash" d="M250 77L208 230"/>
+  <path class="dash" d="M50 60H330M50 102H465M50 104H92M50 130H118M50 135H76"/>
+  ${[[76, 135, "A"], [80, 120, "B"], [92, 104, "C"], [118, 130, "D"], [250, 77, "F"], [330, 60, "G"], [465, 102, "H"]].map(([x, y, l]) => `<circle cx="${x}" cy="${y}" r="3.2" fill="#fff" stroke="#1e40af" stroke-width="1.8"/>` + T(x + (l === "A" ? 7 : l === "B" ? -14 : 0), y + (l === "D" || l === "H" || l === "A" ? 16 : -9), l, "tb", "middle")).join("")}
+  ${T(46, 64, "σ<tspan baseline-shift='sub' font-size='9'>max</tspan>", "small2", "end")}${T(46, 100, "σ<tspan baseline-shift='sub' font-size='9'>r</tspan>  σ<tspan baseline-shift='sub' font-size='9'>f</tspan>", "small2", "end")}${T(46, 134, "σ<tspan baseline-shift='sub' font-size='9'>D</tspan>  σ<tspan baseline-shift='sub' font-size='9'>p</tspan>", "small2", "end")}
+  ${T(470, 24, "tensión verdadera F/A", "small2", "end")}${T(470, 128, "tensión ingenieril F/A₀", "small2", "end")}
+  ${T(214, 226, "O′", "tb", "start")}${T(520, 246, "ε", "tb", "end")}${T(40, 24, "σ", "tb", "end")}${T(46, 246, "O", "tb", "end")}
+  <path d="M50 262V270H80V262M80 262V270H330V262M330 262V270H465V262" fill="none" stroke="#334155" stroke-width="1.4"/>
+  <path d="M82 236V240H122V236M124 236V240H328V236" fill="none" stroke="#94a3b8" stroke-width="1.2"/>
+  ${T(65, 286, "OAB", "small2 tb", "middle")}${T(65, 300, "elástica", "small2", "middle")}
+  ${T(205, 286, "BCDG · zona plástica", "small2 tb", "middle")}${T(205, 300, "fluencia (C–D) + endurecimiento", "small2", "middle")}
+  ${T(398, 286, "GH", "small2 tb", "middle")}${T(398, 300, "estricción y rotura", "small2", "middle")}
+  ${T(102, 254, "fluencia", "small2 mut", "middle")}${T(226, 254, "endurecimiento", "small2 mut", "middle")}
+  <path d="M50 196H206" stroke="#c2413b" stroke-width="1.4" marker-end="url(#arR)"/><path d="M208 196H250" stroke="#0f8a5f" stroke-width="1.6"/><path class="dash" d="M208 196V230M250 196V77"/>
+  ${T(129, 190, "ε<tspan baseline-shift='sub' font-size='9'>p</tspan> (permanece)", "small2", "middle")}${T(229, 190, "ε<tspan baseline-shift='sub' font-size='9'>e</tspan>", "small2", "middle")}`, "Diagrama tensión-deformación del acero de dureza natural según los apuntes") });
 
 D.push({ sec: "t3-horm", h4: "Características reológicas", cap: "Bajo carga constante aplicada en t₀, el hormigón tiene una deformación instantánea σ/E y después una deformación diferida (fluencia) que crece con el tiempo de forma asintótica, φ(t,t₀)·σ/E₂₈. A mayor humedad relativa y mayor edad de puesta en carga, menos fluencia.",
   svg: W("0 0 520 220", `${arrowDefs}
