@@ -155,6 +155,36 @@ function openSlide(deck, n, range) {
   $("#sb-p").onclick = () => { document.removeEventListener("keydown", key); openSlide(deck, n - 1, range); };
   $("#sb-n").onclick = () => { document.removeEventListener("keydown", key); openSlide(deck, n + 1, range); };
 }
+/* ---------- practicar desde cualquier % de dominio ---------- */
+function pmQs(key) {
+  const [k, v] = key.split(":");
+  if (k === "tema") return topicQs(v);
+  if (k === "lesson") { const l = lessonById(v); return l ? l.qids.map(id => QMAP[id]) : []; }
+  if (k === "exam") return EXAM_POOL.map(id => QMAP[id]);
+  if (k === "examtema") return EXAM_POOL.map(id => QMAP[id]).filter(q => q.tema === v);
+  return Object.values(QMAP).filter(inPool);
+}
+function pmTitle(key) {
+  const [k, v] = key.split(":");
+  if (k === "tema") return "Tema " + topicById(v).num + " · " + topicById(v).short;
+  if (k === "lesson") return lessonById(v).title.replace(/^[\d.]+\s*/, "");
+  if (k === "examtema") return "Examen · Tema " + topicById(v).num;
+  return k === "exam" ? "Preguntas de examen" : "Toda la asignatura";
+}
+function practiceMenu(key) {
+  const qs = pmQs(key), title = pmTitle(key);
+  const pending = qs.filter(q => !S.qs[q.id] || S.qs[q.id].last !== "ok"), unseen = qs.filter(q => !S.qs[q.id]), failed = qs.filter(q => S.failed[q.id]);
+  const okN = qs.length - pending.length;
+  const opt = (icon, t, list, sub, ordered) => ({ icon, title: `${t} (${list.length})`, sub, run: () => list.length ? startQuiz({ ids: ordered ? list.map(q => q.id) : shuffle(list.map(q => q.id)), title: title + " · " + t.toLowerCase() }) : confirmBox("Nada que practicar", "No hay preguntas en este grupo. ¡Bien hecho!", "Aceptar", () => {}, { noCancel: true }) });
+  chooseBox(esc(title), `Dominio ${pct(okN, qs.length)} %: ${okN} de ${qs.length} preguntas acertadas en su último intento. Puedes dejar cualquier test a medias y continuar luego.`, [
+    opt("play", "Las que me faltan", pending, "Sin hacer o no acertadas la última vez · hasta llegar al 100 %"),
+    opt("book", "Solo las no vistas", unseen, "Preguntas que aún no has respondido nunca"),
+    opt("redo", "Las falladas", failed, "Hasta que las aciertes"),
+    opt("exam", "Todas", qs, "El conjunto completo, en orden aleatorio")]);
+}
+document.addEventListener("click", e => { const t = e.target.closest("[data-pm]"); if (t) { e.preventDefault(); practiceMenu(t.dataset.pm); } });
+document.addEventListener("keydown", e => { if (e.key === "Enter") { const t = e.target.closest && e.target.closest(".hb-row[data-pm]"); if (t) practiceMenu(t.dataset.pm); } });
+
 /* ---------- teoría de una pregunta en una ventana (sin salir del test o examen) ---------- */
 function bestStep(l, q) {
   const words = [...new Set(toksT([q.q, q.a.map(i => q.o[i]).join(" "), q.exp, q.apartado].join(" ")))];
@@ -324,7 +354,7 @@ function donut(p, label, sub, color = "#2563eb", size = 150) {
   <text x="75" y="76" text-anchor="middle" class="d-v">${v}%</text><text x="75" y="96" text-anchor="middle" class="d-l">${label}</text>${sub ? `<title>${sub}</title>` : ""}</svg>`;
 }
 function hbars(rows, opts = {}) {
-  return `<div class="hbars" role="list" aria-label="${esc(opts.label || "Gráfico de barras")}" style="--lw:${opts.labelW || 150}px">${rows.map(r => `<div class="hb-row" role="listitem" title="${esc(r.label)}: ${r.value}%${r.tip ? " · " + esc(r.tip) : ""}">
+  return `<div class="hbars" role="list" aria-label="${esc(opts.label || "Gráfico de barras")}" style="--lw:${opts.labelW || 150}px">${rows.map(r => `<div class="hb-row${r.pm ? " pm" : ""}" ${r.pm ? `data-pm="${r.pm}" tabindex="0"` : ""} role="listitem" title="${esc(r.label)}: ${r.value}%${r.tip ? " · " + esc(r.tip) : ""}">
     <span class="hb-l">${esc(r.label)}</span><span class="hb-track"><i style="width:${r.value > 0 ? Math.max(2, r.value) : 0}%;background:${r.color || "#2563eb"}"></i></span><span class="hb-v">${r.value}%</span></div>`).join("")}</div>`;
 }
 function heatmap(weeks = 12) {
@@ -393,13 +423,13 @@ function viewHome() {
       <button class="btn primary big" id="h-go">${ic("play")} ${g.n ? "Continuar" : "Empezar a estudiar"}</button>
     </div>
     <div class="today-side">
-      ${donut(g.m, "dominio", "Preguntas cuya última respuesta fue correcta")}
+      <button class="pm-donut" data-pm="all" title="Practicar lo que te falta">${donut(g.m, "dominio", "Preguntas cuya última respuesta fue correcta")}<span class="pm-hint">Practicar lo que falta ›</span></button>
       <div class="mini-stats"><div><b>${doneL}/${LESSONS.length}</b><span>lecciones</span></div><div><b>${g.n ? g.p + "%" : "—"}</b><span>aciertos</span></div><div><b>${g.best != null ? fmt1(g.best) : "—"}</b><span>mejor nota</span></div></div>
     </div>
   </section>
   <div class="grid g2 mt">
     <div class="card"><div class="card-h"><h3>Dominio por tema</h3><a class="small" href="#/progreso">Detalle</a></div>
-      ${hbars(TOPICS.map(t => { const s = topicStats(t.id); return { label: t.num + ". " + t.short, value: s.m, color: t.color, tip: `${s.seen}/${s.total} vistas` }; }), { label: "Dominio por tema" })}</div>
+      ${hbars(TOPICS.map(t => { const s = topicStats(t.id); return { label: t.num + ". " + t.short, value: s.m, color: t.color, tip: `${s.seen}/${s.total} vistas`, pm: "tema:" + t.id }; }), { label: "Dominio por tema" })}<p class="tiny muted mb0">Toca un tema para practicar lo que te falta.</p></div>
     <div class="card"><div class="card-h"><h3>Actividad</h3><span class="small muted">${Object.values(S.days).reduce((a, b) => a + b, 0)} respuestas</span></div>${heatmap(12)}</div>
   </div>
   <div class="grid g2 mt">
@@ -431,8 +461,8 @@ function viewLearn() {
   ${nl ? `<a class="card resume" href="#/leccion/${nl.id}"><span class="ic-sq">${ic("play")}</span><div><div class="eyebrow">Continúa por aquí</div><b>${esc(nl.title)}</b><div class="small muted">Tema ${topicById(nl.tema).num} · ${esc(topicById(nl.tema).title)}</div></div>${ic("arrow", "chev")}</a>` : `<div class="notice">Has completado todas las lecciones. Sigue con las tarjetas y los simulacros.</div>`}
   <div class="grid g2 mt">
   ${TOPICS.map(t => { const ls = LESSONS.filter(l => l.tema === t.id), s = topicStats(t.id), done = ls.filter(l => S.lessons[l.id] && S.lessons[l.id].done).length;
-    return `<section class="card topic" style="--c:${t.color}"><div class="topic-h"><div>${donut(s.m, "", "", t.color, 54)}</div>
-      <div><a href="#/tema/${t.id}" class="th-link"><span class="num">Tema ${t.num}</span><h3>${esc(t.title)}</h3></a><div class="tiny muted">${done}/${ls.length} lecciones · dominio ${s.m}%</div></div></div>
+    return `<section class="card topic" style="--c:${t.color}"><div class="topic-h"><button class="pm-donut sm" data-pm="tema:${t.id}" title="Practicar lo que te falta del tema">${donut(s.m, "", "", t.color, 54)}</button>
+      <div><a href="#/tema/${t.id}" class="th-link"><span class="num">Tema ${t.num}</span><h3>${esc(t.title)}</h3></a><div class="tiny muted">${done}/${ls.length} lecciones · dominio ${s.m}% · <a href="javascript:void 0" data-pm="tema:${t.id}">practicar lo que falta</a></div></div></div>
       <div class="lpath">${ls.map((l, i) => lessonRow(l, i)).join("")}</div></section>`; }).join("")}
   </div>
   <div class="missing">${MISSING_TOPICS.map(m => `<div><b>Tema ${m.num}.</b> ${esc(m.title)} — <span class="muted">${esc(m.note)}</span></div>`).join("")}</div>`;
@@ -445,8 +475,8 @@ function viewTopic(tid, tab) {
   let body = "";
   if (tab === "lecciones") {
     body = `<div class="card"><div class="lpath">${ls.map((l, i) => lessonRow(l, i)).join("")}</div></div>
-    <div class="card mt"><div class="card-h"><h3>Dominio por lección</h3></div>${hbars(ls.map(l => ({ label: l.title.replace(/^[\d.]+\s*/, "").slice(0, 26), value: lessonMastery(l), color: t.color })), { labelW: 190 })}
-    <button class="btn soft mt" id="t-prac">Practicar todo el tema</button></div>
+    <div class="card mt"><div class="card-h"><h3>Dominio por lección</h3></div>${hbars(ls.map(l => ({ label: l.title.replace(/^[\d.]+\s*/, "").slice(0, 26), value: lessonMastery(l), color: t.color, pm: "lesson:" + l.id })), { labelW: 190 })}
+    <button class="btn soft mt" data-pm="tema:${tid}">Practicar el tema (lo que falta, no vistas, falladas o todas)</button></div>
     <div class="card mt"><div class="card-h"><h3>Ejercicios para diferenciar</h3></div><div class="drill-grid">${DRILLS.filter(d => d.tema === tid).map(drillCard).join("")}</div></div>`;
   } else if (tab === "esquemas") {
     body = `<p class="muted small">Todos los esquemas y figuras del tema. Úsalos para repasar de un vistazo.</p>
@@ -469,7 +499,6 @@ function viewTopic(tid, tab) {
   <h1>${t.num}. ${esc(t.title)}</h1><div class="tiny muted">Fuente: ${esc(t.file)}</div>
   <div class="tabs">${tabs.map(([k, l]) => `<button class="${k === tab ? "active" : ""}" data-tab="${k}">${l}</button>`).join("")}</div>${body}`;
   $$("[data-tab]").forEach(b => b.onclick = () => go(`#/tema/${tid}/${b.dataset.tab}`));
-  const tp = $("#t-prac"); if (tp) tp.onclick = () => startQuiz({ ids: shuffle(topicQs(tid).map(q => q.id)).slice(0, 15), title: "Tema " + t.num });
 }
 
 /* ---------- lección guiada ---------- */
@@ -807,7 +836,7 @@ function viewExams() {
     <div class="card"><div class="card-h"><h3>Evolución de tus notas</h3><span class="small muted">${hist.length} intento${hist.length === 1 ? "" : "s"}</span></div>
     ${hist.length ? lineChart(hist.slice(-15).map(h => h.grade), 10, hist.slice(-15).map(h => exById(h.examId).short + " " + exById(h.examId).version), "", 5) : `<div class="empty">Haz un examen para ver tu evolución.</div>`}</div>
     <div class="card"><div class="card-h"><h3>Preguntas de examen por tema</h3></div>
-    ${hbars(TOPICS.map(t => { const qs = EXAM_POOL.map(id => QMAP[id]).filter(q => q.tema === t.id); return { label: t.num + ". " + t.short + " (" + qs.length + ")", value: mastery(qs), color: t.color }; }), { labelW: 170 })}
+    ${hbars(TOPICS.map(t => { const qs = EXAM_POOL.map(id => QMAP[id]).filter(q => q.tema === t.id); return { label: t.num + ". " + t.short + " (" + qs.length + ")", value: mastery(qs), color: t.color, pm: "examtema:" + t.id }; }), { labelW: 170 })}
     <div class="chips mt">${TOPICS.map(t => `<a class="chip" href="javascript:void 0" data-et="${t.id}">Practicar ${t.num}</a>`).join("")}</div></div>
   </div>
   ${hist.length ? `<div class="section-title"><h2>Últimos intentos</h2></div><div class="card"><ul class="list">${hist.slice().reverse().slice(0, 8).map(h => `<li class="clickable" data-h="${h.id}"><span><b>${fmt1(h.grade)}${h.official === false ? "*" : ""}</b> <span class="muted small">· ${esc(exById(h.examId).short)} ${exById(h.examId).version} · ${h.mode === "sim" ? "simulacro" : "sin tiempo"} · ${fmtDate(h.t)}</span></span><span class="small muted">${h.ok}✓ ${h.ko}✗ ${h.partial ? h.partial + "◐ " : ""}${h.blank}○ ${ic("arrow", "chev")}</span></li>`).join("")}</ul></div>` : ""}
@@ -927,7 +956,7 @@ function viewProgress() {
   const byD = [1, 2, 3].map(d => { let n = 0, ok = 0; LEARN.filter(q => q.d === d).forEach(q => { const s = S.qs[q.id]; if (s) { n += s.n; ok += s.ok; } }); return { d, n, ok }; });
   app.innerHTML = `<h1>Tu progreso</h1>
   <div class="card kpi-row">
-    <div>${donut(g.m, "dominio", "", "#2563eb", 120)}</div>
+    <button class="pm-donut" data-pm="all">${donut(g.m, "dominio", "", "#2563eb", 120)}<span class="pm-hint">Practicar ›</span></button>
     <div class="kstat"><b>${LESSONS.filter(l => S.lessons[l.id] && S.lessons[l.id].done).length}/${LESSONS.length}</b><span>lecciones completadas</span></div>
     <div class="kstat"><b>${g.seen}</b><span>preguntas distintas vistas</span></div>
     <div class="kstat"><b>${g.n ? g.p + "%" : "—"}</b><span>aciertos (${g.ok}/${g.n})</span></div>
@@ -935,7 +964,7 @@ function viewProgress() {
   </div>
   <div class="card mt"><div class="card-h"><h3>Mapa de lecciones</h3><span class="small muted">Toca una lección para abrirla</span></div>${lessonGrid()}</div>
   <div class="grid g2 mt">
-    <div class="card"><div class="card-h"><h3>Dominio por tema</h3></div>${hbars(TOPICS.map(t => { const s = topicStats(t.id); return { label: t.num + ". " + t.short, value: s.m, color: t.color, tip: `${s.seen}/${s.total} vistas · ${s.p}% aciertos` }; }))}</div>
+    <div class="card"><div class="card-h"><h3>Dominio por tema</h3></div>${hbars(TOPICS.map(t => { const s = topicStats(t.id); return { label: t.num + ". " + t.short, value: s.m, color: t.color, tip: `${s.seen}/${s.total} vistas · ${s.p}% aciertos`, pm: "tema:" + t.id }; }))}<p class="tiny muted mb0">Toca un tema para practicar.</p></div>
     <div class="card"><div class="card-h"><h3>Aciertos por dificultad</h3></div>${hbars(byD.map(r => ({ label: DIFF[r.d], value: pct(r.ok, r.n), color: SEQ[r.d + 1], tip: `${r.ok}/${r.n} respuestas` })), { labelW: 110 })}</div>
     <div class="card"><div class="card-h"><h3>Notas de examen</h3></div>${hist.length ? lineChart(hist.map(h => h.grade), 10, hist.map(h => exById(h.examId).short + " " + exById(h.examId).version), "", 5) : `<div class="empty">Aún no hay exámenes.</div>`}</div>
     <div class="card"><div class="card-h"><h3>Aciertos en tus últimos test</h3></div>${sess.length ? lineChart(sess.map(s => pct(s.ok, s.n)), 100, sess.map(s => s.title), "%") : `<div class="empty">Aún no hay test completados.</div>`}</div>
