@@ -155,7 +155,33 @@ function openSlide(deck, n, range) {
   $("#sb-p").onclick = () => { document.removeEventListener("keydown", key); openSlide(deck, n - 1, range); };
   $("#sb-n").onclick = () => { document.removeEventListener("keydown", key); openSlide(deck, n + 1, range); };
 }
+/* ---------- teoría de una pregunta en una ventana (sin salir del test o examen) ---------- */
+function bestStep(l, q) {
+  const words = [...new Set(toksT([q.q, q.a.map(i => q.o[i]).join(" "), q.exp, q.apartado].join(" ")))];
+  let best = 0, bs = -1;
+  l.steps.forEach((st, i) => { const tx = " " + normT(st.title + " " + st.html) + " "; const sc = words.reduce((a, w) => a + (tx.includes(" " + w) ? 1 : 0), 0) + (normT(st.title).includes(normT(q.apartado)) ? 3 : 0); if (sc > bs) { bs = sc; best = i; } });
+  return best;
+}
+const normT = t => String(t || "").replace(/<[^>]+>/g, " ").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9ñ]+/g, " ");
+const toksT = t => normT(t).split(" ").filter(w => w.length > 4);
+function openTheory(qid, stepIdx) {
+  const q = QMAP[qid], l = q && lessonById(q.sec); if (!l) return;
+  const i = stepIdx == null ? bestStep(l, q) : Math.max(0, Math.min(l.steps.length - 1, stepIdx)), st = l.steps[i];
+  const m = $("#modal");
+  m.innerHTML = `<div class="box theorybox" role="dialog" aria-modal="true" aria-label="Teoría relacionada">
+    <div class="sb-h"><div><b>${esc(l.title.replace(/^[\d.]+\s*/, ""))}</b> <span class="muted small">· Tema ${topicById(l.tema).num} · paso ${i + 1} de ${l.steps.length}</span></div><button class="linkbtn" id="th-x">✕ Volver a la pregunta</button></div>
+    <div class="th-body theory"><h3>${st.title}</h3>${st.html}</div>
+    <div class="sb-nav"><button class="btn sm" id="th-p" ${i <= 0 ? "disabled" : ""}>${ic("back")} Anterior</button><span>${secSlidesBtn(l.id, "Diapositivas")}</span><button class="btn sm" id="th-n" ${i >= l.steps.length - 1 ? "disabled" : ""}>Siguiente ${ic("arrow")}</button></div></div>`;
+  m.hidden = false; renderMath(m); m.querySelector(".th-body").scrollTop = 0;
+  const close = () => { m.hidden = true; m.innerHTML = ""; document.removeEventListener("keydown", key); };
+  const key = e => { if (e.key === "Escape") close(); };
+  document.addEventListener("keydown", key);
+  $("#th-x").onclick = close; m.onclick = e => { if (e.target === m) close(); };
+  $("#th-p").onclick = () => { document.removeEventListener("keydown", key); openTheory(qid, i - 1); };
+  $("#th-n").onclick = () => { document.removeEventListener("keydown", key); openTheory(qid, i + 1); };
+}
 document.addEventListener("click", e => {
+  const th = e.target.closest("[data-theory]"); if (th) { e.preventDefault(); openTheory(th.dataset.theory); return; }
   const b = e.target.closest("[data-slide]"); if (b) { e.preventDefault(); const [d, x, y] = b.dataset.slide.split("|"); openSlide(d, +x, +y > +x ? [+x, +y] : null); return; }
   const r = e.target.closest("[data-slides]"); if (r) { e.preventDefault(); const rg = SEC_SLIDES[r.dataset.slides]; openSlide(rg.deck, rg.a, [rg.a, rg.b]); }
 });
@@ -253,6 +279,11 @@ function renderMath(el) {
 function updateBanner() {
   const b = $("#resume-banner");
   const onExam = /^#\/examen(\/|$)/.test(location.hash);
+  const onQuiz = /^#\/quiz(\/|$)/.test(location.hash);
+  if (!S.exam && S.quiz && !S.quiz.done && !onQuiz && Object.keys(S.quiz.ans).length) {
+    b.innerHTML = `Test «${esc(S.quiz.title)}» a medias (pregunta ${S.quiz.i + 1} de ${S.quiz.ids.length}). <a href="#/quiz"><b>Continuar donde lo dejaste →</b></a>`;
+    b.hidden = false; return;
+  }
   if (S.exam && !onExam) {
     const ex = EXAMS.find(e => e.id === S.exam.examId);
     const left = S.exam.mode === "sim" ? " · quedan " + fmtTime((S.exam.deadline - Date.now()) / 1000) : "";
@@ -652,7 +683,7 @@ function startFailedQuiz() { const ids = failedIds(); if (!ids.length) return go
 // Resalta las negaciones del enunciado («incorrecta», «falsa», «no»…) para que no se lean como «correcta»
 const qText = t => esc(t).replace(/\b(incorrectas?|falsas?|INCORRECTAS?|FALSAS?|NO es|no es|no son|NO|no corresponde|excepto|EXCEPTO)\b/g, m => `<b class="neg">${m.toUpperCase()}</b>`);
 const explainHtml = q => `${q.official ? `<div class="official">${q.official}</div>` : ""}${q.bank === "exam" ? `<b>${q.official ? "Comentario" : "Explicación orientativa (no oficial)"}:</b> ` : ""}${esc(q.exp)}
-  <div class="src">${q.bank === "exam" ? (q.unofficial ? (q.noKey ? "<b>Sin solución oficial ni propuesta</b> · " : "<b>Solución PROPUESTA por IA (no oficial): " + esc(q.keyText) + " · confianza " + esc(q.conf) + "</b> · ") : "Solución oficial: " + esc(q.keyText) + " · ") : ""}${esc(q.src)}${q.sec && lessonById(q.sec) ? ` · <a href="#/leccion/${q.sec}">Repasar la lección</a>` : ""}</div>${slideButtons(q)}`;
+  <div class="src">${q.bank === "exam" ? (q.unofficial ? (q.noKey ? "<b>Sin solución oficial ni propuesta</b> · " : "<b>Solución PROPUESTA por IA (no oficial): " + esc(q.keyText) + " · confianza " + esc(q.conf) + "</b> · ") : "Solución oficial: " + esc(q.keyText) + " · ") : ""}${esc(q.src)}</div>${q.sec && lessonById(q.sec) ? `<div class="slide-btns"><button class="btn sm soft" data-theory="${q.id}">📘 Ver la teoría de esta pregunta</button></div>` : ""}${slideButtons(q)}`;
 function viewQuiz() {
   const Z = S.quiz;
   if (!Z) return go("#/aprender");
@@ -681,6 +712,7 @@ function viewQuiz() {
     <div class="qtext">${qText(q.q)}</div>
     ${q.fig ? `<figure class="qfig"><img src="${q.fig}" alt="${esc(q.figAlt || "Figura")}" loading="lazy"><figcaption>Figura original del examen</figcaption></figure>` : ""}
     <div class="opts">${optHtml}</div>
+    ${!answered ? `<button class="linkbtn mt" id="z-idk">No lo sé · ver la solución explicada</button>` : ""}
     ${!answered && q.multi ? `<p class="tiny muted mt">Marca todas las que correspondan. Puntúa 0,5 × máx(0, (aciertos − fallos)/nº correctas).</p>` : ""}
     ${fb}
   </article>
@@ -690,6 +722,7 @@ function viewQuiz() {
   const answer = selArr => { const r = scoreQ(q, selArr); Z.ans[id] = { sel: selArr, score: r.score, status: r.status }; recordAnswer(q, r.status); Z.showExp = null; rer(); };
   $$(".opt").forEach(b => b.onclick = () => { const oi = +b.dataset.oi; if (q.multi) { const s = new Set(Z.sel[id] || []); s.has(oi) ? s.delete(oi) : s.add(oi); Z.sel[id] = Array.from(s); rer(); } else answer([oi]); });
   const chk = $("#z-check"); if (chk) chk.onclick = () => answer(Z.sel[id] || []);
+  const idk = $("#z-idk"); if (idk) idk.onclick = () => { Z.ans[id] = { sel: [], score: 0, status: q.a.length ? "ko" : "nokey", idk: true }; recordAnswer(q, q.a.length ? "ko" : "nokey"); Z.showExp = true; rer(); };
   const ex = $("#z-exp"); if (ex) ex.onclick = () => { const cur = Z.showExp != null ? Z.showExp : answered.status !== "ok"; Z.showExp = !cur; rer(); };
   const pv = $("#z-prev"); if (pv) pv.onclick = () => { Z.i--; Z.showExp = null; rer(); };
   const nx = $("#z-next"); if (nx) nx.onclick = () => { if (Z.i < Z.ids.length - 1) { Z.i++; Z.showExp = null; rer(); window.scrollTo(0, 0); } else finishQuiz(); };
@@ -800,6 +833,8 @@ function viewExamRunner() {
   if (!E) return go("#/examenes");
   const ex = EXAMS.find(e => e.id === E.examId), qs = EXAM_Q[E.examId];
   const q = qs[E.cur], sel = E.ans[q.n] || [];
+  E.peek = E.peek || {}; E.show = E.show || {};
+  const peek = !!E.show[q.n];
   const nAns = qs.filter(x => (E.ans[x.n] || []).length).length;
   app.innerHTML = `<div class="exam-top"><span class="small"><b>${esc(ex.short)} · ${ex.version}</b> <span class="muted">${E.mode === "sim" ? "simulacro" : "sin límite"}</span></span>
     <span class="timer" id="e-timer">--:--</span><button class="btn primary sm" id="e-submit">Entregar</button></div>
@@ -808,13 +843,14 @@ function viewExamRunner() {
       <div class="qmeta"><span class="tag brand">Pregunta ${q.n} de ${qs.length}</span>${q.part === "P2" ? `<span class="tag p2">2ª parte · no entra en la PEC1</span>` : ""}${q.multi ? `<span class="tag warn">Puede haber más de una</span>` : ""}</div>
       <div class="qtext">${qText(q.q)}</div>
       ${q.fig ? `<figure class="qfig"><img src="${q.fig}" alt="${esc(q.figAlt || "Figura")}"><figcaption>Figura original del examen</figcaption></figure>` : ""}
-      <div class="opts">${q.o.map((o, i) => `<button class="opt ${sel.includes(i) ? "sel" : ""}" data-i="${i}"><span class="k">${"abcd"[i]}</span><span class="t">${esc(o)}</span></button>`).join("")}</div>
-      ${sel.length ? `<button class="linkbtn mt" id="e-clear">Dejar en blanco</button>` : ""}
+      <div class="opts">${q.o.map((o, i) => `<button class="opt ${sel.includes(i) ? "sel" : ""} ${peek && q.a.includes(i) ? "peek-ok" : ""}" data-i="${i}"><span class="k">${"abcd"[i]}</span><span class="t">${esc(o)}</span></button>`).join("")}</div>
+      <div class="row between mt">${sel.length ? `<button class="linkbtn" id="e-clear">Dejar en blanco</button>` : "<span></span>"}${q.noKey ? "" : `<button class="btn sm ${peek ? "ghost" : "soft"}" id="e-peek">${peek ? "Ocultar solución" : "💡 Ver solución explicada"}</button>`}</div>
+      ${peek ? `<div class="explain mt"><div class="peek-key">Respuesta${q.a.length > 1 ? "s" : ""} ${q.unofficial ? "propuesta" + (q.a.length > 1 ? "s" : "") + " (no oficial)" : "correcta" + (q.a.length > 1 ? "s" : "")}: <b>${q.a.map(i => "abcd"[i]).join(", ")}</b></div>${explainHtml(q)}</div>` : ""}
     </article>
     <div class="lesson-nav">${E.cur > 0 ? `<button class="btn ghost" id="e-prev">${ic("back")} Anterior</button>` : "<span></span>"}${E.cur < qs.length - 1 ? `<button class="btn primary big" id="e-next">Siguiente ${ic("arrow")}</button>` : `<button class="btn primary big" id="e-submit2">Entregar examen</button>`}</div>
   </div>
   <aside class="exam-side card"><div class="small muted">${nAns} de ${qs.length} respondidas</div>
-    <div class="qgrid">${qs.map((x, k) => `<button class="${(E.ans[x.n] || []).length ? "ans" : ""} ${k === E.cur ? "cur" : ""}" data-go="${k}" aria-label="Pregunta ${x.n}">${x.n}</button>`).join("")}</div>
+    <div class="qgrid">${qs.map((x, k) => `<button class="${(E.ans[x.n] || []).length ? "ans" : ""} ${k === E.cur ? "cur" : ""} ${E.peek[x.n] ? "peeked" : ""}" data-go="${k}" aria-label="Pregunta ${x.n}${E.peek[x.n] ? " (solución consultada)" : ""}">${x.n}</button>`).join("")}</div>
     <div class="side-links"><button class="linkbtn" id="e-exit">Salir y continuar luego</button><button class="linkbtn danger" id="e-restart">Reiniciar examen</button></div>
   </aside></div>`;
   const tick = () => {
@@ -826,6 +862,11 @@ function viewExamRunner() {
   const rerender = () => { clearInterval(timerId); save(); viewExamRunner(); renderMath(app); };
   $$(".opt").forEach(b => b.onclick = () => { const i = +b.dataset.i; let s = new Set(E.ans[q.n] || []); if (q.multi) s.has(i) ? s.delete(i) : s.add(i); else s = s.has(i) ? new Set() : new Set([i]); E.ans[q.n] = Array.from(s); rerender(); });
   const cl = $("#e-clear"); if (cl) cl.onclick = () => { E.ans[q.n] = []; rerender(); };
+  const pk = $("#e-peek"); if (pk) pk.onclick = () => {
+    if (peek) { E.show[q.n] = false; return rerender(); }
+    const go = () => { E.peek[q.n] = true; E.show[q.n] = true; rerender(); };
+    if (E.peek[q.n] || E.mode !== "sim") go(); else confirmBox("Ver la solución", "Estás en un <b>simulacro</b>. Puedes ver la solución explicada, pero la pregunta quedará marcada como «consultada» en el resultado. El tiempo sigue corriendo.", "Ver solución", go);
+  };
   const pv = $("#e-prev"); if (pv) pv.onclick = () => { E.cur--; rerender(); window.scrollTo(0, 0); };
   const nx = $("#e-next"); if (nx) nx.onclick = () => { E.cur++; rerender(); window.scrollTo(0, 0); };
   $$("[data-go]").forEach(b => b.onclick = () => { E.cur = +b.dataset.go; rerender(); });
@@ -843,7 +884,7 @@ function submitExam(auto) {
   if (ex.neg) total = Math.max(0, total);
   if (!ex.official && keyed) total = total * qs.length / keyed;
   const dur = E.mode === "sim" ? Math.min((Date.now() - E.start) / 1000, (E.deadline - E.start) / 1000) : (Date.now() - E.start) / 1000;
-  const h = { id: "h" + Date.now(), examId: E.examId, mode: E.mode, t: Date.now(), grade: Math.round(total * 1000) / 1000, ok, ko, partial, blank: blankN, nokey, official: ex.official, dur: Math.round(dur), ans: E.ans, auto: !!auto };
+  const h = { id: "h" + Date.now(), examId: E.examId, mode: E.mode, t: Date.now(), grade: Math.round(total * 1000) / 1000, ok, ko, partial, blank: blankN, nokey, official: ex.official, dur: Math.round(dur), ans: E.ans, auto: !!auto, peek: Object.keys(E.peek || {}).filter(k => E.peek[k]).map(Number) };
   S.history.push(h); S.exam = null; save(); if (window.CLOUD) CLOUD.recordAttempt(h, exById(h.examId));
   go("#/resultado/" + h.id);
   if (auto) setTimeout(() => confirmBox("Tiempo agotado", "Se acabaron los " + exById(h.examId).time + " minutos y el examen se ha entregado automáticamente.", "Ver resultado", () => {}, { noCancel: true }), 50);
@@ -860,7 +901,7 @@ function viewResult(hid) {
     ${donut(Math.round(h.grade * 10), "", "", h.grade >= 5 ? "#0f8a5f" : "#c2413b", 150).replace(/>\d+%<\/text>/, `>${fmt1(h.grade)}</text>`).replace('class="d-l"></text>', 'class="d-l">sobre 10</text>')}
     <div class="rh-main"><div class="eyebrow">${esc(ex.short)} · Versión ${ex.version} · ${h.mode === "sim" ? "simulacro" : "sin tiempo"} · ${fmtTime(h.dur)}${h.auto ? " · entregado automáticamente" : ""}</div>
       <h2>${h.official === false ? "Nota estimada" : h.grade >= 5 ? "Aprobado" : "Suspenso"} · ${fmt1(h.grade)}</h2>
-      <div class="kpis"><div class="kpi ok"><b>${h.ok}</b><span>aciertos</span></div><div class="kpi ko"><b>${h.ko}</b><span>errores</span></div><div class="kpi partial"><b>${h.partial}</b><span>parciales</span></div><div class="kpi"><b>${h.blank}</b><span>en blanco</span></div></div>${h.nokey ? `<p class="tiny muted mb0">${h.nokey} preguntas sin solución (no puntúan). Nota estimada con solución no oficial.</p>` : ""}
+      <div class="kpis"><div class="kpi ok"><b>${h.ok}</b><span>aciertos</span></div><div class="kpi ko"><b>${h.ko}</b><span>errores</span></div><div class="kpi partial"><b>${h.partial}</b><span>parciales</span></div><div class="kpi"><b>${h.blank}</b><span>en blanco</span></div></div>${h.peek && h.peek.length ? `<p class="tiny muted mb0">💡 Consultaste la solución de ${h.peek.length} pregunta${h.peek.length > 1 ? "s" : ""} (${h.peek.join(", ")}) durante el examen.</p>` : ""}${h.nokey ? `<p class="tiny muted mb0">${h.nokey} preguntas sin solución (no puntúan). Nota estimada con solución no oficial.</p>` : ""}
       <div class="qgrid res">${qs.map(q => { const st = q.noKey ? "nokey" : scoreQ(q, h.ans[q.n]).status; return `<button class="r-${st}" data-jump="${q.n}" title="Pregunta ${q.n}">${q.n}</button>`; }).join("")}</div></div></div>
   <div class="grid g2 mt">
     <div class="card"><div class="card-h"><h3>Puntos obtenidos por tema</h3></div>${hbars(Object.entries(byT).map(([t, b]) => ({ label: topicById(t).num + ". " + topicById(t).short, value: pct(b.s, b.n), color: topicById(t).color, tip: fmt1(b.s) + " de " + fmt1(b.n) + " puntos" })), { labelW: 150 })}</div>
