@@ -519,3 +519,4 @@ body.picking .mainnav,body.picking .tabbar,body.picking #acct,body.picking .subj
 .hb-row.pm{cursor:pointer;border-radius:8px;transition:background .15s}
 .hb-row.pm:hover,.hb-row.pm:focus{background:var(--surface-2);outline:none}
 .dgfig.photo img{display:block;max-width:100%;max-height:420px;margin:0 auto;border-radius:8px;background:#fff}
+.step-figs{margin-top:16px;padding-top:12px;border-top:1px dashed var(--line)}

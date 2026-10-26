@@ -95,19 +95,25 @@ TOPICS.forEach(t => THEORY[t.id].sections.forEach((s, idx) => {
   const parts = s.html.split(/(?=<h4>)/).map(x => x.trim()).filter(Boolean);
   let steps = parts.map(p => { const m = p.match(/^<h4>(.*?)<\/h4>/); return { title: m ? m[1] : s.title.replace(/^[\d.]+\s*/, ""), html: m ? p.slice(m[0].length) : p }; });
   if (steps.length > 1 && steps[0].html.replace(/<[^>]+>/g, "").trim().length < 40) { steps[1].html = steps[0].html + steps[1].html; steps.shift(); }
-  DIAGRAMS.filter(d => d.sec === s.id).forEach(d => {
-    const st = d.h4 ? steps.find(x => x.title.includes(d.h4)) : steps[0];
-    (st || steps[0]).html = figHtml(d) + (st || steps[0]).html;
+  // primero el texto resumido y debajo las figuras (en el orden de siempre: la última añadida, arriba)
+  DIAGRAMS.filter(d => d.sec === s.id).reverse().forEach(d => {
+    const st = (d.h4 ? steps.find(x => x.title.includes(d.h4)) : steps[0]) || steps[0];
+    st.figs = (st.figs || "") + figHtml(d);
   });
+  steps.forEach(st => { if (st.figs) { st.html += `<div class="step-figs">${st.figs}</div>`; delete st.figs; } });
   LESSONS.push({ id: s.id, tema: t.id, idx, title: s.title, steps, qids: Object.values(QMAP).filter(q => q.sec === s.id && inPool(q)).map(q => q.id) });
 }));
 const lessonById = id => LESSONS.find(l => l.id === id);
 const theoryWithDiagrams = s => {
   let h = s.html;
-  DIAGRAMS.filter(d => d.sec === s.id).forEach(d => {
-    if (!d.h4) { h = figHtml(d) + h; return; }
-    const i = h.indexOf("<h4>" + d.h4) >= 0 ? h.indexOf("<h4>" + d.h4) : h.search(new RegExp("<h4>[^<]*" + d.h4.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
-    if (i >= 0) { const j = h.indexOf("</h4>", i) + 5; h = h.slice(0, j) + figHtml(d) + h.slice(j); } else h = figHtml(d) + h;
+  DIAGRAMS.filter(d => d.sec === s.id).reverse().forEach(d => {
+    // la figura va al final del bloque de su subtítulo (antes del siguiente <h4>)
+    let i = !d.h4 ? 0 : h.indexOf("<h4>" + d.h4) >= 0 ? h.indexOf("<h4>" + d.h4) : h.search(new RegExp("<h4>[^<]*" + d.h4.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    if (i < 0) i = 0;
+    const j = h.indexOf("</h4>", i) >= 0 && d.h4 ? h.indexOf("</h4>", i) + 5 : i;
+    let k = h.indexOf("<h4>", j); if (k < 0) k = h.length;
+    if (!d.h4 && h.indexOf("<h4>") > 0) k = h.indexOf("<h4>");
+    h = h.slice(0, k) + figHtml(d) + h.slice(k);
   });
   return h;
 };
