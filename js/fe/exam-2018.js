@@ -136,10 +136,12 @@ const FE18 = [
 EXAM_SETS["FE-2018"] = { official: false, title: "Examen tipo test", date: "22 de enero de 2018", short: "Enero 2018", kind: "Test" };
 EXAMS.push({ id: "FE-2018", set: "FE-2018", year: 2018, conv: "Examen tipo test · 22 de enero de 2018", short: "Enero 2018", version: "Test", time: 45, official: false, kind: "Test", neg: true });
 const _FE_EX = { "FE-2018": FE18 };
+const _FE_SRC = {}; // nota sobre el origen de la clave de cada examen
+const _FE_KEYBY = {}; // "doc" = respuestas marcadas en el documento original; por defecto, propuesta razonada
 const _FE_SEC = { "FE-2018": ["gen-intro", "gen-intro", "gen-intro", "gen-intro", "fis-reacciones", "fis-reactores", "fis-reactores", "fis-fisica", "fis-residuos", "fis-fisica", "fis-fisica", "fis-reacciones", "fus-magnetico", "fus-inercial", "fus-magnetico", "fus-termo", "fus-retos", "fus-iter", "fus-termo", "fus-magnetico", "sol-termoelectrica", "sol-concentracion", "sol-termoelectrica", "sol-colector", "sol-colector", "sol-curvaiv", "sol-concentracion", "sol-celula", "eol-aerogen", "eol-ventajas", "eol-futuro", "eol-recurso", "eol-recurso", "eol-principio", "eol-aerogen", "eol-aerogen", "gen-sistema", "gen-sistema", "gen-sistema", "gen-sistema"] };
 function buildExamQuestions(exam) {
   return _FE_EX[exam.id].map(([tema, ap, q, o, key, conf, exp], i) => ({
     id: exam.id + "-P" + (i + 1), n: i + 1, canon: "C" + (i + 1), tema, apartado: ap, q, o, a: ["abcd".indexOf(key)], multi: false,
-    sec: _FE_SEC[exam.id][i], exp, official: null, src: "Examen " + exam.conv, keyText: key, conf, unofficial: true, noKey: false, pts: 0.25, pen: 0.075, part: null
+    sec: _FE_SEC[exam.id] ? _FE_SEC[exam.id][i] : undefined, exp, official: null, src: "Examen " + exam.conv + (_FE_SRC[exam.id] ? " · " + _FE_SRC[exam.id] : ""), keyText: key, conf, keyBy: _FE_KEYBY[exam.id] || "ia", unofficial: true, noKey: false, pts: 10 / _FE_EX[exam.id].length, pen: 3 / _FE_EX[exam.id].length, part: null
   }));
 }

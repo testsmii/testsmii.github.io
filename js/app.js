@@ -718,7 +718,7 @@ function startFailedQuiz() { const ids = failedIds(); if (!ids.length) return go
 // Resalta las negaciones del enunciado («incorrecta», «falsa», «no»…) para que no se lean como «correcta»
 const qText = t => esc(t).replace(/\b(incorrectas?|falsas?|INCORRECTAS?|FALSAS?|NO es|no es|no son|NO|no corresponde|excepto|EXCEPTO)\b/g, m => `<b class="neg">${m.toUpperCase()}</b>`);
 const explainHtml = q => `${q.official ? `<div class="official">${q.official}</div>` : ""}${q.bank === "exam" ? `<b>${q.official ? "Comentario" : "Explicación orientativa (no oficial)"}:</b> ` : ""}${esc(q.exp)}
-  <div class="src">${q.bank === "exam" ? (q.unofficial ? (q.noKey ? "<b>Sin solución oficial ni propuesta</b> · " : "<b>Solución PROPUESTA por IA (no oficial): " + esc(q.keyText) + " · confianza " + esc(q.conf) + "</b> · ") : "Solución oficial: " + esc(q.keyText) + " · ") : ""}${esc(q.src)}</div>${q.sec && lessonById(q.sec) ? `<div class="slide-btns"><button class="btn sm soft" data-theory="${q.id}">📘 Ver la teoría de esta pregunta</button></div>` : ""}${slideButtons(q)}`;
+  <div class="src">${q.bank === "exam" ? (q.unofficial ? (q.noKey ? "<b>Sin solución oficial ni propuesta</b> · " : (q.keyBy === "doc" ? "<b>Respuesta marcada en el documento original (no oficial): " + esc(q.keyText) + "</b> · " : "<b>Solución PROPUESTA por IA (no oficial): " + esc(q.keyText) + " · confianza " + esc(q.conf) + "</b> · ")) : "Solución oficial: " + esc(q.keyText) + " · ") : ""}${esc(q.src)}</div>${q.sec && lessonById(q.sec) ? `<div class="slide-btns"><button class="btn sm soft" data-theory="${q.id}">📘 Ver la teoría de esta pregunta</button></div>` : ""}${slideButtons(q)}`;
 function viewQuiz() {
   const Z = S.quiz;
   if (!Z) return go("#/aprender");
