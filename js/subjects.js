@@ -8,7 +8,7 @@
 const SUBJECTS = [
   { id: "est", name: "Cálculo y Diseño de Estructuras", short: "Estructuras", color: "#1e40af", icon: "img/logo.svg",
     desc: "PEC1: temas 1, 2.1, 2.3 y 3. Exámenes PA1 2024-2025 y finales con solución oficial.",
-    scripts: ["js/data-theory.js", "js/data-diagrams.js", "js/data-diagrams-2.js", "js/data-cards.js", "js/data-drills.js", "js/data-updates.js", "js/data-exams.js", "js/data-exams-2.js", "js/data-learn-1.js", "js/data-learn-2.js", "js/est-config.js"] },
+    scripts: ["js/data-theory.js", "js/data-diagrams.js", "js/data-diagrams-2.js", "js/data-diagrams-3.js", "js/data-cards.js", "js/data-drills.js", "js/data-updates.js", "js/data-exams.js", "js/data-exams-2.js", "js/data-learn-1.js", "js/data-learn-2.js", "js/est-config.js"] },
   { id: "fe", name: "Fuentes de Energía", short: "Energía", color: "#0f766e", icon: "img/logo-fe.svg",
     desc: "Biomasa, biogás, fósiles, fisión, fusión, solar, eólica e hidráulica. Examen de 2018 con solución propuesta.",
     scripts: ["js/fe/base.js", "js/fe/biomasa.js", "js/fe/valorizacion.js", "js/fe/biogas.js", "js/fe/fosiles-fision.js", "js/fe/fusion-hidro.js", "js/fe/solar.js", "js/fe/eolica.js", "js/fe/general.js", "js/fe/exam-2018.js", "js/fe/config.js"] }

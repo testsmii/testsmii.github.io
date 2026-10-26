@@ -89,7 +89,7 @@ const SEC_RULES = SUBJ.secRules || {};
 Object.values(QMAP).forEach(q => { if (!q.sec) q.sec = SEC_RULES[q.tema].find(([re]) => new RegExp(re.source, "i").test(q.apartado))[1]; });
 
 /* ---------- lecciones (secciones del temario troceadas por subtítulos) ---------- */
-const figHtml = d => `<figure class="dgfig">${d.svg}<figcaption>${d.cap}</figcaption></figure>`;
+const figHtml = d => d.img ? `<figure class="dgfig photo"><img src="${d.img}" alt="${esc(d.alt || "")}" loading="lazy"><figcaption>${d.cap}</figcaption></figure>` : `<figure class="dgfig">${d.svg}<figcaption>${d.cap}</figcaption></figure>`;
 const LESSONS = [];
 TOPICS.forEach(t => THEORY[t.id].sections.forEach((s, idx) => {
   const parts = s.html.split(/(?=<h4>)/).map(x => x.trim()).filter(Boolean);
