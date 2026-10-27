@@ -12,11 +12,11 @@ const TOPICS = [
   { id: "T1", num: "1", short: "Introducción", title: "Introducción y objetivos", file: "01_Introducción_y_Objetivos.pdf", color: "#2563eb" },
   { id: "T2", num: "2.1", short: "Tipologías", title: "Tipologías estructurales", file: "02.1_Tipologías_Estructurales.pdf", color: "#0891b2" },
   { id: "T23", num: "2.3", short: "Cimentaciones", title: "Estructuras que interaccionan con el suelo: cimentaciones", file: "02.4_Tipologías_Estructurales_cimentaciones.pdf", color: "#7c3aed" },
-  { id: "T3", num: "3", short: "Materiales", title: "Materiales", file: "03_Materiales.pdf", color: "#0d9488" }
+  { id: "T3", num: "3", short: "Materiales", title: "Materiales", file: "03_Materiales.pdf", color: "#0d9488" },
+  { id: "T4", num: "4", short: "Prestaciones", title: "Prestaciones exigidas a las estructuras", file: "04_Prestaciones_exigidas_a_las_estructuras.pdf", color: "#c2410c" }
 ];
 
 const MISSING_TOPICS = [
-  { num: "4", title: "Aspectos normativos (bases de cálculo, acciones, combinaciones)", note: "No hay apuntes adjuntos de este tema. Algunas preguntas de examen lo tocan; sus explicaciones se apoyan en el tema 1 y se indica cuando se usa conocimiento general." },
   { num: "5", title: "Cálculo estructural", note: "No hay apuntes adjuntos de este tema." }
 ];
 
@@ -91,13 +91,13 @@ T1: {
 <h4>Base probabilista</h4>
 <p>Existe incertidumbre en las propiedades del material, en las cargas, en la idealización y el cálculo, en la geometría real y en la variación temporal de propiedades y acciones. Toda esa variabilidad se estima estadísticamente mediante <b>funciones de densidad de probabilidad</b>. En el ejemplo de los apuntes (ménsula con carga F) se comparan el momento solicitante $M = F\\cdot L$ y la capacidad $M_c=\\sigma_{yd}\\cdot W$.</p>
 <p>La <b>fiabilidad</b> de una estructura se define como $1-p_f$, donde $p_f$ es la probabilidad de fallo. Se obtiene a partir de la distribución de la variable resistencia − solicitación, cuya separación respecto a cero se mide con β·s.</p>
-<div class="gen"><b>Ampliación (conocimiento general, no está desarrollado en los apuntes):</b> en el «caso fundamental» con R y S normales e independientes, el margen es M = R − S, con $\\mu_M=\\mu_R-\\mu_S$ y $\\sigma_M=\\sqrt{\\sigma_R^2+\\sigma_S^2}$. El índice de fiabilidad es $\\beta=\\mu_M/\\sigma_M$ y $p_f=\\Phi(-\\beta)$. Si β aumenta, p<sub>f</sub> disminuye. Este planteamiento aparece resuelto en la hoja oficial de soluciones de 2024 (ejercicio de fiabilidad: β = 3,899).</div>
+<p class="note"><b>Desarrollado en el tema 4</b> (T4, diap. 17-19): en el «caso fundamental» con R y S normales e independientes, el margen es M = R − S, con $\\mu_M=\\mu_R-\\mu_S$ y $\\sigma_M=\\sqrt{\\sigma_R^2+\\sigma_S^2}$. El índice de fiabilidad es $\\beta=\\mu_M/\\sigma_M$ y $p_f=\\Phi(-\\beta)$. Si β aumenta, p<sub>f</sub> disminuye. Este planteamiento aparece resuelto en la hoja oficial de soluciones de 2024 (ejercicio de fiabilidad: β = 3,899).</p>
 <h4>Métodos probabilistas: niveles</h4>
 <table class="tbl"><thead><tr><th>Nivel</th><th>Descripción</th></tr></thead><tbody>
 <tr><td><b>Nivel 2</b></td><td>Las variables de carga y resistencia se representan por sus funciones estadísticas de distribución.</td></tr>
 <tr><td><b>Nivel 1</b></td><td>Simplificación del nivel 2: agrupa las incertidumbres en <b>R</b> (resistencia) y <b>S</b> (acciones), sustituye las distribuciones por <b>valores característicos</b> y los pondera con <b>coeficientes parciales de seguridad</b> definidos para una fiabilidad dada. En él se basan el CE, el CTE, los EC y casi todos los códigos.</td></tr>
 </tbody></table>
-<div class="gen"><b>Ampliación:</b> también se habla de métodos de nivel 3 (probabilistas «exactos»). Un método de nivel 1 <u>no</u> proporciona un valor numérico de la fiabilidad; solo verifica R<sub>d</sub> ≥ S<sub>d</sub> con coeficientes calibrados.</div>
+<p class="note"><b>En el tema 4</b> (T4, diap. 16) se añade el <b>nivel 3</b>: distribuciones conjuntas y superficies de fallo exactas. Los niveles 2 y 3 dan P<sub>f</sub>; un método de nivel 1 <u>no</u> proporciona un valor numérico de la fiabilidad, solo verifica R<sub>d</sub> ≥ S<sub>d</sub> con coeficientes calibrados.</p>
 <h4>Normas: bases de cálculo</h4>
 <ul>
 <li><b>Acciones</b>: cualquier causa (fuerza o deformación) capaz de producir o modificar estados tensionales. Pueden ser <b>permanentes</b>, <b>variables</b> o <b>accidentales</b>, y <b>libres o fijas</b> en el espacio.</li>
@@ -128,7 +128,7 @@ T1: {
 <h4>Cálculo mediante estados límite</h4>
 <p>Consiste en dimensionar e interconectar los elementos para que soporten un conjunto de cargas sin superar los límites establecidos. El proceso es: <b>acción normalizada</b> → <b>estructura</b> (idealización) → <b>respuesta</b> (esfuerzos, desplazamientos) → ¿cumple los criterios? Si no cumple, se modifica; si cumple, se acepta.</p>
 <h4>Parámetros de diseño estructural</h4>
-<p>Dependen sobre todo de los <b>materiales</b>, de los <b>tipos, formas y dimensiones resistentes</b> y del <b>proceso constructivo</b> (este último no forma parte de la asignatura). Estructura del curso: cap. 2, tipologías; cap. 3, materiales (hormigón, acero y suelo); cap. 4, normativa; cap. 5, cálculo estructural.</p>` }
+<p>Dependen sobre todo de los <b>materiales</b>, de los <b>tipos, formas y dimensiones resistentes</b> y del <b>proceso constructivo</b> (este último no forma parte de la asignatura). Estructura del curso: cap. 2, tipologías; cap. 3, materiales (hormigón, acero y suelo); cap. 4, normativa (prestaciones exigidas a las estructuras: ver el tema 4); cap. 5, cálculo estructural.</p>` }
   ],
   confusions: [
     ["γ<sub>m</sub> frente a γ<sub>f</sub>", "γ<sub>m</sub> <b>minora resistencias</b> (se divide); γ<sub>f</sub> <b>mayora acciones</b> (se multiplica)."],

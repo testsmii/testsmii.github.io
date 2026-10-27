@@ -179,10 +179,10 @@ L("T1","Fiabilidad",3,"En el caso fundamental de fiabilidad (R y S normales e in
  "si aumenta el valor medio de la carga y los demás parámetros no cambian.",
  "si disminuye la desviación típica de la carga y los demás parámetros no cambian.",
  "si aumentan a la vez el valor medio y la desviación típica de la resistencia y los parámetros de la carga no cambian."],2,
-"Con β = (μR − μS)/√(σR² + σS²) y pf = Φ(−β): si σS disminuye, baja el denominador, β aumenta y pf disminuye. Aumentar σR hace lo contrario, y aumentar μS reduce el numerador, así que ambas aumentan pf. Si suben a la vez μR y σR, el resultado depende de cuánto cambie cada uno, así que no es «siempre». (Desarrollo de conocimiento general; los apuntes solo presentan la idea gráfica.)","General · coherente con T1, diap. 16-17");
+"Con β = (μR − μS)/√(σR² + σS²) y pf = Φ(−β): si σS disminuye, baja el denominador, β aumenta y pf disminuye. Aumentar σR hace lo contrario, y aumentar μS reduce el numerador, así que ambas aumentan pf. Si suben a la vez μR y σR, el resultado depende de cuánto cambie cada uno, así que no es «siempre». (El tema 1 presenta la idea gráfica; el desarrollo con β de Cornell está en T4, diap. 19.)","Apuntes T1, diap. 16-17; T4, diap. 19");
 L("T1","Fiabilidad",3,"Para R con media 235 MPa y desviación típica 14 MPa, y S con media 118,6 MPa y desviación típica 26,36 MPa (normales e independientes), el índice de fiabilidad β vale aproximadamente:",
 ["3,90","2,88","4,42","8,31"],0,
-"μM = 235 − 118,6 = 116,4 MPa y σM = √(14² + 26,36²) = 29,85 MPa, así que β = 116,4/29,85 ≈ 3,90 (hoja oficial de 2024: 3,899). Sumar las desviaciones típicas (116,4/40,36 ≈ 2,88), usar solo la de la carga (116,4/26,36 ≈ 4,42) o solo la de la resistencia (116,4/14 ≈ 8,31) son errores frecuentes.","Hoja de soluciones PA1 2024");
+"μM = 235 − 118,6 = 116,4 MPa y σM = √(14² + 26,36²) = 29,85 MPa, así que β = 116,4/29,85 ≈ 3,90 (hoja oficial de 2024: 3,899). Sumar las desviaciones típicas (116,4/40,36 ≈ 2,88), usar solo la de la carga (116,4/26,36 ≈ 4,42) o solo la de la resistencia (116,4/14 ≈ 8,31) son errores frecuentes (T4, diap. 19: σM² = σR² + σS²).","Hoja de soluciones PA1 2024; T4, diap. 19");
 L("T1","Acciones",2,"Según los apuntes, una acción es…",
 ["cualquier causa (fuerza o deformación) capaz de producir o modificar estados tensionales en una estructura.",
  "cualquier fuerza exterior aplicada sobre la estructura; las deformaciones impuestas se tratan como efectos de las acciones.",

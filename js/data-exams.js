@@ -10,13 +10,13 @@
    ===================================================================== */
 
 const EXAM_CANON = {
-  C1: { tema: "T1", apartado: "Acciones",
+  C1: { tema: "T4", apartado: "Clasificación de acciones",
     q: "Señalar la repuesta correcta. Son acciones permanentes entre otras",
     o: { a: "el peso propio de los elementos estructurales de las plantas y las sobrecargas de uso",
          b: "las variaciones de temperatura",
          c: "el peso de la cubierta y la nieve",
          d: "los empujes del terreno sobre la estructura" },
-    exp: "Los empujes del terreno actúan de forma continuada durante toda la vida de la estructura, por lo que se tratan como acción permanente. Las sobrecargas de uso, la temperatura y la nieve varían en el tiempo (acciones variables); por eso a y c, que mezclan una acción permanente con una variable, no son válidas. (El tema 1 de los apuntes distingue acciones permanentes, variables y accidentales; la asignación concreta de cada acción procede de la normativa, tema 4, del que no hay apuntes adjuntos.)" },
+    exp: "Los empujes del terreno actúan de forma continuada durante toda la vida de la estructura, por lo que se tratan como acción permanente. Las sobrecargas de uso, la temperatura y la nieve varían en el tiempo (acciones variables); por eso a y c, que mezclan una acción permanente con una variable, no son válidas. (Clasificación de acciones de T4, diap. 28-29: los empujes y las acciones del terreno son permanentes, igual que el peso propio y el pretensado; la sobrecarga de uso, la nieve y la temperatura son variables.)" },
 
   C2: { tema: "T3", apartado: "Aceros: ductilidad",
     q: "Marcar la frase que sea verdadera",
@@ -26,13 +26,13 @@ const EXAM_CANON = {
          d: "Ninguna de las anteriores." },
     exp: "Según los apuntes (T3, diap. 12–14), el alargamiento en rotura está ligado a la redistribución de esfuerzos y la ductilidad permite grandes deformaciones antes de la fractura (reserva plástica, aviso antes del colapso, comportamiento sísmico). Todo esto se relaciona con la seguridad frente al colapso, es decir, con los ELU. En los ELS se controlan deformaciones y vibraciones en régimen de servicio, prácticamente elástico." },
 
-  C3: { tema: "T1", apartado: "Coeficientes parciales de seguridad",
+  C3: { tema: "T4", apartado: "Coeficientes parciales de seguridad",
     q: "Señalar la respuesta correcta. Los coeficientes parciales de seguridad de las acciones…",
     o: { a: "no dependen del estado límite, del tipo de verificación y de si el efecto de la carga es favorable o desfavorable.",
          b: "son menores que 1 para las acciones variables desfavorables en las verificaciones correspondientes al estado límite último.",
          c: "son mayores que 1 para las verificaciones correspondientes al estado límite de servicio.",
          d: "Ninguna de las anteriores" },
-    exp: "El coeficiente de mayoración γf depende del estado límite y de si la acción es favorable o desfavorable, así que a es falsa. En ELU, las acciones variables desfavorables se mayoran (γ > 1), así que b es falsa. En ELS los coeficientes valen habitualmente 1, así que c también es falsa. (Los valores concretos son normativos, tema 4; el concepto de γf aparece en T1, diap. 21.)" },
+    exp: "El coeficiente de mayoración γf depende del estado límite y de si la acción es favorable o desfavorable, así que a es falsa. En ELU, las acciones variables desfavorables se mayoran (γ > 1), así que b es falsa. En ELS los coeficientes valen habitualmente 1, así que c también es falsa. (Tabla 4.1 de T4, diap. 26: γ distinto para resistencia y estabilidad, 1,50 para las variables desfavorables y menor que 1, o 0, para las favorables; en las combinaciones de ELS de la diap. 32 no aparece ningún γ. El concepto de γf aparece también en T1, diap. 21.)" },
 
   C4: { tema: "T3", apartado: "Aceros y armaduras",
     q: "Marcar la frase que sea verdadera",
@@ -58,13 +58,13 @@ const EXAM_CANON = {
          d: "arenas sueltas" },
     exp: "Apuntes T3, diap. 41: en las arcillas, las estructuras floculadas tienen mayor índice de huecos. Las estructuras dispersas (láminas ordenadas) se producen por precompresión o preconsolidación. Las arenas se describen por granulometría y compacidad, no como floculadas o dispersas." },
 
-  C7: { tema: "T1", apartado: "Métodos probabilistas / fiabilidad",
+  C7: { tema: "T4", apartado: "Métodos probabilistas / fiabilidad",
     q: "¿Cuál de las siguientes afirmaciones es incorrecta?",
     o: { a: "Como resultado de la aplicación de un método de nivel 1 se obtiene un valor numérico para la fiabilidad.",
          b: "En el cálculo estructural se considera 10-12 como probabilidad de fallo muy baja.",
          c: "Existen métodos de nivel I, II y III para los cálculos de fiabilidad.",
          d: "La fiabilidad R de un sistema se define como sigue: R=1-Pf, donde Pf es la probabilidad de fallo." },
-    exp: "Los métodos de nivel 1 (T1, diap. 18) sustituyen las distribuciones por valores característicos ponderados con coeficientes parciales de seguridad, calibrados para una fiabilidad dada. Comprueban que Rd ≥ Sd, pero no dan un valor numérico de la fiabilidad. La fiabilidad se define como 1 − pf (diap. 17)." },
+    exp: "Los métodos de nivel 1 (T1, diap. 18) sustituyen las distribuciones por valores característicos ponderados con coeficientes parciales de seguridad, calibrados para una fiabilidad dada. Comprueban que Rd ≥ Sd, pero no dan un valor numérico de la fiabilidad; solo los niveles 2 y 3 dan Pf (T4, diap. 16). Existen métodos de nivel I, II y III (T4, diap. 16 y 23), y la fiabilidad se define como R = 1 − Pf (T4, diap. 16; T1, diap. 17)." },
 
   C8: { tema: "T2", apartado: "Acciones térmicas / arriostramiento",
     q: "Cuál de los pórticos tendría más esfuerzos debido a un incremento de temperatura idéntico en todos los elementos, si se tienen las mismas secciones y materiales.",
@@ -73,10 +73,10 @@ const EXAM_CANON = {
     o: { a: "2", b: "1", c: "3", d: "Todos igual ya que tienen las mismas cargas térmicas" },
     exp: "Un incremento de temperatura solo genera esfuerzos si la dilatación está coaccionada (T2.1, diap. 68: en estructuras hiperestáticas los cambios de temperatura pueden generar tensiones). En la estructura 2 los dos arriostramientos de los extremos impiden que dilate libremente la longitud entre ellos, que es prácticamente todo el pórtico. En la 1 el único arriostramiento permite dilatar a ambos lados, y en la 3 no hay coacción horizontal rígida." },
 
-  C9: { tema: "T1", apartado: "Acciones",
+  C9: { tema: "T4", apartado: "Clasificación de acciones",
     q: "Indicar cuál de las siguientes acciones se considera acción ambiental.",
     o: { a: "Fuego", b: "Viento", c: "Empuje del terreno", d: "Sismo" },
-    exp: "El viento es una acción variable de origen climático o ambiental. El fuego y el sismo corresponden a situaciones accidentales o sísmicas (T1, diap. 22), y el empuje del terreno es una acción permanente." },
+    exp: "En el árbol de clasificación de acciones (T4, diap. 29), el viento es una acción variable ambiental, junto con la nieve y la temperatura. El fuego y el sismo son acciones accidentales, y los empujes, permanentes (T4, diap. 28-29; situaciones accidentales y sísmicas en T1, diap. 22)." },
 
   C10: { tema: "T2", apartado: "Naves industriales: pórticos",
     q: "Señalar la sentencia correcta. Los pórticos de una nave industrial con pendiente a un agua están formados por pórticos monolíticos empotrados en cimientos. Los pilares bajo la acción del viento transversal…",
@@ -95,13 +95,13 @@ const EXAM_CANON = {
     official: "<b>Resolución oficial (hoja de soluciones 2025):</b><br>Caso inicial: para 0 ≤ z ≤ H, $\\sigma=\\gamma z;\\ u=0;\\ \\sigma'=\\gamma z$. Para z ≥ H, $\\sigma=\\gamma H+\\gamma_{sat}(z-H);\\ u=\\gamma_w(z-H);\\ \\sigma'=\\gamma H+\\gamma'(z-H)$.<br>Caso final (nivel freático en superficie), en cualquier punto: $\\sigma=\\gamma_{sat} z;\\ u=\\gamma_w z;\\ \\sigma'=\\gamma' z$.<br>Variación: para 0 ≤ z ≤ H, $\\Delta\\sigma'=\\gamma' z-\\gamma z=(\\gamma'-\\gamma)z$ → lineal. Para z ≥ H, $\\Delta\\sigma'=\\gamma' z-[\\gamma H+\\gamma'(z-H)]=(\\gamma'-\\gamma)H$ → constante.",
     exp: "Se aplica el principio de Terzaghi, $\\sigma'=\\sigma-u$ (T3, diap. 46–48). La variación es lineal hasta H y constante por debajo." },
 
-  C12: { tema: "T1", apartado: "Fiabilidad: caso fundamental",
+  C12: { tema: "T4", apartado: "Fiabilidad: caso fundamental",
     q: "En el caso fundamental de fiabilidad la probabilidad de fallo siempre disminuye",
     o: { a: "si el valor medio de la variable de carga aumenta y los otros parámetros de las distribuciones de las variables de carga y resistencia no cambian.",
          b: "si la desviación típica de la variable de carga aumenta y los otros parámetros de las distribuciones de las variables de carga y resistencia no cambian.",
          c: "si la desviación típica y el valor medio de la variable de resistencia aumentan y los parámetros de la distribución de la variable de carga no cambian.",
          d: "si el valor medio de la variable de resistencia es mayor que el valor medio de la variable de carga y la desviación típica de la variable de resistencia disminuye y los otros parámetros de las distribuciones de las variables de carga y resistencia no cambian." },
-    exp: "En el caso fundamental, el margen M = R − S tiene índice de fiabilidad $\\beta=\\mu_M/\\sigma_M=(\\mu_R-\\mu_S)/\\sqrt{\\sigma_R^2+\\sigma_S^2}$, y pf disminuye al aumentar β. Si μR > μS (μM > 0) y σR disminuye, σM baja y β sube, así que pf baja siempre. Con a o b β disminuye. Con c el resultado depende de cuánto crezca cada parámetro, así que no es «siempre». (El desarrollo de β es conocimiento general coherente con T1, diap. 16–17.)" },
+    exp: "En el caso fundamental, el margen M = R − S tiene índice de fiabilidad $\\beta=\\mu_M/\\sigma_M=(\\mu_R-\\mu_S)/\\sqrt{\\sigma_R^2+\\sigma_S^2}$, y pf disminuye al aumentar β. Si μR > μS (μM > 0) y σR disminuye, σM baja y β sube, así que pf baja siempre. Con a o b β disminuye. Con c el resultado depende de cuánto crezca cada parámetro, así que no es «siempre». (Caso fundamental e índice de Cornell: T4, diap. 17 y 19.)" },
 
   C13: { tema: "T3", apartado: "Hormigón: fluencia",
     q: "Señalar la respuesta correcta. La fluencia del hormigón consiste en:",
