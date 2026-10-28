@@ -188,8 +188,57 @@ function practiceMenu(key) {
     opt("redo", "Las falladas", failed, "Hasta que las aciertes"),
     opt("exam", "Todas", qs, "El conjunto completo, en orden aleatorio")]);
 }
-document.addEventListener("click", e => { const t = e.target.closest("[data-pm]"); if (t) { e.preventDefault(); practiceMenu(t.dataset.pm); } });
-document.addEventListener("keydown", e => { if (e.key === "Enter") { const t = e.target.closest && e.target.closest(".hb-row[data-pm]"); if (t) practiceMenu(t.dataset.pm); } });
+document.addEventListener("click", e => { const t = e.target.closest("[data-pm]"); if (t) { e.preventDefault(); go("#/dominio/" + t.dataset.pm); } });
+document.addEventListener("keydown", e => { if (e.key === "Enter") { const t = e.target.closest && e.target.closest(".hb-row[data-pm]"); if (t) go("#/dominio/" + t.dataset.pm); } });
+
+/* ---------- resumen de tema, temario seguido y página de dominio ---------- */
+const isLastOfTopic = id => { const l = lessonById(id); if (!l) return false; const ls = LESSONS.filter(x => x.tema === l.tema); return ls[ls.length - 1] === l; };
+const summaryRow = t => `<a class="lrow sumrow" href="#/tema/${t.id}/resumen"><span class="lnum">📋</span><span class="ltxt"><b>Resumen del tema</b><small>Ideas clave y confusiones frecuentes para repasar al final</small></span></a>`;
+function topicSummaryHtml(t) {
+  const th = THEORY[t.id];
+  return `<div class="card sum-card" style="--c:${t.color}"><div class="card-h"><h3>📋 Resumen · Tema ${t.num}</h3></div><ol class="summary-list">${th.summary.map(x => `<li>${x}</li>`).join("")}</ol></div>
+  ${th.confusions && th.confusions.length ? `<div class="card mt"><div class="card-h"><h3>⚠️ No confundas</h3></div>${th.confusions.map(c => `<div class="conf"><div>${c[0]}</div><div>${c[1]}</div></div>`).join("")}</div>` : ""}`;
+}
+function viewSyllabus(tid) {
+  const tps = tid && topicById(tid) ? [topicById(tid)] : TOPICS;
+  app.innerHTML = `<h1>Temario</h1>${learnTabs("temario")}
+  <p class="muted small">Todo el temario seguido, sin preguntas por medio: texto, esquemas y figuras de las diapositivas, con el resumen al final de cada tema.</p>
+  <nav class="syl-index card">${TOPICS.map(t => `<a class="chip ${tps.length === 1 && tps[0] === t ? "on" : ""}" href="#/temario/${t.id}" style="--c:${t.color}">${t.num}. ${esc(t.short)}</a>`).join("")}${tps.length === 1 ? `<a class="chip" href="#/temario">Todos</a>` : ""}</nav>
+  ${tps.map(t => `<section class="syl-topic" id="syl-${t.id}"><h2 style="color:${t.color}">Tema ${t.num} · ${esc(t.title)}</h2>
+    <div class="syl-toc small">${THEORY[t.id].sections.map(sc => `<a href="javascript:void 0" data-goto="syl-${sc.id}">${esc(sc.title)}</a>`).join(" · ")}</div>
+    ${THEORY[t.id].sections.map(sc => `<article class="card syl-sec theory" id="syl-${sc.id}"><div class="row between"><h3 class="mb0">${esc(sc.title)}</h3>${secSlidesBtn(sc.id, "Diapositivas")}</div>${theoryWithDiagrams(sc)}</article>`).join("")}
+    ${topicSummaryHtml(t)}</section>`).join("")}
+  <p class="tiny muted">Los recuadros amarillos («Ampliación») son conocimiento general que no aparece en tus apuntes.</p>`;
+  $$("[data-goto]").forEach(a => a.onclick = () => { const el = document.getElementById(a.dataset.goto); if (el) el.scrollIntoView({ behavior: "smooth" }); });
+}
+function viewMastery(key) {
+  let qs; try { qs = pmQs(key); } catch (e) { return go("#/progreso"); }
+  const title = pmTitle(key), stat = q => { const s = S.qs[q.id]; return !s ? "new" : s.last === "ok" ? "ok" : s.last === "partial" ? "partial" : "ko"; };
+  const ok = qs.filter(q => stat(q) === "ok"), ko = qs.filter(q => stat(q) === "ko" || stat(q) === "partial"), nw = qs.filter(q => stat(q) === "new");
+  const m = pct(ok.length, qs.length), [k, v] = key.split(":");
+  const lessonsIn = k === "lesson" ? [] : LESSONS.filter(l => (k === "tema" || k === "examtema") ? l.tema === v : true).filter(l => qs.some(q => q.sec === l.id));
+  const byL = l => qs.filter(q => q.sec === l.id);
+  const groups = (k === "lesson" ? [lessonById(v)] : lessonsIn).map(l => ({ l, items: byL(l).filter(q => stat(q) !== "ok").sort((x, y) => (stat(x) === "new") - (stat(y) === "new")) })).filter(g => g.items.length);
+  const badge = q => ({ ko: `<span class="tag ko">Fallada</span>`, partial: `<span class="tag warn">Parcial</span>`, new: `<span class="tag">No vista</span>` })[stat(q)];
+  const back = k === "tema" ? `#/tema/${v}` : k === "lesson" ? `#/leccion/${v}` : k === "examtema" || k === "exam" ? "#/examenes" : "#/progreso";
+  app.innerHTML = `<div class="crumbs"><a href="${back}">Volver</a> › Dominio</div><h1>${esc(title)}</h1>
+  <div class="card kpi-row">${donut(m, "dominio", "", m >= 75 ? "#0f8a5f" : "#2563eb", 120)}
+    <div class="kstat"><b>${ok.length}</b><span>dominadas (última respuesta correcta)</span></div>
+    <div class="kstat"><b>${ko.length}</b><span>falladas o parciales</span></div>
+    <div class="kstat"><b>${nw.length}</b><span>sin hacer</span></div></div>
+  <div class="row mt">${ko.length + nw.length ? `<button class="btn primary big" data-run="pend">${ic("play")} Practicar lo que no domino (${ko.length + nw.length})</button>` : `<span class="notice">¡Lo dominas todo! 🎉</span>`}
+    ${ko.length ? `<button class="btn soft" data-run="ko">Solo las falladas (${ko.length})</button>` : ""}${nw.length ? `<button class="btn soft" data-run="new">Solo las no vistas (${nw.length})</button>` : ""}<button class="btn ghost" data-run="all">Todas (${qs.length})</button></div>
+  ${lessonsIn.length > 1 ? `<div class="card mt"><div class="card-h"><h3>Dominio por lección</h3><span class="small muted">Toca una para ver el detalle</span></div>${hbars(lessonsIn.map(l => ({ label: l.title.replace(/^[\d.]+\s*/, "").slice(0, 30), value: mastery(byL(l)), color: topicById(l.tema).color, pm: "lesson:" + l.id, tip: `${byL(l).filter(q => stat(q) === "ok").length}/${byL(l).length}` })), { labelW: 210 })}</div>` : ""}
+  <div class="section-title"><h2>Lo que aún no dominas</h2></div>
+  ${groups.length ? groups.map(g => `<details class="card mt mgroup" ${groups.length <= 3 ? "open" : ""}><summary class="sum-h"><b>${esc(g.l.title.replace(/^[\d.]+\s*/, ""))}</b> <span class="muted small">· ${g.items.length} pendiente${g.items.length > 1 ? "s" : ""}</span></summary>
+    <div class="row mt"><button class="btn sm primary" data-runl="${g.l.id}">Repetir estas ${g.items.length}</button><a class="btn sm soft" href="#/leccion/${g.l.id}">Releer la lección</a></div>
+    <ul class="list mt">${g.items.slice(0, 40).map(q => `<li class="clickable" data-one="${q.id}"><span>${badge(q)} ${esc(q.q.length > 140 ? q.q.slice(0, 140) + "…" : q.q)}</span>${ic("arrow", "chev")}</li>`).join("")}</ul>
+    ${g.items.length > 40 ? `<p class="tiny muted">…y ${g.items.length - 40} más.</p>` : ""}</details>`).join("") : `<div class="card empty">No hay nada pendiente aquí.</div>`}`;
+  const run = (list, t) => list.length && startQuiz({ ids: shuffle(list.map(q => q.id)), title: title + " · " + t });
+  $$("[data-run]").forEach(b => b.onclick = () => { const r = b.dataset.run; run(r === "pend" ? ko.concat(nw) : r === "ko" ? ko : r === "new" ? nw : qs, { pend: "lo que no domino", ko: "falladas", new: "no vistas", all: "todas" }[r]); });
+  $$("[data-runl]").forEach(b => b.onclick = () => { const g = groups.find(x => x.l.id === b.dataset.runl); run(g.items, g.l.title.replace(/^[\d.]+\s*/, "")); });
+  $$("[data-one]").forEach(li => li.onclick = () => startQuiz({ ids: [li.dataset.one], title: "Repaso" }));
+}
 
 /* ---------- teoría de una pregunta en una ventana (sin salir del test o examen) ---------- */
 function bestStep(l, q) {
@@ -282,7 +331,7 @@ function route() {
   const md = $("#modal"); if (!md.hidden && !md.dataset.keep) { md.hidden = true; md.innerHTML = ""; } delete md.dataset.keep;
   const parts = (location.hash.replace(/^#\/?/, "") || "").split("/").map(decodeURIComponent);
   const [p0, p1, p2] = parts;
-  const nav = { "": "home", aprender: "aprender", tema: "aprender", leccion: "aprender", tarjetas: "aprender", repaso: "aprender", diferenciar: "aprender", ejercicio: "aprender", practicar: "aprender", falladas: "aprender", quiz: S.quiz && S.quiz.fromExam ? "examenes" : "aprender", examenes: "examenes", examen: "examenes", resultado: "examenes", progreso: "progreso", cuenta: "progreso", ranking: "progreso", admin: "progreso", consulta: "consulta" }[p0 || ""];
+  const nav = { "": "home", aprender: "aprender", tema: "aprender", leccion: "aprender", tarjetas: "aprender", repaso: "aprender", diferenciar: "aprender", ejercicio: "aprender", practicar: "aprender", falladas: "aprender", quiz: S.quiz && S.quiz.fromExam ? "examenes" : "aprender", examenes: "examenes", examen: "examenes", resultado: "examenes", progreso: "progreso", cuenta: "progreso", ranking: "progreso", admin: "progreso", consulta: "consulta", temario: "aprender", dominio: "progreso" }[p0 || ""];
   $$("[data-nav]").forEach(a => a.classList.toggle("active", a.dataset.nav === nav));
   try {
     switch (p0 || "") {
@@ -303,6 +352,8 @@ function route() {
       case "progreso": viewProgress(); break;
       case "asignatura": window.showSubjectPicker(); break;
       case "consulta": viewAsk(); break;
+      case "temario": viewSyllabus(p1); break;
+      case "dominio": viewMastery(p1 || "all"); break;
       default: if (!(window.CLOUD && CLOUD.view(p0, p1))) viewHome();
     }
   } catch (err) { console.error(err); app.innerHTML = `<div class="card"><h2>Se ha producido un error</h2><p class="muted">${esc(err.message)}</p><a class="btn" href="#/">Volver al inicio</a></div>`; }
@@ -452,7 +503,7 @@ function viewHome() {
    APRENDIZAJE: ruta de lecciones
    ===================================================================== */
 function learnTabs(active) {
-  return `<div class="seg">${[["aprender", "Lecciones"], ["tarjetas", "Tarjetas"], ["diferenciar", "Diferenciar"], ["practicar", "Test libre"]].map(([k, l]) => `<a class="${k === active ? "on" : ""}" href="#/${k}">${l}</a>`).join("")}</div>`;
+  return `<div class="seg">${[["aprender", "Lecciones"], ["temario", "Temario"], ["tarjetas", "Tarjetas"], ["diferenciar", "Diferenciar"], ["practicar", "Test libre"]].map(([k, l]) => `<a class="${k === active ? "on" : ""}" href="#/${k}">${l}</a>`).join("")}</div>`;
 }
 function lessonRow(l, i) {
   const done = S.lessons[l.id] && S.lessons[l.id].done, m = lessonMastery(l), isNext = nextLesson() === l;
@@ -469,7 +520,7 @@ function viewLearn() {
   ${TOPICS.map(t => { const ls = LESSONS.filter(l => l.tema === t.id), s = topicStats(t.id), done = ls.filter(l => S.lessons[l.id] && S.lessons[l.id].done).length;
     return `<section class="card topic" style="--c:${t.color}"><div class="topic-h"><button class="pm-donut sm" data-pm="tema:${t.id}" title="Practicar lo que te falta del tema">${donut(s.m, "", "", t.color, 54)}</button>
       <div><a href="#/tema/${t.id}" class="th-link"><span class="num">Tema ${t.num}</span><h3>${esc(t.title)}</h3></a><div class="tiny muted">${done}/${ls.length} lecciones · dominio ${s.m}% · <a href="javascript:void 0" data-pm="tema:${t.id}">practicar lo que falta</a></div></div></div>
-      <div class="lpath">${ls.map((l, i) => lessonRow(l, i)).join("")}</div></section>`; }).join("")}
+      <div class="lpath">${ls.map((l, i) => lessonRow(l, i)).join("")}${summaryRow(t)}</div></section>`; }).join("")}
   </div>
   <div class="missing">${MISSING_TOPICS.map(m => `<div><b>Tema ${m.num}.</b> ${esc(m.title)} — <span class="muted">${esc(m.note)}</span></div>`).join("")}</div>`;
 }
@@ -480,7 +531,7 @@ function viewTopic(tid, tab) {
   const tabs = [["lecciones", "Lecciones"], ["esquemas", "Esquemas"], ["resumen", "Resumen"], ["temario", "Temario completo"], ["confusiones", "Confusiones"]];
   let body = "";
   if (tab === "lecciones") {
-    body = `<div class="card"><div class="lpath">${ls.map((l, i) => lessonRow(l, i)).join("")}</div></div>
+    body = `<div class="card"><div class="lpath">${ls.map((l, i) => lessonRow(l, i)).join("")}${summaryRow(t)}</div></div>
     <div class="card mt"><div class="card-h"><h3>Dominio por lección</h3></div>${hbars(ls.map(l => ({ label: l.title.replace(/^[\d.]+\s*/, "").slice(0, 26), value: lessonMastery(l), color: t.color, pm: "lesson:" + l.id })), { labelW: 190 })}
     <button class="btn soft mt" data-pm="tema:${tid}">Practicar el tema (lo que falta, no vistas, falladas o todas)</button></div>
     <div class="card mt"><div class="card-h"><h3>Ejercicios para diferenciar</h3></div><div class="drill-grid">${DRILLS.filter(d => d.tema === tid).map(drillCard).join("")}</div></div>`;
@@ -494,7 +545,7 @@ function viewTopic(tid, tab) {
       <table class="tbl" style="display:table"><tbody>${d.pairs.map(pr => `<tr><td><b>${esc(pr[0])}</b></td><td>${esc(pr[1])}</td></tr>`).join("")}</tbody></table></div>`).join("")}
     <div class="card mt"><div class="card-h"><h3>Trucos para recordar</h3></div>${ls.map(l => MNEMO[l.id] ? `<div class="mn-sec"><b>${esc(l.title.replace(/^[\d.]+\s*/, ""))}</b>${mnemoBox(MNEMO[l.id], true)}</div>` : "").join("")}</div>`;
   } else if (tab === "resumen") {
-    body = `<div class="card"><ol class="summary-list">${th.summary.map(s => `<li>${s}</li>`).join("")}</ol></div>`;
+    body = topicSummaryHtml(t) + `<div class="row mt"><a class="btn soft" href="#/temario/${t.id}">📖 Leer el temario del tema seguido</a><a class="btn soft" href="#/dominio/tema:${t.id}">Ver qué no domino</a></div>`;
   } else if (tab === "temario") {
     body = `<div class="theory">${th.sections.map((s, i) => `<details class="sec" ${i === 0 ? "open" : ""}><summary>${esc(s.title)}</summary><div class="body"><div class="mb-s">${secSlidesBtn(s.id)}</div>${theoryWithDiagrams(s)}</div></details>`).join("")}</div>
     <p class="tiny muted">Los recuadros amarillos («Ampliación») son conocimiento general que no aparece en tus apuntes.</p>`;
@@ -785,7 +836,7 @@ function viewQuizSummary() {
     ${donut(p, "aciertos", "", p >= 70 ? "#0f8a5f" : p >= 50 ? "#2563eb" : "#c2413b", 150)}
     <h2>${msg}</h2><p class="muted mb0">${esc(Z.title)} · ${ok} correctas, ${ko} incorrectas${pa ? `, ${pa} parciales` : ""}${bl ? `, ${bl} sin responder` : ""}</p>
     <div class="row center mt">
-      ${Z.lesson ? (nl ? `<a class="btn primary big" href="#/leccion/${nl.id}">Siguiente lección ${ic("arrow")}</a>` : `<a class="btn primary big" href="#/aprender">Ver la ruta</a>`) : wrongIds.length ? `<button class="btn primary big" id="s-wrong">Repetir las ${wrongIds.length} falladas</button>` : `<a class="btn primary big" href="${Z.fromExam ? "#/examenes" : "#/"}">Continuar</a>`}
+      ${Z.lesson && isLastOfTopic(Z.lesson) ? `<a class="btn primary big" href="#/tema/${lessonById(Z.lesson).tema}/resumen">📋 Resumen del tema ${ic("arrow")}</a>` : Z.lesson ? (nl ? `<a class="btn primary big" href="#/leccion/${nl.id}">Siguiente lección ${ic("arrow")}</a>` : `<a class="btn primary big" href="#/aprender">Ver la ruta</a>`) : wrongIds.length ? `<button class="btn primary big" id="s-wrong">Repetir las ${wrongIds.length} falladas</button>` : `<a class="btn primary big" href="${Z.fromExam ? "#/examenes" : "#/"}">Continuar</a>`}
     </div>
     ${Z.lesson && wrongIds.length ? `<a class="small" href="#/leccion/${Z.lesson}">Volver a leer la lección</a>` : ""}
     ${Z.lesson && drillsFor(Z.lesson).length ? `<div class="drill-suggest">${drillsFor(Z.lesson).map(drillChip).join("")}</div>` : ""}

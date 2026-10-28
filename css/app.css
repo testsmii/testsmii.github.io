@@ -520,3 +520,13 @@ body.picking .mainnav,body.picking .tabbar,body.picking #acct,body.picking .subj
 .hb-row.pm:hover,.hb-row.pm:focus{background:var(--surface-2);outline:none}
 .dgfig.photo img{display:block;max-width:100%;max-height:420px;margin:0 auto;border-radius:8px;background:#fff}
 .step-figs{margin-top:16px;padding-top:12px;border-top:1px dashed var(--line)}
+/* ---------- resumen, temario seguido y dominio ---------- */
+.lrow.sumrow{background:#fff8eb;border:1px dashed #e5a43a}
+.lrow.sumrow .lnum{background:#fde68a}
+.sum-card{border-left:5px solid var(--c)}
+.syl-index{display:flex;flex-wrap:wrap;gap:6px;position:sticky;top:64px;z-index:5}
+.syl-index .chip.on{background:var(--c);color:#fff;border-color:var(--c)}
+.syl-topic{margin-top:22px}
+.syl-toc{margin:-4px 0 12px;line-height:1.9}
+.syl-sec{margin-top:14px;scroll-margin-top:120px}
+.mgroup summary{cursor:pointer}
