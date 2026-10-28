@@ -530,3 +530,31 @@ body.picking .mainnav,body.picking .tabbar,body.picking #acct,body.picking .subj
 .syl-toc{margin:-4px 0 12px;line-height:1.9}
 .syl-sec{margin-top:14px;scroll-margin-top:120px}
 .mgroup summary{cursor:pointer}
+/* ---------- hoja de definiciones y diferencias ---------- */
+.gl-sec{margin-top:14px;border-top:4px solid var(--c)}
+.gl-sec h3{margin-top:0}
+.gl-dl{margin:0;display:grid;gap:0}
+.gl-item{display:grid;grid-template-columns:minmax(150px,30%) 1fr;gap:14px;padding:9px 0;border-bottom:1px solid var(--line)}
+.gl-item:last-child{border-bottom:0}
+.gl-item dt{font-weight:700;color:var(--ink)}
+.gl-item dd{margin:0;color:var(--ink-2)}
+.gl-lnk{font-size:.8rem;white-space:nowrap}
+.gl-cmp{margin-top:14px}
+@media (max-width:620px){.gl-item{grid-template-columns:1fr;gap:2px}}
+.print-only{display:none}
+@media print{
+  .topbar,.tabbar,.seg,.no-print,#resume-banner,.gl-lnk,footer,#acct{display:none!important}
+  .print-only{display:block}
+  body{background:#fff}.card{box-shadow:none;border:1px solid #ccc;break-inside:avoid-page}
+  .gl-item{break-inside:avoid}
+}
+/* ---------- interruptor del test de lección ---------- */
+.qtoggle{display:inline-flex;align-items:center;gap:8px;font-size:.88rem;color:var(--ink-2);cursor:pointer;user-select:none}
+.qtoggle input{position:absolute;opacity:0;width:1px;height:1px}
+.qtoggle .sw{width:38px;height:22px;border-radius:999px;background:#cbd5e1;position:relative;transition:background .15s;flex:none}
+.qtoggle .sw::after{content:"";position:absolute;top:3px;left:3px;width:16px;height:16px;border-radius:50%;background:#fff;transition:left .15s;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+.qtoggle input:checked+.sw{background:var(--brand-2)}
+.qtoggle input:checked+.sw::after{left:19px}
+.qtoggle input:focus-visible+.sw{outline:2px solid var(--brand-2);outline-offset:2px}
+.qt-wrap{text-align:center;margin-top:12px}
+.mb-s{margin-bottom:10px}

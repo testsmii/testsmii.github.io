@@ -39,10 +39,14 @@ const ic = (k, cls = "") => `<svg class="ico ${cls}" viewBox="0 0 24 24">${ICON[
 /* ---------- persistencia ---------- */
 const SUBJ = window.SUBJECT;
 const LS_KEY = SUBJ.lsKey;
-const blank = () => ({ qs: {}, failed: {}, history: [], sessions: [], exam: null, quiz: null, lessons: {}, cards: {}, days: {}, rev: null, drills: {}, seenUpdates: null });
+const blank = () => ({ qs: {}, failed: {}, history: [], sessions: [], exam: null, quiz: null, lessons: {}, cards: {}, days: {}, rev: null, drills: {}, seenUpdates: null, settings: {} });
 let S = blank();
 try { const raw = localStorage.getItem(LS_KEY); if (raw) S = Object.assign(blank(), JSON.parse(raw)); } catch (e) { /* almacenamiento no disponible */ }
 function save() { try { localStorage.setItem(LS_KEY, JSON.stringify(S)); } catch (e) { /* ignorar */ } if (window.CLOUD) CLOUD.onSave(S); }
+const quizOn = () => !(S.settings && S.settings.lessonQuiz === false);
+function toggleQuiz() { S.settings = Object.assign({}, S.settings, { lessonQuiz: !quizOn() }); save(); route(); }
+const quizToggle = () => `<label class="qtoggle no-print" title="Activa o desactiva el test corto al final de cada lección"><input type="checkbox" id="qt-on" ${quizOn() ? "checked" : ""}><span class="sw"></span><span>Test al final de cada lección</span></label>`;
+document.addEventListener("change", e => { if (e.target && e.target.id === "qt-on") toggleQuiz(); });
 const bump = () => { const k = dayKey(); S.days[k] = (S.days[k] || 0) + 1; };
 
 /* ---------- bancos de preguntas ---------- */
@@ -240,6 +244,56 @@ function viewMastery(key) {
   $$("[data-one]").forEach(li => li.onclick = () => startQuiz({ ids: [li.dataset.one], title: "Repaso" }));
 }
 
+/* ---------- todos los resúmenes juntos ---------- */
+function viewSummaries() {
+  app.innerHTML = `<h1>Aprendizaje</h1>${learnTabs("resumenes")}
+  <div class="row between no-print"><p class="muted small mb0">Los resúmenes de todos los temas en una página: ideas clave y lo que no hay que confundir.</p><button class="btn ghost sm" id="rs-print">🖨 Imprimir / PDF</button></div>
+  <nav class="syl-index card no-print">${TOPICS.map(t => `<a class="chip" href="javascript:void 0" data-goto="rs-${t.id}" style="--c:${t.color}">${t.num}. ${esc(t.short)}</a>`).join("")}</nav>
+  <h2 class="print-only">${esc(SUBJ.name)} · Resúmenes</h2>
+  ${TOPICS.map(t => `<section id="rs-${t.id}" class="syl-sec">${topicSummaryHtml(t)}<div class="row mt no-print"><a class="small" href="#/temario/${t.id}">Leer el tema completo</a> · <a class="small" href="#/dominio/tema:${t.id}">Ver qué no domino</a></div></section>`).join("")}`;
+  $$("[data-goto]").forEach(a => a.onclick = () => { const el = document.getElementById(a.dataset.goto); if (el) el.scrollIntoView({ behavior: "smooth" }); });
+  $("#rs-print").onclick = () => window.print();
+}
+
+/* ---------- hoja de definiciones y diferencias ---------- */
+let GL = { q: "", t: "all" };
+function viewGlossary(tab) {
+  const strip = h => String(h).replace(/<[^>]+>/g, "");
+  const tOk = tid => GL.t === "all" || GL.t === tid;
+  const defs = CARDS.map(c => ({ tema: c.tema, sec: c.sec, f: c.f, b: c.b }))
+    .concat(DRILLS.filter(d => d.type === "match").flatMap(d => d.pairs.map(pr => ({ tema: d.tema, sec: d.sec, f: pr[0], b: pr[1], from: d.title }))));
+  const difs = TOPICS.flatMap(t => (THEORY[t.id].confusions || []).map(c => ({ tema: t.id, a: c[0], b: c[1] })));
+  const tables = DRILLS.filter(d => d.type === "classify");
+  const nq = normT(GL.q).trim(), hit = txt => !nq || normT(txt).includes(nq);
+  const lessonT = sec => { const l = lessonById(sec); return l ? l.title.replace(/^[\d.]+\s*/, "") : ""; };
+  let body = "";
+  if (tab === "def") {
+    const list = defs.filter(d => tOk(d.tema) && hit(d.f + " " + d.b));
+    body = TOPICS.filter(t => tOk(t.id)).map(t => { const ds = list.filter(d => d.tema === t.id); if (!ds.length) return "";
+      return `<section class="card gl-sec" style="--c:${t.color}"><h3>Tema ${t.num} · ${esc(t.short)} <span class="muted small">(${ds.length})</span></h3><dl class="gl-dl">${ds.map(d => `<div class="gl-item"><dt>${d.f}</dt><dd>${d.b}${d.sec && lessonById(d.sec) ? ` <a class="gl-lnk" href="#/leccion/${d.sec}" title="${esc(lessonT(d.sec))}">→ lección</a>` : ""}</dd></div>`).join("")}</dl></section>`; }).join("") || `<div class="card empty">No hay definiciones con «${esc(GL.q)}».</div>`;
+  } else {
+    const list = difs.filter(d => tOk(d.tema) && hit(d.a + " " + d.b));
+    const tbs = tables.filter(d => tOk(d.tema) && hit(d.title + " " + d.cats.join(" ") + " " + d.items.map(i => i[0]).join(" ")));
+    body = TOPICS.filter(t => tOk(t.id)).map(t => { const ds = list.filter(d => d.tema === t.id), ts = tbs.filter(d => d.tema === t.id); if (!ds.length && !ts.length) return "";
+      return `<section class="card gl-sec" style="--c:${t.color}"><h3>Tema ${t.num} · ${esc(t.short)}</h3>
+      ${ds.map(d => `<div class="conf"><div>${d.a}</div><div>${d.b}</div></div>`).join("")}
+      ${ts.map(d => `<div class="gl-cmp"><div class="card-h"><b>${esc(d.title)}</b><a class="small no-print" href="#/ejercicio/${d.id}">Ponerte a prueba</a></div><div class="cmp-grid" style="--n:${d.cats.length}">${d.cats.map((c, ci) => `<div class="cmp-col"><div class="cmp-h">${esc(c)}</div><ul>${d.items.filter(it => it[1] === ci).map(it => `<li>${esc(it[0])}</li>`).join("")}</ul></div>`).join("")}</div></div>`).join("")}</section>`; }).join("") || `<div class="card empty">No hay diferencias con «${esc(GL.q)}».</div>`;
+  }
+  app.innerHTML = `<h1>Aprendizaje</h1>${learnTabs("definiciones")}
+  <div class="card gl-bar no-print">
+    <div class="tabs mb0">${[["def", "📘 Definiciones"], ["dif", "⇄ Diferencias"]].map(([k, l]) => `<button class="${k === tab ? "active" : ""}" data-gt="${k}">${l}</button>`).join("")}</div>
+    <div class="row mt"><input class="inp" id="gl-q" type="search" placeholder="Buscar término… (p. ej. robustez, ELU, PCI)" value="${esc(GL.q)}"><button class="btn ghost" id="gl-print">🖨 Imprimir / PDF</button></div>
+    <div class="chips mt">${[{ id: "all", num: "", short: "Todos" }].concat(TOPICS).map(t => `<button class="chip ${GL.t === t.id ? "on" : ""}" data-gf="${t.id}">${t.num ? t.num + ". " : ""}${esc(t.short)}</button>`).join("")}</div>
+  </div>
+  <h2 class="print-only">${esc(SUBJ.name)} · ${tab === "def" ? "Definiciones" : "Diferencias"}</h2>
+  ${body}
+  <p class="tiny muted">Hoja generada con las tarjetas, las confusiones frecuentes y los ejercicios de la app, basados en tus apuntes.</p>`;
+  $$("[data-gt]").forEach(b => b.onclick = () => go("#/definiciones/" + b.dataset.gt));
+  $$("[data-gf]").forEach(b => b.onclick = () => { GL.t = b.dataset.gf; viewGlossary(tab); renderMath(app); });
+  const qi = $("#gl-q"); let tm; qi.oninput = () => { clearTimeout(tm); tm = setTimeout(() => { GL.q = qi.value; const pos = qi.selectionStart; viewGlossary(tab); renderMath(app); const n = $("#gl-q"); n.focus(); n.setSelectionRange(pos, pos); }, 200); };
+  $("#gl-print").onclick = () => window.print();
+}
+
 /* ---------- teoría de una pregunta en una ventana (sin salir del test o examen) ---------- */
 function bestStep(l, q) {
   const words = [...new Set(toksT([q.q, q.a.map(i => q.o[i]).join(" "), q.exp, q.apartado].join(" ")))];
@@ -331,7 +385,7 @@ function route() {
   const md = $("#modal"); if (!md.hidden && !md.dataset.keep) { md.hidden = true; md.innerHTML = ""; } delete md.dataset.keep;
   const parts = (location.hash.replace(/^#\/?/, "") || "").split("/").map(decodeURIComponent);
   const [p0, p1, p2] = parts;
-  const nav = { "": "home", aprender: "aprender", tema: "aprender", leccion: "aprender", tarjetas: "aprender", repaso: "aprender", diferenciar: "aprender", ejercicio: "aprender", practicar: "aprender", falladas: "aprender", quiz: S.quiz && S.quiz.fromExam ? "examenes" : "aprender", examenes: "examenes", examen: "examenes", resultado: "examenes", progreso: "progreso", cuenta: "progreso", ranking: "progreso", admin: "progreso", consulta: "consulta", temario: "aprender", dominio: "progreso" }[p0 || ""];
+  const nav = { "": "home", aprender: "aprender", tema: "aprender", leccion: "aprender", tarjetas: "aprender", repaso: "aprender", diferenciar: "aprender", ejercicio: "aprender", practicar: "aprender", falladas: "aprender", quiz: S.quiz && S.quiz.fromExam ? "examenes" : "aprender", examenes: "examenes", examen: "examenes", resultado: "examenes", progreso: "progreso", cuenta: "progreso", ranking: "progreso", admin: "progreso", consulta: "consulta", temario: "aprender", definiciones: "aprender", resumenes: "aprender", dominio: "progreso" }[p0 || ""];
   $$("[data-nav]").forEach(a => a.classList.toggle("active", a.dataset.nav === nav));
   try {
     switch (p0 || "") {
@@ -353,6 +407,8 @@ function route() {
       case "asignatura": window.showSubjectPicker(); break;
       case "consulta": viewAsk(); break;
       case "temario": viewSyllabus(p1); break;
+      case "definiciones": viewGlossary(p1 || "def"); break;
+      case "resumenes": viewSummaries(); break;
       case "dominio": viewMastery(p1 || "all"); break;
       default: if (!(window.CLOUD && CLOUD.view(p0, p1))) viewHome();
     }
@@ -503,7 +559,7 @@ function viewHome() {
    APRENDIZAJE: ruta de lecciones
    ===================================================================== */
 function learnTabs(active) {
-  return `<div class="seg">${[["aprender", "Lecciones"], ["temario", "Temario"], ["tarjetas", "Tarjetas"], ["diferenciar", "Diferenciar"], ["practicar", "Test libre"]].map(([k, l]) => `<a class="${k === active ? "on" : ""}" href="#/${k}">${l}</a>`).join("")}</div>`;
+  return `<div class="seg">${[["aprender", "Lecciones"], ["temario", "Temario"], ["resumenes", "Resúmenes"], ["definiciones", "Definiciones"], ["tarjetas", "Tarjetas"], ["diferenciar", "Diferenciar"], ["practicar", "Test libre"]].map(([k, l]) => `<a class="${k === active ? "on" : ""}" href="#/${k}">${l}</a>`).join("")}</div>`;
 }
 function lessonRow(l, i) {
   const done = S.lessons[l.id] && S.lessons[l.id].done, m = lessonMastery(l), isNext = nextLesson() === l;
@@ -514,7 +570,7 @@ function lessonRow(l, i) {
 }
 function viewLearn() {
   const nl = nextLesson();
-  app.innerHTML = `<h1>Aprendizaje</h1>${learnTabs("aprender")}
+  app.innerHTML = `<h1>Aprendizaje</h1>${learnTabs("aprender")}<div class="row between mb-s">${quizToggle()}<a class="small" href="#/resumenes">📋 Ver todos los resúmenes</a></div>
   ${nl ? `<a class="card resume" href="#/leccion/${nl.id}"><span class="ic-sq">${ic("play")}</span><div><div class="eyebrow">Continúa por aquí</div><b>${esc(nl.title)}</b><div class="small muted">Tema ${topicById(nl.tema).num} · ${esc(topicById(nl.tema).title)}</div></div>${ic("arrow", "chev")}</a>` : `<div class="notice">Has completado todas las lecciones. Sigue con las tarjetas y los simulacros.</div>`}
   <div class="grid g2 mt">
   ${TOPICS.map(t => { const ls = LESSONS.filter(l => l.tema === t.id), s = topicStats(t.id), done = ls.filter(l => S.lessons[l.id] && S.lessons[l.id].done).length;
@@ -577,8 +633,12 @@ function viewLesson(id, step) {
   </article>
   <div class="lesson-nav">
     ${step > 0 ? `<a class="btn ghost" href="#/leccion/${id}/${step - 1}">${ic("back")} Anterior</a>` : `<span></span>`}
-    ${last ? `<button class="btn primary big" id="l-check">Comprobar lo aprendido ${ic("arrow")}</button>` : `<a class="btn primary big" href="#/leccion/${id}/${step + 1}">Continuar ${ic("arrow")}</a>`}
-  </div>`;
+    ${last ? (quizOn() ? `<button class="btn primary big" id="l-check">Comprobar lo aprendido ${ic("arrow")}</button>` : `<button class="btn primary big" id="l-done">Terminar lección ${ic("check")}</button>`) : `<a class="btn primary big" href="#/leccion/${id}/${step + 1}">Continuar ${ic("arrow")}</a>`}
+  </div>
+  ${last ? `<div class="qt-wrap">${quizToggle()}</div>` : ""}`;
+  const dn = $("#l-done");
+  if (dn) dn.onclick = () => { S.lessons[id] = Object.assign(S.lessons[id] || {}, { done: true, t: Date.now() }); save();
+    if (isLastOfTopic(id)) return go(`#/tema/${l.tema}/resumen`); const nx = LESSONS[LESSONS.indexOf(l) + 1]; go(nx ? `#/leccion/${nx.id}` : "#/aprender"); };
   const ck = $("#l-check");
   if (ck) ck.onclick = () => {
     const qs = l.qids.map(i => QMAP[i]);
