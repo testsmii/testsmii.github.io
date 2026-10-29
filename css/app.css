@@ -354,6 +354,8 @@ details.more summary{cursor:pointer;color:var(--brand-2);font-weight:600;font-si
 .modal .actions{display:flex;gap:10px;justify-content:flex-end;margin-top:16px;flex-wrap:wrap}
 .katex{font-size:1.04em}
 .formula .katex-display{margin:.5em 0}
+.explain .katex-display,.official .katex-display{overflow-x:auto;overflow-y:hidden;padding:2px 0}
+.official{line-height:1.9}
 @media (max-width:620px){.dg text{font-size:14px}.dg .small2,.dg .water-t{font-size:13px}.dgfig{padding:10px 6px}}
 .hbars{display:flex;flex-direction:column;gap:9px}
 .hb-row{display:grid;grid-template-columns:minmax(0,var(--lw)) 1fr 44px;gap:10px;align-items:center;font-size:.86rem}
@@ -558,3 +560,4 @@ body.picking .mainnav,body.picking .tabbar,body.picking #acct,body.picking .subj
 .qtoggle input:focus-visible+.sw{outline:2px solid var(--brand-2);outline-offset:2px}
 .qt-wrap{text-align:center;margin-top:12px}
 .mb-s{margin-bottom:10px}
+.seg{max-width:100%;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}.seg::-webkit-scrollbar{display:none}.seg a{white-space:nowrap;flex:none}

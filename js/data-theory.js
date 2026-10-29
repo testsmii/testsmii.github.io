@@ -26,12 +26,12 @@ T1: {
   summary: [
     "Una estructura debe cumplir requisitos de <b>seguridad y funcionalidad estructural</b>, de <b>seguridad en caso de incendio</b> y de <b>higiene, salud y medio ambiente</b>.",
     "Requisitos de seguridad y funcionalidad: <b>resistencia y estabilidad</b>, <b>aptitud al servicio</b> (rigidez), <b>robustez y redundancia</b> y <b>durabilidad</b>.",
-    "<b>Tensiones admisibles</b> (determinista): σ ≤ σ<sub>adm</sub> = σ<sub>mat</sub>/FS. Desaprovecha el material y no informa del margen real de seguridad.",
+    "<b>Tensiones admisibles</b> (determinista): $\\sigma\\le\\sigma_{adm}=\\sigma_{mat}/FS$. Desaprovecha el material y no informa del margen real de seguridad.",
     "<b>Estados límite</b> (probabilista de nivel 1): valores característicos más coeficientes parciales γ<sub>m</sub> (minoran resistencias) y γ<sub>f</sub> (mayoran acciones).",
     "Valor característico: un 5 % de probabilidad de que la <b>resistencia</b> sea menor, o de que la <b>acción</b> sea mayor.",
-    "<b>ELS</b>: funcionalidad, estética y durabilidad; combinaciones de alta probabilidad; se controlan desplazamientos y aceleraciones; C<sub>d</sub> ≥ E<sub>d</sub>.",
-    "<b>ELU</b>: seguridad frente al colapso; combinaciones de baja probabilidad; se controlan esfuerzos y tensiones; R<sub>d</sub> ≥ S<sub>d</sub>. Comprenden equilibrio, agotamiento, pandeo, fatiga y adherencia.",
-    "Fiabilidad = 1 − p<sub>f</sub>. Métodos de nivel 2: distribuciones estadísticas. Métodos de nivel 1: simplificación con coeficientes parciales (CE, CTE, EC)."
+    "<b>ELS</b>: funcionalidad, estética y durabilidad; combinaciones de alta probabilidad; se controlan desplazamientos y aceleraciones; $C_d\\ge E_d$.",
+    "<b>ELU</b>: seguridad frente al colapso; combinaciones de baja probabilidad; se controlan esfuerzos y tensiones; $R_d\\ge S_d$. Comprenden equilibrio, agotamiento, pandeo, fatiga y adherencia.",
+    "Fiabilidad $=1-p_f$. Métodos de nivel 2: distribuciones estadísticas. Métodos de nivel 1: simplificación con coeficientes parciales (CE, CTE, EC)."
   ],
   sections: [
     { id: "t1-proyecto", title: "1. Proyecto estructural", html: `
@@ -91,13 +91,13 @@ T1: {
 <h4>Base probabilista</h4>
 <p>Existe incertidumbre en las propiedades del material, en las cargas, en la idealización y el cálculo, en la geometría real y en la variación temporal de propiedades y acciones. Toda esa variabilidad se estima estadísticamente mediante <b>funciones de densidad de probabilidad</b>. En el ejemplo de los apuntes (ménsula con carga F) se comparan el momento solicitante $M = F\\cdot L$ y la capacidad $M_c=\\sigma_{yd}\\cdot W$.</p>
 <p>La <b>fiabilidad</b> de una estructura se define como $1-p_f$, donde $p_f$ es la probabilidad de fallo. Se obtiene a partir de la distribución de la variable resistencia − solicitación, cuya separación respecto a cero se mide con β·s.</p>
-<p class="note"><b>Desarrollado en el tema 4</b> (T4, diap. 17-19): en el «caso fundamental» con R y S normales e independientes, el margen es M = R − S, con $\\mu_M=\\mu_R-\\mu_S$ y $\\sigma_M=\\sqrt{\\sigma_R^2+\\sigma_S^2}$. El índice de fiabilidad es $\\beta=\\mu_M/\\sigma_M$ y $p_f=\\Phi(-\\beta)$. Si β aumenta, p<sub>f</sub> disminuye. Este planteamiento aparece resuelto en la hoja oficial de soluciones de 2024 (ejercicio de fiabilidad: β = 3,899).</p>
+<p class="note"><b>Desarrollado en el tema 4</b> (T4, diap. 17-19): en el «caso fundamental» con R y S normales e independientes, el margen es $M=R-S$, con $\\mu_M=\\mu_R-\\mu_S$ y $\\sigma_M=\\sqrt{\\sigma_R^2+\\sigma_S^2}$. El índice de fiabilidad es $\\beta=\\mu_M/\\sigma_M$ y $p_f=\\Phi(-\\beta)$. Si β aumenta, p<sub>f</sub> disminuye. Este planteamiento aparece resuelto en la hoja oficial de soluciones de 2024 (ejercicio de fiabilidad: $\\beta=3{,}899$).</p>
 <h4>Métodos probabilistas: niveles</h4>
 <table class="tbl"><thead><tr><th>Nivel</th><th>Descripción</th></tr></thead><tbody>
 <tr><td><b>Nivel 2</b></td><td>Las variables de carga y resistencia se representan por sus funciones estadísticas de distribución.</td></tr>
 <tr><td><b>Nivel 1</b></td><td>Simplificación del nivel 2: agrupa las incertidumbres en <b>R</b> (resistencia) y <b>S</b> (acciones), sustituye las distribuciones por <b>valores característicos</b> y los pondera con <b>coeficientes parciales de seguridad</b> definidos para una fiabilidad dada. En él se basan el CE, el CTE, los EC y casi todos los códigos.</td></tr>
 </tbody></table>
-<p class="note"><b>En el tema 4</b> (T4, diap. 16) se añade el <b>nivel 3</b>: distribuciones conjuntas y superficies de fallo exactas. Los niveles 2 y 3 dan P<sub>f</sub>; un método de nivel 1 <u>no</u> proporciona un valor numérico de la fiabilidad, solo verifica R<sub>d</sub> ≥ S<sub>d</sub> con coeficientes calibrados.</p>
+<p class="note"><b>En el tema 4</b> (T4, diap. 16) se añade el <b>nivel 3</b>: distribuciones conjuntas y superficies de fallo exactas. Los niveles 2 y 3 dan P<sub>f</sub>; un método de nivel 1 <u>no</u> proporciona un valor numérico de la fiabilidad, solo verifica $R_d\\ge S_d$ con coeficientes calibrados.</p>
 <h4>Normas: bases de cálculo</h4>
 <ul>
 <li><b>Acciones</b>: cualquier causa (fuerza o deformación) capaz de producir o modificar estados tensionales. Pueden ser <b>permanentes</b>, <b>variables</b> o <b>accidentales</b>, y <b>libres o fijas</b> en el espacio.</li>
@@ -133,7 +133,7 @@ T1: {
   confusions: [
     ["γ<sub>m</sub> frente a γ<sub>f</sub>", "γ<sub>m</sub> <b>minora resistencias</b> (se divide); γ<sub>f</sub> <b>mayora acciones</b> (se multiplica)."],
     ["Característico de resistencia frente a característico de acción", "Resistencia: 5 % de valores <b>inferiores</b>. Acción: 5 % de valores <b>superiores</b>. Los dos van del lado de la seguridad."],
-    ["ELS frente a ELU", "ELS: funcionalidad, combinaciones frecuentes, desplazamientos (C<sub>d</sub> ≥ E<sub>d</sub>). ELU: colapso, combinaciones poco probables, esfuerzos (R<sub>d</sub> ≥ S<sub>d</sub>)."],
+    ["ELS frente a ELU", "ELS: funcionalidad, combinaciones frecuentes, desplazamientos ($C_d\\ge E_d$). ELU: colapso, combinaciones poco probables, esfuerzos ($R_d\\ge S_d$)."],
     ["Nivel 1 frente a nivel 2", "El nivel 2 usa distribuciones completas. El nivel 1 usa valores característicos y coeficientes parciales y <b>no da un número de fiabilidad</b>."],
     ["Tensiones admisibles frente a estados límite", "Tensiones admisibles: un único FS, base determinista, desaprovecha la plasticidad. Estados límite: probabilista, coeficientes parciales, varias comprobaciones."],
     ["Cálculo elástico frente a plástico", "El plástico admite rótulas y mecanismos de colapso y da <b>menores</b> dimensiones que el elástico."],
@@ -145,7 +145,7 @@ T1: {
 T2: {
   summary: [
     "Tipo estructural (Torroja): «conjunto de elementos resistentes capaz de mantener sus formas y cualidades a lo largo del tiempo». No hay solución única.",
-    "<b>Escala</b> (Galileo): el peso crece con λ³ y la resistencia y rigidez con λ². Con peso propio importante se pierde la semejanza geométrica.",
+    "<b>Escala</b> (Galileo): el peso crece con $\\lambda^3$ y la resistencia y rigidez con $\\lambda^2$. Con peso propio importante se pierde la semejanza geométrica.",
     "<b>Geometría</b>: la curvatura y el alabeo determinan los mecanismos resistentes. Desarrollable = una curvatura principal nula.",
     "Losas: Grupo 1 (N<sub>x</sub>, N<sub>y</sub>, N<sub>xy</sub>) y Grupo 2 (M, V). <b>Laja</b>: solo Grupo 1. <b>Placa</b>: solo Grupo 2. <b>Membrana</b>: solo Grupo 1, con curvatura.",
     "Cable: solo tracción. Polígono funicular. Flecha óptima: D/2 con una carga; D/3 en la parábola y ≈ D/3 en la catenaria.",
@@ -153,7 +153,7 @@ T2: {
     "Losa: acción de placa (dos direcciones + torsión; en placa cuadrada la torsión transmite el 50 %). Reservas: redistribución (líneas de articulación) y acción de membrana.",
     "Acciones horizontales en edificios: pórticos, pantallas, pórtico + pantalla, triangulaciones, pórticos excéntricos, pantallas acopladas, núcleos y tubos; acción diafragma; efectos P-Δ.",
     "Puentes: tablero + sistema primario (superestructura) + subestructura. Tipos: arco, tablero sobre pilas, colgante, atirantado y voladizo.",
-    "Térmica: en estructuras isostáticas, movimientos sin tensiones; en hiperestáticas, tensiones. ΔL = L·α·ΔT.",
+    "Térmica: en estructuras isostáticas, movimientos sin tensiones; en hiperestáticas, tensiones. $\\Delta L=L\\,\\alpha\\,\\Delta T$.",
     "Túneles: sostenimiento con dovelas, gunita, bulones (bóveda natural) y cerchas. Subsidencia.",
     "Naves: pórticos de nudos rígidos (flexión) o cerchas articuladas (axiles). Torres eléctricas según su material y su función."
   ],
@@ -253,7 +253,7 @@ T2: {
 <tr><td>Núcleos, tubos y «tubo en tubo»</td><td>Pantallas unidas por los lados, para edificios altos y esbeltos. El tubo puede ser la propia fachada (framed tube), con pilares separados 1–3 m. Efecto <b>shear lag</b>: concentración de esfuerzos en las esquinas por la deformación a cortante.</td></tr>
 </tbody></table>
 <h4>Diafragma rígido</h4>
-<p>Si la unión es monolítica y el forjado es rígido en su plano, se trata como un sólido rígido que se traslada y gira en su plano (EHE-08: espesor ≥ 50 mm, mallazo y L/h ≤ 4). Si no es rígido, se calcula como una viga horizontal sobre apoyos elásticos k<sub>i</sub>.</p>
+<p>Si la unión es monolítica y el forjado es rígido en su plano, se trata como un sólido rígido que se traslada y gira en su plano (EHE-08: espesor $\\ge50$ mm, mallazo y $L/h\\le4$). Si no es rígido, se calcula como una viga horizontal sobre apoyos elásticos k<sub>i</sub>.</p>
 <h4>Efectos P-Δ</h4>
 <p>Son solicitaciones adicionales que aparecen porque las cargas gravitatorias actúan sobre la estructura desplazada lateralmente:</p>
 <div class="formula">$$M_{ext}=P_{tot}\\,\\Delta=V_i'\\,h\\;\\Rightarrow\\; k'=\\frac{V_i'}{\\Delta}=\\frac{P_{tot}}{h}$$</div>
@@ -317,13 +317,13 @@ $$\\varepsilon=\\varepsilon_T+\\varepsilon_m=0\\Rightarrow \\varepsilon_m=-\\alp
 T23: {
   summary: [
     "Cimentaciones superficiales: zapata aislada, combinada y corrida, pozo, emparrillado y losa. Reparten la carga en un plano horizontal.",
-    "ELS: asiento s, asiento diferencial δs, distorsión angular β = δs/L e inclinación ω. Límites del CTE en β: 1/300 (isostáticas), 1/500 (reticuladas con tabiquería), 1/700 (paneles prefabricados).",
+    "ELS: asiento s, asiento diferencial δs, distorsión angular $\\beta=\\delta_s/L$ e inclinación ω. Límites del CTE en β: 1/300 (isostáticas), 1/500 (reticuladas con tabiquería), 1/700 (paneles prefabricados).",
     "Bulbo de presiones: las zapatas próximas forman un bulbo conjunto más profundo (isobara 0,1·p).",
     "ELU: hundimiento, deslizamiento, vuelco, estabilidad global y capacidad estructural del cimiento.",
-    "Coulomb: τ = c + σ·tg φ. Círculo de Mohr seguro, límite o imposible.",
-    "Zapata rígida: V<sub>máx</sub> ≤ 2h, reparto lineal de presiones y núcleo central L/6. Zapata flexible: V<sub>máx</sub> > 2h, coeficiente de balasto k.",
+    "Coulomb: $\\tau=c+\\sigma\\,\\mathrm{tg}\\,\\varphi$. Círculo de Mohr seguro, límite o imposible.",
+    "Zapata rígida: $V_{\\text{máx}}\\le2h$, reparto lineal de presiones y núcleo central $L/6$. Zapata flexible: $V_{\\text{máx}}\\gt2h$, coeficiente de balasto k.",
     "Deslizamiento y vuelco: γ > 1,5. No se cuenta con el empuje pasivo salvo que esté garantizado.",
-    "Pilotes: R<sub>ck</sub> = R<sub>pk</sub> (punta) + R<sub>fk</sub> (fuste). Grupo: R = η·n·R<sub>ck</sub>, con η = 0,7 si S = D y η = 1 si S ≥ 3D.",
+    "Pilotes: $R_{ck}=R_{pk}+R_{fk}$ (punta + fuste). Grupo: $R=\\eta\\,n\\,R_{ck}$, con $\\eta=0{,}7$ si $S=D$ y $\\eta=1$ si $S\\ge3D$.",
     "Rozamiento negativo: el terreno asienta más que el pilote y lo carga.",
     "Pantallas: contención flexible para excavaciones verticales. Muros: mantienen una diferencia de nivel. Empujes activo (mínimo), reposo y pasivo (máximo)."
   ],
@@ -365,7 +365,11 @@ T23: {
 </tbody></table>
 <p><b>Zapata rígida con carga excéntrica</b> (zapata corrida de ancho L por metro):</p>
 <div class="formula">$$e\\le \\frac{L}{6}:\\ \\sigma_{1,2}=\\frac{N}{L}\\left(1\\pm\\frac{6e}{L}\\right)\\qquad e>\\frac{L}{6}:\\ \\sigma_{max}=\\frac{4N}{3(L-2e)},\\ L_0=3\\left(\\tfrac{L}{2}-e\\right)$$</div>
-<p>En el ejemplo resuelto de los apuntes (p = 7,5 t/m en el borde de un muro de 0,30 m y σ<sub>adm</sub> = 2 kg/cm²), sin el peso de la zapata no hay solución: σ = 3,33 kg/cm² sea cual sea L. Hay que contar con el <b>peso de la cimentación, que es una carga centradora</b>: $e^*=p\\,e/(p+w)$ con $w=\\gamma_c L H$ y H = máx(50; L/2 − 15) cm. Con L ≈ 175 cm se obtiene σ ≈ 1,95 kg/cm² &lt; 2.</p>
+<p>En el ejemplo resuelto de los apuntes ($p=7{,}5\\text{ t/m}=75\\text{ kg/cm}$ en el borde de un muro de 30 cm y $\\sigma_{adm}=2\\text{ kg/cm}^2$), sin el peso de la zapata no hay solución: la carga queda fuera del núcleo central con $e=L/2-15$ cm, y $L-2e=30$ cm sea cual sea L.</p>
+<div class="formula">$$\\sigma_{max}=\\frac{4p}{3(L-2e)}=\\frac{4\\cdot75}{3\\cdot30}=3{,}33\\ \\text{kg/cm}^2\\gt2$$</div>
+<p>Hay que contar con el <b>peso de la cimentación, que es una carga centradora</b>: $e^*=p\\,e/(p+w)$ con $w=\\gamma_c L H$ y $H=\\max(50;\\ L/2-15)$ cm. Con $L\\approx175$ cm:</p>
+<div class="formula">$$H=72{,}5\\ \\text{cm},\\quad w=31{,}72\\ \\text{kg/cm},\\quad e^*=\\frac{75\\cdot72{,}5}{75+31{,}72}=50{,}95\\ \\text{cm}\\gt\\frac{L}{6}$$
+$$\\sigma_{max}=\\frac{4(p+w)}{3(L-2e^*)}=\\frac{4\\cdot106{,}72}{3\\cdot73{,}1}\\approx1{,}95\\ \\text{kg/cm}^2\\lt2$$</div>
 <h4>Deslizamiento y vuelco</h4>
 <div class="formula">$$\\gamma_t=\\frac{F_R}{H}>1{,}5\\qquad F_R=(N+P)\\,\\mathrm{tg}\\tfrac23\\varphi\\ \\text{(arenas)}\\qquad F_R=\\tfrac{c}{2}\\,a\\,b\\ \\text{(arcillas)}$$
 $$\\gamma_t=\\frac{\\sum M_{estab}}{\\sum M_{vuelco}}=\\frac{(N+P)\\,a/2}{M+V\\,h}>1{,}5$$</div>
@@ -408,10 +412,10 @@ $$\\gamma_t=\\frac{\\sum M_{estab}}{\\sum M_{vuelco}}=\\frac{(N+P)\\,a/2}{M+V\\,
 <p>Hundimiento, deslizamiento, vuelco, estabilidad global y capacidad estructural del muro, de forma análoga a las zapatas.</p>` }
   ],
   confusions: [
-    ["Zapata rígida frente a flexible", "Rígida: V<sub>máx</sub> ≤ 2h, presiones lineales, bielas. Flexible: V<sub>máx</sub> > 2h, balasto k."],
+    ["Zapata rígida frente a flexible", "Rígida: $V_{\\text{máx}}\\le2h$, presiones lineales, bielas. Flexible: $V_{\\text{máx}}\\gt2h$, balasto k."],
     ["Asiento diferencial frente a distorsión angular", "δs es una diferencia de asientos (longitud). β = δs/distancia es adimensional y es lo que limita el CTE."],
-    ["e ≤ L/6 frente a e > L/6", "Dentro del núcleo central toda la base está comprimida (trapecio). Fuera, una parte se despega y se usa el triángulo, con σ = 4N/[3(L − 2e)]."],
-    ["Peso de la zapata", "Es una <b>carga centradora</b>: reduce la excentricidad (e* = p·e/(p + w))."],
+    ["$e\\le L/6$ frente a $e\\gt L/6$", "Dentro del núcleo central toda la base está comprimida (trapecio). Fuera, una parte se despega y se usa el triángulo, con $\\sigma=\\dfrac{4N}{3(L-2e)}$."],
+    ["Peso de la zapata", "Es una <b>carga centradora</b>: reduce la excentricidad ($e^*=\\dfrac{p\\,e}{p+w}$)."],
     ["Pilote flotante frente a columna", "Flotante: trabaja por fuste. Columna: trabaja por punta sobre un estrato firme."],
     ["Rozamiento negativo", "Lo produce el terreno que asienta <b>más</b> que el pilote y lo «arrastra», añadiendo carga."],
     ["Empuje activo frente a pasivo", "Activo: el muro se aleja del terreno y el empuje es mínimo. Pasivo: el muro empuja contra el terreno y el empuje es máximo. El reposo es el estado inicial."],
@@ -424,19 +428,19 @@ T3: {
   summary: [
     "Materiales más usados: acero, hormigón, áridos, fábrica y mezclas bituminosas. También madera, aluminio, vidrio, plásticos, materiales compuestos… y el suelo.",
     "Propiedades mecánicas: resistencia, resistencia a la deformación, dureza y fatiga. Las no mecánicas (densidad, propiedades térmicas, durabilidad…) no influyen en la ley de comportamiento.",
-    "Acero: E ≈ 207 GPa, ν ≈ 0,27. Diagrama con zona elástica, fluencia, endurecimiento y estricción; σ<sub>r</sub> &lt; σ<sub>max</sub> en el diagrama ingenieril.",
+    "Acero: E ≈ 207 GPa, ν ≈ 0,27. Diagrama con zona elástica, fluencia, endurecimiento y estricción; $\\sigma_r\\lt\\sigma_{max}$ en el diagrama ingenieril.",
     "Perfiles laminados en caliente (los más usados), conformados en frío, cables (acero trefilado) y tornillos (4.6 a 10.9).",
     "Ductilidad: grandes deformaciones sin fractura. Favorece la fatiga y el comportamiento sísmico. La rotura frágil la favorecen entallas, grandes espesores, soldaduras y bajas temperaturas.",
     "Designación S 355 J2: S (acero) + f<sub>y</sub> mínimo en MPa + grado (JR, J0, J2: tenacidad y soldabilidad crecientes).",
-    "Hormigón: cemento + áridos + agua (+ aditivos ≤ 5 % del peso del cemento). Árido fino ≤ 4 mm; árido grueso > 4 mm.",
+    "Hormigón: cemento + áridos + agua (+ aditivos $\\le5$ % del peso del cemento). Árido fino $\\le4$ mm; árido grueso $\\gt4$ mm.",
     "Docilidad (cono de Abrams, 30 cm) y homogeneidad (se pierde por segregación y decantación).",
     "Fluencia: deformación en el tiempo bajo carga constante. Retracción: pérdida de agua (plástica e hidráulica). Cansancio: menor resistencia bajo carga lenta (≈ 0,85).",
-    "Parábola-rectángulo: f<sub>cd</sub> = α<sub>cc</sub> f<sub>ck</sub>/γ<sub>c</sub> (γ<sub>c</sub> = 1,5 o 1,3), ε<sub>c0</sub> = 0,002, ε<sub>cu</sub> = 0,0035 (f<sub>ck</sub> ≤ 50).",
+    "Parábola-rectángulo: $f_{cd}=\\alpha_{cc}\\,f_{ck}/\\gamma_c$ ($\\gamma_c=1{,}5$ o $1{,}3$), $\\varepsilon_{c0}=0{,}002$, $\\varepsilon_{cu}=0{,}0035$ ($f_{ck}\\le50$).",
     "Designación T-R/C/TM/A, p. ej. HA-30/B/20/XC2. Clases de exposición: X0, XC, XD, XS, XF, XA, XM.",
     "Armaduras pasivas (400 o 500 MPa: B 400 S, B 500 SD, B 500 T) y activas (> 1000 MPa). Adherencia físico-química y mecánica.",
     "Suelos: arenas (alteración física, granulometría) y arcillas (alteración química, límites de Atterberg). Floculada = más huecos; dispersa = preconsolidada.",
-    "Terzaghi: σ′ = σ − u. El equilibrio se plantea con tensiones totales y el comportamiento con efectivas. Al bajar el nivel freático aumenta σ′.",
-    "Consolidación: asiento diferido por la permeabilidad. Ensayo edométrico: m<sub>v</sub> = −dε<sub>v</sub>/dσ′."
+    "Terzaghi: $\\sigma'=\\sigma-u$. El equilibrio se plantea con tensiones totales y el comportamiento con efectivas. Al bajar el nivel freático aumenta σ′.",
+    "Consolidación: asiento diferido por la permeabilidad. Ensayo edométrico: $m_v=-d\\varepsilon_v/d\\sigma'$."
   ],
   sections: [
     { id: "t3-intro", title: "3.1 Introducción", html: `
@@ -481,7 +485,7 @@ T3: {
 <p class="note">Al aumentar el espesor disminuye f<sub>y</sub>. Grados disponibles: S 235 (JR, J0, J2), S 275 (JR, J0, J2), S 355 (JR, J0, J2, K2) y S 450 (J0).</p>` },
     { id: "t3-horm", title: "3.3 Hormigón", html: `
 <p>Está formado por <b>cemento, áridos y agua</b> y, a veces, <b>aditivos</b>.</p>
-<ul><li><b>Cemento</b>: calizas + arcillas, mezcladas y calcinadas, dan el clínker. Clínker + yeso pulverizados dan el cemento.</li><li><b>Áridos</b>: arenas, gravas, rocas machacadas o escoria siderúrgica. Áridos finos o arenas, φ ≤ 4 mm; áridos gruesos o gravas, φ > 4 mm. La superficie total de los áridos debe ser la menor posible respecto a su volumen, lo que exige una dosificación adecuada.</li><li><b>Agua</b>: en general cualquiera vale, <b>excepto la de mar</b> (cloruros), la de <b>alta montaña</b> (agresividad) y las <b>pantanosas</b> (limos, algas y residuos que dificultan la adherencia pasta-árido).</li><li><b>Aditivos</b>: se incorporan antes o durante el amasado en proporción <b>no superior al 5 % del peso del cemento</b> y modifican alguna característica en estado fresco o endurecido.</li></ul>
+<ul><li><b>Cemento</b>: calizas + arcillas, mezcladas y calcinadas, dan el clínker. Clínker + yeso pulverizados dan el cemento.</li><li><b>Áridos</b>: arenas, gravas, rocas machacadas o escoria siderúrgica. Áridos finos o arenas, $\\phi\\le4$ mm; áridos gruesos o gravas, $\\phi\\gt4$ mm. La superficie total de los áridos debe ser la menor posible respecto a su volumen, lo que exige una dosificación adecuada.</li><li><b>Agua</b>: en general cualquiera vale, <b>excepto la de mar</b> (cloruros), la de <b>alta montaña</b> (agresividad) y las <b>pantanosas</b> (limos, algas y residuos que dificultan la adherencia pasta-árido).</li><li><b>Aditivos</b>: se incorporan antes o durante el amasado en proporción <b>no superior al 5 % del peso del cemento</b> y modifican alguna característica en estado fresco o endurecido.</li></ul>
 <h4>Características tecnológicas</h4>
 <ul><li><b>Docilidad</b>: capacidad de rellenar el molde sin huecos. Se mide con el asiento del <b>cono de Abrams</b>: molde troncocónico de 30 cm que se llena, se voltea y se mide cuánto asienta la masa.</li><li><b>Homogeneidad</b>: los componentes deben estar distribuidos regularmente. Se consigue con buen amasado, transporte cuidadoso y colocación adecuada. Se pierde por <b>segregación</b> (separación de gruesos y finos) y por <b>decantación</b> (los gruesos caen al fondo en mezclas muy líquidas). Ambos fenómenos aumentan con el contenido de agua, el tamaño del árido, las vibraciones en el transporte y la puesta en obra en caída libre.</li></ul>
 <h4>Características reológicas (comportamiento en el tiempo)</h4>
@@ -493,7 +497,7 @@ T3: {
 <div class="formula">$$\\varepsilon_{c\\sigma}(t,t_0)=\\sigma(t_0)\\left[\\frac{1}{E_{0,t_0}}+\\frac{\\varphi(t,t_0)}{E_{0,28}}\\right],\\qquad \\varphi(t,t_0)=\\varphi_0\\,\\beta_c(t-t_0)$$</div>
 <p>El primer término es la deformación instantánea y el segundo la diferida. φ<sub>0</sub> es el coeficiente básico y β<sub>c</sub> describe el desarrollo en el tiempo.</p>
 <h4>Características mecánicas</h4>
-<p>A compresión con carga instantánea, el máximo se alcanza hacia ε ≈ 0,002 (curvas para f<sub>ck</sub> = 25 y 50 MPa). En los apuntes se distinguen la curva instantánea, la característica, la de t→∞ y la de cálculo.</p>
+<p>A compresión con carga instantánea, el máximo se alcanza hacia $\\varepsilon\\approx0{,}002$ (curvas para f<sub>ck</sub> = 25 y 50 MPa). En los apuntes se distinguen la curva instantánea, la característica, la de t→∞ y la de cálculo.</p>
 <p><b>Diagrama parábola-rectángulo:</b></p>
 <div class="formula">$$f_{cd}=\\alpha_{cc}\\frac{f_{ck}}{\\gamma_c},\\quad 0{,}85\\le\\alpha_{cc}\\le1;\\quad \\gamma_c=1{,}5\\ \\text{(persistente o transitoria)},\\ 1{,}3\\ \\text{(accidental)}$$
 $$\\sigma_c=f_{cd}\\left[1-\\left(1-\\frac{\\varepsilon_c}{\\varepsilon_{c0}}\\right)^n\\right]\\ (0\\le\\varepsilon_c\\le\\varepsilon_{c0});\\qquad \\sigma_c=f_{cd}\\ (\\varepsilon_{c0}\\le\\varepsilon_c\\le\\varepsilon_{cu})$$</div>
@@ -545,14 +549,16 @@ $$\\sigma_c=f_{cd}\\left[1-\\left(1-\\frac{\\varepsilon_c}{\\varepsilon_{c0}}\\r
 <tr><td>Humedad</td><td>$w=W_w/W_s$</td></tr>
 <tr><td>Saturación</td><td>$S=V_w/(V_a+V_w)$</td></tr>
 </tbody></table>
-<p class="note">Ejemplo de la hoja oficial de soluciones de 2024: con G<sub>s</sub> = 2,7 y e = 1,5 se obtiene γ<sub>d</sub> = 2,7/2,5 = 1,08 t/m³ y γ<sub>sat</sub> = (2,7 + 1,5)/2,5 = 1,68 t/m³.</p>
+<p class="note">Ejemplo de la hoja oficial de soluciones de 2024: con $G_s=2{,}7$ y $e=1{,}5$ ($V_s=1$, $V_m=1+e=2{,}5$):</p>
+<div class="formula">$$\\gamma_d=\\frac{G_s\\,\\gamma_w}{1+e}=\\frac{2{,}7}{2{,}5}=1{,}08\\ \\text{t/m}^3$$
+$$\\gamma_{sat}=\\frac{(G_s+e)\\,\\gamma_w}{1+e}=\\frac{2{,}7+1{,}5}{2{,}5}=1{,}68\\ \\text{t/m}^3$$</div>
 <h4>Principio de Terzaghi (tensiones efectivas)</h4>
 <div class="formula">$$\\sigma'_{ij}=\\sigma_{ij}-u\\,\\delta_{ij}$$</div>
 <p>El <b>equilibrio</b> se plantea con tensiones <b>totales</b> y el <b>comportamiento</b> depende de las <b>efectivas</b>. Los apuntes usan la analogía de una esponja sumergida en una bañera.</p>
-<ul><li><b>Caso 1</b>, lámina de agua h<sub>w</sub> sobre el terreno: σ = γ<sub>w</sub>h<sub>w</sub> + γ<sub>sat</sub>(z − h<sub>w</sub>) y u = γ<sub>w</sub>z, así que σ′ = γ′(z − h<sub>w</sub>). Las tensiones efectivas <b>no dependen de h<sub>w</sub></b> y no hay deformación.</li>
-<li><b>Caso 2</b>, relleno de peso γ<sub>r</sub>: σ′ = γ<sub>r</sub>h<sub>w</sub> + γ′(z − h<sub>w</sub>). Las tensiones efectivas <b>sí dependen</b> del relleno y hay deformación.</li>
-<li><b>Descenso del nivel freático</b> de H<sub>W1</sub> a H<sub>W2</sub> &gt; H<sub>W1</sub>: σ′ = (γ − γ′)H<sub>W</sub> + γ′H, que <b>aumenta</b> al bajar el nivel freático. Por eso los descensos de nivel producen asientos.</li></ul>
-<div class="gen"><b>Aplicación (examen PA1 2025, resolución oficial):</b> si el nivel freático sube desde H hasta la superficie, Δσ′ = (γ′ − γ)z para 0 ≤ z ≤ H (<b>lineal</b>) y Δσ′ = (γ′ − γ)H para z ≥ H (<b>constante</b>).</div>
+<ul><li><b>Caso 1</b>, lámina de agua h<sub>w</sub> sobre el terreno: $\\sigma=\\gamma_w h_w+\\gamma_{sat}(z-h_w)$ y $u=\\gamma_w z$, así que $\\sigma'=\\gamma'(z-h_w)$. Las tensiones efectivas <b>no dependen de h<sub>w</sub></b> y no hay deformación.</li>
+<li><b>Caso 2</b>, relleno de peso γ<sub>r</sub>: $\\sigma'=\\gamma_r h_w+\\gamma'(z-h_w)$. Las tensiones efectivas <b>sí dependen</b> del relleno y hay deformación.</li>
+<li><b>Descenso del nivel freático</b> de $H_{W1}$ a $H_{W2}\\gt H_{W1}$: $\\sigma'=(\\gamma-\\gamma')\\,H_W+\\gamma' H$, que <b>aumenta</b> al bajar el nivel freático. Por eso los descensos de nivel producen asientos.</li></ul>
+<div class="gen"><b>Aplicación (examen PA1 2025, resolución oficial):</b> si el nivel freático sube desde H hasta la superficie, $\\Delta\\sigma'=(\\gamma'-\\gamma)\\,z$ para $0\\le z\\le H$ (<b>lineal</b>) y $\\Delta\\sigma'=(\\gamma'-\\gamma)\\,H$ para $z\\ge H$ (<b>constante</b>).</div>
 <h4>ELS del suelo: asientos (CTE)</h4>
 <p>Asiento s, asiento diferencial δs, distorsión angular β e inclinación ω, definidos como en el tema de cimentaciones.</p>
 <h4>Consolidación</h4>
@@ -564,14 +570,14 @@ $$\\sigma_c=f_{cd}\\left[1-\\left(1-\\frac{\\varepsilon_c}{\\varepsilon_{c0}}\\r
     ["Fluencia frente a retracción", "La fluencia la causa una <b>carga mantenida</b>. La retracción, la <b>pérdida de agua</b>, y aparece aunque no haya carga."],
     ["Fluencia frente a cansancio", "Fluencia: aumento de deformación con el tiempo. Cansancio: <b>menor resistencia</b> ante cargas lentas (≈ 0,85 f<sub>c</sub>)."],
     ["Segregación frente a decantación", "Segregación: gruesos y finos se separan. Decantación: los gruesos caen al fondo en mezclas muy líquidas."],
-    ["Tensión de rotura frente a resistencia a tracción", "En el diagrama ingenieril σ<sub>r</sub> &lt; σ<sub>max</sub> (= f<sub>u</sub>) por la estricción."],
+    ["Tensión de rotura frente a resistencia a tracción", "En el diagrama ingenieril $\\sigma_r\\lt\\sigma_{max}\\ (=f_u)$ por la estricción."],
     ["Resiliencia frente a tenacidad", "Resiliencia (KV): energía absorbida en el impacto Charpy. Tenacidad: resistencia a la propagación de grietas."],
     ["JR, J0 y J2", "JR: construcción ordinaria. J0: altas exigencias de soldabilidad. J2: exigencias especiales de resistencia, resiliencia y soldabilidad."],
     ["B 500 S, B 500 SD y B 500 T", "S: barra corrugada soldable. SD: además, alta ductilidad. T: alambre trefilado (mallas)."],
     ["Armadura pasiva frente a activa", "Pasiva: 400 o 500 MPa, hormigón armado. Activa: más de 1000 MPa, pretensado."],
     ["Floculada frente a dispersa", "Floculada: más huecos. Dispersa: láminas ordenadas por preconsolidación, menor resistencia al corte."],
     ["Tensión total frente a efectiva", "La total sirve para el equilibrio. La efectiva (σ − u) gobierna el comportamiento: deformación y resistencia."],
-    ["Peso saturado frente a sumergido", "γ′ = γ<sub>sat</sub> − γ<sub>w</sub>. Es el que aparece en σ′ bajo el nivel freático."]
+    ["Peso saturado frente a sumergido", "$\\gamma'=\\gamma_{sat}-\\gamma_w$. Es el que aparece en σ′ bajo el nivel freático."]
   ]
 }
 };

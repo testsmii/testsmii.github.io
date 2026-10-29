@@ -32,7 +32,7 @@ const EXAM_CANON = {
          b: "son menores que 1 para las acciones variables desfavorables en las verificaciones correspondientes al estado límite último.",
          c: "son mayores que 1 para las verificaciones correspondientes al estado límite de servicio.",
          d: "Ninguna de las anteriores" },
-    exp: "El coeficiente de mayoración γf depende del estado límite y de si la acción es favorable o desfavorable, así que a es falsa. En ELU, las acciones variables desfavorables se mayoran (γ > 1), así que b es falsa. En ELS los coeficientes valen habitualmente 1, así que c también es falsa. (Tabla 4.1 de T4, diap. 26: γ distinto para resistencia y estabilidad, 1,50 para las variables desfavorables y menor que 1, o 0, para las favorables; en las combinaciones de ELS de la diap. 32 no aparece ningún γ. El concepto de γf aparece también en T1, diap. 21.)" },
+    exp: "El coeficiente de mayoración γf depende del estado límite y de si la acción es favorable o desfavorable, así que a es falsa. En ELU, las acciones variables desfavorables se mayoran ($\\gamma\\gt1$), así que b es falsa. En ELS los coeficientes valen habitualmente 1, así que c también es falsa. (Tabla 4.1 de T4, diap. 26: γ distinto para resistencia y estabilidad, 1,50 para las variables desfavorables y menor que 1, o 0, para las favorables; en las combinaciones de ELS de la diap. 32 no aparece ningún γ. El concepto de γf aparece también en T1, diap. 21.)" },
 
   C4: { tema: "T3", apartado: "Aceros y armaduras",
     q: "Marcar la frase que sea verdadera",
@@ -61,10 +61,10 @@ const EXAM_CANON = {
   C7: { tema: "T4", apartado: "Métodos probabilistas / fiabilidad",
     q: "¿Cuál de las siguientes afirmaciones es incorrecta?",
     o: { a: "Como resultado de la aplicación de un método de nivel 1 se obtiene un valor numérico para la fiabilidad.",
-         b: "En el cálculo estructural se considera 10-12 como probabilidad de fallo muy baja.",
+         b: "En el cálculo estructural se considera $10^{-12}$ como probabilidad de fallo muy baja.",
          c: "Existen métodos de nivel I, II y III para los cálculos de fiabilidad.",
-         d: "La fiabilidad R de un sistema se define como sigue: R=1-Pf, donde Pf es la probabilidad de fallo." },
-    exp: "Los métodos de nivel 1 (T1, diap. 18) sustituyen las distribuciones por valores característicos ponderados con coeficientes parciales de seguridad, calibrados para una fiabilidad dada. Comprueban que Rd ≥ Sd, pero no dan un valor numérico de la fiabilidad; solo los niveles 2 y 3 dan Pf (T4, diap. 16). Existen métodos de nivel I, II y III (T4, diap. 16 y 23), y la fiabilidad se define como R = 1 − Pf (T4, diap. 16; T1, diap. 17)." },
+         d: "La fiabilidad R de un sistema se define como sigue: $R=1-P_f$, donde $P_f$ es la probabilidad de fallo." },
+    exp: "Los métodos de nivel 1 (T1, diap. 18) sustituyen las distribuciones por valores característicos ponderados con coeficientes parciales de seguridad, calibrados para una fiabilidad dada. Comprueban que $R_d\\ge S_d$, pero no dan un valor numérico de la fiabilidad; solo los niveles 2 y 3 dan Pf (T4, diap. 16). Existen métodos de nivel I, II y III (T4, diap. 16 y 23), y la fiabilidad se define como $R=1-P_f$ (T4, diap. 16; T1, diap. 17)." },
 
   C8: { tema: "T2", apartado: "Acciones térmicas / arriostramiento",
     q: "Cuál de los pórticos tendría más esfuerzos debido a un incremento de temperatura idéntico en todos los elementos, si se tienen las mismas secciones y materiales.",
@@ -92,8 +92,8 @@ const EXAM_CANON = {
          b: "Entre 0 y H: lineal\nDebajo de H: constante",
          c: "Entre 0 y H: constante\nDebajo de H: constante",
          d: "Entre 0 y H: lineal\nDebajo de H: lineal" },
-    official: "<b>Resolución oficial (hoja de soluciones 2025):</b><br>Caso inicial: para 0 ≤ z ≤ H, $\\sigma=\\gamma z;\\ u=0;\\ \\sigma'=\\gamma z$. Para z ≥ H, $\\sigma=\\gamma H+\\gamma_{sat}(z-H);\\ u=\\gamma_w(z-H);\\ \\sigma'=\\gamma H+\\gamma'(z-H)$.<br>Caso final (nivel freático en superficie), en cualquier punto: $\\sigma=\\gamma_{sat} z;\\ u=\\gamma_w z;\\ \\sigma'=\\gamma' z$.<br>Variación: para 0 ≤ z ≤ H, $\\Delta\\sigma'=\\gamma' z-\\gamma z=(\\gamma'-\\gamma)z$ → lineal. Para z ≥ H, $\\Delta\\sigma'=\\gamma' z-[\\gamma H+\\gamma'(z-H)]=(\\gamma'-\\gamma)H$ → constante.",
-    exp: "Se aplica el principio de Terzaghi, $\\sigma'=\\sigma-u$ (T3, diap. 46–48). La variación es lineal hasta H y constante por debajo." },
+    official: "<b>Resolución oficial (hoja de soluciones 2025):</b><br>Caso inicial: para $0\\le z\\le H$, $\\sigma=\\gamma z;\\ u=0;\\ \\sigma'=\\gamma z$. Para $z\\ge H$, $\\sigma=\\gamma H+\\gamma_{sat}(z-H);\\ u=\\gamma_w(z-H);\\ \\sigma'=\\gamma H+\\gamma'(z-H)$.<br>Caso final (nivel freático en superficie), en cualquier punto: $\\sigma=\\gamma_{sat} z;\\ u=\\gamma_w z;\\ \\sigma'=\\gamma' z$.<br>Variación: para $0\\le z\\le H$, $\\Delta\\sigma'=\\gamma' z-\\gamma z=(\\gamma'-\\gamma)z$ → lineal. Para $z\\ge H$, $\\Delta\\sigma'=\\gamma' z-[\\gamma H+\\gamma'(z-H)]=(\\gamma'-\\gamma)H$ → constante.",
+    exp: "Se aplica el principio de Terzaghi (T3, diap. 46–48), comparando el estado inicial con el final, en el que el nivel freático está en superficie y en todo punto $\\sigma'=\\gamma' z$: $$\\sigma'=\\sigma-u$$ $$0\\le z\\le H:\\quad\\Delta\\sigma'=\\gamma' z-\\gamma z=(\\gamma'-\\gamma)\\,z\\ \\Rightarrow\\ \\text{lineal}$$ $$z\\ge H:\\quad\\Delta\\sigma'=\\gamma' z-[\\gamma H+\\gamma'(z-H)]=(\\gamma'-\\gamma)\\,H\\ \\Rightarrow\\ \\text{constante}$$ Como $\\gamma'\\lt\\gamma$, la tensión efectiva disminuye. La variación es lineal hasta H y constante por debajo: las opciones que dan la misma ley en las dos zonas olvidan que por debajo de H el terreno ya estaba saturado." },
 
   C12: { tema: "T4", apartado: "Fiabilidad: caso fundamental",
     q: "En el caso fundamental de fiabilidad la probabilidad de fallo siempre disminuye",
@@ -101,7 +101,7 @@ const EXAM_CANON = {
          b: "si la desviación típica de la variable de carga aumenta y los otros parámetros de las distribuciones de las variables de carga y resistencia no cambian.",
          c: "si la desviación típica y el valor medio de la variable de resistencia aumentan y los parámetros de la distribución de la variable de carga no cambian.",
          d: "si el valor medio de la variable de resistencia es mayor que el valor medio de la variable de carga y la desviación típica de la variable de resistencia disminuye y los otros parámetros de las distribuciones de las variables de carga y resistencia no cambian." },
-    exp: "En el caso fundamental, el margen M = R − S tiene índice de fiabilidad $\\beta=\\mu_M/\\sigma_M=(\\mu_R-\\mu_S)/\\sqrt{\\sigma_R^2+\\sigma_S^2}$, y pf disminuye al aumentar β. Si μR > μS (μM > 0) y σR disminuye, σM baja y β sube, así que pf baja siempre. Con a o b β disminuye. Con c el resultado depende de cuánto crezca cada parámetro, así que no es «siempre». (Caso fundamental e índice de Cornell: T4, diap. 17 y 19.)" },
+    exp: "En el caso fundamental, el margen $M=R-S$ tiene índice de fiabilidad $$\\beta=\\frac{\\mu_M}{\\sigma_M}=\\frac{\\mu_R-\\mu_S}{\\sqrt{\\sigma_R^2+\\sigma_S^2}}$$ y pf disminuye al aumentar β. Si $\\mu_R\\gt\\mu_S$ ($\\mu_M\\gt0$) y σR disminuye, σM baja y β sube, así que pf baja siempre. Con a o b β disminuye. Con c el resultado depende de cuánto crezca cada parámetro, así que no es «siempre». (Caso fundamental e índice de Cornell: T4, diap. 17 y 19.)" },
 
   C13: { tema: "T3", apartado: "Hormigón: fluencia",
     q: "Señalar la respuesta correcta. La fluencia del hormigón consiste en:",

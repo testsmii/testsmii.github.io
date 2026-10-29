@@ -18,14 +18,14 @@ THEORY.T4 = {
     "<b>ELU</b>: seguridad de usuarios y de personas en espacios públicos cercanos. El CTE contempla la <b>pérdida de equilibrio</b> como cuerpo rígido, el <b>fallo</b> por deformación excesiva, mecanismo o rotura (incluidos apoyos, cimentación y uniones) y la <b>inestabilidad</b> (también por corrosión o fatiga).",
     "Fallo <b>dúctil</b> (gran deformación, capacidad de aviso) frente a <b>frágil</b> (poca o nula; las normas insisten en evitarlo). Fallo <b>parcial</b> frente a <b>global</b>: para impedir la propagación hace falta <b>redundancia</b>. Ronan Point (1968) obligó a dar <b>continuidad a la armadura de forjados adyacentes</b>.",
     "Comprobaciones <b>deterministas</b>, <b>probabilistas</b> (dan P<sub>f</sub>) y <b>semi-probabilistas</b> (valores nominales y coeficientes parciales). Los probabilistas sirven para <b>calibrar</b> los coeficientes de los semi-probabilistas.",
-    "<b>Tensión admisible</b>: σ ≤ σ<sub>y</sub>/1,5 (estado de carga I) o σ<sub>y</sub>/1,33 (estado II, con viento, térmicos, puentes grúa y sismo). <b>Estados límite</b>: S(γ<sub>S</sub>F<sub>k</sub>) ≤ R(f<sub>k</sub>/γ<sub>R</sub>).",
-    "Fiabilidad: <b>R = 1 − P<sub>f</sub></b> durante un periodo de referencia. Niveles 1 (característicos + factores parciales), 2 (distribuciones → P<sub>f</sub>) y 3 (distribuciones conjuntas y superficies de fallo exactas → P<sub>f</sub>).",
-    "Caso fundamental: $P_f=\\int F_R(x)f_S(x)\\,dx$. Con R y S normales e independientes, M = R − S, <b>β = μ<sub>M</sub>/σ<sub>M</sub></b> (Cornell) y P<sub>f</sub> = Φ(−β). Cornell depende de cómo se escribe la superficie de fallo; <b>Hasofer-Lind</b> no: β es la distancia mínima al origen en variables normalizadas.",
+    "<b>Tensión admisible</b>: $\\sigma\\le\\sigma_y/1{,}5$ (estado de carga I) o $\\sigma_y/1{,}33$ (estado II, con viento, térmicos, puentes grúa y sismo). <b>Estados límite</b>: $S(\\gamma_S F_k)\\le R(f_k/\\gamma_R)$.",
+    "Fiabilidad: <b>$R=1-P_f$</b> durante un periodo de referencia. Niveles 1 (característicos + factores parciales), 2 (distribuciones → P<sub>f</sub>) y 3 (distribuciones conjuntas y superficies de fallo exactas → P<sub>f</sub>).",
+    "Caso fundamental: $P_f=\\int F_R(x)f_S(x)\\,dx$. Con R y S normales e independientes, $M=R-S$, <b>$\\beta=\\mu_M/\\sigma_M$</b> (Cornell) y $P_f=\\Phi(-\\beta)$. Cornell depende de cómo se escribe la superficie de fallo; <b>Hasofer-Lind</b> no: β es la distancia mínima al origen en variables normalizadas.",
     "β ↔ P<sub>f</sub>: 1,3 → 10⁻¹, 2,3 → 10⁻², 3,1 → 10⁻³, 3,7 → 10⁻⁴, 4,3 → 10⁻⁵, 4,8 → 10⁻⁶, 5,2 → 10⁻⁷. El CTE pide β de 0 a 4,3 según consecuencias y coste, <b>referidos a todo el periodo de servicio</b>. Vida útil nominal: 50 años en edificación y 100 en monumentales y puentes.",
-    "Factores parciales de acciones (resistencia): peso propio <b>1,35/0,80</b>, empuje <b>1,35/0,70</b>, agua <b>1,20/0,90</b>, variables <b>1,50/0</b>. Estabilidad: <b>1,10/0,90</b>, 1,35/0,80, 1,05/0,95 y 1,50/0. Resistencia: γ<sub>M0</sub> = γ<sub>M1</sub> = 1,05, γ<sub>M2</sub> = 1,25; γ<sub>c</sub> = 1,5/1,3 y γ<sub>s</sub> = 1,15/1,0.",
-    "Acciones: <b>permanentes</b> (G), <b>variables</b> (Q) y <b>accidentales</b> (A); fijas o libres; directas o indirectas. Valor <b>característico</b> F<sub>k</sub> → <b>representativo</b> ψ·F<sub>k</sub> → <b>de cálculo</b> γ<sub>f</sub>·F<sub>rep</sub>.",
+    "Factores parciales de acciones (resistencia): peso propio <b>1,35/0,80</b>, empuje <b>1,35/0,70</b>, agua <b>1,20/0,90</b>, variables <b>1,50/0</b>. Estabilidad: <b>1,10/0,90</b>, 1,35/0,80, 1,05/0,95 y 1,50/0. Resistencia: $\\gamma_{M0}=\\gamma_{M1}=1{,}05$, $\\gamma_{M2}=1{,}25$; $\\gamma_c=1{,}5/1{,}3$ y $\\gamma_s=1{,}15/1{,}0$.",
+    "Acciones: <b>permanentes</b> (G), <b>variables</b> (Q) y <b>accidentales</b> (A); fijas o libres; directas o indirectas. Valor <b>característico</b> $F_k$ → <b>representativo</b> $\\psi\\,F_k$ → <b>de cálculo</b> $\\gamma_f\\,F_{rep}$.",
     "Combinaciones: ELU fundamental $\\sum\\gamma_G G_k+\\gamma_{Q,1}Q_{k,1}+\\sum\\gamma_{Q,i}\\psi_{0,i}Q_{k,i}$; accidental (ψ<sub>1</sub> en la principal, ψ<sub>2</sub> en el resto); sismo (ψ<sub>2</sub> en todas). ELS característica (ψ<sub>0</sub>), frecuente (ψ<sub>1</sub>/ψ<sub>2</sub>) y casi permanente (ψ<sub>2</sub>).",
-    "ELU: estabilidad <b>E<sub>d,dst</sub> ≤ E<sub>d,stb</sub></b> y resistencia <b>E<sub>d</sub> ≤ R<sub>d</sub></b>. Cada comprobación tiene dos fases: <b>análisis</b> (esfuerzos y desplazamientos) y <b>comprobación</b> (capacidades frente a solicitaciones). En ELS se suelen usar modelos <b>elásticos y lineales</b>."
+    "ELU: estabilidad <b>$E_{d,dst}\\le E_{d,stb}$</b> y resistencia <b>$E_d\\le R_d$</b>. Cada comprobación tiene dos fases: <b>análisis</b> (esfuerzos y desplazamientos) y <b>comprobación</b> (capacidades frente a solicitaciones). En ELS se suelen usar modelos <b>elásticos y lineales</b>."
   ],
   sections: [
     { id: "t4-intro", title: "1. Introducción y principios generales", slides: ["T4", 1, 4], html: `
@@ -167,7 +167,7 @@ THEORY.T4 = {
 <tr><td><b>3</b></td><td>Funciones de distribución conjuntas y superficies de fallo exactas</td><td>Sí</td></tr>
 </tbody></table>
 <h4>Caso fundamental de fiabilidad</h4>
-<p>A veces la fiabilidad de un elemento se describe con solo <b>dos variables aleatorias independientes</b>: una de <b>carga S</b> y otra de <b>resistencia R</b>. El <b>criterio de fallo</b> es <b>R − S &lt; 0</b> (diap. 17).</p>
+<p>A veces la fiabilidad de un elemento se describe con solo <b>dos variables aleatorias independientes</b>: una de <b>carga S</b> y otra de <b>resistencia R</b>. El <b>criterio de fallo</b> es <b>$R-S\\lt0$</b> (diap. 17).</p>
 <ul><li>La probabilidad de que la carga esté entre x − dx/2 y x + dx/2 es $f_S(x)\\,dx$.</li>
 <li>La probabilidad de que la resistencia sea menor que esa carga es $F_R(x)$ (función de distribución de R).</li>
 <li>Su producto, integrado sobre x, da la probabilidad de fallo:</li></ul>
@@ -178,11 +178,14 @@ THEORY.T4 = {
 <h4>Índice de fiabilidad de Cornell</h4>
 <p>La integral suele ser muy complicada. Hay solución analítica en casos especiales como este (diap. 19):</p>
 <ul><li>R y S son <b>independientes</b> y <b>normales</b>: N(μ<sub>R</sub>, σ<sub>R</sub>) y N(μ<sub>S</sub>, σ<sub>S</sub>).</li>
-<li>El <b>margen de seguridad</b> M = R − S sigue N(μ<sub>M</sub>, σ<sub>M</sub>), con $\\mu_M=\\mu_R-\\mu_S$ y $\\sigma_M^2=\\sigma_R^2+\\sigma_S^2$.</li>
+<li>El <b>margen de seguridad</b> $M=R-S$ sigue $N(\\mu_M,\\ \\sigma_M)$, con $\\mu_M=\\mu_R-\\mu_S$ y $\\sigma_M^2=\\sigma_R^2+\\sigma_S^2$.</li>
 <li>P<sub>f</sub> se obtiene con la función de distribución normal estándar Φ.</li></ul>
 <div class="formula">$$P_f=P(M\\le0)=\\Phi\\!\\left(\\frac{0-\\mu_M}{\\sigma_M}\\right)=\\Phi\\!\\left(\\frac{\\mu_S-\\mu_R}{\\sqrt{\\sigma_R^2+\\sigma_S^2}}\\right)=\\Phi(-\\beta)\\ \\Rightarrow\\ \\beta=-\\Phi^{-1}(P_f)$$</div>
 <p>El <b>índice de fiabilidad β de Cornell</b> es el cociente entre el valor esperado del margen de seguridad y su desviación típica: $\\beta=\\mu_M/\\sigma_M$, es decir, $\\mu_M=\\beta\\,\\sigma_M$. La media del margen está β desviaciones típicas por encima de cero.</p>
-<p class="note">Ejemplo numérico: μ<sub>R</sub> = 300, σ<sub>R</sub> = 30, μ<sub>S</sub> = 180 y σ<sub>S</sub> = 40 (mismas unidades). μ<sub>M</sub> = 120, σ<sub>M</sub> = √(30² + 40²) = 50, así que β = 2,4 y P<sub>f</sub> = Φ(−2,4) ≈ 8·10⁻³. Si μ<sub>R</sub> = μ<sub>S</sub>, entonces β = 0 y P<sub>f</sub> = 0,5, sean cuales sean las desviaciones típicas.</p>
+<p class="note">Ejemplo numérico: $\\mu_R=300$, $\\sigma_R=30$, $\\mu_S=180$ y $\\sigma_S=40$ (mismas unidades):</p>
+<div class="formula">$$\\mu_M=300-180=120,\\qquad\\sigma_M=\\sqrt{30^2+40^2}=50$$
+$$\\beta=\\frac{\\mu_M}{\\sigma_M}=\\frac{120}{50}=2{,}4,\\qquad P_f=\\Phi(-2{,}4)\\approx8\\cdot10^{-3}$$</div>
+<p class="note">Si $\\mu_R=\\mu_S$, entonces $\\beta=0$ y $P_f=0{,}5$, sean cuales sean las desviaciones típicas.</p>
 <h4>Índice de Hasofer-Lind</h4>
 <p>El índice de Cornell tiene una desventaja: <b>depende de la función que describe la superficie de fallo</b>, y como hay infinitas funciones para describir la misma superficie es un punto débil importante (diap. 20). Por ejemplo, con $M_1=R-S$ y $M_2=1-S/R$ la probabilidad de fallo es la misma, $P_{f,M_1}=P_{f,M_2}$, pero $\\beta_{M_1}\\ne\\beta_{M_2}$.</p>
 <p><b>Hasofer y Lind</b> propusieron una definición sin ese defecto. Usan <b>variables normalizadas</b>:</p>
@@ -242,14 +245,14 @@ THEORY.T4 = {
 <p>¡Si las acciones actúan de manera <b>favorable o estabilizadora</b>, los factores parciales son <b>menores que 1</b>! (y 0 para las variables).</p>
 <p><b>Resistencias</b> (diap. 27):</p>
 <table class="tbl"><thead><tr><th>Material</th><th>Coeficiente</th><th>Uso</th></tr></thead><tbody>
-<tr><td rowspan="6"><b>Estructuras metálicas</b></td><td>γ<sub>M0</sub> = 1,05</td><td>Comprobaciones frente a f<sub>y</sub></td></tr>
-<tr><td>γ<sub>M1</sub> = 1,05</td><td>Comprobaciones de estabilidad</td></tr>
-<tr><td>γ<sub>M2</sub> = 1,25</td><td>Comprobaciones en rotura</td></tr>
-<tr><td>γ<sub>M3</sub> = 1,10</td><td>Deslizamiento de tornillos en ELS</td></tr>
-<tr><td>γ<sub>M3</sub> = 1,25</td><td>Deslizamiento de tornillos en ELU</td></tr>
-<tr><td>γ<sub>M3</sub> = 1,40</td><td>Deslizamiento de tornillos en ELU (agujeros rasgados)</td></tr>
-<tr><td rowspan="2"><b>Estructuras de hormigón</b></td><td>γ<sub>c</sub> = 1,5 · γ<sub>s</sub> = 1,15</td><td>Situación persistente o transitoria (hormigón · acero pasivo y activo)</td></tr>
-<tr><td>γ<sub>c</sub> = 1,3 · γ<sub>s</sub> = 1,0</td><td>Situación accidental</td></tr>
+<tr><td rowspan="6"><b>Estructuras metálicas</b></td><td>$\\gamma_{M0}=1{,}05$</td><td>Comprobaciones frente a f<sub>y</sub></td></tr>
+<tr><td>$\\gamma_{M1}=1{,}05$</td><td>Comprobaciones de estabilidad</td></tr>
+<tr><td>$\\gamma_{M2}=1{,}25$</td><td>Comprobaciones en rotura</td></tr>
+<tr><td>$\\gamma_{M3}=1{,}10$</td><td>Deslizamiento de tornillos en ELS</td></tr>
+<tr><td>$\\gamma_{M3}=1{,}25$</td><td>Deslizamiento de tornillos en ELU</td></tr>
+<tr><td>$\\gamma_{M3}=1{,}40$</td><td>Deslizamiento de tornillos en ELU (agujeros rasgados)</td></tr>
+<tr><td rowspan="2"><b>Estructuras de hormigón</b></td><td>$\\gamma_c=1{,}5$ · $\\gamma_s=1{,}15$</td><td>Situación persistente o transitoria (hormigón · acero pasivo y activo)</td></tr>
+<tr><td>$\\gamma_c=1{,}3$ · $\\gamma_s=1{,}0$</td><td>Situación accidental</td></tr>
 </tbody></table>
 <h4>Clasificación de acciones</h4>
 <p>En general se distingue entre <b>acción directa</b> (fuerza aplicada sobre el edificio) y <b>acción indirecta</b> (deformación impuesta o aceleración causada por cambios de temperatura, variaciones de humedad, <b>asientos diferenciales</b> o <b>sismos</b>) (diap. 28).</p>
@@ -269,23 +272,26 @@ THEORY.T4 = {
 <tr><td><b>De cálculo</b></td><td>Producto del valor característico o representativo por el <b>coeficiente parcial γ<sub>f</sub></b>, que puede ser mayor o menor que 1 según la acción actúe de forma desfavorable o no.</td></tr>
 </tbody></table>
 <div class="formula">$$F_d=\\gamma_f\\,F_{rep}=\\gamma_f\\,\\psi_i\\,F_k$$</div>
-<div class="gen"><b>Ampliación (CTE DB SE 4.2.2, no está en las diapositivas):</b> el CTE da nombre a cada valor representativo de una acción variable: <b>valor de combinación</b> ψ<sub>0</sub>·Q<sub>k</sub>, <b>valor frecuente</b> ψ<sub>1</sub>·Q<sub>k</sub> y <b>valor casi permanente</b> ψ<sub>2</sub>·Q<sub>k</sub>, con ψ<sub>0</sub> ≥ ψ<sub>1</sub> ≥ ψ<sub>2</sub>. Valores orientativos de su tabla 4.2: uso en viviendas 0,7 / 0,5 / 0,3; nieve por debajo de 1000 m 0,5 / 0,2 / 0; viento 0,6 / 0,5 / 0. En las preguntas de la app, los ψ se dan siempre como dato.</div>
+<div class="gen"><b>Ampliación (CTE DB SE 4.2.2, no está en las diapositivas):</b> el CTE da nombre a cada valor representativo de una acción variable: <b>valor de combinación</b> $\\psi_0 Q_k$, <b>valor frecuente</b> $\\psi_1 Q_k$ y <b>valor casi permanente</b> $\\psi_2 Q_k$, con $\\psi_0\\ge\\psi_1\\ge\\psi_2$. Valores orientativos de su tabla 4.2: uso en viviendas 0,7 / 0,5 / 0,3; nieve por debajo de 1000 m 0,5 / 0,2 / 0; viento 0,6 / 0,5 / 0. En las preguntas de la app, los ψ se dan siempre como dato.</div>
 <h4>Formato de las comprobaciones y combinaciones</h4>
 <p>Formato de las comprobaciones de ELU (diap. 31):</p>
 <table class="tbl"><thead><tr><th>Comprobación</th><th>Condición</th><th>Significado</th></tr></thead><tbody>
 <tr><td><b>Estabilidad</b></td><td>$E_{d,dst}\\le E_{d,stb}$</td><td>Efecto de cálculo de las acciones desestabilizadoras ≤ el de las estabilizadoras</td></tr>
 <tr><td><b>Resistencia</b></td><td>$E_d\\le R_d$</td><td>Efecto de cálculo de las acciones ≤ resistencia de cálculo correspondiente</td></tr>
 </tbody></table>
-<p>Valor de cálculo del efecto de las acciones en cada situación (diap. 32). Q<sub>k,1</sub> es la variable <b>principal</b> y Q<sub>k,i</sub> (i &gt; 1) las <b>acompañantes</b>:</p>
+<p>Valor de cálculo del efecto de las acciones en cada situación (diap. 32). $Q_{k,1}$ es la variable <b>principal</b> y $Q_{k,i}$ ($i\\gt1$) las <b>acompañantes</b>:</p>
 <table class="tbl"><thead><tr><th>Situación</th><th>Combinación</th></tr></thead><tbody>
 <tr><td><b>ELU fundamental</b><br><small>persistente y transitoria</small></td><td>$\\sum_j\\gamma_{G,j}G_{k,j}+\\gamma_{Q,1}Q_{k,1}+\\sum_{i&gt;1}\\gamma_{Q,i}\\psi_{0,i}Q_{k,i}$</td></tr>
-<tr><td><b>ELU accidental</b></td><td>$\\sum_j\\gamma_{G,j}G_{k,j}+A_d+\\gamma_{Q,1}\\psi_{1,1}Q_{k,1}+\\sum_{i&gt;1}\\gamma_{Q,i}\\psi_{2,i}Q_{k,i}$<br><small>γ<sub>Q,1</sub> = 1 (efecto desfavorable); γ<sub>Q,1</sub> = 0 (favorable)</small></td></tr>
+<tr><td><b>ELU accidental</b></td><td>$\\sum_j\\gamma_{G,j}G_{k,j}+A_d+\\gamma_{Q,1}\\psi_{1,1}Q_{k,1}+\\sum_{i&gt;1}\\gamma_{Q,i}\\psi_{2,i}Q_{k,i}$<br><small>$\\gamma_{Q,1}=1$ (efecto desfavorable); $\\gamma_{Q,1}=0$ (favorable)</small></td></tr>
 <tr><td><b>ELU sismo</b></td><td>$\\sum_j G_{k,j}+A_d+\\sum_{i\\ge1}\\psi_{2,i}Q_{k,i}$</td></tr>
 <tr><td><b>ELS poco frecuente o característica</b><br><small>corta duración, efecto irreversible</small></td><td>$\\sum_j G_{k,j}+Q_{k,1}+\\sum_{i&gt;1}\\psi_{0,i}Q_{k,i}$</td></tr>
 <tr><td><b>ELS frecuente</b><br><small>corta duración, efecto reversible</small></td><td>$\\sum_j G_{k,j}+\\psi_{1,1}Q_{k,1}+\\sum_{i&gt;1}\\psi_{2,i}Q_{k,i}$</td></tr>
 <tr><td><b>ELS casi permanente</b><br><small>acciones de larga duración</small></td><td>$\\sum_j G_{k,j}+\\sum_{i\\ge1}\\psi_{2,i}Q_{k,i}$</td></tr>
 </tbody></table>
-<p class="note">Ejemplo: G<sub>k</sub> = 20, uso Q<sub>k</sub> = 10 (ψ<sub>0</sub> = 0,7) y nieve Q<sub>k</sub> = 5 (ψ<sub>0</sub> = 0,5) kN/m. ELU fundamental con el uso como principal: 1,35·20 + 1,5·10 + 1,5·0,5·5 = <b>45,75 kN/m</b>. Con la nieve como principal: 1,35·20 + 1,5·5 + 1,5·0,7·10 = 45,0 kN/m. Se prueban todas las variables como principal y manda la mayor.</p>
+<p class="note">Ejemplo: $G_k=20$, uso $Q_k=10$ ($\\psi_0=0{,}7$) y nieve $Q_k=5$ ($\\psi_0=0{,}5$) kN/m. ELU fundamental, probando cada variable como principal:</p>
+<div class="formula">$$\\text{Uso principal: }1{,}35\\cdot20+1{,}5\\cdot10+1{,}5\\cdot0{,}5\\cdot5=\\boxed{45{,}75\\ \\text{kN/m}}$$
+$$\\text{Nieve principal: }1{,}35\\cdot20+1{,}5\\cdot5+1{,}5\\cdot0{,}7\\cdot10=45{,}0\\ \\text{kN/m}$$</div>
+<p class="note">Se prueban todas las variables como principal y manda la mayor.</p>
 <p>En ELS no hay coeficientes γ en las fórmulas (valen 1): ni siquiera el peso propio se mayora.</p>
 <h4>Organización de las comprobaciones</h4>
 <p>En general, la comprobación de cada estado límite se hace en <b>dos fases</b> (diap. 33):</p>
@@ -298,14 +304,14 @@ THEORY.T4 = {
     ["ELS frente a ELU", "ELS: combinaciones <b>frecuentes</b>, sin afectar a la integridad (deformaciones, vibraciones, daños). ELU: seguridad de las personas, integridad estructural (equilibrio, fallo, inestabilidad)."],
     ["Deformación excesiva: ¿ELS o ELU?", "Las flechas, asientos y desplomes que afectan a la apariencia o la funcionalidad son <b>ELS</b>. El «fallo por deformación excesiva» que compromete la integridad es <b>ELU</b> (diap. 8 y 10)."],
     ["Fallo frágil frente a fallo parcial", "Dúctil/frágil depende de la <b>deformación plástica</b> del material (capacidad de aviso). Parcial/global depende de la <b>extensión</b> del fallo (redundancia)."],
-    ["Cornell frente a Hasofer-Lind", "Cornell: β = μ<sub>M</sub>/σ<sub>M</sub>, <b>depende</b> de cómo se escriba M. Hasofer-Lind: distancia mínima al origen en variables <b>normalizadas</b>, <b>no depende</b>."],
+    ["Cornell frente a Hasofer-Lind", "Cornell: $\\beta=\\mu_M/\\sigma_M$, <b>depende</b> de cómo se escriba M. Hasofer-Lind: distancia mínima al origen en variables <b>normalizadas</b>, <b>no depende</b>."],
     ["Nivel 1, 2 y 3", "Nivel 1: característicos + γ, <b>no</b> da P<sub>f</sub>. Nivel 2: distribuciones de cada variable → P<sub>f</sub>. Nivel 3: distribuciones conjuntas y superficies exactas → P<sub>f</sub>."],
     ["β por periodo de servicio frente a β anual", "La tabla C.2 del CTE da β para <b>todo el periodo de servicio</b>. Para un año los valores son otros."],
-    ["Valor representativo frente a valor de cálculo", "Representativo = <b>ψ·F<sub>k</sub></b> (simultaneidad). De cálculo = <b>γ<sub>f</sub>·F<sub>k</sub></b> o γ<sub>f</sub>·F<sub>rep</sub> (seguridad). El característico no se obtiene de ninguno de ellos."],
+    ["Valor representativo frente a valor de cálculo", "Representativo = <b>$\\psi\\,F_k$</b> (simultaneidad). De cálculo = <b>$\\gamma_f\\,F_k$</b> o $\\gamma_f\\,F_{rep}$ (seguridad). El característico no se obtiene de ninguno de ellos."],
     ["γ favorable en resistencia frente a estabilizador", "Peso propio: 0,80 favorable en resistencia y 0,90 estabilizador. Desfavorable: 1,35 en resistencia y 1,10 desestabilizador."],
     ["ψ<sub>0</sub>, ψ<sub>1</sub> y ψ<sub>2</sub>", "ψ<sub>0</sub>: acompañantes de la fundamental y de la característica. ψ<sub>1</sub>: principal de la frecuente y de la accidental. ψ<sub>2</sub>: el resto de la frecuente y la accidental, y todas en la casi permanente y en el sismo."],
     ["Acción directa frente a indirecta", "Directa: fuerza aplicada. Indirecta: deformación o aceleración impuesta (temperatura, humedad, <b>asientos diferenciales</b>, sismo)."],
-    ["Tensión admisible: estado I frente a II", "I: permanentes, uso, nieve, asientos y ejecución → σ<sub>y</sub>/1,5. II: además viento, térmicos, puentes grúa y sismo → σ<sub>y</sub>/1,33 (tensión admisible mayor)."]
+    ["Tensión admisible: estado I frente a II", "I: permanentes, uso, nieve, asientos y ejecución → $\\sigma_y/1{,}5$. II: además viento, térmicos, puentes grúa y sismo → $\\sigma_y/1{,}33$ (tensión admisible mayor)."]
   ]
 };
 
@@ -465,45 +471,45 @@ L("T4","Tipos de comprobación",2,"Según los apuntes, en las comprobaciones sem
  "las acciones y resistencias siguen funciones de distribución y como resultado se obtiene la probabilidad de fallo.",
  "los valores de las acciones y resistencias se consideran perfectamente conocidos.",
  "los coeficientes parciales se fijan de antemano y con ellos se calcula la probabilidad de fallo de cada estructura."],0,
-"La diap. 14 define las tres comprobaciones: deterministas (valores perfectamente conocidos), probabilistas (funciones de distribución, resultado P<sub>f</sub>) y semi-probabilistas (valores nominales combinados con coeficientes parciales para obtener los valores de cálculo). El método semi-probabilista no da la P<sub>f</sub>: son los probabilistas los que sirven para calibrar sus coeficientes.","Apuntes T4, diap. 14");
+"La diap. 14 define las tres comprobaciones: deterministas (valores perfectamente conocidos), probabilistas (funciones de distribución, resultado $P_f$) y semi-probabilistas (valores nominales combinados con coeficientes parciales para obtener los valores de cálculo). El método semi-probabilista no da la $P_f$: son los probabilistas los que sirven para calibrar sus coeficientes.","Apuntes T4, diap. 14");
 L("T4","Tipos de comprobación",2,"Según los apuntes, ¿qué relación hay entre los métodos probabilistas y los semi-probabilistas?",
 ["Se suelen utilizar métodos probabilistas para calibrar los coeficientes parciales de seguridad de los métodos semi-probabilistas.",
  "Se suelen utilizar métodos semi-probabilistas para calibrar las funciones de distribución de los métodos probabilistas.",
  "Son equivalentes: ambos dan como resultado la probabilidad de fallo de la estructura.",
  "Ninguna de las anteriores."],0,
-"Diap. 14: «Se suelen utilizar métodos probabilistas para calibrar los coeficientes parciales de seguridad de los métodos semi-probabilistas». La calibración va en ese sentido y no al revés. Solo los probabilistas dan P<sub>f</sub>; el semi-probabilista da valores de cálculo y verifica desigualdades. Como la primera es correcta, «Ninguna» no procede.","Apuntes T4, diap. 14");
+"Diap. 14: «Se suelen utilizar métodos probabilistas para calibrar los coeficientes parciales de seguridad de los métodos semi-probabilistas». La calibración va en ese sentido y no al revés. Solo los probabilistas dan $P_f$; el semi-probabilista da valores de cálculo y verifica desigualdades. Como la primera es correcta, «Ninguna» no procede.","Apuntes T4, diap. 14");
 L("T4","Tensión admisible",2,"En el método clásico de la tensión admisible, ¿qué acciones añade el estado de carga II a las del estado de carga I y qué tensión admisible le corresponde?",
-["El viento, los efectos térmicos, el frenado y el empuje lateral de los puentes grúa y los efectos sísmicos; σadm = σy/1,33.",
- "Las sobrecargas de nieve y las de ejecución; σadm = σy/1,33.",
- "El viento y los efectos térmicos; σadm = σy/1,5.",
- "Los asientos y los posibles movimientos de los apoyos; σadm = σy/1,5."],0,
-"Diap. 15: el estado de carga I incluye cargas permanentes, sobrecargas de explotación y de nieve, asientos o movimientos de apoyos y sobrecargas de ejecución, con σadm = σy/1,5. El II añade viento, efectos térmicos, frenado y empuje lateral de puentes grúa y efectos sísmicos, con σadm = σy/1,33. La nieve, la ejecución y los asientos ya están en el estado I.","Apuntes T4, diap. 15");
+["El viento, los efectos térmicos, el frenado y el empuje lateral de los puentes grúa y los efectos sísmicos; $\\sigma_{adm}=\\sigma_y/1{,}33$.",
+ "Las sobrecargas de nieve y las de ejecución; $\\sigma_{adm}=\\sigma_y/1{,}33$.",
+ "El viento y los efectos térmicos; $\\sigma_{adm}=\\sigma_y/1{,}5$.",
+ "Los asientos y los posibles movimientos de los apoyos; $\\sigma_{adm}=\\sigma_y/1{,}5$."],0,
+"Diap. 15: el estado de carga I incluye cargas permanentes, sobrecargas de explotación y de nieve, asientos o movimientos de apoyos y sobrecargas de ejecución; el II añade viento, efectos térmicos, frenado y empuje lateral de puentes grúa y efectos sísmicos: $$\\text{Estado I:}\\ \\sigma_{adm}=\\frac{\\sigma_y}{1{,}5}\\qquad\\text{Estado II:}\\ \\sigma_{adm}=\\frac{\\sigma_y}{1{,}33}$$ La nieve, la ejecución y los asientos ya están en el estado I.","Apuntes T4, diap. 15");
 L("T4","Tensión admisible",3,"Una barra de acero con σy = 275 MPa trabaja a σ = 195 MPa bajo cargas permanentes, sobrecarga de uso y viento. Según el método clásico de la tensión admisible de los apuntes…",
-["Cumple: al incluir el viento es el estado de carga II, con σadm = 275/1,33 ≈ 206,8 MPa ≥ 195 MPa.",
- "No cumple: σadm = 275/1,5 ≈ 183,3 MPa < 195 MPa.",
- "Cumple con holgura: σadm = 275/1,05 ≈ 261,9 MPa.",
- "No cumple: con viento hay que aplicar ambos factores, σadm = 275/(1,5·1,33) ≈ 137,8 MPa."],0,
-"Con viento estamos en el estado de carga II (diap. 15), así que σadm = σy/1,33 = 206,8 MPa y 195 ≤ 206,8. El divisor 1,5 es el del estado I, que no incluye el viento. 1,05 es el γM0 del método de estados límite (diap. 27), no un factor de tensión admisible. Los dos divisores no se multiplican: cada estado de carga tiene el suyo.","Apuntes T4, diap. 15");
+["Cumple: al incluir el viento es el estado de carga II, con $\\sigma_{adm}=275/1{,}33\\approx206{,}8\\text{ MPa}\\ge195\\text{ MPa}$.",
+ "No cumple: $\\sigma_{adm}=275/1{,}5\\approx183{,}3\\text{ MPa}\\lt195\\text{ MPa}$.",
+ "Cumple con holgura: $\\sigma_{adm}=275/1{,}05\\approx261{,}9\\text{ MPa}$.",
+ "No cumple: con viento hay que aplicar ambos factores, $\\sigma_{adm}=\\dfrac{275}{1{,}5\\cdot1{,}33}\\approx137{,}8\\text{ MPa}$."],0,
+"Con viento estamos en el estado de carga II (diap. 15), cuyo divisor es 1,33: $$\\sigma_{adm}=\\frac{\\sigma_y}{1{,}33}=\\frac{275}{1{,}33}\\approx206{,}8\\text{ MPa}$$ $$\\sigma=195\\text{ MPa}\\le206{,}8\\text{ MPa}\\ \\Rightarrow\\ \\boxed{\\text{cumple}}$$ El divisor 1,5 (183,3 MPa) es el del estado I, que no incluye el viento. 1,05 es el γM0 del método de estados límite (diap. 27), no un factor de tensión admisible. Los dos divisores no se multiplican: cada estado de carga tiene el suyo.","Apuntes T4, diap. 15");
 L("T4","Tensión admisible y estados límite",2,"Señalar la respuesta incorrecta sobre la evolución de los conceptos de seguridad.",
 ["En el método de la tensión admisible, el factor 1,5 o 1,33 divide a la tensión de fluencia σy para obtener σadm.",
  "En el método de los estados límite se mayoran las cargas con γS y se minoran las resistencias con γR.",
  "En el método de los estados límite se definen los estados límite, las situaciones a comprobar y los factores parciales de seguridad.",
  "En el método de la tensión admisible, el factor de seguridad depende de que cada acción sea favorable o desfavorable, igual que en el de estados límite."],3,
-"Las tres primeras reproducen la diap. 15: σ ≤ σadm = σy/1,5 (o /1,33) y S(γSi·Fki) ≤ R(fkj/γRj), con estados límite, situaciones y factores parciales que mayoran cargas y minoran resistencias. En la tensión admisible el factor depende del estado de carga (I o II), no de que cada acción sea favorable o desfavorable; esa distinción es propia de los factores parciales (diap. 26).","Apuntes T4, diap. 15");
+"Las tres primeras reproducen la diap. 15: $$\\sigma\\le\\sigma_{adm}=\\frac{\\sigma_y}{1{,}5}\\ \\left(\\text{o}\\ \\frac{\\sigma_y}{1{,}33}\\right),\\qquad S\\left(\\gamma_{Si}\\,F_{ki}\\right)\\le R\\left(\\frac{f_{kj}}{\\gamma_{Rj}}\\right)$$ con estados límite, situaciones y factores parciales que mayoran cargas y minoran resistencias. En la tensión admisible el factor depende del estado de carga (I o II), no de que cada acción sea favorable o desfavorable; esa distinción es propia de los factores parciales (diap. 26).","Apuntes T4, diap. 15");
 L("T4","Tipos de comprobación: estados límite",2,"La expresión S(γSi·Fki) ≤ R(fkj/γRj) del método de los estados límite indica que…",
 ["el efecto de las acciones características multiplicadas por sus factores parciales no debe superar la resistencia obtenida con las resistencias características divididas por los suyos.",
  "la suma de las acciones características divididas por γS no debe superar las resistencias características multiplicadas por γR.",
  "γS y γR deben ser iguales para que la comprobación sea equilibrada.",
  "S y R son variables aleatorias y la expresión proporciona directamente la probabilidad de fallo."],0,
-"En la diap. 15, los factores parciales sirven «para mayorar las cargas y minorar las resistencias»: Fki se multiplica por γSi y fkj se divide por γRj. No tienen por qué ser iguales (por ejemplo γ = 1,35 o 1,5 en acciones y γM0 = 1,05 en acero, diap. 26-27). La expresión trabaja con valores característicos y no da la P<sub>f</sub>: es un método semi-probabilista.","Apuntes T4, diap. 15");
+"En la diap. 15, los factores parciales sirven «para mayorar las cargas y minorar las resistencias»: $$S(\\gamma_{Si}\\,F_{ki})\\le R\\!\\left(\\frac{f_{kj}}{\\gamma_{Rj}}\\right)$$ Fki se multiplica por γSi y fkj se divide por γRj. No tienen por qué ser iguales (por ejemplo γ = 1,35 o 1,5 en acciones y γM0 = 1,05 en acero, diap. 26-27). La expresión trabaja con valores característicos y no da la $P_f$: es un método semi-probabilista.","Apuntes T4, diap. 15");
 
 /* ---- 6. Fiabilidad estructural ---- */
 L("T4","Fiabilidad",2,"Según los apuntes, la fiabilidad de una estructura…",
-["es su capacidad de cumplir los objetivos para los que ha sido diseñada durante un periodo de referencia, y vale R = 1 − Pf.",
- "es su capacidad de cumplir los objetivos para los que ha sido diseñada durante un año, y vale R = 1/Pf.",
- "es la probabilidad de que la estructura falle durante su vida útil, R = Pf.",
- "es su capacidad de resistir la combinación de carga más desfavorable sin superar la tensión admisible, R = σadm/σ."],0,
-"Diap. 16: «La fiabilidad de una estructura es la capacidad de cumplir los objetivos por los que ha sido diseñada durante un periodo de referencia», con R = 1 − Pf. El periodo de referencia no tiene por qué ser un año (la tabla del CTE se refiere a todo el periodo de servicio, diap. 21). R es el complemento de Pf, no Pf ni su inverso, y no es un cociente de tensiones.","Apuntes T4, diap. 16");
+["es su capacidad de cumplir los objetivos para los que ha sido diseñada durante un periodo de referencia, y vale $R=1-P_f$.",
+ "es su capacidad de cumplir los objetivos para los que ha sido diseñada durante un año, y vale $R=1/P_f$.",
+ "es la probabilidad de que la estructura falle durante su vida útil, $R=P_f$.",
+ "es su capacidad de resistir la combinación de carga más desfavorable sin superar la tensión admisible, $R=\\sigma_{adm}/\\sigma$."],0,
+"Diap. 16: «La fiabilidad de una estructura es la capacidad de cumplir los objetivos por los que ha sido diseñada durante un periodo de referencia», con $$R=1-P_f$$ El periodo de referencia no tiene por qué ser un año (la tabla del CTE se refiere a todo el periodo de servicio, diap. 21). R es el complemento de Pf, no Pf ni su inverso, y no es un cociente de tensiones.","Apuntes T4, diap. 16");
 L("T4","Fiabilidad: niveles",2,"Señalar la respuesta correcta sobre los métodos de cálculo de la probabilidad de fallo.",
 ["Nivel 1: valores característicos y factores parciales; nivel 2: funciones de distribución de las variables de carga y resistencia → Pf; nivel 3: funciones de distribución conjuntas y superficies de fallo exactas → Pf.",
  "Nivel 1: funciones de distribución conjuntas y superficies de fallo exactas; nivel 3: valores característicos y factores parciales.",
@@ -515,55 +521,55 @@ L("T4","Fiabilidad: caso fundamental",3,"En el caso fundamental de fiabilidad (c
  "integrando sobre x el producto fR(x)·FS(x): la densidad de la resistencia por la probabilidad de que la carga sea menor que x.",
  "como el área bajo la función de densidad de R a la izquierda del valor medio de S.",
  "como el producto FR(μS)·fS(μR), evaluado en los valores medios."],0,
-"Diap. 17: la probabilidad de que la carga esté entre x − dx/2 y x + dx/2 es fS(x)dx; la de que la resistencia sea menor es FR(x); el fallo en ese intervalo tiene probabilidad FR(x)·fS(x)dx y se integra sobre x: Pf = ∫FR(x)fS(x)dx. fR·FS mide la probabilidad de que la carga sea menor que la resistencia, es decir, de no fallar. Los atajos con valores medios ignoran la dispersión de la carga.","Apuntes T4, diap. 17");
+"Diap. 17: la probabilidad de que la carga esté entre x − dx/2 y x + dx/2 es fS(x)dx, y la de que la resistencia sea menor es FR(x). El fallo en ese intervalo tiene probabilidad FR(x)·fS(x)dx, y se integra sobre x: $$P_f=\\int_{-\\infty}^{\\infty}F_R(x)\\,f_S(x)\\,dx$$ fR·FS mide la probabilidad de que la carga sea menor que la resistencia, es decir, de no fallar. Los atajos con valores medios ignoran la dispersión de la carga.","Apuntes T4, diap. 17");
 L("T4","Fiabilidad: caso fundamental",3,"En el ejemplo de los apuntes con distribuciones triangulares (S entre 1 y 5 con pico 0,5 en 3; R entre 4 y 8 con pico 0,5 en 6), señalar la respuesta correcta.",
-["Solo contribuye la zona de solape, 4 ≤ t ≤ 5, y resulta Pf = 1/384 ≈ 2,6·10⁻³, que corresponde a un β entre 2,3 y 3,1.",
- "Hay que integrar en todo el dominio, 1 ≤ t ≤ 8, y resulta Pf = 1/384 ≈ 2,6·10⁻³.",
- "Solo contribuye la zona de solape y resulta Pf = 1/384 ≈ 2,6·10⁻⁴, que corresponde a un β ≈ 3,7.",
- "Solo contribuye la zona de solape y resulta Pf = FR(5) = 1/8, porque en t = 5 se acaba la carga."],0,
-"Diap. 18: fuera de 4 ≤ t ≤ 5 el producto FR·fS es nulo (FR = 0 por debajo de 4 y fS = 0 por encima de 5), así que solo cuenta el solape. Integrando (t²/8 − t + 2)(0,5 − 0,25(t − 3)) entre 4 y 5 sale 1/384 ≈ 0,0026, entre 10⁻³ (β = 3,1) y 10⁻² (β = 2,3) en la tabla de la diap. 21 (β ≈ 2,8). 2,6·10⁻⁴ es un error de un orden de magnitud. FR(5) = 1/8 es solo la probabilidad de que R &lt; 5, sin ponderar por la densidad de la carga.","Apuntes T4, diap. 18 y 21");
+["Solo contribuye la zona de solape, $4\\le t\\le5$, y resulta $P_f=1/384\\approx2{,}6\\cdot10^{-3}$, que corresponde a un β entre 2,3 y 3,1.",
+ "Hay que integrar en todo el dominio, $1\\le t\\le8$, y resulta $P_f=1/384\\approx2{,}6\\cdot10^{-3}$.",
+ "Solo contribuye la zona de solape y resulta $P_f=1/384\\approx2{,}6\\cdot10^{-4}$, que corresponde a un $\\beta\\approx3{,}7$.",
+ "Solo contribuye la zona de solape y resulta $P_f=F_R(5)=1/8$, porque en $t=5$ se acaba la carga."],0,
+"Diap. 18: fuera de 4 ≤ t ≤ 5 el producto FR·fS es nulo (FR = 0 por debajo de 4 y fS = 0 por encima de 5), así que solo cuenta la zona de solape: $$f_S(t)=0{,}5-0{,}25\\,(t-3),\\qquad F_R(t)=\\frac{t^2}{8}-t+2\\qquad(4\\le t\\le5)$$ $$P_f=\\int_4^5\\Big(\\frac{t^2}{8}-t+2\\Big)\\big(0{,}5-0{,}25\\,(t-3)\\big)\\,dt=\\boxed{\\frac{1}{384}\\approx2{,}6\\cdot10^{-3}}$$ Ese valor está entre 10⁻³ (β = 3,1) y 10⁻² (β = 2,3) en la tabla de la diap. 21 (β ≈ 2,8). 2,6·10⁻⁴ es un error de un orden de magnitud. FR(5) = 1/8 es solo la probabilidad de que R < 5, sin ponderar por la densidad de la carga.","Apuntes T4, diap. 18 y 21");
 L("T4","Índices de fiabilidad: Cornell",1,"Según los apuntes, el índice de fiabilidad β de Cornell se define como…",
-["el cociente entre el valor esperado del margen de seguridad y su desviación típica, β = μM/σM.",
- "el cociente entre la desviación típica del margen de seguridad y su valor esperado, β = σM/μM.",
+["el cociente entre el valor esperado del margen de seguridad y su desviación típica, $\\beta=\\mu_M/\\sigma_M$.",
+ "el cociente entre la desviación típica del margen de seguridad y su valor esperado, $\\beta=\\sigma_M/\\mu_M$.",
  "la distancia mínima entre el origen y la superficie de fallo en el espacio de coordenadas normalizadas.",
- "el cociente entre los valores medios de la resistencia y la carga, β = μR/μS."],0,
-"Diap. 19: «El índice de fiabilidad β de Cornell está definido como cociente entre el valor esperado del margen de seguridad y su desviación típica», β = μM/σM, así que μM = β·σM. La distancia mínima en coordenadas normalizadas es la definición de Hasofer-Lind (diap. 20). μR/μS sería un coeficiente de seguridad central, que no tiene en cuenta la dispersión.","Apuntes T4, diap. 19");
+ "el cociente entre los valores medios de la resistencia y la carga, $\\beta=\\mu_R/\\mu_S$."],0,
+"Diap. 19: «El índice de fiabilidad β de Cornell está definido como cociente entre el valor esperado del margen de seguridad y su desviación típica»: $$\\beta=\\frac{\\mu_M}{\\sigma_M}\\ \\Rightarrow\\ \\mu_M=\\beta\\,\\sigma_M$$ La distancia mínima en coordenadas normalizadas es la definición de Hasofer-Lind (diap. 20). μR/μS sería un coeficiente de seguridad central, que no tiene en cuenta la dispersión.","Apuntes T4, diap. 19");
 L("T4","Índices de fiabilidad: Cornell",3,"La resistencia R y la carga S de un elemento son normales e independientes, con μR = 300, σR = 30, μS = 180 y σS = 40 (mismas unidades). Según el caso fundamental de los apuntes, el índice de fiabilidad y la probabilidad de fallo valen aproximadamente:",
-["β = 2,4 y Pf ≈ 8·10⁻³",
- "β ≈ 1,71 y Pf ≈ 4·10⁻²",
- "β = 3,0 y Pf ≈ 1,3·10⁻³",
- "β = 4,0 y Pf ≈ 3·10⁻⁵"],0,
-"μM = 300 − 180 = 120 y σM = √(30² + 40²) = 50, así que β = 120/50 = 2,4 y Pf = Φ(−2,4) ≈ 0,008, algo menos que el 10⁻² que la diap. 21 asocia a β = 2,3. Sumar las desviaciones (120/70 ≈ 1,71) o usar solo la de la carga (120/40 = 3,0) o solo la de la resistencia (120/30 = 4,0) son errores: las varianzas se suman, σM² = σR² + σS² (diap. 19).","Apuntes T4, diap. 19 y 21");
+["$\\beta=2{,}4$ y $P_f\\approx8\\cdot10^{-3}$",
+ "$\\beta\\approx1{,}71$ y $P_f\\approx4\\cdot10^{-2}$",
+ "$\\beta=3{,}0$ y $P_f\\approx1{,}3\\cdot10^{-3}$",
+ "$\\beta=4{,}0$ y $P_f\\approx3\\cdot10^{-5}$"],0,
+"Caso fundamental (diap. 19): el margen M = R − S es normal, con μM = μR − μS y σM² = σR² + σS². $$\\mu_M=300-180=120,\\qquad\\sigma_M=\\sqrt{30^2+40^2}=50$$ $$\\beta=\\frac{\\mu_M}{\\sigma_M}=\\frac{120}{50}=\\boxed{2{,}4},\\qquad P_f=\\Phi(-2{,}4)\\approx\\boxed{8\\cdot10^{-3}}$$ Es algo menos que el 10⁻² que la diap. 21 asocia a β = 2,3. Sumar las desviaciones (120/70 ≈ 1,71), usar solo la de la carga (120/40 = 3,0) o solo la de la resistencia (120/30 = 4,0) son errores: se suman las varianzas, no las desviaciones típicas.","Apuntes T4, diap. 19 y 21");
 L("T4","Índices de fiabilidad: Cornell",3,"Una barra de sección A = 1000 mm² soporta una carga axial P normal de media 150 kN y desviación típica 30 kN. Su tensión de fluencia es normal con media 275 MPa y desviación típica 20 MPa. Si falla cuando la tensión axial supera fy, el índice de fiabilidad β de Cornell vale aproximadamente:",
-["3,47; Pf entre 10⁻⁴ y 10⁻³",
- "2,50; Pf del orden de 10⁻²",
- "4,17; Pf del orden de 10⁻⁵",
- "6,25; Pf despreciable"],0,
-"Se pasa la carga a tensión: μS = 150 000/1000 = 150 MPa y σS = 30 MPa. Entonces μM = 275 − 150 = 125 MPa y σM = √(20² + 30²) = 36,06 MPa, y β = 125/36,06 ≈ 3,47 (Pf ≈ 2,6·10⁻⁴, entre β = 3,1 y 3,7 en la tabla de la diap. 21). 2,50 sale de sumar desviaciones (125/50), 4,17 de usar solo σS y 6,25 de usar solo σR. Es el mismo planteamiento que el ejercicio oficial de la PA1 2024.","Apuntes T4, diap. 19 y 21");
+["$3{,}47$; $P_f$ entre $10^{-4}$ y $10^{-3}$",
+ "$2{,}50$; $P_f$ del orden de $10^{-2}$",
+ "$4{,}17$; $P_f$ del orden de $10^{-5}$",
+ "$6{,}25$; $P_f$ despreciable"],0,
+"Se pasa la carga a tensión dividiendo por el área y se aplica el caso fundamental (diap. 19): $$\\mu_S=\\frac{150\\,000\\text{ N}}{1000\\text{ mm}^2}=150\\text{ MPa},\\qquad\\sigma_S=\\frac{30\\,000}{1000}=30\\text{ MPa}$$ $$\\mu_M=275-150=125\\text{ MPa},\\qquad\\sigma_M=\\sqrt{20^2+30^2}=36{,}06\\text{ MPa}$$ $$\\beta=\\frac{125}{36{,}06}\\approx\\boxed{3{,}47},\\qquad P_f=\\Phi(-3{,}47)\\approx2{,}6\\cdot10^{-4}$$ Pf queda entre los valores de β = 3,1 y 3,7 de la tabla de la diap. 21 (10⁻³ y 10⁻⁴). 2,50 sale de sumar desviaciones (125/50), 4,17 de usar solo σS y 6,25 de usar solo σR. Es el mismo planteamiento que el ejercicio oficial de la PA1 2024.","Apuntes T4, diap. 19 y 21");
 L("T4","Índices de fiabilidad: Cornell y Hasofer-Lind",3,"Señalar la respuesta correcta sobre los índices de fiabilidad.",
-["El índice de Cornell depende de la función elegida para describir la superficie de fallo: con M1 = R − S y M2 = 1 − S/R la probabilidad de fallo es la misma, pero β puede ser distinto.",
- "Con M1 = R − S y M2 = 1 − S/R se obtiene el mismo índice de Cornell, pero distinta probabilidad de fallo.",
+["El índice de Cornell depende de la función elegida para describir la superficie de fallo: con $M_1=R-S$ y $M_2=1-S/R$ la probabilidad de fallo es la misma, pero β puede ser distinto.",
+ "Con $M_1=R-S$ y $M_2=1-S/R$ se obtiene el mismo índice de Cornell, pero distinta probabilidad de fallo.",
  "El índice de Hasofer-Lind tiene el mismo defecto que el de Cornell, pero es más fácil de calcular.",
- "Hasofer y Lind definen β como el cociente μM/σM, pero usando las variables sin normalizar."],0,
-"Diap. 20: el índice de Cornell depende de la función que describe la superficie de fallo, y como hay infinitas funciones para la misma superficie es un punto débil importante: Pf,M1 = Pf,M2 pero βM1 ≠ βM2. La superficie de fallo, y por tanto Pf, es la misma; lo que cambia es β. Hasofer y Lind propusieron una definición sin ese defecto, con variables normalizadas y β como distancia mínima al origen.","Apuntes T4, diap. 20");
+ "Hasofer y Lind definen β como el cociente $\\mu_M/\\sigma_M$, pero usando las variables sin normalizar."],0,
+"Diap. 20: el índice de Cornell depende de la función que describe la superficie de fallo, y como hay infinitas funciones para la misma superficie es un punto débil importante: $$P_{f,M_1}=P_{f,M_2}\\quad\\text{pero}\\quad\\beta_{M_1}\\ne\\beta_{M_2}$$ La superficie de fallo, y por tanto Pf, es la misma; lo que cambia es β. Hasofer y Lind propusieron una definición sin ese defecto, con variables normalizadas y β como distancia mínima al origen.","Apuntes T4, diap. 20");
 L("T4","Índices de fiabilidad: Hasofer-Lind",2,"Según la definición de Hasofer y Lind recogida en los apuntes…",
-["se normalizan las variables, R̄ = (R − μR)/σR y S̄ = (S − μS)/σS, y β es la distancia mínima entre el origen del espacio normalizado y la superficie de fallo.",
+["se normalizan las variables, $\\bar R=\\dfrac{R-\\mu_R}{\\sigma_R}$ y $\\bar S=\\dfrac{S-\\mu_S}{\\sigma_S}$, y β es la distancia mínima entre el origen del espacio normalizado y la superficie de fallo.",
  "β es la distancia máxima entre el origen y la superficie de fallo, medida en las coordenadas originales R y S.",
- "se normalizan las variables dividiéndolas por su media, R̄ = R/μR y S̄ = S/μS, y β es la pendiente de la superficie de fallo.",
- "β es la distancia entre el punto de valores medios (μR, μS) y la superficie de fallo, en las coordenadas originales."],0,
-"Diap. 20: R̄ = (R − μR)/σR, S̄ = (S − μS)/σS, M̄ = f(R̄, S̄), y β es la distancia mínima entre el origen de coordenadas normalizadas y la superficie de fallo, lo que da reglas claras si la función de fallo no es lineal y se aproxima por un hiperplano. La normalización resta la media y divide por la desviación típica; medir en coordenadas originales mezcla unidades y escalas.","Apuntes T4, diap. 20");
+ "se normalizan las variables dividiéndolas por su media, $\\bar R=R/\\mu_R$ y $\\bar S=S/\\mu_S$, y β es la pendiente de la superficie de fallo.",
+ "β es la distancia entre el punto de valores medios $(\\mu_R,\\ \\mu_S)$ y la superficie de fallo, en las coordenadas originales."],0,
+"Diap. 20: se normalizan las variables restando la media y dividiendo por la desviación típica, $$\\bar R=\\frac{R-\\mu_R}{\\sigma_R},\\qquad\\bar S=\\frac{S-\\mu_S}{\\sigma_S},\\qquad\\bar M=f(\\bar R,\\bar S)$$ y β es la distancia mínima entre el origen de coordenadas normalizadas y la superficie de fallo, lo que da reglas claras si la función de fallo no es lineal y se aproxima por un hiperplano. Medir en coordenadas originales mezcla unidades y escalas, y dividir solo por la media no normaliza la dispersión.","Apuntes T4, diap. 20");
 L("T4","Fiabilidad: caso fundamental",3,"En el caso fundamental con R y S normales e independientes, si los valores medios de resistencia y carga coinciden (μR = μS), la probabilidad de fallo…",
 ["vale 0,5, sean cuales sean las desviaciones típicas de R y S.",
  "vale 0, porque el margen de seguridad medio es nulo.",
  "depende de σR y σS: cuanto mayores son, mayor es la probabilidad de fallo.",
  "vale 1, porque la carga media alcanza la resistencia media."],0,
-"Con μR = μS el margen M = R − S tiene media μM = 0 y β = μM/σM = 0, así que Pf = Φ(−β) = Φ(0) = 0,5 (diap. 19): la distribución normal de M es simétrica respecto a cero. Las desviaciones típicas cambian el ancho de la campana pero no la mitad que queda por debajo de cero. Pf = 0 o Pf = 1 exigirían un margen siempre positivo o siempre negativo.","Apuntes T4, diap. 19");
+"Con μR = μS el margen M = R − S tiene media nula (diap. 19): $$\\mu_M=\\mu_R-\\mu_S=0\\ \\Rightarrow\\ \\beta=\\frac{\\mu_M}{\\sigma_M}=0\\ \\Rightarrow\\ P_f=\\Phi(0)=\\boxed{0{,}5}$$ La distribución normal de M es simétrica respecto a cero. Las desviaciones típicas cambian el ancho de la campana, pero no la mitad que queda por debajo de cero. Pf = 0 o Pf = 1 exigirían un margen siempre positivo o siempre negativo.","Apuntes T4, diap. 19");
 L("T4","β requerido según el CTE",3,"Según la tabla C.2 del DB SE del CTE recogida en los apuntes, para una estructura cuyo fallo tendría consecuencias moderadas y en la que incrementar la fiabilidad tiene un coste relativo moderado, el índice de fiabilidad requerido es…",
-["β = 3,1, es decir, Pf ≈ 10⁻³, referida a todo el periodo de servicio.",
- "β = 3,8, es decir, Pf ≈ 10⁻⁴, referida a un periodo de un año.",
- "β = 2,3, es decir, Pf ≈ 10⁻², referida a todo el periodo de servicio.",
- "β = 3,1, es decir, Pf ≈ 10⁻³ en cada año de servicio."],0,
-"En la tabla C.2 (diap. 21), la fila de coste moderado y la columna de consecuencias moderadas dan β = 3,1, al que la misma diapositiva asocia Pf = 10⁻³. Los valores son «nominales, referidos a todo el periodo de servicio», y los apuntes advierten de que cambian para otros periodos de evaluación, como un año. 3,8 es el de consecuencias grandes con coste moderado (o moderadas con coste bajo), y 2,3 el de consecuencias moderadas con coste elevado.","Apuntes T4, diap. 21");
+["$\\beta=3{,}1$, es decir, $P_f\\approx10^{-3}$, referida a todo el periodo de servicio.",
+ "$\\beta=3{,}8$, es decir, $P_f\\approx10^{-4}$, referida a un periodo de un año.",
+ "$\\beta=2{,}3$, es decir, $P_f\\approx10^{-2}$, referida a todo el periodo de servicio.",
+ "$\\beta=3{,}1$, es decir, $P_f\\approx10^{-3}$ en cada año de servicio."],0,
+"En la tabla C.2 (diap. 21), la fila de coste moderado y la columna de consecuencias moderadas dan $$\\beta=3{,}1\\ \\Rightarrow\\ P_f\\approx10^{-3}$$ que es la probabilidad que la misma diapositiva asocia a ese índice. Los valores son «nominales, referidos a todo el periodo de servicio», y los apuntes advierten de que cambian para otros periodos de evaluación, como un año. 3,8 es el de consecuencias grandes con coste moderado (o moderadas con coste bajo), y 2,3 el de consecuencias moderadas con coste elevado.","Apuntes T4, diap. 21");
 L("T4","β requerido según el CTE",3,"Señalar las respuestas correctas (puede haber más de una) sobre la tabla C.2 del CTE de los apuntes.",
 ["Para unas mismas consecuencias de fallo, el β requerido aumenta cuanto menor es el coste relativo de incrementar la fiabilidad.",
  "Para un mismo coste relativo, el β requerido aumenta con la gravedad de las consecuencias de un fallo.",
@@ -575,13 +581,13 @@ L("T4","β requerido según el CTE",3,"Un elemento tiene σR = 20 kN y σS = 15 
  "157 kN",
  "176 kN",
  "233 kN"],0,
-"La tabla C.2 (diap. 21) da β = 3,8 para consecuencias grandes y coste moderado. Con σM = √(20² + 15²) = 25 kN y μM = β·σM (diap. 19) = 3,8·25 = 95 kN, resulta μR = μS + μM = 195 kN. 157 usa solo σS (3,8·15), 176 solo σR (3,8·20) y 233 suma las desviaciones (3,8·35).","Apuntes T4, diap. 19 y 21");
+"La tabla C.2 (diap. 21) da β = 3,8 para consecuencias grandes y coste moderado. Con μM = β·σM (diap. 19): $$\\sigma_M=\\sqrt{20^2+15^2}=25\\text{ kN}$$ $$\\mu_M=\\beta\\,\\sigma_M=3{,}8\\cdot25=95\\text{ kN}$$ $$\\mu_R=\\mu_S+\\mu_M=100+95=\\boxed{195\\text{ kN}}$$ 157 usa solo σS (3,8·15), 176 solo σR (3,8·20) y 233 suma las desviaciones (3,8·35).","Apuntes T4, diap. 19 y 21");
 L("T4","Fiabilidad",2,"Una estructura tiene un índice de fiabilidad β = 3,7 para todo su periodo de servicio. Según la relación entre β y Pf de los apuntes, su fiabilidad R es aproximadamente:",
 ["0,9999",
  "0,999",
  "0,99999",
  "0,63"],0,
-"La diap. 21 asocia β = 3,7 a Pf = 10⁻⁴, y la diap. 16 define R = 1 − Pf = 1 − 0,0001 = 0,9999. 0,999 corresponde a β = 3,1 (Pf = 10⁻³) y 0,99999 a β = 4,3 (Pf = 10⁻⁵). 0,63 no tiene relación con la tabla.","Apuntes T4, diap. 16 y 21");
+"La diap. 21 asocia β = 3,7 a Pf = 10⁻⁴, y la diap. 16 define la fiabilidad como el complemento de la probabilidad de fallo: $$\\beta=3{,}7\\ \\Rightarrow\\ P_f\\approx10^{-4}$$ $$R=1-P_f=1-0{,}0001=\\boxed{0{,}9999}$$ 0,999 corresponde a β = 3,1 (Pf = 10⁻³) y 0,99999 a β = 4,3 (Pf = 10⁻⁵). 0,63 no tiene relación con la tabla.","Apuntes T4, diap. 16 y 21");
 L("T4","Vida útil",1,"Según la tabla de vida útil nominal del anejo 18 del Código Estructural que recogen los apuntes, señalar la respuesta correcta.",
 ["Estructuras de edificación y otras estructuras comunes: 50 años; edificios monumentales, puentes y otras estructuras de ingeniería civil: 100 años.",
  "Estructuras de edificación y otras estructuras comunes: 100 años; puentes y otras estructuras de ingeniería civil: 50 años.",
@@ -621,35 +627,35 @@ L("T4","Factores parciales para las acciones",2,"Según la tabla 4.1 de coeficie
  "peso propio: 1,50 desfavorable y 0,80 favorable; acciones variables: 1,35 desfavorable y 0 favorable."],0,
 "Tabla 4.1 (diap. 26), resistencia: peso propio y peso del terreno 1,35/0,80, empuje del terreno 1,35/0,70, presión del agua 1,20/0,90 y variables 1,50/0. Si la acción es favorable, el factor es menor que 1 (y 0 para las variables), nunca 1,00. 1,10/0,90 son los del peso propio en las comprobaciones de estabilidad, y la cuarta opción intercambia 1,35 y 1,50.","Apuntes T4, diap. 26");
 L("T4","Factores parciales: estabilidad",3,"Se comprueba el vuelco de un muro. El peso propio produce un momento estabilizador característico de 500 kN·m; el empuje del terreno, uno desestabilizador de 200 kN·m, y el viento (variable), otro desestabilizador de 100 kN·m. Con la tabla 4.1 de los apuntes, la comprobación de estabilidad queda:",
-["Ed,dst = 1,35·200 + 1,5·100 = 420 kN·m ≤ Ed,stb = 0,90·500 = 450 kN·m: cumple.",
- "Ed,dst = 200 + 100 = 300 kN·m ≤ Ed,stb = 500 kN·m: cumple, porque en estabilidad no se aplican coeficientes parciales.",
- "Ed,dst = 1,10·200 + 1,5·100 = 370 kN·m ≤ Ed,stb = 0,90·500 = 450 kN·m: cumple.",
- "Ed,dst = 1,35·200 + 1,5·100 = 420 kN·m > Ed,stb = 0,80·500 = 400 kN·m: no cumple."],0,
-"Formato de estabilidad: Ed,dst ≤ Ed,stb (diap. 31). En la parte de estabilidad de la tabla 4.1 (diap. 26), el empuje del terreno desestabilizador lleva 1,35, la variable 1,50 y el peso propio estabilizador 0,90: 420 ≤ 450, cumple. 1,10 es el del peso propio desestabilizador, no el del empuje; 0,80 es el del peso propio favorable en resistencia; y en estabilidad sí se aplican coeficientes parciales.","Apuntes T4, diap. 26 y 31");
+["$E_{d,dst}=1{,}35\\cdot200+1{,}5\\cdot100=420\\text{ kN}\\cdot\\text{m}\\le E_{d,stb}=0{,}90\\cdot500=450\\text{ kN}\\cdot\\text{m}$: cumple.",
+ "$E_{d,dst}=200+100=300\\text{ kN}\\cdot\\text{m}\\le E_{d,stb}=500\\text{ kN}\\cdot\\text{m}$: cumple, porque en estabilidad no se aplican coeficientes parciales.",
+ "$E_{d,dst}=1{,}10\\cdot200+1{,}5\\cdot100=370\\text{ kN}\\cdot\\text{m}\\le E_{d,stb}=0{,}90\\cdot500=450\\text{ kN}\\cdot\\text{m}$: cumple.",
+ "$E_{d,dst}=1{,}35\\cdot200+1{,}5\\cdot100=420\\text{ kN}\\cdot\\text{m}\\gt E_{d,stb}=0{,}80\\cdot500=400\\text{ kN}\\cdot\\text{m}$: no cumple."],0,
+"Formato de estabilidad: Ed,dst ≤ Ed,stb (diap. 31), con los coeficientes de la parte de estabilidad de la tabla 4.1 (diap. 26): empuje del terreno desestabilizador 1,35, variable desestabilizadora 1,50 y peso propio estabilizador 0,90. $$E_{d,dst}=1{,}35\\cdot200+1{,}5\\cdot100=270+150=420\\text{ kN}\\cdot\\text{m}$$ $$E_{d,stb}=0{,}90\\cdot500=450\\text{ kN}\\cdot\\text{m}$$ $$420\\le450\\ \\Rightarrow\\ \\boxed{\\text{cumple}}$$ 1,10 es el del peso propio desestabilizador, no el del empuje; 0,80 es el del peso propio favorable en resistencia; y en estabilidad sí se aplican coeficientes parciales.","Apuntes T4, diap. 26 y 31");
 L("T4","Factores parciales para las acciones",3,"Señalar la respuesta incorrecta sobre la tabla 4.1 de coeficientes parciales para las acciones de los apuntes.",
-["La presión del agua tiene γ = 1,20 como acción desfavorable en resistencia y γ = 1,05 como acción desestabilizadora en estabilidad.",
+["La presión del agua tiene $\\gamma=1{,}20$ como acción desfavorable en resistencia y $\\gamma=1{,}05$ como acción desestabilizadora en estabilidad.",
  "El empuje del terreno tiene el mismo coeficiente, 1,35, como acción desfavorable en resistencia y como desestabilizadora en estabilidad.",
- "Las acciones variables favorables o estabilizadoras se toman con γ = 0.",
- "El peso propio estabilizador se toma con γ = 0,80, el mismo valor que el peso propio favorable en las comprobaciones de resistencia."],3,
+ "Las acciones variables favorables o estabilizadoras se toman con $\\gamma=0$.",
+ "El peso propio estabilizador se toma con $\\gamma=0{,}80$, el mismo valor que el peso propio favorable en las comprobaciones de resistencia."],3,
 "En la tabla 4.1 (diap. 26) el peso propio estabilizador lleva 0,90, mientras que el favorable en resistencia lleva 0,80: no son iguales. Las otras tres afirmaciones son correctas: agua 1,20 (resistencia) y 1,05 (estabilidad); empuje 1,35 en ambos casos (sus valores favorable y estabilizador sí difieren: 0,70 y 0,80); y variables con 0 cuando son favorables.","Apuntes T4, diap. 26");
 L("T4","Factores parciales para la resistencia",2,"Según los apuntes, en estructuras metálicas los coeficientes parciales de la resistencia son…",
-["γM0 = 1,05 en las comprobaciones frente a fy, γM1 = 1,05 en las de estabilidad y γM2 = 1,25 en las de rotura.",
- "γM0 = 1,10 en las comprobaciones frente a fy, γM1 = 1,25 en las de estabilidad y γM2 = 1,40 en las de rotura.",
- "γM0 = 1,05 en las comprobaciones frente a fy, γM1 = 1,25 en las de estabilidad y γM2 = 1,05 en las de rotura.",
- "γM0 = 1,15 en las comprobaciones frente a fy, γM1 = 1,15 en las de estabilidad y γM2 = 1,50 en las de rotura."],0,
-"Diap. 27: γM0 = 1,05 (frente a fy), γM1 = 1,05 (estabilidad), γM2 = 1,25 (rotura) y γM3 = 1,10/1,25/1,40 para el deslizamiento de tornillos. 1,10, 1,25 y 1,40 son los valores de γM3. 1,15 y 1,5 son los del acero de armar (γs) y el hormigón (γc) en situación persistente.","Apuntes T4, diap. 27");
+["$\\gamma_{M0}=1{,}05$ en las comprobaciones frente a $f_y$, $\\gamma_{M1}=1{,}05$ en las de estabilidad y $\\gamma_{M2}=1{,}25$ en las de rotura.",
+ "$\\gamma_{M0}=1{,}10$ en las comprobaciones frente a $f_y$, $\\gamma_{M1}=1{,}25$ en las de estabilidad y $\\gamma_{M2}=1{,}40$ en las de rotura.",
+ "$\\gamma_{M0}=1{,}05$ en las comprobaciones frente a $f_y$, $\\gamma_{M1}=1{,}25$ en las de estabilidad y $\\gamma_{M2}=1{,}05$ en las de rotura.",
+ "$\\gamma_{M0}=1{,}15$ en las comprobaciones frente a $f_y$, $\\gamma_{M1}=1{,}15$ en las de estabilidad y $\\gamma_{M2}=1{,}50$ en las de rotura."],0,
+"Diap. 27: $$\\gamma_{M0}=1{,}05\\ (f_y),\\qquad\\gamma_{M1}=1{,}05\\ (\\text{estabilidad}),\\qquad\\gamma_{M2}=1{,}25\\ (\\text{rotura})$$ y $\\gamma_{M3}=1{,}10/1{,}25/1{,}40$ para el deslizamiento de tornillos. 1,10, 1,25 y 1,40 son los valores de γM3. 1,15 y 1,5 son los del acero de armar (γs) y el hormigón (γc) en situación persistente.","Apuntes T4, diap. 27");
 L("T4","Factores parciales para la resistencia",2,"Según los apuntes, el deslizamiento de las uniones atornilladas se comprueba con…",
-["γM3 = 1,10 en ELS, γM3 = 1,25 en ELU y γM3 = 1,40 en ELU con agujeros rasgados.",
- "γM3 = 1,25 en ELS, γM3 = 1,10 en ELU y γM3 = 1,40 en ELU con agujeros rasgados.",
- "γM3 = 1,40 en ELS, por ser la comprobación más exigente, y γM3 = 1,25 en ELU.",
- "γM3 = 1,25 solo en ELU; en ELS el deslizamiento de tornillos no se comprueba."],0,
-"Diap. 27: γM3 = 1,10 para el deslizamiento de tornillos en ELS, 1,25 en ELU y 1,40 en ELU con agujeros rasgados. El coeficiente es menor en servicio que en rotura, como es lógico. El deslizamiento de tornillos sí se comprueba en ELS: es un ELS clásico (en T1 aparece como «otros» ELS).","Apuntes T4, diap. 27");
+["$\\gamma_{M3}=1{,}10$ en ELS, $\\gamma_{M3}=1{,}25$ en ELU y $\\gamma_{M3}=1{,}40$ en ELU con agujeros rasgados.",
+ "$\\gamma_{M3}=1{,}25$ en ELS, $\\gamma_{M3}=1{,}10$ en ELU y $\\gamma_{M3}=1{,}40$ en ELU con agujeros rasgados.",
+ "$\\gamma_{M3}=1{,}40$ en ELS, por ser la comprobación más exigente, y $\\gamma_{M3}=1{,}25$ en ELU.",
+ "$\\gamma_{M3}=1{,}25$ solo en ELU; en ELS el deslizamiento de tornillos no se comprueba."],0,
+"Diap. 27, deslizamiento de tornillos: $$\\gamma_{M3}=1{,}10\\ (\\text{ELS}),\\qquad\\gamma_{M3}=1{,}25\\ (\\text{ELU}),\\qquad\\gamma_{M3}=1{,}40\\ (\\text{ELU, agujeros rasgados})$$ El coeficiente es menor en servicio que en rotura, como es lógico. El deslizamiento de tornillos sí se comprueba en ELS: es un ELS clásico (en T1 aparece como «otros» ELS).","Apuntes T4, diap. 27");
 L("T4","Factores parciales para la resistencia",3,"Un elemento de hormigón armado tiene fck = 30 MPa y armaduras de fyk = 500 MPa. Con los coeficientes parciales de los apuntes, en situación accidental las resistencias de cálculo son:",
-["fcd ≈ 23,1 MPa y fyd = 500 MPa",
- "fcd = 20,0 MPa y fyd ≈ 434,8 MPa",
- "fcd ≈ 23,1 MPa y fyd ≈ 434,8 MPa",
- "fcd = 20,0 MPa y fyd = 500 MPa"],0,
-"En situación accidental (diap. 27) γc = 1,3 y γs = 1,0: fcd = 30/1,3 ≈ 23,1 MPa y fyd = 500/1,0 = 500 MPa. 20,0 y 434,8 MPa son los valores de la situación persistente o transitoria (γc = 1,5 y γs = 1,15). Las opciones mixtas combinan un coeficiente de cada situación.","Apuntes T4, diap. 27");
+["$f_{cd}\\approx23{,}1\\text{ MPa}$ y $f_{yd}=500\\text{ MPa}$",
+ "$f_{cd}=20{,}0\\text{ MPa}$ y $f_{yd}\\approx434{,}8\\text{ MPa}$",
+ "$f_{cd}\\approx23{,}1\\text{ MPa}$ y $f_{yd}\\approx434{,}8\\text{ MPa}$",
+ "$f_{cd}=20{,}0\\text{ MPa}$ y $f_{yd}=500\\text{ MPa}$"],0,
+"En situación accidental (diap. 27) γc = 1,3 y γs = 1,0: $$f_{cd}=\\frac{f_{ck}}{\\gamma_c}=\\frac{30}{1{,}3}\\approx\\boxed{23{,}1\\text{ MPa}}$$ $$f_{yd}=\\frac{f_{yk}}{\\gamma_s}=\\frac{500}{1{,}0}=\\boxed{500\\text{ MPa}}$$ 20,0 y 434,8 MPa son los valores de la situación persistente o transitoria (γc = 1,5 y γs = 1,15). Las opciones mixtas combinan un coeficiente de cada situación.","Apuntes T4, diap. 27");
 L("T4","Clasificación de acciones",2,"Según los apuntes, una acción indirecta es…",
 ["una deformación impuesta o una aceleración causada por cambios de temperatura, variaciones de humedad, asientos diferenciales o sismos.",
  "una fuerza aplicada sobre el edificio, como el peso propio o la sobrecarga de uso.",
@@ -685,35 +691,35 @@ L("T4","Valor de cálculo",2,"Señalar la respuesta correcta según los apuntes.
  "El valor de cálculo de una acción es siempre mayor que su valor característico.",
  "Los coeficientes de simultaneidad sirven para generar las hipótesis en las que la nieve y el viento alcanzan a la vez sus valores máximos.",
  "Ninguna de las anteriores."],0,
-"La primera es literal de la diap. 30. El valor de cálculo puede ser menor que el característico cuando γf &lt; 1 (acciones favorables, diap. 26). Los coeficientes de simultaneidad se usan justo para lo contrario: «para no generar hipótesis de cálculo muy improbables o físicamente imposibles como p.e. que la carga de nieve y la de viento alcancen simultáneamente sus valores máximos».","Apuntes T4, diap. 26 y 30");
+"La primera es literal de la diap. 30. El valor de cálculo puede ser menor que el característico cuando γf < 1 (acciones favorables, diap. 26). Los coeficientes de simultaneidad se usan justo para lo contrario: «para no generar hipótesis de cálculo muy improbables o físicamente imposibles como p.e. que la carga de nieve y la de viento alcancen simultáneamente sus valores máximos».","Apuntes T4, diap. 26 y 30");
 L("T4","Combinaciones: ELU fundamental",3,"Una viga soporta Gk = 20 kN/m (permanente, desfavorable), una sobrecarga de uso Qk = 10 kN/m (ψ0 = 0,7) y nieve Qk = 5 kN/m (ψ0 = 0,5). Con la combinación fundamental y los coeficientes de la tabla 4.1 de los apuntes, el valor de cálculo determinante de la carga es:",
 ["45,75 kN/m, con la sobrecarga de uso como acción variable principal.",
  "45,0 kN/m, con la nieve como acción variable principal.",
  "49,5 kN/m, con todas las acciones variables con su valor característico.",
  "41,25 kN/m, con todas las acciones variables reducidas con su ψ0."],0,
-"ELU fundamental (diap. 32): ΣγG·Gk + γQ,1·Qk,1 + ΣγQ,i·ψ0,i·Qk,i, con γG = 1,35 y γQ = 1,50 (diap. 26). Con el uso como principal: 1,35·20 + 1,5·10 + 1,5·0,5·5 = 27 + 15 + 3,75 = 45,75. Con la nieve como principal: 27 + 7,5 + 1,5·0,7·10 = 45,0, menor. Hay que probar cada variable como principal y quedarse con la mayor. Tomar todas sin ψ (49,5) o reducir también la principal (41,25) no es la combinación de la norma.","Apuntes T4, diap. 26 y 32");
+"ELU fundamental (diap. 32), con γG = 1,35 y γQ = 1,50 (diap. 26). Hay que probar cada acción variable como principal: $$E_d=\\sum\\gamma_G\\,G_k+\\gamma_{Q,1}\\,Q_{k,1}+\\sum_{i\\gt1}\\gamma_{Q,i}\\,\\psi_{0,i}\\,Q_{k,i}$$ $$\\text{Uso principal: }1{,}35\\cdot20+1{,}5\\cdot10+1{,}5\\cdot0{,}5\\cdot5=\\boxed{45{,}75\\text{ kN/m}}$$ $$\\text{Nieve principal: }1{,}35\\cdot20+1{,}5\\cdot5+1{,}5\\cdot0{,}7\\cdot10=45{,}0\\text{ kN/m}$$ Manda la mayor, con el uso como principal. Tomar todas sin ψ (49,5) o reducir también la principal (41,25) no es la combinación de la norma.","Apuntes T4, diap. 26 y 32");
 L("T4","Combinaciones: ELS",3,"Para las mismas acciones (Gk = 20 kN/m; uso Qk = 10 kN/m con ψ0 = 0,7, ψ1 = 0,5 y ψ2 = 0,3; nieve Qk = 5 kN/m con ψ0 = 0,5, ψ1 = 0,2 y ψ2 = 0), el valor de la combinación frecuente de ELS, con el uso como acción principal, es:",
 ["25 kN/m",
  "32,5 kN/m",
  "23 kN/m",
  "26 kN/m"],0,
-"Combinación frecuente (diap. 32): ΣGk + ψ1,1·Qk,1 + Σψ2,i·Qk,i = 20 + 0,5·10 + 0·5 = 25 kN/m, sin coeficientes γ. 32,5 es la característica (20 + 10 + 0,5·5) y 23 la casi permanente (20 + 0,3·10 + 0·5). 26 sale de usar ψ1 también en la acompañante (20 + 5 + 0,2·5).","Apuntes T4, diap. 32");
+"Combinación frecuente (diap. 32), sin coeficientes γ: $$E=\\sum G_k+\\psi_{1,1}\\,Q_{k,1}+\\sum_{i\\gt1}\\psi_{2,i}\\,Q_{k,i}$$ $$E=20+0{,}5\\cdot10+0\\cdot5=\\boxed{25\\text{ kN/m}}$$ 32,5 es la característica (20 + 10 + 0,5·5) y 23 la casi permanente (20 + 0,3·10 + 0·5). 26 sale de usar ψ1 también en la acompañante (20 + 5 + 0,2·5).","Apuntes T4, diap. 32");
 L("T4","Combinaciones: ELU accidental",3,"En una situación accidental actúan Gk = 20 kN/m, un impacto de valor de cálculo Ad = 50 kN/m, una sobrecarga de uso Qk = 10 kN/m (principal, desfavorable; ψ1 = 0,5) y nieve Qk = 5 kN/m (ψ2 = 0). Con γG = 1 y la combinación accidental de los apuntes, el valor de cálculo es:",
 ["75 kN/m",
  "80 kN/m",
  "77,5 kN/m",
  "84,5 kN/m"],0,
-"Combinación accidental (diap. 32): ΣγG·Gk + Ad + γQ,1·ψ1,1·Qk,1 + ΣγQ,i·ψ2,i·Qk,i, con γQ,1 = 1 por ser desfavorable: 20 + 50 + 0,5·10 + 0·5 = 75. 80 toma el uso entero; 77,5 añade la nieve con ψ0 = 0,5; 84,5 aplica a G y Q los coeficientes de la combinación fundamental (1,35·20 + 50 + 1,5·0,5·10).","Apuntes T4, diap. 32");
+"Combinación accidental (diap. 32), con γG = 1 y γQ,1 = 1 por ser desfavorable: $$E_d=\\sum\\gamma_G\\,G_k+A_d+\\gamma_{Q,1}\\,\\psi_{1,1}\\,Q_{k,1}+\\sum_{i\\gt1}\\gamma_{Q,i}\\,\\psi_{2,i}\\,Q_{k,i}$$ $$E_d=20+50+0{,}5\\cdot10+0\\cdot5=\\boxed{75\\text{ kN/m}}$$ 80 toma el uso entero; 77,5 añade la nieve con ψ0 = 0,5; 84,5 aplica a G y Q los coeficientes de la combinación fundamental (1,35·20 + 50 + 1,5·0,5·10).","Apuntes T4, diap. 32");
 L("T4","Combinaciones",2,"Según los apuntes, en la combinación frecuente de los estados límite de servicio…",
 ["la acción variable principal se toma con ψ1 y las acompañantes con ψ2; corresponde a acciones de corta duración y efecto reversible.",
  "la acción variable principal se toma con ψ0 y las acompañantes con ψ1; corresponde a acciones de corta duración y efecto irreversible.",
  "todas las acciones variables se toman con ψ2; corresponde a acciones de larga duración.",
  "la acción variable principal se toma con su valor característico y las acompañantes con ψ0; corresponde a acciones de corta duración y efecto reversible."],0,
-"Diap. 32: frecuente = ΣGk + ψ1,1·Qk,1 + Σψ2,i·Qk,i (corta duración, efecto reversible). La característica o poco frecuente, ΣGk + Qk,1 + Σψ0,i·Qk,i, es de corta duración y efecto irreversible. La casi permanente, ΣGk + Σψ2,i·Qk,i para todas las variables, corresponde a acciones de larga duración.","Apuntes T4, diap. 32");
+"Diap. 32. La frecuente (corta duración, efecto reversible) es $$\\sum G_k+\\psi_{1,1}\\,Q_{k,1}+\\sum_{i\\gt1}\\psi_{2,i}\\,Q_{k,i}$$ La característica o poco frecuente, ΣGk + Qk,1 + Σψ0,i·Qk,i, es de corta duración y efecto irreversible. La casi permanente, ΣGk + Σψ2,i·Qk,i para todas las variables, corresponde a acciones de larga duración.","Apuntes T4, diap. 32");
 L("T4","Formato de las comprobaciones",1,"Según los apuntes, el formato de las comprobaciones de los estados límite últimos es…",
-["estabilidad: Ed,dst ≤ Ed,stb; resistencia: Ed ≤ Rd.",
- "estabilidad: Ed,stb ≤ Ed,dst; resistencia: Rd ≤ Ed.",
- "estabilidad: Ed ≤ Rd; resistencia: Ed,dst ≤ Ed,stb.",
+["estabilidad: $E_{d,dst}\\le E_{d,stb}$; resistencia: $E_d\\le R_d$.",
+ "estabilidad: $E_{d,stb}\\le E_{d,dst}$; resistencia: $R_d\\le E_d$.",
+ "estabilidad: $E_d\\le R_d$; resistencia: $E_{d,dst}\\le E_{d,stb}$.",
  "Ninguna de las anteriores."],0,
 "Diap. 31: en estabilidad, el efecto de cálculo de las acciones desestabilizadoras no debe superar el de las estabilizadoras (Ed,dst ≤ Ed,stb); en resistencia, el efecto de cálculo de las acciones no debe superar la resistencia de cálculo (Ed ≤ Rd). La segunda opción invierte las desigualdades y la tercera intercambia los dos formatos.","Apuntes T4, diap. 31");
 L("T4","Organización de las comprobaciones",2,"Según los apuntes, sobre la organización de las comprobaciones de cada estado límite, señalar la respuesta correcta.",
@@ -845,7 +851,7 @@ D.push({ sec: "t4-metodos", h4: "Deterministas, probabilistas", cap: "Los tres t
   let ov = ""; for (let x = 60; x <= 200; x += 2) { const y = Math.min(g(x, 100, 26, 120), g(x, 175, 22, 128)); ov += (ov ? "L" : "M") + x + " " + (base - y).toFixed(1); }
   ov += `L200 ${base}L60 ${base}Z`;
   let pf = ""; for (let x = 300; x <= 350; x += 2) pf += (pf ? "L" : "M") + x + " " + (base - g(x, 440, 42, 125)).toFixed(1); pf += `L350 ${base}L300 ${base}Z`;
-  D.push({ sec: "t4-fiab", h4: "Índice de fiabilidad de Cornell", cap: "<b>Izquierda</b>: caso fundamental (diap. 17). La carga S y la resistencia R son independientes; el solape de sus densidades (en rojo) indica dónde puede ser R &lt; S y da una idea de P<sub>f</sub>. El valor exacto es $\\int F_R f_S\\,dx$, no el área de solape. <b>Derecha</b>: con R y S normales, el margen M = R − S es normal, con μ<sub>M</sub> = μ<sub>R</sub> − μ<sub>S</sub> y σ<sub>M</sub>² = σ<sub>R</sub>² + σ<sub>S</sub>² (diap. 19). P<sub>f</sub> es el área a la izquierda de 0, y la media está a <b>β·σ<sub>M</sub></b> de 0: β = μ<sub>M</sub>/σ<sub>M</sub>. Esquema elaborado para la app.",
+  D.push({ sec: "t4-fiab", h4: "Índice de fiabilidad de Cornell", cap: "<b>Izquierda</b>: caso fundamental (diap. 17). La carga S y la resistencia R son independientes; el solape de sus densidades (en rojo) indica dónde puede ser R &lt; S y da una idea de P<sub>f</sub>. El valor exacto es $\\int F_R f_S\\,dx$, no el área de solape. <b>Derecha</b>: con R y S normales, el margen $M=R-S$ es normal, con $\\mu_M=\\mu_R-\\mu_S$ y $\\sigma_M^2=\\sigma_R^2+\\sigma_S^2$ (diap. 19). P<sub>f</sub> es el área a la izquierda de 0, y la media está a <b>$\\beta\\,\\sigma_M$</b> de 0: $\\beta=\\mu_M/\\sigma_M$. Esquema elaborado para la app.",
     svg: W("0 0 560 250", `${MK("t4cf")}
     <path d="M20 ${base}H262M20 ${base}V40" class="ax" marker-end="url(#t4cf)"/>
     <path d="${ov}" fill="#fecaca" stroke="none"/>

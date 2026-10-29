@@ -16,7 +16,7 @@ L("T23","ELS: asientos",2,"Señalar la respuesta correcta respecto a los paráme
  "El asiento diferencial δs es la diferencia de asiento entre dos puntos cualesquiera dividida por la distancia que los separa, y por eso es una magnitud adimensional.",
  "La distorsión angular β es el asiento diferencial entre dos puntos dividido por la distancia que los separa, y la inclinación ω es el ángulo girado respecto a la vertical según la línea media de la cimentación deformada.",
  "El asiento s es el descenso medio de toda la cimentación del edificio, y la distorsión angular es la diferencia entre el asiento máximo y ese asiento medio."],2,
-"Diap. 3: s es el descenso de cualquier punto; δs, la diferencia de asiento entre dos puntos (es una longitud); β = δs/L, adimensional; ω, el ángulo girado respecto a la vertical por la línea media de la cimentación deformada. La primera opción intercambia β y ω, la segunda atribuye a δs la división por la distancia que define a β, y la cuarta inventa un asiento «medio» que no aparece en la definición.","Apuntes T2.3, diap. 3");
+"Diap. 3: s es el descenso de cualquier punto; δs, la diferencia de asiento entre dos puntos (es una longitud); $\\beta=\\delta_s/L$, adimensional; ω, el ángulo girado respecto a la vertical por la línea media de la cimentación deformada. La primera opción intercambia β y ω, la segunda atribuye a δs la división por la distancia que define a β, y la cuarta inventa un asiento «medio» que no aparece en la definición.","Apuntes T2.3, diap. 3");
 L("T23","ELS: asientos",2,"Según la tabla 2.2 del CTE recogida en los apuntes, ¿cuál de las siguientes asociaciones entre tipo de estructura y valor límite de la distorsión angular es correcta?",
 ["Estructuras de paneles prefabricados: 1/500",
  "Estructuras reticuladas con tabiquería de separación: 1/500",
@@ -30,11 +30,11 @@ L("T23","ELS: asientos",3,"Ordenar los siguientes tipos de estructura de mayor a
  "Reticuladas con tabiquería > isostáticas y muros de contención > paneles prefabricados > muros de carga sin armar con flexión cóncava hacia arriba > ídem cóncava hacia abajo"],0,
 "Los límites son 1/300, 1/500, 1/700, 1/1000 y 1/2000 en el orden de la primera opción. Las estructuras isostáticas toleran mejor los asientos diferenciales porque no generan esfuerzos por ellos. Los paneles prefabricados (1/700) son más exigentes que las reticuladas con tabiquería (1/500), y en los muros de carga sin armar la flexión cóncava hacia abajo (1/2000) es más restrictiva que la cóncava hacia arriba (1/1000).","Apuntes T2.3, diap. 4");
 L("T23","ELS: asientos",3,"Tres pilares alineados A, B y C de una estructura reticulada con tabiquería de separación están separados 6 m (A–B) y 4,5 m (B–C). Sus asientos son sA = 18 mm, sB = 32 mm y sC = 26 mm. Respecto a la limitación de la distorsión angular del CTE:",
-["Cumple: la distorsión angular entre los pilares extremos A y C es 8/10500 ≈ 1/1300, inferior a 1/500.",
- "Cumple: el asiento diferencial máximo es 14 mm y, repartido en la longitud total de 10,5 m, da β ≈ 1/750 < 1/500.",
- "No cumple: la distorsión angular entre B y C, 6/4500 = 1/750, supera el límite de 1/700 de las estructuras reticuladas.",
- "No cumple: la distorsión angular entre A y B, 14/6000 ≈ 1/429, supera el límite de 1/500, aunque entre B y C (1/750) sí se cumple."],3,
-"β se evalúa entre cada par de puntos con su propia separación: entre A y B, δs = 32 − 18 = 14 mm y β = 14/6000 ≈ 1/429 > 1/500, así que no cumple; entre B y C, 6/4500 = 1/750 sí cumple. Comparar solo los extremos o dividir el asiento diferencial máximo por la longitud total enmascara la distorsión local. Además, el límite de 1/700 corresponde a paneles prefabricados, no a estructuras reticuladas.","Apuntes T2.3, diap. 3-4 (cálculo)");
+["Cumple: la distorsión angular entre los pilares extremos A y C es $\\dfrac{8}{10\\,500}\\approx\\dfrac{1}{1300}$, inferior a $1/500$.",
+ "Cumple: el asiento diferencial máximo es 14 mm y, repartido en la longitud total de 10,5 m, da $\\beta\\approx\\dfrac{1}{750}\\lt\\dfrac{1}{500}$.",
+ "No cumple: la distorsión angular entre B y C, $\\dfrac{6}{4500}=\\dfrac{1}{750}$, supera el límite de $1/700$ de las estructuras reticuladas.",
+ "No cumple: la distorsión angular entre A y B, $\\dfrac{14}{6000}\\approx\\dfrac{1}{429}$, supera el límite de $1/500$, aunque entre B y C ($1/750$) sí se cumple."],3,
+"La distorsión angular se evalúa entre cada par de pilares contiguos, con su propia separación (β = δs/L), y se compara con el límite de la tabla 2.2 para estructuras reticuladas con tabiquería de separación, 1/500: $$\\beta_{AB}=\\frac{32-18}{6000}=\\frac{14}{6000}\\approx\\frac{1}{429}\\gt\\frac{1}{500}\\ \\Rightarrow\\ \\boxed{\\text{no cumple}}$$ $$\\beta_{BC}=\\frac{32-26}{4500}=\\frac{6}{4500}=\\frac{1}{750}\\lt\\frac{1}{500}\\ \\Rightarrow\\ \\text{cumple}$$ Comparar solo los extremos (8/10 500 ≈ 1/1300) o dividir el asiento diferencial máximo por la longitud total (14/10 500 = 1/750) enmascara la distorsión local. Además, el límite de 1/700 corresponde a paneles prefabricados, no a estructuras reticuladas.","Apuntes T2.3, diap. 3-4 (cálculo)");
 L("T23","ELS: asientos",2,"Respecto a la precaución de cálculo por proximidad de cimentaciones (bulbo de presiones) que muestran los apuntes, señalar la afirmación correcta.",
 ["La superposición de bulbos solo se produce si las zapatas están en contacto; con separaciones de 1B o 2B cada zapata puede calcularse de forma independiente.",
  "Cuando dos zapatas de ancho B están separadas una distancia del orden de B, sus bulbos se superponen y forman un bulbo conjunto (isobara 0,1·p) más ancho y profundo que los individuales, que debe considerarse en el cálculo.",
@@ -45,11 +45,11 @@ L("T23","ELU",2,"Señalar las respuestas correctas (puede haber más de una). Se
 ["Vuelco del cimiento","Pérdida de estabilidad global","Asiento diferencial que fisura la tabiquería","Inclinación excesiva de la cimentación respecto a la vertical"],[0,1],
 "Los ELU de la diap. 6 son hundimiento, deslizamiento, vuelco, estabilidad global y capacidad estructural del cimiento. El asiento diferencial y la inclinación ω son parámetros de los estados límite de servicio (diap. 3), aunque sus consecuencias, como la fisuración de la tabiquería, sean visibles.","Apuntes T2.3, diap. 6");
 L("T23","ELU: hundimiento",3,"Respecto al modelo de Coulomb (linealización de la curva de resistencia intrínseca) de los apuntes, señalar la afirmación correcta.",
-["τ = c + σ·tg φ; c es la ordenada en el origen, de modo que un suelo sin cohesión no tiene resistencia al corte aunque esté sometido a una tensión normal de compresión.",
- "τ = c·tg φ + σ; el ángulo de rozamiento interno φ es el ángulo que forma el radio del círculo de Mohr con el eje σ en el punto de tangencia.",
- "τ = c + σ·tg φ; la recta corta al eje σ a una distancia c/tg φ a la izquierda del origen, y un suelo sin cohesión (c = 0) tiene resistencia al corte nula cuando la tensión normal es nula.",
- "τ = c + σ·tg φ; un círculo de Mohr en estado límite es secante a la recta, y la recta corta al eje σ en el punto σ = c."],2,
-"En la diap. 8, τ = c + σ·tg φ, con c la cohesión (ordenada en el origen) y φ el ángulo de rozamiento interno (pendiente de la recta). La recta corta al eje σ a una distancia c/tg φ del origen, del lado de las tracciones. Si c = 0, la resistencia solo es nula cuando σ = 0; con compresión, el término σ·tg φ da resistencia. El círculo límite es tangente a la recta, no secante, y el corte con el eje no está en σ = c.","Apuntes T2.3, diap. 8");
+["$\\tau=c+\\sigma\\,\\mathrm{tg}\\,\\varphi$; c es la ordenada en el origen, de modo que un suelo sin cohesión no tiene resistencia al corte aunque esté sometido a una tensión normal de compresión.",
+ "$\\tau=c\\,\\mathrm{tg}\\,\\varphi+\\sigma$; el ángulo de rozamiento interno φ es el ángulo que forma el radio del círculo de Mohr con el eje σ en el punto de tangencia.",
+ "$\\tau=c+\\sigma\\,\\mathrm{tg}\\,\\varphi$; la recta corta al eje σ a una distancia $c/\\mathrm{tg}\\,\\varphi$ a la izquierda del origen, y un suelo sin cohesión ($c=0$) tiene resistencia al corte nula cuando la tensión normal es nula.",
+ "$\\tau=c+\\sigma\\,\\mathrm{tg}\\,\\varphi$; un círculo de Mohr en estado límite es secante a la recta, y la recta corta al eje σ en el punto $\\sigma=c$."],2,
+"En la diap. 8, la recta de Coulomb es $$\\tau=c+\\sigma\\,\\mathrm{tg}\\,\\varphi$$ con c la cohesión (ordenada en el origen) y φ el ángulo de rozamiento interno (pendiente de la recta). Haciendo τ = 0, la recta corta al eje σ del lado de las tracciones: $$\\tau=0\\ \\Rightarrow\\ \\sigma=-\\frac{c}{\\mathrm{tg}\\,\\varphi}$$ Si c = 0, la resistencia solo es nula cuando σ = 0; con compresión, el término σ·tg φ da resistencia. El círculo límite es tangente a la recta, no secante, y el corte con el eje no está en σ = c.","Apuntes T2.3, diap. 8");
 L("T23","ELU: hundimiento",2,"Respecto a la curva de resistencia intrínseca del terreno y los círculos de Mohr representados en los apuntes, es correcto que:",
 ["un círculo tangente a la curva representa un estado límite, y el punto de tangencia permite obtener la orientación del plano de fallo",
  "un círculo que corta a la curva representa un estado límite, porque en los puntos de corte la tensión tangencial iguala a la resistencia",
@@ -75,11 +75,11 @@ L("T23","ELU: hundimiento",2,"Respecto al hundimiento de un cimiento, ¿cuál de
  "La carga de hundimiento depende del peso específico del terreno y de las condiciones del agua subálvea."],2,
 "Según la diap. 7, la carga V que produce el hundimiento es función de la resistencia al corte del terreno, de las dimensiones y la forma de la cimentación, de la profundidad a la que está situada, del peso específico del terreno y de las condiciones del agua subálvea. La profundidad sí influye: en la ecuación 4.8 aparece a través de la sobrecarga q0K y de los factores d. Las otras tres afirmaciones están en la diapositiva.","Apuntes T2.3, diap. 7");
 L("T23","Rígidas y flexibles",3,"Señalar la afirmación correcta sobre las zapatas rígidas y flexibles según los apuntes.",
-["Una zapata es rígida si su vuelo máximo no supera el doble del canto (Vmáx ≤ 2h); bajo una zapata rígida sobre suelo sin cohesión la presión real se concentra en los bordes, y sobre suelo cohesivo en el centro.",
- "Una zapata es rígida si su vuelo máximo no supera el doble del canto (Vmáx ≤ 2h); bajo una zapata rígida sobre suelo cohesivo la presión real se concentra en los bordes, y sobre suelo sin cohesión en el centro.",
- "Una zapata es rígida si su canto no supera el doble del vuelo (h ≤ 2·Vmáx); en ella el reparto real de presiones es uniforme, sea cual sea el tipo de suelo.",
- "Una zapata es flexible si Vmáx ≤ 2h; su reparto de presiones se estudia con el núcleo central y su armado se obtiene con el método de las bielas."],1,
-"Diap. 11: rígida si Vmáx ≤ 2h y flexible si Vmáx > 2h. Los diagramas de la misma diapositiva muestran que, bajo una zapata rígida, en suelo cohesivo las presiones son máximas en los bordes y en suelo sin cohesión son máximas en el centro. La primera opción invierte esa distribución. El núcleo central y el método de las bielas corresponden a las zapatas rígidas, no a las flexibles.","Apuntes T2.3, diap. 11");
+["Una zapata es rígida si su vuelo máximo no supera el doble del canto ($V_{\\text{máx}}\\le2h$); bajo una zapata rígida sobre suelo sin cohesión la presión real se concentra en los bordes, y sobre suelo cohesivo en el centro.",
+ "Una zapata es rígida si su vuelo máximo no supera el doble del canto ($V_{\\text{máx}}\\le2h$); bajo una zapata rígida sobre suelo cohesivo la presión real se concentra en los bordes, y sobre suelo sin cohesión en el centro.",
+ "Una zapata es rígida si su canto no supera el doble del vuelo ($h\\le2\\,V_{\\text{máx}}$); en ella el reparto real de presiones es uniforme, sea cual sea el tipo de suelo.",
+ "Una zapata es flexible si $V_{\\text{máx}}\\le2h$; su reparto de presiones se estudia con el núcleo central y su armado se obtiene con el método de las bielas."],1,
+"Diap. 11: rígida si $V_{\\text{máx}}\\le2h$ y flexible si $V_{\\text{máx}}\\gt2h$. Los diagramas de la misma diapositiva muestran que, bajo una zapata rígida, en suelo cohesivo las presiones son máximas en los bordes y en suelo sin cohesión son máximas en el centro. La primera opción invierte esa distribución. El núcleo central y el método de las bielas corresponden a las zapatas rígidas, no a las flexibles.","Apuntes T2.3, diap. 11");
 L("T23","Rígidas y flexibles",3,"Sobre el estudio de las zapatas flexibles mediante el coeficiente de balasto recogido en los apuntes, señalar la afirmación correcta.",
 ["El terreno se modeliza como un lecho de muelles de rigidez k por unidad de superficie; según la tabla de los apuntes, un suelo compacto (arena y grava compactas) tiene k del orden de 0,1–0,5 kg/cm³ y un suelo flojo (turbas, rellenos jóvenes) de 20–100 kg/cm³.",
  "El terreno se modeliza como un lecho de muelles de rigidez k por unidad de superficie; según la tabla de los apuntes, un suelo flojo (turbas, rellenos jóvenes de arena) tiene k del orden de 0,1–0,5 kg/cm³ y un suelo duro (roca blanda, calizas) de 20–100 kg/cm³.",
@@ -89,45 +89,45 @@ L("T23","Rígidas y flexibles",3,"Sobre el estudio de las zapatas flexibles medi
 L("T23","Rígidas y flexibles",3,"Respecto al método de las bielas recogido en los apuntes para la capacidad estructural del cimiento, señalar la afirmación correcta.",
 ["Se aplica a zapatas flexibles, en las que la carga llega al terreno por flexión, y obtiene el armado a partir del coeficiente de balasto.",
  "Se aplica a zapatas rígidas y comprueba el hundimiento, comparando la compresión en las bielas con la presión de hundimiento del terreno.",
- "Se aplica a zapatas rígidas, y la tracción Td = R1d·(x1 − 0,25·a)/(0,85·d) la resiste el hormigón traccionado de la cara inferior, sin necesidad de armadura.",
- "Se aplica a zapatas rígidas y permite determinar su armado: la tracción Td = R1d·(x1 − 0,25·a)/(0,85·d) debe ser resistida por la armadura inferior, Td = As·fyd."],3,
-"La diap. 21 presenta el método de las bielas en zapatas rígidas, dentro de la capacidad estructural del cimiento: «permite determinar el armado de las zapatas». Las bielas comprimidas llevan la carga del soporte hacia la base, y la tracción horizontal inferior Td se iguala a As·fyd. El hormigón no se cuenta para resistir esa tracción, y el método no comprueba el hundimiento (que es una comprobación del terreno) ni se aplica a zapatas flexibles.","Apuntes T2.3, diap. 21");
+ "Se aplica a zapatas rígidas, y la tracción $T_d=\\dfrac{R_{1d}\\,(x_1-0{,}25\\,a)}{0{,}85\\,d}$ la resiste el hormigón traccionado de la cara inferior, sin necesidad de armadura.",
+ "Se aplica a zapatas rígidas y permite determinar su armado: la tracción $T_d=\\dfrac{R_{1d}\\,(x_1-0{,}25\\,a)}{0{,}85\\,d}$ debe ser resistida por la armadura inferior, $T_d=A_s\\,f_{yd}$."],3,
+"La diap. 21 presenta el método de las bielas en zapatas rígidas, dentro de la capacidad estructural del cimiento: «permite determinar el armado de las zapatas». Las bielas comprimidas llevan la carga del soporte hacia la base, y la tracción horizontal inferior se confía a la armadura: $$T_d=\\frac{R_{1d}\\,(x_1-0{,}25\\,a)}{0{,}85\\,d}=A_s\\,f_{yd}$$ El hormigón no se cuenta para resistir esa tracción, y el método no comprueba el hundimiento (que es una comprobación del terreno) ni se aplica a zapatas flexibles.","Apuntes T2.3, diap. 21");
 L("T23","Excentricidad",3,"Para una zapata rígida rectangular de lados a y b con carga biexcéntrica (excentricidades ex y ey), el núcleo central dibujado en los apuntes es:",
-["un rombo centrado cuyas diagonales miden a/3 y b/3, de modo que toda la base está comprimida si |ex|/a + |ey|/b ≤ 1/6",
- "un rectángulo centrado de lados a/3 y b/3, de modo que basta con que |ex| ≤ a/6 y |ey| ≤ b/6 por separado",
- "un rombo centrado cuyas diagonales miden a/6 y b/6, de modo que toda la base está comprimida si |ex|/a + |ey|/b ≤ 1/12",
+["un rombo centrado cuyas diagonales miden $a/3$ y $b/3$, de modo que toda la base está comprimida si $\\dfrac{|e_x|}{a}+\\dfrac{|e_y|}{b}\\le\\dfrac16$",
+ "un rectángulo centrado de lados $a/3$ y $b/3$, de modo que basta con que $|e_x|\\le a/6$ y $|e_y|\\le b/6$ por separado",
+ "un rombo centrado cuyas diagonales miden $a/6$ y $b/6$, de modo que toda la base está comprimida si $\\dfrac{|e_x|}{a}+\\dfrac{|e_y|}{b}\\le\\dfrac{1}{12}$",
  "un círculo centrado de diámetro igual a un tercio del lado menor de la zapata"],0,
-"La diap. 12 dibuja el núcleo central como un rombo con diagonales a/3 y b/3 (vértices a a/6 y b/6 del centro). Es la generalización de e ≤ L/6 en una dirección. Con ex y ey simultáneas no basta con comprobarlas por separado: el rectángulo incluiría sus esquinas, que quedan fuera del rombo y producen despegue de una esquina.","Apuntes T2.3, diap. 12-14");
+"La diap. 12 dibuja el núcleo central como un rombo con diagonales a/3 y b/3 (vértices a a/6 y b/6 del centro). Es la generalización de e ≤ L/6 en una dirección: $$\\frac{|e_x|}{a/6}+\\frac{|e_y|}{b/6}\\le1\\ \\Longleftrightarrow\\ \\frac{|e_x|}{a}+\\frac{|e_y|}{b}\\le\\frac16$$ Con ex y ey simultáneas no basta con comprobarlas por separado: el rectángulo incluiría sus esquinas, que quedan fuera del rombo y producen despegue de una esquina.","Apuntes T2.3, diap. 12-14");
 L("T23","Excentricidad",3,"Una zapata corrida rígida de 1,2 m de ancho soporta N = 24 t/m con una excentricidad e = 0,15 m. Las tensiones en el terreno son:",
-["σmáx ≈ 35,6 t/m² con reparto triangular, porque e supera el límite del núcleo central, L/12 = 0,10 m",
- "σmáx = 27,5 t/m² y σmín = 12,5 t/m²; toda la base está comprimida porque e ≤ L/6 = 0,20 m",
- "σmáx = 35 t/m² y σmín = 5 t/m²; toda la base está comprimida porque e ≤ L/6 = 0,20 m",
- "σmáx = 40 t/m² y σmín = 0; la carga está justo en el límite del núcleo central"],2,
-"El núcleo central de una zapata corrida es e ≤ L/6 = 0,20 m; con e = 0,15 m la base está totalmente comprimida y se aplica σ = (N/L)(1 ± 6e/L) = 20·(1 ± 0,75) = 35 y 5 t/m². Usar 3e/L en lugar de 6e/L da 27,5 y 12,5. El límite del núcleo no es L/12, y la fórmula del reparto triangular solo se usa cuando e > L/6. El valor 40/0 correspondería a e = L/6.","Apuntes T2.3, diap. 14 (cálculo)");
+["$\\sigma_{\\text{máx}}\\approx35{,}6\\text{ t/m}^2$ con reparto triangular, porque e supera el límite del núcleo central, $L/12=0{,}10\\text{ m}$",
+ "$\\sigma_{\\text{máx}}=27{,}5\\text{ t/m}^2$ y $\\sigma_{\\text{mín}}=12{,}5\\text{ t/m}^2$; toda la base está comprimida porque $e\\le L/6=0{,}20\\text{ m}$",
+ "$\\sigma_{\\text{máx}}=35\\text{ t/m}^2$ y $\\sigma_{\\text{mín}}=5\\text{ t/m}^2$; toda la base está comprimida porque $e\\le L/6=0{,}20\\text{ m}$",
+ "$\\sigma_{\\text{máx}}=40\\text{ t/m}^2$ y $\\sigma_{\\text{mín}}=0$; la carga está justo en el límite del núcleo central"],2,
+"Primero se comprueba si la carga está dentro del núcleo central (e ≤ L/6) y después se aplica la fórmula del reparto trapecial: $$\\frac{L}{6}=\\frac{1{,}2}{6}=0{,}20\\text{ m}\\ge e=0{,}15\\text{ m}\\ \\Rightarrow\\ \\text{toda la base comprimida}$$ $$\\sigma_{1,2}=\\frac{N}{L}\\left(1\\pm\\frac{6e}{L}\\right)=\\frac{24}{1{,}2}\\left(1\\pm\\frac{6\\cdot0{,}15}{1{,}2}\\right)=20\\,(1\\pm0{,}75)$$ $$\\sigma_{max}=\\boxed{35\\text{ t/m}^2},\\qquad\\sigma_{min}=\\boxed{5\\text{ t/m}^2}$$ Usar 3e/L en lugar de 6e/L da 27,5 y 12,5. El límite del núcleo no es L/12, y la fórmula del reparto triangular solo se usa cuando e > L/6. El par 40/0 correspondería a e = L/6.","Apuntes T2.3, diap. 14 (cálculo)");
 L("T23","Excentricidad",3,"En el ejemplo de los apuntes (p = 75 kg/cm en el borde de un muro de 30 cm, e = L/2 − 15 cm, σadm = 2 kg/cm²), despreciando el peso de la zapata y con la carga fuera del núcleo central:",
-["σ disminuye al aumentar el ancho L, y basta con L > 45 cm para que σ < 2 kg/cm².",
- "σ = 4p/[3(L − 2e)] = 4·75/(3·30) ≈ 3,33 kg/cm² para cualquier L, porque L − 2e = 30 cm; por eso es imprescindible contar con el peso de la cimentación.",
- "σ = 4p/[3(L − 2e)] ≈ 3,33 kg/cm² solo para L = 45 cm; para anchos mayores la tensión disminuye y se cumple a partir de L ≈ 75 cm.",
- "σ = (p/L)·(1 + 6e/L), que tiende a 2,5 kg/cm² al aumentar L; por eso no hay solución."],1,
-"Fuera del núcleo central se usa σmáx = 4p/[3(L − 2e)]. Como e = L/2 − 15, resulta 2e = L − 30 y L − 2e = 30 cm sea cual sea L, de modo que σ = 3,33 kg/cm² > 2 para cualquier ancho. La diap. 15 concluye que la solución no depende de L y que es imprescindible tener en cuenta el peso de la cimentación. La expresión trapezoidal (1 + 6e/L) solo vale dentro del núcleo central.","Apuntes T2.3, diap. 15");
+["σ disminuye al aumentar el ancho L, y basta con $L\\gt45\\text{ cm}$ para que $\\sigma\\lt2\\text{ kg/cm}^2$.",
+ "$\\sigma=\\dfrac{4p}{3(L-2e)}=\\dfrac{4\\cdot75}{3\\cdot30}\\approx3{,}33\\text{ kg/cm}^2$ para cualquier L, porque $L-2e=30\\text{ cm}$; por eso es imprescindible contar con el peso de la cimentación.",
+ "$\\sigma=\\dfrac{4p}{3(L-2e)}\\approx3{,}33\\text{ kg/cm}^2$ solo para $L=45\\text{ cm}$; para anchos mayores la tensión disminuye y se cumple a partir de $L\\approx75\\text{ cm}$.",
+ "$\\sigma=\\dfrac{p}{L}\\left(1+\\dfrac{6e}{L}\\right)$, que tiende a $2{,}5\\text{ kg/cm}^2$ al aumentar L; por eso no hay solución."],1,
+"Fuera del núcleo central se usa el reparto triangular. Como la carga está en el borde del muro de 30 cm, su excentricidad es e = L/2 − 15 cm, y el término L − 2e no depende del ancho: $$\\sigma_{max}=\\frac{4p}{3(L-2e)},\\qquad L-2e=L-2\\left(\\frac{L}{2}-15\\right)=30\\text{ cm}$$ $$\\sigma_{max}=\\frac{4\\cdot75}{3\\cdot30}\\approx\\boxed{3{,}33\\text{ kg/cm}^2}\\gt2\\text{ kg/cm}^2\\ \\text{ para cualquier }L$$ La diap. 15 concluye que la solución no depende de L y que es imprescindible tener en cuenta el peso de la cimentación. La expresión trapecial (1 + 6e/L) solo vale dentro del núcleo central, y aumentar el ancho no reduce la tensión.","Apuntes T2.3, diap. 15");
 L("T23","Excentricidad",3,"En el ejemplo de los apuntes (zapata corrida bajo carga excéntrica), al tener en cuenta el peso de la cimentación se obtiene una solución con L ≈ 175 cm. Señalar la afirmación correcta.",
-["El peso w reduce la excentricidad a e* = p·e/(p + w) y lleva la carga dentro del núcleo central para L ≈ 175 cm, de modo que toda la base queda comprimida con σ ≈ 1,95 kg/cm².",
+["El peso w reduce la excentricidad a $e^*=\\dfrac{p\\,e}{p+w}$ y lleva la carga dentro del núcleo central para $L\\approx175\\text{ cm}$, de modo que toda la base queda comprimida con $\\sigma\\approx1{,}95\\text{ kg/cm}^2$.",
  "El peso w aumenta la carga vertical y con ella la tensión máxima; la solución se alcanza solo porque la tensión admisible del terreno aumenta con el canto H de la zapata.",
- "El peso w reduce la excentricidad a e* = p·e/w, y con L = 30 cm ya se obtiene σ < 2 kg/cm² con la carga centrada.",
- "El peso w es una carga centradora que reduce la excentricidad a e* = p·e/(p + w); aun así, para L ≈ 175 cm la carga sigue fuera del núcleo central (e* ≈ 51 cm > L/6) y σ ≈ 1,95 kg/cm² se obtiene con reparto triangular."],3,
-"En la diap. 17, para L = 175 cm: H = 72,5 cm, w = 31,72 kg/cm, e = 72,5 cm, e* = 50,95 cm y 6e*/L = 1,75 > 1. La carga sigue fuera del núcleo, se usa σ = 4(p + w)/[3(L − 2e*)] con L0 = 109,64 cm y resulta σ = 1,95 kg/cm² < 2. Con L = 30 cm (diap. 16) la tensión es 2,63 kg/cm², que no cumple. La tensión admisible es un dato y no depende del canto.","Apuntes T2.3, diap. 16-17");
+ "El peso w reduce la excentricidad a $e^*=\\dfrac{p\\,e}{w}$, y con $L=30\\text{ cm}$ ya se obtiene $\\sigma\\lt2\\text{ kg/cm}^2$ con la carga centrada.",
+ "El peso w es una carga centradora que reduce la excentricidad a $e^*=\\dfrac{p\\,e}{p+w}$; aun así, para $L\\approx175\\text{ cm}$ la carga sigue fuera del núcleo central ($e^*\\approx51\\text{ cm}\\gt L/6$) y $\\sigma\\approx1{,}95\\text{ kg/cm}^2$ se obtiene con reparto triangular."],3,
+"El peso de la zapata w es una carga centrada que reduce la excentricidad de la resultante (diap. 17), con H = máx(50; L/2 − 15) cm. Para L = 175 cm: $$H=\\frac{175}{2}-15=72{,}5\\text{ cm},\\qquad w=31{,}72\\text{ kg/cm},\\qquad e=72{,}5\\text{ cm}$$ $$e^*=\\frac{p\\,e}{p+w}=\\frac{75\\cdot72{,}5}{75+31{,}72}=50{,}95\\text{ cm},\\qquad\\frac{6e^*}{L}=1{,}75\\gt1$$ La carga sigue fuera del núcleo, así que se usa el reparto triangular: $$L_0=3\\left(\\frac{L}{2}-e^*\\right)=109{,}64\\text{ cm}$$ $$\\sigma_{max}=\\frac{4(p+w)}{3(L-2e^*)}=\\frac{4\\cdot106{,}72}{3\\cdot73{,}1}=\\boxed{1{,}95\\text{ kg/cm}^2}\\lt2$$ Con L = 30 cm (diap. 16) la tensión es 2,63 kg/cm², que no cumple. La tensión admisible es un dato y no depende del canto.","Apuntes T2.3, diap. 16-17");
 L("T23","Deslizamiento y vuelco",2,"Respecto a las comprobaciones de deslizamiento y vuelco de zapatas recogidas en los apuntes, señalar la afirmación correcta.",
 ["Ambos coeficientes de seguridad deben superar 1,5; en el vuelco los momentos se toman respecto al centro de la base, de modo que el peso propio P no contribuye a la estabilidad.",
  "El coeficiente frente al deslizamiento debe superar 1,5 y el de vuelco 2, porque el vuelco es un fallo frágil.",
  "Ambos coeficientes de seguridad deben superar 1,5; en el vuelco los momentos se toman respecto al borde de la zapata (punto A), y el momento estabilizador es (N + P)·a/2.",
  "Ambos coeficientes deben superar 1,5, y en el momento de vuelco solo interviene el momento M, ya que la fuerza horizontal V se tiene en cuenta en el deslizamiento."],2,
-"Diap. 19: γt = FR/H > 1,5 y γt = ΣMestab/ΣMvuelco = (N + P)·(a/2)/(M + V·h) > 1,5, con los momentos referidos al punto A, en el borde de la base. Por eso N + P actúa con brazo a/2 a favor de la estabilidad y la fuerza horizontal V, aplicada a una altura h, suma un momento V·h al de vuelco. No hay un coeficiente distinto para el vuelco.","Apuntes T2.3, diap. 19");
+"Diap. 19: los dos coeficientes deben superar 1,5, con los momentos referidos al punto A, en el borde de la base: $$\\gamma_t=\\frac{F_R}{H}\\gt1{,}5$$ $$\\gamma_t=\\frac{\\sum M_{estab}}{\\sum M_{vuelco}}=\\frac{(N+P)\\,a/2}{M+V\\,h}\\gt1{,}5$$ Por eso N + P actúa con brazo a/2 a favor de la estabilidad, y la fuerza horizontal V, aplicada a una altura h, suma un momento V·h al de vuelco. No hay un coeficiente distinto para el vuelco.","Apuntes T2.3, diap. 19");
 L("T23","Deslizamiento y vuelco",2,"Según los apuntes, la fuerza de rozamiento FR que resiste el deslizamiento de una zapata de dimensiones a × b se toma como:",
-["FR = (N + P)·tg φ en arenas y FR = a·b·c/2 en arcillas",
- "FR = (N + P)·tg(2φ/3) en arenas y FR = (N + P)·c/2 en arcillas, proporcional a la carga vertical",
- "FR = a·b·c/2 en arenas y FR = (N + P)·tg(2φ/3) en arcillas",
- "FR = (N + P)·tg(2φ/3) en arenas y FR = a·b·c/2 en arcillas, que no depende de la carga vertical"],3,
-"Diap. 19: en arenas se usa un rozamiento reducido, tg(2φ/3), aplicado a la carga vertical N + P; en arcillas se cuenta con la mitad de la cohesión actuando sobre la superficie de apoyo a·b, sin intervención de la carga vertical. Usar tg φ completo sobrestima la resistencia, y la segunda opción mezcla la cohesión con la carga vertical.","Apuntes T2.3, diap. 19");
+["$F_R=(N+P)\\,\\mathrm{tg}\\,\\varphi$ en arenas y $F_R=\\dfrac{a\\,b\\,c}{2}$ en arcillas",
+ "$F_R=(N+P)\\,\\mathrm{tg}\\tfrac{2\\varphi}{3}$ en arenas y $F_R=(N+P)\\,\\dfrac{c}{2}$ en arcillas, proporcional a la carga vertical",
+ "$F_R=\\dfrac{a\\,b\\,c}{2}$ en arenas y $F_R=(N+P)\\,\\mathrm{tg}\\tfrac{2\\varphi}{3}$ en arcillas",
+ "$F_R=(N+P)\\,\\mathrm{tg}\\tfrac{2\\varphi}{3}$ en arenas y $F_R=\\dfrac{a\\,b\\,c}{2}$ en arcillas, que no depende de la carga vertical"],3,
+"Diap. 19: en arenas se usa un rozamiento reducido, tg(2φ/3), aplicado a la carga vertical; en arcillas se cuenta con la mitad de la cohesión actuando sobre la superficie de apoyo: $$F_R=(N+P)\\,\\mathrm{tg}\\,\\tfrac{2\\varphi}{3}\\ \\text{(arenas)},\\qquad F_R=a\\,b\\,\\frac{c}{2}\\ \\text{(arcillas)}$$ En arcillas no interviene la carga vertical. Usar tg φ completo sobrestima la resistencia, y la segunda opción mezcla la cohesión con la carga vertical.","Apuntes T2.3, diap. 19");
 L("T23","Deslizamiento y vuelco",2,"En la comprobación del equilibrio (deslizamiento y vuelco) de zapatas, el empuje pasivo del terreno situado junto a la zapata:",
 ["se cuenta siempre, ya que es la acción que se opone directamente al deslizamiento",
  "no se cuenta en el deslizamiento, pero sí en el vuelco, porque su brazo respecto al punto A es favorable",
@@ -139,7 +139,7 @@ L("T23","Deslizamiento y vuelco",3,"Una zapata de ancho a = 2 m apoyada en arena
  "vuelco ≈ 2,86 y deslizamiento ≈ 2,43: cumple ambas",
  "vuelco ≈ 2,86 y deslizamiento ≈ 3,85: cumple ambas",
  "vuelco ≈ 5,71 y deslizamiento ≈ 2,43: cumple ambas"],1,
-"Vuelco: γ = (N + P)·(a/2)/(M + V·h) = 100·1/(20 + 15) ≈ 2,86. Deslizamiento en arena: FR = (N + P)·tg(2φ/3) = 100·tg 20° ≈ 36,4 kN y γ = 36,4/15 ≈ 2,43. Los distractores olvidan el momento V·h (5,0), usan tg φ en lugar de tg(2φ/3) (3,85) o toman el brazo a en lugar de a/2 (5,71).","Apuntes T2.3, diap. 19 (cálculo)");
+"Diap. 19, con los momentos respecto al borde de la base (punto A): $$\\gamma_{vuelco}=\\frac{(N+P)\\,a/2}{M+V\\,h}=\\frac{100\\cdot1}{20+15\\cdot1}=\\frac{100}{35}\\approx\\boxed{2{,}86}\\gt1{,}5$$ Deslizamiento en arena, con el rozamiento reducido tg(2φ/3) = tg 20°: $$F_R=(N+P)\\,\\mathrm{tg}\\,\\tfrac{2\\varphi}{3}=100\\cdot0{,}364=36{,}4\\text{ kN}$$ $$\\gamma_{desl}=\\frac{F_R}{V}=\\frac{36{,}4}{15}\\approx\\boxed{2{,}43}\\gt1{,}5$$ Los distractores olvidan el momento V·h (100/20 = 5,0), usan tg φ en lugar de tg(2φ/3) (57,7/15 ≈ 3,85) o toman el brazo a en lugar de a/2 (200/35 ≈ 5,71).","Apuntes T2.3, diap. 19 (cálculo)");
 L("T23","Estabilidad global",2,"Respecto al estado límite de estabilidad global de una cimentación, señalar la afirmación correcta según los apuntes.",
 ["Es un estado límite de servicio asociado a la inclinación ω, típico de edificios en terreno llano sobre estratos blandos, y se calcula por equilibrio límite.",
  "Se produce siempre después de un fallo local por hundimiento de alguna zapata, y se calcula con el coeficiente de balasto.",
@@ -153,23 +153,23 @@ L("T23","Profundas",1,"Según la forma de transmitir la carga, ¿qué asociació
  "Pilote flotante: reparte la carga a partes iguales entre punta y fuste, por lo que necesita un encepado rígido."],2,
 "Diap. 22: los pilotes por punta (columna) atraviesan el suelo blando y se apoyan en el terreno firme; los pilotes por fuste (flotantes) transmiten la carga sobre todo por rozamiento lateral en un terreno sin estrato resistente accesible. Las dos primeras opciones intercambian los nombres, y la cuarta no aparece en los apuntes.","Apuntes T2.3, diap. 22");
 L("T23","Profundas",2,"La carga de hundimiento de un pilote aislado según los apuntes es:",
-["Rck = Rpk + Rfk, con Rpk = qp·pf y Rfk = ∫ τf·Ap·dz",
- "Rck = Rpk + Rfk, con Rpk = qp·Ap y Rfk = ∫ τf·pf·dz, integrada a lo largo de la longitud del pilote",
- "Rck = máx(Rpk; Rfk), porque la resistencia por punta y la resistencia por fuste no se movilizan simultáneamente",
- "Rck = Rpk + Rfk, con Rpk = qp·Ap y Rfk = τf·pf, independiente de la longitud del pilote"],1,
-"Diap. 25: Rck = Rpk + Rfk. La punta aporta la resistencia unitaria por punta qp por el área de la punta Ap, y el fuste aporta la integral a lo largo de la profundidad de la resistencia unitaria por fuste τf por el perímetro pf. El primer distractor intercambia área y perímetro, y el último elimina la integración en la longitud, de la que depende la resistencia por fuste.","Apuntes T2.3, diap. 25");
+["$R_{ck}=R_{pk}+R_{fk}$, con $R_{pk}=q_p\\,p_f$ y $R_{fk}=\\int\\tau_f\\,A_p\\,dz$",
+ "$R_{ck}=R_{pk}+R_{fk}$, con $R_{pk}=q_p\\,A_p$ y $R_{fk}=\\int\\tau_f\\,p_f\\,dz$, integrada a lo largo de la longitud del pilote",
+ "$R_{ck}=\\max(R_{pk};\\ R_{fk})$, porque la resistencia por punta y la resistencia por fuste no se movilizan simultáneamente",
+ "$R_{ck}=R_{pk}+R_{fk}$, con $R_{pk}=q_p\\,A_p$ y $R_{fk}=\\tau_f\\,p_f$, independiente de la longitud del pilote"],1,
+"Diap. 25: la carga de hundimiento suma la resistencia por punta y la resistencia por fuste: $$R_{ck}=R_{pk}+R_{fk}=q_p\\,A_p+\\int_0^{L}\\tau_f\\,p_f\\,dz$$ La punta aporta la resistencia unitaria qp por el área de la punta Ap, y el fuste, la integral a lo largo de la profundidad de la resistencia unitaria τf por el perímetro pf. El primer distractor intercambia área y perímetro, y el último elimina la integración en la longitud, de la que depende la resistencia por fuste.","Apuntes T2.3, diap. 25");
 L("T23","Profundas",2,"Según los apuntes, el coeficiente de eficiencia η del efecto grupo de pilotes:",
-["vale 1,0 cuando la separación es igual al diámetro y 0,7 cuando S ≥ 3D, porque los pilotes más separados colaboran menos",
- "vale 0,7 cuando S = 3D y 1,0 cuando S ≥ 6D, coincidiendo con la zona pasiva de influencia de la punta",
- "vale 0,7 cuando S = D y 1,0 cuando S ≥ 3D; para separaciones intermedias se toma 0,7 del lado de la seguridad, sin interpolar",
- "vale 0,7 cuando la separación entre pilotes es igual a su diámetro y 1,0 cuando S ≥ 3D, interpolando en situaciones intermedias"],3,
-"Diap. 25: Rckg = η·n·Rck, con η = 0,7 si S = D, η = 1,0 si S ≥ 3D, y la indicación expresa de interpolar en situaciones intermedias. Cuanto más próximos están los pilotes, más se interfieren sus zonas de influencia y menor es la eficiencia, así que el primer distractor invierte el sentido del efecto.","Apuntes T2.3, diap. 25");
+["vale 1,0 cuando la separación es igual al diámetro y 0,7 cuando $S\\ge3D$, porque los pilotes más separados colaboran menos",
+ "vale 0,7 cuando $S=3D$ y 1,0 cuando $S\\ge6D$, coincidiendo con la zona pasiva de influencia de la punta",
+ "vale 0,7 cuando $S=D$ y 1,0 cuando $S\\ge3D$; para separaciones intermedias se toma 0,7 del lado de la seguridad, sin interpolar",
+ "vale 0,7 cuando la separación entre pilotes es igual a su diámetro y 1,0 cuando $S\\ge3D$, interpolando en situaciones intermedias"],3,
+"Diap. 25: $$R_{ckg}=\\eta\\,n\\,R_{ck},\\qquad\\eta=0{,}7\\ \\text{si}\\ S=D,\\qquad\\eta=1{,}0\\ \\text{si}\\ S\\ge3D$$ con la indicación expresa de interpolar en situaciones intermedias. Cuanto más próximos están los pilotes, más se interfieren sus zonas de influencia y menor es la eficiencia, así que el primer distractor invierte el sentido del efecto.","Apuntes T2.3, diap. 25");
 L("T23","Profundas",3,"Un grupo de 6 pilotes con separación S = 1,5D y carga de hundimiento individual Rck = 800 kN. Interpolando linealmente η según los apuntes, la carga de hundimiento del grupo es aproximadamente:",
-["η = 0,70 → Rckg ≈ 3360 kN",
- "η = 0,775 → Rckg ≈ 3720 kN",
- "η = 0,85 → Rckg ≈ 4080 kN",
- "η = 1,00 → Rckg = 4800 kN"],1,
-"Entre S = D (η = 0,7) y S = 3D (η = 1,0), para S = 1,5D: η = 0,7 + 0,3·(1,5 − 1)/(3 − 1) = 0,775. Rckg = 0,775·6·800 = 3720 kN. El valor 0,85 correspondería a S = 2D, 0,70 a no interpolar y 1,0 a ignorar el efecto grupo.","Apuntes T2.3, diap. 25 (cálculo)");
+["$\\eta=0{,}70$ → $R_{ckg}\\approx3360\\text{ kN}$",
+ "$\\eta=0{,}775$ → $R_{ckg}\\approx3720\\text{ kN}$",
+ "$\\eta=0{,}85$ → $R_{ckg}\\approx4080\\text{ kN}$",
+ "$\\eta=1{,}00$ → $R_{ckg}=4800\\text{ kN}$"],1,
+"Diap. 25: η = 0,7 si S = D y η = 1,0 si S ≥ 3D, interpolando en las situaciones intermedias, y Rckg = η·n·Rck. $$\\eta=0{,}7+0{,}3\\cdot\\frac{1{,}5-1}{3-1}=0{,}775$$ $$R_{ckg}=\\eta\\,n\\,R_{ck}=0{,}775\\cdot6\\cdot800=\\boxed{3720\\text{ kN}}$$ El valor 0,85 correspondería a S = 2D, 0,70 a no interpolar y 1,0 a ignorar el efecto grupo.","Apuntes T2.3, diap. 25 (cálculo)");
 L("T23","Profundas",2,"Respecto al rozamiento negativo en pilotes, señalar la afirmación correcta según los apuntes.",
 ["Se produce cuando el pilote asienta más que el terreno que lo rodea, y el terreno ejerce sobre el fuste una fuerza ascendente que descarga la punta.",
  "Se produce cuando el terreno que rodea al pilote asienta más que el propio pilote (por ejemplo, una capa blanda bajo un relleno), y el pilote soporta, además de la carga de la estructura, parte del peso del terreno.",
@@ -210,11 +210,11 @@ L("T23","Contención",1,"Según los apuntes, el empuje activo se produce cuando 
  "no se mueve, de modo que el terreno conserva su estado tensional inicial"],1,
 "Diap. 30: activo, el elemento gira o se desplaza hacia el exterior y el empuje es mínimo; pasivo, el elemento es comprimido contra el terreno y el empuje es máximo; reposo, estado intermedio correspondiente al estado tensional inicial. Los distractores combinan el movimiento de un estado con el empuje de otro o describen el reposo.","Apuntes T2.3, diap. 30");
 L("T23","Contención",3,"Según el gráfico K–x/H de los apuntes para terrenos granulares, señalar la afirmación correcta.",
-["Ka < K0 < Kp; el Kp de un terreno granular denso es mayor que el de uno suelto, y el estado de reposo K0 corresponde a desplazamiento nulo del elemento.",
- "Ka < K0 < Kp; el Kp de un terreno granular suelto es mayor que el de uno denso, porque el suelo suelto se comprime más contra el muro.",
- "K0 < Ka < Kp; el empuje activo es mayor que el de reposo porque el elemento se desplaza y moviliza más terreno.",
- "Kp < K0 < Ka; el empuje pasivo es el mínimo porque es el muro el que empuja contra el terreno."],0,
-"En la diap. 30 el valor de K en el origen de desplazamientos es K0 (reposo); hacia el lado activo baja hasta Ka (del orden de 0,2) y hacia el pasivo sube hasta Kp. La curva 1, terreno granular denso, alcanza un Kp mucho mayor que la curva 2, terreno suelto. Por tanto Ka < K0 < Kp, y el pasivo es el empuje máximo.","Apuntes T2.3, diap. 30");
+["$K_a\\lt K_0\\lt K_p$; el Kp de un terreno granular denso es mayor que el de uno suelto, y el estado de reposo K0 corresponde a desplazamiento nulo del elemento.",
+ "$K_a\\lt K_0\\lt K_p$; el Kp de un terreno granular suelto es mayor que el de uno denso, porque el suelo suelto se comprime más contra el muro.",
+ "$K_0\\lt K_a\\lt K_p$; el empuje activo es mayor que el de reposo porque el elemento se desplaza y moviliza más terreno.",
+ "$K_p\\lt K_0\\lt K_a$; el empuje pasivo es el mínimo porque es el muro el que empuja contra el terreno."],0,
+"En la diap. 30 el valor de K en el origen de desplazamientos es K0 (reposo); hacia el lado activo baja hasta Ka (del orden de 0,2) y hacia el pasivo sube hasta Kp. La curva 1, terreno granular denso, alcanza un Kp mucho mayor que la curva 2, terreno suelto. Por tanto $K_a\\lt K_0\\lt K_p$, y el pasivo es el empuje máximo.","Apuntes T2.3, diap. 30");
 L("T23","Contención",2,"Según el gráfico de coeficiente de empuje frente al desplazamiento relativo x/H de los apuntes:",
 ["ambos estados límite se alcanzan con desplazamientos del mismo orden de magnitud, aunque en sentidos contrarios",
  "el estado pasivo se alcanza con desplazamientos menores que el activo, porque el terreno comprimido rigidiza el contacto",
@@ -228,11 +228,11 @@ L("T23","Contención",2,"Señalar las respuestas correctas (puede haber más de 
  "Deslizamiento del muro sobre su base por efecto del empuje del terreno"],[0,1,2],
 "La diap. 29 recoge como ELS los movimientos, la infiltración de agua y la afección al nivel freático del entorno. El deslizamiento figura entre los ELU de los muros (diap. 32).","Apuntes T2.3, diap. 29");
 L("T23","Contención",3,"Un muro de trasdós vertical de H = 4 m retiene un relleno granular sin cohesión de γ = 18 kN/m³ en estado activo con Ka = 0,3, sin sobrecargas ni agua. Con σh = K·σv, la tensión horizontal en la base y el empuje total son:",
-["σh = 21,6 kPa en la base; E = 86,4 kN/m aplicado a H/2 de la base",
- "σh = 21,6 kPa en la base; E = 43,2 kN/m aplicado a 2H/3 de la base",
- "σh = 240 kPa en la base; E = 480 kN/m aplicado a H/3 de la base",
- "σh = 21,6 kPa en la base; E = 43,2 kN/m aplicado a H/3 ≈ 1,33 m de la base"],3,
-"σv = γ·z = 18·4 = 72 kPa y σh = Ka·σv = 0,3·72 = 21,6 kPa. La ley es triangular, por lo que E = ½·γ·H²·Ka = 0,5·18·16·0,3 = 43,2 kN/m, aplicado en el centro de gravedad del triángulo, a H/3 de la base (como en el esquema de peso propio del terreno de la diap. 31). Un reparto rectangular, que daría 86,4 kN/m a H/2, corresponde a una sobrecarga uniforme. Dividir por K en vez de multiplicar da el valor de 240 kPa.","Apuntes T2.3, diap. 30");
+["$\\sigma_h=21{,}6\\text{ kPa}$ en la base; $E=86{,}4\\text{ kN/m}$ aplicado a $H/2$ de la base",
+ "$\\sigma_h=21{,}6\\text{ kPa}$ en la base; $E=43{,}2\\text{ kN/m}$ aplicado a $2H/3$ de la base",
+ "$\\sigma_h=240\\text{ kPa}$ en la base; $E=480\\text{ kN/m}$ aplicado a $H/3$ de la base",
+ "$\\sigma_h=21{,}6\\text{ kPa}$ en la base; $E=43{,}2\\text{ kN/m}$ aplicado a $H/3\\approx1{,}33\\text{ m}$ de la base"],3,
+"Con σh = K·σv y una ley de tensiones triangular (esquema de peso propio del terreno de la diap. 31): $$\\sigma_v=\\gamma\\,H=18\\cdot4=72\\text{ kPa},\\qquad\\sigma_h=K_a\\,\\sigma_v=0{,}3\\cdot72=\\boxed{21{,}6\\text{ kPa}}$$ $$E=\\tfrac12\\,K_a\\,\\gamma\\,H^2=0{,}5\\cdot0{,}3\\cdot18\\cdot4^2=\\boxed{43{,}2\\text{ kN/m}}$$ $$z_E=\\frac{H}{3}=\\frac43\\approx1{,}33\\text{ m sobre la base}$$ El empuje se aplica en el centro de gravedad del triángulo. Un reparto rectangular, que daría 86,4 kN/m a H/2, corresponde a una sobrecarga uniforme; 2H/3 es la distancia desde la coronación, no desde la base. Dividir por K en vez de multiplicar da el valor de 240 kPa.","Apuntes T2.3, diap. 30");
 L("T23","Contención",1,"Señalar la afirmación correcta sobre los muros según los apuntes.",
 ["Se emplean para realizar excavaciones verticales en las que las construcciones próximas no serían estables sin sujeción; sus tipologías son las de hormigón, de pilotes y de tablestacas.",
  "Establecen y mantienen una diferencia de niveles en el terreno con una pendiente de transición superior a la que permitiría su resistencia; entre sus tipologías están los de gravedad, en L o en ménsula, de contrafuertes, con placas y por bataches.",
@@ -264,7 +264,7 @@ L("T3","Introducción",2,"Respecto a las propiedades no mecánicas de los materi
 "Diap. 8: las propiedades no mecánicas no influyen en la ley de comportamiento. Sin embargo, la densidad influye en la solicitación (peso propio) y algunas propiedades térmicas en la resistencia al fuego. La pendiente del diagrama σ-ε es el módulo de elasticidad, una propiedad mecánica, y la dureza y la fatiga son propiedades mecánicas (diap. 4).","Apuntes T3, diap. 8");
 L("T3","Introducción",3,"Dos barras de igual sección y longitud, una de acero y otra de aleación de aluminio, se someten a la misma fuerza axial en régimen elástico. Según la tabla de módulos de Young de los apuntes, el alargamiento de la barra de aluminio es aproximadamente:",
 ["un tercio del de la barra de acero, porque el aluminio es más ligero","igual al de la de acero, porque en régimen elástico el alargamiento solo depende de la fuerza y de la sección","unas tres veces el de la barra de acero","unas dos veces el de la barra de acero"],2,
-"Δl = F·L/(E·A). Con la misma F, L y A, el alargamiento es inversamente proporcional a E. Acero: 207 GPa; aluminio: 69–75 GPa. 207/69 ≈ 3 y 207/75 ≈ 2,8, así que el aluminio se alarga unas tres veces más. La relación de dos veces correspondería al cobre (110 GPa). La densidad no interviene en el alargamiento elástico.","Apuntes T3, diap. 6");
+"Alargamiento elástico de una barra (ley de Hooke). Con la misma F, L y A, el alargamiento es inversamente proporcional a E (acero 207 GPa; aluminio 69–75 GPa): $$\\Delta l=\\frac{F\\,L}{E\\,A}\\ \\Rightarrow\\ \\frac{\\Delta l_{Al}}{\\Delta l_{ac}}=\\frac{E_{ac}}{E_{Al}}$$ $$\\frac{207}{69}=3,\\qquad\\frac{207}{75}\\approx2{,}8\\ \\Rightarrow\\ \\boxed{\\approx3\\text{ veces}}$$ La relación de dos veces correspondería al cobre (110 GPa). La densidad no interviene en el alargamiento elástico.","Apuntes T3, diap. 6");
 L("T3","Introducción",2,"Según la tabla de propiedades mecánicas de los apuntes, señalar la afirmación correcta respecto al hormigón.",
 ["Su módulo de Young es de 14–40 GPa y su coeficiente de Poisson de 0,23–0,40, superior al del acero (0,27).",
  "Su módulo de Young es de 62–70 GPa y su coeficiente de Poisson de 0,25, valores similares a los del vidrio.",
@@ -294,13 +294,13 @@ L("T3","Aceros: tipos",2,"Según los apuntes, las calidades de los tornillos van
  "La calidad 4.6 tiene un límite elástico de 400 MPa y la 10.9 de 1000 MPa.",
  "La calidad 4.6 tiene un límite elástico de 240 MPa y la 10.9 de 1000 MPa.",
  "La calidad 4.6 tiene un límite elástico de 240 MPa y la 10.9 de 900 MPa."],3,
-"La diap. 10 da 240 MPa para la calidad 4.6 y 900 MPa para la 10.9. Es coherente con la regla habitual de designación: el producto de las dos cifras por 10 da el límite elástico (4·6·10 = 240; 10·9·10 = 900) y la primera cifra por 100, la resistencia a tracción (400 y 1000 MPa). Por eso 400 y 1000 MPa son valores de fu, no de fy.","Apuntes T3, diap. 10");
+"La diap. 10 da 240 MPa para la calidad 4.6 y 900 MPa para la 10.9. Es coherente con la regla habitual de designación: el producto de las dos cifras por 10 da el límite elástico, y la primera cifra por 100, la resistencia a tracción: $$4.6:\\ f_y=4\\cdot6\\cdot10=\\boxed{240\\text{ MPa}},\\qquad f_u=4\\cdot100=400\\text{ MPa}$$ $$10.9:\\ f_y=10\\cdot9\\cdot10=\\boxed{900\\text{ MPa}},\\qquad f_u=10\\cdot100=1000\\text{ MPa}$$ Por eso 400 y 1000 MPa son valores de fu, no de fy.","Apuntes T3, diap. 10");
 L("T3","Aceros: diagrama",2,"Marcar la frase que sea verdadera respecto al diagrama tensión-deformación de un acero de dureza natural.",
 ["En el diagrama de tensión ingenieril, la tensión de rotura σr coincide con la resistencia a tracción σmax, ya que la rotura se produce al alcanzar la carga máxima.",
- "En el diagrama de tensión ingenieril, la tensión de rotura σr es inferior a σmax porque durante la estricción la fuerza disminuye, aunque la tensión verdadera F/A siga creciendo.",
+ "En el diagrama de tensión ingenieril, la tensión de rotura σr es inferior a σmax porque durante la estricción la fuerza disminuye, aunque la tensión verdadera $F/A$ siga creciendo.",
  "En el diagrama de tensión verdadera, la tensión disminuye durante la estricción, igual que en el ingenieril, porque la fuerza aplicada disminuye.",
  "Ninguna de las anteriores."],1,
-"Diap. 11: la tensión ingenieril se calcula con el área inicial (F/A0) y la verdadera con el área real (F/A). Tras σmax (punto G) empieza la estricción (GH): la fuerza baja y la tensión ingenieril cae hasta σr < σmax, mientras que la verdadera sigue creciendo porque el área se reduce más deprisa. Esta misma idea es una opción del examen PA1 2025.","Apuntes T3, diap. 11");
+"Diap. 11: la tensión ingenieril se calcula con el área inicial y la verdadera con el área real: $$\\sigma_{ing}=\\frac{F}{A_0},\\qquad\\sigma_{ver}=\\frac{F}{A}$$ Tras σmax (punto G) empieza la estricción (GH): la fuerza baja y la tensión ingenieril cae hasta $\\sigma_r\\lt\\sigma_{max}$, mientras que la verdadera sigue creciendo porque el área se reduce más deprisa. Esta misma idea es una opción del examen PA1 2025.","Apuntes T3, diap. 11");
 L("T3","Aceros: diagrama",3,"En el diagrama tensión-deformación de un acero de dureza natural recogido en los apuntes, ¿qué afirmación es correcta?",
 ["σp es el límite elástico asociado a una deformación residual del 2 ‰, σe el límite de proporcionalidad y σD el límite superior de fluencia.",
  "σe es el límite elástico asociado a una deformación residual del 2 %, y σf es la tensión de rotura tras la estricción.",
@@ -323,11 +323,11 @@ L("T3","Aceros: características",2,"Según los apuntes, ¿qué afirmación sobr
  "La resiliencia KV es la energía absorbida en el ensayo de Charpy, y la tenacidad es la aptitud del acero para ser soldado sin fisuración en frío."],1,
 "Diap. 12: la resiliencia KV es la energía absorbida en la rotura durante un ensayo de impacto con péndulo de Charpy, y la tenacidad o resistencia a la fractura cuantifica la capacidad de resistir la propagación de una grieta bajo tensión cíclica. La estricción Z es otra característica distinta, y la aptitud para soldar sin fisuración en frío es la soldabilidad (diap. 15).","Apuntes T3, diap. 12");
 L("T3","Aceros: ductilidad",3,"Según los apuntes, señalar la afirmación correcta sobre la ductilidad del acero.",
-["Cuanto mayor es la pendiente de la zona elástica del diagrama σ-ε, mayor es la ductilidad; los requisitos de ductilidad son fu/fy ≥ 1,10, εu ≥ 0,15 y εmáx ≥ 15·εy.",
- "Cuanto mayor es el área encerrada por la zona plástica del diagrama σ-ε, mayor es la ductilidad; los requisitos son fy/fu ≥ 1,10, εu ≥ 0,05 y εmáx ≥ 5·εy.",
- "Cuanto mayor es el área encerrada por la zona plástica del diagrama σ-ε, mayor es la ductilidad; los requisitos de ductilidad indicados son fu/fy ≥ 1,10, εu ≥ 0,15 y εmáx ≥ 15·εy.",
- "Cuanto mayor es el límite elástico, mayor es la ductilidad; un acero dúctil se caracteriza por tener fu/fy ≤ 1,10."],2,
-"Diap. 14: la ductilidad es la capacidad de alcanzar grandes deformaciones sin fractura, y crece con el área de la zona plástica. La figura indica los requisitos de ductilidad fu/fy ≥ 1,10, εu ≥ 0,15 y εmáx ≥ 15·εy. La pendiente elástica es la rigidez (E), no la ductilidad, y fy/fu es siempre menor que 1.","Apuntes T3, diap. 14");
+["Cuanto mayor es la pendiente de la zona elástica del diagrama σ-ε, mayor es la ductilidad; los requisitos de ductilidad son $f_u/f_y\\ge1{,}10$, $\\varepsilon_u\\ge0{,}15$ y $\\varepsilon_{\\text{máx}}\\ge15\\,\\varepsilon_y$.",
+ "Cuanto mayor es el área encerrada por la zona plástica del diagrama σ-ε, mayor es la ductilidad; los requisitos son $f_y/f_u\\ge1{,}10$, $\\varepsilon_u\\ge0{,}05$ y $\\varepsilon_{\\text{máx}}\\ge5\\,\\varepsilon_y$.",
+ "Cuanto mayor es el área encerrada por la zona plástica del diagrama σ-ε, mayor es la ductilidad; los requisitos de ductilidad indicados son $f_u/f_y\\ge1{,}10$, $\\varepsilon_u\\ge0{,}15$ y $\\varepsilon_{\\text{máx}}\\ge15\\,\\varepsilon_y$.",
+ "Cuanto mayor es el límite elástico, mayor es la ductilidad; un acero dúctil se caracteriza por tener $f_u/f_y\\le1{,}10$."],2,
+"Diap. 14: la ductilidad es la capacidad de alcanzar grandes deformaciones sin fractura, y crece con el área de la zona plástica. La figura indica los requisitos de ductilidad: $$\\frac{f_u}{f_y}\\ge1{,}10,\\qquad\\varepsilon_u\\ge0{,}15,\\qquad\\varepsilon_{\\text{máx}}\\ge15\\,\\varepsilon_y$$ La pendiente elástica es la rigidez (E), no la ductilidad, y fy/fu es siempre menor que 1.","Apuntes T3, diap. 14");
 L("T3","Aceros: ductilidad",3,"Señalar las respuestas correctas (puede haber más de una). Según los apuntes, favorecen la rotura frágil del acero:",
 ["Los mayores espesores, porque aparecen tensiones normales a la superficie","Las soldaduras, por las contracciones del enfriamiento rápido del material de aporte, los defectos de fusión y el cruce de cordones","El aumento de la temperatura ambiental de servicio","El empleo de aceros de grado J2 en lugar de grado JR"],[0,1],
 "La diap. 14 enumera la ejecución descuidada, los mayores espesores (tensiones normales a la superficie), las singularidades, las soldaduras y la disminución, no el aumento, de la temperatura de servicio. El grado J2 (diap. 16) implica especiales exigencias de resiliencia, lo que mejora el comportamiento frente a la rotura frágil.","Apuntes T3, diap. 14 y 16");
@@ -345,7 +345,7 @@ L("T3","Aceros: tecnológicas",2,"Según los apuntes, respecto al desgarro lamin
 "Diap. 15: la resistencia al desgarro laminar es la resistencia a la aparición de fisuras en piezas soldadas con tensiones de tracción perpendiculares a su superficie. Se evita con aceros de resistencia mejorada a la deformación en esa dirección y con un proyecto adecuado de los detalles constructivos. La fisuración en frío está ligada a la soldabilidad, y los mayores espesores agravan el problema (diap. 14).","Apuntes T3, diap. 15");
 L("T3","Aceros: tecnológicas",3,"Una barra de diámetro φ se dobla de modo que su eje describe un arco de radio 2φ y su fibra exterior un arco de radio 2,5φ. Siguiendo el razonamiento de los apuntes, la deformación de la fibra exterior respecto a la longitud inicial del eje es:",
 ["25 %","20 %","50 %","2,5 %"],0,
-"Para un mismo ángulo, las longitudes de arco son proporcionales al radio: ε = (2,5φ − 2φ)/2φ = 0,25, es decir, un 25 %. En el ejemplo de la diap. 15 (eje a 2,5φ y fibra exterior a 3φ) resulta (3 − 2,5)/2,5 = 0,20; aquí el radio del eje es menor, el doblado es más cerrado y la deformación crece. Por eso los apuntes recuerdan que en ganchos y patillas se alcanzan deformaciones elevadas y que la aptitud al doblado es un índice de ductilidad.","Apuntes T3, diap. 15");
+"Para un mismo ángulo de doblado θ, las longitudes de arco son proporcionales al radio, así que la deformación de la fibra exterior respecto al eje es: $$\\varepsilon=\\frac{r_{ext}\\,\\theta-r_{eje}\\,\\theta}{r_{eje}\\,\\theta}=\\frac{2{,}5\\phi-2\\phi}{2\\phi}=0{,}25=\\boxed{25\\ \\%}$$ En el ejemplo de la diap. 15 (eje a 2,5φ y fibra exterior a 3φ) resulta (3 − 2,5)/2,5 = 0,20; aquí el radio del eje es menor, el doblado es más cerrado y la deformación crece. Por eso los apuntes recuerdan que en ganchos y patillas se alcanzan deformaciones elevadas y que la aptitud al doblado es un índice de ductilidad.","Apuntes T3, diap. 15");
 L("T3","Aceros: designación",2,"En la designación de un acero estructural S 355 J2:",
 ["355 es la resistencia a tracción fu mínima en MPa, y J2 indica aplicación con especiales exigencias de resistencia, resiliencia y soldabilidad",
  "355 es el valor mínimo garantizado del límite elástico fy en MPa, y J2 indica aplicación en construcción con altas exigencias de soldabilidad",
@@ -365,11 +365,11 @@ L("T3","Aceros: designación",3,"En los símbolos del grupo 2 de la designación
  "M: laminación termomecánica; S: soldable; T: tubos"],1,
 "Tabla del grupo 2 (diap. 16): C, conformado especial en frío; D, galvanización en caliente; E, esmaltado; F, forjado; H, perfil hueco; L, baja temperatura; M, laminación termomecánica; N, normalizado; P, tablestacas; Q, templado y revenido; S, construcción naval; T, tubos; W, resistente a la corrosión atmosférica. Cada distractor contiene al menos un significado erróneo (W y S no significan «soldable»).","Apuntes T3, diap. 16");
 L("T3","Aceros: valores",3,"Según la tabla de los apuntes, una chapa de acero S 355 de 50 mm de espesor tiene:",
-["fy = 355 MPa y 490 < fu < 680 MPa",
- "fy = 335 MPa y 490 < fu < 680 MPa",
- "fy = 335 MPa y 470 < fu < 630 MPa",
- "fy = 315 MPa y 470 < fu < 630 MPa"],2,
-"Con 40 < t ≤ 80 mm, el S 355 tiene fy = 335 MPa y 470 < fu < 630 MPa (diap. 17). Los valores 355 y 490–680 corresponden a t ≤ 40 mm. Al aumentar el espesor disminuyen tanto fy como el intervalo de fu, así que no se puede combinar el fy reducido con el fu de espesores pequeños.","Apuntes T3, diap. 17");
+["$f_y=355\\text{ MPa}$ y $490\\lt f_u\\lt680\\text{ MPa}$",
+ "$f_y=335\\text{ MPa}$ y $490\\lt f_u\\lt680\\text{ MPa}$",
+ "$f_y=335\\text{ MPa}$ y $470\\lt f_u\\lt630\\text{ MPa}$",
+ "$f_y=315\\text{ MPa}$ y $470\\lt f_u\\lt630\\text{ MPa}$"],2,
+"Tabla de la diap. 17 para el S 355 con $40\\lt t\\le80\\text{ mm}$: $$f_y=335\\text{ MPa},\\qquad470\\lt f_u\\lt630\\text{ MPa}$$ Los valores 355 y 490–680 corresponden a $t\\le40\\text{ mm}$. Al aumentar el espesor disminuyen tanto fy como el intervalo de fu, así que no se puede combinar el fy reducido con el fu de espesores pequeños.","Apuntes T3, diap. 17");
 L("T3","Aceros: valores",3,"Según la tabla de aceros más empleados de los apuntes, ¿cuál de las siguientes designaciones NO figura en ella?",
 ["S 450 J0","S 355 K2","S 235 J2","S 450 J2"],3,
 "La tabla de la diap. 17 incluye S 235 (JR, J0, J2), S 275 (JR, J0, J2), S 355 (JR, J0, J2, K2) y S 450 solo en grado J0. El grado K2 existe únicamente para el S 355, y para el S 450 no figuran JR, J2 ni K2.","Apuntes T3, diap. 17");
@@ -380,10 +380,10 @@ L("T3","Hormigón: componentes",2,"Según los apuntes, el proceso de obtención 
  "calizas y arcillas se calcinan para obtener directamente el cemento; el clínker es un subproducto que se añade como árido"],1,
 "Diap. 18: calizas + arcillas, mediante pulverización, mezcla y calcinación, dan el clínker; clínker + yeso, mediante pulverización, dan el cemento. El yeso solo interviene en la segunda etapa y no se calcina, y las arcillas intervienen en la primera.","Apuntes T3, diap. 18");
 L("T3","Hormigón: componentes",1,"Según los apuntes, los áridos del hormigón (arenas, gravas, rocas machacadas o escoria siderúrgica) se clasifican en:",
-["finos o arenas (φ ≤ 2 mm) y gruesos o gravas (φ > 2 mm)",
- "finos o arenas (φ ≤ 4 mm) y gruesos o gravas (φ > 20 mm)",
- "finos o arenas (φ ≤ 0,06 mm) y gruesos o gravas (φ > 0,06 mm)",
- "finos o arenas (φ ≤ 4 mm) y gruesos o gravas (φ > 4 mm)"],3,
+["finos o arenas ($\\phi\\le2\\text{ mm}$) y gruesos o gravas ($\\phi\\gt2\\text{ mm}$)",
+ "finos o arenas ($\\phi\\le4\\text{ mm}$) y gruesos o gravas ($\\phi\\gt20\\text{ mm}$)",
+ "finos o arenas ($\\phi\\le0{,}06\\text{ mm}$) y gruesos o gravas ($\\phi\\gt0{,}06\\text{ mm}$)",
+ "finos o arenas ($\\phi\\le4\\text{ mm}$) y gruesos o gravas ($\\phi\\gt4\\text{ mm}$)"],3,
 "Diap. 18: áridos finos o arenas φ ≤ 4 mm, y áridos gruesos o gravas φ > 4 mm. Los límites de 2 mm y 0,06 mm son los de la escala granulométrica de suelos (diap. 40), que separan gravilla, arena y limo, y no se aplican a los áridos del hormigón. Con un límite de 20 mm quedaría sin clasificar el intervalo de 4 a 20 mm.","Apuntes T3, diap. 18");
 L("T3","Hormigón: componentes",3,"Señalar las respuestas correctas (puede haber más de una). Según los apuntes, NO son aceptables en general para el amasado del hormigón:",
 ["El agua de mar, por su alto contenido en cloruros","El agua de alta montaña, por su agresividad","Las aguas pantanosas, por su alto contenido en cloruros","El agua de alta montaña, por la existencia de limos y algas que dificultan la adherencia pasta-árido"],[0,1],
@@ -432,7 +432,7 @@ L("T3","Hormigón: reológicas",3,"En la expresión de los apuntes εcσ(t,t0) =
  "la deformación diferida, calculada con el módulo a 28 días E0,28 y el coeficiente de fluencia φ(t,t0), producto del coeficiente básico φ0 por la función de desarrollo en el tiempo βc",
  "la deformación diferida, calculada con el módulo en el momento de puesta en carga, siendo βc el coeficiente básico de fluencia y φ0 la función de desarrollo en el tiempo",
  "la deformación por retracción, que se suma a la de fluencia aunque no haya carga"],1,
-"Diap. 23: el término 1/E0,t0 da la deformación instantánea y φ(t,t0)/E0,28 la diferida. φ0 es el coeficiente básico de fluencia y βc(t − t0) su desarrollo en el tiempo; la tercera opción intercambia estos dos papeles y el módulo. La retracción no forma parte de esta expresión, porque es proporcional a σ(t0) y por tanto se anula sin carga.","Apuntes T3, diap. 23");
+"Diap. 23: $$\\varepsilon_{c\\sigma}(t,t_0)=\\sigma(t_0)\\left[\\frac{1}{E_{0,t_0}}+\\frac{\\varphi(t,t_0)}{E_{0,28}}\\right],\\qquad\\varphi(t,t_0)=\\varphi_0\\,\\beta_c(t-t_0)$$ El término 1/E0,t0 da la deformación instantánea y φ(t,t0)/E0,28 la diferida. φ0 es el coeficiente básico de fluencia y βc(t − t0) su desarrollo en el tiempo; la tercera opción intercambia estos dos papeles y el módulo. La retracción no forma parte de esta expresión, porque es proporcional a σ(t0) y por tanto se anula sin carga.","Apuntes T3, diap. 23");
 L("T3","Hormigón: reológicas",2,"Según la gráfica del coeficiente de fluencia φ0(t0) de los apuntes, respecto a la edad del hormigón en el momento de la puesta en carga:",
 ["cuanto mayor es t0, mayor es el coeficiente de fluencia, porque el hormigón más viejo ha acumulado más deformación",
  "el coeficiente φ0 no depende de t0, sino solo de la humedad relativa y del espesor de la pieza",
@@ -464,35 +464,35 @@ L("T3","Hormigón: mecánicas",2,"Según las curvas de comportamiento a compresi
  "la tensión máxima se alcanza para una deformación de ≈ 0,0002, del orden de la deformación en el límite elástico del acero"],1,
 "En la diap. 28 todas las curvas tienen el máximo en torno a ε = 0,002 (línea roja). La de fck = 50 MPa cae bruscamente y termina hacia 0,003, mientras que la de 25 MPa desciende suavemente y llega a 0,004: el hormigón de alta resistencia es más frágil. El valor 0,0035 es la deformación última εcu del diagrama de cálculo (diap. 30).","Apuntes T3, diap. 28 y 30");
 L("T3","Hormigón: mecánicas",3,"Para un hormigón de fck = 90 N/mm², los parámetros del diagrama parábola-rectángulo según las expresiones de los apuntes son aproximadamente:",
-["n = 2; εc0 = 0,002; εcu = 0,0035",
- "n ≈ 1,4; εc0 = 0,002; εcu = 0,0035",
- "n ≈ 11; εc0 ≈ 0,0025; εcu ≈ 0,017",
- "n ≈ 1,4; εc0 ≈ 0,0025; εcu ≈ 0,0026"],3,
-"Con fck > 50: (100 − 90)/100 = 0,1 y 0,1⁴ = 0,0001. n = 1,4 + 9,6·0,0001 ≈ 1,4; εc0 = 0,002 + 0,000085·√40 ≈ 0,0025; εcu = 0,0026 + 0,0144·0,0001 ≈ 0,0026. La primera opción usa los valores de fck ≤ 50, y la tercera olvida elevar a la cuarta potencia (1,4 + 9,6 y 0,0026 + 0,0144). En alta resistencia la rama horizontal casi desaparece, coherente con la fragilidad de la diap. 28.","Apuntes T3, diap. 30");
+["$n=2;\\ \\varepsilon_{c0}=0{,}002;\\ \\varepsilon_{cu}=0{,}0035$",
+ "$n\\approx1{,}4;\\ \\varepsilon_{c0}=0{,}002;\\ \\varepsilon_{cu}=0{,}0035$",
+ "$n\\approx11;\\ \\varepsilon_{c0}\\approx0{,}0025;\\ \\varepsilon_{cu}\\approx0{,}017$",
+ "$n\\approx1{,}4;\\ \\varepsilon_{c0}\\approx0{,}0025;\\ \\varepsilon_{cu}\\approx0{,}0026$"],3,
+"Para fck > 50 se usan las expresiones de alta resistencia, con (100 − fck)/100 = 0,1 y 0,1⁴ = 0,0001: $$n=1{,}4+9{,}6\\left(\\frac{100-f_{ck}}{100}\\right)^4=1{,}4+9{,}6\\cdot0{,}0001\\approx\\boxed{1{,}4}$$ $$\\varepsilon_{c0}=0{,}002+0{,}000085\\,(f_{ck}-50)^{0{,}5}=0{,}002+0{,}000085\\sqrt{40}\\approx\\boxed{0{,}0025}$$ $$\\varepsilon_{cu}=0{,}0026+0{,}0144\\left(\\frac{100-f_{ck}}{100}\\right)^4\\approx\\boxed{0{,}0026}$$ La primera opción usa los valores de fck ≤ 50, y la tercera olvida elevar a la cuarta potencia (1,4 + 9,6 ≈ 11 y 0,0026 + 0,0144 ≈ 0,017). En alta resistencia la rama horizontal casi desaparece, coherente con la fragilidad de la diap. 28.","Apuntes T3, diap. 30");
 L("T3","Hormigón: mecánicas",1,"Según los apuntes, en la resistencia de cálculo del hormigón fcd = αcc·fck/γc:",
-["γc = 1,3 en situación persistente o transitoria y 1,5 en situación accidental, con 0,85 ≤ αcc ≤ 1",
- "γc = 1,5 en situación persistente o transitoria y 1,0 en situación accidental, con αcc = 0,85 fijo",
- "γc = 1,15 en situación persistente o transitoria y 1,0 en situación accidental, con 0,85 ≤ αcc ≤ 1",
- "γc = 1,5 en situación persistente o transitoria y 1,3 en situación accidental, con 0,85 ≤ αcc ≤ 1"],3,
-"Tabla de la diap. 30: γc = 1,5 en situación persistente o transitoria y 1,3 en accidental, con 0,85 ≤ αcc ≤ 1. En la situación accidental el coeficiente es menor, no mayor, y los valores 1,15 y 1,0 son los habituales del acero, no del hormigón.","Apuntes T3, diap. 30");
+["$\\gamma_c=1{,}3$ en situación persistente o transitoria y 1,5 en situación accidental, con $0{,}85\\le\\alpha_{cc}\\le1$",
+ "$\\gamma_c=1{,}5$ en situación persistente o transitoria y 1,0 en situación accidental, con $\\alpha_{cc}=0{,}85$ fijo",
+ "$\\gamma_c=1{,}15$ en situación persistente o transitoria y 1,0 en situación accidental, con $0{,}85\\le\\alpha_{cc}\\le1$",
+ "$\\gamma_c=1{,}5$ en situación persistente o transitoria y 1,3 en situación accidental, con $0{,}85\\le\\alpha_{cc}\\le1$"],3,
+"Tabla de la diap. 30: $$f_{cd}=\\frac{\\alpha_{cc}\\,f_{ck}}{\\gamma_c},\\qquad\\gamma_c=\\begin{cases}1{,}5&\\text{persistente o transitoria}\\\\1{,}3&\\text{accidental}\\end{cases},\\qquad0{,}85\\le\\alpha_{cc}\\le1$$ En la situación accidental el coeficiente es menor, no mayor, y los valores 1,15 y 1,0 son los habituales del acero, no del hormigón.","Apuntes T3, diap. 30");
 L("T3","Hormigón: mecánicas",3,"Para un HA-35 en situación accidental, con αcc = 0,85, la resistencia de cálculo fcd según los apuntes es aproximadamente:",
 ["22,9 N/mm²","19,8 N/mm²","26,9 N/mm²","23,3 N/mm²"],0,
-"En situación accidental γc = 1,3: fcd = 0,85·35/1,3 ≈ 22,9 N/mm². Con γc = 1,5 (persistente) saldría 19,8; sin αcc, 35/1,3 ≈ 26,9; y 35/1,5 ≈ 23,3 omite αcc y usa el coeficiente persistente.","Apuntes T3, diap. 30 (cálculo)");
+"En situación accidental γc = 1,3 (diap. 30): $$f_{cd}=\\alpha_{cc}\\,\\frac{f_{ck}}{\\gamma_c}=0{,}85\\cdot\\frac{35}{1{,}3}\\approx\\boxed{22{,}9\\text{ N/mm}^2}$$ Con γc = 1,5 (persistente) saldría 19,8; sin αcc, 35/1,3 ≈ 26,9; y 35/1,5 ≈ 23,3 omite αcc y usa el coeficiente persistente.","Apuntes T3, diap. 30 (cálculo)");
 L("T3","Hormigón: mecánicas",3,"En el diagrama parábola-rectángulo de un hormigón con fck ≤ 50 N/mm², la tensión para una deformación εc = 0,001 vale:",
-["0,50·fcd","0,75·fcd","0,25·fcd","fcd"],1,
-"Con n = 2 y εc0 = 0,002: σc = fcd·[1 − (1 − 0,001/0,002)²] = fcd·(1 − 0,25) = 0,75·fcd. Una relación lineal daría 0,50·fcd, quedarse con el término (1 − εc/εc0)² daría 0,25·fcd, y fcd solo se alcanza a partir de εc0 = 0,002.","Apuntes T3, diap. 30");
+["$0{,}50\\,f_{cd}$","$0{,}75\\,f_{cd}$","$0{,}25\\,f_{cd}$","$f_{cd}$"],1,
+"Diagrama parábola-rectángulo con n = 2 y εc0 = 0,002 (fck ≤ 50): $$\\sigma_c=f_{cd}\\left[1-\\left(1-\\frac{\\varepsilon_c}{\\varepsilon_{c0}}\\right)^{n}\\right]=f_{cd}\\left[1-\\left(1-\\frac{0{,}001}{0{,}002}\\right)^2\\right]$$ $$\\sigma_c=f_{cd}\\,(1-0{,}25)=\\boxed{0{,}75\\,f_{cd}}$$ Una relación lineal daría 0,50·fcd, quedarse con el término (1 − εc/εc0)² daría 0,25·fcd, y fcd solo se alcanza a partir de εc0 = 0,002.","Apuntes T3, diap. 30");
 L("T3","Hormigón: mecánicas",3,"Para un hormigón de fck = 27 MPa, según las expresiones de los apuntes:",
-["fct,m = 1,89 MPa y fct,k = 2,70 MPa",
- "fct,m = 3,51 MPa y fct,k = 2,70 MPa",
- "fct,m = 2,70 MPa y fct,k = 3,51 MPa",
- "fct,m = 2,70 MPa y fct,k = 1,89 MPa"],3,
-"fck^(2/3) = 27^(2/3) = 9. Media: 0,30·9 = 2,70 MPa; característica: 0,21·9 = 1,89 MPa; cuantil del 95 %: 0,39·9 = 3,51 MPa. La característica (cuantil del 5 %) es menor que la media, y la del 95 % mayor; los distractores intercambian los coeficientes.","Apuntes T3, diap. 31 (cálculo)");
+["$f_{ct,m}=1{,}89\\text{ MPa}$ y $f_{ct,k}=2{,}70\\text{ MPa}$",
+ "$f_{ct,m}=3{,}51\\text{ MPa}$ y $f_{ct,k}=2{,}70\\text{ MPa}$",
+ "$f_{ct,m}=2{,}70\\text{ MPa}$ y $f_{ct,k}=3{,}51\\text{ MPa}$",
+ "$f_{ct,m}=2{,}70\\text{ MPa}$ y $f_{ct,k}=1{,}89\\text{ MPa}$"],3,
+"Diap. 31: las tres resistencias a tracción se expresan en función de $f_{ck}^{2/3}$: $$f_{ck}^{2/3}=27^{2/3}=9$$ $$f_{ct,m}=0{,}30\\cdot9=\\boxed{2{,}70\\text{ MPa}},\\qquad f_{ct,k}=0{,}21\\cdot9=\\boxed{1{,}89\\text{ MPa}}$$ $$f_{ct,k,0{,}95}=0{,}39\\cdot9=3{,}51\\text{ MPa}$$ La característica (cuantil del 5 %) es menor que la media, y la del 95 % mayor; los distractores intercambian los coeficientes.","Apuntes T3, diap. 31 (cálculo)");
 L("T3","Hormigón: mecánicas",2,"Sobre la resistencia a tracción del hormigón según los apuntes:",
 ["Normalmente se refiere a la resistencia media y es un parámetro fundamental del proyecto de piezas de hormigón armado.",
- "Se expresa en función de fck^(2/3); el valor característico usa el coeficiente 0,30 y el valor medio el 0,21.",
- "El valor del cuantil del 95 %, fct,k,0,95 = 0,39·fck^(2/3), es menor que el valor característico fct,k.",
+ "Se expresa en función de $f_{ck}^{2/3}$; el valor característico usa el coeficiente 0,30 y el valor medio el 0,21.",
+ "El valor del cuantil del 95 %, $f_{ct,k,0{,}95}=0{,}39\\,f_{ck}^{2/3}$, es menor que el valor característico $f_{ct,k}$.",
  "Ninguna de las anteriores."],3,
-"Diap. 31: normalmente se refiere a la resistencia característica, fct,k = 0,21·fck^(2/3); la media es 0,30·fck^(2/3) y el cuantil del 95 % es 0,39·fck^(2/3), el mayor de los tres. Los apuntes subrayan su escasa aplicación en proyecto. Las tres afirmaciones son falsas.","Apuntes T3, diap. 31");
+"Diap. 31: normalmente se refiere a la resistencia característica; las tres expresiones son $$f_{ct,k}=0{,}21\\,f_{ck}^{2/3},\\qquad f_{ct,m}=0{,}30\\,f_{ck}^{2/3},\\qquad f_{ct,k,0{,}95}=0{,}39\\,f_{ck}^{2/3}$$ y la del cuantil del 95 % es la mayor de las tres. Los apuntes subrayan su escasa aplicación en proyecto. Las tres afirmaciones son falsas.","Apuntes T3, diap. 31");
 L("T3","Hormigón: rigidez",3,"Según los apuntes, respecto a los módulos de deformación del hormigón:",
 ["Ec,sec45 es la pendiente de la tangente a la curva en el punto en que se alcanza el 45 % de fck, y el módulo inicial Ec,0 es la pendiente de la secante desde el origen hasta el pico.",
  "Ec,sec45 es la pendiente de la secante cuando la deformación alcanza el 0,45 ‰, y el módulo tangente es constante en toda la rama ascendente.",
@@ -602,23 +602,23 @@ L("T3","Suelos",3,"Según los apuntes, al aumentar la humedad w de una arcilla, 
  "semisólido → (límite de retracción) → sólido → (límite plástico) → plástico → (límite líquido) → semilíquido"],2,
 "En el eje de humedad de la diap. 41: sólido; límite de retracción; semisólido; límite plástico (PL); plástico; límite líquido (LL); semilíquido o viscoso. Los distractores permutan el límite de retracción con el plástico o el orden de los estados sólido y semisólido.","Apuntes T3, diap. 41");
 L("T3","Suelos: fases",3,"Con la notación de los apuntes (Ws peso de sólidos, Vs volumen de sólidos, Vh volumen de huecos, Vm volumen total), indicar cuál de las siguientes expresiones es incorrecta.",
-["γ′ = γsat − γw","γsat = (Ws + Vh·γw)/Vm","γs = Ws/Vs = Gs·γw","γ′ = (Ws − Vh·γw)/Vm"],3,
-"Las tres primeras son las de la diap. 43. Restando: γsat − γw = (Ws + Vh·γw − Vm·γw)/Vm = (Ws − Vs·γw)/Vm, porque Vm − Vh = Vs. El peso sumergido descuenta el empuje sobre el volumen de sólidos, no sobre el de huecos.","Apuntes T3, diap. 43");
+["$\\gamma'=\\gamma_{sat}-\\gamma_w$","$\\gamma_{sat}=\\dfrac{W_s+V_h\\,\\gamma_w}{V_m}$","$\\gamma_s=\\dfrac{W_s}{V_s}=G_s\\,\\gamma_w$","$\\gamma'=\\dfrac{W_s-V_h\\,\\gamma_w}{V_m}$"],3,
+"Las tres primeras son las de la diap. 43. Restando γw a γsat, y teniendo en cuenta que Vm − Vh = Vs: $$\\gamma'=\\gamma_{sat}-\\gamma_w=\\frac{W_s+V_h\\gamma_w-V_m\\gamma_w}{V_m}=\\frac{W_s-V_s\\,\\gamma_w}{V_m}$$ Por tanto, la expresión con Vh es la incorrecta: el peso sumergido descuenta el empuje sobre el volumen de sólidos, no sobre el de huecos.","Apuntes T3, diap. 43");
 L("T3","Suelos: fases",2,"Un suelo tiene un índice de huecos e = 0,6. Su porosidad n y la fracción del volumen total ocupada por los sólidos son:",
-["n = 0,375 y 0,625","n = 0,60 y 0,40","n = 0,625 y 0,375","n = 0,375 y 0,60"],0,
-"n = e/(1 + e) = 0,6/1,6 = 0,375, y los sólidos ocupan 1 − n = 0,625 del volumen total (en el esquema de la diap. 44, Vs = 1 y Vm = 1 + e). Confundir n con e da 0,60, y la tercera opción invierte las dos fracciones.","Apuntes T3, diap. 44");
+["$n=0{,}375$ y $0{,}625$","$n=0{,}60$ y $0{,}40$","$n=0{,}625$ y $0{,}375$","$n=0{,}375$ y $0{,}60$"],0,
+"Tomando Vs = 1, el volumen de huecos es e y el total, Vm = 1 + e (esquema de la diap. 44): $$n=\\frac{V_h}{V_m}=\\frac{e}{1+e}=\\frac{0{,}6}{1{,}6}=\\boxed{0{,}375}$$ $$\\frac{V_s}{V_m}=1-n=\\frac{1}{1+e}=\\boxed{0{,}625}$$ Confundir n con e da 0,60, y la tercera opción invierte las dos fracciones.","Apuntes T3, diap. 44");
 L("T3","Suelos: fases",2,"Respecto a los índices de fase definidos en los apuntes, señalar la afirmación correcta.",
-["La humedad es w = Ww/Wm, referida al peso total, y el grado de saturación es S = Vw/Vm.",
- "La humedad es w = Vw/(Va + Vw), y el grado de saturación es S = Ww/Ws.",
- "La humedad es w = Ww/Ws = (Wm − Ws)/Ws, referida al peso de los sólidos, y el grado de saturación es S = Vw/(Va + Vw).",
- "La humedad es w = Ww/Ws, y el grado de saturación es S = Vw/Vs, que puede superar la unidad."],2,
-"Diap. 44: w = Ww/Ws = (Wm − Ws)/Ws y S = Vw/(Va + Vw), es decir, el agua respecto al volumen de huecos (de 0 en suelo seco a 1 en suelo saturado). Referir la humedad al peso total o la saturación al volumen total o de sólidos son confusiones habituales; la segunda opción intercambia las dos definiciones.","Apuntes T3, diap. 44");
+["La humedad es $w=W_w/W_m$, referida al peso total, y el grado de saturación es $S=V_w/V_m$.",
+ "La humedad es $w=\\dfrac{V_w}{V_a+V_w}$, y el grado de saturación es $S=W_w/W_s$.",
+ "La humedad es $w=\\dfrac{W_w}{W_s}=\\dfrac{W_m-W_s}{W_s}$, referida al peso de los sólidos, y el grado de saturación es $S=\\dfrac{V_w}{V_a+V_w}$.",
+ "La humedad es $w=W_w/W_s$, y el grado de saturación es $S=V_w/V_s$, que puede superar la unidad."],2,
+"Diap. 44: $$w=\\frac{W_w}{W_s}=\\frac{W_m-W_s}{W_s},\\qquad S=\\frac{V_w}{V_a+V_w}$$ La humedad se refiere al peso de los sólidos y el grado de saturación, al volumen de huecos (de 0 en suelo seco a 1 en suelo saturado). Referir la humedad al peso total o la saturación al volumen total o de sólidos son confusiones habituales; la segunda opción intercambia las dos definiciones.","Apuntes T3, diap. 44");
 L("T3","Suelos: fases",3,"Un suelo tiene Gs = 2,7 y e = 1,5. Con γw = 1 t/m³, sus pesos específicos seco, saturado y sumergido son:",
-["γd = 1,08; γsat = 2,68; γ′ = 1,68 t/m³","γd = 1,80; γsat = 1,68; γ′ = 0,68 t/m³","γd = 1,08; γsat = 1,68; γ′ = 2,68 t/m³","γd = 1,08; γsat = 1,68; γ′ = 0,68 t/m³"],3,
-"Tomando Vs = 1: Vm = 1 + e = 2,5 y Ws = Gs·γw = 2,7. γd = 2,7/2,5 = 1,08; γsat = (2,7 + 1,5)/2,5 = 1,68; γ′ = γsat − γw = 0,68 t/m³. Son los datos del ejercicio de la hoja oficial de soluciones de 2024. Los errores típicos son sumar γw en lugar de restarlo, o dividir Gs por e en lugar de por 1 + e.","Apuntes T3, diap. 43-44 · Hoja de soluciones 2024");
+["$\\gamma_d=1{,}08;\\ \\gamma_{sat}=2{,}68;\\ \\gamma'=1{,}68\\text{ t/m}^3$","$\\gamma_d=1{,}80;\\ \\gamma_{sat}=1{,}68;\\ \\gamma'=0{,}68\\text{ t/m}^3$","$\\gamma_d=1{,}08;\\ \\gamma_{sat}=1{,}68;\\ \\gamma'=2{,}68\\text{ t/m}^3$","$\\gamma_d=1{,}08;\\ \\gamma_{sat}=1{,}68;\\ \\gamma'=0{,}68\\text{ t/m}^3$"],3,
+"Tomando Vs = 1: Vm = 1 + e = 2,5, Ws = Gs·γw = 2,7 y, en saturación, el agua llena el volumen de huecos Vh = e = 1,5. $$\\gamma_d=\\frac{W_s}{V_m}=\\frac{G_s\\,\\gamma_w}{1+e}=\\frac{2{,}7}{2{,}5}=\\boxed{1{,}08\\text{ t/m}^3}$$ $$\\gamma_{sat}=\\frac{W_s+V_h\\,\\gamma_w}{V_m}=\\frac{2{,}7+1{,}5}{2{,}5}=\\boxed{1{,}68\\text{ t/m}^3}$$ $$\\gamma'=\\gamma_{sat}-\\gamma_w=1{,}68-1=\\boxed{0{,}68\\text{ t/m}^3}$$ Son los datos del ejercicio de la hoja oficial de soluciones de 2024. Los errores típicos son sumar γw en lugar de restarlo, o dividir Ws por e en lugar de por 1 + e (2,7/1,5 = 1,80).","Apuntes T3, diap. 43-44 · Hoja de soluciones 2024");
 L("T3","Suelos: fases",2,"El peso específico de la fase sólida de un suelo es γs = 26,5 kN/m³. Con γw = 10 kN/m³ y según los apuntes:",
-["Gs = 2,65, dentro del intervalo habitual de 2,3 a 2,8","Gs ≈ 0,38, porque Gs = γw/γs","Gs = 2,65, fuera del intervalo habitual de 1,0 a 1,5","Gs = 26,5, porque la gravedad específica tiene unidades de peso específico"],0,
-"Diap. 43: γs = Ws/Vs = Gs·γw, así que Gs = γs/γw = 26,5/10 = 2,65, adimensional y dentro del intervalo de los apuntes (≈ 2,3 a 2,8). La relación inversa o la confusión con el propio peso específico son los errores que reflejan los distractores.","Apuntes T3, diap. 43");
+["$G_s=2{,}65$, dentro del intervalo habitual de 2,3 a 2,8","$G_s\\approx0{,}38$, porque $G_s=\\gamma_w/\\gamma_s$","$G_s=2{,}65$, fuera del intervalo habitual de 1,0 a 1,5","$G_s=26{,}5$, porque la gravedad específica tiene unidades de peso específico"],0,
+"Diap. 43: la gravedad específica es el cociente entre el peso específico de los sólidos y el del agua: $$\\gamma_s=\\frac{W_s}{V_s}=G_s\\,\\gamma_w\\ \\Rightarrow\\ G_s=\\frac{\\gamma_s}{\\gamma_w}=\\frac{26{,}5}{10}=\\boxed{2{,}65}$$ Es adimensional y está dentro del intervalo de los apuntes (≈ 2,3 a 2,8). La relación inversa o la confusión con el propio peso específico son los errores que reflejan los distractores.","Apuntes T3, diap. 43");
 L("T3","Suelos: fases",1,"Señalar la afirmación correcta sobre las fases y el agua en el suelo según los apuntes.",
 ["Un suelo saturado tiene los huecos llenos de aire y agua, y uno parcialmente saturado tiene todos sus huecos llenos de agua.",
  "Un suelo saturado tiene los huecos llenos de agua; por encima del nivel freático solo puede haber suelo seco, porque el agua no asciende desde la capa freática.",
@@ -627,10 +627,10 @@ L("T3","Suelos: fases",1,"Señalar la afirmación correcta sobre las fases y el 
 "Diap. 42: seco, huecos llenos de aire; saturado, huecos llenos de agua; parcialmente saturado, aire y agua. Por encima del nivel freático hay agua higroscópica (fuerzas de atracción), adsorbida (tensión superficial) y capilar, que asciende de la capa freática.","Apuntes T3, diap. 42");
 L("T3","Terzaghi",3,"El principio de Terzaghi se expresa en los apuntes como σ′ij = σij − u·δij. De esta expresión se deduce que:",
 ["la presión intersticial reduce por igual las componentes normales y las tangenciales del tensor de tensiones",
- "la presión intersticial solo afecta a las componentes normales (i = j), de modo que la tensión tangencial efectiva coincide con la total",
+ "la presión intersticial solo afecta a las componentes normales ($i=j$), de modo que la tensión tangencial efectiva coincide con la total",
  "la presión intersticial aumenta las tensiones normales efectivas, porque el agua colabora con el esqueleto sólido",
- "las tensiones totales son las efectivas menos la presión intersticial, σij = σ′ij − u·δij"],1,
-"La delta de Kronecker vale 1 si i = j y 0 si i ≠ j, de modo que u solo se resta de las tensiones normales: σ′ = σ − u y τ′ = τ, ya que el agua no transmite cortante. Por eso en el examen de 2024 (σ = 30 kPa, τ = 20 kPa, u = 5 kPa) resulta σ′ = 25 kPa y τ′ = 20 kPa. La última opción invierte el signo de la relación.","Apuntes T3, diap. 46");
+ "las tensiones totales son las efectivas menos la presión intersticial, $\\sigma_{ij}=\\sigma'_{ij}-u\\,\\delta_{ij}$"],1,
+"La delta de Kronecker vale 1 si i = j y 0 si i ≠ j, de modo que u solo se resta de las tensiones normales: $$\\sigma'_{ij}=\\sigma_{ij}-u\\,\\delta_{ij}\\ \\Rightarrow\\ \\sigma'=\\sigma-u,\\qquad\\tau'=\\tau$$ El agua no transmite cortante. Por eso en el examen de 2024 (σ = 30 kPa, τ = 20 kPa, u = 5 kPa): $$\\sigma'=30-5=25\\text{ kPa},\\qquad\\tau'=20\\text{ kPa}$$ La última opción invierte el signo de la relación.","Apuntes T3, diap. 46");
 L("T3","Terzaghi",1,"Según los apuntes, en el principio de las tensiones efectivas:",
 ["el equilibrio se plantea con tensiones efectivas, y el comportamiento (deformación y resistencia) depende de las tensiones totales",
  "el equilibrio se plantea con tensiones totales, y el comportamiento (deformación y resistencia) depende de las tensiones efectivas",
@@ -638,26 +638,26 @@ L("T3","Terzaghi",1,"Según los apuntes, en el principio de las tensiones efecti
  "tanto el equilibrio como el comportamiento se plantean en tensiones totales, y las efectivas solo se usan bajo el nivel freático"],1,
 "Diap. 46: «Equilibrio: tensiones totales. Comportamiento: tensiones efectivas (no totales)». La analogía de la esponja en la bañera de la diap. 45 lo ilustra: sumergida solo en agua no se deforma, aunque la presión total aumente.","Apuntes T3, diap. 46");
 L("T3","Terzaghi",3,"Sobre un terreno saturado de γsat = 20 kN/m³ hay una lámina de agua libre de 3 m (γw = 10 kN/m³). En un punto situado a 4 m por debajo de la superficie del terreno:",
-["σ = 110 kPa, u = 40 kPa y σ′ = 70 kPa; si la lámina sube a 6 m, σ′ aumenta",
- "σ = 110 kPa, u = 70 kPa y σ′ = 40 kPa; si la lámina sube a 6 m, σ′ aumenta 30 kPa",
- "σ = 110 kPa, u = 70 kPa y σ′ = 40 kPa; si la lámina sube a 6 m, σ′ no cambia",
- "σ = 80 kPa, u = 40 kPa y σ′ = 40 kPa, porque la lámina de agua no se incluye en la tensión total"],2,
-"σ = γw·hw + γsat·4 = 30 + 80 = 110 kPa; u = γw·(3 + 4) = 70 kPa; σ′ = 40 kPa = γ′·4. Es el caso 1 de la diap. 46: σ′ = γ′·(z − hw) no depende de hw, porque al subir la lámina σ y u aumentan lo mismo. Por eso no hay deformación. La tensión total sí incluye el peso de la lámina de agua.","Apuntes T3, diap. 46");
+["$\\sigma=110\\text{ kPa}$, $u=40\\text{ kPa}$ y $\\sigma'=70\\text{ kPa}$; si la lámina sube a 6 m, σ′ aumenta",
+ "$\\sigma=110\\text{ kPa}$, $u=70\\text{ kPa}$ y $\\sigma'=40\\text{ kPa}$; si la lámina sube a 6 m, σ′ aumenta 30 kPa",
+ "$\\sigma=110\\text{ kPa}$, $u=70\\text{ kPa}$ y $\\sigma'=40\\text{ kPa}$; si la lámina sube a 6 m, σ′ no cambia",
+ "$\\sigma=80\\text{ kPa}$, $u=40\\text{ kPa}$ y $\\sigma'=40\\text{ kPa}$, porque la lámina de agua no se incluye en la tensión total"],2,
+"Es el caso 1 de la diap. 46 (lámina de agua sobre un terreno saturado). En el punto, a z = 4 m bajo la superficie del terreno: $$\\sigma=\\gamma_w\\,h_w+\\gamma_{sat}\\,z=10\\cdot3+20\\cdot4=\\boxed{110\\text{ kPa}}$$ $$u=\\gamma_w\\,(h_w+z)=10\\cdot(3+4)=\\boxed{70\\text{ kPa}}$$ $$\\sigma'=\\sigma-u=110-70=\\boxed{40\\text{ kPa}}=\\gamma'\\,z=(20-10)\\cdot4$$ σ′ no depende de hw: si la lámina sube a 6 m, σ y u aumentan lo mismo (30 kPa) y σ′ no cambia, por eso no hay deformación. La tensión total sí incluye el peso de la lámina de agua.","Apuntes T3, diap. 46");
 L("T3","Terzaghi",2,"Según los apuntes, al descender el nivel freático de HW1 a HW2 > HW1, las tensiones efectivas a una profundidad H situada por debajo de ambos niveles:",
-["disminuyen, porque el suelo pierde el empuje del agua y pasa a valer σ′ = γ′·H",
+["disminuyen, porque el suelo pierde el empuje del agua y pasa a valer $\\sigma'=\\gamma'H$",
  "no varían, porque la disminución de la presión intersticial se compensa exactamente con la de la tensión total",
- "aumentan, porque σ′ = (γ − γ′)·HW + γ′·H crece con la profundidad del nivel freático al ser γ > γ′; por eso los descensos del nivel freático producen asientos",
- "aumentan, porque la tensión total aumenta en (γsat − γ)·ΔHW mientras la presión intersticial no cambia"],2,
-"Diap. 48: σ′(H) = γ·HW + γ′·(H − HW) = (γ − γ′)·HW + γ′·H, que aumenta con HW porque γ > γ′. Al bajar el nivel la tensión total σ no aumenta, sino que disminuye ligeramente (γ < γsat), pero u disminuye más (γw·ΔHW), y el resultado es un aumento de σ′ que produce asientos.","Apuntes T3, diap. 48");
+ "aumentan, porque $\\sigma'=(\\gamma-\\gamma')\\,H_W+\\gamma' H$ crece con la profundidad del nivel freático al ser $\\gamma\\gt\\gamma'$; por eso los descensos del nivel freático producen asientos",
+ "aumentan, porque la tensión total aumenta en $(\\gamma_{sat}-\\gamma)\\,\\Delta H_W$ mientras la presión intersticial no cambia"],2,
+"Diap. 48, para un punto a profundidad H por debajo del nivel freático HW: $$\\sigma'(H)=\\gamma\\,H_W+\\gamma'\\,(H-H_W)=(\\gamma-\\gamma')\\,H_W+\\gamma'\\,H$$ Como γ > γ′, σ′ aumenta con HW. Al bajar el nivel la tensión total σ no aumenta, sino que disminuye ligeramente (γ < γsat), pero u disminuye más (γw·ΔHW), y el resultado es un aumento de σ′ que produce asientos.","Apuntes T3, diap. 48");
 L("T3","Terzaghi",3,"Un terreno tiene γ = 1,8 t/m³ por encima y γsat = 2,0 t/m³ por debajo del nivel freático, que está a 2 m de profundidad (γw = 1 t/m³). Si el nivel freático desciende hasta 4 m, la tensión efectiva vertical a 5 m de profundidad:",
-["pasa de 9,6 a 9,2 t/m²","pasa de 6,6 a 8,6 t/m², porque aumenta γw·ΔHW = 2 t/m²","pasa de 6,6 a 8,2 t/m²","no cambia (6,6 t/m²), porque el punto sigue bajo el nivel freático"],2,
-"Inicial: σ′ = 1,8·2 + 1,0·3 = 6,6 t/m². Final: σ′ = 1,8·4 + 1,0·1 = 8,2 t/m². El incremento es (γ − γ′)·ΔHW = 0,8·2 = 1,6 t/m², como en la expresión de la diap. 48. 9,6 → 9,2 son las tensiones totales, que bajan, y sumar γw·ΔHW olvida que la tensión total también disminuye.","Apuntes T3, diap. 46-48 (cálculo)");
+["pasa de 9,6 a 9,2 t/m²","pasa de 6,6 a 8,6 t/m², porque aumenta $\\gamma_w\\,\\Delta H_W=2\\text{ t/m}^2$","pasa de 6,6 a 8,2 t/m²","no cambia (6,6 t/m²), porque el punto sigue bajo el nivel freático"],2,
+"Diap. 48, con γ′ = γsat − γw = 1,0 t/m³ por debajo del nivel freático. A 5 m de profundidad: $$H_W=2\\text{ m}:\\quad\\sigma'=1{,}8\\cdot2+1{,}0\\cdot3=\\boxed{6{,}6\\text{ t/m}^2}$$ $$H_W=4\\text{ m}:\\quad\\sigma'=1{,}8\\cdot4+1{,}0\\cdot1=\\boxed{8{,}2\\text{ t/m}^2}$$ $$\\Delta\\sigma'=(\\gamma-\\gamma')\\,\\Delta H_W=0{,}8\\cdot2=1{,}6\\text{ t/m}^2$$ 9,6 → 9,2 son las tensiones totales, que bajan, y sumar γw·ΔHW = 2 t/m² olvida que la tensión total también disminuye.","Apuntes T3, diap. 46-48 (cálculo)");
 L("T3","Terzaghi",3,"En un terreno con γ = 1,8 t/m³ (seco) y γsat = 2,0 t/m³ (γw = 1 t/m³), el nivel freático sube de H = 3 m de profundidad hasta la superficie. Según la resolución oficial de la PA1 2025, el incremento de tensión efectiva vertical a 2 m y a 6 m de profundidad es:",
 ["−1,6 t/m² a 2 m y −4,8 t/m² a 6 m (variación lineal en toda la profundidad)",
  "−2,4 t/m² a 2 m y −2,4 t/m² a 6 m (variación constante en toda la profundidad)",
  "−1,6 t/m² a 2 m y −2,4 t/m² a 6 m (variación lineal hasta H y constante por debajo)",
- "−2,0 t/m² a 2 m y −3,0 t/m² a 6 m (variación igual a −γw·z hasta H y constante por debajo)"],2,
-"Con γ′ = 1,0 t/m³: para z ≤ H, Δσ′ = (γ′ − γ)·z = −0,8·2 = −1,6 t/m², lineal; para z ≥ H, Δσ′ = (γ′ − γ)·H = −0,8·3 = −2,4 t/m², constante. Aplicar la ley lineal por debajo de H daría −4,8, y restar solo γw·z ignora que la tensión total también aumenta al saturarse el terreno.","Hoja de soluciones PA1 2025");
+ "−2,0 t/m² a 2 m y −3,0 t/m² a 6 m (variación igual a $-\\gamma_w z$ hasta H y constante por debajo)"],2,
+"Con γ′ = 1,0 t/m³, al subir el nivel freático desde H = 3 m hasta la superficie, σ′ pasa a valer γ′·z en todo punto: $$z\\le H:\\quad\\Delta\\sigma'=(\\gamma'-\\gamma)\\,z=-0{,}8\\cdot2=\\boxed{-1{,}6\\text{ t/m}^2}\\ \\text{(lineal)}$$ $$z\\ge H:\\quad\\Delta\\sigma'=(\\gamma'-\\gamma)\\,H=-0{,}8\\cdot3=\\boxed{-2{,}4\\text{ t/m}^2}\\ \\text{(constante)}$$ Aplicar la ley lineal por debajo de H daría −4,8, y restar solo γw·z ignora que la tensión total también aumenta al saturarse el terreno.","Hoja de soluciones PA1 2025");
 L("T3","Consolidación",1,"Según los apuntes, la consolidación de un suelo es:",
 ["el asiento instantáneo que se produce al aplicar la carga, antes de que el agua pueda drenar",
  "el asiento diferido en el tiempo debido a la permeabilidad del suelo, que hace que las presiones neutras varíen con el tiempo (drenaje) hasta alcanzar un nuevo equilibrio",
@@ -665,11 +665,11 @@ L("T3","Consolidación",1,"Según los apuntes, la consolidación de un suelo es:
  "el asiento diferido que se produce sobre todo en las arenas, cuya baja permeabilidad retrasa el drenaje"],1,
 "Diap. 50: la permeabilidad, resistencia al paso del agua por la estructura del suelo, implica una variación temporal de las presiones neutras hasta una nueva situación de equilibrio y, en consecuencia, un asiento diferido: la consolidación. Es el fenómeno típico de las arcillas, poco permeables (en las figuras, entre capas de arena por las que drena el agua); las arenas son muy permeables.","Apuntes T3, diap. 50");
 L("T3","Consolidación",2,"Respecto al ensayo edométrico y al coeficiente de cambio volumétrico de los apuntes, señalar la afirmación correcta.",
-["mv = −dσ′a/dεv; es la rigidez del suelo, que aumenta con la tensión aplicada.",
- "mv = −dεv/dσa, expresado en tensiones totales, porque durante el ensayo el agua no puede drenar.",
- "mv = −dεv/dσ′a; el ensayo representa un terreno homogéneo con carga uniforme y distintas condiciones de drenaje, y relaciona la deformación volumétrica con la tensión efectiva axial.",
- "mv = e/(1 + e); es la porosidad de la muestra medida al final del ensayo edométrico."],2,
-"Diap. 51: el ensayo edométrico representa un terreno homogéneo con carga uniforme y diferentes condiciones de drenaje, y su curva εv–σ′a define mv = −dεv/dσ′a. Es una flexibilidad (deformación por unidad de tensión), no una rigidez, y se expresa en tensiones efectivas porque es el comportamiento del suelo lo que se mide. e/(1 + e) es la porosidad n.","Apuntes T3, diap. 51");
+["$m_v=-\\dfrac{d\\sigma'_a}{d\\varepsilon_v}$; es la rigidez del suelo, que aumenta con la tensión aplicada.",
+ "$m_v=-\\dfrac{d\\varepsilon_v}{d\\sigma_a}$, expresado en tensiones totales, porque durante el ensayo el agua no puede drenar.",
+ "$m_v=-\\dfrac{d\\varepsilon_v}{d\\sigma'_a}$; el ensayo representa un terreno homogéneo con carga uniforme y distintas condiciones de drenaje, y relaciona la deformación volumétrica con la tensión efectiva axial.",
+ "$m_v=\\dfrac{e}{1+e}$; es la porosidad de la muestra medida al final del ensayo edométrico."],2,
+"Diap. 51: el ensayo edométrico representa un terreno homogéneo con carga uniforme y diferentes condiciones de drenaje, y su curva εv–σ′a define $$m_v=-\\frac{d\\varepsilon_v}{d\\sigma'_a}$$ Es una flexibilidad (deformación por unidad de tensión), no una rigidez, y se expresa en tensiones efectivas porque es el comportamiento del esqueleto del suelo lo que se mide. e/(1 + e) es la porosidad n.","Apuntes T3, diap. 51");
 L("T3","Introducción",2,"Según la tabla C.1 del DB-SE-AE recogida en los apuntes, señalar la asociación correcta de pesos específicos aparentes.",
 ["Acero 77,0–78,5 kN/m³; aluminio 24,0 kN/m³; hormigón normal 27,0 kN/m³",
  "Acero 87,0–89,0 kN/m³; aluminio 27,0 kN/m³; hormigón normal 24,0 kN/m³",

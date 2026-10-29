@@ -130,11 +130,11 @@ L("T1","Métodos",3,"Señalar la respuesta correcta según el esquema de los apu
  "Los métodos probabilistas se asocian al método de los estados límite y a la evaluación de solicitaciones en tensiones admisibles."],0,
 "En el esquema, la fila determinista enlaza con el cálculo clásico y los métodos en tensiones admisibles; la fila probabilista, con el método de los estados límite (CE, CTE, EC…) y los métodos de cálculo en rotura. Las demás opciones cruzan las dos filas.","Apuntes T1, diap. 14-15");
 L("T1","Métodos",2,"En el método de tensiones admisibles se calcula la tensión σ en la sección más solicitada y se verifica:",
-["σ ≤ σadm = σmat / FS, siendo FS un factor de seguridad cuyo objetivo es disminuir la posibilidad de fallo.",
- "σ ≤ σadm = σmat · FS, siendo FS un factor de seguridad cuyo objetivo es disminuir la posibilidad de fallo.",
- "σ · FS ≥ σmat, siendo σmat la resistencia máxima útil del material.",
- "σ ≤ σadm = σmat / FS, siendo FS un coeficiente parcial distinto para cada acción."],0,
-"La resistencia útil se divide por un único factor de seguridad: σadm = σmat/FS. Multiplicarla por FS aumentaría la tensión admisible, y la tercera expresión invierte la desigualdad. Los coeficientes parciales distintos para acciones y resistencias son propios de los estados límite, no de este método.","Apuntes T1, diap. 15");
+["$\\sigma\\le\\sigma_{adm}=\\dfrac{\\sigma_{mat}}{FS}$, siendo FS un factor de seguridad cuyo objetivo es disminuir la posibilidad de fallo.",
+ "$\\sigma\\le\\sigma_{adm}=\\sigma_{mat}\\cdot FS$, siendo FS un factor de seguridad cuyo objetivo es disminuir la posibilidad de fallo.",
+ "$\\sigma\\cdot FS\\ge\\sigma_{mat}$, siendo σmat la resistencia máxima útil del material.",
+ "$\\sigma\\le\\sigma_{adm}=\\dfrac{\\sigma_{mat}}{FS}$, siendo FS un coeficiente parcial distinto para cada acción."],0,
+"La resistencia útil se divide por un único factor de seguridad, que reduce la tensión admisible: $$\\sigma\\le\\sigma_{adm}=\\frac{\\sigma_{mat}}{FS},\\qquad FS\\gt1$$ Multiplicarla por FS aumentaría la tensión admisible, y la tercera expresión invierte la desigualdad. Los coeficientes parciales distintos para acciones y resistencias son propios de los estados límite, no de este método.","Apuntes T1, diap. 15");
 L("T1","Métodos",3,"Señalar las respuestas correctas (puede haber más de una). Según los apuntes, el método en tensiones admisibles:",
 ["desaprovecha la capacidad resistente de los materiales, porque no considera su capacidad de readaptación plástica.",
  "no da información sobre el margen de seguridad de la estructura, es decir, cuánta más carga puede recibir hasta su rotura.",
@@ -142,8 +142,8 @@ L("T1","Métodos",3,"Señalar las respuestas correctas (puede haber más de una)
  "tiene base probabilista, ya que el factor FS se calibra para una probabilidad de fallo dada."],[0,1],
 "Las dos primeras son las consecuencias que enumeran los apuntes. La tercera conclusión es que las estructuras resultan más caras (no más económicas) e inciertas en cuanto a seguridad. El método es de base determinista; los coeficientes definidos para una fiabilidad dada pertenecen al nivel 1 probabilista.","Apuntes T1, diap. 15");
 L("T1","Métodos",3,"Una barra trabaja con una tensión σ y tiene un factor de seguridad FS = σmat/σ. Se sustituye su acero por otro con σmat un 50 % mayor y, a la vez, la carga (y por tanto σ) aumenta un 20 %. El nuevo factor de seguridad respecto al inicial vale:",
-["1,25·FS","1,80·FS","0,80·FS","1,30·FS"],0,
-"FS es proporcional a σmat e inversamente proporcional a σ: FSfinal/FSinicial = 1,5/1,2 = 1,25. Multiplicar los dos factores (1,5·1,2 = 1,8) o invertir el cociente (1,2/1,5 = 0,8) es un error frecuente, igual que restar porcentajes (1,5 − 0,2 = 1,3). Es el mismo razonamiento del «ejercicio factor de seguridad» de la hoja de 2025, donde FSfinal/FSinicial = σinicial/σfinal.","Apuntes T1, diap. 15 · Hoja de soluciones 2025");
+["$1{,}25\\cdot FS$","$1{,}80\\cdot FS$","$0{,}80\\cdot FS$","$1{,}30\\cdot FS$"],0,
+"FS es proporcional a σmat e inversamente proporcional a σ, así que basta con dividir los dos factores de cambio. Es el mismo razonamiento del «ejercicio factor de seguridad» de la hoja de 2025, donde FSfinal/FSinicial = σinicial/σfinal. $$FS=\\frac{\\sigma_{mat}}{\\sigma}\\ \\Rightarrow\\ \\frac{FS_{final}}{FS_{inicial}}=\\frac{\\sigma_{mat,f}/\\sigma_{mat,i}}{\\sigma_f/\\sigma_i}$$ $$\\frac{FS_{final}}{FS_{inicial}}=\\frac{1{,}5}{1{,}2}=\\boxed{1{,}25}$$ Multiplicar los dos factores (1,5·1,2 = 1,8) o invertir el cociente (1,2/1,5 = 0,8) es un error frecuente, igual que restar porcentajes (1,5 − 0,2 = 1,3).","Apuntes T1, diap. 15 · Hoja de soluciones 2025");
 L("T1","Métodos",3,"Según los apuntes, el método de los estados límite permite tener en cuenta de manera sencilla el carácter aleatorio de las variables…",
 ["de solicitación (acciones) y de resistencia (propiedades de los materiales), considerando deterministas los datos geométricos.",
  "de resistencia (propiedades de los materiales) únicamente, ya que las acciones vienen fijadas por la normativa.",
@@ -179,10 +179,10 @@ L("T1","Fiabilidad",3,"En el caso fundamental de fiabilidad (R y S normales e in
  "si aumenta el valor medio de la carga y los demás parámetros no cambian.",
  "si disminuye la desviación típica de la carga y los demás parámetros no cambian.",
  "si aumentan a la vez el valor medio y la desviación típica de la resistencia y los parámetros de la carga no cambian."],2,
-"Con β = (μR − μS)/√(σR² + σS²) y pf = Φ(−β): si σS disminuye, baja el denominador, β aumenta y pf disminuye. Aumentar σR hace lo contrario, y aumentar μS reduce el numerador, así que ambas aumentan pf. Si suben a la vez μR y σR, el resultado depende de cuánto cambie cada uno, así que no es «siempre». (El tema 1 presenta la idea gráfica; el desarrollo con β de Cornell está en T4, diap. 19.)","Apuntes T1, diap. 16-17; T4, diap. 19");
+"En el caso fundamental, con R y S normales e independientes: $$\\beta=\\frac{\\mu_R-\\mu_S}{\\sqrt{\\sigma_R^2+\\sigma_S^2}},\\qquad p_f=\\Phi(-\\beta)$$ Si σS disminuye, baja el denominador, β aumenta y pf disminuye. Aumentar σR hace lo contrario, y aumentar μS reduce el numerador, así que ambas aumentan pf. Si suben a la vez μR y σR, el resultado depende de cuánto cambie cada uno, así que no es «siempre». (El tema 1 presenta la idea gráfica; el desarrollo con β de Cornell está en T4, diap. 19.)","Apuntes T1, diap. 16-17; T4, diap. 19");
 L("T1","Fiabilidad",3,"Para R con media 235 MPa y desviación típica 14 MPa, y S con media 118,6 MPa y desviación típica 26,36 MPa (normales e independientes), el índice de fiabilidad β vale aproximadamente:",
 ["3,90","2,88","4,42","8,31"],0,
-"μM = 235 − 118,6 = 116,4 MPa y σM = √(14² + 26,36²) = 29,85 MPa, así que β = 116,4/29,85 ≈ 3,90 (hoja oficial de 2024: 3,899). Sumar las desviaciones típicas (116,4/40,36 ≈ 2,88), usar solo la de la carga (116,4/26,36 ≈ 4,42) o solo la de la resistencia (116,4/14 ≈ 8,31) son errores frecuentes (T4, diap. 19: σM² = σR² + σS²).","Hoja de soluciones PA1 2024; T4, diap. 19");
+"Caso fundamental con R y S normales e independientes (T4, diap. 19): el margen M = R − S tiene media μM = μR − μS y varianza σM² = σR² + σS², y β = μM/σM. $$\\mu_M=235-118{,}6=116{,}4\\text{ MPa}$$ $$\\sigma_M=\\sqrt{14^2+26{,}36^2}=29{,}85\\text{ MPa}$$ $$\\beta=\\frac{\\mu_M}{\\sigma_M}=\\frac{116{,}4}{29{,}85}\\approx\\boxed{3{,}90}$$ Coincide con la hoja oficial de 2024 (3,899). Sumar las desviaciones típicas (116,4/40,36 ≈ 2,88), usar solo la de la carga (116,4/26,36 ≈ 4,42) o solo la de la resistencia (116,4/14 ≈ 8,31) son errores frecuentes: lo que se suma son las varianzas.","Hoja de soluciones PA1 2024; T4, diap. 19");
 L("T1","Acciones",2,"Según los apuntes, una acción es…",
 ["cualquier causa (fuerza o deformación) capaz de producir o modificar estados tensionales en una estructura.",
  "cualquier fuerza exterior aplicada sobre la estructura; las deformaciones impuestas se tratan como efectos de las acciones.",
@@ -236,7 +236,7 @@ L("T1","Coeficientes parciales",2,"Con Xd = Xk/γm y Fd = γf·Fk (γm y γf may
  "los valores de cálculo, mayores que los característicos en las resistencias y menores en las acciones.",
  "los valores medios, que son los que se utilizan en los métodos de nivel 1.",
  "los valores de servicio, que solo se utilizan en las comprobaciones de estados límite de servicio."],0,
-"Aplicar γ sobre los valores característicos da los valores de cálculo: dividir por γm > 1 reduce la resistencia y multiplicar por γf > 1 aumenta la acción, los dos del lado de la seguridad. El nivel 1 parte de valores característicos, no medios.","Apuntes T1, diap. 21");
+"Aplicar γ sobre los valores característicos da los valores de cálculo, los dos del lado de la seguridad: $$X_d=\\frac{X_k}{\\gamma_m}\\lt X_k,\\qquad F_d=\\gamma_f\\,F_k\\gt F_k\\qquad(\\gamma_m,\\ \\gamma_f\\gt1)$$ Dividir por γm reduce la resistencia y multiplicar por γf aumenta la acción. El nivel 1 parte de valores característicos, no medios, y los valores de servicio no son los que resultan de aplicar los coeficientes de ELU.","Apuntes T1, diap. 21");
 L("T1","Estados límite",2,"Señalar la respuesta correcta. Los estados límite de servicio…",
 ["se relacionan con la funcionalidad, estética y durabilidad, y se comprueban con combinaciones de carga de alta probabilidad de ocurrencia.",
  "se relacionan con la funcionalidad, estética y durabilidad, y se comprueban con combinaciones de carga de baja probabilidad de ocurrencia.",
@@ -271,9 +271,9 @@ L("T1","Estados límite",1,"Según los apuntes, la fase de ejecución de una est
 ["persistente","transitoria","accidental","extraordinaria"],1,
 "Persistentes: uso normal. Transitorias: condiciones temporales, como la ejecución o la reparación. Accidentales: fuego, impacto o fallo localizado. «Extraordinaria» es una de las situaciones relativas a la resistencia de la diapositiva 19, no una situación de proyecto.","Apuntes T1, diap. 22");
 L("T1","Estados límite",3,"Un forjado de oficinas no presenta riesgo de colapso, pero su flecha bajo las cargas habituales fisura la tabiquería y sus vibraciones resultan molestas. Según los apuntes:",
-["Se ha superado un estado límite de servicio, que se comprueba con Cd ≥ Ed usando desplazamientos y aceleraciones como parámetros de control.",
+["Se ha superado un estado límite de servicio, que se comprueba con $C_d\\ge E_d$ usando desplazamientos y aceleraciones como parámetros de control.",
  "Se ha superado un estado límite último, porque la fisuración de elementos no estructurales supone un colapso parcial.",
- "Se ha superado un estado límite de servicio, que se comprueba con Rd ≥ Sd usando esfuerzos y tensiones como parámetros de control.",
+ "Se ha superado un estado límite de servicio, que se comprueba con $R_d\\ge S_d$ usando esfuerzos y tensiones como parámetros de control.",
  "No se ha superado ningún estado límite, porque estos solo se refieren a la seguridad frente al colapso."],0,
 "Flechas y vibraciones son ELS (funcionalidad, estética y durabilidad). Se comprueban con Cd ≥ Ed y se controlan desplazamientos y aceleraciones. Rd ≥ Sd y el control de esfuerzos corresponden a los ELU, y la fisuración de la tabiquería no es un colapso de la estructura.","Apuntes T1, diap. 23-24");
 L("T1","Estados límite",3,"Una viga apoyada en dos puntos, con un vuelo cargado en su extremo, gira como sólido rígido y se levanta del apoyo más alejado sin que ninguna sección alcance su resistencia. Según los apuntes, se trata de:",
@@ -310,13 +310,13 @@ L("T2","Introducción",2,"Señalar la respuesta incorrecta respecto a la introdu
 "Los apuntes subrayan que «no hay solución única» y que en el tipo estructural influyen el material, los procesos constructivos y la geometría. Las otras tres afirmaciones son literales de la diapositiva.","Apuntes T2.1, diap. 2");
 L("T2","Escala",3,"Si se multiplican por 3 todas las dimensiones de una estructura manteniendo la semejanza geométrica, la tensión que produce el peso propio en su sección resistente (peso/área) se multiplica por:",
 ["3","9","27","1, porque peso y sección crecen igual"],0,
-"El peso crece con el volumen (λ³ = 27) y la sección resistente con el área (λ² = 9), así que la tensión debida al peso propio crece con λ³/λ² = λ = 3. Por eso, cuando el peso propio es importante, no se puede aumentar la forma proporcionalmente. 9 y 27 son los factores de la sección y del peso por separado.","Apuntes T2.1, diap. 3");
+"Con un factor de escala λ = 3, el peso crece con el volumen y la sección resistente con el área: $$W\\propto\\lambda^3=27,\\qquad A\\propto\\lambda^2=9$$ $$\\frac{\\sigma'}{\\sigma}=\\frac{W'/A'}{W/A}=\\frac{\\lambda^3}{\\lambda^2}=\\lambda=\\boxed{3}$$ Por eso, cuando el peso propio es importante, no se puede aumentar la forma proporcionalmente. 9 y 27 son los factores de la sección y del peso por separado, y la tensión no se mantiene porque peso y sección no crecen igual.","Apuntes T2.1, diap. 3");
 L("T2","Escala",2,"Señalar la respuesta correcta. Según los apuntes (Galileo, 1638), cuando el peso propio de una estructura es muy importante…",
 ["no se puede incrementar la forma proporcionalmente: se pierde la semejanza geométrica, a menos que se usen mejores materiales.",
  "se puede incrementar la forma proporcionalmente, porque la resistencia y el peso crecen ambos con el cubo de las dimensiones.",
  "no se puede incrementar la forma proporcionalmente, porque la resistencia crece con el cubo y el peso con el cuadrado de las dimensiones.",
  "se puede incrementar la forma proporcionalmente siempre que se aumente la rigidez, que crece con el cubo de las dimensiones."],0,
-"El peso crece con λ³ y la resistencia y la rigidez con λ² (área de la sección). Al crecer la escala, el peso aumenta más deprisa que la capacidad para soportarlo, así que hay que engrosar las proporciones (se pierde la semejanza) o usar mejores materiales. La tercera opción invierte los exponentes.","Apuntes T2.1, diap. 3");
+"Con un factor de escala λ, el peso crece con el volumen y la resistencia y la rigidez con el área de la sección: $$W\\propto\\lambda^3,\\qquad R\\propto A\\propto\\lambda^2\\ \\Rightarrow\\ \\frac{W}{A}\\propto\\lambda$$ Al crecer la escala, el peso aumenta más deprisa que la capacidad para soportarlo, así que hay que engrosar las proporciones (se pierde la semejanza) o usar mejores materiales. La tercera opción invierte los exponentes.","Apuntes T2.1, diap. 3");
 L("T2","Geometría",3,"Según los apuntes, una superficie desarrollable (que se puede aplanar sin cortarla) es aquella que tiene…",
 ["una curvatura principal nula y la otra del mismo signo en todos los puntos.",
  "las dos curvaturas principales del mismo signo en todos los puntos.",
@@ -396,19 +396,19 @@ L("T2","Cables",2,"En los puentes colgantes, según los apuntes, las armaduras q
  "transmitir directamente las cargas del tráfico a las torres, sin pasar por el cable."],0,
 "Como el cable se adapta a las cargas cambiantes y es inestable, el tablero y sus armaduras deben rigidizarlo. Las fuerzas horizontales importantes en el tablero son propias del puente atirantado, y un cable no puede comprimirse.","Apuntes T2.1, diap. 10");
 L("T2","Cables",3,"Un cable de luz horizontal D soporta una única carga vertical P en su centro. Con la flecha óptima de los apuntes (mínimo volumen de cable), la tracción en cada tramo vale aproximadamente:",
-["0,707·P","0,5·P","P","1,41·P"],0,
-"La flecha óptima con una carga es D/2, así que cada tramo forma 45° con la horizontal. Cada tramo lleva una componente vertical P/2, de modo que T = (P/2)/sen 45° ≈ 0,707·P, y la componente horizontal es H = P/2 (es la figura de la diapositiva). 0,5·P es solo la componente H o la vertical, no la tracción total.","Apuntes T2.1, diap. 11");
+["$0{,}707\\,P$","$0{,}5\\,P$","$P$","$1{,}41\\,P$"],0,
+"La flecha óptima con una carga es D/2, así que cada tramo forma 45° con la horizontal (es la figura de la diapositiva). Por equilibrio vertical en el punto de carga, cada tramo lleva P/2: $$f=\\frac{D}{2}\\ \\Rightarrow\\ \\mathrm{tg}\\,\\alpha=\\frac{D/2}{D/2}=1\\ \\Rightarrow\\ \\alpha=45^\\circ$$ $$T\\,\\mathrm{sen}\\,45^\\circ=\\frac{P}{2}\\ \\Rightarrow\\ T=\\frac{P}{2\\,\\mathrm{sen}\\,45^\\circ}=\\frac{P}{\\sqrt2}\\approx\\boxed{0{,}707\\,P}$$ $$H=T\\cos45^\\circ=\\frac{P}{2}$$ 0,5·P es solo la componente horizontal H (o la vertical), no la tracción total, y 1,41·P sale de no repartir la carga entre los dos tramos (P/sen 45°).","Apuntes T2.1, diap. 11");
 L("T2","Cables",2,"Un cable soporta un número elevado de cargas verticales iguales, separadas horizontalmente la misma distancia. Según los apuntes, su curva funicular y su flecha óptima son:",
-["una parábola, con flecha óptima D/3.",
- "una catenaria, con flecha óptima aproximadamente D/3.",
- "una parábola, con flecha óptima D/2.",
- "una catenaria, con flecha óptima D/2."],0,
+["una parábola, con flecha óptima $D/3$.",
+ "una catenaria, con flecha óptima aproximadamente $D/3$.",
+ "una parábola, con flecha óptima $D/2$.",
+ "una catenaria, con flecha óptima $D/2$."],0,
 "Cargas iguales con la misma separación horizontal dan una parábola, con flecha óptima D/3. La catenaria aparece cuando las cargas se reparten a distancias iguales a lo largo del cable (flecha óptima ≈ D/3). D/2 es la flecha óptima con una única carga.","Apuntes T2.1, diap. 12");
 L("T2","Cables",3,"Señalar la respuesta incorrecta respecto a la curva funicular de un cable con un número elevado de cargas.",
 ["Si las cargas son iguales y se distribuyen a distancias iguales a lo largo del cable, la curva funicular es una catenaria.",
  "Si las cargas son iguales y están separadas horizontalmente la misma distancia, la curva funicular es una parábola.",
  "Para la flecha óptima, la parábola y la catenaria son muy parecidas.",
- "Para la flecha óptima, la parábola y la catenaria difieren mucho, y la flecha óptima de la catenaria es D/2."],3,
+ "Para la flecha óptima, la parábola y la catenaria difieren mucho, y la flecha óptima de la catenaria es $D/2$."],3,
 "Los apuntes indican que, para la flecha óptima (D/3 en la parábola y ≈ D/3 en la catenaria), las dos curvas son muy parecidas. D/2 es la flecha óptima con una sola carga. Un cable bajo su propio peso es el caso típico de catenaria, porque es una carga uniforme a lo largo del cable.","Apuntes T2.1, diap. 12");
 L("T2","Cables",1,"Un cable sometido a varias cargas verticales adopta una configuración de equilibrio con lados rectos entre cargas y cambios de dirección en sus puntos de aplicación, que los apuntes denominan:",
 ["polígono funicular, la forma natural de soportar cargas por tracción.",
@@ -475,16 +475,16 @@ L("T2","Entramados",2,"Dos vigas perpendiculares apoyadas en sus extremos y unid
  "repartiéndosela según su rigidez a torsión.",
  "a partes iguales, porque el desplazamiento en el cruce es el mismo para las dos.",
  "repartiéndosela en proporción a su longitud, de modo que la viga más larga toma más carga."],0,
-"Si el desplazamiento en el cruce es igual, cada viga toma una carga proporcional a su rigidez a flexión (48EI/L³ para carga centrada). Solo se reparte a partes iguales si las rigideces son iguales. La torsión aparece con uniones rígidas, y la viga más larga es más flexible, así que toma menos carga.","Apuntes T2.1, diap. 22");
+"Si el desplazamiento en el cruce es igual, cada viga toma una carga proporcional a su rigidez a flexión, que para carga centrada vale: $$k=\\frac{P}{\\delta}=\\frac{48EI}{L^3}$$ Solo se reparte a partes iguales si las rigideces son iguales. La torsión aparece con uniones rígidas, y la viga más larga es más flexible, así que toma menos carga.","Apuntes T2.1, diap. 22");
 L("T2","Entramados",2,"En un entramado con vigas de distinta longitud y unión no rígida, para obtener una transmisión eficiente (similar) de la carga en las dos direcciones, según los apuntes:",
 ["la viga más larga debe tener mayor inercia.",
  "la viga más corta debe tener mayor inercia.",
  "las dos vigas deben tener la misma inercia, porque sufren igual deformación en el cruce.",
  "la viga más larga debe tener menor inercia, para que no absorba más carga."],0,
-"La rigidez es 48EI/L³, así que la viga larga es mucho más flexible. Para igualar rigideces hay que darle más inercia. Con la misma inercia, la viga corta se lleva casi toda la carga.","Apuntes T2.1, diap. 22");
+"La rigidez de una viga biapoyada con carga centrada es $$k=\\frac{48EI}{L^3}$$ así que la viga larga es mucho más flexible (con luz doble e igual inercia, 8 veces menos rígida). Para igualar rigideces hay que darle más inercia. Con la misma inercia, la viga corta se lleva casi toda la carga.","Apuntes T2.1, diap. 22");
 L("T2","Entramados",3,"Una viga A de luz L y otra B de luz 2L, biapoyadas, perpendiculares y con la misma EI, se cruzan en su punto medio, donde actúa una carga P (unión no rígida). ¿Qué fracción de P toma la viga larga B?",
 ["1/9","8/9","1/2","1/3"],0,
-"kA = 48EI/L³ y kB = 48EI/(2L)³ = kA/8. Con igual desplazamiento, la carga se reparte en proporción a la rigidez: A toma 8/9 y B, 1/9 (la figura de los apuntes da reacciones de 8/18·P en la viga corta y 1/18·P en la larga). 1/3 resultaría de repartir en proporción inversa a la luz, y 8/9 es la fracción de la viga corta.","Apuntes T2.1, diap. 22 (cálculo)");
+"Con unión no rígida, las dos vigas tienen la misma flecha en el cruce y la carga se reparte en proporción a su rigidez, k = P/δ = 48EI/L³ en una viga biapoyada con carga centrada: $$k_A=\\frac{48EI}{L^3},\\qquad k_B=\\frac{48EI}{(2L)^3}=\\frac{k_A}{8}$$ $$P_B=P\\,\\frac{k_B}{k_A+k_B}=\\frac{P}{8+1}=\\boxed{\\tfrac19\\,P},\\qquad P_A=\\tfrac89\\,P$$ La figura de los apuntes da reacciones de 8/18·P en la viga corta y 1/18·P en la larga (la mitad de cada fracción en cada apoyo). 1/3 resultaría de repartir en proporción inversa a la luz, y 8/9 es la fracción de la viga corta.","Apuntes T2.1, diap. 22 (cálculo)");
 L("T2","Entramados",2,"Según los apuntes, con entramados se puede llegar de forma económica a relaciones espesor/luz de…",
 ["1/30 o 1/40, frente a 1/10 a 1/24 en sistemas convencionales con transmisión unidireccional.",
  "1/10 a 1/24, frente a 1/30 o 1/40 en sistemas convencionales con transmisión unidireccional.",
@@ -622,7 +622,7 @@ L("T2","Edificación",3,"Según los apuntes (EHE-08), un forjado puede considera
 "Es la segunda viñeta de la diapositiva: sin diafragma rígido, el forjado se modeliza como viga horizontal sobre resortes ki. El sólido rígido que se traslada y gira en su plano es precisamente el caso de diafragma rígido.","Apuntes T2.1, diap. 56");
 L("T2","Edificación",3,"Una planta de altura h = 3,5 m soporta una carga gravitatoria total Ptot = 7000 kN. Según el planteamiento de los apuntes, la «reserva» de rigidez lateral k′ que debe tener la estructura para compensar el efecto P-Δ es:",
 ["2000 kN/m","24 500 kN","0,0005 m/kN","7000 kN/m"],0,
-"De Ptot·Δ = Vi′·h se obtiene k′ = Vi′/Δ = Ptot/h = 7000/3,5 = 2000 kN/m. Multiplicar (Ptot·h = 24 500) no da una rigidez, y h/Ptot es su inversa (una flexibilidad).","Apuntes T2.1, diap. 57");
+"Las cargas gravitatorias actúan sobre la estructura desplazada Δ y generan un momento adicional Ptot·Δ, equivalente a un cortante Vi′ en la planta de altura h. La rigidez de «reserva» es el cociente entre ese cortante y el desplazamiento: $$P_{tot}\\,\\Delta=V_i'\\,h\\ \\Rightarrow\\ k'=\\frac{V_i'}{\\Delta}=\\frac{P_{tot}}{h}$$ $$k'=\\frac{7000\\text{ kN}}{3{,}5\\text{ m}}=\\boxed{2000\\text{ kN/m}}$$ Multiplicar (Ptot·h = 24 500) no da una rigidez, y h/Ptot = 0,0005 m/kN es su inversa (una flexibilidad).","Apuntes T2.1, diap. 57");
 L("T2","Edificación",2,"Señalar la respuesta correcta respecto a las placas sobre pilares aislados.",
 ["Combinan pilares y placas macizas o aligeradas que transmiten la carga bidireccionalmente, con unión rígida entre ambos, y dan libertad para organizar los pilares en planta.",
  "Combinan pilares y placas que transmiten la carga unidireccionalmente, con unión articulada entre ambos, y obligan a alinear los pilares en pórticos.",
@@ -673,7 +673,7 @@ L("T2","Puentes",2,"En los puentes de tablero sobre soportes o muros, según los
 "Los apoyos que permiten el desplazamiento horizontal dejan dilatar el tablero sin generar tensiones y mejoran el comportamiento sísmico. Empotrar el tablero haría que la temperatura generara tensiones.","Apuntes T2.1, diap. 60");
 L("T2","Térmica",2,"Un tablero isostático de 80 m con α = 10⁻⁵ ºC⁻¹ sufre un aumento de temperatura de 25 ºC. Su alargamiento libre es:",
 ["20 mm","2 mm","200 mm","0 mm, porque es isostático"],0,
-"ΔL = L·α·ΔT = 80·10⁻⁵·25 = 0,02 m = 20 mm. Que sea isostático significa que puede alargarse libremente sin tensiones, no que no se alargue.","Apuntes T2.1, diap. 68 (cálculo)");
+"Alargamiento térmico libre (el mismo planteamiento del ejemplo de los apuntes): $$\\Delta L=L\\,\\alpha\\,\\Delta T=80\\cdot10^{-5}\\cdot25=0{,}02\\text{ m}=\\boxed{20\\text{ mm}}$$ Que sea isostático significa que puede alargarse libremente sin tensiones, no que no se alargue. 2 mm y 200 mm son errores de un orden de magnitud en la potencia de 10.","Apuntes T2.1, diap. 68 (cálculo)");
 L("T2","Térmica",2,"Marcar la frase que sea verdadera.",
 ["En estructuras isostáticas los cambios de temperatura generan tensiones pero no movimientos, y las juntas de dilatación sirven para absorber esas tensiones.",
  "En estructuras hiperestáticas los cambios de temperatura generan movimientos pero nunca tensiones.",
@@ -682,7 +682,7 @@ L("T2","Térmica",2,"Marcar la frase que sea verdadera.",
 "Según los apuntes, en las isostáticas la temperatura no genera tensiones pero sí movimientos, que se absorben con juntas de dilatación; en las hiperestáticas puede generar tensiones y movimientos. Cada una de las tres primeras frases altera alguna parte de esa idea, así que ninguna es verdadera.","Apuntes T2.1, diap. 68");
 L("T2","Térmica",3,"En el tablero de un puente con α = 10⁻⁵ ºC⁻¹ se impide totalmente el alargamiento y la temperatura sube 60 ºC. Según el planteamiento de los apuntes, la deformación mecánica εm necesaria es:",
 ["−0,0006 (compresión)","+0,0006 (tracción)","−0,006 (compresión)","0, porque la deformación total es nula"],0,
-"ε = εT + εm = 0, así que εm = −α·ΔT = −10⁻⁵·60 = −0,0006: el tablero se comprime para no alargarse. Lo nulo es la deformación total, no la mecánica. Como referencia, el máximo de la ley tensión-deformación del hormigón está en torno a 0,002 de compresión.","Apuntes T2.1, diap. 68");
+"Si el alargamiento está totalmente impedido, la deformación total es nula y la deformación mecánica compensa exactamente la térmica: $$\\varepsilon=\\varepsilon_T+\\varepsilon_m=0\\ \\Rightarrow\\ \\varepsilon_m=-\\alpha\\,\\Delta T$$ $$\\varepsilon_m=-10^{-5}\\cdot60=\\boxed{-0{,}0006}\\ \\text{(compresión)}$$ El tablero se comprime para no alargarse. Lo nulo es la deformación total, no la mecánica; el signo + correspondería a una tracción y −0,006 es un error de un orden de magnitud. Como referencia, el máximo de la ley tensión-deformación del hormigón está en torno a 0,002 de compresión.","Apuntes T2.1, diap. 68");
 L("T2","Túneles",3,"Señalar la respuesta correcta respecto a la sección transversal de un túnel.",
 ["Consta de tres superficies: línea de excavación total, línea de sostenimiento (cara exterior) y línea de revestimiento (cara interior); sus partes estructurales son bóveda, hastiales y contrabóveda o solera.",
  "Consta de tres superficies: línea de excavación total, línea de revestimiento (cara exterior) y línea de sostenimiento (cara interior); sus partes estructurales son bóveda, hastiales y contrabóveda o solera.",
