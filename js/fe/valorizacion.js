@@ -125,15 +125,15 @@ THEORY.B2 = {
 <p>Se producen múltiples reacciones simultáneas (diap. 20):</p>
 <table class="tbl"><thead><tr><th>Reacción</th><th>Ecuación</th><th>ΔH° (kJ/mol)</th></tr></thead><tbody>
 <tr><td colspan="3"><b>Exotérmicas</b></td></tr>
-<tr><td>Combustión completa</td><td>C + O<sub>2</sub> → CO<sub>2</sub></td><td>−393,8</td></tr>
-<tr><td>Combustión incompleta</td><td>C + ½ O<sub>2</sub> → CO</td><td>−123,1</td></tr>
-<tr><td>Metanización</td><td>C + 2 H<sub>2</sub> → CH<sub>4</sub></td><td>−87,5</td></tr>
-<tr><td><i>Water-gas shift</i></td><td>CO + H<sub>2</sub>O → H<sub>2</sub> + CO<sub>2</sub></td><td>−40,9</td></tr>
+<tr><td>Combustión completa</td><td>$\\mathrm{C + O_{2} \\rightarrow  CO_{2}}$</td><td>−393,8</td></tr>
+<tr><td>Combustión incompleta</td><td>$\\mathrm{C + \\tfrac12\\, O_{2} \\rightarrow  CO}$</td><td>−123,1</td></tr>
+<tr><td>Metanización</td><td>$\\mathrm{C + 2\\,H_{2} \\rightarrow  CH_{4}}$</td><td>−87,5</td></tr>
+<tr><td><i>Water-gas shift</i></td><td>$\\mathrm{CO + H_{2}O \\rightarrow  H_{2} + CO_{2}}$</td><td>−40,9</td></tr>
 <tr><td colspan="3"><b>Endotérmicas</b></td></tr>
-<tr><td>Boudouard</td><td>C + CO<sub>2</sub> → 2 CO</td><td>+159,9</td></tr>
-<tr><td><i>Water-gas</i></td><td>C + H<sub>2</sub>O → H<sub>2</sub> + CO</td><td>+118,5</td></tr>
-<tr><td>Reformado (con vapor)</td><td>C<sub>n</sub>H<sub>m</sub> + n H<sub>2</sub>O → n CO + (n + m/2) H<sub>2</sub></td><td>&gt; 0</td></tr>
-<tr><td>Reformado seco</td><td>C<sub>n</sub>H<sub>m</sub> + n CO<sub>2</sub> → 2n CO + (m/2) H<sub>2</sub></td><td>&gt; 0</td></tr>
+<tr><td>Boudouard</td><td>$\\mathrm{C + CO_{2} \\rightarrow  2\\,CO}$</td><td>+159,9</td></tr>
+<tr><td><i>Water-gas</i></td><td>$\\mathrm{C + H_{2}O \\rightarrow  H_{2} + CO}$</td><td>+118,5</td></tr>
+<tr><td>Reformado (con vapor)</td><td>$\\mathrm{C_{n}H_{m} + n\\,H_{2}O \\rightarrow  n\\,CO + (n + m/2)\\,H_{2}}$</td><td>&gt; 0</td></tr>
+<tr><td>Reformado seco</td><td>$\\mathrm{C_{n}H_{m} + n\\,CO_{2} \\rightarrow  2n\\,CO + (m/2)\\,H_{2}}$</td><td>&gt; 0</td></tr>
 </tbody></table>
 <h4>Alquitranes y acondicionamiento del gas</h4>
 <p><b>Alquitranes (<i>tar</i>)</b>: compuestos orgánicos que van desde hidrocarburos de bajo peso molecular hasta <b>hidrocarburos aromáticos policíclicos (HAP)</b> de alto peso molecular (diap. 21). Según Devi et al. (2005), la biomasa da alquitranes <b>primarios</b> (muy rápido, baja temperatura), <b>secundarios</b> y <b>terciarios</b> (lento, alta temperatura).</p>
@@ -176,10 +176,10 @@ THEORY.B2 = {
 <li>Instalaciones de valorización o eliminación de residuos en plantas de incineración o coincineración.</li></ul>
 <p>Según la <b>Ley 7/2022</b>, la incineración de residuos domésticos solo se considera <b>valorización</b> si su eficiencia energética es ≥ <b>0,60</b> (instalaciones en funcionamiento y autorizadas antes del 1 de enero de 2009) o ≥ <b>0,65</b> (autorizadas después del 31 de diciembre de 2008):</p>
 <div class="formula">$$\\text{Eficiencia energética}=\\frac{E_p-(E_f+E_i)}{0{,}97\\,(E_w+E_f)}$$</div>
-<ul><li><b>E<sub>p</sub></b>: energía anual producida como calor o electricidad = electricidad × <b>2,6</b> + calor para usos comerciales × <b>1,1</b> (GJ/año).</li>
-<li><b>E<sub>f</sub></b>: aportación anual de energía de los combustibles que contribuyen a producir vapor (GJ/año).</li>
-<li><b>E<sub>w</sub></b>: energía anual contenida en los residuos, con su <b>poder calorífico neto</b> (GJ/año).</li>
-<li><b>E<sub>i</sub></b>: energía anual importada, excluyendo E<sub>w</sub> y E<sub>f</sub> (GJ/año).</li>
+<ul><li><b>$E_p$</b>: energía anual producida como calor o electricidad, $E_p=2{,}6\\cdot\\text{electricidad}+1{,}1\\cdot\\text{calor para usos comerciales}$ (GJ/año).</li>
+<li><b>$E_f$</b>: aportación anual de energía de los combustibles que contribuyen a producir vapor (GJ/año).</li>
+<li><b>$E_w$</b>: energía anual contenida en los residuos, con su <b>poder calorífico neto</b> (GJ/año).</li>
+<li><b>$E_i$</b>: energía anual importada, excluyendo $E_w$ y $E_f$ (GJ/año).</li>
 <li><b>0,97</b>: pérdidas de energía por cenizas de fondo y radiación.</li></ul>
 <h4>Límites en la coincineración de residuos</h4>
 <p>Valores medios diarios (mg/Nm³) con <b>O<sub>2</sub> = 6 %</b>, condiciones normales 273,15 K y 101,3 kPa (diap. 29-30):</p>
@@ -215,7 +215,7 @@ THEORY.B2 = {
 <h4>Corrección por oxígeno y equivalencia tóxica</h4>
 <p>La concentración medida se refiere al oxígeno de referencia antes de compararla con el límite (diap. 32):</p>
 <div class="formula">$$E_s=\\frac{21-O_s}{21-O_m}\\,E_m$$</div>
-<p><b>E<sub>s</sub></b>: concentración corregida (gas seco, condiciones normales, O<sub>2</sub> de referencia); <b>E<sub>m</sub></b>: concentración medida (gas seco, condiciones normales); <b>O<sub>s</sub></b>: oxígeno de <b>referencia</b> (% vol.); <b>O<sub>m</sub></b>: oxígeno <b>medido</b> (% vol., gas seco). Se expresan en mg/m³ (ng/m³ para dioxinas y furanos). Si O<sub>m</sub> &gt; O<sub>s</sub>, el gas está diluido y E<sub>s</sub> &gt; E<sub>m</sub>.</p>
+<p><b>$E_s$</b>: concentración corregida (gas seco, condiciones normales, O<sub>2</sub> de referencia); <b>$E_m$</b>: concentración medida (gas seco, condiciones normales); <b>$O_s$</b>: oxígeno de <b>referencia</b> (% vol.); <b>$O_m$</b>: oxígeno <b>medido</b> (% vol., gas seco). Se expresan en mg/m³ (ng/m³ para dioxinas y furanos). Si O<sub>m</sub> &gt; O<sub>s</sub>, el gas está diluido y E<sub>s</sub> &gt; E<sub>m</sub>.</p>
 <p>Las dioxinas y furanos se expresan como equivalente tóxico multiplicando cada congénere por su <b>factor de equivalencia</b> (diap. 33): <b>2,3,7,8-TCDD = 1</b>; 1,2,3,7,8-PeCDD = 0,5; HxCDD = 0,1; HpCDD = 0,01; <b>OCDD = 0,001</b>; 2,3,7,8-TCDF = 0,1; 2,3,4,7,8-PeCDF = 0,5; 1,2,3,7,8-PeCDF = 0,05; HxCDF = 0,1; HpCDF = 0,01; OCDF = 0,001.</p>
 <h4>Aguas residuales de la depuración de gases</h4>
 <p>Límites en el agua de depuración de gases de las incineradoras (diap. 34, mg/L): SST 35 (95 %) - 40 (100 %); <b>Hg 0,03</b>; Cd 0,05; Tl 0,05; As 0,15; Pb 0,2; Cr 0,5; Cu 0,5; Ni 0,5; <b>Zn 1,5</b>; dioxinas y furanos <b>0,3 ng/L</b>.</p>
@@ -277,39 +277,135 @@ THEORY.B2 = {
 <div class="formula">$$\\underbrace{\\text{Triglicérido}}_{100\\ \\text{kg}}+\\underbrace{3\\,\\text{CH}_3\\text{OH}}_{11\\ \\text{kg}}\\rightleftarrows\\underbrace{3\\ \\text{metiléster}}_{100\\ \\text{kg}}+\\underbrace{\\text{glicerina}}_{11\\ \\text{kg}}$$</div>
 ` },
     { id: "b2-problemas", title: "8. Problemas resueltos", slides: ["P1", 1, 7], html: `
-<p>Resolución oficial de los tres problemas de combustión y biogás de la colección (Enunciados_Problemas_FE y Resolución P1, P2 y P3). Masas atómicas: C = 12, H = 1, O = 16, N = 14, S = 32; el aire es 21 % O<sub>2</sub> y 79 % N<sub>2</sub> en volumen.</p>
+<p>Solución modelo de los tres problemas de combustión y biogás de la colección (Enunciados_Problemas_FE y Resolución P1, P2 y P3), paso a paso y con los resultados de la resolución oficial. Datos comunes: masas atómicas C = 12, H = 1, O = 16, N = 14 y S = 32 g/mol; el aire es 21 % de O<sub>2</sub> y 79 % de N<sub>2</sub> en volumen (79/21 = 3,76 mol de N<sub>2</sub> por mol de O<sub>2</sub>); en condiciones normales 1 mol de gas ocupa 22,4 L. Al final de cada problema se indican las erratas de la resolución oficial.</p>
 <h4>Problema 1: balance de un horno de incineración</h4>
-<p><b>Enunciado</b>: se incineran <b>6000 kg/h</b> de un residuo con <b>70 % de humedad</b> (base húmeda); la materia no combustible es el <b>43 %</b> de la materia seca. Materia seca combustible: C 64,3 %, H 8,2 %, S 2,2 %, O 21,0 % y N 4,3 %. Calor latente del agua: 550 kcal/kg. Se pide (a) el balance de materia con combustión estequiométrica con aire (C, S y H dan solo CO<sub>2</sub>, SO<sub>2</sub> y H<sub>2</sub>O; el N sale como N<sub>2</sub>; los inquemados salen como escorias), (b) el PCS de la fracción combustible y (c) el PCS y el PCI del residuo.</p>
-<p><b>(a) Balance</b> (P1, diap. 2-5): Entrada = residuo (E1) + aire (E2); Salida = escorias (S1) + gases (S2) + humedad vaporizada (S3).</p>
-<ul><li>Residuo seco = 6000 · (1 − 0,7) = <b>1800 kg/h</b>; materia seca combustible = 1800 · (1 − 0,43) = <b>1026 kg/h</b>.</li>
-<li>Fórmula: moles en 100 g, C 5,358; H 8,2; S 0,06875; O 1,3125; N 0,307. Dividiendo por el menor (S) y redondeando al entero superior: C 77,9 → 78, H 119,3 → 120, O 19,1 → 20, N 4,5 → 5 ⇒ <b>C<sub>78</sub>H<sub>120</sub>O<sub>20</sub>N<sub>5</sub>S</b>, M = <b>1478 g/mol</b>.</li>
-<li>Reacción: C<sub>78</sub>H<sub>120</sub>O<sub>20</sub>N<sub>5</sub>S + <b>99</b> O<sub>2</sub> + (79/21)·99 N<sub>2</sub> → 78 CO<sub>2</sub> + 60 H<sub>2</sub>O + SO<sub>2</sub> + [(79/21)·99 + 5/2] N<sub>2</sub>.</li>
-<li>Moles de combustible = 1026 / 1478 = <b>0,6942 kmol/h</b>; O<sub>2</sub> = 99 · 32 · 0,6942 = 2199 kg/h; N<sub>2</sub> = (79/21) · 99 · 28 · 0,6942 = 7239 kg/h ⇒ <b>aire E2 = 9438 kg/h</b>; entradas = 6000 + 9438 = <b>15.438 kg/h</b>.</li>
-<li>Escorias S1 = 6000 · 0,3 · 0,43 = <b>774 kg/h</b>.</li>
-<li>Gases S2: CO<sub>2</sub> 2382,5; H<sub>2</sub>O 749,7; SO<sub>2</sub> 44,4; N<sub>2</sub> 7287,7 kg/h ⇒ <b>10.464 kg/h</b> (en la diapositiva la suma escribe 41,6 para el SO<sub>2</sub>, pero el total corresponde a 44,4).</li>
-<li>Humedad vaporizada S3 = 6000 · 0,7 = <b>4200 kg/h</b>. Salidas = 774 + 10.464 + 4200 = <b>15.438 kg/h</b> = entradas.</li></ul>
-<p><b>(b) PCS de la materia seca combustible</b> con la fórmula de Dulong modificada (P1, diap. 6):</p>
-<div class="formula">$$PCS\\,(\\text{kcal/kg})=80{,}60\\,C+339{,}10\\left(H-\\frac{O}{8}\\right)+22{,}22\\,S+5{,}56\\,N$$</div>
-<p>PCS = 80,6·64,3 + 339,1·(8,2 − 21/8) + 22,22·2,2 + 5,56·4,3 = <b>7146 kcal/kg</b> de materia seca combustible.</p>
-<p><b>(c) PCS y PCI del residuo</b> (P1, diap. 7): PCS<sub>materia seca</sub> = 7146 · 0,57 = <b>4073 kcal/kg</b>; PCS<sub>residuo</sub> = 4073 · 0,3 = <b>1222 kcal/kg</b>. Siempre PCS<sub>residuo</sub> &lt; PCS<sub>materia seca</sub> &lt; PCS<sub>materia seca combustible</sub>.</p>
-<p>PCI = PCS − L<sub>v</sub> · (humedad del residuo + agua formada). Agua formada = 749,7 / 6000 = <b>0,125 kg/kg</b> de residuo ⇒ PCI = 1222 − 550 · (0,7 + 0,125) = <b>768 kcal/kg</b> de residuo.</p>
-<h4>Problema 2: aire estequiométrico de la celulosa y masa molecular de los humos</h4>
-<p><b>Enunciado</b>: calcular los kilos de aire estequiométrico para quemar 1 kg de celulosa y la masa molecular media de los gases de combustión con un <b>50 % de exceso de aire</b>.</p>
-<p><b>1. Aire estequiométrico</b> (P2, diap. 2): C<sub>6</sub>H<sub>10</sub>O<sub>5</sub> + 6 O<sub>2</sub> + (79/21)·6 N<sub>2</sub> → 6 CO<sub>2</sub> + 5 H<sub>2</sub>O + (79/21)·6 N<sub>2</sub>. Con M = 162 g/mol: O<sub>2</sub> = 6·32 = 192 g; N<sub>2</sub> = (79/21)·6·28 = 632 g; aire = <b>824 g/mol</b> ⇒ 824/162 = <b>5,1 kg de aire/kg de celulosa</b>.</p>
-<p><b>2. Humos estequiométricos</b> (P2, diap. 3): 6 CO<sub>2</sub> + 5 H<sub>2</sub>O + 22,57 N<sub>2</sub> = <b>33,57 mol</b>; X<sub>CO2</sub> = 0,18, X<sub>H2O</sub> = 0,15, X<sub>N2</sub> = 0,67 ⇒ M = ΣX<sub>i</sub>M<sub>i</sub> = <b>29,38 g/mol</b>.</p>
-<p><b>3. Con 50 % de exceso</b> (P2, diap. 4): sobran 0,5·6 = <b>3 mol de O<sub>2</sub></b> y 0,5·6·(79/21) = 11,28 mol de N<sub>2</sub> (N<sub>2</sub> total 33,85). Total = 6 + 5 + 3 + 33,85 = <b>47,85 mol</b>; X<sub>CO2</sub> = 0,125, X<sub>H2O</sub> = 0,105, X<sub>N2</sub> = 0,707, X<sub>O2</sub> = 0,063 ⇒ M = <b>29,21 g/mol</b>.</p>
-<h4>Problema 3: biogás teórico con la ecuación de Buswell</h4>
-<p><b>Enunciado</b>: 50.000 t/año de biomasa vegetal cuya materia volátil tiene C 50 %, H 8 %, O 35 %, N 6 % y S 1 %. Con la ecuación de Buswell, calcular la composición teórica del biogás y la producción específica de metano si se biodegrada el <b>75 %</b> de la materia volátil.</p>
-<p><b>Fórmula</b> (P3, diap. 1): dividiendo los moles por los del S (0,03125) ⇒ <b>C<sub>133</sub>H<sub>256</sub>O<sub>70</sub>N<sub>14</sub>S</b>, M = <b>3200 g/mol</b>.</p>
-<p><b>Buswell</b> (P3, diap. 2): C<sub>133</sub>H<sub>256</sub>O<sub>70</sub>N<sub>14</sub>S + <b>45 H<sub>2</sub>O</b> → <b>57,5 CO<sub>2</sub> + 75,5 CH<sub>4</sub></b> + 14 NH<sub>3</sub> + H<sub>2</sub>S. Con 22,4 L/mol en condiciones normales: CO<sub>2</sub> 1288 L, CH<sub>4</sub> 1691,2 L, NH<sub>3</sub> 313,6 L, H<sub>2</sub>S 22,4 L (total 3315,2 L); masas 2530 + 1208 + 238 + 34 = 4010 g = 3200 g de biomasa + 810 g de agua.</p>
-<table class="tbl"><thead><tr><th>Compuesto</th><th>Fracción en volumen Y<sub>i</sub></th><th>Fracción másica X<sub>i</sub></th></tr></thead><tbody>
-<tr><td>CO<sub>2</sub></td><td>0,388</td><td>0,631</td></tr>
-<tr><td>CH<sub>4</sub></td><td><b>0,51</b></td><td>0,301</td></tr>
-<tr><td>NH<sub>3</sub></td><td>0,0946</td><td>0,059</td></tr>
-<tr><td>H<sub>2</sub>S</td><td>0,00676</td><td>0,0085</td></tr>
+<p><b>Enunciado</b>: se incineran <b>6000 kg/h</b> de un residuo con <b>70 % de humedad</b> (base húmeda); la materia no combustible es el <b>43 %</b> de la materia seca. Materia seca combustible (MSC): C 64,3 %, H 8,2 %, S 2,2 %, O 21,0 % y N 4,3 %. Calor latente del agua: 550 kcal/kg. Se pide (a) el balance de materia con combustión estequiométrica con aire (C, S y H dan solo CO<sub>2</sub>, SO<sub>2</sub> y H<sub>2</sub>O; el N del aire y el del residuo salen como N<sub>2</sub>; los inquemados salen como escorias), (b) el PCS de la fracción combustible y (c) el PCS y el PCI del residuo.</p>
+<p><b>Planteamiento</b> (P1, diap. 2): el horno es un sistema en régimen permanente, así que la masa que entra por hora es la que sale. Entran el residuo (E1) y el aire (E2); salen las escorias (S1), los gases de combustión (S2) y la humedad vaporizada (S3):</p>
+<div class="formula">$$\\underbrace{E_1}_{\\text{residuo}}+\\underbrace{E_2}_{\\text{aire}}=\\underbrace{S_1}_{\\text{escorias}}+\\underbrace{S_2}_{\\text{gases}}+\\underbrace{S_3}_{\\text{humedad}}$$</div>
+<p><b>(a.1) Reparto del residuo (E1)</b> (P1, diap. 2). Primero se quita la humedad y después se separa la materia no combustible de la materia seca:</p>
+<div class="formula">$$\\dot m_{\\text{seco}}=6000\\,(1-0{,}70)=1800\\ \\text{kg/h}$$</div>
+<div class="formula">$$\\dot m_{\\text{MSC}}=1800\\,(1-0{,}43)=1026\\ \\text{kg/h}$$ $$ \\dot m_{\\text{inertes}}=1800\\cdot0{,}43=774\\ \\text{kg/h}$$</div>
+<table class="tbl"><thead><tr><th>Fracción del residuo (E1)</th><th>Cálculo</th><th>kg/h</th><th>Destino</th></tr></thead><tbody>
+<tr><td>Humedad</td><td>$6000\\cdot0{,}70$</td><td>4200</td><td>Se vaporiza (S3)</td></tr>
+<tr><td>Materia seca combustible</td><td>$6000\\cdot0{,}30\\cdot0{,}57$</td><td>1026</td><td>Se quema con el aire (S2)</td></tr>
+<tr><td>Materia no combustible</td><td>$6000\\cdot0{,}30\\cdot0{,}43$</td><td>774</td><td>Escorias (S1)</td></tr>
+<tr><td><b>Total</b></td><td></td><td><b>6000</b></td><td></td></tr>
 </tbody></table>
-<p><b>Producción específica</b> (P3, diap. 3): 1 kg de biomasa = 1000/3200 = <b>0,3125 mol</b>; se degrada el 75 % ⇒ 0,234 mol; 0,234 · 75,5 = 17,67 mol CH<sub>4</sub> ⇒ 17,67 · 22,4 = 395,8 L ⇒ <b>≈ 0,4 Nm³ CH<sub>4</sub>/kg</b> de biomasa.</p>
-<div class="gen"><b>Ampliación (conocimiento general, no está en los apuntes):</b> la ecuación de Buswell para C<sub>c</sub>H<sub>h</sub>O<sub>o</sub>N<sub>n</sub>S<sub>s</sub> da CH<sub>4</sub> = c/2 + h/8 − o/4 − 3n/8 − s/4 y CO<sub>2</sub> = c/2 − h/8 + o/4 + 3n/8 + s/4; con c = 133, h = 256, o = 70, n = 14 y s = 1 se obtienen exactamente los 75,5 y 57,5 mol del problema. El oxígeno estequiométrico de una combustión completa es c + h/4 + s − o/2 (99 mol en el problema 1).</div>
+<p><b>(a.2) Fórmula empírica de la MSC</b> (P1, diap. 3). En 100 g de MSC hay tantos gramos de cada elemento como su porcentaje; se pasan a moles y se dividen por los del elemento menos abundante (el S), redondeando al entero superior:</p>
+<table class="tbl"><thead><tr><th>Elemento</th><th>g en 100 g</th><th>M (g/mol)</th><th>mol en 100 g</th><th>÷ 0,06875</th><th>Átomos</th></tr></thead><tbody>
+<tr><td>C</td><td>64,3</td><td>12</td><td>5,35833</td><td>77,9</td><td>78</td></tr>
+<tr><td>H</td><td>8,2</td><td>1</td><td>8,2</td><td>119,3</td><td>120</td></tr>
+<tr><td>S</td><td>2,2</td><td>32</td><td>0,06875</td><td>1</td><td>1</td></tr>
+<tr><td>O</td><td>21,0</td><td>16</td><td>1,3125</td><td>19,1</td><td>20</td></tr>
+<tr><td>N</td><td>4,3</td><td>14</td><td>0,30714</td><td>4,5</td><td>5</td></tr>
+</tbody></table>
+<div class="formula">$$\\mathrm{C_{78}H_{120}O_{20}N_5S}$$ $$ M=78\\cdot12+120\\cdot1+20\\cdot16+5\\cdot14+1\\cdot32=\\mathbf{1478\\ g/mol}$$</div>
+<p><b>(a.3) Reacción de combustión estequiométrica</b> (P1, diap. 3). El O<sub>2</sub> necesario por mol de combustible es el de los productos menos el oxígeno que ya trae el combustible (la misma regla $x+\\tfrac{y}{4}+z-\\tfrac{w}{2}$ de Apuntes B4, diap. 5):</p>
+<div class="formula">$$n_{O_2}=\\underbrace{78}_{C\\to CO_2}+\\underbrace{\\tfrac{120}{4}}_{H\\to H_2O}+\\underbrace{1}_{S\\to SO_2}-\\underbrace{\\tfrac{20}{2}}_{\\text{O propio}}=99\\ \\text{mol}$$</div>
+<div class="formula">$$\\mathrm{C_{78}H_{120}O_{20}N_5S}+99\\,\\mathrm{O_2}+\\tfrac{79}{21}\\,99\\,\\mathrm{N_2}\\rightarrow78\\,\\mathrm{CO_2}+60\\,\\mathrm{H_2O}+\\mathrm{SO_2}+\\left(\\tfrac{79}{21}\\,99+\\tfrac52\\right)\\mathrm{N_2}$$</div>
+<p>El N<sub>2</sub> de los gases es el del aire (79/21 · 99 = 372,43 mol) más el del propio residuo (5 átomos de N = 5/2 mol de N<sub>2</sub>): 374,93 mol por mol de combustible.</p>
+<p><b>(a.4) Aire estequiométrico (E2)</b> (P1, diap. 3). Caudal molar de combustible y masas de O<sub>2</sub> y N<sub>2</sub>:</p>
+<div class="formula">$$\\dot n=\\frac{1026\\ \\text{kg/h}}{1478\\ \\text{kg/kmol}}=0{,}6942\\ \\text{kmol/h}$$</div>
+<div class="formula">$$\\dot m_{O_2}=99\\cdot32\\cdot0{,}6942=2199\\ \\text{kg/h}$$ $$ \\dot m_{N_2}=\\tfrac{79}{21}\\cdot99\\cdot28\\cdot0{,}6942=7239\\ \\text{kg/h}$$</div>
+<div class="formula">$$E_2=2199+7239=\\mathbf{9438\\ kg/h}$$ $$ E=E_1+E_2=6000+9438=\\mathbf{15.438\\ kg/h}$$</div>
+<p><b>(a.5) Gases de combustión (S2)</b> (P1, diap. 5). Cada producto: kmol/h de combustible × coeficiente de la reacción × masa molar.</p>
+<table class="tbl"><thead><tr><th>Gas</th><th>kmol por kmol de combustible</th><th>kmol/h</th><th>M (kg/kmol)</th><th>kg/h</th></tr></thead><tbody>
+<tr><td>CO<sub>2</sub></td><td>78</td><td>54,15</td><td>44</td><td>2382,5</td></tr>
+<tr><td>H<sub>2</sub>O (formada)</td><td>60</td><td>41,65</td><td>18</td><td>749,7</td></tr>
+<tr><td>SO<sub>2</sub></td><td>1</td><td>0,694</td><td>64</td><td>44,4</td></tr>
+<tr><td>N<sub>2</sub> (aire + residuo)</td><td>79/21 · 99 + 5/2 = 374,93</td><td>260,27</td><td>28</td><td>7287,7</td></tr>
+<tr><td><b>S2</b></td><td></td><td></td><td></td><td><b>10.464</b></td></tr>
+</tbody></table>
+<p>Comprobación: los gases contienen exactamente la masa de la MSC más la del aire, $1026+9438=10.464$ kg/h.</p>
+<p><b>(a.6) Escorias (S1) y humedad vaporizada (S3)</b> (P1, diap. 4-5):</p>
+<div class="formula">$$S_1=6000\\,(1-0{,}7)\\cdot0{,}43=\\mathbf{774\\ kg/h}$$ $$ S_3=6000\\cdot0{,}7=\\mathbf{4200\\ kg/h}$$</div>
+<p><b>Balance de materia global</b> (P1, diap. 5):</p>
+<table class="tbl"><thead><tr><th>Entradas</th><th>kg/h</th><th>Salidas</th><th>kg/h</th></tr></thead><tbody>
+<tr><td>E1 · residuo (4200 de agua + 1026 de MSC + 774 de inertes)</td><td>6000</td><td>S1 · escorias</td><td>774</td></tr>
+<tr><td>E2 · aire (2199 de O<sub>2</sub> + 7239 de N<sub>2</sub>)</td><td>9438</td><td>S2 · gases (CO<sub>2</sub>, H<sub>2</sub>O, SO<sub>2</sub>, N<sub>2</sub>)</td><td>10.464</td></tr>
+<tr><td></td><td></td><td>S3 · humedad vaporizada</td><td>4200</td></tr>
+<tr><td><b>Total entradas</b></td><td><b>15.438</b></td><td><b>Total salidas</b></td><td><b>15.438</b></td></tr>
+</tbody></table>
+<p><b>(b) PCS de la fracción combustible</b> con la fórmula de Dulong modificada (P1, diap. 6), con C, H, O, S y N en % en masa de la MSC (suman 100 %):</p>
+<div class="formula">$$PCS\\,(\\text{kcal/kg})=80{,}60\\,C+339{,}10\\left(H-\\frac{O}{8}\\right)+22{,}22\\,S+5{,}56\\,N$$</div>
+<div class="formula">$$PCS=80{,}6\\cdot64{,}3+339{,}1\\left(8{,}2-\\frac{21}{8}\\right)+22{,}22\\cdot2{,}2+5{,}56\\cdot4{,}3$$</div>
+<div class="formula">$$PCS=5182{,}6+1890{,}5+48{,}9+23{,}9=\\mathbf{7146\\ kcal/kg\\ de\\ MSC}$$</div>
+<p>El término $H-O/8$ descuenta el hidrógeno que ya está unido al oxígeno del combustible (1 kg de O se combina con 1/8 kg de H para formar agua).</p>
+<p><b>(c) PCS y PCI del residuo</b> (P1, diap. 7). El PCS se reduce con los mismos factores que la masa: la MSC es el 57 % de la materia seca y la materia seca el 30 % del residuo.</p>
+<div class="formula">$$PCS_{\\text{m. seca}}=PCS_{\\text{MSC}}\\,(1-0{,}43)=7146\\cdot0{,}57=\\mathbf{4073\\ kcal/kg\\ de\\ materia\\ seca}$$</div>
+<div class="formula">$$PCS_{\\text{residuo}}=PCS_{\\text{m. seca}}\\,(1-0{,}7)=4073\\cdot0{,}3=\\mathbf{1222\\ kcal/kg\\ de\\ residuo}$$</div>
+<p>Siempre se cumple $PCS_{\\text{residuo}}\\lt PCS_{\\text{m. seca}}\\lt PCS_{\\text{MSC}}$. El PCI descuenta el calor latente de toda el agua que sale en los humos: la humedad del residuo y el agua formada al quemar el hidrógeno, ambas por kg de residuo.</p>
+<div class="formula">$$\\frac{m_{H_2O\\,\\text{formada}}}{m_{\\text{residuo}}}=\\frac{0{,}6942\\cdot60\\cdot18}{6000}=\\frac{749{,}7}{6000}=0{,}125\\ \\text{kg/kg}$$</div>
+<div class="formula">$$PCI=PCS-L_v\\,(w+m_{H_2O\\,\\text{formada}})=1222-550\\,(0{,}7+0{,}125)=\\mathbf{768\\ kcal/kg\\ de\\ residuo}$$</div>
+<p><b>Erratas de la resolución oficial del problema 1</b></p>
+<ul><li>Diap. 5, suma de S2: escribe «2.382,5 + 749,7 + <b>41,6</b> + 7.287,7 = 10.464», pero el SO<sub>2</sub> calculado justo encima es <b>44,4</b> kg/h; con 41,6 la suma daría 10.461,5. El total correcto, 10.464 kg/h, es el que corresponde a 44,4.</li>
+<li>Diap. 5, línea del N<sub>2</sub>: escribe «[(<b>719</b>/21) · 99 + 5/2]»; debe ser <b>79/21</b>. El resultado (7.287,7 kg/h) sí está calculado con 79/21.</li>
+<li>Diap. 3: dice que la fórmula química permite calcular la corriente de gases de combustión «(S3)»; los gases son <b>S2</b> (S3 es la humedad vaporizada).</li>
+<li>Diap. 7: a la fórmula del PCI le falta cerrar un paréntesis, «PCI = PCS − L<sub>V</sub> (Humedad»; la expresión correcta es la de arriba.</li>
+<li>Redondeos: «redondeando al entero superior» se aplica a todos los elementos (77,9 → 78, 119,3 → 120, 19,1 → 20, 4,5 → 5). Por ello la fórmula C<sub>78</sub>H<sub>120</sub>O<sub>20</sub>N<sub>5</sub>S no reproduce exactamente los porcentajes de partida (tiene un 63,3 % de C), pero el balance cierra porque el caudal molar se calcula con su propia masa molecular.</li></ul>
+<h4>Problema 2: aire estequiométrico de la celulosa y masa molecular de los humos</h4>
+<p><b>Enunciado</b>: calcular los kilos de aire estequiométrico necesarios para quemar 1 kg de celulosa, y el peso molecular medio de los gases de combustión cuando se quema con un <b>50 % de exceso de aire</b>. La resolución oficial tiene tres pasos: aire estequiométrico, masa molecular de los humos estequiométricos y masa molecular con exceso de aire.</p>
+<p><b>Paso 1. Aire estequiométrico</b> (P2, diap. 2). Celulosa $\\mathrm{C_6H_{10}O_5}$: $M=6\\cdot12+10\\cdot1+5\\cdot16=162$ g/mol y $n_{O_2}=6+\\tfrac{10}{4}-\\tfrac{5}{2}=6$ mol.</p>
+<div class="formula">$$\\mathrm{C_6H_{10}O_5}+6\\,\\mathrm{O_2}+\\tfrac{79}{21}\\,6\\,\\mathrm{N_2}\\rightarrow6\\,\\mathrm{CO_2}+5\\,\\mathrm{H_2O}+\\tfrac{79}{21}\\,6\\,\\mathrm{N_2}$$</div>
+<div class="formula">$$m_{O_2}=6\\cdot32=192\\ \\text{g}$$ $$ m_{N_2}=\\tfrac{79}{21}\\cdot6\\cdot28=632\\ \\text{g}$$ $$ m_{\\text{aire}}=824\\ \\text{g por mol de celulosa}$$</div>
+<div class="formula">$$\\frac{m_{\\text{aire}}}{m_{\\text{celulosa}}}=\\frac{824}{162}=\\mathbf{5{,}1\\ kg\\ de\\ aire/kg\\ de\\ celulosa}$$</div>
+<p><b>Paso 2. Humos estequiométricos</b> (P2, diap. 3). Por mol de celulosa salen 6 mol de CO<sub>2</sub>, 5 de H<sub>2</sub>O y 79/21 · 6 = 22,57 de N<sub>2</sub> sin reaccionar: 33,57 mol. La masa molecular media es la media de las masas moleculares ponderada con las fracciones molares:</p>
+<div class="formula">$$\\bar M=\\sum_i X_i\\,M_i=\\frac{\\sum_i n_i\\,M_i}{\\sum_i n_i}$$</div>
+<table class="tbl"><thead><tr><th>Gas</th><th>n<sub>i</sub> (mol)</th><th>X<sub>i</sub> = n<sub>i</sub>/33,57</th><th>M<sub>i</sub> (g/mol)</th><th>X<sub>i</sub>·M<sub>i</sub></th></tr></thead><tbody>
+<tr><td>CO<sub>2</sub></td><td>6</td><td>0,18</td><td>44</td><td>7,92</td></tr>
+<tr><td>H<sub>2</sub>O</td><td>5</td><td>0,15</td><td>18</td><td>2,70</td></tr>
+<tr><td>N<sub>2</sub></td><td>22,57</td><td>0,67</td><td>28</td><td>18,76</td></tr>
+<tr><td><b>Total</b></td><td><b>33,57</b></td><td><b>1</b></td><td></td><td><b>29,38</b></td></tr>
+</tbody></table>
+<div class="formula">$$\\bar M_{\\text{esteq}}=0{,}18\\cdot44+0{,}15\\cdot18+0{,}67\\cdot28=\\mathbf{29{,}38\\ g/mol}$$</div>
+<p><b>Paso 3. Humos con un 50 % de exceso de aire</b> (P2, diap. 4). A los 33,57 mol anteriores se suman el O<sub>2</sub> y el N<sub>2</sub> del exceso, que no reaccionan:</p>
+<div class="formula">$$n_{O_2,\\,\\text{exceso}}=0{,}5\\cdot6=3\\ \\text{mol}$$ $$ n_{N_2,\\,\\text{exceso}}=0{,}5\\cdot6\\cdot\\tfrac{79}{21}=11{,}28\\ \\text{mol}\\ \\Rightarrow\\ n_{N_2}=22{,}57+11{,}28=33{,}85\\ \\text{mol}$$</div>
+<table class="tbl"><thead><tr><th>Gas</th><th>n<sub>i</sub> (mol)</th><th>X<sub>i</sub> = n<sub>i</sub>/47,85</th><th>M<sub>i</sub> (g/mol)</th><th>X<sub>i</sub>·M<sub>i</sub></th></tr></thead><tbody>
+<tr><td>CO<sub>2</sub></td><td>6</td><td>0,125</td><td>44</td><td>5,50</td></tr>
+<tr><td>H<sub>2</sub>O</td><td>5</td><td>0,105</td><td>18</td><td>1,89</td></tr>
+<tr><td>N<sub>2</sub></td><td>33,85</td><td>0,707</td><td>28</td><td>19,80</td></tr>
+<tr><td>O<sub>2</sub></td><td>3</td><td>0,063</td><td>32</td><td>2,02</td></tr>
+<tr><td><b>Total</b></td><td><b>47,85</b></td><td><b>1</b></td><td></td><td><b>29,21</b></td></tr>
+</tbody></table>
+<div class="formula">$$\\bar M_{50\\,\\%}=0{,}125\\cdot44+0{,}105\\cdot18+0{,}707\\cdot28+0{,}063\\cdot32=\\mathbf{29{,}21\\ g/mol}$$</div>
+<p>La masa molecular baja ligeramente porque el exceso de aire (M ≈ 28,8 g/mol) diluye el CO<sub>2</sub>, que es el gas más pesado.</p>
+<p><b>Erratas de la resolución oficial del problema 2</b>: no hay errores de planteamiento; solo redondeos. Con las fracciones molares redondeadas a dos cifras sale 29,38 g/mol, frente a 986/33,57 = 29,37 g/mol sin redondear; y 22,57 + 11,28 = 33,85 (33,86 sin redondear, 79/21 · 9 = 33,857). Los resultados oficiales, 5,1 kg/kg, 29,38 y 29,21 g/mol, no cambian a efectos prácticos.</p>
+<h4>Problema 3: biogás teórico con la ecuación de Buswell</h4>
+<p><b>Enunciado</b>: se dispone de 50.000 t/año de biomasa vegetal cuya materia volátil tiene C 50 %, H 8 %, O 35 %, N 6 % y S 1 %. Con la ecuación de Buswell, calcular (a) la composición teórica del biogás y (b) la producción específica de metano, si se biodegrada el <b>75 %</b> de la materia volátil.</p>
+<p><b>(a.1) Fórmula empírica</b> (P3, diap. 1), con el mismo método que en el problema 1, dividiendo por los moles de S:</p>
+<table class="tbl"><thead><tr><th>Elemento</th><th>g en 100 g</th><th>M (g/mol)</th><th>mol en 100 g</th><th>÷ 0,03125</th><th>Átomos</th></tr></thead><tbody>
+<tr><td>C</td><td>50</td><td>12</td><td>4,1667</td><td>133,3</td><td>133</td></tr>
+<tr><td>H</td><td>8</td><td>1</td><td>8</td><td>256</td><td>256</td></tr>
+<tr><td>O</td><td>35</td><td>16</td><td>2,1875</td><td>70</td><td>70</td></tr>
+<tr><td>N</td><td>6</td><td>14</td><td>0,4286</td><td>13,7</td><td>14</td></tr>
+<tr><td>S</td><td>1</td><td>32</td><td>0,03125</td><td>1</td><td>1</td></tr>
+</tbody></table>
+<div class="formula">$$\\mathrm{C_{133}H_{256}O_{70}N_{14}S}$$ $$ M=133\\cdot12+256\\cdot1+70\\cdot16+14\\cdot14+1\\cdot32=\\mathbf{3200\\ g/mol}$$</div>
+<p><b>(a.2) Ecuación de Buswell</b> (P3, diap. 2; forma general en Apuntes B3, diap. 14). Para $\\mathrm{C_cH_hO_oN_nS_s}$ los coeficientes son:</p>
+<div class="formula">$$n_{H_2O}=c-\\tfrac{h}{4}-\\tfrac{o}{2}+\\tfrac{3n}{4}+\\tfrac{s}{2}=133-64-35+10{,}5+0{,}5=45$$</div>
+<div class="formula">$$n_{CH_4}=\\tfrac{c}{2}+\\tfrac{h}{8}-\\tfrac{o}{4}-\\tfrac{3n}{8}-\\tfrac{s}{4}=66{,}5+32-17{,}5-5{,}25-0{,}25=75{,}5$$</div>
+<div class="formula">$$n_{CO_2}=\\tfrac{c}{2}-\\tfrac{h}{8}+\\tfrac{o}{4}+\\tfrac{3n}{8}+\\tfrac{s}{4}=66{,}5-32+17{,}5+5{,}25+0{,}25=57{,}5$$</div>
+<div class="formula">$$\\mathrm{C_{133}H_{256}O_{70}N_{14}S}+45\\,\\mathrm{H_2O}\\rightarrow57{,}5\\,\\mathrm{CO_2}+75{,}5\\,\\mathrm{CH_4}+14\\,\\mathrm{NH_3}+\\mathrm{H_2S}$$</div>
+<p>Por cada mol de biomasa (3200 g) se forman, con 22,4 L/mol en condiciones normales (P3, diap. 2):</p>
+<table class="tbl"><thead><tr><th>Compuesto</th><th>mol / mol de biomasa</th><th>Volumen (L, c.n.)</th><th>M (g/mol)</th><th>Masa (g)</th><th>Fracción en volumen Y<sub>i</sub></th><th>Fracción másica X<sub>i</sub></th></tr></thead><tbody>
+<tr><td>CO<sub>2</sub></td><td>57,5</td><td>1288</td><td>44</td><td>2530</td><td>0,388</td><td>0,631</td></tr>
+<tr><td>CH<sub>4</sub></td><td>75,5</td><td>1691,2</td><td>16</td><td>1208</td><td><b>0,51</b></td><td><b>0,301</b></td></tr>
+<tr><td>NH<sub>3</sub></td><td>14</td><td>313,6</td><td>17</td><td>238</td><td>0,0946</td><td>0,059</td></tr>
+<tr><td>H<sub>2</sub>S</td><td>1</td><td>22,4</td><td>34</td><td>34</td><td>0,00676</td><td>0,0085</td></tr>
+<tr><td><b>Total</b></td><td><b>148</b></td><td><b>3315,2</b></td><td></td><td><b>4010</b></td><td><b>1</b></td><td><b>1</b></td></tr>
+</tbody></table>
+<div class="formula">$$Y_i=\\frac{n_i}{\\sum n_i}=\\frac{V_i}{\\sum V_i}$$ $$ X_i=\\frac{m_i}{\\sum m_i}$$ $$ Y_{CH_4}=\\frac{75{,}5}{148}=0{,}51$$ $$ X_{CH_4}=\\frac{1208}{4010}=0{,}301$$</div>
+<p>Comprobación del balance de masa: $3200\\ \\text{g de biomasa}+45\\cdot18=810\\ \\text{g de agua}\\Rightarrow4010$ g de productos. El metano es la mitad del biogás en volumen, pero solo el 30 % en masa, porque el CO<sub>2</sub> pesa casi el triple (44 frente a 16 g/mol).</p>
+<p><b>(b) Producción específica de metano</b> (P3, diap. 3), por kg de biomasa (se toma toda como materia volátil, igual que en la resolución oficial):</p>
+<div class="formula">$$n_{\\text{biomasa}}=\\frac{1000\\ \\text{g}}{3200\\ \\text{g/mol}}=0{,}3125\\ \\text{mol/kg}$$ $$ n_{\\text{degradada}}=0{,}75\\cdot0{,}3125=0{,}234\\ \\text{mol/kg}$$</div>
+<div class="formula">$$n_{CH_4}=0{,}234\\cdot75{,}5=17{,}67\\ \\text{mol/kg}$$ $$ V_{CH_4}=17{,}67\\cdot22{,}4=395{,}8\\ \\text{L/kg}$$</div>
+<div class="formula">$$\\boxed{\\text{Producción específica}\\approx0{,}4\\ \\text{Nm}^3\\ \\text{CH}_4/\\text{kg de biomasa}}$$</div>
+<p>Dato complementario (no está en la resolución oficial): con las 50.000 t/año del enunciado, y suponiendo como en ella que toda la biomasa es materia volátil, se obtendrían unos $5\\cdot10^{7}\\ \\text{kg}\\cdot0{,}396\\ \\text{Nm}^3/\\text{kg}\\approx2\\cdot10^{7}$ Nm³ de CH<sub>4</sub> al año.</p>
+<p><b>Erratas de la resolución oficial del problema 3</b></p>
+<ul><li>Diap. 1, fila del N: escribe «<b>0,248</b> / 0,03125 → 14»; el cociente correcto es 0,428 / 0,03125 = 13,7 → 14 (el 0,428 está bien en la columna anterior).</li>
+<li>Diap. 1: la cabecera dice «redondeando al entero superior», pero el C se redondea hacia abajo (133,3 → 133). Con el entero superior saldrían 134 átomos de C (M = 3212 g/mol); los resultados oficiales usan 133.</li>
+<li>Diap. 3: 0,3125 · 0,75 = 0,2344 mol (no 0,234 exacto); sin ese redondeo salen 17,70 mol y 396,4 L de CH<sub>4</sub> por kg, frente a 17,67 mol y 395,8 L. El resultado final, ≈ 0,4 Nm³/kg, no cambia.</li>
+<li>Diap. 1: 35/16 = 2,1875 aparece como 2,18 (redondeo); el cociente exacto, 2,1875/0,03125 = 70, es el que se usa.</li></ul>
 ` }
   ],
   confusions: [
@@ -339,7 +435,7 @@ L("B2", "b2-alternativas", "Diagrama de van Krevelen", 2, "En el diagrama de van
    "una relación O/C mucho menor (≈ 0) y una relación H/C algo mayor (≈ 2-2,5)",
    "una relación O/C parecida (≈ 0,1) y una relación H/C mucho menor (≈ 0,5)",
    "una relación O/C próxima a 1, como el metanol, y una relación H/C próxima a 2"],
-  0, "Diésel y gasolinas están en O/C ≈ 0 y H/C ≈ 2; la biomasa, en O/C ≈ 0,55-0,75 y H/C ≈ 1,3-1,7. La flecha del diagrama indica que hay que eliminar oxígeno y ganar hidrógeno relativo. Las cenizas son las que tienen H/C &lt; 0,5.", "Apuntes B2, diap. 3");
+  0, "Diésel y gasolinas están en O/C ≈ 0 y H/C ≈ 2; la biomasa, en O/C ≈ 0,55-0,75 y H/C ≈ 1,3-1,7. La flecha del diagrama indica que hay que eliminar oxígeno y ganar hidrógeno relativo. Las cenizas son las que tienen H/C < 0,5.", "Apuntes B2, diap. 3");
 L("B2", "b2-alternativas", "Diagrama de van Krevelen", 3, "En el diagrama de van Krevelen de los apuntes, ¿qué compuesto aparece con relación O/C = 1 y relación H/C = 3?",
   ["El etilenglicol (EG)", "El glicerol", "El etanol", "El metanol"],
   0, "En O/C = 1 aparecen, de arriba abajo, metanol (H/C = 4), EG (H/C = 3), glicerol (≈ 2,7), ácido láctico (2) y CO (0). El etanol tiene H/C = 3 pero O/C = 0,5.", "Apuntes B2, diap. 3");
@@ -351,7 +447,7 @@ L("B2", "b2-alternativas", "Parque por rango de potencia", 2, "Según los datos 
   0, "≤ 1 MW: 89 plantas y 40 MW; 1-5 MW: 98 plantas y 187 MW (en total, 187 plantas y 227 MW, el 72 %). Las 16 plantas de 25-50 MW suman 585 MW, el rango con más potencia; 417 MW corresponde a las 26 plantas de 10-25 MW.", "Apuntes B2, diap. 7");
 L("B2", "b2-alternativas", "Plantas de biomasa en España", 3, "Una planta de biomasa de la tabla de los apuntes tiene 16 MW y produce 128 GWh/año. ¿Cuántas horas equivalentes a plena potencia funciona al año?",
   ["8.000 h", "6.480 h", "7.000 h", "800 h"],
-  0, "128.000 MWh / 16 MW = 8.000 h (Briviesca o Miajadas). 6.480 h corresponde a Curtis Teixeiro (324 GWh / 50 MW) y 7.000 h a Corduente (14 GWh / 2 MW); 800 h es el error de un factor 10.", "Apuntes B2, diap. 8");
+  0, "Las horas equivalentes son la energía anual dividida por la potencia (Apuntes B2, tabla de plantas de biomasa): $$h_{eq}=\\frac{E}{P}$$ $$=\\frac{128\\ \\text{GWh}}{16\\ \\text{MW}}$$ $$=\\frac{128.000\\ \\text{MWh}}{16\\ \\text{MW}}$$ $$=\\boxed{8000\\ \\text{h}}$$ Es el caso de Briviesca o Miajadas. 6.480 h corresponde a Curtis Teixeiro (324 GWh / 50 MW) y 7.000 h a Corduente (14 GWh / 2 MW); 800 h es un error de un factor 10 en las unidades.", "Apuntes B2, diap. 8");
 L("B2", "b2-alternativas", "Ejemplos de plantas", 3, "Entre los ejemplos de plantas de combustión de biomasa de los apuntes, ¿cuáles trabajan con gasificación + combustión? (varias respuestas)",
   ["Kymijärvi II (Finlandia), 160 MW, alimentada con CSR",
    "Vaasa (Finlandia), 140 MW, alimentada con residuos forestales",
@@ -361,17 +457,17 @@ L("B2", "b2-alternativas", "Ejemplos de plantas", 3, "Entre los ejemplos de plan
 
 /* Sección 2 · Combustión */
 L("B2", "b2-combustion", "Tipos de hornos", 2, "¿Qué tamaño de partícula indican los apuntes para los hornos de lecho fluidizado y para los de cocombustión?",
-  ["Lecho fluidizado: 3-4 cm de dimensión máxima; cocombustión: &lt; 1 mm",
-   "Lecho fluidizado: &lt; 1 mm; cocombustión: 3-4 cm de dimensión máxima",
-   "Lecho fluidizado: 3-4 mm de dimensión máxima; cocombustión: &lt; 1 cm",
-   "Lecho fluidizado: &lt; 3 mm; cocombustión: &lt; 1 mm, como en la pirólisis rápida"],
-  0, "Lecho fluidizado: partículas de 3-4 cm como máximo. Cocombustión en hornos de carbón: &lt; 1 mm. La molienda a &lt; 3 mm es la de la pirólisis rápida.", "Apuntes B2, diap. 9");
+  ["Lecho fluidizado: 3-4 cm de dimensión máxima; cocombustión: < 1 mm",
+   "Lecho fluidizado: < 1 mm; cocombustión: 3-4 cm de dimensión máxima",
+   "Lecho fluidizado: 3-4 mm de dimensión máxima; cocombustión: < 1 cm",
+   "Lecho fluidizado: < 3 mm; cocombustión: < 1 mm, como en la pirólisis rápida"],
+  0, "Lecho fluidizado: partículas de 3-4 cm como máximo. Cocombustión en hornos de carbón: < 1 mm. La molienda a < 3 mm es la de la pirólisis rápida.", "Apuntes B2, diap. 9");
 L("B2", "b2-combustion", "Pretratamiento", 1, "Antes de incinerarla, la biomasa se trocea y se seca hasta una humedad de…",
-  ["&lt; 10 % para combustión industrial y &lt; 30 % para combustión doméstica",
-   "&lt; 30 % para combustión industrial y &lt; 10 % para combustión doméstica",
-   "&lt; 15 % para combustión industrial y &lt; 30 % para combustión doméstica",
-   "&lt; 10 % en ambos casos, el mismo valor que exige el pellet ENplus"],
-  0, "Industrial &lt; 10 %, doméstica &lt; 30 %. El 15 % es la humedad de las astillas del district heating de Soria.", "Apuntes B2, diap. 9");
+  ["< 10 % para combustión industrial y < 30 % para combustión doméstica",
+   "< 30 % para combustión industrial y < 10 % para combustión doméstica",
+   "< 15 % para combustión industrial y < 30 % para combustión doméstica",
+   "< 10 % en ambos casos, el mismo valor que exige el pellet ENplus"],
+  0, "Industrial < 10 %, doméstica < 30 %. El 15 % es la humedad de las astillas del district heating de Soria.", "Apuntes B2, diap. 9");
 L("B2", "b2-combustion", "Hornos para residuos", 2, "Sobre los hornos empleados para residuos, ¿cuál de las siguientes afirmaciones es FALSA?",
   ["Los residuos líquidos contenidos en recipientes se incineran en quemadores industriales, como los combustibles líquidos",
    "Los residuos municipales se incineran en hornos de parrillas y de lecho fluidizado",
@@ -392,14 +488,14 @@ L("B2", "b2-combustion", "District heating de Soria", 3, "¿Qué descripción co
   0, "Soria: 3 líneas, parrilla fija de 6 MW con dos entradas de aire secundario y una de primario, rendimiento 85 %, ciclón seguido de filtro de mangas, astillas al 15 %, 16.000 t/año y unos 45·10⁶ kWh/año para 8.000 clientes.", "Apuntes B2, diap. 12");
 L("B2", "b2-combustion", "District heating de Soria", 3, "La central de Soria genera unos 45·10⁶ kWh/año consumiendo 16.000 t/año de astillas. ¿Cuánta energía útil obtiene, aproximadamente, por tonelada de astilla?",
   ["≈ 2.800 kWh/t", "≈ 28.000 kWh/t", "≈ 280 kWh/t", "≈ 3.300 kWh/t"],
-  0, "45·10⁶ kWh / 16.000 t = 2.812,5 kWh/t ≈ 2,8 MWh/t. Los otros valores son errores de un factor 10 o el resultado de dividir además por el rendimiento (2.812,5 / 0,85 ≈ 3.300 kWh/t, que sería la energía del combustible).", "Apuntes B2, diap. 12");
+  0, "La energía útil por tonelada es la energía generada al año dividida por el combustible consumido al año (central de Soria, Apuntes B2): $$e=\\frac{45\\cdot10^{6}\\ \\text{kWh/año}}{16.000\\ \\text{t/año}}$$ $$=2812{,}5\\ \\text{kWh/t}\\approx\\boxed{2800\\ \\text{kWh/t}}$$ 28.000 y 280 kWh/t son errores de un factor 10. Dividir además por el rendimiento (2812,5 / 0,85 ≈ 3.300 kWh/t) da la energía del combustible, no la útil.", "Apuntes B2, diap. 12");
 L("B2", "b2-combustion", "Horno de parrillas de RSU", 2, "¿Qué datos corresponden al horno de parrillas para RSU de los apuntes? (varias respuestas)",
   ["Parrillas metálicas refrigeradas por aire o agua e inclinadas unos 25º", "Gases en la cámara de combustión a más de 850 ºC durante 2 s", "Gases de escape a 315 ºC que pasan por dos lavadores, el segundo con NaOH", "Tiempo de residencia del residuo de 30 a 90 minutos a 500-1450 ºC"],
-  [0, 1], "Parrillas inclinadas unos 25º y refrigeradas; gases a &gt; 850 ºC durante 2 s (quemadores auxiliares de gas natural y gasóleo para alcanzar los 850 ºC); escape a 160-220 ºC. Los 315 ºC con lavadores y los 30-90 min a 500-1450 ºC son del incinerador rotatorio.", "Apuntes B2, diap. 15");
+  [0, 1], "Parrillas inclinadas unos 25º y refrigeradas; gases a > 850 ºC durante 2 s (quemadores auxiliares de gas natural y gasóleo para alcanzar los 850 ºC); escape a 160-220 ºC. Los 315 ºC con lavadores y los 30-90 min a 500-1450 ºC son del incinerador rotatorio.", "Apuntes B2, diap. 15");
 L("B2", "b2-combustion", "Horno rotatorio", 2, "¿Qué conjunto de datos corresponde al incinerador rotatorio de los apuntes?",
   ["Longitud 8-20 m, diámetro 1-5 m, 0,1-20 t/h, 500-1450 ºC y residencia de 30-90 min",
    "Longitud 1-5 m, diámetro 8-20 m, 0,1-20 t/h, 500-1450 ºC y residencia de 30-90 min",
-   "Longitud 8-20 m, diámetro 1-5 m, 0,1-20 t/h, &gt; 850 ºC y residencia de 2 s",
+   "Longitud 8-20 m, diámetro 1-5 m, 0,1-20 t/h, > 850 ºC y residencia de 2 s",
    "Longitud 8-20 m, diámetro 1-5 m, 1-50 t/h, 3000-20000 ºC y residencia de 30-90 min"],
   0, "Horno rotatorio: 8-20 m de longitud, 1-5 m de diámetro, 0,1-20 t/h, 500-1450 ºC y 30-90 min. Los 850 ºC y 2 s son del horno de parrillas; 3000-20000 ºC, del plasma.", "Apuntes B2, diap. 17");
 
@@ -414,20 +510,20 @@ L("B2", "b2-gasificacion", "Agente gasificante", 2, "Si se gasifica una biomasa 
   ["4-7 MJ/Nm³", "15-20 MJ/Nm³", "10-20 MJ/Nm³", "Ninguna de las otras opciones"],
   2, "Aire: 4-7 MJ/Nm³ (el N₂ diluye el gas); oxígeno: 10-20 MJ/Nm³; aire u oxígeno + vapor de agua: 15-20 MJ/Nm³.", "Apuntes B2, diap. 19");
 L("B2", "b2-gasificacion", "Reacciones endotérmicas", 3, "¿Cuáles de las siguientes reacciones de la gasificación son endotérmicas según los apuntes? (varias respuestas)",
-  ["Boudouard: C + CO₂ → 2 CO", "Water-gas: C + H₂O → H₂ + CO", "Water-gas shift: CO + H₂O → H₂ + CO₂", "Reformado seco: CₙHₘ + n CO₂ → 2n CO + (m/2) H₂"],
-  [0, 1, 3], "Endotérmicas: Boudouard (+159,9 kJ/mol), water-gas (+118,5 kJ/mol), reformado con vapor y reformado seco (ΔH° &gt; 0). La water-gas shift es exotérmica (−40,9 kJ/mol).", "Apuntes B2, diap. 20");
+  ["Boudouard: $\\mathrm{C + CO_2 \\rightarrow 2\\,CO}$", "Water-gas: $\\mathrm{C + H_2O \\rightarrow H_2 + CO}$", "Water-gas shift: $\\mathrm{CO + H_2O \\rightarrow H_2 + CO_2}$", "Reformado seco: $\\mathrm{C_nH_m + n\\,CO_2 \\rightarrow 2n\\,CO + (m/2)\\,H_2}$"],
+  [0, 1, 3], "Endotérmicas: Boudouard (+159,9 kJ/mol), water-gas (+118,5 kJ/mol), reformado con vapor y reformado seco (ΔH° > 0). La water-gas shift es exotérmica (−40,9 kJ/mol).", "Apuntes B2, diap. 20");
 L("B2", "b2-gasificacion", "Entalpías de reacción", 3, "¿Qué pareja reacción–entalpía estándar es correcta según la tabla de los apuntes?",
-  ["Metanización, C + 2 H₂ → CH₄: ΔH° = −87,5 kJ/mol",
-   "Water-gas shift, CO + H₂O → H₂ + CO₂: ΔH° = +118,5 kJ/mol",
-   "Combustión incompleta, C + ½ O₂ → CO: ΔH° = −393,8 kJ/mol",
-   "Boudouard, C + CO₂ → 2 CO: ΔH° = −159,9 kJ/mol"],
+  ["Metanización, $\\mathrm{C + 2\\,H_2 \\rightarrow CH_4}$: $\\Delta H^\\circ = -87{,}5$ kJ/mol",
+   "Water-gas shift, $\\mathrm{CO + H_2O \\rightarrow H_2 + CO_2}$: $\\Delta H^\\circ = +118{,}5$ kJ/mol",
+   "Combustión incompleta, $\\mathrm{C + \\tfrac12\\,O_2 \\rightarrow CO}$: $\\Delta H^\\circ = -393{,}8$ kJ/mol",
+   "Boudouard, $\\mathrm{C + CO_2 \\rightarrow 2\\,CO}$: $\\Delta H^\\circ = -159{,}9$ kJ/mol"],
   0, "Valores de la diapositiva: combustión completa −393,8; incompleta −123,1; metanización −87,5; shift −40,9; Boudouard +159,9; water-gas +118,5 kJ/mol.", "Apuntes B2, diap. 20");
 L("B2", "b2-gasificacion", "Alquitranes", 2, "Para acondicionar el gas de gasificación y eliminar los alquitranes, los apuntes citan…",
-  ["la eliminación de partículas (filtros, ciclones, lavadores), el craqueo térmico a T &gt; 1100 ºC y los catalizadores",
-   "la eliminación de partículas (filtros, ciclones, lavadores), el craqueo térmico a T &gt; 850 ºC y la adición de caliza",
-   "la condensación a baja temperatura, el craqueo térmico a T &gt; 400 ºC y los catalizadores",
+  ["la eliminación de partículas (filtros, ciclones, lavadores), el craqueo térmico a T > 1100 ºC y los catalizadores",
+   "la eliminación de partículas (filtros, ciclones, lavadores), el craqueo térmico a T > 850 ºC y la adición de caliza",
+   "la condensación a baja temperatura, el craqueo térmico a T > 400 ºC y los catalizadores",
    "la eliminación de partículas en electrofiltros y la gasificación por plasma a 3000-20000 ºC"],
-  0, "Acondicionamiento: eliminación de partículas (filtros, ciclones, lavadores), craqueo térmico (T &gt; 1100 ºC) y catalizadores. 850 ºC es la temperatura mínima del horno de parrillas; 400 ºC, la de la pirólisis.", "Apuntes B2, diap. 21");
+  0, "Acondicionamiento: eliminación de partículas (filtros, ciclones, lavadores), craqueo térmico (T > 1100 ºC) y catalizadores. 850 ºC es la temperatura mínima del horno de parrillas; 400 ºC, la de la pirólisis.", "Apuntes B2, diap. 21");
 L("B2", "b2-gasificacion", "Tipos de gasificadores", 3, "En un gasificador de lecho fijo <i>down draft</i> como el de los apuntes…",
   ["el aire entra a media altura y el gas de síntesis sale por la parte inferior, tras atravesar la zona de reducción",
    "el aire entra por la parte inferior y el gas de síntesis sale por arriba, tras atravesar la zona de secado",
@@ -443,11 +539,11 @@ L("B2", "b2-gasificacion", "Plasma", 1, "La gasificación por plasma descrita en
 
 /* Sección 4 · Pirólisis */
 L("B2", "b2-pirolisis", "Definición", 1, "Según los apuntes, la pirólisis es…",
-  ["una descomposición por calor (&gt; 400 ºC) en ausencia de oxígeno, con recuperación de energía y/o materia",
-   "una oxidación parcial (&gt; 400 ºC) en condiciones subestequiométricas, con recuperación de energía",
-   "una descomposición por calor (&gt; 850 ºC) con exceso de aire y depuración de los gases",
-   "una descomposición por calor (&gt; 1100 ºC) en ausencia de oxígeno, sin recuperación de materia"],
-  0, "Pirólisis = descomposición por calor (&gt; 400 ºC) en ausencia de oxígeno con recuperación de energía y/o materia y depuración de los gases. La oxidación parcial subestequiométrica es la gasificación.", "Apuntes B2, diap. 25");
+  ["una descomposición por calor (> 400 ºC) en ausencia de oxígeno, con recuperación de energía y/o materia",
+   "una oxidación parcial (> 400 ºC) en condiciones subestequiométricas, con recuperación de energía",
+   "una descomposición por calor (> 850 ºC) con exceso de aire y depuración de los gases",
+   "una descomposición por calor (> 1100 ºC) en ausencia de oxígeno, sin recuperación de materia"],
+  0, "Pirólisis = descomposición por calor (> 400 ºC) en ausencia de oxígeno con recuperación de energía y/o materia y depuración de los gases. La oxidación parcial subestequiométrica es la gasificación.", "Apuntes B2, diap. 25");
 L("B2", "b2-pirolisis", "Pirólisis rápida", 1, "En la pirólisis rápida (la de la mayor parte de las instalaciones), el material de partida se descompone en…",
   ["coque 20 %, gas 20 % y líquido por condensación 60 %",
    "coque 60 %, gas 20 % y líquido por condensación 20 %",
@@ -461,11 +557,11 @@ L("B2", "b2-pirolisis", "Pirólisis lenta", 1, "La pirólisis que se conoce como
    "dura segundos, trabaja a ≈ 400 ºC y da un 20 % de coque y un 80 % de gases"],
   0, "La pirólisis lenta (horas, ≈ 400 ºC) produce 80 % de coque y 20 % de gases y se denomina carbonización.", "Apuntes B2, diap. 26");
 L("B2", "b2-pirolisis", "Pirólisis rápida", 3, "Según el esquema de pirólisis rápida de los apuntes, la biomasa se prepara y trata con…",
-  ["secado a &lt; 10 % de humedad, molienda a &lt; 3 mm y reactor a 500 ºC con &lt; 2 s",
-   "secado a &lt; 30 % de humedad, molienda a 3-4 cm y reactor a 700 ºC durante horas",
-   "secado a &lt; 10 % de humedad, molienda a &lt; 1 mm y reactor a 400 ºC con &lt; 2 s",
-   "secado a &lt; 15 % de humedad, molienda a &lt; 3 mm y reactor a 850 ºC durante 2 s"],
-  0, "El material debe estar molido: secado &lt; 10 %, molienda &lt; 3 mm, pirólisis rápida a 500 ºC y &lt; 2 s, y condensación que separa gas, líquido y carbón. El texto de la misma diapositiva habla de ≈ 700 ºC para la pirólisis rápida en general.", "Apuntes B2, diap. 26");
+  ["secado a < 10 % de humedad, molienda a < 3 mm y reactor a 500 ºC con < 2 s",
+   "secado a < 30 % de humedad, molienda a 3-4 cm y reactor a 700 ºC durante horas",
+   "secado a < 10 % de humedad, molienda a < 1 mm y reactor a 400 ºC con < 2 s",
+   "secado a < 15 % de humedad, molienda a < 3 mm y reactor a 850 ºC durante 2 s"],
+  0, "El material debe estar molido: secado < 10 %, molienda < 3 mm, pirólisis rápida a 500 ºC y < 2 s, y condensación que separa gas, líquido y carbón. El texto de la misma diapositiva habla de ≈ 700 ºC para la pirólisis rápida en general.", "Apuntes B2, diap. 26");
 L("B2", "b2-pirolisis", "Gas de pirólisis", 2, "La composición aproximada del gas de pirólisis que dan los apuntes es…",
   ["48 % CO, 20 % H₂, 13 % CH₄, 6,5 % CO₂ y 6 % de hidrocarburos insaturados, con PCI ≈ 4500 kcal/Nm³",
    "20 % CO, 48 % H₂, 13 % CH₄, 6,5 % CO₂ y 6 % de hidrocarburos insaturados, con PCI ≈ 4500 kcal/Nm³",
@@ -483,7 +579,7 @@ L("B2", "b2-pirolisis", "Usos de los productos", 2, "Sobre los usos de los produ
 L("B2", "b2-emisiones", "Ámbito del RD 815/2013", 2, "Según los apuntes, el Real Decreto 815/2013 de emisiones industriales se aplica a…",
   ["instalaciones de combustión de ≥ 50 MW térmicos, gasificación y licuefacción de ≥ 20 MW e incineración o coincineración de residuos",
    "instalaciones de combustión de ≥ 20 MW térmicos, gasificación y licuefacción de ≥ 50 MW e incineración o coincineración de residuos",
-   "instalaciones de combustión de ≥ 1 MW y &lt; 50 MW térmicos, incluidos los motores y las turbinas de gas",
+   "instalaciones de combustión de ≥ 1 MW y < 50 MW térmicos, incluidos los motores y las turbinas de gas",
    "calderas de combustibles sólidos de ≤ 500 kW y aparatos de calefacción local de ≤ 50 kW"],
   0, "RD 815/2013 (modificado por el RD 773/2017): combustión ≥ 50 MW, gasificación y licuefacción ≥ 20 MW, e incineración y coincineración de residuos. El intervalo 1-50 MW es el del RD 1042/2017 y los ≤ 500 kW y ≤ 50 kW, los de los reglamentos de ecodiseño.", "Apuntes B2, diap. 28");
 L("B2", "b2-emisiones", "Eficiencia energética", 2, "Una incineradora de residuos domésticos autorizada en 2015 se considera instalación de valorización si su eficiencia energética es…",
@@ -494,31 +590,31 @@ L("B2", "b2-emisiones", "Eficiencia energética", 2, "En la fórmula de eficienc
    "la electricidad por 1,1 y el calor para usos comerciales por 2,6",
    "la electricidad por 2,6 y el calor para usos comerciales por 0,97",
    "la electricidad y el calor para usos comerciales por 0,97"],
-  0, "E<sub>p</sub> = 2,6 · electricidad + 1,1 · calor (GJ/año). El 0,97 va en el denominador y representa las pérdidas por cenizas de fondo y radiación.", "Apuntes B2, diap. 28");
+  0, "La fórmula de eficiencia energética de la Ley 7/2022 (Apuntes B2, diap. 28) pondera la electricidad por 2,6 y el calor para usos comerciales por 1,1: $$E_p=2{,}6\\,E_{elec}+1{,}1\\,E_{calor}\\quad(\\text{GJ/año})$$ $$\\eta=\\frac{E_p-(E_f+E_i)}{0{,}97\\,(E_w+E_f)}$$ El 0,97 va en el denominador y representa las pérdidas por cenizas de fondo y radiación.", "Apuntes B2, diap. 28");
 L("B2", "b2-emisiones", "Eficiencia energética", 3, "Una incineradora de residuos domésticos produce al año 200.000 GJ de electricidad y 100.000 GJ de calor para usos comerciales, con E<sub>f</sub> = 10.000 GJ, E<sub>i</sub> = 5.000 GJ y E<sub>w</sub> = 1.000.000 GJ. Su eficiencia energética es…",
   ["≈ 0,63: es valorización solo si estaba autorizada antes del 1 de enero de 2009",
    "≈ 0,63: es valorización en cualquier caso, porque supera los dos umbrales",
    "≈ 0,52: no alcanza ninguno de los dos umbrales de valorización",
    "≈ 0,29: no alcanza ninguno de los dos umbrales de valorización"],
-  0, "E<sub>p</sub> = 2,6·200.000 + 1,1·100.000 = 630.000 GJ; (630.000 − 15.000) / [0,97·(1.000.000 + 10.000)] = 615.000 / 979.700 ≈ 0,628. Supera 0,60 pero no 0,65. Olvidar el calor da ≈ 0,52 y no aplicar los factores 2,6 y 1,1 da ≈ 0,29.", "Apuntes B2, diap. 28");
+  0, "Se aplica la fórmula de eficiencia energética de la Ley 7/2022 (Apuntes B2, diap. 28). Primero, la energía producida ponderada: $$E_p=2{,}6\\cdot200.000+1{,}1\\cdot100.000$$ $$=630.000\\ \\text{GJ}$$ Después, la eficiencia: $$\\eta=\\frac{E_p-(E_f+E_i)}{0{,}97\\,(E_w+E_f)}$$ $$=\\frac{630.000-15.000}{0{,}97\\,(1.000.000+10.000)}$$ $$=\\frac{615.000}{979.700}\\approx\\boxed{0{,}63}$$ Supera el umbral de 0,60 (instalaciones autorizadas antes del 1-1-2009) pero no el de 0,65, así que solo es valorización si estaba autorizada antes de esa fecha. Olvidar el calor da ≈ 0,52 y no aplicar los factores 2,6 y 1,1 da ≈ 0,29.", "Apuntes B2, diap. 28");
 L("B2", "b2-emisiones", "Coincineración con biomasa", 2, "En una instalación de combustión de 80 MWth que coincinera residuos con biomasa como combustible, el valor límite diario de NO<sub>x</sub> (O<sub>2</sub> = 6 %) es…",
   ["350 mg/Nm³", "400 mg/Nm³", "300 mg/Nm³", "200 mg/Nm³"],
-  0, "Biomasa: NO<sub>x</sub> 350 (50-100 MWth), 300 (100-300) y 200 (&gt; 300). Con combustibles sólidos distintos de la biomasa, 400 mg/Nm³ en 50-100 MWth.", "Apuntes B2, diap. 29-30");
+  0, "Biomasa: NOₓ 350 (50-100 MWth), 300 (100-300) y 200 (> 300). Con combustibles sólidos distintos de la biomasa, 400 mg/Nm³ en 50-100 MWth.", "Apuntes B2, diap. 29-30");
 L("B2", "b2-emisiones", "Corrección por oxígeno", 3, "En esa instalación de coincineración con biomasa de 80 MWth se miden 300 mg/Nm³ de NO<sub>x</sub> (gas seco) con un 9 % de O<sub>2</sub>. Corrigiendo al oxígeno de referencia…",
   ["se obtienen 375 mg/Nm³, que superan el límite de 350 mg/Nm³",
    "se obtienen 240 mg/Nm³, que cumplen el límite de 350 mg/Nm³",
    "se obtienen 375 mg/Nm³, que cumplen el límite de 400 mg/Nm³",
    "no hay que corregir, porque 300 mg/Nm³ ya cumple el límite de 350 mg/Nm³"],
-  0, "E<sub>s</sub> = (21 − 6)/(21 − 9) · 300 = 15/12 · 300 = 375 mg/Nm³ &gt; 350. Invertir la fracción da 240; 400 mg/Nm³ es el límite de los combustibles sólidos distintos de la biomasa. Siempre se compara la concentración corregida.", "Apuntes B2, diap. 29 y 32");
+  0, "Los límites se comparan siempre con la concentración corregida al oxígeno de referencia, que es el 6 % para combustibles sólidos (Apuntes B2): $$E_s=\\frac{21-O_s}{21-O_m}\\,E_m$$ $$=\\frac{21-6}{21-9}\\cdot300$$ $$=\\frac{15}{12}\\cdot300$$ $$=\\boxed{375\\ \\text{mg/Nm}^3}$$ Como 375 mg/Nm³ supera los 350 mg/Nm³ (límite de NOₓ para biomasa de 50-100 MWth), la instalación no cumple. Invertir la fracción da 240 mg/Nm³; 400 mg/Nm³ es el límite de los combustibles sólidos distintos de la biomasa.", "Apuntes B2, diap. 29 y 32");
 L("B2", "b2-emisiones", "Incineración de residuos", 3, "En una incineradora de residuos se miden 40 mg/Nm³ de SO<sub>2</sub> (gas seco) con un 15 % de O<sub>2</sub>. Según los apuntes…",
-  ["corregida al 11 % de O<sub>2</sub> son ≈ 66,7 mg/Nm³: supera la media de 24 h (50) pero no la de ½ h (200)",
-   "corregida al 11 % de O<sub>2</sub> son 24 mg/Nm³: cumple la media de 24 h (50) y la de ½ h (200)",
-   "corregida al 6 % de O<sub>2</sub> son 90 mg/Nm³: supera la media de 24 h (50) pero no la de ½ h (200)",
-   "corregida al 11 % de O<sub>2</sub> son ≈ 66,7 mg/Nm³: cumple, porque el límite de SO<sub>2</sub> es 200 en ambas medias"],
-  0, "En incineración la referencia es el 11 % de O<sub>2</sub>: E<sub>s</sub> = (21 − 11)/(21 − 15) · 40 = 10/6 · 40 ≈ 66,7 mg/Nm³. Límites de SO<sub>2</sub>: 200 (media de ½ h) y 50 (media de 24 h).", "Apuntes B2, diap. 31-32");
+  ["corregida al 11 % de O₂ son ≈ 66,7 mg/Nm³: supera la media de 24 h (50) pero no la de ½ h (200)",
+   "corregida al 11 % de O₂ son 24 mg/Nm³: cumple la media de 24 h (50) y la de ½ h (200)",
+   "corregida al 6 % de O₂ son 90 mg/Nm³: supera la media de 24 h (50) pero no la de ½ h (200)",
+   "corregida al 11 % de O₂ son ≈ 66,7 mg/Nm³: cumple, porque el límite de SO₂ es 200 en ambas medias"],
+  0, "En incineración de residuos el oxígeno de referencia es el 11 % (Apuntes B2). Corrección: $$E_s=\\frac{21-11}{21-15}\\cdot40$$ $$=\\frac{10}{6}\\cdot40\\approx\\boxed{66{,}7\\ \\text{mg/Nm}^3}$$ Límites de SO₂: 50 mg/Nm³ (media de 24 h) y 200 mg/Nm³ (media de ½ h). 66,7 supera el primero pero no el segundo. Invertir la fracción da 24 mg/Nm³; corregir al 6 % daría 100 mg/Nm³ (la opción que dice 90 está además mal calculada).", "Apuntes B2, diap. 31-32");
 L("B2", "b2-emisiones", "Equivalencia tóxica", 3, "Una muestra contiene 0,2 ng de 2,3,7,8-TCDD, 0,4 ng de 1,2,3,7,8-PeCDD y 1 ng de OCDD. Su contenido expresado como equivalente tóxico es…",
   ["0,401 ng TEQ", "1,6 ng TEQ", "0,221 ng TEQ", "0,41 ng TEQ"],
-  0, "Factores: TCDD = 1, PeCDD = 0,5 y OCDD = 0,001 ⇒ 0,2 + 0,2 + 0,001 = 0,401 ng TEQ. 1,6 es la suma sin ponderar; 0,221 usa el 0,05 del 1,2,3,7,8-PeCDF y 0,41 el 0,01 de las heptacloradas.", "Apuntes B2, diap. 33");
+  0, "El equivalente tóxico es la suma de cada masa por su factor de equivalencia (TEF) de la tabla de los apuntes: TCDD = 1; 1,2,3,7,8-PeCDD = 0,5; OCDD = 0,001. $$TEQ=\\sum m_i\\,TEF_i$$ $$=0{,}2\\cdot1+0{,}4\\cdot0{,}5+1\\cdot0{,}001$$ $$TEQ=0{,}2+0{,}2+0{,}001$$ $$=\\boxed{0{,}401\\ \\text{ng TEQ}}$$ 1,6 es la suma sin ponderar; 0,221 usa el 0,05 del 1,2,3,7,8-PeCDF y 0,41 el 0,01 de las heptacloradas.", "Apuntes B2, diap. 33");
 L("B2", "b2-emisiones", "Aguas de depuración de gases", 2, "¿Qué valores límite de las aguas residuales de la depuración de gases de las incineradoras son correctos? (varias respuestas)",
   ["Mercurio y sus compuestos: 0,03 mg/L",
    "Dioxinas y furanos: 0,3 ng/L",
@@ -527,36 +623,36 @@ L("B2", "b2-emisiones", "Aguas de depuración de gases", 2, "¿Qué valores lím
   [0, 1], "Aguas: Hg 0,03 mg/L y dioxinas y furanos 0,3 ng/L (Cd y Tl 0,05; As 0,15; Pb 0,2; Cr, Cu y Ni 0,5; Zn 1,5): el 0,15 es el del arsénico y el 0,5 el del cromo, cobre y níquel. Los 0,05 mg/Nm³ de Hg y los 0,1 ng TEQ/Nm³ son límites de emisión atmosférica.", "Apuntes B2, diap. 34");
 L("B2", "b2-emisiones", "Oxígeno de referencia", 1, "En los límites de emisión de las instalaciones de combustión de residuos (incineración), el contenido de oxígeno de referencia es…",
   ["6 %", "3 %", "15 %", "11 %"],
-  3, "Incineración de residuos: 11 % de O<sub>2</sub>. La coincineración con biomasa o sólidos usa el 6 %, los líquidos el 3 % y las turbinas y motores de gas el 15 %.", "Apuntes B2, diap. 31");
+  3, "Incineración de residuos: 11 % de O₂. La coincineración con biomasa o sólidos usa el 6 %, los líquidos el 3 % y las turbinas y motores de gas el 15 %.", "Apuntes B2, diap. 31");
 
 /* Sección 6 · Límites de combustión y ecodiseño */
 L("B2", "b2-limites", "Grandes instalaciones", 3, "Para una instalación de combustión de biomasa de 50-100 MW térmicos, los valores límite de SO<sub>2</sub>, NO<sub>x</sub> y partículas (O<sub>2</sub> = 6 %) son…",
   ["200, 300 y 30 mg/Nm³", "400, 300 y 30 mg/Nm³", "300, 300 y 30 mg/Nm³", "200, 250 y 20 mg/Nm³"],
-  0, "Biomasa 50-100 MW: SO<sub>2</sub> 200, NO<sub>x</sub> 300, partículas 30. Hulla y lignito: 400/300/30; turba: 300/300/30; biomasa de 100-300 MW: 200/250/20.", "Apuntes B2, diap. 35");
+  0, "Biomasa 50-100 MW: SO₂ 200, NOₓ 300, partículas 30. Hulla y lignito: 400/300/30; turba: 300/300/30; biomasa de 100-300 MW: 200/250/20.", "Apuntes B2, diap. 35");
 L("B2", "b2-limites", "Gas natural", 3, "En la tabla de límites para instalaciones de combustión de ≥ 50 MW, el valor límite de partículas para el gas natural es…",
   ["30 mg/Nm³", "20 mg/Nm³", "10-30 mg/Nm³", "Ninguna de las otras opciones"],
-  3, "Para el gas natural: SO<sub>2</sub> 35, NO<sub>x</sub> 100, partículas 5 y CO 100 mg/Nm³. El intervalo 10-30 corresponde al gas de alto horno; 30 y 20, a combustibles sólidos.", "Apuntes B2, diap. 35");
+  3, "Para el gas natural: SO₂ 35, NOₓ 100, partículas 5 y CO 100 mg/Nm³. El intervalo 10-30 corresponde al gas de alto horno; 30 y 20, a combustibles sólidos.", "Apuntes B2, diap. 35");
 L("B2", "b2-limites", "Oxígeno de referencia", 1, "En las tablas de límites para instalaciones de combustión, el contenido de O<sub>2</sub> de referencia para las turbinas y los motores de gas es…",
   ["15 %", "3 %", "6 %", "11 %"],
   0, "6 % sólidos, 3 % líquidos y gases, salvo turbinas y motores de gas, que usan el 15 %. El 11 % es el de la incineración de residuos.", "Apuntes B2, diap. 35-36");
 L("B2", "b2-limites", "RD 1042/2017", 3, "Una caldera nueva de biomasa sólida de 4 MW térmicos, regulada por el RD 1042/2017, tiene como límites de NO<sub>x</sub> y de partículas…",
   ["500 y 50 mg/Nm³", "300 y 20 mg/Nm³", "300 y 30 mg/Nm³", "500 y 30 mg/Nm³"],
-  0, "Valores generales: NO<sub>x</sub> 300 y partículas 20 mg/Nm³, pero las notas fijan 500 mg/Nm³ de NO<sub>x</sub> y 50 mg/Nm³ de partículas entre 1 y 5 MW. El valor de 30 mg/Nm³ de partículas es para 5-20 MW.", "Apuntes B2, diap. 36");
+  0, "Valores generales: NOₓ 300 y partículas 20 mg/Nm³, pero las notas fijan 500 mg/Nm³ de NOₓ y 50 mg/Nm³ de partículas entre 1 y 5 MW. El valor de 30 mg/Nm³ de partículas es para 5-20 MW.", "Apuntes B2, diap. 36");
 L("B2", "b2-limites", "RD 1042/2017", 2, "Según la nota (1) de la tabla del RD 1042/2017, el límite de 200 mg/Nm³ de SO<sub>2</sub> para la biomasa sólida no se aplica a…",
   ["las instalaciones que queman exclusivamente biomasa sólida leñosa",
    "las instalaciones con una potencia térmica nominal entre 1 y 5 MW",
    "las instalaciones que queman biomasa sólida no leñosa",
    "los motores y turbinas de gas alimentados con biogás"],
-  0, "Nota (1): el valor de SO<sub>2</sub> no se aplica si se quema exclusivamente biomasa sólida leñosa. Las notas (2) y (3) modifican NO<sub>x</sub> y partículas según la potencia; la (4) fija 40 mg/Nm³ de SO<sub>2</sub> para el biogás en motores y turbinas.", "Apuntes B2, diap. 36");
+  0, "Nota (1): el valor de SO₂ no se aplica si se quema exclusivamente biomasa sólida leñosa. Las notas (2) y (3) modifican NOₓ y partículas según la potencia; la (4) fija 40 mg/Nm³ de SO₂ para el biogás en motores y turbinas.", "Apuntes B2, diap. 36");
 L("B2", "b2-limites", "Ecodiseño", 2, "Sobre los reglamentos de ecodiseño de los apuntes, ¿qué afirmaciones son correctas? (varias respuestas)",
-  ["El 2015/1189 regula calderas de combustibles sólidos ≤ 500 kW, con O<sub>2</sub> de referencia del 10 %",
-   "El 2015/1185 regula aparatos de calefacción local ≤ 50 kW, con O<sub>2</sub> de referencia del 13 %",
+  ["El 2015/1189 regula calderas de combustibles sólidos ≤ 500 kW, con O₂ de referencia del 10 %",
+   "El 2015/1185 regula aparatos de calefacción local ≤ 50 kW, con O₂ de referencia del 13 %",
    "El 2015/1189 se aplica desde enero de 2022 y el 2015/1185 desde enero de 2020",
    "Ambos reglamentos incluyen las calderas y estufas de biomasa no leñosa"],
-  [0, 1], "Las fechas están invertidas (calderas desde enero de 2020; calefacción local desde enero de 2022) y la biomasa no leñosa queda excluida de ambos. Reglamento 2015/1189: calderas de combustibles sólidos ≤ 500 kW (desde enero de 2020), O<sub>2</sub> 10 %. Reglamento 2015/1185: aparatos de calefacción local ≤ 50 kW (desde enero de 2022), O<sub>2</sub> 13 %.", "Apuntes B2, diap. 37");
+  [0, 1], "Las fechas están invertidas (calderas desde enero de 2020; calefacción local desde enero de 2022) y la biomasa no leñosa queda excluida de ambos. Reglamento 2015/1189: calderas de combustibles sólidos ≤ 500 kW (desde enero de 2020), O₂ 10 %. Reglamento 2015/1185: aparatos de calefacción local ≤ 50 kW (desde enero de 2022), O₂ 13 %.", "Apuntes B2, diap. 37");
 L("B2", "b2-limites", "Ecodiseño", 3, "Según el Reglamento 2015/1185, los límites de una estufa de pellets (CO, NO<sub>x</sub>, COV y partículas, en mg/Nm³) son…",
   ["300, 200, 60 y 20", "1500, 200, 120 y 40", "500, 200, 20 y 40", "300, 300, 60 y 20"],
-  0, "Estufa de pellets: CO 300, NO<sub>x</sub> 200, COV 60, partículas 20. La estufa cerrada y la cocina: 1500/200/120/40; la caldera automática (2015/1189): 500/200/20/40. El NO<sub>x</sub> de 300 mg/Nm³ es para combustibles fósiles.", "Apuntes B2, diap. 37");
+  0, "Estufa de pellets: CO 300, NOₓ 200, COV 60, partículas 20. La estufa cerrada y la cocina: 1500/200/120/40; la caldera automática (2015/1189): 500/200/20/40. El NOₓ de 300 mg/Nm³ es para combustibles fósiles.", "Apuntes B2, diap. 37");
 
 /* Sección 7 · Biocarburantes */
 L("B2", "b2-biocarburantes", "Bioetanol", 2, "En las rutas de obtención de bioetanol de los apuntes, ¿qué materias primas son de primera generación? (varias respuestas)",
@@ -579,10 +675,10 @@ L("B2", "b2-biocarburantes", "Biodiésel", 3, "En el esquema de producción de b
    "pasa directamente a la transesterificación con catalizador básico y metanol",
    "se refina con hidróxido de sodio antes de la transesterificación con catalizador ácido",
    "se somete a prensado mecánico o a extracción con disolventes para obtener el aceite primario"],
-  0, "FFA &gt; 5 %: esterificación (catalizador ácido + metanol, sale agua química) y después transesterificación. FFA &lt; 5 %: transesterificación directa con catalizador básico. El hidróxido de sodio se usa en la refinación de la glicerina.", "Apuntes B2, diap. 39");
+  0, "FFA > 5 %: esterificación (catalizador ácido + metanol, sale agua química) y después transesterificación. FFA < 5 %: transesterificación directa con catalizador básico. El hidróxido de sodio se usa en la refinación de la glicerina.", "Apuntes B2, diap. 39");
 L("B2", "b2-biocarburantes", "Transesterificación", 2, "Según el balance de masas de la transesterificación de los apuntes, al procesar 1.000 kg de triglicérido se obtienen aproximadamente…",
   ["110 kg de glicerina", "11 kg de glicerina", "100 kg de glicerina", "330 kg de glicerina"],
-  0, "100 kg de triglicérido + 11 kg de metanol → 100 kg de metiléster + 11 kg de glicerina; para 1.000 kg de triglicérido, 110 kg de glicerina (y 110 kg de metanol consumidos).", "Apuntes B2, diap. 39");
+  0, "Balance de masas de la transesterificación de los apuntes (Apuntes B2, diap. 39): $$\\underbrace{\\text{triglicérido}}_{100\\ \\text{kg}}+\\underbrace{3\\,\\text{CH}_3\\text{OH}}_{11\\ \\text{kg}}\\rightarrow\\underbrace{3\\ \\text{metiléster}}_{100\\ \\text{kg}}+\\underbrace{\\text{glicerina}}_{11\\ \\text{kg}}$$ Escalando a 1.000 kg de triglicérido (×10): $$m_{glicerina}=11\\cdot\\frac{1000}{100}$$ $$=\\boxed{110\\ \\text{kg}}$$ (y se consumen 110 kg de metanol). 11 kg sería no escalar; 100 kg confunde la glicerina con el metiléster.", "Apuntes B2, diap. 39");
 L("B2", "b2-biocarburantes", "Materias primas del biodiésel", 2, "Según el esquema de los apuntes, para producir una tonelada de biodiésel se necesitan aproximadamente…",
   ["5,9 t de palma de aceite o 4,2 t de jatropha",
    "4,2 t de palma de aceite o 5,9 t de jatropha",
@@ -593,40 +689,40 @@ L("B2", "b2-biocarburantes", "Materias primas del biodiésel", 2, "Según el esq
 /* Sección 8 · Problemas resueltos (cálculo con los métodos oficiales) */
 L("B2", "b2-problemas", "P1 · Escorias", 2, "Con el método del problema 1, se incineran 5.000 kg/h de un residuo con un 60 % de humedad (base húmeda) y un 40 % de materia no combustible en la materia seca. Si todos los inquemados salen como escorias, el caudal de escorias es…",
   ["800 kg/h", "1.200 kg/h", "2.000 kg/h", "3.000 kg/h"],
-  0, "Residuo seco = 5.000 · (1 − 0,6) = 2.000 kg/h; escorias = 2.000 · 0,4 = 800 kg/h. 1.200 kg/h es la materia seca combustible, 2.000 kg/h toda la materia seca y 3.000 kg/h la humedad vaporizada.", "Apuntes P1, diap. 3-4");
+  0, "Método del problema 1 (Apuntes P1, diap. 2-4): primero se quita la humedad y después se separa la materia no combustible, que sale como escorias. $$\\dot m_{seco}=5000\\,(1-0{,}6)$$ $$=2000\\ \\text{kg/h}$$ $$\\dot m_{escorias}=2000\\cdot0{,}4$$ $$=\\boxed{800\\ \\text{kg/h}}$$ 1.200 kg/h es la materia seca combustible (2.000 · 0,6), 2.000 kg/h toda la materia seca y 3.000 kg/h la humedad vaporizada.", "Apuntes P1, diap. 3-4");
 L("B2", "b2-problemas", "P1 · Oxígeno estequiométrico", 3, "Ajustando la combustión completa como en el problema 1 (C → CO₂, H → H₂O, S → SO₂, N → N₂), ¿cuántos moles de O₂ estequiométrico necesita un mol de un combustible de fórmula C<sub>10</sub>H<sub>16</sub>O<sub>4</sub>S?",
   ["13", "12", "11", "15"],
-  0, "O₂ = 10 (CO₂) + 16/4 (H₂O) + 1 (SO₂) − 4/2 (oxígeno propio) = 13. Olvidar el azufre da 12; restar los 4 átomos de O sin dividir por 2 da 11; no descontar el oxígeno del combustible da 15. Con la misma regla, C<sub>78</sub>H<sub>120</sub>O<sub>20</sub>N<sub>5</sub>S necesita 78 + 30 + 1 − 10 = 99.", "Apuntes P1, diap. 4");
+  0, "Para un combustible $C_xH_yO_zS$ que se quema por completo (C → CO₂, H → H₂O, S → SO₂, N → N₂), el oxígeno estequiométrico es (Apuntes B4, diap. 5, y P1): $$n_{O_2}=x+\\frac{y}{4}+s-\\frac{z}{2}$$ $$n_{O_2}=10+\\frac{16}{4}+1-\\frac{4}{2}$$ $$=10+4+1-2 =\\boxed{13\\ \\text{mol}}$$ Olvidar el azufre da 12; restar los 4 átomos de O sin dividir por 2 da 11; no descontar el oxígeno propio da 15. Con la misma regla, C₇₈H₁₂₀O₂₀N₅S necesita 78 + 30 + 1 − 10 = 99 mol.", "Apuntes P1, diap. 4");
 L("B2", "b2-problemas", "P1 · Balance de materia", 3, "Sobre el balance de materia del horno del problema 1 (6.000 kg/h de residuo), ¿qué afirmación es correcta?",
   ["Entradas y salidas suman 15.438 kg/h: 6.000 de residuo + 9.438 de aire = 774 de escorias + 10.464 de gases + 4.200 de humedad",
    "Entradas y salidas suman 15.438 kg/h: 6.000 de residuo + 9.438 de aire = 2.580 de escorias + 8.658 de gases + 4.200 de humedad",
    "Entradas y salidas suman 11.238 kg/h, porque la humedad del residuo no entra en el balance del horno",
    "Entradas y salidas suman 15.438 kg/h, y el N₂ de los gases procede exclusivamente del aire de combustión"],
-  0, "Escorias = 6.000 · 0,3 · 0,43 = 774 kg/h (no 6.000 · 0,43). Gases: CO₂ 2.382,5 + H₂O 749,7 + SO₂ 44,4 + N₂ 7.287,7 = 10.464 kg/h; humedad vaporizada 4.200 kg/h. El N₂ de los gases incluye los 5/2 mol de N₂ del propio residuo.", "Apuntes P1, diap. 4-5");
+  0, "Balance del problema 1 (Apuntes P1, diap. 2-5): entradas = residuo + aire; salidas = escorias + gases + humedad vaporizada. $$S_1=6000\\cdot0{,}3\\cdot0{,}43$$ $$=774\\ \\text{kg/h}$$ $$S_3=6000\\cdot0{,}7 =4200\\ \\text{kg/h}$$ $$S_2=2382{,}5+749{,}7+44{,}4+7287{,}7$$ $$=10.464\\ \\text{kg/h}\\ (\\text{CO}_2+\\text{H}_2\\text{O}+\\text{SO}_2+\\text{N}_2)$$ $$\\underbrace{6000+9438}_{E_1+E_2}=\\underbrace{774+10.464+4200}_{S_1+S_2+S_3}$$ $$=\\boxed{15.438\\ \\text{kg/h}}$$ La segunda opción toma las escorias como 6.000 · 0,43 = 2.580 kg/h (olvida quitar antes la humedad). La humedad sí entra y sale del horno. El N₂ de los gases incluye los 5/2 mol de N₂ del propio residuo, no solo el del aire.", "Apuntes P1, diap. 4-5");
 L("B2", "b2-problemas", "P1 · Dulong", 3, "Aplicando la fórmula de Dulong modificada del problema 1 a la celulosa (C<sub>6</sub>H<sub>10</sub>O<sub>5</sub>: C ≈ 44,4 %, H ≈ 6,2 %, O ≈ 49,4 %), se obtiene un PCS de…",
   ["≈ 3.580 kcal/kg, porque el término (H − O/8) se anula", "≈ 5.680 kcal/kg, porque el término (H − O/8) se anula", "≈ 4.073 kcal/kg, igual que la materia seca del problema 1", "≈ 7.146 kcal/kg, igual que la fracción combustible del problema 1"],
-  0, "En la celulosa la masa de H (10 g/mol) es exactamente O/8 (80/8 = 10 g/mol), así que solo queda 80,6 · 44,4 ≈ 3.580 kcal/kg. Unos 5.680 kcal/kg salen si se suma 339,1·H sin restar O/8. 7.146 y 4.073 kcal/kg son resultados del problema 1.", "Apuntes P1, diap. 6");
+  0, "Composición de la celulosa (C₆H₁₀O₅, M = 162 g/mol): C = 72/162 = 44,4 %, H = 10/162 = 6,2 % y O = 80/162 = 49,4 %. En la fórmula de Dulong modificada (Apuntes P1, diap. 6) el término del hidrógeno se anula porque la masa de H es exactamente O/8: $$H-\\frac{O}{8}=6{,}17-\\frac{49{,}38}{8}$$ $$=6{,}17-6{,}17 =0$$ $$PCS=80{,}6\\cdot44{,}4+339{,}1\\cdot0\\approx\\boxed{3580\\ \\text{kcal/kg}}$$ Sumar 339,1·H sin restar O/8 da ≈ 5.680 kcal/kg. 7.146 y 4.073 kcal/kg son resultados del problema 1.", "Apuntes P1, diap. 6");
 L("B2", "b2-problemas", "P1 · PCS del residuo", 2, "La materia seca combustible de un residuo tiene un PCS de 7.146 kcal/kg. Si el residuo tiene un 50 % de humedad y la materia no combustible es el 20 % de la materia seca, el PCS del residuo es…",
   ["≈ 2.858 kcal/kg de residuo", "≈ 5.717 kcal/kg de residuo", "≈ 3.573 kcal/kg de residuo", "≈ 1.429 kcal/kg de residuo"],
-  0, "Como en el problema 1: PCS<sub>materia seca</sub> = 7.146 · 0,8 = 5.717 kcal/kg; PCS<sub>residuo</sub> = 5.717 · 0,5 ≈ 2.858 kcal/kg. 5.717 es el PCS de la materia seca y 3.573 solo descuenta la humedad.", "Apuntes P1, diap. 7");
+  0, "Igual que en el problema 1 (Apuntes P1, diap. 7), el PCS se reduce con los mismos factores que la masa: primero la materia no combustible (20 % de la materia seca) y después la humedad (50 %). $$PCS_{m.s.}=PCS_{MSC}\\,(1-0{,}2)$$ $$=7146\\cdot0{,}8 =5717\\ \\text{kcal/kg}$$ $$PCS_{residuo}=PCS_{m.s.}\\,(1-0{,}5)$$ $$=5717\\cdot0{,}5\\approx\\boxed{2858\\ \\text{kcal/kg}}$$ 5.717 es el PCS de la materia seca (falta la humedad), 3.573 solo descuenta la humedad (7.146 · 0,5) y 1.429 multiplica por la fracción no combustible (7.146 · 0,2) en lugar de por la combustible.", "Apuntes P1, diap. 7");
 L("B2", "b2-problemas", "P1 · PCI del residuo", 2, "Un residuo tiene un PCS de 2.000 kcal/kg, un 40 % de humedad y su combustión forma 0,2 kg de agua por kg de residuo. Con L<sub>v</sub> = 550 kcal/kg y el método del problema 1, su PCI es…",
   ["1.670 kcal/kg", "1.780 kcal/kg", "1.890 kcal/kg", "2.330 kcal/kg"],
-  0, "PCI = PCS − L<sub>v</sub> · (humedad + agua formada) = 2.000 − 550 · (0,4 + 0,2) = 1.670 kcal/kg. Descontar solo la humedad da 1.780; solo el agua formada, 1.890; sumar en lugar de restar, 2.330.", "Apuntes P1, diap. 7");
+  0, "Método del problema 1 (Apuntes P1, diap. 7): al PCS se le resta el calor latente del agua que sale en los humos, que es la humedad del residuo más el agua formada en la combustión. $$PCI=PCS-L_v\\,(w+m_{H_2O\\,formada})$$ $$PCI=2000-550\\,(0{,}4+0{,}2) =2000-330$$ $$=\\boxed{1670\\ \\text{kcal/kg}}$$ Descontar solo la humedad da 1.780; solo el agua formada, 1.890; sumar en lugar de restar, 2.330.", "Apuntes P1, diap. 7");
 L("B2", "b2-problemas", "P2 · Aire estequiométrico", 3, "Con el método del problema 2, la masa de aire estequiométrico necesaria para quemar 1 kg de glucosa (C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>, M = 180 g/mol; C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6 O₂ → 6 CO₂ + 6 H₂O) es…",
   ["≈ 4,58 kg", "≈ 5,1 kg", "≈ 1,07 kg", "≈ 3,51 kg"],
-  0, "Aire = 6·32 + (79/21)·6·28 = 192 + 632 = 824 g por mol, igual que la celulosa; 824/180 ≈ 4,58 kg/kg. 5,1 kg es el de la celulosa (824/162); 1,07 kg solo cuenta el O₂ (192/180) y 3,51 kg solo el N₂ (632/180).", "Apuntes P2, diap. 2");
+  0, "Método del problema 2 (Apuntes P2, diap. 2): el aire lleva 79/21 mol de N₂ por cada mol de O₂. $$m_{O_2}=6\\cdot32 =192\\ \\text{g}$$ $$m_{N_2}=\\tfrac{79}{21}\\cdot6\\cdot28$$ $$=632\\ \\text{g}$$ $$m_{aire}=192+632$$ $$=824\\ \\text{g por mol de glucosa}$$ $$\\frac{m_{aire}}{m_{glucosa}}=\\frac{824}{180}\\approx\\boxed{4{,}58\\ \\text{kg aire/kg}}$$ La glucosa necesita el mismo O₂ por mol que la celulosa, pero pesa más (180 frente a 162 g/mol). 5,1 kg es el de la celulosa (824/162); 1,07 kg solo cuenta el O₂ (192/180) y 3,51 kg solo el N₂ (632/180).", "Apuntes P2, diap. 2");
 L("B2", "b2-problemas", "P2 · Exceso de aire", 3, "En el problema 2, al quemar 1 mol de celulosa con un 50 % de exceso de aire, los gases de combustión contienen…",
   ["3 mol de O₂ sin reaccionar y 47,85 mol de gases en total",
    "9 mol de O₂ sin reaccionar y 47,85 mol de gases en total",
    "3 mol de O₂ sin reaccionar y 36,57 mol de gases en total",
    "3 mol de O₂ sin reaccionar y 33,57 mol de gases en total"],
-  0, "Exceso: 0,5·6 = 3 mol de O₂ y 0,5·6·79/21 = 11,28 mol de N₂ (33,85 en total). Gases: 6 CO₂ + 5 H₂O + 3 O₂ + 33,85 N₂ = 47,85 mol, con M ≈ 29,21 g/mol (29,38 en condiciones estequiométricas, con 33,57 mol). 36,57 olvida el N₂ del exceso.", "Apuntes P2, diap. 3-4");
+  0, "Método del problema 2 (Apuntes P2, diap. 4). Con un 50 % de exceso sobra la mitad del O₂ estequiométrico y entra un 50 % más de N₂: $$O_2\\ \\text{sobrante}=0{,}5\\cdot6$$ $$=3\\ \\text{mol}$$ $$N_2=\\tfrac{79}{21}\\cdot6\\cdot1{,}5$$ $$=22{,}57+11{,}28 =33{,}85\\ \\text{mol}$$ $$n_{gases}=\\underbrace{6}_{CO_2}+\\underbrace{5}_{H_2O}+\\underbrace{3}_{O_2}+\\underbrace{33{,}85}_{N_2}$$ $$=\\boxed{47{,}85\\ \\text{mol}}$$ con una masa molecular media de 29,21 g/mol (29,38 g/mol y 33,57 mol en condiciones estequiométricas). 36,57 mol olvida el N₂ del exceso; 9 mol de O₂ sería 1,5 · 6, el O₂ que entra, no el que sobra.", "Apuntes P2, diap. 3-4");
 L("B2", "b2-problemas", "P3 · Composición del biogás", 2, "En el problema 3 (C<sub>133</sub>H<sub>256</sub>O<sub>70</sub>N<sub>14</sub>S con la ecuación de Buswell), el metano del biogás teórico representa…",
   ["el 51 % en volumen y el 30,1 % en masa", "el 30,1 % en volumen y el 51 % en masa", "el 38,8 % en volumen y el 63,1 % en masa", "el 63,1 % en volumen y el 38,8 % en masa"],
-  0, "Por mol de biomasa: 57,5 CO₂, 75,5 CH₄, 14 NH₃ y 1 H₂S. Fracción en volumen del CH₄ = 0,51; másica = 1.208/4.010 = 0,301. El CO₂ es el 38,8 % en volumen y el 63,1 % en masa, porque pesa 44 g/mol frente a 16.", "Apuntes P3, diap. 2");
+  0, "Problema 3 (Apuntes P3, diap. 2): por cada mol de biomasa se forman 57,5 mol de CO₂, 75,5 de CH₄, 14 de NH₃ y 1 de H₂S (148 mol en total; 4.010 g). $$Y_{CH_4}=\\frac{75{,}5}{148} =0{,}51$$ $$X_{CH_4}=\\frac{75{,}5\\cdot16}{4010}$$ $$=\\frac{1208}{4010} =0{,}301$$ $$\\boxed{CH_4:\\ 51\\ \\%\\ \\text{en volumen y}\\ 30{,}1\\ \\%\\ \\text{en masa}}$$ En volumen cuentan los moles; en masa pesa más el CO₂ (44 g/mol frente a 16), que es el 38,8 % en volumen y el 63,1 % en masa.", "Apuntes P3, diap. 2");
 L("B2", "b2-problemas", "P3 · Producción específica", 3, "Si en el problema 3 solo se biodegradara el 60 % de la materia volátil (en lugar del 75 %), la producción específica de metano sería…",
   ["≈ 0,32 Nm³ CH₄/kg", "≈ 0,40 Nm³ CH₄/kg", "≈ 0,53 Nm³ CH₄/kg", "≈ 0,24 Nm³ CH₄/kg"],
-  0, "1 kg = 1.000/3.200 = 0,3125 mol; 0,3125 · 0,6 · 75,5 mol CH₄ · 22,4 L ≈ 317 L ≈ 0,32 Nm³/kg. 0,40 es el resultado oficial con el 75 %; 0,53 supone degradación total y 0,24 aplica los 57,5 mol de CO₂.", "Apuntes P3, diap. 3");
+  0, "Método del problema 3 (Apuntes P3, diap. 3) cambiando solo la fracción degradada: $$n_{biomasa}=\\frac{1000\\ \\text{g}}{3200\\ \\text{g/mol}}$$ $$=0{,}3125\\ \\text{mol/kg}$$ $$n_{CH_4}=0{,}3125\\cdot0{,}6\\cdot75{,}5$$ $$=14{,}16\\ \\text{mol/kg}$$ $$V_{CH_4}=14{,}16\\cdot22{,}4\\approx317\\ \\text{L}\\approx\\boxed{0{,}32\\ \\text{Nm}^3\\ \\text{CH}_4/\\text{kg}}$$ 0,40 es el resultado oficial con el 75 %; 0,53 supone degradación total; 0,24 usa los 57,5 mol de CO₂ en lugar de los 75,5 de CH₄.", "Apuntes P3, diap. 3");
 
 /* ---------- Tarjetas B2 ---------- */
 C("B2", "b2-alternativas", "¿Qué se obtiene al valorizar biomasa y residuos?", "<b>Electricidad</b>, <b>calor</b>, <b>combustibles para el transporte</b> y <b>materias primas para la industria química</b>.");

@@ -51,7 +51,7 @@ THEORY.FUS = {
 <p><b>Energía de enlace</b> (<i>binding energy</i>): energía que mantiene unido el núcleo atómico (protones y neutrones). <b>A mayor energía de enlace, más estable es el núcleo.</b> La curva de energía de enlace media por nucleón frente al número másico (diap. 12) sube muy deprisa desde el <sup>2</sup>H (~1 MeV) pasando por <sup>6</sup>Li (~5,3), <sup>4</sup>He (~7), hasta un máximo de ≈ 8,7-8,8 MeV en torno al <b><sup>56</sup>Fe</b>, el núcleo más estable, y luego baja suavemente hasta el <sup>238</sup>U (~7,6 MeV).</p>
 <div class="gen"><b>Ampliación (conocimiento general, no está en los apuntes):</b> la diapositiva escribe «Fe, 56 protones», pero 56 es el número másico (protones + neutrones) del isótopo <sup>56</sup>Fe; el hierro tiene 26 protones.</div>
 <h4>¿Cuándo se libera energía?</h4>
-<p>En una transmutación atómica se libera energía (<b>reacción exotérmica</b>) cuando <b>aumenta la energía de enlace</b> de los núcleos (diap. 13): los núcleos ligeros ganan estabilidad <b>uniéndose</b> (<b>fusión</b>, hacia la derecha de la curva) y los pesados <b>dividiéndose</b> (<b>fisión</b>, hacia la izquierda). En la fusión D + T → He + n; en la fisión un neutrón rompe un núcleo pesado en dos fragmentos y varios neutrones (diap. 14). La fisión se cubrió en clase por E. Oliva.</p>
+<p>En una transmutación atómica se libera energía (<b>reacción exotérmica</b>) cuando <b>aumenta la energía de enlace</b> de los núcleos (diap. 13): los núcleos ligeros ganan estabilidad <b>uniéndose</b> (<b>fusión</b>, hacia la derecha de la curva) y los pesados <b>dividiéndose</b> (<b>fisión</b>, hacia la izquierda). En la fusión $\\mathrm{D + T \\rightarrow He + n}$; en la fisión un neutrón rompe un núcleo pesado en dos fragmentos y varios neutrones (diap. 14). La fisión se cubrió en clase por E. Oliva.</p>
 <h4>Fusión frente a fisión</h4>
 <p>Principales ventajas de la fusión frente a la fisión (diap. 15): <b>mayor disponibilidad de combustible</b> y <b>menor riesgo de proliferación</b>.</p>
 <table class="tbl cmp"><thead><tr><th></th><th>Fusión</th><th>Fisión</th></tr></thead><tbody>
@@ -75,12 +75,12 @@ THEORY.FUS = {
 <h4>¿Por qué deuterio-tritio?</h4>
 <p>La curva de tasa de reacción (m³/s) frente a la temperatura (diap. 24) muestra que la <b>D-T</b> tiene la mayor tasa a bajas temperaturas (máximo ≈ 10⁻²¹ m³/s hacia 10² keV), por encima de D-D y D-<sup>3</sup>He. La reacción D + T requiere una temperatura <b>«relativamente baja»</b>.</p>
 <table class="tbl"><thead><tr><th>Nº</th><th>Reacción</th><th>Energía</th></tr></thead><tbody>
-<tr><td>1</td><td>D + T → <sup>4</sup>He + n</td><td>+17,588 MeV</td></tr>
-<tr><td>2</td><td>D + D → <sup>3</sup>He + n</td><td>+3,2689 MeV</td></tr>
-<tr><td>3</td><td>D + D → T + p</td><td>+4,0327 MeV</td></tr>
-<tr><td>4</td><td><sup>3</sup>He + D → <sup>4</sup>He + p</td><td>+18,353 MeV</td></tr>
-<tr><td>5</td><td><sup>6</sup>Li + n → T + <sup>4</sup>He</td><td>+4,7829 MeV</td></tr>
-<tr><td>6</td><td><sup>7</sup>Li + n → T + <sup>4</sup>He + n</td><td><b>−2,4670 MeV</b></td></tr>
+<tr><td>1</td><td>$\\mathrm{D + T \\rightarrow  {}^{4}He + n}$</td><td>+17,588 MeV</td></tr>
+<tr><td>2</td><td>$\\mathrm{D + D \\rightarrow  {}^{3}He + n}$</td><td>+3,2689 MeV</td></tr>
+<tr><td>3</td><td>$\\mathrm{D + D \\rightarrow  T + p}$</td><td>+4,0327 MeV</td></tr>
+<tr><td>4</td><td>$\\mathrm{{}^{3}He + D \\rightarrow  {}^{4}He + p}$</td><td>+18,353 MeV</td></tr>
+<tr><td>5</td><td>$\\mathrm{{}^{6}Li + n \\rightarrow  T + {}^{4}He}$</td><td>+4,7829 MeV</td></tr>
+<tr><td>6</td><td>$\\mathrm{{}^{7}Li + n \\rightarrow  T + {}^{4}He + n}$</td><td><b>−2,4670 MeV</b></td></tr>
 </tbody></table>
 <p>En el futuro se espera conseguir fusión a <b>mayor temperatura</b> con reacciones <b>sin tritio</b> (difícil de producir) y que <b>no generen neutrones</b> (es decir, que no generen material radiactivo).</p>
 <h4>Plasma</h4>
@@ -98,7 +98,7 @@ THEORY.FUS = {
 <li>El <b>helio</b> deposita su energía <b>en el plasma</b>, calentándolo.</li></ul>
 <h4>El gran problema: el confinamiento</h4>
 <p>En un plasma termonuclear los núcleos alcanzan velocidades tan altas que es difícil confinarlos en la zona caliente. Es necesario <b>«aislar térmicamente»</b> el combustible para minimizar las <b>pérdidas por difusión de calor</b>. El <b>criterio de Lawson</b> establece las condiciones para que el plasma termonuclear genere más energía que la que pierde por difusión:</p>
-<div class="formula">$$n\\times\\tau\\times T > 3{,}5\\cdot10^{28}\\ \\text{K·s/m}^3$$</div>
+<div class="formula">$$n\\times\\tau\\times T > 3{,}5\\cdot10^{28}\\ \\text{K}\\cdot\\text{s/m}^3$$</div>
 <p>$n$: densidad (de combustible); $\\tau$: tiempo de confinamiento; $T$: temperatura del plasma. Es el <b>triple producto</b>.</p>
 <h4>Tipos de confinamiento</h4>
 <table class="tbl cmp"><thead><tr><th></th><th>Confinamiento magnético</th><th>Confinamiento inercial</th></tr></thead><tbody>
@@ -220,8 +220,8 @@ L("FUS", "fus-panorama", "Densidad energética", 2, "Según los apuntes, la ener
    "3.500.000 kJ/g, frente a 15 kJ/g del carbón y 44 kJ/g de la gasolina"],
   0, "D/T: 350.000.000 kJ/g; carbón 20 kJ/g; gasolina 44 kJ/g; los 15 kJ/g son del alimento («Twinkies»).", "Apuntes FUS, diap. 8");
 L("FUS", "fus-panorama", "Densidad energética", 3, "Con los valores por gramo de la diapositiva, ¿cuántas veces más energía por unidad de masa libera el combustible D-T que el carbón?",
-  ["≈ 1,75·10<sup>7</sup> veces", "≈ 1,75·10<sup>6</sup> veces", "≈ 8·10<sup>6</sup> veces", "≈ 1,75·10<sup>8</sup> veces"],
-  0, "350.000.000 / 20 = 1,75·10⁷. Frente a la gasolina sería 350.000.000 / 44 ≈ 8·10⁶.", "Apuntes FUS, diap. 8");
+  ["≈ 1,75·10⁷ veces", "≈ 1,75·10⁶ veces", "≈ 8·10⁶ veces", "≈ 1,75·10⁸ veces"],
+  0, "Cociente de las energías por gramo de la diapositiva (Apuntes FUS, diap. 8): D-T ≈ 350.000.000 kJ/g y carbón ≈ 20 kJ/g. $$\\frac{3{,}5\\cdot10^{8}\\ \\text{kJ/g}}{20\\ \\text{kJ/g}}=\\boxed{1{,}75\\cdot10^{7}}$$ Frente a la gasolina (44 kJ/g) sería 3,5·10⁸ / 44 ≈ 8·10⁶; 1,75·10⁶ y 1,75·10⁸ son errores de un factor 10.", "Apuntes FUS, diap. 8");
 L("FUS", "fus-panorama", "Deuterio y tritio", 3, "Sobre la disponibilidad del combustible de fusión, señale la afirmación correcta según los apuntes:",
   ["Hay 1 átomo de D por cada 6.500 de H en el agua de mar; el tritio no existe de forma natural y se produce con reacciones intermedias con ⁶Li",
    "Hay 1 átomo de D por cada 65.000 de H en el agua de mar; el tritio no existe de forma natural y se produce con reacciones intermedias con ⁶Li",
@@ -264,16 +264,16 @@ L("FUS", "fus-termo", "Haces o calentamiento", 2, "Para vencer la repulsión ent
    "Acelerar haces no es rentable porque la distribución de velocidades que se obtiene es una campana ancha"],
   0, "Los haces dan dos picos estrechos de velocidad y no son rentables; el calentamiento da una distribución ancha, cuya anchura fija la temperatura.", "Apuntes FUS, diap. 19-21");
 L("FUS", "fus-termo", "Reacciones con neutrones", 3, "De las reacciones de fusión de la lista de la diap. 24, ¿cuáles producen un neutrón? (puede haber varias)",
-  ["D + T → ⁴He + …", "D + D → ³He + …", "D + D → T + …", "³He + D → ⁴He + …"],
+  ["$\\mathrm{D + T \\rightarrow {}^{4}He} + \\ldots$", "$\\mathrm{D + D \\rightarrow {}^{3}He} + \\ldots$", "$\\mathrm{D + D \\rightarrow T} + \\ldots$", "$\\mathrm{{}^{3}He + D \\rightarrow {}^{4}He} + \\ldots$"],
   [0, 1], "D + T → ⁴He + n (17,588 MeV) y D + D → ³He + n (3,2689 MeV). D + D → T + p y ³He + D → ⁴He + p producen un protón: de ahí el interés futuro por reacciones sin neutrones.", "Apuntes FUS, diap. 24");
 L("FUS", "fus-termo", "Temperaturas de ignición", 2, "Según la tabla de reacciones de los apuntes, la temperatura de ignición de la reacción D-T es de…",
   ["45 millones de ºC (4 keV)", "350 millones de ºC (30 keV)", "400 millones de ºC (35 keV)", "200 millones de ºC (17 keV)"],
   0, "D-T: 45 M ºC (4 keV). D-³He: 350 M ºC (30 keV). D-D: 400 M ºC (35 keV).", "Apuntes FUS, diap. 23");
 L("FUS", "fus-termo", "Temperaturas de ignición", 3, "Ordene de menor a mayor temperatura de ignición las reacciones de la tabla de los apuntes:",
-  ["D-T &lt; D-³He &lt; D-D", "D-T &lt; D-D &lt; D-³He", "D-D &lt; D-T &lt; D-³He", "D-³He &lt; D-T &lt; D-D"],
+  ["D-T < D-³He < D-D", "D-T < D-D < D-³He", "D-D < D-T < D-³He", "D-³He < D-T < D-D"],
   0, "D-T 45 M ºC, D-³He 350 M ºC, D-D 400 M ºC. Ojo: la D-³He libera más energía (18.300 keV) que la D-T (17.600 keV), pero necesita mucha más temperatura.", "Apuntes FUS, diap. 23");
 L("FUS", "fus-termo", "Energías de reacción", 3, "Según la lista de reacciones de la diap. 24, ¿cuál de ellas es endotérmica?",
-  ["⁷Li + n → T + ⁴He + n", "⁶Li + n → T + ⁴He", "D + D → T + p", "³He + D → ⁴He + p"],
+  ["$\\mathrm{{}^{7}Li + n \\rightarrow T + {}^{4}He + n}$", "$\\mathrm{{}^{6}Li + n \\rightarrow T + {}^{4}He}$", "$\\mathrm{D + D \\rightarrow T + p}$", "$\\mathrm{{}^{3}He + D \\rightarrow {}^{4}He + p}$"],
   0, "⁷Li + n → T + ⁴He + n tiene −2,4670 MeV. La del ⁶Li libera +4,7829 MeV; D + D → T + p, +4,0327 MeV; ³He + D, +18,353 MeV.", "Apuntes FUS, diap. 24");
 L("FUS", "fus-termo", "¿Por qué D-T?", 2, "¿Cuál es la razón que dan los apuntes para utilizar la reacción deuterio-tritio?",
   ["Requiere una temperatura «relativamente baja», con la mayor tasa de reacción a bajas temperaturas",
@@ -308,7 +308,7 @@ L("FUS", "fus-lawson", "Reparto de energía D-T", 2, "En la reacción D + T → 
   0, "El ⁴He (3,5 MeV) deposita su energía en el plasma; el neutrón (14,1 MeV), sin carga, sale del tanque y calienta agua como en una central de fisión.", "Apuntes FUS, diap. 32-33");
 L("FUS", "fus-lawson", "Reparto de energía D-T", 3, "Con los datos de la reacción D-T de los apuntes, ¿qué fracción aproximada de la energía liberada se lleva el neutrón?",
   ["≈ 80 %", "≈ 20 %", "≈ 50 %", "≈ 67 %"],
-  0, "14,1 / (14,1 + 3,5) = 14,1 / 17,6 ≈ 0,80. El helio se lleva ≈ 20 %, que es lo que calienta el plasma.", "Apuntes FUS, diap. 32");
+  0, "En la reacción D + T → ⁴He (3,5 MeV) + n (14,1 MeV) (Apuntes FUS, diap. 32), la fracción del neutrón es: $$\\frac{E_n}{E_n+E_{He}}=\\frac{14{,}1}{14{,}1+3{,}5}$$ $$=\\frac{14{,}1}{17{,}6}\\approx\\boxed{0{,}80=80\\ \\%}$$ El helio se lleva el ≈ 20 % restante, que es lo que calienta el plasma; el neutrón, sin carga, escapa del confinamiento magnético y deposita su energía en el manto.", "Apuntes FUS, diap. 32");
 L("FUS", "fus-lawson", "Autosostenimiento", 2, "El tercer paso de la receta, cuando el plasma termonuclear está a ~5·10⁷ ºC, consiste en que…",
   ["las reacciones de fusión son tan frecuentes que mantienen la temperatura del plasma sin seguir calentando",
    "se retira el combustible quemado para evitar que el helio enfríe el plasma",
@@ -323,7 +323,7 @@ L("FUS", "fus-lawson", "Triple producto", 2, "¿Qué magnitudes intervienen en e
   [0, 1, 2], "n × τ × T: densidad, tiempo de confinamiento y temperatura. El campo magnético es solo un medio para confinar (no aparece en el criterio, que vale también para el inercial).", "Apuntes FUS, diap. 36");
 L("FUS", "fus-lawson", "Criterio de Lawson", 3, "Un plasma de confinamiento magnético tiene $n = 10^{20}$ m⁻³ y $T = 10^{8}$ K. Según el criterio de Lawson de los apuntes, ¿qué tiempo de confinamiento mínimo necesita?",
   ["3,5 s", "0,35 s", "35 s", "3,5·10⁻⁹ s"],
-  0, "τ > 3,5·10²⁸ / (10²⁰ · 10⁸) = 3,5 s, dentro del rango 1-10 s del confinamiento magnético.", "Apuntes FUS, diap. 36-38");
+  0, "Criterio de Lawson de los apuntes (Apuntes FUS, diap. 36-38), despejando el tiempo de confinamiento: $$n\\,\\tau\\,T\\gt3{,}5\\cdot10^{28}\\ \\text{K}\\cdot\\text{s/m}^3$$ $$\\Rightarrow\\tau\\gt\\frac{3{,}5\\cdot10^{28}}{n\\,T}$$ $$\\tau\\gt\\frac{3{,}5\\cdot10^{28}}{10^{20}\\cdot10^{8}}=\\boxed{3{,}5\\ \\text{s}}$$ Está dentro del rango 1-10 s del confinamiento magnético; 3,5·10⁻⁹ s es el orden del confinamiento inercial, con densidades mucho mayores.", "Apuntes FUS, diap. 36-38");
 L("FUS", "fus-lawson", "Tipos de confinamiento", 2, "Según los apuntes, los valores típicos de densidad y tiempo de confinamiento en el confinamiento inercial son…",
   ["$n\\sim10^{29}$ m⁻³ y $\\tau\\sim10^{-9}$ s", "$n\\sim10^{20}$ m⁻³ y $\\tau\\sim10^{-9}$ s", "$n\\sim10^{29}$ m⁻³ y $\\tau\\sim$ 1-10 s", "$n\\sim10^{25}$ m⁻³ y $\\tau\\sim10^{-6}$ s"],
   0, "Inercial: 10²⁹ m⁻³ y 10⁻⁹ s. Magnético: 10²⁰ m⁻³ y 1-10 s. 10²⁵ m⁻³ es la densidad del aire a presión atmosférica.", "Apuntes FUS, diap. 38");
@@ -363,23 +363,23 @@ L("FUS", "fus-magnetico", "Confinamiento magnético", 3, "Señale la afirmación
   0, "Los neutrones no tienen carga: no sienten la fuerza de Lorentz y escapan del plasma (por eso se usan para calentar agua).", "Apuntes FUS, diap. 33 y 40-45");
 
 L("FUS", "fus-iter", "Factor Q", 2, "El factor Q que se usa en los apuntes para medir el rendimiento de un reactor de fusión se define como…",
-  ["$Q = P_{generada}/P_{calentamiento}$", "$Q = P_{calentamiento}/P_{generada}$", "$Q = n\\,\\tau\\,T / 3{,}5\\cdot10^{28}$", "$Q = P_{eléctrica}/P_{térmica}$"],
+  ["$Q = P_{generada}/P_{calentamiento}$", "$Q = P_{calentamiento}/P_{generada}$", "$Q = n\\,\\tau\\,T / 3{,}5\\cdot10^{28}$", "$Q = P_{\\text{eléctrica}}/P_{\\text{térmica}}$"],
   0, "Q = potencia generada / potencia de calentamiento. Q = 1 es el equilibrio (breakeven).", "Apuntes FUS, diap. 50");
 L("FUS", "fus-iter", "JET", 2, "Sobre el tokamak JET, los apuntes indican que…",
-  ["está en Reino Unido, tiene el récord de extracción de energía y alcanzó Q ≈ 0,6 con unos 16 MW<sub>th</sub>",
-   "está en Francia, tiene el récord de extracción de energía y alcanzó Q ≈ 0,6 con unos 16 MW<sub>th</sub>",
-   "está en Reino Unido, tiene el récord de extracción de energía y alcanzó Q ≈ 10 con unos 500 MW<sub>th</sub>",
-   "está en Reino Unido, tiene el récord de tiempo de confinamiento y alcanzó Q ≈ 1,6 con unos 16 MW<sub>th</sub>"],
-  0, "JET (Joint European Torus, UK): D = 5,92 m, V = 80 m³, Q ≈ 0,6, P ≈ 16 MW<sub>th</sub>. ITER (Francia): Q ≈ 10, 500 MW<sub>th</sub>.", "Apuntes FUS, diap. 50-52");
+  ["está en Reino Unido, tiene el récord de extracción de energía y alcanzó Q ≈ 0,6 con unos 16 $\\mathrm{MW}_{\\mathrm{th}}$",
+   "está en Francia, tiene el récord de extracción de energía y alcanzó Q ≈ 0,6 con unos 16 $\\mathrm{MW}_{\\mathrm{th}}$",
+   "está en Reino Unido, tiene el récord de extracción de energía y alcanzó Q ≈ 10 con unos 500 $\\mathrm{MW}_{\\mathrm{th}}$",
+   "está en Reino Unido, tiene el récord de tiempo de confinamiento y alcanzó Q ≈ 1,6 con unos 16 $\\mathrm{MW}_{\\mathrm{th}}$"],
+  0, "JET (Joint European Torus, UK): D = 5,92 m, V = 80 m³, Q ≈ 0,6, P ≈ 16 $\\mathrm{MW}_{\\mathrm{th}}$. ITER (Francia): Q ≈ 10, 500 $\\mathrm{MW}_{\\mathrm{th}}$.", "Apuntes FUS, diap. 50-52");
 L("FUS", "fus-iter", "ITER", 2, "Según los apuntes, los parámetros previstos de ITER son…",
-  ["D = 12,4 m, V = 800 m³, Q ≈ 10 y P ≈ 500 MW<sub>th</sub>",
-   "D = 5,92 m, V = 80 m³, Q ≈ 0,6 y P ≈ 16 MW<sub>th</sub>",
-   "D = 12,4 m, V = 800 m³, Q ≈ 25 y P ≈ 2000 MW<sub>th</sub>",
-   "D = 12,4 m, V = 8000 m³, Q ≈ 10 y P ≈ 500 MW<sub>e</sub>"],
-  0, "ITER: 12,4 m, 800 m³, Q ≈ 10, 500 MW térmicos. DEMO: 13-19 m, 1000-3500 m³, Q ≈ 25, 2000-4000 MW<sub>th</sub>.", "Apuntes FUS, diap. 52");
+  ["D = 12,4 m, V = 800 m³, Q ≈ 10 y P ≈ 500 $\\mathrm{MW}_{\\mathrm{th}}$",
+   "D = 5,92 m, V = 80 m³, Q ≈ 0,6 y P ≈ 16 $\\mathrm{MW}_{\\mathrm{th}}$",
+   "D = 12,4 m, V = 800 m³, Q ≈ 25 y P ≈ 2000 $\\mathrm{MW}_{\\mathrm{th}}$",
+   "D = 12,4 m, V = 8000 m³, Q ≈ 10 y P ≈ 500 $\\mathrm{MW}_{e}$"],
+  0, "ITER: 12,4 m, 800 m³, Q ≈ 10, 500 MW térmicos. DEMO: 13-19 m, 1000-3500 m³, Q ≈ 25, 2000-4000 $\\mathrm{MW}_{\\mathrm{th}}$.", "Apuntes FUS, diap. 52");
 L("FUS", "fus-iter", "ITER", 3, "Si ITER alcanza los valores de la diapositiva (Q ≈ 10 y P ≈ 500 MW<sub>th</sub>), ¿qué potencia de calentamiento habrá que aportar al plasma?",
   ["≈ 50 MW", "≈ 5 MW", "≈ 500 MW", "≈ 5000 MW"],
-  0, "Q = P<sub>generada</sub>/P<sub>calentamiento</sub> → P<sub>cal</sub> = 500/10 = 50 MW.", "Apuntes FUS, diap. 50 y 52");
+  0, "Factor de ganancia de los apuntes (Apuntes FUS, diap. 50 y 52): $$Q=\\frac{P_{generada}}{P_{calentamiento}}$$ $$\\Rightarrow P_{calentamiento}$$ $$=\\frac{P_{generada}}{Q}$$ $$=\\frac{500\\ \\text{MW}}{10}$$ $$=\\boxed{50\\ \\text{MW}}$$ 5.000 MW sale si se multiplica en lugar de dividir; 5 MW es un error de un factor 10.", "Apuntes FUS, diap. 50 y 52");
 L("FUS", "fus-iter", "Tiempo de confinamiento", 3, "Según los apuntes, el mayor reto de los tokamaks y la vía para afrontarlo son…",
   ["aumentar el tiempo de confinamiento (récord del orden de 6 s) reduciendo inestabilidades; reactores más grandes lo mejoran",
    "aumentar la densidad del plasma hasta 10²⁹ m⁻³ reduciendo inestabilidades; reactores más pequeños lo mejoran",
@@ -387,11 +387,11 @@ L("FUS", "fus-iter", "Tiempo de confinamiento", 3, "Según los apuntes, el mayor
    "aumentar la temperatura hasta 10¹⁰ ºC; reactores más grandes empeoran el confinamiento"],
   0, "Reto: aumentar τ (récord ~6 s) reduciendo las inestabilidades. Construir reactores más grandes mejora el confinamiento → ITER.", "Apuntes FUS, diap. 51-52");
 L("FUS", "fus-iter", "DEMO", 2, "En la comparación JET-ITER-DEMO de los apuntes, DEMO se caracteriza por…",
-  ["Q ≈ 25 y P ≈ 2000-4000 MW<sub>th</sub>, con un volumen de ≈ 1000-3500 m³",
-   "Q ≈ 10 y P ≈ 2000-4000 MW<sub>th</sub>, con un volumen de ≈ 800 m³",
-   "Q ≈ 25 y P ≈ 500 MW<sub>th</sub>, con un volumen de ≈ 1000-3500 m³",
-   "Q ≈ 50 y P ≈ 2000-4000 MW<sub>th</sub>, con un volumen de ≈ 10.000 m³"],
-  0, "DEMO: D ≈ 13-19 m, V ≈ 1000-3500 m³, Q ≈ 25, P ≈ 2000-4000 MW<sub>th</sub>.", "Apuntes FUS, diap. 52");
+  ["Q ≈ 25 y P ≈ 2000-4000 $\\mathrm{MW}_{\\mathrm{th}}$, con un volumen de ≈ 1000-3500 m³",
+   "Q ≈ 10 y P ≈ 2000-4000 $\\mathrm{MW}_{\\mathrm{th}}$, con un volumen de ≈ 800 m³",
+   "Q ≈ 25 y P ≈ 500 $\\mathrm{MW}_{\\mathrm{th}}$, con un volumen de ≈ 1000-3500 m³",
+   "Q ≈ 50 y P ≈ 2000-4000 $\\mathrm{MW}_{\\mathrm{th}}$, con un volumen de ≈ 10.000 m³"],
+  0, "DEMO: D ≈ 13-19 m, V ≈ 1000-3500 m³, Q ≈ 25, P ≈ 2000-4000 $\\mathrm{MW}_{\\mathrm{th}}$.", "Apuntes FUS, diap. 52");
 L("FUS", "fus-iter", "Componentes de ITER", 3, "En el esquema de componentes de ITER de los apuntes, ¿qué asociación es correcta?",
   ["Bobina de campo poloidal: NbTi superconductor a −269 ºC",
    "Bobina de campo poloidal: Nb₃Sn superconductor a −269 ºC",
@@ -405,9 +405,9 @@ L("FUS", "fus-iter", "Superconductores de ITER", 3, "En el esquema de ITER de lo
   ["El solenoide central", "La bobina de campo toroidal", "La bobina de campo poloidal", "El desviador"],
   [0, 1], "Solenoide central y bobina toroidal: Nb₃Sn-SC; bobina poloidal: NbTi-SC (todas a −269 ºC). Desviador: W-acero inoxidable a 2000 ºC.", "Apuntes FUS, diap. 53");
 L("FUS", "fus-iter", "Diagrama de Lawson", 3, "En el diagrama de triple producto frente a temperatura de los apuntes, ¿qué afirmación es correcta?",
-  ["Las máquinas de los años 90 (JET, JT-60U, TFTR) se sitúan cerca de las bandas Q<sub>DT</sub> = 0,1-1, e ITER en la zona de ignición/condiciones de reactor",
-   "Las máquinas de los años 70 (T3, TFR) ya alcanzaron la banda Q<sub>DT</sub> = 1, e ITER se sitúa por debajo de Q<sub>DT</sub> = 0,1",
-   "Las máquinas de los años 90 (JET, JT-60U, TFTR) ya superaron la zona de ignición, e ITER se sitúa en la banda Q<sub>DT</sub> = 0,1",
+  ["Las máquinas de los años 90 (JET, JT-60U, TFTR) se sitúan cerca de las bandas $Q_{\\mathrm{DT}}$ = 0,1-1, e ITER en la zona de ignición/condiciones de reactor",
+   "Las máquinas de los años 70 (T3, TFR) ya alcanzaron la banda $Q_{\\mathrm{DT}}$ = 1, e ITER se sitúa por debajo de $Q_{\\mathrm{DT}}$ = 0,1",
+   "Las máquinas de los años 90 (JET, JT-60U, TFTR) ya superaron la zona de ignición, e ITER se sitúa en la banda $Q_{\\mathrm{DT}}$ = 0,1",
    "Todas las máquinas se sitúan a la misma temperatura (≈ 1 keV) y solo difieren en el triple producto"],
   0, "El gráfico muestra la progresión desde los 70 (T3, ~0,002) a los 90 (JET, JT-60U, TFTR, cerca de Q = 1); ITER está en la zona de ignición/reactor.", "Apuntes FUS, diap. 50");
 
@@ -449,7 +449,7 @@ L("FUS", "fus-inercial", "NIF", 2, "¿Cuándo alcanzó NIF la ignición, según 
   0, "Ignición: 5/12/2022. Finales de 2012 era el objetivo inicial (incumplido). 12/2/2024: récord de 5,2 MJ.", "Apuntes FUS, diap. 65");
 L("FUS", "fus-inercial", "NIF", 3, "Con los datos de los apuntes, el récord de NIF del 12 de febrero de 2024 equivale a una energía de fusión unas … veces la energía láser de la instalación.",
   ["2,6", "0,26", "26", "1,0"],
-  0, "5,2 MJ de energía de fusión / 2 MJ de láser ≈ 2,6.", "Apuntes FUS, diap. 64-65");
+  0, "Cociente entre la energía de fusión del récord de NIF y la energía láser de la instalación (Apuntes FUS, diap. 64-65): $$\\frac{E_{\\text{fusión}}}{E_{\\text{láser}}}=\\frac{5{,}2\\ \\text{MJ}}{2\\ \\text{MJ}}\\approx\\boxed{2{,}6}$$ 0,26 y 26 son errores de un factor 10; 1,0 sería solo el punto de equilibrio (ignición «científica»).", "Apuntes FUS, diap. 64-65");
 L("FUS", "fus-inercial", "Instalaciones", 3, "De las instalaciones láser del mapa de los apuntes, ¿cuáles están en Estados Unidos? (puede haber varias)",
   ["LMJ", "OMEGA", "GEKKO XII", "NIKE"],
   [1, 3], "En EE. UU.: NIF, OMEGA, NIKE y SANDIA. LMJ está en Francia y GEKKO XII en Japón.", "Apuntes FUS, diap. 64");
@@ -791,7 +791,7 @@ THEORY.HID = {
 <h4>Origen y recurso</h4>
 <p>Las olas las causa <b>directamente el viento</b> e <b>indirectamente la energía solar</b>. Como los océanos cubren <b>más del 70 %</b> de la superficie terrestre, la energía de las olas es abundante.</p>
 <h4>Mecánica de ondas</h4>
-<p>Parámetros: <b>amplitud a</b> (mitad de la distancia vertical cresta-valle), <b>longitud de onda λ</b> (distancia horizontal entre crestas), <b>período</b> (tiempo entre dos crestas en un punto), frecuencia = 1/período y velocidad c = λ/período. Las partículas de fluido realizan <b>oscilaciones circulares</b> (diap. 43).</p>
+<p>Parámetros: <b>amplitud a</b> (mitad de la distancia vertical cresta-valle), <b>longitud de onda λ</b> (distancia horizontal entre crestas), <b>período</b> (tiempo entre dos crestas en un punto), frecuencia $=1/\\text{período}$ y velocidad $c=\\lambda/\\text{período}$. Las partículas de fluido realizan <b>oscilaciones circulares</b> (diap. 43).</p>
 <div class="formula">$$\\frac{\\dot W}{L}=\\frac{\\rho a^2 g\\sqrt{g\\lambda}}{\\sqrt{8\\pi}} \\qquad \\frac{\\dot W}{A}=\\frac{\\rho a^2 g\\sqrt{g}}{\\sqrt{8\\pi\\lambda}}$$</div>
 <p>Densidades típicas por unidad de ancho cerca de las costas del Atlántico y el Pacífico: <b>20-80 kW/m</b>; en <b>tormentas</b> la potencia es mucho mayor y los sistemas deben soportar fuerzas muy altas.</p>
 <h4>Sistemas de aprovechamiento</h4>
@@ -831,13 +831,13 @@ THEORY.HID = {
 /* ---------- HID · preguntas ---------- */
 L("HID", "hid-fundamentos", "Energía máxima", 1, "Según los apuntes, la energía máxima que puede producir un caudal de agua m que cae desde una altura H es…",
   ["$W_{max}=m\\,g\\,H$", "$W_{max}=\\tfrac12\\,m\\,g\\,H$", "$W_{max}=\\tfrac12\\,m\\,v^2$", "$W_{max}=m\\,g\\,H^2$"],
-  0, "W<sub>max</sub> = m·g·H. El factor ½ y H² aparecen en la energía del llenado de una piscina mareomotriz (½AηρgH²).", "Apuntes HID, diap. 3");
+  0, "$W_{\\mathrm{max}}$ = m·g·H. El factor ½ y H² aparecen en la energía del llenado de una piscina mareomotriz (½AηρgH²).", "Apuntes HID, diap. 3");
 L("HID", "hid-fundamentos", "Rendimiento de la turbina", 2, "El rendimiento típico de una turbina hidráulica que dan los apuntes es…",
   ["72-84 %", "30-40 %", "85-95 %", "47 %"],
   0, "72-84 %. El 30-40 % es la limitación de Carnot de una máquina térmica (diap. 5) y el 47 % el factor de carga medio de las hidroeléctricas.", "Apuntes HID, diap. 3");
 L("HID", "hid-fundamentos", "Energía específica", 2, "¿Qué energía específica tiene 1 kg de agua con un salto de 30 m, según los apuntes?",
   ["0,294 kJ/kg", "2,94 kJ/kg", "29,4 kJ/kg", "0,0294 kJ/kg"],
-  0, "g·H = 9,8 · 30 ≈ 294 J/kg = 0,294 kJ/kg, unas 10.000 veces menos que los ~3000 kJ/kg del vapor.", "Apuntes HID, diap. 5");
+  0, "La energía específica de un salto es la energía potencial por unidad de masa (Apuntes HID, diap. 5): $$e=g\\,H$$ $$=9{,}8\\ \\tfrac{\\text{m}}{\\text{s}^2}\\cdot30\\ \\text{m}$$ $$=294\\ \\text{J/kg}$$ $$=\\boxed{0{,}294\\ \\text{kJ/kg}}$$ Es unas 10.000 veces menos que los ≈ 3.000 kJ/kg del vapor de una central térmica; por eso las hidroeléctricas necesitan caudales enormes.", "Apuntes HID, diap. 5");
 L("HID", "hid-fundamentos", "Energía específica", 3, "Sobre la comparación entre la energía potencial del agua y la energía térmica, ¿qué afirman los apuntes?",
   ["La energía específica potencial es muy baja; incluso con la limitación de Carnot (30-40 %), la térmica es muy superior",
    "La energía específica potencial es comparable a la térmica una vez se aplica la limitación de Carnot (30-40 %)",
@@ -846,7 +846,7 @@ L("HID", "hid-fundamentos", "Energía específica", 3, "Sobre la comparación en
   0, "0,294 kJ/kg frente a ~3000 kJ/kg (×10.000): ni con el 30-40 % de Carnot se compensa. La potencia hidráulica sale de los grandes caudales.", "Apuntes HID, diap. 5");
 L("HID", "hid-fundamentos", "Caudal y potencia", 3, "Con un caudal de 10⁴ m³/s, un salto de 30 m y un rendimiento del 75 %, ¿qué potencia eléctrica se obtiene aproximadamente?",
   ["≈ 2.200 MW", "≈ 22.000 MW", "≈ 2.900 MW", "≈ 220 MW"],
-  0, "P = η·ρ·Q·g·H = 0,75 · 1000 · 10⁴ · 9,8 · 30 ≈ 2,2·10⁹ W. Con 10⁵ m³/s serían ≈ 22.000 MW (el rango de los apuntes); sin el 75 % saldrían ≈ 2.900 MW.", "Apuntes HID, diap. 6");
+  0, "Potencia de una central hidroeléctrica (Apuntes HID, diap. 6): $$P=\\eta\\,\\rho\\,Q\\,g\\,H$$ $$=0{,}75\\cdot1000\\cdot10^{4}\\cdot9{,}8\\cdot30$$ $$P\\approx2{,}2\\cdot10^{9}\\ \\text{W}=\\boxed{2200\\ \\text{MW}}$$ Sin el rendimiento saldrían ≈ 2.900 MW; 22.000 y 220 MW son errores de un factor 10 (con 10⁵ m³/s se llegaría a ≈ 22.000 MW).", "Apuntes HID, diap. 6");
 L("HID", "hid-fundamentos", "Canales y antigüedad", 2, "Señale la afirmación correcta según los apuntes:",
   ["Las grandes plantas tienen varios canales (5-30) hacia turbinas en paralelo, y la mayoría son instalaciones viejas, salvo Tres Gargantas",
    "Las grandes plantas tienen una única tubería forzada hacia una turbina, y la mayoría son instalaciones recientes",
@@ -901,7 +901,7 @@ L("HID", "hid-mundo", "Expansión", 3, "Sobre la expansión futura de la hidroel
   0, "Gran Inga: 40.000 MW; China: 70.000 MW además de Tres Gargantas; Brasil y Argentina: ~10.000 MW. La expansión será en países en desarrollo.", "Apuntes HID, diap. 12");
 L("HID", "hid-mundo", "Pequeñas centrales", 3, "Un río con un caudal de 10³ m³/s y un salto de 4 m tiene, según los apuntes, capacidad para producir…",
   ["39,2 MW", "3,92 MW", "392 MW", "29,4 MW"],
-  0, "ρ·Q·g·H = 1000 · 10³ · 9,8 · 4 = 39,2 MW (potencia bruta, sin rendimiento). Con un 75 % saldrían ≈ 29,4 MW.", "Apuntes HID, diap. 13");
+  0, "Potencia bruta de un salto, sin rendimiento (Apuntes HID, diap. 13): $$P=\\rho\\,Q\\,g\\,H$$ $$=1000\\cdot10^{3}\\cdot9{,}8\\cdot4$$ $$=3{,}92\\cdot10^{7}\\ \\text{W}$$ $$=\\boxed{39{,}2\\ \\text{MW}}$$ Con un rendimiento del 75 % saldrían ≈ 29,4 MW; 3,92 y 392 MW son errores de un factor 10.", "Apuntes HID, diap. 13");
 L("HID", "hid-mundo", "Pequeñas centrales", 2, "En el contexto mundial de los apuntes, las «pequeñas» y las «micro» hidroeléctricas se definen como las de menos de…",
   ["30 MW y 1 MW, respectivamente", "10 MW y 10 kW, respectivamente", "5 MW y 1 MW, respectivamente", "30 MW y 100 kW, respectivamente"],
   0, "Diap. 13: pequeñas < 30 MW, micro < 1 MW. Los 10 MW (minihidráulica) y 10 kW (microturbinas) aparecen en el apartado de España.", "Apuntes HID, diap. 13 y 23");
@@ -945,7 +945,7 @@ L("HID", "hid-espana", "Datos REE", 3, "Según los datos de REE de 2023 de los a
   0, "Hidráulica 13,6 % de potencia y 9,5 % de cobertura; turbinación bombeo 2,7 % y 1,9 %; 20,3 % es la nuclear en cobertura (y la FV en potencia).", "Apuntes HID, diap. 20-21");
 L("HID", "hid-espana", "Datos REE", 3, "Con el total de 125.620 MW instalados en 2023 y la cuota hidráulica de la diapositiva, ¿qué potencia hidráulica (sin bombeo) había aproximadamente?",
   ["≈ 17.100 MW", "≈ 11.900 MW", "≈ 3.400 MW", "≈ 25.500 MW"],
-  0, "0,136 · 125.620 ≈ 17.084 MW. Con el 9,5 % (cobertura) saldría ≈ 11.900 MW y con el 2,7 % (bombeo) ≈ 3.400 MW, pero no son cuotas de potencia hidráulica.", "Apuntes HID, diap. 20");
+  0, "Potencia hidráulica = cuota hidráulica de la potencia instalada (13,6 %, Apuntes HID, diap. 20) × potencia total: $$P_{hid}=0{,}136\\cdot125.620\\ \\text{MW}\\approx\\boxed{17.100\\ \\text{MW}}$$ Con el 9,5 % (cobertura de la demanda) saldría ≈ 11.900 MW y con el 2,7 % (bombeo) ≈ 3.400 MW, pero no son la cuota de potencia hidráulica.", "Apuntes HID, diap. 20");
 L("HID", "hid-espana", "Minihidráulica", 2, "En el apartado de España, una central se considera minihidráulica si su potencia instalada es menor de…",
   ["10 MW, y puede ser de agua fluyente o de pie de presa", "10 MW, y solo puede ser de agua fluyente", "30 MW, y puede ser de agua fluyente o de pie de presa", "5 MW, y solo puede ser de pie de presa"],
   0, "Minihidráulica < 10 MW, fluyente o pie de presa. El límite de 30 MW es el de «pequeñas centrales» en el contexto mundial.", "Apuntes HID, diap. 23");
@@ -991,7 +991,7 @@ L("HID", "hid-bombeo", "La Muela", 2, "Sobre el sistema de bombeo de La Muela (C
   0, "630 MW, depósito superior de 23 hm³, Cortes aguas abajo; se llena de noche con energía de la CN de Cofrentes; ampliación de 852 MW en 2013.", "Apuntes HID, diap. 28");
 L("HID", "hid-bombeo", "La Muela", 3, "Tras la ampliación terminada en 2013, ¿qué potencia de bombeo totaliza La Muela con los datos de los apuntes y qué la caracteriza?",
   ["≈ 1.482 MW; es la mayor central hidroeléctrica de bombeo de Europa", "≈ 852 MW; es la mayor central hidroeléctrica de bombeo de Europa", "≈ 1.482 MW; es la mayor central hidroeléctrica de España, pero no de bombeo", "≈ 2.200 MW; es la mayor central hidroeléctrica de bombeo del mundo"],
-  0, "630 + 852 = 1.482 MW; los apuntes la califican como la mayor central hidroeléctrica de bombeo de Europa.", "Apuntes HID, diap. 28");
+  0, "Potencia de bombeo de La Muela (Apuntes HID, diap. 28): La Muela I más la ampliación (La Muela II) terminada en 2013: $$P=630+852=\\boxed{1482\\ \\text{MW}}$$ Los apuntes la califican como la mayor central hidroeléctrica de bombeo de Europa; 852 MW es solo la ampliación.", "Apuntes HID, diap. 28");
 
 L("HID", "hid-mareas", "Origen de las mareas", 2, "¿Por qué la Luna desempeña un papel más importante que el Sol en la creación de las mareas?",
   ["Porque, aunque su masa es mucho menor, está significativamente más cerca de la Tierra",
@@ -1013,7 +1013,7 @@ L("HID", "hid-mareas", "Altura de la marea", 3, "Según el modelo de los apuntes
   0, "Teórico 0,36 m (m/M = 0,0123); medido ≈ 0,5 m; el rango medio es el doble de la altura máxima, ≈ 1 m.", "Apuntes HID, diap. 32-33");
 L("HID", "hid-mareas", "Período y longitud de onda", 3, "Con un período de marea de ≈ 45.000 s y una velocidad de propagación de ≈ 200 m/s, la longitud de onda de las mareas es de unos…",
   ["9.000 km, mayor que el ancho del Atlántico", "900 km, menor que el ancho del Atlántico", "90.000 km, mayor que el ancho del Pacífico", "9.000 km, menor que el ancho del Atlántico"],
-  0, "λ = c·T = 200 · 45.000 = 9·10⁶ m = 9.000 km, mayor que el ancho del Atlántico y del orden del ancho máximo del Pacífico.", "Apuntes HID, diap. 33-34");
+  0, "Longitud de onda = velocidad de propagación × período (Apuntes HID, diap. 33-34): $$\\lambda=c\\,T$$ $$=200\\ \\tfrac{\\text{m}}{\\text{s}}\\cdot45.000\\ \\text{s}$$ $$=9\\cdot10^{6}\\ \\text{m}$$ $$=\\boxed{9000\\ \\text{km}}$$ Es mayor que el ancho del Atlántico y del orden del ancho máximo del Pacífico; 900 y 90.000 km son errores de un factor 10.", "Apuntes HID, diap. 33-34");
 L("HID", "hid-mareas", "Período", 2, "El período de las mareas oceánicas es de unas 12 h 25 min porque…",
   ["es la mitad del período aparente de rotación de la Luna alrededor de la Tierra (24 h 50 min)",
    "es la mitad del período de rotación de la Tierra (24 h)",
@@ -1022,7 +1022,7 @@ L("HID", "hid-mareas", "Período", 2, "El período de las mareas oceánicas es d
   0, "Hay dos pleamares y dos bajamares: la onda tiene la mitad del período aparente de la Luna (24 h 50 min → 12 h 25 min ≈ 45.000 s).", "Apuntes HID, diap. 33");
 L("HID", "hid-mareas", "Piscina única", 3, "Una central mareomotriz de piscina única con A = 10 km², rango H = 5 m y η = 0,8 produce, según la expresión de los apuntes, una potencia media de unos…",
   ["44 MW", "22 MW", "9 MW", "87 MW"],
-  0, "Ẇ = AηρgH²/T = 10⁷ · 0,8 · 1000 · 9,8 · 25 / 45.000 ≈ 43,6 MW. 22 MW sería tomar solo un llenado (½AηρgH²/T) y 9 MW usar H en vez de H².", "Apuntes HID, diap. 36");
+  0, "Potencia media de una central de piscina única (Apuntes HID, diap. 36), con A = 10 km² = 10⁷ m², H = 5 m y T ≈ 45.000 s: $$\\dot W=\\frac{A\\,\\eta\\,\\rho\\,g\\,H^2}{T}$$ $$=\\frac{10^{7}\\cdot0{,}8\\cdot1000\\cdot9{,}8\\cdot5^2}{45.000}$$ $$\\dot W=\\frac{1{,}96\\cdot10^{12}}{45.000}\\approx4{,}36\\cdot10^{7}\\ \\text{W}\\approx\\boxed{44\\ \\text{MW}}$$ 22 MW tomaría solo un llenado (½·AηρgH²/T); 9 MW usa H en vez de H² y 87 MW cuenta dos veces la energía.", "Apuntes HID, diap. 36");
 L("HID", "hid-mareas", "Piscina única", 2, "En el sistema de piscina única de los apuntes, las turbinas…",
   ["operan a baja presión y son reversibles, y producen energía tanto al llenar como al vaciar la piscina",
    "operan a alta presión y son reversibles, y solo producen energía al llenar la piscina",
@@ -1047,7 +1047,7 @@ L("HID", "hid-olas", "Densidad de potencia", 2, "¿Qué potencia típica por uni
   0, "20-80 kW/m; en tormentas, mucho más.", "Apuntes HID, diap. 44");
 L("HID", "hid-olas", "Potencia de las olas", 3, "Según la expresión de los apuntes, $\\dot W/L=\\rho a^2 g\\sqrt{g\\lambda}/\\sqrt{8\\pi}$. Si la amplitud de las olas se duplica (misma longitud de onda), la potencia por unidad de ancho…",
   ["se multiplica por 4", "se multiplica por 2", "se multiplica por √2", "se multiplica por 8"],
-  0, "Depende de a²: al duplicar a, se cuadruplica. Por eso en tormentas la potencia crece mucho y los sistemas deben resistir fuerzas muy altas.", "Apuntes HID, diap. 44");
+  0, "En la expresión de los apuntes (Apuntes HID, diap. 44) la potencia por unidad de ancho depende del cuadrado de la amplitud: $$\\frac{\\dot W}{L}=\\frac{\\rho\\,a^2\\,g\\sqrt{g\\lambda}}{\\sqrt{8\\pi}}\\propto a^2$$ $$\\Rightarrow\\frac{\\dot W'}{\\dot W}$$ $$=\\left(\\frac{2a}{a}\\right)^2 =\\boxed{4}$$ Por eso en los temporales la potencia crece mucho y los captadores deben resistir esfuerzos muy altos.", "Apuntes HID, diap. 44");
 L("HID", "hid-olas", "Energía de las ondas", 3, "Según los apuntes, la mayor parte de la energía de las olas está contenida en las ondas de…",
   ["gran longitud de onda y gran amplitud", "pequeña longitud de onda y gran amplitud", "gran longitud de onda y pequeña amplitud", "alta frecuencia y pequeña amplitud"],
   0, "Las olas son superposición de ondas; la energía está en las de gran λ y gran amplitud, que los dispositivos deben absorber eficientemente.", "Apuntes HID, diap. 45");
@@ -1075,7 +1075,7 @@ L("HID", "hid-otec", "Rendimiento", 2, "El rendimiento de Carnot del ciclo OTEC 
   0, "Carnot < 9 %; plantas reales 1-2 %. Aun así, el calor es casi inagotable y gratuito.", "Apuntes HID, diap. 53");
 L("HID", "hid-otec", "Rendimiento", 3, "Con agua superficial a 32 ºC y agua profunda a 5 ºC (extremos de los rangos de los apuntes), el rendimiento de Carnot es de aproximadamente…",
   ["8,8 %", "84 %", "0,88 %", "15,6 %"],
-  0, "η = 1 − 278,15/305,15 ≈ 0,088 → 8,8 %, coherente con el «inferior al 9 %». 84 % sería usar ºC en lugar de K.", "Apuntes HID, diap. 53");
+  0, "Rendimiento de Carnot entre el agua superficial y la profunda (Apuntes HID, diap. 53), con temperaturas absolutas: $$T_c=32+273{,}15 =305{,}15\\ \\text{K}$$ $$T_f=5+273{,}15 =278{,}15\\ \\text{K}$$ $$\\eta_C=1-\\frac{T_f}{T_c}$$ $$=1-\\frac{278{,}15}{305{,}15} =0{,}088$$ $$\\Rightarrow\\boxed{8{,}8\\ \\%}$$ Es coherente con el «inferior al 9 %» de los apuntes. 84 % sale usando ºC en lugar de K (1 − 5/32) y 15,6 % es 5/32.", "Apuntes HID, diap. 53");
 L("HID", "hid-otec", "Ventajas", 3, "¿Qué afirmaciones sobre la OTEC son correctas según los apuntes? (puede haber varias)",
   ["Puede ser una fuente continua y bastante confiable, porque la diferencia de temperatura existe todo el año",
    "Sus efectos ambientales son muy bajos y se localizan en las proximidades de la planta",

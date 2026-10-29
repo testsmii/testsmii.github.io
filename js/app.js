@@ -827,8 +827,10 @@ function startQuiz({ ids, title, fromExam, lesson }) {
 }
 function startFailedQuiz() { const ids = failedIds(); if (!ids.length) return go("#/aprender"); startQuiz({ ids: shuffle(ids).slice(0, 20), title: "Corregir falladas" }); }
 // Resalta las negaciones del enunciado («incorrecta», «falsa», «no»…) para que no se lean como «correcta»
-const qText = t => esc(t).replace(/\b(incorrectas?|falsas?|INCORRECTAS?|FALSAS?|NO es|no es|no son|NO|no corresponde|excepto|EXCEPTO)\b/g, m => `<b class="neg">${m.toUpperCase()}</b>`);
-const explainHtml = q => `${q.official ? `<div class="official">${q.official}</div>` : ""}${q.bank === "exam" ? `<b>${q.official ? "Comentario" : "Explicación orientativa (no oficial)"}:</b> ` : ""}${esc(q.exp)}
+// Escapa el texto pero respeta etiquetas inofensivas de formato (sub, sup, b, i, br) y entidades ya escritas en los datos
+const escF = t => esc(t).replace(/&lt;(\/?)(sub|sup|b|i|br)\s*\/?&gt;/g, "<$1$2>").replace(/&amp;(lt|gt|amp|nbsp|le|ge|middot|minus|asymp|deg);/g, "&$1;");
+const qText = t => escF(t).replace(/\b(incorrectas?|falsas?|INCORRECTAS?|FALSAS?|NO es|no es|no son|NO|no corresponde|excepto|EXCEPTO)\b/g, m => `<b class="neg">${m.toUpperCase()}</b>`);
+const explainHtml = q => `${q.official ? `<div class="official">${q.official}</div>` : ""}${q.bank === "exam" ? `<b>${q.official ? "Comentario" : "Explicación orientativa (no oficial)"}:</b> ` : ""}${escF(q.exp)}
   <div class="src">${q.bank === "exam" ? (q.unofficial ? (q.noKey ? "<b>Sin solución oficial ni propuesta</b> · " : (q.keyBy === "doc" ? "<b>Respuesta marcada en el documento original (no oficial): " + esc(q.keyText) + "</b> · " : "<b>Solución PROPUESTA por IA (no oficial): " + esc(q.keyText) + " · confianza " + esc(q.conf) + "</b> · ")) : "Solución oficial: " + esc(q.keyText) + " · ") : ""}${esc(q.src)}</div>${q.sec && lessonById(q.sec) ? `<div class="slide-btns"><button class="btn sm soft" data-theory="${q.id}">📘 Ver la teoría de esta pregunta</button></div>` : ""}${slideButtons(q)}`;
 function viewQuiz() {
   const Z = S.quiz;
@@ -841,7 +843,7 @@ function viewQuiz() {
     let cls = "";
     if (answered) { const isC = q.a.includes(oi), isS = sel.includes(oi); cls = isC && isS ? "correct" : isS ? "wrong" : isC ? "correct missed" : "dim"; }
     else if (sel.includes(oi)) cls = "sel";
-    return `<button class="opt ${cls}" data-oi="${oi}" ${answered ? "disabled" : ""}><span class="k">${LET[k]}</span><span class="t">${esc(q.o[oi])}</span></button>`;
+    return `<button class="opt ${cls}" data-oi="${oi}" ${answered ? "disabled" : ""}><span class="k">${LET[k]}</span><span class="t">${escF(q.o[oi])}</span></button>`;
   }).join("");
   let fb = "";
   if (answered) {
@@ -914,7 +916,7 @@ function reviewItem(q, sel, n, order) {
   <div style="font-weight:600;margin-bottom:8px;white-space:pre-line">${qText(q.q)}</div>
   ${q.fig ? `<figure class="qfig"><img src="${q.fig}" alt="${esc(q.figAlt || "Figura")}" loading="lazy"></figure>` : ""}
   ${order.map((oi, k) => { const isC = q.a.includes(oi), isS = sel.includes(oi);
-    return `<div class="ropt ${isC ? "correct" : isS ? "wrong" : ""}"><span class="k">${LET[k]}</span><span style="white-space:pre-line">${esc(q.o[oi])}</span><span class="who">${isS ? "Tu respuesta" + (isC ? " ✓" : " ✗") : isC ? "Correcta" : ""}</span></div>`; }).join("")}
+    return `<div class="ropt ${isC ? "correct" : isS ? "wrong" : ""}"><span class="k">${LET[k]}</span><span style="white-space:pre-line">${escF(q.o[oi])}</span><span class="who">${isS ? "Tu respuesta" + (isC ? " ✓" : " ✗") : isC ? "Correcta" : ""}</span></div>`; }).join("")}
   <details class="mt"><summary class="small linkish">Explicación</summary><div class="explain">${explainHtml(q)}</div></details></div>`;
 }
 
@@ -989,7 +991,7 @@ function viewExamRunner() {
       <div class="qmeta"><span class="tag brand">Pregunta ${q.n} de ${qs.length}</span>${q.part === "P2" ? `<span class="tag p2">2ª parte · no entra en la PEC1</span>` : ""}${q.multi ? `<span class="tag warn">Puede haber más de una</span>` : ""}</div>
       <div class="qtext">${qText(q.q)}</div>
       ${q.fig ? `<figure class="qfig"><img src="${q.fig}" alt="${esc(q.figAlt || "Figura")}"><figcaption>Figura original del examen</figcaption></figure>` : ""}
-      <div class="opts">${q.o.map((o, i) => `<button class="opt ${sel.includes(i) ? "sel" : ""} ${peek && q.a.includes(i) ? "peek-ok" : ""}" data-i="${i}"><span class="k">${"abcd"[i]}</span><span class="t">${esc(o)}</span></button>`).join("")}</div>
+      <div class="opts">${q.o.map((o, i) => `<button class="opt ${sel.includes(i) ? "sel" : ""} ${peek && q.a.includes(i) ? "peek-ok" : ""}" data-i="${i}"><span class="k">${"abcd"[i]}</span><span class="t">${escF(o)}</span></button>`).join("")}</div>
       <div class="row between mt">${sel.length ? `<button class="linkbtn" id="e-clear">Dejar en blanco</button>` : "<span></span>"}${q.noKey ? "" : `<button class="btn sm ${peek ? "ghost" : "soft"}" id="e-peek">${peek ? "Ocultar solución" : "💡 Ver solución explicada"}</button>`}</div>
       ${peek ? `<div class="explain mt"><div class="peek-key">Respuesta${q.a.length > 1 ? "s" : ""} ${q.unofficial ? "propuesta" + (q.a.length > 1 ? "s" : "") + " (no oficial)" : "correcta" + (q.a.length > 1 ? "s" : "")}: <b>${q.a.map(i => "abcd"[i]).join(", ")}</b></div>${explainHtml(q)}</div>` : ""}
     </article>
@@ -1169,7 +1171,7 @@ function askCard(d, i) {
   const t = topicById(d.tema);
   return `<div class="ask-hit"><div class="ah-h"><span class="ah-n">${i + 1}</span><span class="tag" style="background:${t.color}1a;color:${t.color}">${esc(d.sub)}</span></div>
   <b class="ah-t">${esc(d.title.length > 220 ? d.title.slice(0, 220) + "…" : d.title)}</b>
-  ${d.q ? `<ul class="ah-opts">${d.q.o.map((o, k) => `<li class="${d.q.a.includes(k) ? "ok" : ""}">${esc(o)}${d.q.a.includes(k) ? " ✓" : ""}</li>`).join("")}</ul>` : ""}
+  ${d.q ? `<ul class="ah-opts">${d.q.o.map((o, k) => `<li class="${d.q.a.includes(k) ? "ok" : ""}">${escF(o)}${d.q.a.includes(k) ? " ✓" : ""}</li>`).join("")}</ul>` : ""}
   <div class="ah-b theory">${d.q ? d.html.replace(/^<b>Respuesta:<\/b>[^<]*<br>/, "") : d.html}</div>
   <div class="row">${d.href ? `<a class="btn sm soft" href="${d.href}">Abrir en la app</a>` : ""}${d.q ? `<button class="btn sm soft" data-askq="${d.q.id}">Responder esta pregunta</button>` : ""}</div>${slides}</div>`;
 }

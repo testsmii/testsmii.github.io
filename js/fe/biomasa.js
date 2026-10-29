@@ -63,7 +63,7 @@ THEORY.B1 = {
 <h4>Poder calorífico inferior (PCI)</h4>
 <p>PCI = NCV = LHV: descuenta el calor de vaporización del agua de la humedad y del agua formada por el hidrógeno.</p>
 <div class="formula">$$\\text{van Loo y Koppejan: } PCI\\,(\\text{MJ/kg m.h.}) = PCS\\left(1-\\tfrac{w}{100}\\right) - 2{,}444\\tfrac{w}{100} - 2{,}444\\tfrac{H}{100}\\,8{,}936\\left(1-\\tfrac{w}{100}\\right)$$</div>
-<p>con el PCS en MJ/kg de materia seca y <i>w</i> la humedad (%). EPA: PCI = PCS − 1050·(H<sub>2</sub>O + 9(H − Cl/35 − F/19)), donde 1050 Btu/lb es el calor de vaporización del agua a 25 ºC.</p>
+<p>con el PCS en MJ/kg de materia seca y <i>w</i> la humedad (%). EPA: $PCI=PCS-1050\\left[H_2O+9\\left(H-\\frac{Cl}{35}-\\frac{F}{19}\\right)\\right]$, donde 1050 Btu/lb es el calor de vaporización del agua a 25 ºC.</p>
 <h4>Valores típicos (CIEMAT)</h4>
 <table class="tbl"><thead><tr><th>Material</th><th>Humedad (1)</th><th>M. volátil (2)</th><th>C fijo (2)</th><th>Cenizas (2)</th></tr></thead><tbody>
 <tr><td>Madera de pino</td><td>10,3</td><td>81,6</td><td>17,8</td><td>0,6</td></tr>
@@ -274,7 +274,7 @@ L("B1", "b1-composicion", "Poder calorífico superior", 2, "Sobre el PCS de la b
   0, "Diapositiva 10: más de 20 expresiones; medida con bomba calorimétrica (UNE-EN 14918:2011). Van Loo y Koppejan es una aproximación del PCI.", "Apuntes B1, diap. 10");
 L("B1", "b1-composicion", "Dulong", 3, "Aplicando la aproximación de Dulong a la paja del análisis último de los apuntes (C 40,7 %; H 7,0 %; O 50,5 %; N 1,6 %; S 0,2 %), el PCS resulta aproximadamente…",
   ["3.527 kcal/kg", "5.667 kcal/kg", "3.294 kcal/kg", "4.073 kcal/kg"],
-  0, "PCS = 80,6·40,7 + 339,1·(7,0 − 50,5/8) + 22,22·0,2 + 5,56·1,6 = 3280,4 + 233,1 + 4,4 + 8,9 ≈ 3.527 kcal/kg. Olvidar restar O/8 da ≈ 5.667; omitir el término de H da ≈ 3.294.", "Apuntes B1, diap. 10-11");
+  0, "Datos: análisis último de la paja (Apuntes B1, diap. 10): C = 40,7; H = 7,0; O = 50,5; N = 1,6; S = 0,2 (% en masa). Se aplica la aproximación de Dulong, que da el PCS en kcal/kg con los porcentajes en masa: $$PCS=80{,}6\\,C+339{,}1\\left(H-\\frac{O}{8}\\right)$$ $$+22{,}22\\,S+5{,}56\\,N$$ Sustitución término a término: $$80{,}6\\cdot40{,}7=3280{,}4$$ $$339{,}1\\left(7{,}0-\\frac{50{,}5}{8}\\right)=339{,}1\\cdot0{,}6875$$ $$=233{,}1$$ $$22{,}22\\cdot0{,}2=4{,}4$$ $$5{,}56\\cdot1{,}6=8{,}9$$ $$PCS=3280{,}4+233{,}1+4{,}4+8{,}9$$ $$\\approx\\boxed{3527\\ \\text{kcal/kg}}$$ Distractores: olvidar restar O/8 da 3280,4 + 339,1·7,0 + … ≈ 5.667 kcal/kg; omitir el término del hidrógeno da ≈ 3.294 kcal/kg; 4.073 kcal/kg es el PCS de la materia seca del problema 1.", "Apuntes B1, diap. 10-11");
 L("B1", "b1-composicion", "Dulong", 3, "En la fórmula de Dulong, el término 339,1·(H − O/8) refleja que…",
   ["parte del hidrógeno se considera ya combinado con el oxígeno del combustible y no aporta calor",
    "el oxígeno del combustible aporta calor adicional al oxidarse con el hidrógeno",
@@ -283,10 +283,10 @@ L("B1", "b1-composicion", "Dulong", 3, "En la fórmula de Dulong, el término 33
   0, "Se resta O/8 porque 1 kg de O se combina con 1/8 kg de H para formar agua; ese H ya está «oxidado». La corrección por evaporación de agua es la que pasa del PCS al PCI.", "Apuntes B1, diap. 10");
 L("B1", "b1-composicion", "PCI", 3, "Con la aproximación de van Loo y Koppejan, ¿cuál es el PCI de una biomasa con PCS = 20 MJ/kg m.s., humedad w = 20 % y H = 6 % (m.s.)?",
   ["≈ 14,5 MJ/kg m.h.", "≈ 16,0 MJ/kg m.h.", "≈ 15,5 MJ/kg m.h.", "≈ 18,7 MJ/kg m.h."],
-  0, "PCI = 20·0,8 − 2,444·0,2 − 2,444·0,06·8,936·0,8 = 16 − 0,489 − 1,048 ≈ 14,46 MJ/kg. 16,0 sería solo corregir por la masa seca; 15,5 olvida el agua formada.", "Apuntes B1, diap. 10");
+  0, "Datos: PCS = 20 MJ/kg m.s., w = 20 % y H = 6 % (m.s.). La aproximación de van Loo y Koppejan (Apuntes B1, diap. 11) descuenta del PCS de la parte seca el calor de vaporización (2,444 MJ/kg) de la humedad y del agua que forma el hidrógeno (8,936 kg de agua por kg de H): $$PCI=PCS\\left(1-\\tfrac{w}{100}\\right)-2{,}444\\,\\tfrac{w}{100}$$ $$-2{,}444\\,\\tfrac{H}{100}\\,8{,}936\\left(1-\\tfrac{w}{100}\\right)$$ $$PCI=20\\cdot0{,}8-2{,}444\\cdot0{,}2$$ $$-2{,}444\\cdot0{,}06\\cdot8{,}936\\cdot0{,}8$$ $$PCI=16-0{,}489-1{,}048$$ $$\\approx\\boxed{14{,}5\\ \\text{MJ/kg m.h.}}$$ Distractores: 16,0 solo corrige por la masa seca; 15,5 olvida el agua formada por el hidrógeno; 18,7 olvida la humedad (20 − 1,31, en base seca).", "Apuntes B1, diap. 10");
 L("B1", "b1-composicion", "PCI", 2, "En la aproximación EPA del PCI, el valor 1050 Btu/lb corresponde a…",
   ["el calor de vaporización del agua a 25 ºC", "el PCS medio de la biomasa seca", "el calor de combustión del hidrógeno", "el calor de vaporización del agua a 100 ºC"],
-  0, "PCI (Btu/lb) = PCS − 1050·(H₂O + 9(H − Cl/35 − F/19)), con 1050 Btu/lb = calor de vaporización del agua a 25 ºC.", "Apuntes B1, diap. 10");
+  0, "La aproximación de la EPA (Apuntes B1, diap. 11) da el PCI en Btu/lb restando al PCS el calor de vaporización del agua de humedad y del agua formada por el hidrógeno (9 kg de agua por kg de H, descontando el H ligado al cloro y al flúor): $$PCI=PCS-1050\\left[H_2O+9\\left(H-\\frac{Cl}{35}-\\frac{F}{19}\\right)\\right]$$ El coeficiente 1050 Btu/lb es el calor de vaporización del agua a 25 ºC (no a 100 ºC).", "Apuntes B1, diap. 10");
 L("B1", "b1-composicion", "Valores típicos", 2, "Según la tabla de análisis próximo de los apuntes, ¿qué material tiene el mayor contenido en cenizas (% sobre masa seca)?",
   ["Paja (6,1 %)", "Trigo (2,8 %)", "Cáscara de almendra (2,2 %)", "Madera de pino (0,6 %)"],
   0, "Cenizas: pino 0,6; cáscara de almendra 2,2; trigo 2,8; paja 6,1 %.", "Apuntes B1, diap. 11");
@@ -332,7 +332,7 @@ L("B1", "b1-cultivos", "Cultivos agrícolas", 3, "Según los apuntes, ¿qué cul
   0, "Miscanto: 25-35 t MS/ha·año. Caña: 10-35; sorgo: 12-28; eucalipto: 6-25.", "Apuntes B1, diap. 14-17");
 L("B1", "b1-cultivos", "Cálculo de energía", 3, "Una chopera energética produce 10 t MS/ha·año con el PCI de los apuntes. ¿Cuánta energía (PCI) produce por hectárea y año?",
   ["4,1·10⁷ kcal", "4,1·10⁶ kcal", "4,3·10⁷ kcal", "4,1·10⁴ kcal"],
-  0, "10 t = 10.000 kg MS × 4.100 kcal/kg = 41·10⁶ = 4,1·10⁷ kcal/ha·año. 4,3·10⁷ usaría el PCI del eucalipto.", "Apuntes B1, diap. 14");
+  0, "Datos: productividad 10 t MS/ha·año y PCI del chopo de la tabla de cultivos forestales (Apuntes B1): 4.100 kcal/kg MS. La energía anual es masa × PCI, con la masa en kg: $$E=10\\ \\text{t}\\cdot1000\\ \\tfrac{\\text{kg}}{\\text{t}}\\cdot4100\\ \\tfrac{\\text{kcal}}{\\text{kg}}$$ $$=4{,}1\\cdot10^{7}\\ \\text{kcal}$$ $$\\boxed{E=4{,}1\\cdot10^{7}\\ \\text{kcal/ha·año}}$$ Distractores: 4,1·10⁶ y 4,1·10⁴ son errores de potencias de 10 al pasar de toneladas a kilogramos; 4,3·10⁷ usaría el PCI del eucalipto (4.300 kcal/kg).", "Apuntes B1, diap. 14");
 L("B1", "b1-cultivos", "Mostaza etíope", 1, "Según los apuntes, ¿qué ventaja agronómica tiene la mostaza etíope?",
   ["Es más beneficiosa que el barbecho en la rotación y aumenta el rendimiento del cereal posterior",
    "Es la especie con mayor PCI de los cultivos agrícolas, 4.400 kcal/kg MS",
