@@ -76,7 +76,7 @@ THEORY.B3 = {
 <p>Se estima de forma <b>experimental</b> (laboratorio y planta piloto) o <b>teórica</b> (diap. 9):</p>
 <div class="formula">$$\\mathrm{C_6H_{12}O_6 \\rightarrow 3CO_2 + 3CH_4}:\\ \\frac{48}{180}=0{,}27\\ \\mathrm{g\\,CH_4/g\\ glucosa}\\ (=0{,}38\\ \\mathrm{L})$$</div>
 <div class="formula">$$\\mathrm{C_6H_{12}O_6 + 6O_2 \\rightarrow 6CO_2 + 6H_2O}:\\ \\frac{192}{180}=1{,}06\\ \\mathrm{g\\,O_2/g\\ glucosa}$$</div>
-<p>16 g de metano ocupan 22,4 L en condiciones normales. Por tanto: 0,38/1,06 = <b>0,35 L de metano por g de DQO</b>.</p>
+<p>16 g de metano ocupan 22,4 L en condiciones normales. Por tanto: $\\dfrac{0{,}38\\ \\text{L CH}_4/\\text{g glucosa}}{1{,}06\\ \\text{g DQO/g glucosa}}=\\mathbf{0{,}35}$ <b>L de metano por g de DQO</b>.</p>
 <h4>Modelo de Tchobanoglous para mezcla completa</h4>
 <div class="formula">$$M = 0{,}35\\,(n\\,Q\\,C_i - 1{,}42\\,v_g\\,V)$$</div>
 <p>M: metano producido (m<sup>3</sup>/d); n: fracción de DQO transformada; Q: caudal tratado (m<sup>3</sup>/d); C<sub>i</sub>: DQO entrante (kg/m<sup>3</sup>); v<sub>g</sub>: velocidad de generación de biomasa (kg/m<sup>3</sup>·d); V: volumen de agua en el reactor (m<sup>3</sup>). El término 1,42·v<sub>g</sub>·V descuenta la DQO que se convierte en nueva biomasa en lugar de en metano.</p>
@@ -166,10 +166,10 @@ THEORY.B3 = {
 <div class="formula">$$\\mathrm{CO + 3H_2 \\rightarrow CH_4 + H_2O}\\qquad \\mathrm{CO_2 + 4H_2 \\rightarrow CH_4 + 2H_2O}$$</div>
 <h4>Otros aprovechamientos del gas de síntesis</h4>
 <table class="tbl cmp"><thead><tr><th>Producto</th><th>Proceso y condiciones</th><th>Reacción</th></tr></thead><tbody>
-<tr><td>Biometano</td><td>Metanación, catalizadores metálicos, 200-450 ºC, 30-70 bar</td><td>CO + 3H<sub>2</sub> → CH<sub>4</sub> + H<sub>2</sub>O</td></tr>
-<tr><td>Gasolinas y gasóleos</td><td><b>Fischer-Tropsch</b>, catalizadores metálicos, <b>150-350 ºC</b>, <b>10-40 bar</b></td><td>nCO + (n+m/2)H<sub>2</sub> → C<sub>n</sub>H<sub>m</sub> + nH<sub>2</sub>O</td></tr>
-<tr><td>Hidrógeno</td><td><b>Water-Gas Shift</b> (uno o más reactores en serie), catalizadores metálicos, <b>200-500 ºC</b></td><td>CO + H<sub>2</sub>O → H<sub>2</sub> + CO<sub>2</sub></td></tr>
-<tr><td>Metanol</td><td>Catalizadores metálicos, <b>250-400 ºC</b>, <b>50-350 bar</b></td><td>CO + 2H<sub>2</sub> → CH<sub>3</sub>OH; CO<sub>2</sub> + 3H<sub>2</sub> → CH<sub>3</sub>OH + H<sub>2</sub>O</td></tr>
+<tr><td>Biometano</td><td>Metanación, catalizadores metálicos, 200-450 ºC, 30-70 bar</td><td>$\\mathrm{CO + 3H_{2} \\rightarrow  CH_{4} + H_{2}O}$</td></tr>
+<tr><td>Gasolinas y gasóleos</td><td><b>Fischer-Tropsch</b>, catalizadores metálicos, <b>150-350 ºC</b>, <b>10-40 bar</b></td><td>$\\mathrm{nCO + (n+m/2)H_{2} \\rightarrow  C_{n}H_{m} + nH_{2}O}$</td></tr>
+<tr><td>Hidrógeno</td><td><b>Water-Gas Shift</b> (uno o más reactores en serie), catalizadores metálicos, <b>200-500 ºC</b></td><td>$\\mathrm{CO + H_{2}O \\rightarrow  H_{2} + CO_{2}}$</td></tr>
+<tr><td>Metanol</td><td>Catalizadores metálicos, <b>250-400 ºC</b>, <b>50-350 bar</b></td><td>$\\mathrm{CO + 2H_{2} \\rightarrow  CH_{3}OH}$; $\\mathrm{CO_{2} + 3H_{2} \\rightarrow  CH_{3}OH + H_{2}O}$</td></tr>
 </tbody></table>
 ` }
   ],
@@ -190,35 +190,35 @@ THEORY.B3 = {
 
 /* ---------- B3 · preguntas: fundamentos, fuentes y línea de agua ---------- */
 L("B3", "b3-fundamentos", "Metanización", 1, "Según los apuntes, la metanización es…",
-  ["una transformación biológica en la que microorganismos descomponen la materia orgánica y generan un gas compuesto mayoritariamente por CO<sub>2</sub> y CH<sub>4</sub>",
-   "una transformación termoquímica en la que la materia orgánica se descompone sin oxígeno y genera un gas compuesto mayoritariamente por CO y H<sub>2</sub>",
-   "una transformación biológica en la que microorganismos oxidan la materia orgánica y generan un gas compuesto mayoritariamente por CO<sub>2</sub> y H<sub>2</sub>O",
-   "una transformación catalítica en la que el gas de síntesis reacciona con hidrógeno y genera un gas compuesto mayoritariamente por CH<sub>4</sub> y H<sub>2</sub>O"],
-  0, "Metanización = transformación biológica con microorganismos; el biogás es mayoritariamente CO<sub>2</sub> + CH<sub>4</sub>. La conversión termoquímica a CO + H<sub>2</sub> es la gasificación y la reacción catalítica con H<sub>2</sub> es la metanación del gas de síntesis.", "Apuntes B3, diap. 2");
+  ["una transformación biológica en la que microorganismos descomponen la materia orgánica y generan un gas compuesto mayoritariamente por CO₂ y CH₄",
+   "una transformación termoquímica en la que la materia orgánica se descompone sin oxígeno y genera un gas compuesto mayoritariamente por CO y H₂",
+   "una transformación biológica en la que microorganismos oxidan la materia orgánica y generan un gas compuesto mayoritariamente por CO₂ y H₂O",
+   "una transformación catalítica en la que el gas de síntesis reacciona con hidrógeno y genera un gas compuesto mayoritariamente por CH₄ y H₂O"],
+  0, "Metanización = transformación biológica con microorganismos; el biogás es mayoritariamente CO₂ + CH₄. La conversión termoquímica a CO + H₂ es la gasificación y la reacción catalítica con H₂ es la metanación del gas de síntesis.", "Apuntes B3, diap. 2");
 L("B3", "b3-fundamentos", "Etapas", 2, "En la digestión anaerobia de residuos sólidos, la etapa que los apuntes señalan como limitante y lo que se forma en ella es…",
   ["la hidrólisis, en la que lípidos, polisacáridos, proteínas y ácidos nucleicos se transforman en compuestos sencillos",
-   "la acidogénesis, en la que los compuestos sencillos se transforman, mediante varias fases, en acetato, hidrógeno y CO<sub>2</sub>",
+   "la acidogénesis, en la que los compuestos sencillos se transforman, mediante varias fases, en acetato, hidrógeno y CO₂",
    "la metanogénesis, en la que el acetato y el hidrógeno se transforman en metano y dióxido de carbono",
-   "la hidrólisis, en la que los compuestos sencillos se transforman, mediante varias fases, en acetato, hidrógeno y CO<sub>2</sub>"],
-  0, "La «fase limitante en sólidos» es la hidrólisis, que rompe las macromoléculas en compuestos sencillos. Formar acetato, H<sub>2</sub> y CO<sub>2</sub> es propio de la fermentación (acidogénesis).", "Apuntes B3, diap. 2");
+   "la hidrólisis, en la que los compuestos sencillos se transforman, mediante varias fases, en acetato, hidrógeno y CO₂"],
+  0, "La «fase limitante en sólidos» es la hidrólisis, que rompe las macromoléculas en compuestos sencillos. Formar acetato, H₂ y CO₂ es propio de la fermentación (acidogénesis).", "Apuntes B3, diap. 2");
 L("B3", "b3-fundamentos", "Rutas del metano", 3, "Según el esquema de rutas de la metanización de los apuntes, el metano producido procede…",
   ["en un 72 % del ácido acético y en un 28 % del hidrógeno",
    "en un 76 % de los ácidos orgánicos y en un 24 % del hidrógeno",
    "en un 52 % del ácido acético y en un 48 % del hidrógeno",
    "en un 28 % del ácido acético y en un 72 % del hidrógeno"],
-  0, "El 72 % del CH<sub>4</sub> sale del acético (CH<sub>3</sub>COOH → CH<sub>4</sub> + CO<sub>2</sub>) y el 28 % del H<sub>2</sub> (CO<sub>2</sub> + 4H<sub>2</sub> → CH<sub>4</sub> + 2H<sub>2</sub>O). El 76 % y el 24 % son repartos intermedios (orgánicos complejos → ácidos orgánicos; ácidos orgánicos → H<sub>2</sub>).", "Apuntes B3, diap. 2");
+  0, "El 72 % del CH₄ sale del acético (CH₃COOH → CH₄ + CO₂) y el 28 % del H₂ (CO₂ + 4H₂ → CH₄ + 2H₂O). El 76 % y el 24 % son repartos intermedios (orgánicos complejos → ácidos orgánicos; ácidos orgánicos → H₂).", "Apuntes B3, diap. 2");
 L("B3", "b3-fundamentos", "Rutas del metano", 3, "En el esquema de rutas de la metanización, ¿qué porcentaje de los orgánicos complejos pasa directamente a ácido acético sin pasar por los ácidos orgánicos?",
   ["20 %", "4 %", "52 %", "24 %"],
-  0, "De los orgánicos complejos: 76 % → ácidos orgánicos, 20 % → ácido acético directamente y 4 % → H<sub>2</sub>. El 52 % y el 24 % salen de los ácidos orgánicos hacia el acético y el H<sub>2</sub>, respectivamente.", "Apuntes B3, diap. 2");
+  0, "De los orgánicos complejos: 76 % → ácidos orgánicos, 20 % → ácido acético directamente y 4 % → H₂. El 52 % y el 24 % salen de los ácidos orgánicos hacia el acético y el H₂, respectivamente.", "Apuntes B3, diap. 2");
 L("B3", "b3-fundamentos", "Reacciones metanogénicas", 2, "¿Cuál de estas reacciones aparece en los apuntes como formación de metano a partir de hidrógeno?",
-  ["CO<sub>2</sub> + 4H<sub>2</sub> → CH<sub>4</sub> + 2H<sub>2</sub>O", "CO + 3H<sub>2</sub> → CH<sub>4</sub> + H<sub>2</sub>O", "CH<sub>3</sub>COOH → CH<sub>4</sub> + CO<sub>2</sub>", "CO + H<sub>2</sub>O → H<sub>2</sub> + CO<sub>2</sub>"],
-  0, "En la metanogénesis el H<sub>2</sub> reduce el CO<sub>2</sub>: CO<sub>2</sub> + 4H<sub>2</sub> → CH<sub>4</sub> + 2H<sub>2</sub>O. CO + 3H<sub>2</sub> es la metanación catalítica del gas de síntesis, el acético da la vía acetoclástica y CO + H<sub>2</sub>O es la reacción de desplazamiento (WGS).", "Apuntes B3, diap. 2 y 23");
+  ["$\\mathrm{CO_2 + 4H_2 \\rightarrow CH_4 + 2H_2O}$", "$\\mathrm{CO + 3H_2 \\rightarrow CH_4 + H_2O}$", "$\\mathrm{CH_3COOH \\rightarrow CH_4 + CO_2}$", "$\\mathrm{CO + H_2O \\rightarrow H_2 + CO_2}$"],
+  0, "En la metanogénesis el H₂ reduce el CO₂: CO₂ + 4H₂ → CH₄ + 2H₂O. CO + 3H₂ es la metanación catalítica del gas de síntesis, el acético da la vía acetoclástica y CO + H₂O es la reacción de desplazamiento (WGS).", "Apuntes B3, diap. 2 y 23");
 L("B3", "b3-fundamentos", "Crecimiento y energía", 2, "Respecto al metabolismo microbiano de la diap. 3, señale la afirmación correcta:",
-  ["Materia orgánica, microorganismos y nutrientes producen simultáneamente nuevos microorganismos y energía; la glucosa da 3CO<sub>2</sub> + 3CH<sub>4</sub> en la vía anaerobia",
-   "Materia orgánica, microorganismos y nutrientes producen primero nuevos microorganismos y, solo después, energía; la glucosa da 3CO<sub>2</sub> + 3CH<sub>4</sub> en la vía anaerobia",
-   "Materia orgánica, microorganismos y nutrientes producen simultáneamente nuevos microorganismos y energía; la glucosa da 6CO<sub>2</sub> + 6CH<sub>4</sub> en la vía anaerobia",
-   "Materia orgánica, microorganismos y nutrientes producen simultáneamente nuevos microorganismos y energía; la glucosa da 3CO<sub>2</sub> + 3CH<sub>4</sub> en la vía anóxica"],
-  0, "La diap. 3 indica «simultáneamente» y escribe C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> → 3CO<sub>2</sub> + 3CH<sub>4</sub> + E (anaerobia), frente a la vía aerobia con 6O<sub>2</sub> → 6CO<sub>2</sub> + 6H<sub>2</sub>O. La vía anóxica es un tipo de proceso distinto.", "Apuntes B3, diap. 3");
+  ["Materia orgánica, microorganismos y nutrientes producen simultáneamente nuevos microorganismos y energía; la glucosa da 3CO₂ + 3CH₄ en la vía anaerobia",
+   "Materia orgánica, microorganismos y nutrientes producen primero nuevos microorganismos y, solo después, energía; la glucosa da 3CO₂ + 3CH₄ en la vía anaerobia",
+   "Materia orgánica, microorganismos y nutrientes producen simultáneamente nuevos microorganismos y energía; la glucosa da 6CO₂ + 6CH₄ en la vía anaerobia",
+   "Materia orgánica, microorganismos y nutrientes producen simultáneamente nuevos microorganismos y energía; la glucosa da 3CO₂ + 3CH₄ en la vía anóxica"],
+  0, "La diap. 3 indica «simultáneamente» y escribe C₆H₁₂O₆ → 3CO₂ + 3CH₄ + E (anaerobia), frente a la vía aerobia con 6O₂ → 6CO₂ + 6H₂O. La vía anóxica es un tipo de proceso distinto.", "Apuntes B3, diap. 3");
 L("B3", "b3-fuentes", "Orígenes del biogás", 2, "En el esquema de fuentes de biogás de los apuntes, ¿qué origen NO confluye en el «biogás generado en digestores por codigestión de lodos, residuos y desechos»?",
   ["Los vertederos", "Las depuradoras de agua (EDAR)", "La agricultura y la ganadería", "Los biorresiduos de municipios e industrias"],
   0, "A la codigestión llegan flechas desde las EDAR (lodos), la agricultura-ganadería y los biorresiduos urbanos e industriales. El biogás de vertedero se genera y capta en el propio vertedero.", "Apuntes B3, diap. 4");
@@ -254,13 +254,13 @@ L("B3", "b3-agua", "Cargas orgánicas", 2, "¿Qué sistemas anaerobios admiten l
   0, "Lecho fluidificado e IC: 30-40. UASB: 15-25. Filtro anaerobio: 10-15.", "Apuntes B3, diap. 6");
 L("B3", "b3-agua", "Cargas orgánicas", 3, "Señale la pareja sistema–carga (kg DQO/m<sup>3</sup>·d) que NO coincide con la tabla de los apuntes:",
   ["UASB: 30 - 40", "Reactor anaeróbico de contacto: 1 - 5,5", "Filtro anaeróbico: 10 - 15", "Laguna anaeróbica: 0,1 - 2"],
-  0, "El UASB trabaja a 15-25 kg DQO/m<sup>3</sup>·d; 30-40 corresponde al lecho fluidificado y al IC.", "Apuntes B3, diap. 6");
+  0, "El UASB trabaja a 15-25 kg DQO/m³·d; 30-40 corresponde al lecho fluidificado y al IC.", "Apuntes B3, diap. 6");
 L("B3", "b3-agua", "Reactor IC", 2, "En el reactor IC (<i>Internal Circulation</i>) de los apuntes, el orden de abajo arriba de sus zonas es…",
-  ["distribución del influente, lecho expandido, 1.<sup>er</sup> separador, compartimento de pulido, 2.º separador",
-   "distribución del influente, compartimento de pulido, 1.<sup>er</sup> separador, lecho expandido, 2.º separador",
-   "distribución del influente, lecho expandido, 2.º separador, compartimento de pulido, 1.<sup>er</sup> separador",
-   "tanque de desgasificación, lecho expandido, 1.<sup>er</sup> separador, compartimento de pulido, 2.º separador"],
-  0, "Abajo el sistema de distribución y el lecho expandido; encima el primer separador, después el compartimento de pulido (<i>polishing</i>) y el segundo separador; el tanque de desgasificación está en cabeza.", "Apuntes B3, diap. 7");
+  ["distribución del influente, lecho expandido, 1.ᵉʳ separador, compartimento de pulido, 2.º separador",
+   "distribución del influente, compartimento de pulido, 1.ᵉʳ separador, lecho expandido, 2.º separador",
+   "distribución del influente, lecho expandido, 2.º separador, compartimento de pulido, 1.ᵉʳ separador",
+   "tanque de desgasificación, lecho expandido, 1.ᵉʳ separador, compartimento de pulido, 2.º separador"],
+  0, "Abajo el sistema de distribución y el lecho expandido; encima el primer separador, después el compartimento de pulido (polishing) y el segundo separador; el tanque de desgasificación está en cabeza.", "Apuntes B3, diap. 7");
 L("B3", "b3-agua", "Características", 3, "¿Cuál de estas afirmaciones sobre el proceso anaerobio de la línea de agua es FALSA según los apuntes?",
   ["Tiene un arranque rápido y sencillo, por lo que la inversión es moderada",
    "Permite la desnitrificación simultánea",
@@ -269,31 +269,31 @@ L("B3", "b3-agua", "Características", 3, "¿Cuál de estas afirmaciones sobre e
   0, "Los apuntes indican «arranque lento y complejo» y «elevada inversión». Las otras tres sí aparecen entre las características.", "Apuntes B3, diap. 8");
 L("B3", "b3-agua", "Nutrientes", 2, "La relación de nutrientes DBO<sub>5</sub>/N/P que figura en las características del proceso anaerobio es…",
   ["100 / 0,5 / 0,1", "100 / 5 / 1", "100 / 0,5 / 1", "100 / 1 / 0,5"],
-  0, "Los apuntes dan DBO<sub>5</sub>/N/P = 100/0,5/0,1; las necesidades de nutrientes son bajas porque se produce poco fango.", "Apuntes B3, diap. 8");
+  0, "Los apuntes dan DBO₅/N/P = 100/0,5/0,1; las necesidades de nutrientes son bajas porque se produce poco fango.", "Apuntes B3, diap. 8");
 L("B3", "b3-agua", "Esquema anaerobio + aerobio", 3, "En el esquema de proceso de la diap. 8 (una etapa anaerobia seguida de otra aerobia), el reactor IC y el posterior reactor aerobio son, respectivamente…",
-  ["un IC de 500 m<sup>3</sup> (Q<sub>máx</sub> 250 m<sup>3</sup>/h) y un CIRCOX de 140 m<sup>3</sup>",
-   "un IC de 670 m<sup>3</sup> (Q<sub>máx</sub> 250 m<sup>3</sup>/h) y un CIRCOX de 500 m<sup>3</sup>",
-   "un IC de 140 m<sup>3</sup> (Q<sub>máx</sub> 500 m<sup>3</sup>/h) y un CIRCOX de 670 m<sup>3</sup>",
-   "un IC de 500 m<sup>3</sup> (Q<sub>máx</sub> 140 m<sup>3</sup>/h) y un CIRCOX de 250 m<sup>3</sup>"],
-  0, "IC: V = 500 m<sup>3</sup>, D = 6,5 m, H = 19,6 m, Q<sub>máx</sub> = 250 m<sup>3</sup>/h. CIRCOX: V = 140 m<sup>3</sup>. Los 670 m<sup>3</sup> son el <i>buffer tank</i> y el tanque de preacidificación.", "Apuntes B3, diap. 8");
+  ["un IC de 500 m³ ($Q_{\\text{máx}}$ 250 m³/h) y un CIRCOX de 140 m³",
+   "un IC de 670 m³ ($Q_{\\text{máx}}$ 250 m³/h) y un CIRCOX de 500 m³",
+   "un IC de 140 m³ ($Q_{\\text{máx}}$ 500 m³/h) y un CIRCOX de 670 m³",
+   "un IC de 500 m³ ($Q_{\\text{máx}}$ 140 m³/h) y un CIRCOX de 250 m³"],
+  0, "IC: V = 500 m³, D = 6,5 m, H = 19,6 m, $Q_{\\text{máx}}$ = 250 m³/h. CIRCOX: V = 140 m³. Los 670 m³ son el buffer tank y el tanque de preacidificación.", "Apuntes B3, diap. 8");
 L("B3", "b3-agua", "Producción teórica", 2, "La producción teórica de metano por unidad de DQO eliminada que deducen los apuntes es…",
-  ["0,35 L CH<sub>4</sub>/g DQO", "0,38 L CH<sub>4</sub>/g DQO", "0,27 L CH<sub>4</sub>/g DQO", "1,06 L CH<sub>4</sub>/g DQO"],
-  0, "0,27 g CH<sub>4</sub>/g glucosa ocupan 0,38 L; como 1 g de glucosa equivale a 1,06 g de O<sub>2</sub> (DQO), 0,38/1,06 = 0,35 L CH<sub>4</sub>/g DQO. 0,38 L es por gramo de glucosa.", "Apuntes B3, diap. 9");
+  ["0,35 L CH₄/g DQO", "0,38 L CH₄/g DQO", "0,27 L CH₄/g DQO", "1,06 L CH₄/g DQO"],
+  0, "Deducción de los apuntes (Apuntes B3, diap. 9) con la glucosa como sustrato modelo. Metano formado y oxígeno que equivale a su DQO: $$\\mathrm{C_6H_{12}O_6\\rightarrow3\\,CH_4+3\\,CO_2}\\Rightarrow0{,}27\\ \\tfrac{\\text{g CH}_4}{\\text{g glucosa}}\\equiv0{,}38\\ \\tfrac{\\text{L CH}_4}{\\text{g glucosa}}$$ $$\\mathrm{C_6H_{12}O_6+6\\,O_2\\rightarrow6\\,CO_2+6\\,H_2O}\\Rightarrow\\frac{6\\cdot32}{180}=1{,}06\\ \\tfrac{\\text{g O}_2}{\\text{g glucosa}}=1{,}06\\ \\tfrac{\\text{g DQO}}{\\text{g glucosa}}$$ $$\\frac{0{,}38\\ \\text{L CH}_4/\\text{g glucosa}}{1{,}06\\ \\text{g DQO/g glucosa}}=\\boxed{0{,}35\\ \\text{L CH}_4/\\text{g DQO}}$$ 0,38 L es por gramo de glucosa, 0,27 son gramos (no litros) de CH₄ y 1,06 es la DQO de la glucosa.", "Apuntes B3, diap. 9");
 L("B3", "b3-agua", "Producción teórica", 3, "En la deducción de los 0,35 L CH<sub>4</sub>/g DQO, el factor 1,06 representa…",
   ["los gramos de oxígeno necesarios para oxidar completamente un gramo de glucosa (192/180)",
    "los gramos de metano producidos por gramo de glucosa degradada en condiciones anaerobias (48/180)",
    "los litros de metano que ocupa un gramo de metano en condiciones normales (22,4/16)",
    "los gramos de oxígeno necesarios para oxidar completamente un gramo de metano (64/16)"],
-  0, "C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub>: 192 g O<sub>2</sub> por 180 g de glucosa = 1,06 g O<sub>2</sub>/g, es decir, la DQO de la glucosa. 48/180 = 0,27 es el metano por gramo de glucosa.", "Apuntes B3, diap. 9");
+  0, "C₆H₁₂O₆ + 6O₂: 192 g O₂ por 180 g de glucosa = 1,06 g O₂/g, es decir, la DQO de la glucosa. 48/180 = 0,27 es el metano por gramo de glucosa.", "Apuntes B3, diap. 9");
 L("B3", "b3-agua", "Modelo de Tchobanoglous", 3, "Un reactor anaerobio de mezcla completa trata Q = 100 m<sup>3</sup>/d con C<sub>i</sub> = 5 kg DQO/m<sup>3</sup>, n = 0,8, v<sub>g</sub> = 0,1 kg/m<sup>3</sup>·d y V = 500 m<sup>3</sup>. Según el modelo de Tchobanoglous, el metano producido es aproximadamente…",
-  ["115 m<sup>3</sup>/d", "140 m<sup>3</sup>/d", "175 m<sup>3</sup>/d", "165 m<sup>3</sup>/d"],
-  0, "M = 0,35·(0,8·100·5 − 1,42·0,1·500) = 0,35·(400 − 71) ≈ 115 m<sup>3</sup>/d. Olvidar el término de biomasa da 140; usar n = 1 sin restar biomasa da 175.", "Apuntes B3, diap. 9");
+  ["115 m³/d", "140 m³/d", "175 m³/d", "165 m³/d"],
+  0, "Modelo de Tchobanoglous para un reactor de mezcla completa (Apuntes B3, diap. 9): el metano es 0,35 m³ por kg de DQO eliminada, descontando la DQO que pasa a biomasa (1,42 kg DQO por kg de biomasa). $$M=0{,}35\\,(n\\,Q\\,C_i-1{,}42\\,v_g\\,V)$$ $$n\\,Q\\,C_i=0{,}8\\cdot100\\cdot5=400\\ \\text{kg DQO/d}\\qquad1{,}42\\,v_gV=1{,}42\\cdot0{,}1\\cdot500=71\\ \\text{kg DQO/d}$$ $$M=0{,}35\\,(400-71)=0{,}35\\cdot329\\approx\\boxed{115\\ \\text{m}^3\\ \\text{CH}_4/\\text{d}}$$ Olvidar el término de biomasa da 140; sumarlo en lugar de restarlo, ≈ 165; usar n = 1 sin restar biomasa, 175.", "Apuntes B3, diap. 9");
 L("B3", "b3-agua", "Modelo de Tchobanoglous", 2, "En el modelo de Tchobanoglous $M=0{,}35\\,(nQC_i-1{,}42\\,v_gV)$, el término $1{,}42\\,v_gV$ representa…",
   ["la DQO que se transforma en nueva biomasa y que, por tanto, no se convierte en metano",
    "la DQO que sale con el efluente sin haber sido degradada en el reactor",
    "el oxígeno consumido por la biomasa aerobia del postratamiento",
    "el metano que se pierde disuelto en el efluente del reactor"],
-  0, "v<sub>g</sub> es la velocidad de generación de biomasa (kg/m<sup>3</sup>·d) y V el volumen: 1,42·v<sub>g</sub>·V es la DQO equivalente de la biomasa producida, que se descuenta de la DQO transformada (n·Q·C<sub>i</sub>).", "Apuntes B3, diap. 9");
+  0, "$v_{g}$ es la velocidad de generación de biomasa (kg/m³·d) y V el volumen: 1,42·$v_{g}$·V es la DQO equivalente de la biomasa producida, que se descuenta de la DQO transformada (n·Q·$C_{i}$).", "Apuntes B3, diap. 9");
 
 /* ---------- B3 · preguntas: fangos, valorización y vertedero ---------- */
 L("B3", "b3-fangos", "Objetivo del digestor", 1, "Según los apuntes, el objetivo del digestor de la línea de fangos es…",
@@ -330,14 +330,14 @@ L("B3", "b3-valorizacion", "Tratamiento biológico", 1, "Según los apuntes, los
   ["metanización o compostaje", "metanización o gasificación", "compostaje o incineración", "gasificación o pirólisis"],
   0, "Residuos fermentables → T. biológico → metanización o compostaje. Los no fermentables van a «otros tratamientos».", "Apuntes B3, diap. 13");
 L("B3", "b3-valorizacion", "Ecuación de Buswell", 3, "Aplicando la ecuación de Buswell tal como figura en los apuntes a un sustrato C<sub>5</sub>H<sub>7</sub>O<sub>2</sub>NS (x = 5, y = 7, z = 2, w = 1), los moles de CH<sub>4</sub> y de CO<sub>2</sub> por mol de sustrato son…",
-  ["2,25 de CH<sub>4</sub> y 2,75 de CO<sub>2</sub>", "2,75 de CH<sub>4</sub> y 2,25 de CO<sub>2</sub>", "2,50 de CH<sub>4</sub> y 2,50 de CO<sub>2</sub>", "3,00 de CH<sub>4</sub> y 2,00 de CO<sub>2</sub>"],
-  0, "CH<sub>4</sub> = x/2 + y/8 − z/4 − 3w/8 − 1/4 = 2,5 + 0,875 − 0,5 − 0,375 − 0,25 = 2,25. CO<sub>2</sub> = x/2 − y/8 + z/4 + 3w/8 + 1/4 = 2,75. La suma (5) coincide con los átomos de C.", "Apuntes B3, diap. 14");
+  ["2,25 de CH₄ y 2,75 de CO₂", "2,75 de CH₄ y 2,25 de CO₂", "2,50 de CH₄ y 2,50 de CO₂", "3,00 de CH₄ y 2,00 de CO₂"],
+  0, "Ecuación de Buswell tal como figura en los apuntes (Apuntes B3, diap. 14), con x = 5, y = 7, z = 2 y w = 1: $$n_{CH_4}=\\frac{x}{2}+\\frac{y}{8}-\\frac{z}{4}-\\frac{3w}{8}-\\frac14=2{,}5+0{,}875-0{,}5-0{,}375-0{,}25=\\boxed{2{,}25}$$ $$n_{CO_2}=\\frac{x}{2}-\\frac{y}{8}+\\frac{z}{4}+\\frac{3w}{8}+\\frac14=2{,}5-0{,}875+0{,}5+0{,}375+0{,}25=\\boxed{2{,}75}$$ Comprobación: 2,25 + 2,75 = 5 = x, todo el carbono acaba en CH₄ o CO₂. La segunda opción intercambia los dos valores.", "Apuntes B3, diap. 14");
 L("B3", "b3-valorizacion", "Húmeda y seca", 2, "En los sistemas de digestión anaerobia de residuos, la fermentación húmeda y la seca se caracterizan por una concentración de sólidos de…",
   ["≤ 20 % (húmeda) y ≤ 40 % (seca)", "≤ 10 % (húmeda) y ≤ 20 % (seca)", "≤ 20 % (húmeda) y ≥ 40 % (seca)", "≤ 40 % (húmeda) y ≤ 60 % (seca)"],
   0, "Húmeda: baja concentración de sólidos, ≤ 20 %. Seca: alta concentración, ≤ 40 %.", "Apuntes B3, diap. 14");
 L("B3", "b3-valorizacion", "Requisitos del proceso", 3, "¿Cuál de los siguientes NO figura entre los requisitos del proceso de digestión anaerobia de los apuntes?",
   ["Tiempo de reacción de 25 a 40 días", "Alcalinidad adecuada", "Carga de sólidos constante", "Inexistencia de sales inhibidoras"],
-  0, "El tiempo de reacción indicado es de 8 a 25 días. Los demás (alcalinidad adecuada, carga de sólidos constante, sin sales inhibidoras) sí están, junto con baja concentración de O<sub>2</sub>, temperatura estable, pH neutro y agitación.", "Apuntes B3, diap. 14");
+  0, "El tiempo de reacción indicado es de 8 a 25 días. Los demás (alcalinidad adecuada, carga de sólidos constante, sin sales inhibidoras) sí están, junto con baja concentración de O₂, temperatura estable, pH neutro y agitación.", "Apuntes B3, diap. 14");
 L("B3", "b3-valorizacion", "Tecnologías", 3, "Según la tabla de tecnologías de digestión de los apuntes, ¿cuáles son de vía seca y exclusivamente termófilas?",
   ["KOMPOGAS y BIOCELL", "VALORGA y DRANCO", "VAGRON y KOMPOGAS", "BIOCELL y LINDE"],
   0, "Vía seca: VALORGA (mesófilo), DRANCO (ambos), KOMPOGAS (termófilo), BIOCELL (termófilo) y LINDE (ambos). VAGRON es termófilo pero de vía húmeda.", "Apuntes B3, diap. 14");
@@ -364,7 +364,7 @@ L("B3", "b3-valorizacion", "Balance de fermentación seca", 3, "En ese mismo bal
    "100 kg, el 25 % de los 400 kg de SV de entrada",
    "90 kg, algo menos del 50 % de los 190 kg de SV de entrada",
    "110 kg, algo menos del 60 % de los 190 kg de SV de entrada"],
-  0, "Entran 190 kg de SV y salen 90 kg: 100 kg de SV pasan a biogás, 100/190 ≈ 53 %. Los 400 kg son sólidos totales del residuo, no SV.", "Apuntes B3, diap. 16");
+  0, "Balance de sólidos volátiles de la fermentación seca (Apuntes B3, diap. 16): al fermentador entran 190 kg de SV y el biogás que sale (100 kg) procede de los SV degradados. $$SV_{\\to biogás}=190-90=100\\ \\text{kg}\\qquad\\frac{100}{190}=0{,}53\\Rightarrow\\boxed{\\approx53\\ \\%}$$ Algo más de la mitad de los SV de entrada. Los 400 kg son sólidos totales del residuo, no SV; 90 kg son los SV que quedan sin degradar.", "Apuntes B3, diap. 16");
 L("B3", "b3-vertedero", "Aprovechamiento del vertedero", 2, "Según los apuntes, en un vertedero…",
   ["el único aprovechamiento es el biogás de la metanización de la materia orgánica cuando los residuos se cubren con tierra",
    "el único aprovechamiento es el biogás de la metanización de la materia orgánica, tanto si los residuos se cubren con tierra como si no",
@@ -375,17 +375,17 @@ L("B3", "b3-vertedero", "Tipos de vertedero", 1, "Los tipos de vertedero que rec
   ["peligrosos, no peligrosos e inertes", "urbanos, industriales y agrícolas", "peligrosos, urbanos y de construcción", "controlados, incontrolados e inertes"],
   0, "Diap. 17: peligrosos, no peligrosos e inertes.", "Apuntes B3, diap. 17");
 L("B3", "b3-vertedero", "Fases del vertedero", 3, "Según las curvas de las fases del metabolismo de un vertedero de los apuntes, señale la opción correcta:",
-  ["En la fase final estable el CH<sub>4</sub> supera al CO<sub>2</sub> y el pH del lixiviado se mantiene en torno a 6-7",
-   "En la fase final estable el CO<sub>2</sub> supera al CH<sub>4</sub> y el pH del lixiviado se mantiene en torno a 4-5",
+  ["En la fase final estable el CH₄ supera al CO₂ y el pH del lixiviado se mantiene en torno a 6-7",
+   "En la fase final estable el CO₂ supera al CH₄ y el pH del lixiviado se mantiene en torno a 4-5",
    "El máximo de DQO y de ácidos grasos volátiles del lixiviado coincide con la fase final de metano estable",
-   "El H<sub>2</sub> alcanza su máximo en la fase final, cuando el O<sub>2</sub> y el N<sub>2</sub> del aire ya han desaparecido"],
-  0, "En la fase IV el CH<sub>4</sub> (≈ 55-60 %) queda por encima del CO<sub>2</sub> y el lixiviado se estabiliza a pH 6-7. Los máximos de DQO, VFA y H<sub>2</sub> se dan en las fases intermedias (ácidas).", "Apuntes B3, diap. 17");
+   "El H₂ alcanza su máximo en la fase final, cuando el O₂ y el N₂ del aire ya han desaparecido"],
+  0, "En la fase IV el CH₄ (≈ 55-60 %) queda por encima del CO₂ y el lixiviado se estabiliza a pH 6-7. Los máximos de DQO, VFA y H₂ se dan en las fases intermedias (ácidas).", "Apuntes B3, diap. 17");
 L("B3", "b3-vertedero", "Barrera geológica", 2, "Para la barrera geológica natural de un vertedero, los apuntes exigen…",
-  ["K ≤ 10<sup>−9</sup> m/s y espesor ≥ 1 m en no peligrosos y ≥ 5 m en peligrosos",
-   "K ≤ 10<sup>−9</sup> m/s y espesor ≥ 0,5 m en no peligrosos y ≥ 1 m en peligrosos",
-   "K ≤ 10<sup>−7</sup> m/s y espesor ≥ 1 m en no peligrosos y ≥ 5 m en peligrosos",
-   "K ≥ 10<sup>−9</sup> m/s y espesor ≥ 1 m en no peligrosos y ≥ 5 m en peligrosos"],
-  0, "Barrera natural: permeabilidad K ≤ 10<sup>−9</sup> m/s; ≥ 1 m (no peligrosos) y ≥ 5 m (peligrosos). Los 0,5 m corresponden a la capa de drenaje y a la barrera artificial.", "Apuntes B3, diap. 19");
+  ["K ≤ 10⁻⁹ m/s y espesor ≥ 1 m en no peligrosos y ≥ 5 m en peligrosos",
+   "K ≤ 10⁻⁹ m/s y espesor ≥ 0,5 m en no peligrosos y ≥ 1 m en peligrosos",
+   "K ≤ 10⁻⁷ m/s y espesor ≥ 1 m en no peligrosos y ≥ 5 m en peligrosos",
+   "K ≥ 10⁻⁹ m/s y espesor ≥ 1 m en no peligrosos y ≥ 5 m en peligrosos"],
+  0, "Barrera natural: permeabilidad K ≤ 10⁻⁹ m/s; ≥ 1 m (no peligrosos) y ≥ 5 m (peligrosos). Los 0,5 m corresponden a la capa de drenaje y a la barrera artificial.", "Apuntes B3, diap. 19");
 L("B3", "b3-vertedero", "Capas de impermeabilización", 3, "Sobre el sistema de impermeabilización del fondo de un vertedero, señale la opción correcta:",
   ["La barrera geológica artificial (≥ 0,5 m) solo se dispone cuando la natural no cumple, y sobre ella van el revestimiento impermeable y la capa de drenaje (≥ 0,5 m)",
    "La barrera geológica artificial (≥ 1 m) se dispone siempre, y sobre ella van el revestimiento impermeable y la capa de drenaje (≥ 0,5 m)",
@@ -393,73 +393,73 @@ L("B3", "b3-vertedero", "Capas de impermeabilización", 3, "Sobre el sistema de 
    "La capa de drenaje (≥ 0,5 m) se coloca bajo el revestimiento impermeable para recoger los lixiviados que lo atraviesan"],
   0, "De arriba abajo: masa de residuos, capa de drenaje ≥ 0,5 m (lixiviados), revestimiento artificial impermeable, barrera geológica artificial ≥ 0,5 m (cuando la natural no cumple) y barrera natural.", "Apuntes B3, diap. 19");
 L("B3", "b3-vertedero", "Modelo IPCC", 2, "En el modelo IPCC de los apuntes, el potencial de generación de metano de la materia orgánica es…",
-  ["$L_0 = 0{,}15\\cdot0{,}55\\cdot0{,}5\\cdot16/12 \\approx 0{,}055$ t CH<sub>4</sub>/t residuo",
-   "$L_0 = 0{,}4\\cdot0{,}55\\cdot0{,}5\\cdot16/12 \\approx 0{,}147$ t CH<sub>4</sub>/t residuo",
-   "$L_0 = 0{,}15\\cdot0{,}55\\cdot0{,}5\\cdot12/16 \\approx 0{,}031$ t CH<sub>4</sub>/t residuo",
-   "$L_0 = 0{,}15\\cdot0{,}1\\cdot0{,}5\\cdot16/12 \\approx 0{,}010$ t CH<sub>4</sub>/t residuo"],
-  0, "L<sub>0</sub> = COD·COD<sub>F</sub>·F·16/12 con COD = 0,15 (materia orgánica), COD<sub>F</sub> = 0,55 y F = 0,5 → 0,055. Con COD = 0,4 (papel y cartón) sale 0,147. El 16/12 pasa de C a CH<sub>4</sub>; k = 0,1 no interviene en L<sub>0</sub>.", "Apuntes B3, diap. 20");
+  ["$L_0 = 0{,}15\\cdot0{,}55\\cdot0{,}5\\cdot16/12 \\approx 0{,}055$ t CH₄/t residuo",
+   "$L_0 = 0{,}4\\cdot0{,}55\\cdot0{,}5\\cdot16/12 \\approx 0{,}147$ t CH₄/t residuo",
+   "$L_0 = 0{,}15\\cdot0{,}55\\cdot0{,}5\\cdot12/16 \\approx 0{,}031$ t CH₄/t residuo",
+   "$L_0 = 0{,}15\\cdot0{,}1\\cdot0{,}5\\cdot16/12 \\approx 0{,}010$ t CH₄/t residuo"],
+  0, "Modelo IPCC de los apuntes (Apuntes B3, diap. 20): el potencial de generación de metano es el carbono orgánico degradable que se descompone, por la fracción de CH₄ en el biogás y por 16/12 para pasar de carbono a metano. $$L_0=COD\\cdot COD_F\\cdot F\\cdot\\frac{16}{12}$$ $$L_0=0{,}15\\cdot0{,}55\\cdot0{,}5\\cdot\\frac{16}{12}\\approx\\boxed{0{,}055\\ \\text{t CH}_4/\\text{t}}$$ Con COD = 0,4 (papel y cartón) sale 0,147; invertir 16/12 da 0,031; k = 0,1 es la constante de velocidad y no interviene en $L_0$.", "Apuntes B3, diap. 20");
 L("B3", "b3-vertedero", "Modelo IPCC", 3, "Un vertedero recibe 10.000 t de materia orgánica solo en el año 2020. Con el modelo IPCC de los apuntes (k = 0,1 año<sup>−1</sup>, L<sub>0</sub> = 0,055 t/t), el metano generado en 2021 es aproximadamente…",
   ["45 t", "50 t", "498 t", "550 t"],
-  0, "G<sub>2021</sub> = [(1 − e<sup>−0,1</sup>)<sup>2</sup>/0,1]·10.000·0,055·e<sup>−0,1·1</sup> = 0,0906·550·0,905 ≈ 45 t. Para 2020 (t − i = 0) saldrían ≈ 50 t; 550 t es R·L<sub>0</sub>, el potencial total.", "Apuntes B3, diap. 20");
+  0, "Modelo IPCC de los apuntes (Apuntes B3, diap. 20) con un único depósito R = 10.000 t en i = 2020: $$G_t=\\frac{(1-e^{-k})^2}{k}\\,R_i\\,L_0\\,e^{-k(t-i)}$$ $$\\frac{(1-e^{-0{,}1})^2}{0{,}1}=\\frac{0{,}0952^2}{0{,}1}=0{,}0906\\qquad R\\,L_0=10.000\\cdot0{,}055=550\\ \\text{t}$$ $$G_{2021}=0{,}0906\\cdot550\\cdot e^{-0{,}1\\cdot1}=0{,}0906\\cdot550\\cdot0{,}905\\approx\\boxed{45\\ \\text{t CH}_4}$$ Para 2020 (t − i = 0) saldrían ≈ 50 t; 550 t es el potencial total R·L₀ y 498 t olvida el factor (1 − e⁻ᵏ)²/k.", "Apuntes B3, diap. 20");
 L("B3", "b3-vertedero", "Parámetros IPCC", 3, "Respecto a los parámetros del modelo IPCC de los apuntes, señale la opción FALSA:",
-  ["F = 0,55 es la fracción en volumen de CH<sub>4</sub> en el biogás y COD<sub>F</sub> = 0,5 la fracción de COD que se descompone",
-   "k = 0,1 año<sup>−1</sup> es el ratio de generación de metano",
+  ["F = 0,55 es la fracción en volumen de CH₄ en el biogás y $\\mathrm{COD}_{F}$ = 0,5 la fracción de COD que se descompone",
+   "k = 0,1 año⁻¹ es el ratio de generación de metano",
    "COD vale 0,15 para la materia orgánica y 0,4 para el papel y el cartón",
-   "R<sub>i</sub> es la cantidad de residuos depositada en el año i, en toneladas"],
-  0, "Están intercambiados: COD<sub>F</sub> = 0,55 (fracción del COD que se descompone en biogás) y F = 0,5 (fracción en volumen de CH<sub>4</sub>).", "Apuntes B3, diap. 20");
+   "$R_{i}$ es la cantidad de residuos depositada en el año i, en toneladas"],
+  0, "Están intercambiados: $\\mathrm{COD}_{F}$ = 0,55 (fracción del COD que se descompone en biogás) y F = 0,5 (fracción en volumen de CH₄).", "Apuntes B3, diap. 20");
 
 /* ---------- B3 · preguntas: tratamiento del biogás y biometano ---------- */
 L("B3", "b3-tratamiento", "Composición de gases", 2, "Según la tabla de composición orientativa de gases para motores (Tekniker), el gas de vertedero tiene…",
-  ["25-55 % de CH<sub>4</sub>, 45-75 % de CO<sub>2</sub> y un PCI de 18-22 MJ/Nm<sup>3</sup>",
-   "35-65 % de CH<sub>4</sub>, 30-40 % de CO<sub>2</sub> y un PCI de 22-26 MJ/Nm<sup>3</sup>",
-   "25-55 % de CH<sub>4</sub>, 30-40 % de CO<sub>2</sub> y un PCI de 22-26 MJ/Nm<sup>3</sup>",
-   "35-65 % de CH<sub>4</sub>, 45-75 % de CO<sub>2</sub> y un PCI de 18-22 MJ/Nm<sup>3</sup>"],
-  0, "Vertedero: 25-55 % CH<sub>4</sub>, 45-75 % CO<sub>2</sub>, PCI 18-22 MJ/Nm<sup>3</sup>. Digestor: 35-65 % CH<sub>4</sub>, 30-40 % CO<sub>2</sub>, PCI 22-26 MJ/Nm<sup>3</sup>.", "Apuntes B3, diap. 20");
+  ["25-55 % de CH₄, 45-75 % de CO₂ y un PCI de 18-22 MJ/Nm³",
+   "35-65 % de CH₄, 30-40 % de CO₂ y un PCI de 22-26 MJ/Nm³",
+   "25-55 % de CH₄, 30-40 % de CO₂ y un PCI de 22-26 MJ/Nm³",
+   "35-65 % de CH₄, 45-75 % de CO₂ y un PCI de 18-22 MJ/Nm³"],
+  0, "Vertedero: 25-55 % CH₄, 45-75 % CO₂, PCI 18-22 MJ/Nm³. Digestor: 35-65 % CH₄, 30-40 % CO₂, PCI 22-26 MJ/Nm³.", "Apuntes B3, diap. 20");
 L("B3", "b3-tratamiento", "Composición de gases", 3, "Comparando el gas de digestor con el gas natural de la tabla de los apuntes, señale la opción correcta:",
-  ["El gas de digestor tiene más azufre (0,01-0,04 %) que el natural (&lt; 0,001 %) y un PCI menor (22-26 frente a 31-35 MJ/Nm<sup>3</sup>)",
-   "El gas de digestor tiene menos azufre (0,01-0,04 %) que el natural (&lt; 0,1 %) y un PCI menor (22-26 frente a 31-35 MJ/Nm<sup>3</sup>)",
-   "El gas de digestor tiene más azufre (0,01-0,04 %) que el natural (&lt; 0,001 %) y un PCI menor (18-22 frente a 31-35 MJ/Nm<sup>3</sup>)",
-   "El gas de digestor tiene más azufre (0-0,02 %) que el natural (&lt; 0,001 %) y hidrocarburos C2-C4 en torno al 4,9 %"],
-  0, "Digestor: S 0,01-0,04 %, PCI 22-26. Gas natural: S &lt; 0,001 %, 93,2 % CH<sub>4</sub>, 4,9 % de hidrocarburos C2-C4, H<sub>2</sub> &lt; 0,1 %, PCI 31-35. El 0-0,02 % de S y los 18-22 MJ/Nm<sup>3</sup> son del gas de vertedero.", "Apuntes B3, diap. 20");
+  ["El gas de digestor tiene más azufre (0,01-0,04 %) que el natural (< 0,001 %) y un PCI menor (22-26 frente a 31-35 MJ/Nm³)",
+   "El gas de digestor tiene menos azufre (0,01-0,04 %) que el natural (< 0,1 %) y un PCI menor (22-26 frente a 31-35 MJ/Nm³)",
+   "El gas de digestor tiene más azufre (0,01-0,04 %) que el natural (< 0,001 %) y un PCI menor (18-22 frente a 31-35 MJ/Nm³)",
+   "El gas de digestor tiene más azufre (0-0,02 %) que el natural (< 0,001 %) y hidrocarburos C2-C4 en torno al 4,9 %"],
+  0, "Digestor: S 0,01-0,04 %, PCI 22-26. Gas natural: S < 0,001 %, 93,2 % CH₄, 4,9 % de hidrocarburos C2-C4, H₂ < 0,1 %, PCI 31-35. El 0-0,02 % de S y los 18-22 MJ/Nm³ son del gas de vertedero.", "Apuntes B3, diap. 20");
 L("B3", "b3-tratamiento", "Depuración de H2S", 2, "Según los apuntes, el H<sub>2</sub>S del biogás se elimina mediante…",
-  ["tratamientos biológicos, filtros de Fe<sub>2</sub>O<sub>3</sub> (&lt; 2.500 ppm) y absorción química con FeCl<sub>3</sub> y NaOH",
-   "tratamientos biológicos, filtros de Fe<sub>2</sub>O<sub>3</sub> (&gt; 2.500 ppm) y absorción química con soluciones ácidas",
+  ["tratamientos biológicos, filtros de Fe₂O₃ (< 2.500 ppm) y absorción química con FeCl₃ y NaOH",
+   "tratamientos biológicos, filtros de Fe₂O₃ (> 2.500 ppm) y absorción química con soluciones ácidas",
    "adsorción con carbón activo, adsorción con gel de sílice y refrigeración",
    "absorción química con soluciones, adsorción y membranas"],
-  0, "H<sub>2</sub>S: biológicos, filtros de Fe<sub>2</sub>O<sub>3</sub> (&lt; 2.500 ppm) y absorción química (FeCl<sub>3</sub> y NaOH). Carbón activo, gel de sílice y refrigeración son para siloxanos; absorción, adsorción y membranas, para el CO<sub>2</sub>.", "Apuntes B3, diap. 21");
+  0, "H₂S: biológicos, filtros de Fe₂O₃ (< 2.500 ppm) y absorción química (FeCl₃ y NaOH). Carbón activo, gel de sílice y refrigeración son para siloxanos; absorción, adsorción y membranas, para el CO₂.", "Apuntes B3, diap. 21");
 L("B3", "b3-tratamiento", "Depuración", 3, "Señale la pareja contaminante–tratamiento que NO coincide con los apuntes:",
-  ["NH<sub>3</sub>: absorción química con soluciones alcalinas", "Haluros: absorción química con soluciones alcalinas", "Humedad: cambiadores de calor (placas o tubulares) y adsorción", "Partículas: ciclones o filtros"],
-  0, "El NH<sub>3</sub> se absorbe con soluciones ácidas; las alcalinas son para los haluros.", "Apuntes B3, diap. 21");
+  ["NH₃: absorción química con soluciones alcalinas", "Haluros: absorción química con soluciones alcalinas", "Humedad: cambiadores de calor (placas o tubulares) y adsorción", "Partículas: ciclones o filtros"],
+  0, "El NH₃ se absorbe con soluciones ácidas; las alcalinas son para los haluros.", "Apuntes B3, diap. 21");
 L("B3", "b3-tratamiento", "Equipos", 2, "En una instalación de tratamiento del biogás, la antorcha y el gasómetro cumplen, respectivamente, la función de…",
   ["sistema de seguridad y almacenamiento", "depuración y almacenamiento", "almacenamiento y sistema de seguridad", "aspiración/impulsión y depuración"],
   0, "Diap. 21: d) sistemas de seguridad: antorcha; e) almacenamiento: gasómetro. La aspiración/impulsión la hacen las soplantes.", "Apuntes B3, diap. 21");
 L("B3", "b3-tratamiento", "Siloxanos", 3, "¿Qué técnicas de eliminación de siloxanos recogen los apuntes? (Puede haber varias correctas)",
-  ["Adsorción con carbón activo o con gel de sílice", "Refrigeración", "Filtros de Fe<sub>2</sub>O<sub>3</sub>", "Absorción química con soluciones ácidas"],
-  [0, 1], "Siloxanos: adsorción con C activo, adsorción con silicagel, absorción química con disolventes orgánicos y refrigeración. Los filtros de Fe<sub>2</sub>O<sub>3</sub> son para el H<sub>2</sub>S y las soluciones ácidas, para el NH<sub>3</sub>.", "Apuntes B3, diap. 21");
+  ["Adsorción con carbón activo o con gel de sílice", "Refrigeración", "Filtros de Fe₂O₃", "Absorción química con soluciones ácidas"],
+  [0, 1], "Siloxanos: adsorción con C activo, adsorción con silicagel, absorción química con disolventes orgánicos y refrigeración. Los filtros de Fe₂O₃ son para el H₂S y las soluciones ácidas, para el NH₃.", "Apuntes B3, diap. 21");
 L("B3", "b3-biometano", "Fuentes de biometano", 1, "Según los apuntes, las fuentes de biometano son…",
   ["la digestión anaerobia y la gasificación", "la digestión anaerobia y el compostaje", "la gasificación y la pirólisis", "la digestión aerobia y la gasificación"],
   0, "Diap. 22: «Las fuentes de biometano son la digestión anaeróbica y la gasificación».", "Apuntes B3, diap. 22");
 L("B3", "b3-biometano", "Ruta por gasificación", 2, "En el esquema de obtención de biometano por gasificación, el orden de las etapas es…",
-  ["gasificador, enfriamiento del gas, limpieza del gas, metanación y <i>upgrading</i>",
-   "gasificador, limpieza del gas, metanación, enfriamiento del gas y <i>upgrading</i>",
-   "gasificador, enfriamiento del gas, metanación, limpieza del gas y <i>upgrading</i>",
-   "gasificador, <i>upgrading</i>, enfriamiento del gas, limpieza del gas y metanación"],
+  ["gasificador, enfriamiento del gas, limpieza del gas, metanación y upgrading",
+   "gasificador, limpieza del gas, metanación, enfriamiento del gas y upgrading",
+   "gasificador, enfriamiento del gas, metanación, limpieza del gas y upgrading",
+   "gasificador, upgrading, enfriamiento del gas, limpieza del gas y metanación"],
   0, "Gasifier → gas cooling → gas cleaning → methanation → gas upgrading → biometano (red de gas o combustible).", "Apuntes B3, diap. 22");
 L("B3", "b3-biometano", "Metanación", 2, "La metanación del gas de síntesis se realiza, según los apuntes, con catalizadores metálicos a…",
   ["200-450 ºC y 30-70 bar", "150-350 ºC y 10-40 bar", "250-400 ºC y 50-350 bar", "200-500 ºC y 30-70 bar"],
   0, "Metanación: 200-450 ºC y 30-70 bar. Fischer-Tropsch: 150-350 ºC y 10-40 bar. Metanol: 250-400 ºC y 50-350 bar. WGS: 200-500 ºC.", "Apuntes B3, diap. 23");
 L("B3", "b3-biometano", "Gas de síntesis", 3, "Sobre los aprovechamientos del gas de síntesis de los apuntes, señale la afirmación correcta:",
-  ["La reacción de Water-Gas Shift (CO + H<sub>2</sub>O → H<sub>2</sub> + CO<sub>2</sub>) se usa para producir H<sub>2</sub>, con uno o más reactores en serie a 200-500 ºC",
-   "La síntesis de Fischer-Tropsch (CO + 2H<sub>2</sub> → CH<sub>3</sub>OH) produce gasolinas y gasóleos a 150-350 ºC y 10-40 bar",
-   "La producción de metanol (nCO + (n+m/2)H<sub>2</sub> → C<sub>n</sub>H<sub>m</sub> + nH<sub>2</sub>O) se realiza a 250-400 ºC y 50-350 bar",
-   "La metanación (CO + H<sub>2</sub>O → H<sub>2</sub> + CO<sub>2</sub>) se realiza a altas temperaturas, por encima de 500 ºC"],
-  0, "WGS: CO + H<sub>2</sub>O → H<sub>2</sub> + CO<sub>2</sub>, 200-500 ºC, uno o más reactores en serie. En las demás opciones las reacciones están intercambiadas; la metanación es a «bajas temperaturas» (200-450 ºC).", "Apuntes B3, diap. 23");
+  ["La reacción de Water-Gas Shift ($\\mathrm{CO + H_2O \\rightarrow H_2 + CO_2}$) se usa para producir H₂, con uno o más reactores en serie a 200-500 ºC",
+   "La síntesis de Fischer-Tropsch ($\\mathrm{CO + 2H_2 \\rightarrow CH_3OH}$) produce gasolinas y gasóleos a 150-350 ºC y 10-40 bar",
+   "La producción de metanol ($\\mathrm{nCO + (n+m/2)H_2 \\rightarrow C_nH_m + nH_2O}$) se realiza a 250-400 ºC y 50-350 bar",
+   "La metanación ($\\mathrm{CO + H_2O \\rightarrow H_2 + CO_2}$) se realiza a altas temperaturas, por encima de 500 ºC"],
+  0, "WGS: CO + H₂O → H₂ + CO₂, 200-500 ºC, uno o más reactores en serie. En las demás opciones las reacciones están intercambiadas; la metanación es a «bajas temperaturas» (200-450 ºC).", "Apuntes B3, diap. 23");
 L("B3", "b3-biometano", "Digestión y biometano", 3, "En el esquema de obtención de biometano por digestión anaerobia (Gas for Climate, ECOFYS 2018), señale la opción correcta:",
-  ["El biogás del tanque de digestión se inyecta directamente en la red de gas sin necesidad de <i>upgrading</i>",
-   "El tanque de digestión solo produce biogás; el fertilizante procede del <i>upgrading</i>",
+  ["El biogás del tanque de digestión se inyecta directamente en la red de gas sin necesidad de upgrading",
+   "El tanque de digestión solo produce biogás; el fertilizante procede del upgrading",
    "El biometano se obtiene por metanación catalítica del biogás a 200-450 ºC",
    "Ninguna de las otras opciones"],
-  3, "En el esquema, el tanque de digestión produce biogás y fertilizante (digestato); el biogás puede dar electricidad y calor o pasar por el <i>gas upgrading</i> para obtener biometano (red de gas o combustible). La metanación es propia de la ruta de gasificación.", "Apuntes B3, diap. 22");
+  3, "En el esquema, el tanque de digestión produce biogás y fertilizante (digestato); el biogás puede dar electricidad y calor o pasar por el gas upgrading para obtener biometano (red de gas o combustible). La metanación es propia de la ruta de gasificación.", "Apuntes B3, diap. 22");
 
 /* ---------- B3 · tarjetas ---------- */
 C("B3", "b3-fundamentos", "¿Cuáles son las tres etapas de la metanización y cuál limita en sólidos?", "<b>Hidrólisis</b> (limitante en sólidos) → <b>fermentación/acidogénesis</b> (acetato, H<sub>2</sub>, CO<sub>2</sub>) → <b>metanogénesis</b> (CH<sub>4</sub> + CO<sub>2</sub>).");
@@ -729,9 +729,9 @@ THEORY.B4 = {
 <div class="formula">$$a\\,\\mathrm{C_vH_wO_xN_yS_z} + n\\left(\\mathrm{O_2}+\\tfrac{0{,}79}{0{,}21}\\mathrm{N_2}\\right) \\rightarrow b\\,\\mathrm{CO_2}+c\\,\\mathrm{H_2O}+d\\,\\mathrm{SO_2}+e\\,\\mathrm{N_2}+f\\,\\mathrm{CO}+g\\,\\mathrm{NO}+h\\,\\mathrm{NO_2}+i\\,\\mathrm{C_pH_q}+j\\,\\mathrm{N_2O}+k\\,\\mathrm{O_2}$$</div>
 <h4>Mecanismos de formación de NOx</h4>
 <table class="tbl cmp"><thead><tr><th>Mecanismo</th><th>Origen del N y condiciones</th><th>Reacciones</th></tr></thead><tbody>
-<tr><td>Térmico (Zeldovich)</td><td>N<sub>2</sub> y O<sub>2</sub> del aire a alta temperatura; <b>importante a T &gt; 1.300 ºC</b></td><td>N<sub>2</sub> + O = NO + N; O<sub>2</sub> + N = NO + O; OH• + N = NO + H</td></tr>
+<tr><td>Térmico (Zeldovich)</td><td>N<sub>2</sub> y O<sub>2</sub> del aire a alta temperatura; <b>importante a T &gt; 1.300 ºC</b></td><td>$\\mathrm{N_{2} + O = NO + N}$; $\\mathrm{O_{2} + N = NO + O}$; $\\mathrm{OH^{\\bullet} + N = NO + H}$</td></tr>
 <tr><td>Del combustible</td><td>Nitrógeno contenido en el combustible; <b>a cualquier temperatura y régimen de mezcla</b></td><td>—</td></tr>
-<tr><td>Por radicales</td><td>Radicales derivados de la combustión; <b>importante en zonas ricas en combustible</b></td><td>CH• + N<sub>2</sub> → HCN + N; N + OH• → NO + H; N + O<sub>2</sub> → NO + O; HCN + O<sub>2</sub> → NO + CO + H</td></tr>
+<tr><td>Por radicales</td><td>Radicales derivados de la combustión; <b>importante en zonas ricas en combustible</b></td><td>$\\mathrm{CH^{\\bullet} + N_{2} \\rightarrow  HCN + N}$; $\\mathrm{N + OH^{\\bullet} \\rightarrow  NO + H}$; $\\mathrm{N + O_{2} \\rightarrow  NO + O}$; $\\mathrm{HCN + O_{2} \\rightarrow  NO + CO + H}$</td></tr>
 </tbody></table>
 <h4>Influencia del tiempo de reacción</h4>
 <p>En la gráfica de NO<sub>x</sub> (ppm) frente al <b>tiempo de residencia</b> (ms) de la diap. 6, el <b>NO del combustible</b> sube muy deprisa (≈ 290 ppm a 0,14 ms; ≈ 460 ppm a 0,43 ms) y se estabiliza en torno a <b>490-500 ppm</b>, mientras que el <b>NO térmico</b> crece casi <b>linealmente</b> y lentamente (≈ 75 ppm a 0,5 ms; ≈ 215 ppm a 1,45 ms).</p>
@@ -744,26 +744,26 @@ THEORY.B4 = {
 <h4>Lluvia ácida</h4>
 <p>El <b>ozono</b> da <b>átomos de oxígeno</b>, que con agua forman el <b>radical hidroxilo</b> (diap. 7):</p>
 <table class="tbl"><thead><tr><th>Reacción</th><th>Producto</th></tr></thead><tbody>
-<tr><td>O + H<sub>2</sub>O → 2 HO</td><td>Radical hidroxilo</td></tr>
-<tr><td>OH + NO<sub>2</sub> → HNO<sub>3</sub></td><td><b>Ácido nítrico</b> → lluvia ácida</td></tr>
-<tr><td>OH + SO<sub>2</sub> + O<sub>2</sub> → SO<sub>3</sub> + HO<sub>2</sub></td><td>Radical <b>hidroperoxilo</b></td></tr>
-<tr><td>SO<sub>3</sub> + H<sub>2</sub>O → H<sub>2</sub>SO<sub>4</sub></td><td><b>Ácido sulfúrico</b> → lluvia ácida</td></tr>
-<tr><td>NO + HO<sub>2</sub> → NO<sub>2</sub> + OH</td><td>Regenera OH</td></tr>
-<tr><td>HO<sub>2</sub> + H<sub>2</sub>O → H<sub>2</sub>O<sub>2</sub> + OH</td><td>Agua oxigenada</td></tr>
-<tr><td>H<sub>2</sub>O<sub>2</sub> + SO<sub>2</sub> → H<sub>2</sub>SO<sub>4</sub></td><td>+ partículas minerales → <b>partículas de sulfatos (deposición seca)</b></td></tr>
-<tr><td>HO + CO + O<sub>2</sub> → CO<sub>2</sub> + HO<sub>2</sub></td><td>Lluvia ácida</td></tr>
+<tr><td>$\\mathrm{O + H_{2}O \\rightarrow  2\\,HO}$</td><td>Radical hidroxilo</td></tr>
+<tr><td>$\\mathrm{OH + NO_{2} \\rightarrow  HNO_{3}}$</td><td><b>Ácido nítrico</b> → lluvia ácida</td></tr>
+<tr><td>$\\mathrm{OH + SO_{2} + O_{2} \\rightarrow  SO_{3} + HO_{2}}$</td><td>Radical <b>hidroperoxilo</b></td></tr>
+<tr><td>$\\mathrm{SO_{3} + H_{2}O \\rightarrow  H_{2}SO_{4}}$</td><td><b>Ácido sulfúrico</b> → lluvia ácida</td></tr>
+<tr><td>$\\mathrm{NO + HO_{2} \\rightarrow  NO_{2} + OH}$</td><td>Regenera OH</td></tr>
+<tr><td>$\\mathrm{HO_{2} + H_{2}O \\rightarrow  H_{2}O_{2} + OH}$</td><td>Agua oxigenada</td></tr>
+<tr><td>$\\mathrm{H_{2}O_{2} + SO_{2} \\rightarrow  H_{2}SO_{4}}$</td><td>+ partículas minerales → <b>partículas de sulfatos (deposición seca)</b></td></tr>
+<tr><td>$\\mathrm{HO + CO + O_{2} \\rightarrow  CO_{2} + HO_{2}}$</td><td>Lluvia ácida</td></tr>
 </tbody></table>
 <h4>Ozono troposférico: ciclo fotoquímico</h4>
 <div class="formula">$$\\mathrm{NO_2} + h\\nu \\rightarrow \\mathrm{NO} + \\mathrm{O}\\ \\ (\\lambda \\le 420\\ \\mathrm{nm});\\quad \\mathrm{O}+\\mathrm{O_2}\\rightarrow\\mathrm{O_3};\\quad \\mathrm{O_3}+\\mathrm{NO}\\rightarrow\\mathrm{NO_2}+\\mathrm{O_2}$$</div>
-<p>Además, N<sub>2</sub>O + O → 2NO (diap. 8).</p>
+<p>Además, $\\mathrm{N_{2}O + O \\rightarrow  2NO}$ (diap. 8).</p>
 <div class="gen"><b>Ampliación (conocimiento general, no está en los apuntes):</b> el ciclo NO<sub>2</sub>/NO/O<sub>3</sub> por sí solo no acumula ozono, porque el NO formado lo vuelve a destruir; los hidrocarburos rompen ese equilibrio al convertir NO en NO<sub>2</sub> sin gastar O<sub>3</sub>.</div>
 <h4>Papel de los hidrocarburos y el PAN</h4>
-<p>Los hidrocarburos (HC) reaccionan con el O atómico: HC + O → RCO* (radical), p. ej. el propeno CH<sub>3</sub>−CH=CH<sub>2</sub> + O → … → CH<sub>3</sub>* + CH<sub>3</sub>−C=O*. <b>Reacciones en cadena</b>:</p>
-<ul><li>RCO* + O<sub>2</sub> → RCO<sub>3</sub>* (radical <b>peroxiacilo</b>)</li>
-<li>RCO<sub>3</sub>* + HC → RCO<sub>2</sub>* (radical <b>aciloxi</b>) + R'CHO (<b>aldehído</b>)</li>
-<li>RCO<sub>3</sub>* + O<sub>2</sub> → RCO<sub>2</sub>* + <b>O<sub>3</sub></b></li>
-<li>RCO<sub>3</sub>* + NO → RCO<sub>2</sub>* + NO<sub>2</sub></li>
-<li>CH<sub>3</sub>CO<sub>3</sub>* + NO<sub>2</sub> → RCO<sub>3</sub>NO<sub>2</sub> (<b>peroxiacetilnitrato, PAN</b>; «peroxiacetilnitrilo» en los apuntes)</li></ul>
+<p>Los hidrocarburos (HC) reaccionan con el O atómico: $\\mathrm{HC + O \\rightarrow  RCO^{*}}$ (radical), p. ej. el propeno $\\mathrm{CH_{3}{-}CH=CH_{2} + O \\rightarrow  \\ldots  \\rightarrow  CH_{3}^{*} + CH_{3}{-}C=O^{*}}$. <b>Reacciones en cadena</b>:</p>
+<ul><li>$\\mathrm{RCO^{*} + O_{2} \\rightarrow  RCO_{3}^{*}}$ (radical <b>peroxiacilo</b>)</li>
+<li>$\\mathrm{RCO_{3}^{*} + HC \\rightarrow  RCO_{2}^{*}}$ (radical <b>aciloxi</b>) + $\\mathrm{R'CHO}$ (<b>aldehído</b>)</li>
+<li>$\\mathrm{RCO_{3}^{*} + O_{2} \\rightarrow  RCO_{2}^{*} + O_{3}}$</li>
+<li>$\\mathrm{RCO_{3}^{*} + NO \\rightarrow  RCO_{2}^{*} + NO_{2}}$</li>
+<li>$\\mathrm{CH_{3}CO_{3}^{*} + NO_{2} \\rightarrow  RCO_{3}NO_{2}}$ (<b>peroxiacetilnitrato, PAN</b>; «peroxiacetilnitrilo» en los apuntes)</li></ul>
 <h4>Diagrama de isopletas de ozono</h4>
 <p>El diagrama de la diap. 8 da las isopletas de O<sub>3</sub> (0,08 a 0,40 ppm) en función de NO<sub>x</sub> (ppm, 0-0,28) y VOC (ppmC, 0-2,0), con rectas VOC/NO<sub>x</sub> = 4/1, 8/1 y 15/1. Distingue una región <b>limitada por VOC</b> (punto A, mucho NO<sub>x</sub> y pocos VOC) y otra <b>limitada por NO<sub>x</sub></b> (punto C). Las fotos muestran Madrid con y sin contaminación fotoquímica.</p>
 ` },
@@ -812,7 +812,7 @@ THEORY.B4 = {
 <tr><td>Nucleación</td><td>&lt; 0,02 µm</td><td>Vida media de <b>horas</b>: coagulan con otras partículas o crecen por condensación</td></tr>
 <tr><td>Aitken</td><td>0,02-0,1 µm</td><td>Vida media de <b>horas</b>, por la misma evolución; una parte es el <b><i>soot</i></b> de la combustión</td></tr>
 <tr><td>Acumulación</td><td>0,1-1 µm</td><td>Se forman a partir de las Aitken mediante <b>reacciones en fase líquida en el agua de las nubes</b>; pueden permanecer <b>semanas y meses</b></td></tr>
-<tr><td>Gruesa</td><td>&gt; 1 µm</td><td>Fundamentalmente de <b>origen primario</b>; las secundarias se forman por reacciones entre aerosoles marinos y gases (HNO<sub>3</sub> + NaCl → NaNO<sub>3</sub>)</td></tr>
+<tr><td>Gruesa</td><td>&gt; 1 µm</td><td>Fundamentalmente de <b>origen primario</b>; las secundarias se forman por reacciones entre aerosoles marinos y gases ($\\mathrm{HNO_{3} + NaCl \\rightarrow  NaNO_{3}}$)</td></tr>
 </tbody></table>
 <h4>Fuentes de las partículas atmosféricas</h4>
 <p>El esquema de Lazaridis (2011) muestra que una partícula recibe aportes primarios (sal marina, emisiones de partículas inorgánicas como polvo y cenizas volantes, partículas orgánicas primarias OC y EC) y secundarios: vapores de compuestos orgánicos semivolátiles (de la fotoquímica de gases orgánicos primarios), HNO<sub>3</sub> (de las emisiones de NO<sub>x</sub>), NH<sub>3</sub>, H<sub>2</sub>O y H<sub>2</sub>SO<sub>4</sub> (de las emisiones de SO<sub>2</sub> o directamente emitido).</p>
@@ -847,11 +847,11 @@ L("B4", "b4-calidad", "Radón", 2, "Entre los parámetros que influyen en la cal
   ["la segunda causa de cáncer pulmonar en Europa", "la primera causa de cáncer pulmonar en Europa", "la segunda causa de cáncer de piel en Europa", "el principal contaminante del aire interior en Europa"],
   0, "Diap. 3: «Radón (segunda causa de cáncer pulmonar en Europa)». El aire interior se cita aparte (productos químicos y partículas como mohos).", "Apuntes B4, diap. 3");
 L("B4", "b4-calidad", "Calidad del aire", 2, "Según los apuntes, la calidad del aire depende fundamentalmente de…",
-  ["partículas (PM), ozono troposférico, SO<sub>2</sub>, NO<sub>2</sub> e hidrocarburos aromáticos policíclicos",
-   "partículas (PM), ozono estratosférico, SO<sub>2</sub>, NO<sub>2</sub> e hidrocarburos aromáticos policíclicos",
-   "partículas (PM), ozono troposférico, CO<sub>2</sub>, CH<sub>4</sub> y N<sub>2</sub>O",
-   "mohos y otros microorganismos, productos químicos, SO<sub>2</sub> y radón"],
-  0, "La lista de la diap. 3 es PM, ozono troposférico, SO<sub>2</sub>, NO<sub>2</sub> y HAP. El ozono estratosférico se relaciona con la radiación UV; mohos y microorganismos son del aire interior.", "Apuntes B4, diap. 3");
+  ["partículas (PM), ozono troposférico, SO₂, NO₂ e hidrocarburos aromáticos policíclicos",
+   "partículas (PM), ozono estratosférico, SO₂, NO₂ e hidrocarburos aromáticos policíclicos",
+   "partículas (PM), ozono troposférico, CO₂, CH₄ y N₂O",
+   "mohos y otros microorganismos, productos químicos, SO₂ y radón"],
+  0, "La lista de la diap. 3 es PM, ozono troposférico, SO₂, NO₂ y HAP. El ozono estratosférico se relaciona con la radiación UV; mohos y microorganismos son del aire interior.", "Apuntes B4, diap. 3");
 L("B4", "b4-calidad", "Radiación UV", 3, "¿Cómo relacionan los apuntes la radiación ultravioleta con la calidad del ambiente?",
   ["La disminución de la capa de ozono estratosférico facilita la llegada de mayor cantidad de radiación",
    "El aumento del ozono troposférico facilita la llegada de mayor cantidad de radiación",
@@ -871,14 +871,14 @@ L("B4", "b4-calidad", "Factores de salud", 2, "Según la diap. 2, los factores s
    "la edad, la renta y el acceso a la sanidad de cada persona"],
   0, "Los apuntes citan condiciones de vida y de trabajo e influencias culturales, que interaccionan con la edad, el sexo y la dotación genética.", "Apuntes B4, diap. 2");
 L("B4", "b4-calidad", "Economía circular", 2, "En el esquema del papel del biogás en la economía circular (Hoja de ruta del biogás, MITERD 2022), el producto que vuelve de la planta de biogás a la agricultura es…",
-  ["el digerido", "el biometano", "el compost aerobio", "el CO<sub>2</sub> separado en el <i>upgrading</i>"],
+  ["el digerido", "el biometano", "el compost aerobio", "el CO₂ separado en el upgrading"],
   0, "La flecha de la planta de biogás hacia la agricultura es el «digerido»; el biometano va al suministro de carburante y la recogida de residuos, y el biogás a calor y electricidad.", "Apuntes B4, diap. 2");
 L("B4", "b4-incidencia", "Cambio climático", 2, "Según el cuadro de incidencia de la valorización de biomasa y residuos, en el cambio climático la valorización tiene…",
-  ["menor incidencia por el consumo de CO<sub>2</sub> que hacen los cultivos",
-   "mayor incidencia por las emisiones de NO<sub>x</sub> y SO<sub>2</sub> de la combustión",
-   "una incidencia nula, porque el CO<sub>2</sub> emitido no se contabiliza",
-   "menor incidencia por la captura del CO<sub>2</sub> en el digestato"],
-  0, "Diap. 4: «Menor incidencia por el consumo de CO<sub>2</sub> que hacen los cultivos». Los apuntes no hablan de incidencia nula ni de captura en el digestato.", "Apuntes B4, diap. 4");
+  ["menor incidencia por el consumo de CO₂ que hacen los cultivos",
+   "mayor incidencia por las emisiones de NOₓ y SO₂ de la combustión",
+   "una incidencia nula, porque el CO₂ emitido no se contabiliza",
+   "menor incidencia por la captura del CO₂ en el digestato"],
+  0, "Diap. 4: «Menor incidencia por el consumo de CO₂ que hacen los cultivos». Los apuntes no hablan de incidencia nula ni de captura en el digestato.", "Apuntes B4, diap. 4");
 L("B4", "b4-incidencia", "Suelo", 2, "En el cuadro de incidencia de la valorización, los efectos sobre el suelo son…",
   ["la ocupación del suelo por cultivos y la generación de residuos en la valorización",
    "la ocupación del suelo por cultivos y los vertidos con materia en suspensión",
@@ -886,11 +886,11 @@ L("B4", "b4-incidencia", "Suelo", 2, "En el cuadro de incidencia de la valorizac
    "la erosión por el laboreo de los cultivos y los vertidos con pesticidas"],
   0, "Suelo: ocupación por cultivos y generación de residuos. Los vertidos (pesticidas, materia en suspensión) son de calidad del agua y el consumo de agua, de disponibilidad del agua.", "Apuntes B4, diap. 4");
 L("B4", "b4-incidencia", "Calidad del agua", 1, "En la valorización de biomasa y residuos, la calidad del agua se ve afectada, según los apuntes, por…",
-  ["vertidos con pesticidas y con materia en suspensión", "el consumo de agua para el crecimiento de los cultivos", "las emisiones de NO<sub>x</sub>, SO<sub>2</sub> y partículas", "la ocupación del suelo por cultivos"],
+  ["vertidos con pesticidas y con materia en suspensión", "el consumo de agua para el crecimiento de los cultivos", "las emisiones de NOₓ, SO₂ y partículas", "la ocupación del suelo por cultivos"],
   0, "Calidad del agua: vertidos con pesticidas y con materia en suspensión. El consumo para cultivos corresponde a la disponibilidad del agua.", "Apuntes B4, diap. 4");
 L("B4", "b4-incidencia", "Calidad del aire", 2, "¿Qué emisiones recogen los apuntes como incidencia de la valorización en la calidad del aire?",
-  ["NO<sub>x</sub>, SO<sub>2</sub> y partículas", "CO<sub>2</sub>, CH<sub>4</sub> y N<sub>2</sub>O", "NO<sub>x</sub>, CO y ozono troposférico", "SO<sub>2</sub>, HCl y dioxinas"],
-  0, "Diap. 4: emisiones de NO<sub>x</sub>, de SO<sub>2</sub> y de partículas.", "Apuntes B4, diap. 4");
+  ["NOₓ, SO₂ y partículas", "CO₂, CH₄ y N₂O", "NOₓ, CO y ozono troposférico", "SO₂, HCl y dioxinas"],
+  0, "Diap. 4: emisiones de NOₓ, de SO₂ y de partículas.", "Apuntes B4, diap. 4");
 L("B4", "b4-incidencia", "Cuadro de incidencias", 3, "Sobre el cuadro de incidencia de la valorización de biomasa y residuos en la calidad ambiental, señale la opción correcta:",
   ["La disponibilidad del agua se ve afectada por el consumo para el crecimiento de los cultivos",
    "El suelo se ve afectado por la generación de residuos en la valorización",
@@ -898,35 +898,35 @@ L("B4", "b4-incidencia", "Cuadro de incidencias", 3, "Sobre el cuadro de inciden
    "Todas las otras opciones son correctas"],
   3, "Las tres afirmaciones figuran en la diap. 4, por lo que la respuesta es «Todas las otras opciones son correctas».", "Apuntes B4, diap. 4");
 L("B4", "b4-nox", "Oxígeno estequiométrico", 2, "Para un combustible C<sub>x</sub>H<sub>y</sub>S<sub>z</sub>O<sub>w</sub>, los moles de O<sub>2</sub> estequiométricos por mol de combustible son, según los apuntes…",
-  ["x + y/4 + z − w/2", "x + y/2 + z − w/2", "x + y/4 + z + w/2", "x + y/4 + 2z − w"],
-  0, "C → CO<sub>2</sub> (x), H → H<sub>2</sub>O (y/4 de O<sub>2</sub>), S → SO<sub>2</sub> (z), y el O del combustible resta w/2.", "Apuntes B4, diap. 5");
+  ["$x + y/4 + z - w/2$", "$x + y/2 + z - w/2$", "$x + y/4 + z + w/2$", "$x + y/4 + 2z - w$"],
+  0, "Cada elemento del combustible $C_xH_yS_zO_w$ consume el oxígeno de su producto de combustión completa (Apuntes B4, diap. 5): $$\\underbrace{x}_{C\\to CO_2}+\\underbrace{\\frac{y}{4}}_{H\\to H_2O}+\\underbrace{z}_{S\\to SO_2}-\\underbrace{\\frac{w}{2}}_{\\text{O propio}}$$ El hidrógeno da y/2 moléculas de H₂O, que necesitan y/4 de O₂; el oxígeno del combustible aporta w/2 moléculas de O₂ que no hay que suministrar.", "Apuntes B4, diap. 5");
 L("B4", "b4-nox", "Aire estequiométrico", 3, "Con la ecuación estequiométrica de los apuntes, la combustión completa de 1 mol de propano (C<sub>3</sub>H<sub>8</sub>) con aire requiere…",
-  ["5 mol de O<sub>2</sub> acompañados de ≈ 18,8 mol de N<sub>2</sub> (≈ 23,8 mol de aire)",
-   "5 mol de O<sub>2</sub> acompañados de ≈ 23,8 mol de N<sub>2</sub> (≈ 28,8 mol de aire)",
-   "7 mol de O<sub>2</sub> acompañados de ≈ 26,3 mol de N<sub>2</sub> (≈ 33,3 mol de aire)",
-   "4 mol de O<sub>2</sub> acompañados de ≈ 15,0 mol de N<sub>2</sub> (≈ 19,0 mol de aire)"],
-  0, "O<sub>2</sub> = x + y/4 = 3 + 2 = 5 mol; N<sub>2</sub> = (0,79/0,21)·5 ≈ 18,8 mol; aire = 5/0,21 ≈ 23,8 mol.", "Apuntes B4, diap. 5");
+  ["5 mol de O₂ acompañados de ≈ 18,8 mol de N₂ (≈ 23,8 mol de aire)",
+   "5 mol de O₂ acompañados de ≈ 23,8 mol de N₂ (≈ 28,8 mol de aire)",
+   "7 mol de O₂ acompañados de ≈ 26,3 mol de N₂ (≈ 33,3 mol de aire)",
+   "4 mol de O₂ acompañados de ≈ 15,0 mol de N₂ (≈ 19,0 mol de aire)"],
+  0, "Ecuación estequiométrica de los apuntes (Apuntes B4, diap. 5) para el propano, $C_3H_8$ (x = 3, y = 8): $$n_{O_2}=x+\\frac{y}{4}=3+2=5\\ \\text{mol}$$ $$n_{N_2}=\\frac{0{,}79}{0{,}21}\\cdot5\\approx18{,}8\\ \\text{mol}\\qquad n_{aire}=\\frac{5}{0{,}21}\\approx\\boxed{23{,}8\\ \\text{mol}}$$ La segunda opción toma 23,8 mol como N₂ (es el aire); 7 mol saldría con y/2 en vez de y/4.", "Apuntes B4, diap. 5");
 L("B4", "b4-nox", "Combustión real", 2, "Según los apuntes, en el esquema real de combustión (no estequiométrica) aparecen entre los productos…",
-  ["CO, NO, NO<sub>2</sub>, hidrocarburos C<sub>p</sub>H<sub>q</sub>, N<sub>2</sub>O y O<sub>2</sub>, además de CO<sub>2</sub>, H<sub>2</sub>O, SO<sub>2</sub> y N<sub>2</sub>",
-   "CO, NO, NO<sub>2</sub>, SO<sub>3</sub>, H<sub>2</sub>S y O<sub>3</sub>, además de CO<sub>2</sub>, H<sub>2</sub>O, SO<sub>2</sub> y N<sub>2</sub>",
-   "solo CO<sub>2</sub>, H<sub>2</sub>O, SO<sub>2</sub> y N<sub>2</sub>, en proporciones distintas a las estequiométricas",
-   "CO, H<sub>2</sub>, NH<sub>3</sub>, HCN y N<sub>2</sub>O, además de CO<sub>2</sub>, H<sub>2</sub>O, SO<sub>2</sub> y N<sub>2</sub>"],
-  0, "Esquema real: bCO<sub>2</sub> + cH<sub>2</sub>O + dSO<sub>2</sub> + eN<sub>2</sub> + fCO + gNO + hNO<sub>2</sub> + iC<sub>p</sub>H<sub>q</sub> + jN<sub>2</sub>O + kO<sub>2</sub>.", "Apuntes B4, diap. 5");
+  ["CO, NO, NO₂, hidrocarburos $C_{p}H_{q}$, N₂O y O₂, además de CO₂, H₂O, SO₂ y N₂",
+   "CO, NO, NO₂, SO₃, H₂S y O₃, además de CO₂, H₂O, SO₂ y N₂",
+   "solo CO₂, H₂O, SO₂ y N₂, en proporciones distintas a las estequiométricas",
+   "CO, H₂, NH₃, HCN y N₂O, además de CO₂, H₂O, SO₂ y N₂"],
+  0, "Esquema real: $b\\,\\mathrm{CO_2}+c\\,\\mathrm{H_2O}+d\\,\\mathrm{SO_2}+e\\,\\mathrm{N_2}+f\\,\\mathrm{CO}+g\\,\\mathrm{NO}+h\\,\\mathrm{NO_2}+i\\,\\mathrm{C_pH_q}+j\\,\\mathrm{N_2O}+k\\,\\mathrm{O_2}$.", "Apuntes B4, diap. 5");
 L("B4", "b4-nox", "Mecanismo de Zeldovich", 2, "El mecanismo de Zeldovich de formación de NO<sub>x</sub>…",
-  ["forma NO a partir del N<sub>2</sub> y el O<sub>2</sub> del aire a alta temperatura y es importante a T &gt; 1.300 ºC",
-   "forma NO a partir del N<sub>2</sub> y el O<sub>2</sub> del aire a alta temperatura y es importante a T &gt; 1.000 ºC",
-   "forma NO a partir del nitrógeno del combustible y es importante a T &gt; 1.300 ºC",
+  ["forma NO a partir del N₂ y el O₂ del aire a alta temperatura y es importante a T > 1.300 ºC",
+   "forma NO a partir del N₂ y el O₂ del aire a alta temperatura y es importante a T > 1.000 ºC",
+   "forma NO a partir del nitrógeno del combustible y es importante a T > 1.300 ºC",
    "forma NO a partir de radicales CH• y es importante en zonas ricas en combustible"],
-  0, "Zeldovich = NO térmico (N<sub>2</sub> + O = NO + N; O<sub>2</sub> + N = NO + O; OH• + N = NO + H), importante a T &gt; 1.300 ºC.", "Apuntes B4, diap. 5");
+  0, "Zeldovich = NO térmico (N₂ + O = NO + N; O₂ + N = NO + O; OH• + N = NO + H), importante a T > 1.300 ºC.", "Apuntes B4, diap. 5");
 L("B4", "b4-nox", "Mecanismos de NOx", 3, "¿Qué mecanismo de formación de NO<sub>x</sub> actúa, según los apuntes, a cualquier temperatura y régimen de mezcla?",
   ["El del nitrógeno contenido en el combustible", "El térmico de Zeldovich", "El de radicales derivados de la combustión", "Ninguna de las otras opciones"],
-  0, "El NO<sub>x</sub> del combustible se forma «a cualquier temperatura y régimen de mezcla». El térmico requiere T &gt; 1.300 ºC y el de radicales es importante en zonas ricas.", "Apuntes B4, diap. 5");
+  0, "El NOₓ del combustible se forma «a cualquier temperatura y régimen de mezcla». El térmico requiere T > 1.300 ºC y el de radicales es importante en zonas ricas.", "Apuntes B4, diap. 5");
 L("B4", "b4-nox", "NOx por radicales", 3, "Sobre el mecanismo de formación de NO<sub>x</sub> a partir de radicales derivados de la combustión, señale la opción correcta:",
-  ["Es importante en zonas ricas en combustible e incluye la reacción CH• + N<sub>2</sub> → HCN + N",
-   "Es importante en zonas pobres en combustible e incluye la reacción CH• + N<sub>2</sub> → HCN + N",
-   "Es importante en zonas ricas en combustible e incluye la reacción N<sub>2</sub> + O = NO + N",
-   "Es importante a T &gt; 1.300 ºC e incluye la reacción HCN + O<sub>2</sub> → NO + CO + H"],
-  0, "Radicales: zonas ricas en combustible; CH• + N<sub>2</sub> → HCN + N, N + OH• → NO + H, N + O<sub>2</sub> → NO + O, HCN + O<sub>2</sub> → NO + CO + H. N<sub>2</sub> + O = NO + N es de Zeldovich.", "Apuntes B4, diap. 5");
+  ["Es importante en zonas ricas en combustible e incluye la reacción $\\mathrm{CH^{\\bullet} + N_2 \\rightarrow HCN + N}$",
+   "Es importante en zonas pobres en combustible e incluye la reacción $\\mathrm{CH^{\\bullet} + N_2 \\rightarrow HCN + N}$",
+   "Es importante en zonas ricas en combustible e incluye la reacción $\\mathrm{N_2 + O = NO + N}$",
+   "Es importante a T > 1.300 ºC e incluye la reacción $\\mathrm{HCN + O_2 \\rightarrow NO + CO + H}$"],
+  0, "Radicales: zonas ricas en combustible; CH• + N₂ → HCN + N, N + OH• → NO + H, N + O₂ → NO + O, HCN + O₂ → NO + CO + H. N₂ + O = NO + N es de Zeldovich.", "Apuntes B4, diap. 5");
 L("B4", "b4-nox", "Tiempo de residencia", 3, "En la gráfica de NO<sub>x</sub> frente al tiempo de residencia de los apuntes, señale la afirmación correcta:",
   ["El NO del combustible alcanza ≈ 500 ppm en torno a 0,5 ms y se estabiliza, mientras el NO térmico crece casi linealmente hasta ≈ 200 ppm a 1,5 ms",
    "El NO térmico alcanza ≈ 500 ppm en torno a 0,5 ms y se estabiliza, mientras el NO del combustible crece casi linealmente hasta ≈ 200 ppm a 1,5 ms",
@@ -934,102 +934,102 @@ L("B4", "b4-nox", "Tiempo de residencia", 3, "En la gráfica de NO<sub>x</sub> f
    "Ambos alcanzan ≈ 500 ppm en torno a 0,5 ms y se estabilizan, porque dependen de la misma reacción"],
   0, "Curva superior (NO combustible): ≈ 460 ppm a 0,43 ms y meseta ≈ 490-500 ppm. Curva inferior (NO térmico): recta, ≈ 215 ppm a 1,45 ms.", "Apuntes B4, diap. 6");
 L("B4", "b4-nox", "Relación de equivalencia", 3, "En la gráfica de la combustión propano-aire (fracción molar frente a la relación de equivalencia de 0,7 a 1,3), ¿qué ocurre al pasar de mezclas pobres a ricas en combustible?",
-  ["El O<sub>2</sub> disminuye, el CO y el H<sub>2</sub> aumentan y el NO, máximo hacia 0,9-0,95, cae con fuerza",
-   "El O<sub>2</sub> aumenta, el CO y el H<sub>2</sub> disminuyen y el NO, máximo hacia 1,2, cae con fuerza",
-   "El O<sub>2</sub> disminuye, el CO y el H<sub>2</sub> aumentan y el NO crece de forma continua hasta 1,3",
-   "El O<sub>2</sub> disminuye, el CO y el H<sub>2</sub> disminuyen y el NO se mantiene en ≈ 3.000 ppm"],
-  0, "Con más combustible (F<sub>R</sub> creciente) baja el O<sub>2</sub>, suben CO y H<sub>2</sub>, y el NO tiene su máximo ligeramente por debajo de 1 y desciende a ≈ 50 ppm en 1,3.", "Apuntes B4, diap. 6");
+  ["El O₂ disminuye, el CO y el H₂ aumentan y el NO, máximo hacia 0,9-0,95, cae con fuerza",
+   "El O₂ aumenta, el CO y el H₂ disminuyen y el NO, máximo hacia 1,2, cae con fuerza",
+   "El O₂ disminuye, el CO y el H₂ aumentan y el NO crece de forma continua hasta 1,3",
+   "El O₂ disminuye, el CO y el H₂ disminuyen y el NO se mantiene en ≈ 3.000 ppm"],
+  0, "Con más combustible ($F_{R}$ creciente) baja el O₂, suben CO y H₂, y el NO tiene su máximo ligeramente por debajo de 1 y desciende a ≈ 50 ppm en 1,3.", "Apuntes B4, diap. 6");
 
 /* ---------- B4 · preguntas: lluvia ácida, ozono e invernadero ---------- */
 L("B4", "b4-acida", "Radical hidroxilo", 2, "En el esquema de lluvia ácida de los apuntes, el radical hidroxilo se forma mediante…",
-  ["O + H<sub>2</sub>O → 2 HO, a partir del oxígeno atómico procedente del ozono",
-   "O<sub>3</sub> + H<sub>2</sub>O → H<sub>2</sub>O<sub>2</sub> + O<sub>2</sub>, a partir del ozono troposférico",
-   "HO<sub>2</sub> + H<sub>2</sub>O → H<sub>2</sub>O<sub>2</sub> + OH, como única vía de formación",
-   "NO<sub>2</sub> + hν → NO + O, a partir del dióxido de nitrógeno"],
-  0, "O<sub>3</sub> → O (átomo de oxígeno); O + H<sub>2</sub>O → 2 HO. El OH también se regenera (NO + HO<sub>2</sub>, HO<sub>2</sub> + H<sub>2</sub>O), pero no es la única vía.", "Apuntes B4, diap. 7");
+  ["$\\mathrm{O + H_2O \\rightarrow 2\\,HO}$, a partir del oxígeno atómico procedente del ozono",
+   "$\\mathrm{O_3 + H_2O \\rightarrow H_2O_2 + O_2}$, a partir del ozono troposférico",
+   "$\\mathrm{HO_2 + H_2O \\rightarrow H_2O_2 + OH}$, como única vía de formación",
+   "$\\mathrm{NO_2} + h\\nu \\rightarrow \\mathrm{NO + O}$, a partir del dióxido de nitrógeno"],
+  0, "O₃ → O (átomo de oxígeno); O + H₂O → 2 HO. El OH también se regenera (NO + HO₂, HO₂ + H₂O), pero no es la única vía.", "Apuntes B4, diap. 7");
 L("B4", "b4-acida", "Ácido sulfúrico", 3, "Según los apuntes, ¿qué vías conducen a la formación de H<sub>2</sub>SO<sub>4</sub>? (Puede haber varias correctas)",
-  ["OH + SO<sub>2</sub> + O<sub>2</sub> → SO<sub>3</sub> + HO<sub>2</sub>, seguida de SO<sub>3</sub> + H<sub>2</sub>O → H<sub>2</sub>SO<sub>4</sub>",
-   "H<sub>2</sub>O<sub>2</sub> + SO<sub>2</sub> → H<sub>2</sub>SO<sub>4</sub>",
-   "OH + NO<sub>2</sub> → H<sub>2</sub>SO<sub>4</sub>, en presencia de partículas minerales",
-   "HO + CO + O<sub>2</sub> → H<sub>2</sub>SO<sub>4</sub> + HO<sub>2</sub>"],
-  [0, 1], "Las dos vías del sulfúrico son la del OH (vía SO<sub>3</sub>) y la del agua oxigenada. OH + NO<sub>2</sub> da HNO<sub>3</sub> y HO + CO + O<sub>2</sub> da CO<sub>2</sub> + HO<sub>2</sub>.", "Apuntes B4, diap. 7");
+  ["$\\mathrm{OH + SO_2 + O_2 \\rightarrow SO_3 + HO_2}$, seguida de $\\mathrm{SO_3 + H_2O \\rightarrow H_2SO_4}$",
+   "$\\mathrm{H_2O_2 + SO_2 \\rightarrow H_2SO_4}$",
+   "$\\mathrm{OH + NO_2 \\rightarrow H_2SO_4}$, en presencia de partículas minerales",
+   "$\\mathrm{HO + CO + O_2 \\rightarrow H_2SO_4 + HO_2}$"],
+  [0, 1], "Las dos vías del sulfúrico son la del OH (vía SO₃) y la del agua oxigenada. OH + NO₂ da HNO₃ y HO + CO + O₂ da CO₂ + HO₂.", "Apuntes B4, diap. 7");
 L("B4", "b4-acida", "Deposición seca", 2, "En el esquema de los apuntes, la deposición seca corresponde a…",
-  ["partículas de sulfatos formadas por H<sub>2</sub>SO<sub>4</sub> y partículas minerales",
-   "partículas de nitratos formadas por HNO<sub>3</sub> y sal marina",
-   "gotas de lluvia con H<sub>2</sub>SO<sub>4</sub> y HNO<sub>3</sub> disueltos",
+  ["partículas de sulfatos formadas por H₂SO₄ y partículas minerales",
+   "partículas de nitratos formadas por HNO₃ y sal marina",
+   "gotas de lluvia con H₂SO₄ y HNO₃ disueltos",
    "partículas de hollín con hidrocarburos aromáticos policíclicos"],
-  0, "H<sub>2</sub>O<sub>2</sub> + SO<sub>2</sub> → H<sub>2</sub>SO<sub>4</sub> + partículas minerales → partículas de sulfatos (deposición seca). Los ácidos disueltos forman la lluvia ácida (deposición húmeda).", "Apuntes B4, diap. 7");
+  0, "H₂O₂ + SO₂ → H₂SO₄ + partículas minerales → partículas de sulfatos (deposición seca). Los ácidos disueltos forman la lluvia ácida (deposición húmeda).", "Apuntes B4, diap. 7");
 L("B4", "b4-acida", "Radical hidroperoxilo", 2, "En el esquema de la lluvia ácida, el radical hidroperoxilo (HO<sub>2</sub>) se forma en la reacción…",
-  ["OH + SO<sub>2</sub> + O<sub>2</sub> → SO<sub>3</sub> + HO<sub>2</sub>", "NO + HO<sub>2</sub> → NO<sub>2</sub> + OH", "O + H<sub>2</sub>O → 2 HO", "OH + NO<sub>2</sub> → HNO<sub>3</sub>"],
-  0, "El HO<sub>2</sub> (hidroperoxilo) aparece en OH + SO<sub>2</sub> + O<sub>2</sub> y en HO + CO + O<sub>2</sub>; NO + HO<sub>2</sub> lo consume para regenerar OH.", "Apuntes B4, diap. 7");
+  ["$\\mathrm{OH + SO_2 + O_2 \\rightarrow SO_3 + HO_2}$", "$\\mathrm{NO + HO_2 \\rightarrow NO_2 + OH}$", "$\\mathrm{O + H_2O \\rightarrow 2\\,HO}$", "$\\mathrm{OH + NO_2 \\rightarrow HNO_3}$"],
+  0, "El HO₂ (hidroperoxilo) aparece en OH + SO₂ + O₂ y en HO + CO + O₂; NO + HO₂ lo consume para regenerar OH.", "Apuntes B4, diap. 7");
 L("B4", "b4-acida", "Fotólisis del NO2", 2, "La fotólisis del NO<sub>2</sub> que inicia la formación de ozono troposférico se produce, según los apuntes, con radiación de longitud de onda…",
   ["λ ≤ 420 nm", "λ ≥ 420 nm", "λ ≤ 240 nm", "λ ≤ 700 nm"],
-  0, "NO<sub>2</sub> + hν → NO + O con λ ≤ 420 nm; después O + O<sub>2</sub> → O<sub>3</sub>.", "Apuntes B4, diap. 8");
+  0, "NO₂ + hν → NO + O con λ ≤ 420 nm; después O + O₂ → O₃.", "Apuntes B4, diap. 8");
 L("B4", "b4-acida", "PAN", 3, "En las reacciones en cadena del ozono troposférico, el peroxiacetilnitrato (PAN) se forma a partir de…",
-  ["CH<sub>3</sub>CO<sub>3</sub>* + NO<sub>2</sub>", "RCO<sub>3</sub>* + NO", "RCO* + O<sub>2</sub>", "RCO<sub>3</sub>* + HC"],
-  0, "CH<sub>3</sub>CO<sub>3</sub>* + NO<sub>2</sub> → RCO<sub>3</sub>NO<sub>2</sub> (PAN). RCO<sub>3</sub>* + NO da RCO<sub>2</sub>* + NO<sub>2</sub>; RCO* + O<sub>2</sub> da el peroxiacilo; RCO<sub>3</sub>* + HC da aciloxi + aldehído.", "Apuntes B4, diap. 8");
+  ["$\\mathrm{CH_3CO_3^{*} + NO_2}$", "$\\mathrm{RCO_3^{*} + NO}$", "$\\mathrm{RCO^{*} + O_2}$", "$\\mathrm{RCO_3^{*} + HC}$"],
+  0, "CH₃CO₃* + NO₂ → RCO₃NO₂ (PAN). RCO₃* + NO da RCO₂* + NO₂; RCO* + O₂ da el peroxiacilo; RCO₃* + HC da aciloxi + aldehído.", "Apuntes B4, diap. 8");
 L("B4", "b4-acida", "Radicales del ozono", 3, "Sobre los radicales de la química del ozono troposférico, señale la opción correcta:",
-  ["RCO<sub>3</sub>* es el radical peroxiacilo, y al reaccionar con O<sub>2</sub> forma RCO<sub>2</sub>* (aciloxi) y O<sub>3</sub>",
-   "RCO<sub>3</sub>* es el radical aciloxi, y al reaccionar con O<sub>2</sub> forma RCO<sub>2</sub>* (peroxiacilo) y O<sub>3</sub>",
-   "RCO<sub>2</sub>* es el radical peroxiacilo, y al reaccionar con HC forma un aldehído y O<sub>3</sub>",
-   "RCO<sub>3</sub>* es el radical peroxiacilo, y al reaccionar con NO forma RCO<sub>2</sub>* y O<sub>3</sub>"],
-  0, "RCO* + O<sub>2</sub> → RCO<sub>3</sub>* (peroxiacilo); RCO<sub>3</sub>* + O<sub>2</sub> → RCO<sub>2</sub>* (aciloxi) + O<sub>3</sub>; con NO da RCO<sub>2</sub>* + NO<sub>2</sub>.", "Apuntes B4, diap. 8");
+  ["RCO₃* es el radical peroxiacilo, y al reaccionar con O₂ forma RCO₂* (aciloxi) y O₃",
+   "RCO₃* es el radical aciloxi, y al reaccionar con O₂ forma RCO₂* (peroxiacilo) y O₃",
+   "RCO₂* es el radical peroxiacilo, y al reaccionar con HC forma un aldehído y O₃",
+   "RCO₃* es el radical peroxiacilo, y al reaccionar con NO forma RCO₂* y O₃"],
+  0, "RCO* + O₂ → RCO₃* (peroxiacilo); RCO₃* + O₂ → RCO₂* (aciloxi) + O₃; con NO da RCO₂* + NO₂.", "Apuntes B4, diap. 8");
 L("B4", "b4-acida", "Isopletas de ozono", 3, "En el diagrama de isopletas de ozono de los apuntes (NO<sub>x</sub> frente a VOC), un punto con mucho NO<sub>x</sub> y pocos VOC, como el punto A, se encuentra en la región…",
   ["limitada por VOC, donde reducir VOC es lo que más rebaja el ozono",
-   "limitada por NO<sub>x</sub>, donde reducir NO<sub>x</sub> es lo que más rebaja el ozono",
-   "limitada por VOC, donde reducir NO<sub>x</sub> es lo que más rebaja el ozono",
+   "limitada por NOₓ, donde reducir NOₓ es lo que más rebaja el ozono",
+   "limitada por VOC, donde reducir NOₓ es lo que más rebaja el ozono",
    "de máxima formación de ozono, con concentraciones superiores a 0,36 ppm"],
-  0, "El punto A está en la zona «VOC limited» (arriba a la izquierda, isopletas ≈ 0,12 ppm). El punto C, con poco NO<sub>x</sub>, está en la zona «NO<sub>x</sub> limited».", "Apuntes B4, diap. 8");
+  0, "El punto A está en la zona «VOC limited» (arriba a la izquierda, isopletas ≈ 0,12 ppm). El punto C, con poco NOₓ, está en la zona «NOₓ limited».", "Apuntes B4, diap. 8");
 L("B4", "b4-invernadero", "Forzamiento radiativo", 2, "Según los apuntes, el forzamiento radiativo es el cambio en el flujo neto de energía radiativa hacia la superficie de la Tierra medido…",
-  ["en el borde superior de la troposfera, a unos 12.000 m, y se expresa en W/m<sup>2</sup>",
-   "en el borde superior de la estratosfera, a unos 50.000 m, y se expresa en W/m<sup>2</sup>",
-   "en la superficie terrestre, a nivel del mar, y se expresa en W/m<sup>2</sup>",
-   "en el borde superior de la troposfera, a unos 12.000 m, y se expresa en kWh/m<sup>2</sup>·año"],
-  0, "Diap. 9: medido en el borde superior de la troposfera (≈ 12.000 m s. n. m.), en W/m<sup>2</sup>. Positivo calienta y negativo enfría.", "Apuntes B4, diap. 9");
+  ["en el borde superior de la troposfera, a unos 12.000 m, y se expresa en W/m²",
+   "en el borde superior de la estratosfera, a unos 50.000 m, y se expresa en W/m²",
+   "en la superficie terrestre, a nivel del mar, y se expresa en W/m²",
+   "en el borde superior de la troposfera, a unos 12.000 m, y se expresa en kWh/m²·año"],
+  0, "Diap. 9: medido en el borde superior de la troposfera (≈ 12.000 m s. n. m.), en W/m². Positivo calienta y negativo enfría.", "Apuntes B4, diap. 9");
 L("B4", "b4-invernadero", "Forzamiento radiativo", 3, "¿Qué puede originar, según la definición de los apuntes, un forzamiento radiativo? (Puede haber varias correctas)",
   ["Cambios internos en la composición de la atmósfera", "Cambios en el aporte externo de energía solar", "Cambios en la temperatura del manto terrestre", "Cambios en la rotación de la Tierra"],
   [0, 1], "La definición cita los cambios internos en la composición de la atmósfera o los cambios en el aporte externo de energía solar.", "Apuntes B4, diap. 9");
 L("B4", "b4-invernadero", "GWP", 1, "Según la tabla de potenciales de calentamiento global (IPCC 2001) de los apuntes, el GWP del metano es…",
   ["23", "296", "21", "1"],
-  0, "CH<sub>4</sub> = 23 y N<sub>2</sub>O = 296 (CO<sub>2</sub> = 1).", "Apuntes B4, diap. 10");
+  0, "CH₄ = 23 y N₂O = 296 (CO₂ = 1).", "Apuntes B4, diap. 10");
 L("B4", "b4-invernadero", "GWP", 2, "¿Qué gas de la tabla de los apuntes tiene el mayor potencial de calentamiento global?",
-  ["Hexafluoruro de azufre (SF<sub>6</sub>), 22.200", "HFC-23 (CHF<sub>3</sub>), 12.000", "Perfluoroetano (C<sub>2</sub>F<sub>6</sub>), 11.900", "Perfluorociclobutano (c-C<sub>4</sub>F<sub>8</sub>), 10.000"],
-  0, "SF<sub>6</sub> = 22.200 es el mayor; le siguen HFC-23 (12.000), C<sub>2</sub>F<sub>6</sub> (11.900) y c-C<sub>4</sub>F<sub>8</sub> (10.000).", "Apuntes B4, diap. 10");
+  ["Hexafluoruro de azufre (SF₆), 22.200", "HFC-23 (CHF₃), 12.000", "Perfluoroetano (C₂F₆), 11.900", "Perfluorociclobutano (c-C₄F₈), 10.000"],
+  0, "SF₆ = 22.200 es el mayor; le siguen HFC-23 (12.000), C₂F₆ (11.900) y c-C₄F₈ (10.000).", "Apuntes B4, diap. 10");
 L("B4", "b4-invernadero", "CO2 equivalente", 3, "Usando los GWP de los apuntes (IPCC 2001), la emisión de 100 kg de CH<sub>4</sub> y 10 kg de N<sub>2</sub>O equivale a…",
-  ["5.260 kg de CO<sub>2</sub> equivalente", "5.060 kg de CO<sub>2</sub> equivalente", "2.596 kg de CO<sub>2</sub> equivalente", "29.830 kg de CO<sub>2</sub> equivalente"],
-  0, "100·23 + 10·296 = 2.300 + 2.960 = 5.260 kg CO<sub>2</sub>-eq. Con GWP 21 para el metano (no es el valor de los apuntes) saldría 5.060; intercambiar los GWP da 29.830; 2.596 resulta de no multiplicar el GWP del N<sub>2</sub>O por los 10 kg.", "Apuntes B4, diap. 10");
+  ["5.260 kg de CO₂ equivalente", "5.060 kg de CO₂ equivalente", "2.596 kg de CO₂ equivalente", "29.830 kg de CO₂ equivalente"],
+  0, "El CO₂ equivalente es la suma de cada masa por su GWP (IPCC 2001, Apuntes B4, diap. 10): CH₄ = 23 y N₂O = 296. $$m_{CO_2\\text{-eq}}=100\\cdot23+10\\cdot296=2300+2960=\\boxed{5260\\ \\text{kg}}$$ Con GWP = 21 para el metano (no es el valor de los apuntes) saldría 5.060; intercambiar los GWP da 29.830; 2.596 no multiplica el GWP del N₂O por los 10 kg.", "Apuntes B4, diap. 10");
 L("B4", "b4-invernadero", "Forzamiento por gas", 2, "En la gráfica de forzamiento radiativo de la EPA (1980-2013) de los apuntes, los dos gases que más contribuyen son…",
   ["el dióxido de carbono y el metano", "el metano y el óxido nitroso", "el dióxido de carbono y el CFC-12", "el óxido nitroso y el CFC-11"],
-  0, "La banda mayor es la del CO<sub>2</sub> y la segunda la del metano; después vienen el óxido nitroso, el CFC-12, el CFC-11 y otros 15 gases. El índice anual toma 1990 = 1.", "Apuntes B4, diap. 9");
+  0, "La banda mayor es la del CO₂ y la segunda la del metano; después vienen el óxido nitroso, el CFC-12, el CFC-11 y otros 15 gases. El índice anual toma 1990 = 1.", "Apuntes B4, diap. 9");
 L("B4", "b4-invernadero", "Balance de CO2", 2, "Según el balance de CO<sub>2</sub> de los apuntes (CO<sub>2</sub> + H<sub>2</sub>O → CH<sub>2</sub>O + O<sub>2</sub>), la masa de CO<sub>2</sub> fijada por unidad de masa de biomasa es aproximadamente…",
   ["1,5", "0,68", "3,67", "1,0"],
-  0, "Masa CO<sub>2</sub>/masa biomasa ≈ 1,5 (44/30 ≈ 1,47 con CH<sub>2</sub>O como unidad de biomasa). 3,67 es la relación CO<sub>2</sub>/C (44/12).", "Apuntes B4, diap. 11");
+  0, "Con la reacción de fijación de los apuntes (Apuntes B4, diap. 11), una unidad de biomasa $CH_2O$ (30 g/mol) fija un mol de CO₂ (44 g/mol): $$\\mathrm{CO_2+H_2O\\rightarrow CH_2O+O_2}\\qquad\\frac{m_{CO_2}}{m_{biomasa}}=\\frac{44}{30}\\approx\\boxed{1{,}5}$$ 0,68 es la relación inversa (30/44) y 3,67 la relación CO₂/C (44/12).", "Apuntes B4, diap. 11");
 L("B4", "b4-invernadero", "Balance de CO2", 3, "En el esquema de balance de CO<sub>2</sub> (C. Mota) de los apuntes, ¿qué flujo aporta a la atmósfera CO<sub>2</sub> procedente de la energía fósil y no del ciclo de la biomasa?",
   ["El flujo 4", "El flujo 3 (quemas, tala y pestes)", "El flujo 2 (respiración y compost)", "El flujo 1 (fotosíntesis)"],
-  0, "1: fotosíntesis (absorbe CO<sub>2</sub>); 2: respiración y compost; 3: quemas, tala y pestes; 4: energía fósil.", "Apuntes B4, diap. 11");
+  0, "1: fotosíntesis (absorbe CO₂); 2: respiración y compost; 3: quemas, tala y pestes; 4: energía fósil.", "Apuntes B4, diap. 11");
 L("B4", "b4-invernadero", "Cuerpo negro", 3, "Las dos curvas de emisión de cuerpo negro de la diap. 9 (efecto invernadero) corresponden a temperaturas de…",
   ["6.000 K (Sol) y 288 K (Tierra)", "5.800 K (Sol) y 255 K (Tierra)", "6.000 K (Sol) y 255 K (Tierra)", "5.800 K (Sol) y 288 K (Tierra)"],
   0, "Las curvas están rotuladas T = 6000 K y T = 288 K: el máximo solar cae en el visible (≈ 0,5 µm) y el terrestre en el infrarrojo.", "Apuntes B4, diap. 9");
 
 /* ---------- B4 · preguntas: material particulado ---------- */
 L("B4", "b4-particulas", "Diámetro aerodinámico", 2, "Según los apuntes, el diámetro aerodinámico de una partícula es el diámetro de una esfera hipotética…",
-  ["de densidad 1 g/cm<sup>3</sup> con la misma velocidad final por gravedad, en aire en calma, que la partícula",
+  ["de densidad 1 g/cm³ con la misma velocidad final por gravedad, en aire en calma, que la partícula",
    "de la misma densidad que la partícula y con su misma velocidad final por gravedad, en aire en calma",
-   "de densidad 1 g/cm<sup>3</sup> con la misma masa que la partícula, en las condiciones de temperatura y presión existentes",
-   "de densidad 2,5 g/cm<sup>3</sup> con la misma velocidad final por gravedad, en aire en calma, que la partícula"],
-  0, "Esfera de densidad 1 g/cm<sup>3</sup> con la misma velocidad final debida a la gravedad, en aire en calma, en las condiciones existentes de T, P y humedad relativa.", "Apuntes B4, diap. 12");
+   "de densidad 1 g/cm³ con la misma masa que la partícula, en las condiciones de temperatura y presión existentes",
+   "de densidad 2,5 g/cm³ con la misma velocidad final por gravedad, en aire en calma, que la partícula"],
+  0, "Esfera de densidad 1 g/cm³ con la misma velocidad final debida a la gravedad, en aire en calma, en las condiciones existentes de T, P y humedad relativa.", "Apuntes B4, diap. 12");
 L("B4", "b4-particulas", "PM10 y PM2,5", 2, "Según los apuntes, las partículas PM10 y las PM2,5 suelen tener, respectivamente, origen…",
   ["generalmente natural, y en procesos de combustión y polvo transportado por el viento",
    "en procesos de combustión, y generalmente natural",
    "generalmente natural, y en emisiones gaseosas como las ultrafinas exclusivamente",
    "en el polvo transportado por el viento, y en la sal marina"],
-  0, "PM10 (&lt; 10 µm): generalmente origen natural. PM2,5 (&lt; 2,5 µm): combustión (transporte, generación de energía, plantas industriales) y polvo del viento.", "Apuntes B4, diap. 12");
+  0, "PM10 (< 10 µm): generalmente origen natural. PM2,5 (< 2,5 µm): combustión (transporte, generación de energía, plantas industriales) y polvo del viento.", "Apuntes B4, diap. 12");
 L("B4", "b4-particulas", "Clasificación por tamaño", 3, "Señale la opción que NO coincide con la clasificación por tamaño de los apuntes:",
-  ["Partículas sedimentables: diámetro aerodinámico &gt; 10 µm",
-   "Partículas en suspensión ultrafinas: diámetro aerodinámico &lt; 0,1 µm",
+  ["Partículas sedimentables: diámetro aerodinámico > 10 µm",
+   "Partículas en suspensión ultrafinas: diámetro aerodinámico < 0,1 µm",
    "Moda Aitken: 0,02-0,1 µm",
    "Moda de acumulación: 0,1-1 µm"],
-  0, "Las sedimentables tienen un diámetro aerodinámico &gt; 20 µm; 10 µm es el límite de las PM10.", "Apuntes B4, diap. 12");
+  0, "Las sedimentables tienen un diámetro aerodinámico > 20 µm; 10 µm es el límite de las PM10.", "Apuntes B4, diap. 12");
 L("B4", "b4-particulas", "Clasificaciones", 2, "Los apuntes clasifican el material particulado según su origen, su mecanismo de producción y su tamaño. Las categorías por mecanismo de producción son…",
   ["primario o secundario", "natural o antropogénico", "sedimentable o en suspensión", "sólido o líquido"],
   0, "Origen: natural o antropogénico. Mecanismo de producción: primario o secundario. Tamaño: modas, PM10, PM2,5…", "Apuntes B4, diap. 12");
@@ -1040,8 +1040,8 @@ L("B4", "b4-particulas", "Aerosol", 1, "Según los apuntes, un aerosol es…",
    "el conjunto de cenizas volantes arrastradas por los gases de combustión"],
   0, "Aerosol = mezcla de partículas (sólidas o líquidas) en suspensión en el aire o en otro gas.", "Apuntes B4, diap. 12");
 L("B4", "b4-particulas", "Penetración en el organismo", 3, "Según la figura de penetración de partículas en el aparato respiratorio de los apuntes, ¿qué partículas alcanzan los alvéolos?",
-  ["Las inhalables, con Dp &lt; 1 µm", "Las gruesas, con Dp &lt; 10 µm", "Las finas, con Dp &lt; 2,5 µm, que se quedan en la tráquea", "Las sedimentables, con Dp &gt; 20 µm"],
-  0, "Gruesas (Dp &lt; 10 µm): vías superiores. Finas (Dp &lt; 2,5 µm): vías inferiores. Inhalables (Dp &lt; 1 µm): alvéolos. Ultrafinas (&lt; 100 nm): pasan a la sangre.", "Apuntes B4, diap. 13");
+  ["Las inhalables, con Dp < 1 µm", "Las gruesas, con Dp < 10 µm", "Las finas, con Dp < 2,5 µm, que se quedan en la tráquea", "Las sedimentables, con Dp > 20 µm"],
+  0, "Gruesas (Dp < 10 µm): vías superiores. Finas (Dp < 2,5 µm): vías inferiores. Inhalables (Dp < 1 µm): alvéolos. Ultrafinas (< 100 nm): pasan a la sangre.", "Apuntes B4, diap. 13");
 L("B4", "b4-formacion", "Moda de acumulación", 3, "Según los apuntes, las partículas de la moda de acumulación (0,1-1 µm)…",
   ["se forman a partir de las Aitken mediante reacciones en fase líquida en el agua de las nubes y pueden permanecer semanas y meses",
    "se forman a partir de las de nucleación por coagulación y tienen una vida media de horas",
@@ -1049,11 +1049,11 @@ L("B4", "b4-formacion", "Moda de acumulación", 3, "Según los apuntes, las part
    "son fundamentalmente de origen primario y se forman por reacción entre aerosoles marinos y gases"],
   0, "Acumulación: desde las Aitken, en fase líquida en el agua de las nubes, permanencia de semanas y meses. Nucleación y Aitken viven horas; la moda gruesa es fundamentalmente primaria.", "Apuntes B4, diap. 14");
 L("B4", "b4-formacion", "Moda gruesa", 2, "Las partículas secundarias de la moda gruesa (&gt; 1 µm) se forman, según los apuntes, por…",
-  ["reacciones entre aerosoles marinos y gases, como ácido nítrico + NaCl → NaNO<sub>3</sub>",
+  ["reacciones entre aerosoles marinos y gases, como ácido nítrico + NaCl → NaNO₃",
    "reacciones en fase líquida en el agua de las nubes a partir de partículas Aitken",
    "coagulación de partículas de nucleación y condensación de vapores",
-   "reacciones entre SO<sub>2</sub> y partículas minerales, que dan partículas de sulfatos"],
-  0, "Moda gruesa: fundamentalmente primaria; las secundarias se forman por reacción de aerosoles marinos con gases (HNO<sub>3</sub> + NaCl → NaNO<sub>3</sub>).", "Apuntes B4, diap. 14");
+   "reacciones entre SO₂ y partículas minerales, que dan partículas de sulfatos"],
+  0, "Moda gruesa: fundamentalmente primaria; las secundarias se forman por reacción de aerosoles marinos con gases (HNO₃ + NaCl → NaNO₃).", "Apuntes B4, diap. 14");
 L("B4", "b4-formacion", "Vida media de las modas", 2, "¿Qué modas de partículas tienen, según los apuntes, una vida media de horas?",
   ["Las de nucleación y las de Aitken", "Las de Aitken y las de acumulación", "Las de acumulación y las gruesas", "Solo las de nucleación"],
   0, "Nucleación: horas (coagulan o crecen por condensación). Aitken: horas, por la misma evolución. Acumulación: semanas y meses.", "Apuntes B4, diap. 14");
@@ -1067,8 +1067,8 @@ L("B4", "b4-formacion", "Hollín", 3, "Sobre el hollín (<i>soot</i>) según los
   ["Contiene carbono, sales inorgánicas y carbono orgánico con HPA como el benzo(a)pireno, y su BC contribuye al calentamiento global",
    "Contiene carbono, sales inorgánicas y carbono orgánico con HPA como el benzo(a)pireno, y su BC contribuye al enfriamiento global",
    "Contiene solo carbono elemental, sin compuestos orgánicos, y su BC contribuye al calentamiento global",
-   "Es la fracción de las cenizas volantes que se deposita en la parrilla como carbonizado (<i>char</i>)"],
-  0, "Parte de las cenizas volantes es hollín: C, sales inorgánicas y OC (que incluye HPA/PAH, como el benzo(a)pireno). El BC del hollín contribuye al calentamiento global. El <i>char</i> queda en la parrilla.", "Apuntes B4, diap. 15");
+   "Es la fracción de las cenizas volantes que se deposita en la parrilla como carbonizado (char)"],
+  0, "Parte de las cenizas volantes es hollín: C, sales inorgánicas y OC (que incluye HPA/PAH, como el benzo(a)pireno). El BC del hollín contribuye al calentamiento global. El char queda en la parrilla.", "Apuntes B4, diap. 15");
 L("B4", "b4-formacion", "Peligrosidad", 1, "Según los apuntes, ¿qué partículas son peligrosas para la salud?",
   ["Todas, y especialmente las PM2,5", "Solo las PM2,5 y las ultrafinas", "Todas, y especialmente las PM10", "Solo las que contienen benzo(a)pireno"],
   0, "Diap. 15: «Partículas peligrosas para la salud: TODAS. Especialmente peligrosas: PM2,5».", "Apuntes B4, diap. 15");

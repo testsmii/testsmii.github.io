@@ -77,7 +77,7 @@ THEORY.EOL = {
 <h4>Ajuste por linealización</h4>
 <p>Se trabaja con la frecuencia <b>acumulada</b> del histograma (diap. 13 y 15) tomando dos veces logaritmos:</p>
 <div class="formula">$$\\ln\\left(-\\ln(1-F)\\right)=k\\ln v-k\\ln c$$</div>
-<p>Representando $q=\\ln(-\\ln(1-F))$ frente a $p=\\ln v$ sale una recta de <b>pendiente k</b> y <b>ordenada en el origen −k·ln c</b> (Guion del trabajo de eólica, pág. 3-4). En el ejemplo de la diap. 15 la recta es $y=1{,}9566x-4{,}1623$ (R² = 0,9935): k ≈ 1,96 y $c=e^{4{,}1623/1{,}9566}\\approx 8{,}4$ m/s.</p>
+<p>Representando $q=\\ln(-\\ln(1-F))$ frente a $p=\\ln v$ sale una recta de <b>pendiente k</b> y <b>ordenada en el origen $-k\\ln c$</b> (Guion del trabajo de eólica, pág. 3-4). En el ejemplo de la diap. 15 la recta es $y=1{,}9566x-4{,}1623$ (R² = 0,9935): k ≈ 1,96 y $c=e^{4{,}1623/1{,}9566}\\approx 8{,}4$ m/s.</p>
 <h4>Bases de datos y trabajo de eólica</h4>
 <p>Fuentes de datos (diap. 17): <b>NOAA</b> (NNCD Climate Data Online, datos horarios), <b>The POWER Project de la NASA</b> (datos solares y meteorológicos), <b>Puertos del Estado</b> y el <b>Atlas eólico del IDAE</b>.</p>
 <p>En el trabajo de la asignatura se usan datos de NASA POWER con un periodo mínimo de <b>4 años</b> hasta 2025 o 2026, evaluando los datos erróneos de cada año y eligiendo el año más reciente de buena calidad (Guion del trabajo de eólica, pág. 1-2). Se calculan media y varianza por años, por meses y separando <b>periodo diurno (10:00-18:00)</b> y <b>nocturno (22:00-6:00)</b>, histogramas, rosa de los vientos, perfil hasta <b>200 m</b>, ajuste de Weibull a la altura del buje y, con la curva de potencia de un aerogenerador genérico de <b>1600 kW</b> (D = 100 m, buje a 95 m), la energía anual y el factor de carga (Guion del trabajo de eólica, pág. 2 y 4).</p>
@@ -140,7 +140,7 @@ THEORY.EOL = {
 <tr><td>Ventaja/inconv. 4</td><td>Mayor complejidad de diseño (buje basculante)</td><td>Menor impacto visual</td></tr>
 </tbody></table>
 <h4>Relación potencia-tamaño</h4>
-<p>Como W ∝ D², la potencia crece con el cuadrado del diámetro: en la diap. 21, <b>27 m → 225 kW</b>, 33 m → 300 kW, 40 m → 500 kW, 48 m → 750 kW, 54 m → 1000 kW, 64 m → 1500 kW, 72 m → 2000 kW y <b>80 m → 2500 kW</b>. Para offshore se diseñan máquinas enormes (diap. 22): convencional EE. UU. 2,5 MW, <b>SUMR13 de 13,2 MW</b> y el concepto <b>SUMR50 de 50 MW</b>, más alto que la torre Eiffel (306 m).</p>
+<p>Como $W \\propto D^2$, la potencia crece con el cuadrado del diámetro: en la diap. 21, <b>27 m → 225 kW</b>, 33 m → 300 kW, 40 m → 500 kW, 48 m → 750 kW, 54 m → 1000 kW, 64 m → 1500 kW, 72 m → 2000 kW y <b>80 m → 2500 kW</b>. Para offshore se diseñan máquinas enormes (diap. 22): convencional EE. UU. 2,5 MW, <b>SUMR13 de 13,2 MW</b> y el concepto <b>SUMR50 de 50 MW</b>, más alto que la torre Eiffel (306 m).</p>
 ` },
     { id: "eol-curva", title: "5. Curva de potencia, energía anual y factor de carga", slides: ["EOL2", 23, 27], html: `
 <h4>Curva de potencia</h4>
@@ -283,19 +283,19 @@ L("EOL", "eol-recurso", "Ley potencial", 1, "En la ley potencial del perfil de v
   0, "Plano (mar, playa) 0,1-0,13; moderadamente rugoso (región rural) 0,13-0,2; rugoso (bosque) 0,2-0,27; muy rugoso (edificios) 0,27-0,4.", "Apuntes EOL1, diap. 6");
 L("EOL", "eol-recurso", "Ley potencial", 3, "Una torre mide 6 m/s de media a 10 m de altura en una región rural con n = 0,2. Con la ley potencial de los apuntes, la velocidad estimada a 100 m es aproximadamente…",
   ["9,5 m/s", "12,0 m/s", "7,6 m/s", "60 m/s"],
-  0, "$v=6\\cdot(100/10)^{0,2}=6\\cdot10^{0,2}=6\\cdot1{,}585\\approx9{,}5$ m/s. 7,6 m/s saldría con n ≈ 0,1 (mar) y 12 m/s con n ≈ 0,3 (edificios).", "Apuntes EOL1, diap. 6");
+  0, "Ley potencial del perfil de velocidades (Apuntes EOL1, diap. 6): $$v=v_{ref}\\left(\\frac{z}{z_{ref}}\\right)^{n}=6\\left(\\frac{100}{10}\\right)^{0{,}2}=6\\cdot10^{0{,}2}=6\\cdot1{,}585\\approx\\boxed{9{,}5\\ \\text{m/s}}$$ 7,6 m/s saldría con n ≈ 0,1 (mar) y 12 m/s con n ≈ 0,3 (edificios); 60 m/s supone proporcionalidad lineal con la altura.", "Apuntes EOL1, diap. 6");
 L("EOL", "eol-recurso", "Longitud de rugosidad", 2, "En la tabla de clases de rugosidad de los apuntes, ¿qué longitud de rugosidad z<sub>0</sub> corresponde a la clase 1 (tierra agrícola abierta sin vallas ni setos, algunos edificios muy separados y colinas muy suaves)?",
   ["0,03 m", "0,0024 m", "0,1 m", "0,3 m"],
   0, "Clase 0: 0,0002 m; 0,5: 0,0024 m; 1: 0,03 m; 1,5: 0,055 m; 2: 0,1 m; 2,5: 0,2 m; 3: 0,4 m; 3,5: 0,6 m; 4: 1,6 m.", "Apuntes EOL1, diap. 7");
 L("EOL", "eol-recurso", "Ley logarítmica", 3, "Con la ley logarítmica de los apuntes, una medida de 5 m/s a 10 m sobre terreno agrícola abierto (z<sub>0</sub> = 0,03 m) se extrapola a 100 m como…",
   ["≈ 7,0 m/s", "≈ 6,1 m/s", "≈ 8,0 m/s", "≈ 50 m/s"],
-  0, "$v=5\\cdot\\ln(100/0{,}03)/\\ln(10/0{,}03)=5\\cdot8{,}11/5{,}81\\approx7{,}0$ m/s. Sobre el mar (z<sub>0</sub> = 0,0002 m) saldría ≈ 6,1 m/s: el terreno liso «gana» menos al subir.", "Apuntes EOL1, diap. 7");
+  0, "Ley logarítmica (Apuntes EOL1, diap. 7): $$v=v_{ref}\\,\\frac{\\ln(z/z_0)}{\\ln(z_{ref}/z_0)}=5\\cdot\\frac{\\ln(100/0{,}03)}{\\ln(10/0{,}03)}=5\\cdot\\frac{8{,}11}{5{,}81}\\approx\\boxed{7{,}0\\ \\text{m/s}}$$ Sobre el mar ($z_0$ = 0,0002 m) saldría ≈ 6,1 m/s: el terreno liso «gana» menos al subir. 50 m/s supone proporcionalidad lineal con la altura.", "Apuntes EOL1, diap. 7");
 L("EOL", "eol-recurso", "Perfil de velocidades", 3, "Respecto al perfil de velocidades en la capa límite, ¿cuál de estas afirmaciones es FALSA?",
   ["Sobre el mar el viento aumenta con la altura más deprisa que sobre una ciudad, porque su exponente n es menor",
    "Con la misma velocidad medida a 10 m, la ley potencial estima a 100 m más viento sobre un bosque que sobre el mar",
    "Sobre una colina el perfil se deforma y aparece un incremento de velocidad cerca de la cima",
-   "La longitud de rugosidad z<sub>0</sub> de una gran ciudad con rascacielos es del orden de 10<sup>4</sup> veces la del mar"],
-  0, "Es falsa: con n menor (mar) la velocidad crece MENOS con la altura. El terreno rugoso frena el viento cerca del suelo y por eso, partiendo de la misma medida a 10 m, el factor (100/10)<sup>n</sup> es mayor con n grande. z<sub>0</sub>: 1,6 m frente a 0,0002 m (factor 8000, orden 10<sup>4</sup>).", "Apuntes EOL1, diap. 6-7");
+   "La longitud de rugosidad z₀ de una gran ciudad con rascacielos es del orden de 10⁴ veces la del mar"],
+  0, "Es falsa: con n menor (mar) la velocidad crece MENOS con la altura. El terreno rugoso frena el viento cerca del suelo y por eso, partiendo de la misma medida a 10 m, el factor (100/10)ⁿ es mayor con n grande. z₀: 1,6 m frente a 0,0002 m (factor 8000, orden 10⁴).", "Apuntes EOL1, diap. 6-7");
 
 /* ===================== PREGUNTAS · 2. Estadística del viento ===================== */
 L("EOL", "eol-estad", "Muestreo", 3, "En el espectro de frecuencias de la velocidad del viento de los apuntes, el «hueco espectral» (spectral gap) se sitúa en torno a periodos de…",
@@ -321,10 +321,10 @@ L("EOL", "eol-estad", "Distribución de Weibull", 1, "En la distribución de Wei
   0, "«En donde k (1,3 - 3) y c son parámetros que dependen de la ubicación y el periodo de tiempo observado».", "Apuntes EOL1, diap. 14");
 L("EOL", "eol-estad", "Distribución de Weibull", 3, "Un emplazamiento sigue una Weibull con k = 2 y c = 8 m/s. Con las expresiones de los apuntes, la probabilidad de que la velocidad sea inferior a 8 m/s y la velocidad media son, respectivamente…",
   ["63 % y 7,1 m/s", "50 % y 8,0 m/s", "37 % y 7,1 m/s", "63 % y 8,0 m/s"],
-  0, "$F(8)=1-\\exp[-(8/8)^2]=1-e^{-1}=0{,}632$. $v_{ave}=0{,}886\\,c=7{,}09$ m/s. El 37 % es la probabilidad de superar c; c no es ni la media ni la mediana.", "Apuntes EOL1, diap. 14 y 16");
+  0, "Distribución de Weibull de los apuntes (Apuntes EOL1, diap. 14 y 16) con k = 2 y c = 8 m/s: $$F(v)=1-\\exp\\left[-\\left(\\frac{v}{c}\\right)^{k}\\right]\\Rightarrow F(8)=1-e^{-1}=0{,}632\\approx\\boxed{63\\ \\%}$$ $$v_{ave}=\\frac{\\sqrt{\\pi}}{2}\\,c=0{,}886\\cdot8\\approx\\boxed{7{,}1\\ \\text{m/s}}$$ El 37 % es la probabilidad de superar c; c no es ni la media ni la mediana.", "Apuntes EOL1, diap. 14 y 16");
 L("EOL", "eol-estad", "Ajuste por linealización", 3, "Al linealizar la frecuencia acumulada representando ln(−ln(1−F)) frente a ln(v), se obtiene la recta y = 2,1·x − 4,4. Los parámetros de Weibull son aproximadamente…",
   ["k = 2,1 y c ≈ 8,1 m/s", "k = 4,4 y c ≈ 1,6 m/s", "k = 2,1 y c ≈ 4,4 m/s", "k = 2,1 y c ≈ 0,12 m/s"],
-  0, "$\\ln(-\\ln(1-F))=k\\ln v-k\\ln c$: la pendiente es k = 2,1 y la ordenada −k·ln c = −4,4 → ln c = 2,095 → c ≈ 8,1 m/s. El ejemplo de clase (y = 1,9566x − 4,1623) da k ≈ 1,96 y c ≈ 8,4 m/s.", "Apuntes EOL1, diap. 15");
+  0, "Linealización de la Weibull (Apuntes EOL1, diap. 15): $$\\ln\\left[-\\ln(1-F)\\right]=k\\ln v-k\\ln c\\quad\\Leftrightarrow\\quad y=k\\,x+b$$ La pendiente es k y la ordenada en el origen es b = −k·ln c: $$k=\\boxed{2{,}1}\\qquad\\ln c=\\frac{4{,}4}{2{,}1}=2{,}095\\Rightarrow c=e^{2{,}095}\\approx\\boxed{8{,}1\\ \\text{m/s}}$$ Tomar 4,4 directamente como c olvida el logaritmo y el factor k; intercambiar pendiente y ordenada da k = 4,4 y c = e^(2,1/4,4) ≈ 1,6; equivocarse de signo da c = e^(−2,095) ≈ 0,12. El ejemplo de clase (y = 1,9566x − 4,1623) da k ≈ 1,96 y c ≈ 8,4 m/s.", "Apuntes EOL1, diap. 15");
 L("EOL", "eol-estad", "Distribución de Weibull", 2, "Observando las curvas de Weibull de los apuntes (mismo c, k = 1,5; 2; 2,5 y 3), al aumentar k…",
   ["la densidad se estrecha y su máximo es más alto, lo que indica un viento más regular",
    "la densidad se ensancha y su máximo es más bajo, lo que indica un viento más regular",
@@ -370,11 +370,11 @@ L("EOL", "eol-ventajas", "Impacto sonoro", 3, "Respecto al impacto sonoro de los
    "la casa más cercana deberá estar al menos a 2 km (43 dB(A)) y la turbina aparece hacia 50 dB en la tabla de decibelios"],
   0, "Diap. 4: al menos 200 m (43 dB(A)). En la tabla de decibelios de la diap. 5 la turbina eólica está en torno a 50 dB, entre la caída de hojas y los ruidos domésticos.", "Apuntes EOL2, diap. 4-5");
 L("EOL", "eol-ventajas", "Uso del suelo y emisiones", 3, "En la figura de intensidad de uso del suelo frente a emisiones de GEI del ciclo de vida, la eólica…",
-  ["está entre las de menores emisiones (≈ 10<sup>4</sup> t CO<sub>2</sub>-eq/TWh), pero si se cuenta el espaciado entre máquinas su uso del suelo es de los mayores (≈ 10<sup>4</sup> ha/TWh/año)",
-   "está entre las de menores emisiones (≈ 10<sup>4</sup> t CO<sub>2</sub>-eq/TWh) y también entre las de menor uso del suelo, se cuente o no el espaciado",
-   "está entre las de mayores emisiones (≈ 10<sup>5</sup> t CO<sub>2</sub>-eq/TWh), comparable al gas natural, pero con muy poco uso del suelo",
-   "tiene emisiones similares al carbón (≈ 10<sup>6</sup> t CO<sub>2</sub>-eq/TWh) por la fabricación de las palas, y poco uso del suelo"],
-  0, "Wind (footprint) ≈ 100 ha/TWh/año y Wind (spacing) ≈ 10 000 ha/TWh/año, ambos con ≈ 10<sup>4</sup> t CO<sub>2</sub>-eq/TWh; el carbón está cerca de 10<sup>6</sup>.", "Apuntes EOL2, diap. 6");
+  ["está entre las de menores emisiones (≈ 10⁴ t CO₂-eq/TWh), pero si se cuenta el espaciado entre máquinas su uso del suelo es de los mayores (≈ 10⁴ ha/TWh/año)",
+   "está entre las de menores emisiones (≈ 10⁴ t CO₂-eq/TWh) y también entre las de menor uso del suelo, se cuente o no el espaciado",
+   "está entre las de mayores emisiones (≈ 10⁵ t CO₂-eq/TWh), comparable al gas natural, pero con muy poco uso del suelo",
+   "tiene emisiones similares al carbón (≈ 10⁶ t CO₂-eq/TWh) por la fabricación de las palas, y poco uso del suelo"],
+  0, "Wind (footprint) ≈ 100 ha/TWh/año y Wind (spacing) ≈ 10 000 ha/TWh/año, ambos con ≈ 10⁴ t CO₂-eq/TWh; el carbón está cerca de 10⁶.", "Apuntes EOL2, diap. 6");
 L("EOL", "eol-ventajas", "Potencia mundial", 2, "Según los apuntes (GWEC), la potencia eólica total instalada en el mundo en 2025 era de…",
   ["1299 GW, de ellos 1206,5 GW onshore y 92,5 GW offshore, frente a un máximo teórico de 72 TW",
    "1136 GW, de ellos 1052,9 GW onshore y 83,2 GW offshore, frente a un máximo teórico de 72 TW",
@@ -409,39 +409,39 @@ L("EOL", "eol-principio", "Potencia del viento", 1, "La potencia disponible de u
   0, "$W=\\frac12\\rho C_pV^3\\pi D^2/4$: lineal con ρ, cúbica con V y proporcional al área barrida (D²). El V² es la energía cinética por unidad de masa; el otro V viene del flujo másico.", "Apuntes EOL2, diap. 12 y 20");
 L("EOL", "eol-principio", "Potencia del viento", 3, "Un rotor de 100 m de diámetro con C<sub>p</sub> = 0,4 recibe viento de 10 m/s (ρ = 1,225 kg/m³). La potencia extraída es aproximadamente…",
   ["1,9 MW", "4,8 MW", "0,6 MW", "7,7 MW"],
-  0, "$W=\\tfrac12\\cdot1{,}225\\cdot0{,}4\\cdot10^3\\cdot\\pi\\cdot100^2/4=1{,}92\\cdot10^6$ W. Olvidar el /4 del área da 7,7 MW; usar D en lugar de D² o V² en vez de V³ da valores mucho menores.", "Apuntes EOL2, diap. 20");
+  0, "Potencia extraída por el rotor (Apuntes EOL2, diap. 20): $$W=\\tfrac12\\,\\rho\\,C_p\\,V^3\\,\\frac{\\pi D^2}{4}=\\tfrac12\\cdot1{,}225\\cdot0{,}4\\cdot10^3\\cdot\\frac{\\pi\\cdot100^2}{4}$$ $$W=245\\cdot7854\\approx1{,}92\\cdot10^{6}\\ \\text{W}=\\boxed{1{,}9\\ \\text{MW}}$$ Olvidar el /4 del área da 7,7 MW; olvidar el $C_p$ (potencia disponible) da 4,8 MW; olvidar π da 0,6 MW.", "Apuntes EOL2, diap. 20");
 L("EOL", "eol-principio", "Potencia del viento", 2, "Si la velocidad media del viento pasa de 6 a 9 m/s, manteniendo el resto de condiciones, la potencia disponible se multiplica por…",
   ["≈ 3,4", "1,5", "2,25", "≈ 5,1"],
-  0, "(9/6)³ = 1,5³ = 3,375. Con 1,5² = 2,25 se estaría suponiendo dependencia cuadrática. La gráfica de los apuntes lo ilustra: de 8 a 16 m/s se pasa de ≈ 300 a ≈ 2500 W/m² (×8).", "Apuntes EOL2, diap. 20");
+  0, "La potencia del viento crece con el cubo de la velocidad (Apuntes EOL2, diap. 20): $$\\frac{W_2}{W_1}=\\left(\\frac{V_2}{V_1}\\right)^3=\\left(\\frac{9}{6}\\right)^3=1{,}5^3\\approx\\boxed{3{,}4}$$ 2,25 supone una dependencia cuadrática y 1,5 lineal; 5,1 sería 1,5⁴. La gráfica de los apuntes lo ilustra: de 8 a 16 m/s se pasa de ≈ 300 a ≈ 2.500 W/m² (×8).", "Apuntes EOL2, diap. 20");
 L("EOL", "eol-principio", "Límite de Betz", 2, "En el desarrollo del límite de Betz de los apuntes, con a el coeficiente de velocidad inducida, se cumple que…",
   ["$V=V_1(1-a)$ en el rotor y $V_2=V_1(1-2a)$ aguas abajo, y el óptimo es a = 1/3",
    "$V=V_1(1-2a)$ en el rotor y $V_2=V_1(1-a)$ aguas abajo, y el óptimo es a = 1/3",
    "$V=V_1(1-a)$ en el rotor y $V_2=V_1(1-2a)$ aguas abajo, y el óptimo es a = 1/2",
    "$V=V_1(1-a)$ en el rotor y $V_2=V_1(1-a)^2$ aguas abajo, y el óptimo es a = 16/27"],
-  0, "Hipótesis: V = (V₁ + V₂)/2. Con V = V₁(1−a) sale V₂ = V₁(1−2a). dW/da = 0 → a = 1/3, que da C<sub>p</sub> = 16/27.", "Apuntes EOL2, diap. 13-14");
+  0, "Desarrollo de Betz (Apuntes EOL2, diap. 13-14). Hipótesis: la velocidad en el rotor es la media de la de entrada y la de salida: $$V=\\frac{V_1+V_2}{2},\\qquad V=V_1(1-a)\\Rightarrow V_2=V_1(1-2a)$$ Derivando la potencia respecto de a e igualando a cero: $$\\frac{dW}{da}=0\\Rightarrow a=\\frac13\\Rightarrow C_{p,máx}=\\frac{16}{27}\\approx0{,}593$$ 16/27 es el valor de $C_p$ máximo, no el de a; con a = 1/2 la velocidad aguas abajo se anularía.", "Apuntes EOL2, diap. 13-14");
 L("EOL", "eol-principio", "Límite de Betz", 3, "Un viento de 12 m/s atraviesa una turbina ideal que trabaja en el óptimo de Betz. Las velocidades del aire en el rotor y aguas abajo son…",
   ["8 m/s y 4 m/s", "6 m/s y 0 m/s", "8 m/s y 6 m/s", "4 m/s y 8 m/s"],
-  0, "Con a = 1/3: V = 12·(2/3) = 8 m/s y V₂ = 12·(1−2/3) = 4 m/s. La media (12 + 4)/2 = 8 m/s confirma la hipótesis de Betz.", "Apuntes EOL2, diap. 13-14");
+  0, "En el óptimo de Betz a = 1/3 (Apuntes EOL2, diap. 13-14): $$V=V_1(1-a)=12\\cdot\\frac23=\\boxed{8\\ \\text{m/s}}\\qquad V_2=V_1(1-2a)=12\\cdot\\frac13=\\boxed{4\\ \\text{m/s}}$$ Comprobación: V = (V₁ + V₂)/2 = (12 + 4)/2 = 8 m/s, la hipótesis de Betz.", "Apuntes EOL2, diap. 13-14");
 L("EOL", "eol-principio", "Límite de Betz", 3, "Según los apuntes, al aumentar el factor de velocidad inducida a de una turbina…",
   ["disminuyen la velocidad de paso por la turbina y su flujo másico, por lo que existe un valor óptimo de a que maximiza la potencia",
    "aumentan la velocidad de paso por la turbina y su flujo másico, por lo que conviene trabajar con el mayor valor posible de a",
    "disminuyen la velocidad de paso por la turbina y su flujo másico, por lo que conviene trabajar con el menor valor posible de a",
-   "aumenta la velocidad del aire aguas abajo V<sub>2</sub>, por lo que existe un valor óptimo de a que maximiza la potencia"],
+   "aumenta la velocidad del aire aguas abajo V₂, por lo que existe un valor óptimo de a que maximiza la potencia"],
   0, "Más a = más frenado del aire: cambia la energía cinética que cede cada kilo, pero baja la velocidad de paso V = V₁(1−a) y con ella el flujo másico. El compromiso da el óptimo a = 1/3. V₂ = V₁(1−2a) disminuye al crecer a.", "Apuntes EOL2, diap. 14");
 L("EOL", "eol-principio", "Velocidad específica", 1, "La velocidad específica λ de un aerogenerador se define en los apuntes como…",
-  ["la velocidad de punta de pala dividida por la velocidad del viento, λ = ΩR/U",
-   "la velocidad del viento dividida por la velocidad de punta de pala, λ = U/ΩR",
-   "la velocidad angular del rotor dividida por la velocidad del viento, λ = Ω/U",
+  ["la velocidad de punta de pala dividida por la velocidad del viento, $\\lambda = \\Omega R/U$",
+   "la velocidad del viento dividida por la velocidad de punta de pala, $\\lambda = U/\\Omega R$",
+   "la velocidad angular del rotor dividida por la velocidad del viento, $\\lambda = \\Omega/U$",
    "la velocidad de punta de pala dividida por la velocidad nominal del viento"],
   0, "Diap. 17: «velocidad máxima de las palas (velocidad de punta de pala) dividida por la velocidad del viento», λ = ΩR/U (TSR, tip speed ratio).", "Apuntes EOL2, diap. 17");
 L("EOL", "eol-principio", "Velocidad específica", 3, "Un rotor de 120 m de diámetro gira a 12 rpm con un viento de 10 m/s. Su velocidad específica es aproximadamente…",
   ["7,5", "3,8", "15,1", "0,13"],
-  0, "Ω = 12·2π/60 = 1,257 rad/s; λ = ΩR/U = 1,257·60/10 = 7,5 (usar D en lugar de R da 15,1). Es la zona del máximo C<sub>p</sub> del tripala en la figura de la diap. 17.", "Apuntes EOL2, diap. 17 y 28");
+  0, "Velocidad específica = velocidad de punta de pala / velocidad del viento (Apuntes EOL2, diap. 17 y 28): $$\\Omega=12\\ \\tfrac{\\text{rev}}{\\text{min}}\\cdot\\frac{2\\pi}{60}=1{,}257\\ \\text{rad/s}$$ $$\\lambda=\\frac{\\Omega R}{U}=\\frac{1{,}257\\cdot60}{10}\\approx\\boxed{7{,}5}$$ Usar el diámetro en lugar del radio da 15,1 y la relación invertida U/(ΩR) da 0,13. Es la zona del máximo $C_p$ del tripala en la figura de la diap. 17.", "Apuntes EOL2, diap. 17 y 28");
 L("EOL", "eol-principio", "Coeficiente de potencia", 3, "En la figura de C<sub>p</sub> frente a λ de los apuntes, ¿qué afirmación es correcta?",
-  ["El tripala alcanza el mayor C<sub>p</sub> (≈ 0,49) hacia λ ≈ 7; el monopala trabaja a λ más altos con menor C<sub>p</sub>",
-   "El bipala alcanza el mayor C<sub>p</sub> (≈ 0,49) hacia λ ≈ 7; el tripala trabaja a λ más altos con menor C<sub>p</sub>",
-   "El Darrieus alcanza el mayor C<sub>p</sub> (≈ 0,59) hacia λ ≈ 5, igualando el límite de Betz",
-   "El multipala americano alcanza el mayor C<sub>p</sub> (≈ 0,49) hacia λ ≈ 1 por su gran número de palas"],
+  ["El tripala alcanza el mayor $C_{p}$ (≈ 0,49) hacia λ ≈ 7; el monopala trabaja a λ más altos con menor $C_{p}$",
+   "El bipala alcanza el mayor $C_{p}$ (≈ 0,49) hacia λ ≈ 7; el tripala trabaja a λ más altos con menor $C_{p}$",
+   "El Darrieus alcanza el mayor $C_{p}$ (≈ 0,59) hacia λ ≈ 5, igualando el límite de Betz",
+   "El multipala americano alcanza el mayor $C_{p}$ (≈ 0,49) hacia λ ≈ 1 por su gran número de palas"],
   0, "Máximos aproximados: Savonius ≈ 0,15 (λ ≈ 1), multipala ≈ 0,30 (λ ≈ 1), holandés ≈ 0,28, Darrieus ≈ 0,40 (λ ≈ 5), tripala ≈ 0,49 (λ ≈ 7), bipala ≈ 0,47 (λ ≈ 10), monopala ≈ 0,42 (λ ≈ 15). Ninguno llega a Betz.", "Apuntes EOL2, diap. 17");
 L("EOL", "eol-principio", "Número de palas", 2, "En la comparación de los apuntes entre rotores de 2 y 3 palas, ¿cuál es una característica del rotor de 2 palas?",
   ["Más ruidoso por su mayor velocidad periférica, y necesita un buje basculante",
@@ -451,12 +451,12 @@ L("EOL", "eol-principio", "Número de palas", 2, "En la comparación de los apun
   0, "2 palas: menor coste del rotor (menos peso), más ruidoso (velocidad periférica mayor), instalación más simple, mayor complejidad (buje basculante). Las demás ventajas son del tripala.", "Apuntes EOL2, diap. 19");
 L("EOL", "eol-principio", "Relación potencia-tamaño", 2, "En la figura de relación potencia-tamaño de los apuntes, un rotor de 80 m de diámetro corresponde a 2500 kW. Según esa misma figura, a un rotor de 40 m le corresponden…",
   ["500 kW", "1250 kW", "625 kW", "225 kW"],
-  0, "La figura asigna 40 m → 500 kW (27 m → 225 kW, 54 m → 1000 kW, 72 m → 2000 kW). Con W ∝ D² estricto saldrían 625 kW: la figura no es exactamente proporcional porque las máquinas también cambian de altura y diseño.", "Apuntes EOL2, diap. 21");
+  0, "La figura de los apuntes (Apuntes EOL2, diap. 21) asigna 40 m → 500 kW (27 m → 225 kW, 54 m → 1.000 kW, 72 m → 2.000 kW). La proporcionalidad estricta con el área barrida daría: $$W\\propto D^2\\Rightarrow2500\\cdot\\left(\\frac{40}{80}\\right)^2=625\\ \\text{kW}$$ pero la figura no es exactamente proporcional, porque las máquinas también cambian de altura y de diseño: la respuesta según la figura es 500 kW. 1.250 kW supone proporcionalidad lineal con D y 225 kW es el rotor de 27 m.", "Apuntes EOL2, diap. 21");
 
 /* ===================== PREGUNTAS · 5. Curva de potencia y factor de carga ===================== */
 L("EOL", "eol-curva", "Curva de potencia", 2, "Sobre la curva de potencia de un aerogenerador, según los apuntes, señale la correcta:",
   ["Expresa la potencia eléctrica entregada en condiciones estándar; crece con V³ desde la velocidad de arranque hasta la nominal",
-   "Expresa la potencia mecánica en el eje en condiciones de máximo C<sub>p</sub>; crece con V² desde la velocidad de arranque hasta la nominal",
+   "Expresa la potencia mecánica en el eje en condiciones de máximo $C_{p}$; crece con V² desde la velocidad de arranque hasta la nominal",
    "Expresa la potencia eléctrica entregada en condiciones estándar; crece con V³ desde la velocidad nominal hasta la de corte",
    "Expresa la potencia eléctrica media anual del emplazamiento; crece linealmente desde la velocidad de arranque hasta la de corte"],
   0, "Diap. 23: potencia eléctrica en condiciones estándar; aumenta con V³ hasta el máximo nominal; por debajo de la de arranque no arranca y por encima de la de corte se para y desconecta. Entre nominal y corte la potencia es constante.", "Apuntes EOL2, diap. 23");
@@ -465,10 +465,10 @@ L("EOL", "eol-curva", "Velocidades características", 2, "En el aerogenerador de
   0, "Tabla 1.3: arranque 4 m/s, nominal 12 m/s y desconexión 25 m/s. La curva de 850 kW de la diap. 23 tiene la nominal hacia 16 m/s.", "Apuntes EOL2, diap. 28");
 L("EOL", "eol-curva", "Factor de carga", 2, "Con el ejemplo de los apuntes, un aerogenerador de 3000 kW que produce 10 000 000 kWh al año tiene un factor de carga de aproximadamente…",
   ["38 %", "33 %", "46 %", "3,8 %"],
-  0, "FC = 10⁷ kWh / (3000 kW · 8760 h) = 0,38. Equivale a ≈ 3333 horas a plena carga; 33 % saldría confundiendo horas equivalentes con el porcentaje.", "Apuntes EOL2, diap. 25");
+  0, "Factor de carga = energía real / energía a plena potencia todo el año (Apuntes EOL2, diap. 25): $$FC=\\frac{10^{7}\\ \\text{kWh}}{3000\\ \\text{kW}\\cdot8760\\ \\text{h}}=\\frac{10^{7}}{2{,}628\\cdot10^{7}}\\approx\\boxed{0{,}38=38\\ \\%}$$ Equivale a 10⁷/3.000 ≈ 3.333 horas a plena carga; el 33 % sale de confundir esas horas equivalentes con el porcentaje y el 3,8 % es un error de un factor 10.", "Apuntes EOL2, diap. 25");
 L("EOL", "eol-curva", "Energía anual", 3, "En el guion del trabajo, la curva del aerogenerador genérico de 1600 kW da 1109 kW a 8 m/s. Si en el emplazamiento se registran 500 horas al año en el intervalo de 8 m/s a la altura del buje, la energía aportada por ese intervalo es…",
   ["≈ 555 MWh", "≈ 800 MWh", "≈ 1,1 MWh", "≈ 4,9 GWh"],
-  0, "E = 500 h · 1109 kW = 554 500 kWh ≈ 555 MWh. Usar la potencia nominal (1600 kW) daría 800 MWh; multiplicar por 8760 h confunde horas del intervalo con horas del año.", "Guion del trabajo de eólica, pág. 4");
+  0, "Energía de un intervalo de velocidad = potencia de la curva en ese intervalo × horas registradas (Guion del trabajo de eólica, pág. 4): $$E=P(8\\ \\text{m/s})\\cdot h=1109\\ \\text{kW}\\cdot500\\ \\text{h}=554.500\\ \\text{kWh}\\approx\\boxed{555\\ \\text{MWh}}$$ Usar la potencia nominal (1.600 kW) daría 800 MWh; multiplicar por 8.760 h confunde las horas del intervalo con las del año.", "Guion del trabajo de eólica, pág. 4");
 L("EOL", "eol-curva", "Energía anual", 2, "Según la gráfica de energía producida de los apuntes, comparando el reparto anual de horas con el de energía frente a la velocidad…",
   ["el máximo de energía aparece a mayor velocidad que el máximo de horas, porque la potencia crece rápidamente con la velocidad",
    "el máximo de energía coincide con el máximo de horas, porque la energía es proporcional a las horas de cada intervalo",

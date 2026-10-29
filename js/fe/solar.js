@@ -24,12 +24,12 @@ THEORY.SOL = {
 <h4>Constante solar</h4>
 <p>Se define la <b>constante solar</b> como la energía procedente del Sol, recibida por unidad de tiempo sobre la unidad de área de una superficie <b>perpendicular</b> a la radiación <b>extraterrestre</b> (que no ha sufrido ninguna atenuación atmosférica), a la <b>distancia media anual</b> Tierra-Sol.</p>
 <div class="formula">$$G_{sc}=1353\\ \\text{W/m}^2 \\qquad G_{on}=G_{sc}\\left(1+0{,}033\\cos\\frac{360\\,n}{365}\\right)$$</div>
-<p>n es el día del año. La irradiancia extraterrestre oscila entre unos <b>1410 W/m²</b> en enero (Tierra más cerca del Sol) y unos <b>1320 W/m²</b> en julio. Datos de la figura: G<sub>sc</sub> = 1353 W/m² = 433 Btu/ft²·h = 4,87 MJ/m²·h; distancia Tierra-Sol 1,495·10<sup>11</sup> m (± 1,7 %); diámetro solar 1,39·10<sup>9</sup> m; diámetro terrestre 1,27·10<sup>7</sup> m; el Sol se ve con un ángulo de <b>32'</b>.</p>
+<p>n es el día del año. La irradiancia extraterrestre oscila entre unos <b>1410 W/m²</b> en enero (Tierra más cerca del Sol) y unos <b>1320 W/m²</b> en julio. Datos de la figura: $G_{sc} = 1353\\ \\text{W/m}^2 = 433\\ \\text{Btu/ft}^2\\text{·h} = 4{,}87\\ \\text{MJ/m}^2\\text{·h}$; distancia Tierra-Sol 1,495·10<sup>11</sup> m (± 1,7 %); diámetro solar 1,39·10<sup>9</sup> m; diámetro terrestre 1,27·10<sup>7</sup> m; el Sol se ve con un ángulo de <b>32'</b>.</p>
 <h4>Distribución espectral</h4>
 <p>El espectro solar tiene su máximo hacia <b>0,5 µm</b> (unos 2 kW/m²·µm fuera de la atmósfera). Al nivel del suelo aparecen bandas de absorción del <b>O<sub>3</sub></b> (ultravioleta), del <b>H<sub>2</sub>O</b>, del <b>O<sub>2</sub></b> y del <b>CO<sub>2</sub></b> (infrarrojo).</p>
 <p>Balance de la figura de la diap. 4 (entrada = 100 %): <b>absorbido 18 %</b> (ozono 2 %, capa de polvo alta 1 %, moléculas de aire 8 %, vapor de agua 6 %, polvo bajo 1 %), <b>dispersado al espacio 3 %</b>, <b>dispersado hacia la Tierra 7 %</b> y <b>directo a la Tierra 70 %</b>.</p>
 <h4>Efecto de la atmósfera: masa de aire</h4>
-<p>Cuanto mayor sea la distancia recorrida por la radiación en la atmósfera, mayor será la probabilidad de que se produzcan procesos de <b>absorción y dispersión</b>. La <b>masa de aire</b> representa la proporción de atmósfera que la luz debe atravesar respecto al camino vertical: <b>AM = Y/X</b> (con θ el ángulo cenital, geométricamente Y/X = 1/cos θ).</p>
+<p>Cuanto mayor sea la distancia recorrida por la radiación en la atmósfera, mayor será la probabilidad de que se produzcan procesos de <b>absorción y dispersión</b>. La <b>masa de aire</b> representa la proporción de atmósfera que la luz debe atravesar respecto al camino vertical: <b>$AM = Y/X$</b> (con θ el ángulo cenital, geométricamente $Y/X = 1/\\cos\\theta$).</p>
 <p>La luz <b>roja</b> tiene una longitud de onda mayor que la mayoría de las partículas y apenas se ve afectada; la luz <b>azul</b> tiene una longitud de onda similar al tamaño de las partículas y por eso <b>se dispersa</b>.</p>
 ` },
     { id: "sol-geometria", title: "2. Movimiento del Sol, captación y mapas de radiación", slides: ["SOL1", 6, 16], html: `
@@ -179,7 +179,7 @@ THEORY.SOL = {
 ` },
     { id: "sol-fvmercado", title: "7. Fotovoltaica: mercado, ventajas y tipos de instalación", slides: ["SOL3", 2, 9], html: `
 <h4>Tecnología dominante</h4>
-<p>Capacidad instalada en <b>2024</b>: <b>1852,36 GW</b> en el mundo y <b>36,24 GW</b> en España. En España la capacidad se estancó en ≈ 4-5 GW entre 2008 y 2018 y se disparó desde 2019. El precio de las células de silicio cayó de <b>76 $/W (1977)</b> a <b>0,30 $/W (2015)</b>. En capacidad acumulada (2021) lidera China (&gt; 300 GW), seguida de Europa, EE. UU., Alemania, India, Italia y España.</p>
+<p>Capacidad instalada en <b>2024</b>: <b>1852,36 GW</b> en el mundo y <b>36,24 GW</b> en España. En España la capacidad se estancó en ≈ 4-5 GW entre 2008 y 2018 y se disparó desde 2019. El precio de las células de silicio cayó de <b>76 <span>$</span>/W (1977)</b> a <b>0,30 <span>$</span>/W (2015)</b>. En capacidad acumulada (2021) lidera China (&gt; 300 GW), seguida de Europa, EE. UU., Alemania, India, Italia y España.</p>
 <h4>Ventajas y desventajas</h4>
 <table class="tbl cmp"><thead><tr><th>Ventajas</th><th>Desventajas</th></tr></thead><tbody>
 <tr><td>Limpia (al menos en operación)</td><td>Baja densidad de potencia (aunque es la mayor entre las renovables)</td></tr>
@@ -196,7 +196,7 @@ THEORY.SOL = {
     { id: "sol-celula", title: "8. Semiconductores y efecto fotovoltaico", slides: ["SOL3", 10, 17], html: `
 <h4>Semiconductores</h4>
 <p>Son materiales del <b>grupo IV</b> o combinaciones <b>III-V</b> o <b>II-VI</b>. El <b>silicio</b> es el más usado (base de los circuitos integrados y de la mayoría de las células); otros comunes son el <b>germanio</b> (Ge), el <b>arseniuro de galio</b> (GaAs) y el <b>teluro de cadmio</b> (CdTe).</p>
-<p>Los electrones ocupan la <b>banda de valencia</b>; separada por la <b>banda prohibida</b> está la <b>banda de conducción</b>. Un fotón con E<sub>ph</sub> = hf ≥ E<sub>G</sub> crea un par electrón-hueco; si E<sub>ph</sub> = E<sub>G</sub> se absorbe eficientemente sin desperdiciar calor.</p>
+<p>Los electrones ocupan la <b>banda de valencia</b>; separada por la <b>banda prohibida</b> está la <b>banda de conducción</b>. Un fotón con $E_{ph} = hf \\ge E_G$ crea un par electrón-hueco; si $E_{ph} = E_G$ se absorbe eficientemente sin desperdiciar calor.</p>
 <h4>Espectro solar y eficiencia máxima del c-Si</h4>
 <p>A nivel del mar: ≈ <b>2 % ultravioleta</b> (λ ≤ 0,38 µm), <b>47 % visible</b> (0,38-0,78 µm) y <b>51 % infrarrojo</b> (0,78-2,5 µm). Densidad de potencia máxima ≈ <b>1,3 W/m²·nm</b> (1300 W/m²·µm) hacia <b>0,5 µm</b>. El flujo de fotones es la densidad de potencia dividida por la energía del fotón: ≈ 2,0·10<sup>21</sup> fotones/m²·s con la densidad máxima.</p>
 <p>Banda prohibida del silicio: <b>1100 nm ≈ 1,1 eV</b>. Casi el <b>20 %</b> de la energía solar no puede generar pares (fotones con menos energía que la banda prohibida) y casi el <b>30 %</b> se pierde por el exceso de energía de fotones de λ mucho menor que 1,11 µm. Por eso la eficiencia teórica máxima del <b>c-Si no puede superar el 50 %</b>.</p>
@@ -211,7 +211,7 @@ THEORY.SOL = {
 ` },
     { id: "sol-curvaiv", title: "9. Curva I-V, máxima potencia y rendimiento", slides: ["SOL3", 18, 20], html: `
 <h4>Curva I-V y punto de máxima potencia</h4>
-<p>La curva I-V de un módulo arranca en I<sub>sc</sub> (V = 0), se mantiene casi plana y cae bruscamente hasta V<sub>oc</sub> (I = 0). La curva P-V (P = V·I) tiene un máximo, el <b>punto de máxima potencia</b>. En el módulo de la diap. 18, a 1000 W/m²: I<sub>sc</sub> ≈ 16 A, V<sub>oc</sub> ≈ 47 V y P<sub>máx</sub> ≈ 600 W hacia 40 V.</p>
+<p>La curva I-V de un módulo arranca en $I_{sc}$ ($V = 0$), se mantiene casi plana y cae bruscamente hasta $V_{oc}$ ($I = 0$). La curva P-V ($P = V\\cdot I$) tiene un máximo, el <b>punto de máxima potencia</b>. En el módulo de la diap. 18, a 1000 W/m²: I<sub>sc</sub> ≈ 16 A, V<sub>oc</sub> ≈ 47 V y P<sub>máx</sub> ≈ 600 W hacia 40 V.</p>
 <p>El <b>factor de forma</b> (FF) y el rendimiento (PCE) aparecen en la curva de la célula de perovskita (diap. 24): P<sub>in</sub> = 96,4 mW/cm², J<sub>sc</sub> = 20,0 mA/cm², V<sub>oc</sub> = 993 mV, FF = 0,73 y PCE = 15,0 %, que cumplen:</p>
 <div class="formula">$$\\eta=\\frac{P_{máx}}{P_{in}}=\\frac{FF\\cdot J_{sc}\\cdot V_{oc}}{P_{in}}=\\frac{0{,}73\\cdot 20{,}0\\cdot 0{,}993}{96{,}4}\\approx 15\\ \\%$$</div>
 <h4>Influencia de la irradiancia</h4>
@@ -220,7 +220,7 @@ THEORY.SOL = {
 <p>El rendimiento <b>se reduce con la temperatura</b> por la <b>disminución del potencial entre terminales</b>: V<sub>oc</sub> pasa de ≈ 48 V a 10 ºC a ≈ 41 V a 70 ºC, mientras que la corriente de cortocircuito apenas cambia (aumenta ligeramente).</p>
 <h4>Récords de eficiencia (NREL)</h4>
 <p>Gráfico de mejores eficiencias de células de investigación: las <b>multiunión</b> con concentración alcanzan el <b>47,1 %</b> (NREL, 6 uniones, 143 soles); el silicio cristalino ronda el 26-27 %; las capas finas (CIGS, CdTe) ≈ 22-23 %; las emergentes (perovskita, orgánicas, puntos cuánticos) crecen deprisa. Aparece destacado un récord del <b>IES-UPM</b> (1026 soles).</p>
-<div class="gen"><b>Ampliación (conocimiento general, no está en los apuntes):</b> el factor de forma se define como FF = P<sub>máx</sub>/(V<sub>oc</sub>·I<sub>sc</sub>); mide lo «cuadrada» que es la curva I-V. Un seguidor del punto de máxima potencia (MPPT) en el inversor ajusta la tensión de trabajo para operar siempre en ese punto.</div>
+<div class="gen"><b>Ampliación (conocimiento general, no está en los apuntes):</b> el factor de forma se define como $FF = \\dfrac{P_{\\text{máx}}}{V_{oc}\\,I_{sc}}$; mide lo «cuadrada» que es la curva I-V. Un seguidor del punto de máxima potencia (MPPT) en el inversor ajusta la tensión de trabajo para operar siempre en ese punto.</div>
 ` },
     { id: "sol-tecnologias", title: "10. Tecnologías de células, concentración FV y situación en España", slides: ["SOL3", 21, 32], html: `
 <h4>Generaciones de células</h4>
@@ -237,7 +237,7 @@ THEORY.SOL = {
 <p><b>Silicio cristalino</b> (200-500 µm): coeficiente de absorción reducido; mono o policristalino. <b>Lámina delgada</b>: silicio amorfo, arseniuro de galio, teluro de cadmio y diseleniuro de cobre e indio (≈ <b>1 µm</b>), y silicio cristalino de lámina delgada (10-50 µm).</p>
 <p><b>Multiuniones (tándem)</b>: se apilan materiales con distinta banda prohibida, cada uno con su corte de respuesta espectral: InGaP ≈ 650 nm, GaAs ≈ 870 nm, Si ≈ 1100 nm y GaSb ≈ 1770 nm.</p>
 <h4>Fotovoltaica con concentración y madurez tecnológica</h4>
-<p>Dos tipologías: <b>sin concentración</b> y <b>con concentración</b>. En la célula con concentración se ahorra área de célula y se sustituye por dispositivos ópticos (lentes o espejos): <b>1000 soles = 1 MW/m²</b>; una célula de <b>AsGa</b> logra el <b>26 % a 1000 soles</b> (con disipador; módulos de ≈ 10 cm de paso y 3 cm de espesor).</p>
+<p>Dos tipologías: <b>sin concentración</b> y <b>con concentración</b>. En la célula con concentración se ahorra área de célula y se sustituye por dispositivos ópticos (lentes o espejos): <b>$1000\\ \\text{soles} = 1\\ \\text{MW/m}^2$</b>; una célula de <b>AsGa</b> logra el <b>26 % a 1000 soles</b> (con disipador; módulos de ≈ 10 cm de paso y 3 cm de espesor).</p>
 <p>Potencial disruptivo frente a madurez (Arthur D. Little): el <b>c-Si</b> es maduro y de bajo potencial disruptivo; CdTe y CIGS, maduros; <b>perovskita</b>, puntos cuánticos y CPV, los más potencialmente disruptivos; el grafeno, embrionario; la OPV, en investigación y con poco potencial disruptivo.</p>
 <h4>Térmica frente a fotovoltaica, España 2023 y fin de vida</h4>
 <table class="tbl cmp"><thead><tr><th>Térmica (termosolar)</th><th>Fotovoltaica</th></tr></thead><tbody>
@@ -275,22 +275,22 @@ L("SOL", "sol-recurso", "Constante solar", 2, "Según los apuntes, la constante 
    "sobre una superficie horizontal situada en el límite superior de la atmósfera, a la distancia media anual Tierra-Sol",
    "sobre una superficie perpendicular a la radiación, a nivel del mar, con cielo despejado y masa de aire igual a la unidad",
    "sobre una superficie perpendicular a la radiación extraterrestre, sin atenuación atmosférica, en el perihelio de la órbita terrestre"],
-  0, "La definición exige superficie perpendicular, radiación extraterrestre (sin atenuación) y distancia media anual. En el perihelio la irradiancia es mayor (≈ 1410 W/m² en enero), por eso se corrige con G<sub>on</sub>; a nivel del mar ya hay atenuación atmosférica.", "Apuntes SOL1, diap. 3");
+  0, "La definición exige superficie perpendicular, radiación extraterrestre (sin atenuación) y distancia media anual. En el perihelio la irradiancia es mayor (≈ 1410 W/m² en enero), por eso se corrige con $G_{\\mathrm{on}}$; a nivel del mar ya hay atenuación atmosférica.", "Apuntes SOL1, diap. 3");
 L("SOL", "sol-recurso", "Constante solar", 1, "¿Qué valor de la constante solar G<sub>sc</sub> se usa en los apuntes?",
   ["1353 W/m²", "1367 W/m²", "1410 W/m²", "1000 W/m²"],
-  0, "Los apuntes toman G<sub>sc</sub> = 1353 W/m² (= 4,87 MJ/m²·h). 1410 W/m² es aproximadamente el máximo de G<sub>on</sub> en enero, y 1000 W/m² es un valor típico de irradiancia en superficie.", "Apuntes SOL1, diap. 3");
+  0, "Los apuntes toman $G_{\\mathrm{sc}}$ = 1353 W/m² (= 4,87 MJ/m²·h). 1410 W/m² es aproximadamente el máximo de $G_{\\mathrm{on}}$ en enero, y 1000 W/m² es un valor típico de irradiancia en superficie.", "Apuntes SOL1, diap. 3");
 L("SOL", "sol-recurso", "Corrección por la distancia Tierra-Sol", 3, "Con la expresión de los apuntes G<sub>on</sub> = G<sub>sc</sub>·(1 + 0,033·cos(360·n/365)), ¿qué irradiancia extraterrestre corresponde al 1 de enero (n = 1)?",
   ["≈ 1398 W/m²", "≈ 1353 W/m²", "≈ 1308 W/m²", "≈ 1375 W/m²"],
-  0, "cos(360·1/365) ≈ 1, así que G<sub>on</sub> ≈ 1353·1,033 ≈ 1398 W/m². El valor 1308 W/m² corresponde a principios de julio (coseno ≈ −1) y 1353 W/m² a los días en que el coseno se anula (≈ abril y octubre).", "Apuntes SOL1, diap. 3");
+  0, "Expresión de los apuntes (Apuntes SOL1, diap. 3) para el 1 de enero (n = 1); el ángulo está en grados: $$\\cos\\left(\\frac{360\\cdot1}{365}\\right)=\\cos(0{,}99^{\\circ})\\approx1$$ $$G_{on}=1353\\,(1+0{,}033\\cdot1)\\approx\\boxed{1398\\ \\text{W/m}^2}$$ 1.308 W/m² corresponde a principios de julio (coseno ≈ −1) y 1.353 W/m² a los días en que el coseno se anula (≈ abril y octubre).", "Apuntes SOL1, diap. 3");
 L("SOL", "sol-recurso", "Balance de la atmósfera", 2, "En el balance de la radiación solar a su paso por la atmósfera (diap. 4), con una entrada del 100 %, ¿qué fracción llega a la Tierra como radiación directa?",
   ["70 %", "77 %", "82 %", "88 %"],
   0, "La figura da: absorbido 18 %, dispersado al espacio 3 %, dispersado hacia la Tierra 7 % y directo a la Tierra 70 %. El 77 % sumaría directa y dispersada hacia la Tierra; el 82 % sería 100 − 18.", "Apuntes SOL1, diap. 4");
 L("SOL", "sol-recurso", "Espectro solar", 2, "Según la figura del espectro solar (diap. 4), ¿qué especies producen bandas de absorción en el espectro que llega a la superficie? (varias respuestas)",
-  ["Ozono (O<sub>3</sub>)", "Vapor de agua (H<sub>2</sub>O)", "Dióxido de carbono (CO<sub>2</sub>)", "Nitrógeno molecular (N<sub>2</sub>)"],
-  [0, 1, 2], "La figura marca absorciones de O<sub>3</sub> en el ultravioleta y de H<sub>2</sub>O, O<sub>2</sub> y CO<sub>2</sub> en el visible-infrarrojo. El N<sub>2</sub> no aparece como absorbente. En el balance, el ozono absorbe el 2 % y el vapor de agua el 6 %.", "Apuntes SOL1, diap. 4");
+  ["Ozono (O₃)", "Vapor de agua (H₂O)", "Dióxido de carbono (CO₂)", "Nitrógeno molecular (N₂)"],
+  [0, 1, 2], "La figura marca absorciones de O₃ en el ultravioleta y de H₂O, O₂ y CO₂ en el visible-infrarrojo. El N₂ no aparece como absorbente. En el balance, el ozono absorbe el 2 % y el vapor de agua el 6 %.", "Apuntes SOL1, diap. 4");
 L("SOL", "sol-recurso", "Masa de aire", 3, "La masa de aire es, según la diap. 5, el cociente Y/X entre el camino de la luz en la atmósfera y el camino vertical. Si el Sol está a 60º del cénit (θ = 60º), la masa de aire vale aproximadamente…",
   ["2,0", "0,5", "1,15", "1,73"],
-  0, "Por la geometría de la figura, Y = X/cos θ, así que AM = 1/cos 60º = 2. El 0,5 es cos 60º; el 1,15 sería 1/cos 30º (elevación confundida con ángulo cenital) y el 1,73 es tan 60º.", "Apuntes SOL1, diap. 5");
+  0, "Por la geometría de la figura (Apuntes SOL1, diap. 5), el camino inclinado Y y el vertical X cumplen Y = X/cos θ, con θ el ángulo cenital: $$AM=\\frac{Y}{X}=\\frac{1}{\\cos\\theta}=\\frac{1}{\\cos60^{\\circ}}=\\frac{1}{0{,}5}=\\boxed{2{,}0}$$ 0,5 es cos 60º; 1,15 sería 1/cos 30º (elevación confundida con ángulo cenital) y 1,73 es tan 60º.", "Apuntes SOL1, diap. 5");
 L("SOL", "sol-recurso", "Dispersión", 2, "Según los apuntes, la luz azul se ve más afectada por la atmósfera que la roja porque…",
   ["su longitud de onda es similar al tamaño de las partículas de la atmósfera y por eso se dispersa",
    "su longitud de onda es mayor que el tamaño de la mayoría de las partículas y por eso se absorbe",
@@ -345,7 +345,7 @@ L("SOL", "sol-colector", "Aplicaciones térmicas", 2, "Según los apuntes, la tr
    "abarca 35-90 ºC, es de uso doméstico y emplea paneles solares sin concentración para ACS, calefacción y refrigeración",
    "abarca 90-400 ºC, se usa en centrales termoeléctricas y emplea helióstatos y discos parabólicos con alto índice de concentración",
    "abarca más de 400 ºC, es de uso industrial y emplea colectores cilindro-parabólicos y Fresnel lineales con índice de concentración bajo-medio"],
-  0, "Baja: 35-90 ºC, paneles (ACS, calefacción, refrigeración). Media: 90-400 ºC, uso industrial, CCP y Fresnel, concentración baja-media. Alta: &gt; 400 ºC, centrales termoeléctricas con helióstatos y discos, concentración alta.", "Apuntes SOL2, diap. 3");
+  0, "Baja: 35-90 ºC, paneles (ACS, calefacción, refrigeración). Media: 90-400 ºC, uso industrial, CCP y Fresnel, concentración baja-media. Alta: > 400 ºC, centrales termoeléctricas con helióstatos y discos, concentración alta.", "Apuntes SOL2, diap. 3");
 L("SOL", "sol-colector", "Panel sin concentración", 2, "¿Cuál de las siguientes NO es una característica del panel solar sin concentración según los apuntes?",
   ["Aprovecha solo la radiación directa, por lo que debe orientarse con precisión hacia el Sol",
    "No requiere seguimiento de la trayectoria solar",
@@ -360,22 +360,22 @@ L("SOL", "sol-colector", "Código Técnico de la Edificación", 1, "Según los a
   0, "Diap. 5: el CTE obliga desde 2007 y lo más habitual es la solar de apoyo a ACS.", "Apuntes SOL2, diap. 5");
 L("SOL", "sol-colector", "Producto transmitancia-absortancia", 3, "Una cubierta tiene τ = 0,90 y la placa α = 0,93; la reflectancia difusa de la cubierta es ρ<sub>d</sub> = 0,15. Con la expresión de los apuntes, (τα) vale aproximadamente…",
   ["0,846", "0,837", "0,828", "0,900"],
-  0, "(τα) = τα/[1 − (1 − α)ρ<sub>d</sub>] = 0,837/(1 − 0,07·0,15) = 0,837/0,9895 ≈ 0,846. El 0,837 es el producto simple τ·α (sin reflexiones múltiples) y el 0,828 resulta de multiplicar por el denominador en lugar de dividir.", "Apuntes SOL2, diap. 7");
+  0, "Producto transmitancia-absortancia con reflexiones múltiples entre placa y cubierta (Apuntes SOL2, diap. 7): $$(\\tau\\alpha)=\\frac{\\tau\\,\\alpha}{1-(1-\\alpha)\\,\\rho_d}=\\frac{0{,}90\\cdot0{,}93}{1-0{,}07\\cdot0{,}15}=\\frac{0{,}837}{0{,}9895}\\approx\\boxed{0{,}846}$$ 0,837 es el producto simple τ·α (sin reflexiones múltiples) y 0,828 multiplica por el denominador en lugar de dividir.", "Apuntes SOL2, diap. 7");
 L("SOL", "sol-colector", "Producto transmitancia-absortancia", 3, "Sobre el producto transmitancia-absortancia (τα) del colector plano, ¿qué afirmación es correcta según los apuntes?",
   ["Reúne en un factor los efectos de cubiertas y placa, tiene dependencia espectral y es algo mayor que el producto simple τ·α",
    "Reúne en un factor los efectos de cubiertas y placa, no depende de la longitud de onda y es algo menor que el producto simple τ·α",
    "Reúne las pérdidas térmicas por convección y radiación entre placa y cubierta, y tiene dependencia espectral",
    "Reúne las pérdidas ópticas de la cubierta y las térmicas del aislamiento, y es igual al producto simple τ·α"],
-  0, "(τα) evalúa la fuente de calor real que llega al absorbente: incluye las reflexiones múltiples entre placa y cubierta (serie geométrica), por eso es ligeramente mayor que τ·α, y tiene dependencia espectral. Las pérdidas térmicas van en el término U<sub>L</sub>(T − T<sub>a</sub>).", "Apuntes SOL2, diap. 7");
+  0, "(τα) evalúa la fuente de calor real que llega al absorbente: incluye las reflexiones múltiples entre placa y cubierta (serie geométrica), por eso es ligeramente mayor que τ·α, y tiene dependencia espectral. Las pérdidas térmicas van en el término $U_{L}$(T − $T_{a}$).", "Apuntes SOL2, diap. 7");
 L("SOL", "sol-colector", "Rendimiento del colector", 3, "Un colector tiene F<sub>R</sub> = 0,9, (τα)<sub>av</sub> = 0,8 y U<sub>L</sub> = 5 W/m²·K. Si T<sub>i</sub> − T<sub>a</sub> = 40 K y G<sub>T</sub> = 800 W/m², su rendimiento instantáneo es…",
   ["0,495", "0,470", "0,540", "0,550"],
-  0, "η = F<sub>R</sub>[(τα) − U<sub>L</sub>(T<sub>i</sub> − T<sub>a</sub>)/G<sub>T</sub>] = 0,9·(0,8 − 5·40/800) = 0,9·0,55 = 0,495. El 0,55 olvida F<sub>R</sub>; el 0,470 aplica F<sub>R</sub> solo al término óptico; el 0,540 usa 1000 W/m².", "Apuntes SOL2, diap. 8");
+  0, "Ecuación de rendimiento del colector (Apuntes SOL2, diap. 8): $$\\eta=F_R\\left[(\\tau\\alpha)-\\frac{U_L\\,(T_i-T_a)}{G_T}\\right]=0{,}9\\left[0{,}8-\\frac{5\\cdot40}{800}\\right]$$ $$\\eta=0{,}9\\,(0{,}8-0{,}25)=0{,}9\\cdot0{,}55=\\boxed{0{,}495}$$ 0,55 olvida $F_R$; 0,470 aplica $F_R$ solo al término óptico; 0,540 usa 1.000 W/m² en lugar de 800.", "Apuntes SOL2, diap. 8");
 L("SOL", "sol-colector", "Rendimiento del colector", 2, "Según la ecuación de eficiencia del colector de los apuntes, el rendimiento instantáneo de un colector plano…",
   ["disminuye al aumentar la diferencia entre la temperatura de entrada del fluido y la ambiente",
    "aumenta al aumentar la diferencia entre la temperatura de entrada del fluido y la ambiente",
-   "no depende de la irradiancia G<sub>T</sub>, porque esta aparece en el numerador y en el denominador",
+   "no depende de la irradiancia $G_{T}$, porque esta aparece en el numerador y en el denominador",
    "depende del producto emitancia-absortancia de la placa, y no de la cubierta"],
-  0, "η = F<sub>R</sub>[(τα) − U<sub>L</sub>(T<sub>i</sub> − T<sub>a</sub>)/G<sub>T</sub>]: las pérdidas crecen con T<sub>i</sub> − T<sub>a</sub>, y G<sub>T</sub> no se cancela en el término de pérdidas. Interviene el producto transmitancia (cubierta)-absortancia (placa).", "Apuntes SOL2, diap. 8");
+  0, "$\\eta=F_R\\left[(\\tau\\alpha)-U_L(T_i-T_a)/G_T\\right]$: las pérdidas crecen con $T_{i}$ − $T_{a}$, y $G_{T}$ no se cancela en el término de pérdidas. Interviene el producto transmitancia (cubierta)-absortancia (placa).", "Apuntes SOL2, diap. 8");
 L("SOL", "sol-colector", "Absorbentes selectivos", 3, "De la tabla de superficies selectivas de los apuntes, ¿cuál tiene la mayor absortancia?",
   ["Ni-Zn-S sobre Ni (α = 0,96)", "Negro de Ni sobre Ni (α = 0,93)", "Óxido de Cu sobre Al (α = 0,93)", "Negro de Cr sobre Ni (α = 0,92)"],
   0, "La mayor absortancia es la del Ni-Zn-S sobre Ni (0,96, ε = 0,07). El negro de Ni sobre Ni tiene la menor emitancia (0,06), pero su α es 0,93, igual que el óxido de Cu sobre Al (ε = 0,11).", "Apuntes SOL2, diap. 9");
@@ -409,17 +409,17 @@ L("SOL", "sol-acs", "Sistemas directos e indirectos", 3, "¿Qué distingue un si
    "Ninguna de las otras opciones"],
   1, "La diap. 14 muestra las cuatro combinaciones: directos e indirectos pueden ser de circulación natural o forzada. En los indirectos hay un circuito primario separado y un intercambiador; en los directos el agua de consumo atraviesa el colector.", "Apuntes SOL2, diap. 14");
 L("SOL", "sol-acs", "Calefacción por aire", 3, "¿Cuál de las siguientes es un INCONVENIENTE de los sistemas activos de calefacción solar que emplean aire?",
-  ["El factor F<sub>R</sub> es más bajo que en los colectores de líquido",
+  ["El factor $F_{R}$ es más bajo que en los colectores de líquido",
    "Hay problemas de ebullición y congelación en los colectores",
    "Aumentan los problemas de corrosión",
    "En verano hay que evitar el exceso de presión en el circuito"],
-  0, "Con aire se eliminan la ebullición y la congelación y se reduce la corrosión (son ventajas). Sus inconvenientes son el bombeo caro, los grandes volúmenes de almacenamiento, las dificultades estructurales y un F<sub>R</sub> más bajo. La sobrepresión en verano es un problema de los sistemas de agua.", "Apuntes SOL2, diap. 16");
+  0, "Con aire se eliminan la ebullición y la congelación y se reduce la corrosión (son ventajas). Sus inconvenientes son el bombeo caro, los grandes volúmenes de almacenamiento, las dificultades estructurales y un $F_{R}$ más bajo. La sobrepresión en verano es un problema de los sistemas de agua.", "Apuntes SOL2, diap. 16");
 L("SOL", "sol-acs", "Calefacción por agua", 2, "Frente a los de aire, los sistemas de calefacción solar que emplean agua…",
-  ["tienen mayor F<sub>R</sub> y menor volumen de almacenamiento, pero presentan problemas de corrosión y congelación",
-   "tienen menor F<sub>R</sub> y mayor volumen de almacenamiento, pero eliminan la corrosión y la congelación",
-   "tienen mayor F<sub>R</sub> y menor volumen de almacenamiento, y eliminan los problemas de ebullición en verano",
-   "tienen mayor F<sub>R</sub>, pero no pueden adaptarse a acondicionadores que funcionan con aire"],
-  0, "Diap. 17: ventajas del agua → mayor F<sub>R</sub>, volumen de almacenamiento menor y fácil adaptación a acondicionadores de aire. Inconvenientes → corrosión y congelación; en verano hay que evitar sobrepresión y ebullición.", "Apuntes SOL2, diap. 17");
+  ["tienen mayor $F_{R}$ y menor volumen de almacenamiento, pero presentan problemas de corrosión y congelación",
+   "tienen menor $F_{R}$ y mayor volumen de almacenamiento, pero eliminan la corrosión y la congelación",
+   "tienen mayor $F_{R}$ y menor volumen de almacenamiento, y eliminan los problemas de ebullición en verano",
+   "tienen mayor $F_{R}$, pero no pueden adaptarse a acondicionadores que funcionan con aire"],
+  0, "Diap. 17: ventajas del agua → mayor $F_{R}$, volumen de almacenamiento menor y fácil adaptación a acondicionadores de aire. Inconvenientes → corrosión y congelación; en verano hay que evitar sobrepresión y ebullición.", "Apuntes SOL2, diap. 17");
 
 /* ---------- Preguntas · 5. Concentración ---------- */
 L("SOL", "sol-concentracion", "Concentrador y receptor", 2, "Según los apuntes, la concentración solar implica dos elementos fundamentales:",
@@ -429,23 +429,23 @@ L("SOL", "sol-concentracion", "Concentrador y receptor", 2, "Según los apuntes,
    "un receptor que debe seguir la trayectoria del Sol y un campo de lentes fijas que enfoque la radiación difusa"],
   0, "Diap. 18: el concentrador sigue al Sol y el receptor debe recibir bien enfocada la radiación. La concentración solo aprovecha la radiación directa, no la difusa.", "Apuntes SOL2, diap. 18");
 L("SOL", "sol-concentracion", "Límites de la concentración", 2, "El límite termodinámico del factor de concentración que dan los apuntes se resume en:",
-  ["el Sol es un cuerpo negro a 5780 K que no se puede superar; c<sub>máx</sub> = 46000 y en la práctica &lt; 5000",
-   "el Sol es un cuerpo negro a 5780 K que no se puede superar; c<sub>máx</sub> = 5000 y en la práctica &lt; 2000",
-   "el Sol es un disco de 32' que condiciona el punto focal; c<sub>máx</sub> = 46000 y en la práctica &lt; 5000",
-   "el Sol es un cuerpo negro a 6000 K que no se puede superar; c<sub>máx</sub> = 4600 y en la práctica &lt; 1000"],
-  0, "Diap. 19: limitación termodinámica → 5780 K (c = 46000, práctica &lt; 5000). El disco de 32' es la limitación geométrica, no la termodinámica.", "Apuntes SOL2, diap. 19");
+  ["el Sol es un cuerpo negro a 5780 K que no se puede superar; $c_{\\text{máx}}$ = 46000 y en la práctica < 5000",
+   "el Sol es un cuerpo negro a 5780 K que no se puede superar; $c_{\\text{máx}}$ = 5000 y en la práctica < 2000",
+   "el Sol es un disco de 32' que condiciona el punto focal; $c_{\\text{máx}}$ = 46000 y en la práctica < 5000",
+   "el Sol es un cuerpo negro a 6000 K que no se puede superar; $c_{\\text{máx}}$ = 4600 y en la práctica < 1000"],
+  0, "Diap. 19: limitación termodinámica → 5780 K (c = 46000, práctica < 5000). El disco de 32' es la limitación geométrica, no la termodinámica.", "Apuntes SOL2, diap. 19");
 L("SOL", "sol-concentracion", "Temperatura máxima", 3, "Con el balance de los apuntes T<sub>máx</sub> = (α<sub>ef</sub>·c·G/(ε<sub>ef</sub>·σ))<sup>0,25</sup>, un receptor con α<sub>ef</sub> = ε<sub>ef</sub>, c = 1000 y G = 1000 W/m² (σ = 5,67·10<sup>−8</sup> W/m²·K⁴) alcanzaría como máximo unos…",
   ["2050 K", "364 K", "1150 K", "5780 K"],
-  0, "T = (1000·1000/5,67·10<sup>−8</sup>)<sup>1/4</sup> = (1,76·10<sup>13</sup>)<sup>1/4</sup> ≈ 2050 K. 364 K corresponde a c = 1, 1150 K a c = 100, y 5780 K es el techo termodinámico (c ≈ 46000).", "Apuntes SOL2, diap. 20");
+  0, "Balance de los apuntes (Apuntes SOL2, diap. 20) con α = ε (se simplifican), c = 1000 y G = 1000 W/m²: $$T_{máx}=\\left(\\frac{c\\,G}{\\sigma}\\right)^{1/4}=\\left(\\frac{1000\\cdot1000}{5{,}67\\cdot10^{-8}}\\right)^{1/4}=\\left(1{,}76\\cdot10^{13}\\right)^{1/4}\\approx\\boxed{2050\\ \\text{K}}$$ 364 K corresponde a c = 1, 1.150 K a c = 100 y 5.780 K es el techo termodinámico (temperatura del Sol, c ≈ 46.000).", "Apuntes SOL2, diap. 20");
 L("SOL", "sol-concentracion", "Temperatura de equilibrio", 3, "Una placa sin concentración (c = 1) recibe G = 1000 W/m² y está en equilibrio radiante, sin extracción de calor ni convección. Con el mismo balance de los apuntes, ¿qué temperatura alcanza si es de negro de Ni sobre Ni (α = 0,93; ε = 0,06)?",
   ["≈ 723 K", "≈ 364 K", "≈ 358 K", "≈ 538 K"],
-  0, "T = (α·G/(ε·σ))<sup>1/4</sup> = (0,93·1000/(0,06·5,67·10<sup>−8</sup>))<sup>1/4</sup> ≈ 723 K. Con α = ε (superficie no selectiva) serían 364 K; usar solo α sin ε da 358 K; 538 K sería el óxido de Cu sobre Ni (0,81/0,17). La temperatura de equilibrio depende del cociente α/ε.", "Apuntes SOL2, diap. 9 y 20");
+  0, "Mismo balance de los apuntes (Apuntes SOL2, diap. 9 y 20) sin concentración (c = 1) y con superficie selectiva: $$T=\\left(\\frac{\\alpha\\,G}{\\varepsilon\\,\\sigma}\\right)^{1/4}=\\left(\\frac{0{,}93\\cdot1000}{0{,}06\\cdot5{,}67\\cdot10^{-8}}\\right)^{1/4}=\\left(2{,}73\\cdot10^{11}\\right)^{1/4}\\approx\\boxed{723\\ \\text{K}}$$ Con α = ε (superficie no selectiva) serían 364 K; usar solo α sin ε da 358 K; 538 K sería el óxido de Cu sobre Ni (α/ε = 0,81/0,17). La temperatura de equilibrio depende del cociente α/ε.", "Apuntes SOL2, diap. 9 y 20");
 L("SOL", "sol-concentracion", "Razón de concentración", 1, "La razón de concentración (superficial) C se define en los apuntes como…",
   ["el área de apertura del concentrador dividida por el área del receptor",
    "el área del receptor dividida por el área de apertura del concentrador",
    "el flujo de radiación sobre el receptor dividido por la constante solar",
    "la temperatura del receptor dividida por la temperatura del Sol"],
-  0, "C = A<sub>a</sub>/A<sub>r</sub> (diap. 20). Es mayor que 1 en cualquier colector de concentración; un colector plano tiene C ≤ 1.", "Apuntes SOL2, diap. 20");
+  0, "C = $A_{a}$/$A_{r}$ (diap. 20). Es mayor que 1 en cualquier colector de concentración; un colector plano tiene C ≤ 1.", "Apuntes SOL2, diap. 20");
 L("SOL", "sol-concentracion", "Foco lineal y foco puntual", 2, "En la clasificación de tecnologías termosolares de la IEA (diap. 21), ¿qué tecnología combina foco puntual con receptor fijo?",
   ["La torre de receptor central", "El disco parabólico", "El reflector Fresnel lineal", "El colector cilindro-parabólico"],
   0, "Foco lineal: Fresnel (receptor fijo) y cilindro-parabólico (receptor móvil). Foco puntual: torre central (receptor fijo) y disco parabólico (receptor móvil, que se mueve con el reflector).", "Apuntes SOL2, diap. 21");
@@ -474,7 +474,7 @@ L("SOL", "sol-termoelectrica", "Central termosolar de torre", 2, "En la central 
    "las sales calientes se bombean a lo alto de la torre para generar vapor directamente en el receptor",
    "el vapor de agua se genera en el receptor de la torre y las sales solo enfrían el condensador",
    "las sales se calientan en los helióstatos y se almacenan en la torre a más de 500 º"],
-  0, "Diap. 28: tanque de sales frías → bombeo a la torre → receptor → tanque de sales calientes (&gt; 500 º) → cambiadores de calor donde se genera vapor → turbina y generador → transformador y red.", "Apuntes SOL2, diap. 28");
+  0, "Diap. 28: tanque de sales frías → bombeo a la torre → receptor → tanque de sales calientes (> 500 º) → cambiadores de calor donde se genera vapor → turbina y generador → transformador y red.", "Apuntes SOL2, diap. 28");
 L("SOL", "sol-termoelectrica", "Proyectos en España", 2, "Sobre los proyectos termosolares en España entre 2007 y 2013 (diap. 29), ¿qué afirmación es correcta?",
   ["45 de los 49 proyectos fueron cilindro-parabólicos de 50 MWe, para un total de unos 2300 MWe",
    "45 de los 49 proyectos fueron de torre central de 11-20 MWe, para un total de unos 2300 MWe",
@@ -495,7 +495,7 @@ L("SOL", "sol-termoelectrica", "Parabólico compuesto", 2, "El colector paraból
   0, "Diap. 31: concentración baja sin seguimiento, óptica sin imágenes, puede incorporar seguimiento a un eje y se combina con otros sistemas de concentración; proyectos en Latinoamérica.", "Apuntes SOL2, diap. 31");
 L("SOL", "sol-termoelectrica", "Clasificación de tecnologías", 3, "En la tabla de clasificación de tecnologías termosolares (diap. 32), ¿qué colector es estacionario, con absorbedor tubular y razón de concentración 1 &lt; C &lt; 15?",
   ["El colector parabólico compuesto", "El colector Fresnel", "El captador de tubos de vacío", "El colector cilindro-parabólico"],
-  0, "CPC: estacionario, absorbedor tubular, 1 &lt; C &lt; 15, 70-300 ºC. El Fresnel también tiene 1 &lt; C &lt; 15 en esa tabla, pero con seguimiento a un eje; los tubos de vacío tienen C ≤ 1; el CCP, 15 &lt; C &lt; 40 con un eje.", "Apuntes SOL2, diap. 32");
+  0, "CPC: estacionario, absorbedor tubular, 1 < C < 15, 70-300 ºC. El Fresnel también tiene 1 < C < 15 en esa tabla, pero con seguimiento a un eje; los tubos de vacío tienen C ≤ 1; el CCP, 15 < C < 40 con un eje.", "Apuntes SOL2, diap. 32");
 L("SOL", "sol-termoelectrica", "Almacenamiento de energía", 2, "Según los modos de almacenamiento de los apuntes, ¿cuáles se clasifican como almacenamiento térmico? (varias respuestas)",
   ["En forma de calor sensible", "Por cambio de fase", "En reacciones químicas reversibles", "En hidrógeno"],
   [0, 1, 2], "Diap. 33: térmico = calor sensible, cambio de fase y reacciones químicas reversibles. El hidrógeno es almacenamiento químico; además hay electroquímico (baterías), mecánico (volantes, aire comprimido, bombeo) y magnético (superconductores).", "Apuntes SOL2, diap. 33");
@@ -539,7 +539,7 @@ L("SOL", "sol-celula", "Eficiencia máxima del c-Si", 3, "¿Por qué la eficienc
    "Casi un 30 % de la energía llega en fotones con menos energía que la banda prohibida y casi un 20 % se pierde por el exceso de energía de los fotones de λ mucho menor que 1,11 µm",
    "Casi un 20 % de la energía llega en fotones con menos energía que la banda prohibida y casi un 30 % se pierde por el exceso de energía de los fotones de λ mucho mayor que 1,11 µm",
    "Casi un 20 % de la energía se refleja en la superficie de la célula y casi un 30 % se pierde por recombinación de pares en la zona de deplexión"],
-  0, "Diap. 13: ≈ 20 % no genera pares (E<sub>ph</sub> &lt; E<sub>G</sub>, λ &gt; 1,11 µm) y ≈ 30 % se pierde como calor en fotones muy energéticos (λ mucho más corta que 1,11 µm). 100 − 20 − 30 = 50 %.", "Apuntes SOL3, diap. 13");
+  0, "Diap. 13: ≈ 20 % no genera pares ($E_{\\mathrm{ph}}$ < $E_{G}$, λ > 1,11 µm) y ≈ 30 % se pierde como calor en fotones muy energéticos (λ mucho más corta que 1,11 µm). 100 − 20 − 30 = 50 %.", "Apuntes SOL3, diap. 13");
 L("SOL", "sol-celula", "Dopado", 3, "En un semiconductor de tipo n como el de los apuntes…",
   ["el dopante es un átomo del grupo V, los portadores mayoritarios son electrones y quedan donadores ionizados positivos",
    "el dopante es un átomo del grupo III, los portadores mayoritarios son electrones y quedan aceptores ionizados negativos",
@@ -550,8 +550,8 @@ L("SOL", "sol-celula", "Unión p-n", 2, "En una unión p-n en equilibrio, sin te
   ["no circula corriente: la difusión de portadores se compensa con su deriva en el campo de la zona de deplexión",
    "circula una pequeña corriente de difusión de electrones desde n hacia p que no se compensa",
    "no existe campo eléctrico, porque la zona de deplexión solo se forma al polarizar en directa",
-   "circula la corriente de cortocircuito I<sub>sc</sub>, porque el campo separa los pares térmicos"],
-  0, "Diap. 15-17: al unir p y n los portadores difunden y queda una zona de deplexión con un campo moderado; en equilibrio (tensión nula) no circula corriente porque difusión y deriva se equilibran. I<sub>sc</sub> y V<sub>oc</sub> aparecen solo con luz.", "Apuntes SOL3, diap. 16-17");
+   "circula la corriente de cortocircuito $I_{\\mathrm{sc}}$, porque el campo separa los pares térmicos"],
+  0, "Diap. 15-17: al unir p y n los portadores difunden y queda una zona de deplexión con un campo moderado; en equilibrio (tensión nula) no circula corriente porque difusión y deriva se equilibran. $I_{\\mathrm{sc}}$ y $V_{\\mathrm{oc}}$ aparecen solo con luz.", "Apuntes SOL3, diap. 16-17");
 
 /* ---------- Preguntas · 9. Curva I-V y rendimiento ---------- */
 L("SOL", "sol-curvaiv", "Influencia de la irradiancia", 2, "Según los apuntes y las curvas I-V del módulo de la diap. 18, al reducir la irradiancia de 1000 a 200 W/m²…",
@@ -559,19 +559,19 @@ L("SOL", "sol-curvaiv", "Influencia de la irradiancia", 2, "Según los apuntes y
    "la tensión de circuito abierto baja en proporción a la irradiancia, mientras que la corriente apenas disminuye",
    "la corriente y la tensión de circuito abierto bajan ambas en proporción a la irradiancia",
    "la corriente apenas cambia y la potencia máxima se mantiene, porque el rendimiento aumenta"],
-  0, "La corriente de iluminación es proporcional al nivel de iluminación (≈ 16 A → ≈ 3,2 A), mientras que V<sub>oc</sub> pasa solo de ≈ 47 a ≈ 44 V. La potencia máxima cae de ≈ 600 W a ≈ 115 W.", "Apuntes SOL3, diap. 18");
+  0, "La corriente de iluminación es proporcional al nivel de iluminación (≈ 16 A → ≈ 3,2 A), mientras que $V_{\\mathrm{oc}}$ pasa solo de ≈ 47 a ≈ 44 V. La potencia máxima cae de ≈ 600 W a ≈ 115 W.", "Apuntes SOL3, diap. 18");
 L("SOL", "sol-curvaiv", "Influencia de la irradiancia", 3, "El módulo de la diap. 18 da una corriente de cortocircuito de ≈ 16 A a 1000 W/m². Aplicando la regla de los apuntes, ¿qué corriente de cortocircuito cabe esperar a 600 W/m²?",
   ["≈ 9,6 A", "≈ 12,8 A", "≈ 16 A", "≈ 6,4 A"],
-  0, "La corriente es proporcional a la irradiancia: 16·600/1000 ≈ 9,6 A (la curva de 600 W/m² de la figura corta el eje hacia 9,5 A). 12,8 A corresponde a 800 W/m² y 6,4 A a 400 W/m².", "Apuntes SOL3, diap. 18");
+  0, "Según los apuntes (Apuntes SOL3, diap. 18), la corriente de cortocircuito es proporcional a la irradiancia: $$I_{sc}(600)=I_{sc}(1000)\\cdot\\frac{600}{1000}=16\\cdot0{,}6\\approx\\boxed{9{,}6\\ \\text{A}}$$ La curva de 600 W/m² de la figura corta el eje hacia 9,5 A. 12,8 A corresponde a 800 W/m² y 6,4 A a 400 W/m².", "Apuntes SOL3, diap. 18");
 L("SOL", "sol-curvaiv", "Influencia de la temperatura", 3, "Según la diap. 19, al pasar la célula de 10 ºC a 70 ºC…",
   ["la corriente de cortocircuito baja de ≈ 16 A a ≈ 10 A, la tensión de circuito abierto apenas varía y el rendimiento disminuye",
    "la tensión de circuito abierto baja de ≈ 48 V a ≈ 41 V, la corriente de cortocircuito apenas varía y el rendimiento disminuye",
    "la tensión de circuito abierto sube de ≈ 41 V a ≈ 48 V, la corriente apenas varía y el rendimiento aumenta",
    "Ninguna de las otras opciones"],
-  1, "El rendimiento se reduce con la temperatura por la disminución del potencial entre terminales: V<sub>oc</sub> ≈ 48 V a 10 ºC y ≈ 41 V a 70 ºC, mientras que la corriente de cortocircuito (≈ 16 A) apenas cambia.", "Apuntes SOL3, diap. 19");
+  1, "El rendimiento se reduce con la temperatura por la disminución del potencial entre terminales: $V_{\\mathrm{oc}}$ ≈ 48 V a 10 ºC y ≈ 41 V a 70 ºC, mientras que la corriente de cortocircuito (≈ 16 A) apenas cambia.", "Apuntes SOL3, diap. 19");
 L("SOL", "sol-curvaiv", "Factor de forma y rendimiento", 3, "La célula de perovskita de los apuntes tiene J<sub>sc</sub> = 20,0 mA/cm², V<sub>oc</sub> = 993 mV y FF = 0,73, con P<sub>in</sub> = 96,4 mW/cm². Su rendimiento es aproximadamente…",
   ["15,0 %", "20,6 %", "14,5 %", "11,0 %"],
-  0, "P<sub>máx</sub> = FF·J<sub>sc</sub>·V<sub>oc</sub> = 0,73·20,0·0,993 ≈ 14,5 mW/cm²; η = 14,5/96,4 ≈ 15,0 % (el PCE indicado en la diap. 24). Sin el FF saldría 20,6 %; 14,5 es la potencia en mW/cm², no el rendimiento.", "Apuntes SOL3, diap. 24");
+  0, "Con los datos de la curva de la célula de perovskita (Apuntes SOL3, diap. 24): $$P_{máx}=FF\\cdot J_{sc}\\cdot V_{oc}=0{,}73\\cdot20{,}0\\ \\tfrac{\\text{mA}}{\\text{cm}^2}\\cdot0{,}993\\ \\text{V}\\approx14{,}5\\ \\tfrac{\\text{mW}}{\\text{cm}^2}$$ $$\\eta=\\frac{P_{máx}}{P_{in}}=\\frac{14{,}5}{96{,}4}\\approx\\boxed{15{,}0\\ \\%}$$ Es el PCE indicado en la diapositiva. Sin el FF saldría 20,6 %; 14,5 es la potencia en mW/cm², no el rendimiento.", "Apuntes SOL3, diap. 24");
 L("SOL", "sol-curvaiv", "Récords de eficiencia", 3, "En el gráfico de mejores eficiencias de células de investigación (NREL) de los apuntes, el récord absoluto (47,1 %) corresponde a…",
   ["una célula multiunión de 6 uniones con concentración (143 soles)",
    "una célula de silicio monocristalino con concentración (143 soles)",
@@ -594,13 +594,13 @@ L("SOL", "sol-tecnologias", "Tipos de células", 2, "Según la clasificación de
   0, "Diap. 26: c-Si de 200-500 µm (coeficiente de absorción reducido; mono o policristalino). Lámina delgada: a-Si, arseniuro de galio, teluro de cadmio y diseleniuro de cobre e indio ≈ 1 µm; silicio cristalino de lámina delgada 10-50 µm.", "Apuntes SOL3, diap. 26");
 L("SOL", "sol-tecnologias", "Fotovoltaica de concentración", 3, "Una célula de AsGa de 1 cm² trabaja a 1000 soles con el rendimiento indicado en los apuntes. ¿Qué potencia eléctrica entrega aproximadamente?",
   ["≈ 26 W", "≈ 2,6 W", "≈ 0,026 W", "≈ 260 W"],
-  0, "1000 soles = 1 MW/m², así que sobre 1 cm² (10<sup>−4</sup> m²) inciden 100 W; con un 26 % se obtienen ≈ 26 W. 0,026 W sería la misma célula a 1 sol (1 kW/m²).", "Apuntes SOL3, diap. 28");
+  0, "1000 soles = 1 MW/m² (Apuntes SOL3, diap. 28). Sobre 1 cm² = 10⁻⁴ m² inciden: $$P_{inc}=10^{6}\\ \\tfrac{\\text{W}}{\\text{m}^2}\\cdot10^{-4}\\ \\text{m}^2=100\\ \\text{W}$$ $$P_{el}=\\eta\\,P_{inc}=0{,}26\\cdot100=\\boxed{26\\ \\text{W}}$$ 0,026 W sería la misma célula a 1 sol (1 kW/m²); 2,6 y 260 W son errores de un factor 10.", "Apuntes SOL3, diap. 28");
 L("SOL", "sol-tecnologias", "España 2023", 3, "Según la tabla del RAIPEE (noviembre de 2023) de los apuntes, las instalaciones fotovoltaicas de más de 50 MW…",
   ["son 19 y suman 4.061 MW, en torno al 17 % de la potencia de la categoría b.1.1",
    "son 19 y suman 19.588 MW, en torno al 83 % de la potencia de la categoría b.1.1",
    "son 63.147 y suman 4.061 MW, en torno al 17 % de la potencia de la categoría b.1.1",
    "son 19 y suman 4.061 MW, en torno al 50 % de la potencia de la categoría b.1.1"],
-  0, "Tabla de la diap. 31: ≤ 50 MW → 63.147 instalaciones y 19.588 MW; &gt; 50 MW → 19 instalaciones y 4.061 MW; total b.1.1 → 63.166 y 23.649 MW (47.298 ha). 4.061/23.649 ≈ 17 %.", "Apuntes SOL3, diap. 31");
+  0, "Tabla de la diap. 31: ≤ 50 MW → 63.147 instalaciones y 19.588 MW; > 50 MW → 19 instalaciones y 4.061 MW; total b.1.1 → 63.166 y 23.649 MW (47.298 ha). 4.061/23.649 ≈ 17 %.", "Apuntes SOL3, diap. 31");
 L("SOL", "sol-tecnologias", "Fin de vida", 2, "Sobre el fin de vida de los paneles fotovoltaicos, los apuntes indican que…",
   ["se puede reciclar más de un 95 % (vidrio y aluminio), el reciclaje es obligatorio por una normativa europea de 2012 y la primera planta española se inauguró en 2024",
    "se puede reciclar más de un 95 % (vidrio y aluminio), el reciclaje es obligatorio por una normativa europea de 2024 y la primera planta española se inauguró en 2012",

@@ -86,7 +86,7 @@ THEORY.FOS = {
 </tbody></table>
 <p>Destaca <b>Guyana</b>, que pasa de 0 a 716 kb/d entre 2019 y 2025, y la caída de Venezuela (2.864 kb/d en 2015 frente a 1.104 en 2025) (diap. 17).</p>
 <h4>Precios del crudo 1861-2025</h4>
-<p>El gráfico (diap. 19) da el precio en dólares corrientes y en <b>dólares de 2025</b> (deflactado con el IPC de EE. UU.). Referencias: media de EE. UU. (1861-1944), Arabian Light (1945-1983) y <b>Brent dated</b> (1984-2025). Picos en dólares de 2025: el <i>boom</i> de Pensilvania (década de 1860, ≈ 165 $), la revolución iraní (≈ 140 $ hacia 1980), 2008 (≈ 140 $) y 2011-2013 (≈ 150 $); tras la guerra de Ucrania (2022) superó los 100 $ y en 2025 bajó a ≈ 65-70 $. Acontecimientos señalados: guerra del Yom Kipur, revolución iraní, invasión de Kuwait, crisis asiática, primavera árabe, COVID-19.</p>
+<p>El gráfico (diap. 19) da el precio en dólares corrientes y en <b>dólares de 2025</b> (deflactado con el IPC de EE. UU.). Referencias: media de EE. UU. (1861-1944), Arabian Light (1945-1983) y <b>Brent dated</b> (1984-2025). Picos en dólares de 2025: el <i>boom</i> de Pensilvania (década de 1860, ≈ 165 <span>$</span>), la revolución iraní (≈ 140 <span>$</span> hacia 1980), 2008 (≈ 140 <span>$</span>) y 2011-2013 (≈ 150 <span>$</span>); tras la guerra de Ucrania (2022) superó los 100 <span>$</span> y en 2025 bajó a ≈ 65-70 <span>$</span>. Acontecimientos señalados: guerra del Yom Kipur, revolución iraní, invasión de Kuwait, crisis asiática, primavera árabe, COVID-19.</p>
 <h4>Comercio de crudo</h4>
 <p>El diagrama de flujos de 2025 (diap. 20) muestra a <b>Oriente Medio</b> como gran exportador y a <b>China</b> como mayor importador, con Europa en segundo lugar. Flujos destacados: Canadá → EE. UU. (194,7 Mt), Rusia → China (100,7 Mt) y Rusia → India (84,9 Mt).</p>
 ` },
@@ -181,7 +181,7 @@ THEORY.FOS = {
 <tr><td>Hidrógeno azul</td><td>Gas natural (CH<sub>4</sub>) → <b>reformado con vapor</b> → H<sub>2</sub>; el CO<sub>2</sub> se <b>captura, almacena y usa</b></td></tr>
 </tbody></table>
 <h4>Precios del gas</h4>
-<p>En 2025 (diap. 49, $/MMBtu): <b>Henry Hub (EE. UU.) 3,53</b>, TTF neerlandés 11,89, NBP británico 11,65, GNL Japón 11,12 y JKM 12,16. En <b>2022</b> se dispararon: TTF 37,09 y JKM 33,98, mientras Henry Hub solo llegó a 6,38. El gas estadounidense es estructuralmente el más barato.</p>
+<p>En 2025 (diap. 49, <span>$</span>/MMBtu): <b>Henry Hub (EE. UU.) 3,53</b>, TTF neerlandés 11,89, NBP británico 11,65, GNL Japón 11,12 y JKM 12,16. En <b>2022</b> se dispararon: TTF 37,09 y JKM 33,98, mientras Henry Hub solo llegó a 6,38. El gas estadounidense es estructuralmente el más barato.</p>
 ` },
     { id: "fos-gnl", title: "7. GNL, gasoductos, gas en España y metano", slides: ["FOS", 50, 67], html: `
 <h4>Cadena de transporte del gas</h4>
@@ -215,7 +215,7 @@ THEORY.FOS = {
 <p>Un <b>VIP</b> (punto virtual de interconexión) no es un punto físico, sino un agrupador comercial de varios puntos físicos; una <b>CI</b> es una conexión internacional física.</p>
 <h4>Importaciones y consumo de gas en España</h4>
 <p>Importaciones 2025 (diap. 63): <b>371.727 GWh</b>, de ellas <b>248.118 como GNL</b> y 123.609 por gasoducto. Proveedores: <b>Argelia 128.502 GWh</b>, EE. UU. 111.696, Rusia 42.629, Nigeria 27.157 y Angola 20.659. EE. UU. duplica su aportación respecto a 2024 (56.899). Saldo importador: 329.992 GWh.</p>
-<p>Consumo 2025 (diap. 64): <b>331.500 GWh</b> (28,4 bcm; +6,3 %): industrial 167.700 (−5,2 %), <b>centrales eléctricas 99.700 (+33,4 %)</b>, doméstico-comercial 51.600 y cisternas 12.500. El máximo reciente de las centrales fue 2022 (138.000 GWh). Equivalencias del autor: 1 bcm = 10<sup>9</sup> m³; <b>1 GWh = 0,858·10<sup>6</sup> termias = 85,8 tep = 95.300 m³</b> de gas natural. Potencia de ciclos combinados peninsulares a 1-1-2026: <b>24.692 MW</b> (diap. 65).</p>
+<p>Consumo 2025 (diap. 64): <b>331.500 GWh</b> (28,4 bcm; +6,3 %): industrial 167.700 (−5,2 %), <b>centrales eléctricas 99.700 (+33,4 %)</b>, doméstico-comercial 51.600 y cisternas 12.500. El máximo reciente de las centrales fue 2022 (138.000 GWh). Equivalencias del autor: 1 bcm = 10<sup>9</sup> m³; <b>$1\\ \\text{GWh}=0{,}858\\cdot10^{6}\\ \\text{termias}=85{,}8\\ \\text{tep}=95.300\\ \\text{m}^3$</b> de gas natural. Potencia de ciclos combinados peninsulares a 1-1-2026: <b>24.692 MW</b> (diap. 65).</p>
 <h4>Emisiones de metano</h4>
 <p>Del presupuesto mundial de GEI antropogénicos, el CO<sub>2</sub> supone el <b>76 %</b>, el <b>metano el 16 %</b>, los óxidos de nitrógeno el 6 % y los gases fluorados el 2 % (diap. 67). Fuentes antropogénicas de metano: fermentación entérica y estiércol 31 %, <b>gas, petróleo e industria 23 %</b>, vertederos y residuos 17 %, <b>minería del carbón 12 %</b>, arroz 9 %, quema de biomasa 5 % y de biocombustibles 3 %. Por grupos: <b>combustibles fósiles 121 Mt</b>, agricultura y residuos 195 Mt, biomasa y biocombustibles 30 Mt. Potencial de calentamiento del metano: <b>GWP-20 = 81,2</b>; <b>GWP-100 = 27,9</b>.</p>
 ` },
@@ -254,7 +254,7 @@ THEORY.FOS = {
 <h4>Producción, comercio, precios y consumo</h4>
 <p>Producción 2025 (diap. 77): <b>9.052,7 Mt</b>; <b>China 4.663,0 (51,5 %)</b>, India 1.084,2 (12,0 %), Indonesia 790,0 (8,7 %), EE. UU. 483,6 (5,3 %), Australia 431,4 (4,8 %), Rusia 429,2 (4,7 %); Asia-Pacífico, 79,8 %. La UE produce 244,5 Mt (2,7 %) y <b>España ya no produce</b> (−100 % en 2025).</p>
 <p>Comercio 2025 (diap. 78-79): <b>35,32 EJ</b>. Exportadores: <b>Indonesia 10,45 EJ (29,6 %)</b>, Australia 8,90 (25,2 %), Rusia 4,78 (13,5 %), Mongolia 2,42 y EE. UU. 2,34. Importadores: <b>China 10,41 EJ (29,5 %)</b>, India 5,28 (14,9 %), Japón 4,24 (12,0 %) y Europa 3,01 (8,5 %).</p>
-<p>Precios (diap. 80, $/t): el carbón del noroeste de Europa marcó un máximo en <b>2022 (293,63 $/t)</b> y bajó a 97,96 $/t en 2025; también hubo un pico en 2008 (147,67 $/t). La misma tabla da el uranio canadiense (72,40 $/lb en 2025).</p>
+<p>Precios (diap. 80, <span>$</span>/t): el carbón del noroeste de Europa marcó un máximo en <b>2022 (293,63 <span>$</span>/t)</b> y bajó a 97,96 <span>$</span>/t en 2025; también hubo un pico en 2008 (147,67 <span>$</span>/t). La misma tabla da el uranio canadiense (72,40 <span>$</span>/lb en 2025).</p>
 <p>Consumo 2025 (diap. 81-82): <b>166,03 EJ</b>; <b>China 92,24 EJ (55,6 %)</b>, India 23,07 (13,9 %), EE. UU. 8,73 (5,3 %); Asia-Pacífico 83,2 %, OCDE 14,8 %, UE 4,59 EJ (2,8 %). España consume 0,09 EJ.</p>
 <h4>Carbón en España</h4>
 <p>Importaciones 2025 (diap. 84): <b>3.448.807 t</b> (frente a 5.998.412 t en 2023): hulla coquizable 1.549.755 t (EE. UU. y Australia), carbón térmico 1.496.477 t (Colombia y Australia), antracitas 271.151 t (Perú) y otros carbones 131.425 t.</p>
@@ -272,7 +272,7 @@ THEORY.FOS = {
 <p>Capacidad de captura 2025 (diap. 88): <b>258,9 Mt/año</b> (+25,4 %; 180,1 en 2020). EE. UU. 93,9 Mt (36,3 %), Brasil 33,0 (12,8 %), China 28,5 (11,0 %), Australia 22,8, Canadá 19,3; Norteamérica 43,9 %, Europa 28,0 Mt (10,8 %). Las tecnologías incluyen captura directa del aire, oxi-combustión, pre- y post-combustión.</p>
 <p>Emisiones de CO<sub>2</sub> de la energía 2025: <b>35.806,2 Mt</b> (+1,1 %): OCDE 11.161,0 (31,2 %), no OCDE 24.645,2 (68,8 %) y UE 2.480,9 (6,9 %, −2,0 %/año en 2015-2025). La captura instalada equivale a menos del 1 % de lo emitido.</p>
 <h4>Mercados de carbono</h4>
-<p>Precios de los mercados regulados (diap. 89): el <b>EU ETS</b> pasó de 6,87 €/t (2012) y 5,84 €/t (2017) a 53,52 (2021), <b>85,27 (máximo, 2023)</b>, 66,47 (2024) y <b>74,91 €/t (2025)</b>. Otros en 2025: UK ETS 50,17 £/t, California 29,12 $/t, RGGI 22,37 $/t, Australia 35,7 AUD/t y Corea 9.220 wones/t. En los <b>mercados voluntarios</b> los precios van de &lt; 1 $/t (energía renovable 0,85) hasta ≈ 147 $/t (biochar en EE. UU.).</p>
+<p>Precios de los mercados regulados (diap. 89): el <b>EU ETS</b> pasó de 6,87 €/t (2012) y 5,84 €/t (2017) a 53,52 (2021), <b>85,27 (máximo, 2023)</b>, 66,47 (2024) y <b>74,91 €/t (2025)</b>. Otros en 2025: UK ETS 50,17 £/t, California 29,12 <span>$</span>/t, RGGI 22,37 <span>$</span>/t, Australia 35,7 AUD/t y Corea 9.220 wones/t. En los <b>mercados voluntarios</b> los precios van de &lt; 1 <span>$</span>/t (energía renovable 0,85) hasta ≈ 147 <span>$</span>/t (biochar en EE. UU.).</p>
 ` }
   ],
   confusions: [
@@ -317,10 +317,10 @@ L("FOS", "fos-crudo", "Contenido de azufre", 2, "Un crudo con un 1,5 % de azufre
    "dulce, porque no supera el 2 % de azufre",
    "agrio, porque supera el 1 % de azufre",
    "dulce, porque el límite entre dulce y agrio está en el 5 % de azufre"],
-  0, "Dulce &lt; 0,5 % S; agrio &gt; 0,5 % S. La densidad (liviano/pesado) se mide aparte, con la gravedad API.", "Apuntes FOS, diap. 8");
+  0, "Dulce < 0,5 % S; agrio > 0,5 % S. La densidad (liviano/pesado) se mide aparte, con la gravedad API.", "Apuntes FOS, diap. 8");
 L("FOS", "fos-crudo", "Gravedad API", 3, "Un crudo tiene una gravedad específica GE(60 ºF) = 0,85. Con la expresión de los apuntes, su gravedad API es aproximadamente…",
   ["35º", "11,8º", "166º", "25º"],
-  0, "API = 141,5/0,85 − 131,5 = 166,5 − 131,5 ≈ 35º. 166º sale si se olvida restar 131,5; 11,8º, si se resta antes de dividir.", "Apuntes FOS, diap. 8");
+  0, "Expresión de los apuntes (Apuntes FOS, diap. 8): $$API=\\frac{141{,}5}{GE(60\\,^{\\circ}F)}-131{,}5=\\frac{141{,}5}{0{,}85}-131{,}5=166{,}5-131{,}5\\approx\\boxed{35^{\\circ}}$$ Es un crudo ligero (API mayor que 10º: menos denso que el agua). 166º sale si se olvida restar 131,5; 11,8º, si se resta antes de dividir.", "Apuntes FOS, diap. 8");
 L("FOS", "fos-crudo", "Gravedad API", 2, "Un crudo con una gravedad API de 8º…",
   ["es más denso que el agua, porque su GE(60 ºF) es mayor que 1",
    "es menos denso que el agua, porque su GE(60 ºF) es menor que 1",
@@ -353,13 +353,13 @@ L("FOS", "fos-crudo", "Fracking", 2, "Según los apuntes, ¿cuáles de los sigui
   [0, 1], "Es controvertida: a favor, la independencia energética y sustituir carbón por petróleo y gas; en contra, la contaminación de aguas y los pequeños terremotos.", "Apuntes FOS, diap. 15");
 L("FOS", "fos-crudo", "Fracking", 2, "El fluido que se inyecta a alta presión en la fracturación hidráulica está formado, según los apuntes, por…",
   ["agua, arena y agentes espesantes",
-   "agua, arena y CO<sub>2</sub> supercrítico",
+   "agua, arena y CO₂ supercrítico",
    "vapor de agua, arena y disolventes aromáticos",
    "agua, gas natural y agentes espesantes"],
   0, "«Inyección a alta presión de un fluido (agua, arena y agentes espesantes) para agrietar formaciones rocosas facilitando el flujo de crudo y gas natural».", "Apuntes FOS, diap. 15");
 L("FOS", "fos-crudo", "Conversión barril-tonelada", 3, "Con la equivalencia del cuadro de reservas (1 barril = 0,1364 t), las reservas probadas mundiales (1.852,9·10<sup>9</sup> barriles) equivalen aproximadamente a…",
-  ["253·10<sup>9</sup> t", "25,3·10<sup>9</sup> t", "13.584·10<sup>9</sup> t", "2,53·10<sup>9</sup> t"],
-  0, "1.852,9·10<sup>9</sup> × 0,1364 ≈ 252,7·10<sup>9</sup> t. 13.584·10<sup>9</sup> sale si se divide en vez de multiplicar.", "Apuntes FOS, diap. 14");
+  ["253·10⁹ t", "25,3·10⁹ t", "13.584·10⁹ t", "2,53·10⁹ t"],
+  0, "Basta multiplicar los barriles por la equivalencia del cuadro de reservas (Apuntes FOS, diap. 14): $$1852{,}9\\cdot10^{9}\\ \\text{barriles}\\cdot0{,}1364\\ \\tfrac{\\text{t}}{\\text{barril}}\\approx\\boxed{253\\cdot10^{9}\\ \\text{t}}$$ 13.584·10⁹ t sale si se divide en vez de multiplicar; 25,3·10⁹ y 2,53·10⁹ t son errores de potencias de 10.", "Apuntes FOS, diap. 14");
 L("FOS", "fos-crudo", "Formación", 1, "Según el esquema de formación del petróleo y del gas natural, los pequeños organismos marinos que los originaron murieron y quedaron enterrados hace…",
   ["300-400 millones de años", "100 millones de años", "30-40 millones de años", "3.000-4.000 millones de años"],
   0, "El esquema sitúa el océano original hace 300-400 millones de años; la viñeta de «hace 100 millones de años» muestra los restos ya enterrados bajo arena y limo.", "Apuntes FOS, diap. 9");
@@ -377,17 +377,17 @@ L("FOS", "fos-mercado", "Precios del crudo", 2, "En el gráfico de precios del c
   ["Brent dated", "Arabian Light (precio publicado en Ras Tanura)", "Media de EE. UU.", "West Texas Intermediate (WTI)"],
   0, "1861-1944: media de EE. UU.; 1945-1983: Arabian Light en Ras Tanura; 1984-2025: Brent dated.", "Apuntes FOS, diap. 19");
 L("FOS", "fos-mercado", "Precios del crudo", 3, "¿Cuál de estas afirmaciones sobre la evolución del precio del crudo es FALSA?",
-  ["En dólares de 2025, el máximo hacia 1980 (revolución iraní) superó los 100 $/barril",
+  ["En dólares de 2025, el máximo hacia 1980 (revolución iraní) superó los 100 $\\text{\\textdollar}$/barril",
    "En dólares corrientes, el precio de la década de 1860 apenas alcanzó unos pocos dólares por barril",
    "En dólares de 2025, el precio medio de 2025 fue superior al de 2022",
-   "En dólares de 2025, el boom de Pensilvania de la década de 1860 superó los 150 $/barril"],
-  2, "En 2022 (guerra de Ucrania) el precio superó los 100 $ de 2025 y en 2025 bajó a ≈ 65-70 $. Las otras tres afirmaciones se leen en el gráfico.", "Apuntes FOS, diap. 19");
+   "En dólares de 2025, el boom de Pensilvania de la década de 1860 superó los 150 $\\text{\\textdollar}$/barril"],
+  2, "En 2022 (guerra de Ucrania) el precio superó los 100 $\\text{\\textdollar}$ de 2025 y en 2025 bajó a ≈ 65-70 $\\text{\\textdollar}$. Las otras tres afirmaciones se leen en el gráfico.", "Apuntes FOS, diap. 19");
 L("FOS", "fos-mercado", "Producción de petróleo", 2, "¿Qué país aparece en la tabla de producción con un salto desde prácticamente cero (2019) hasta 716 kb/d en 2025?",
   ["Guyana", "Brasil", "Argentina", "Venezuela"],
   0, "Guyana: 1 kb/d en 2019 y 716 en 2025. Brasil produce 3.881 kb/d, Argentina 1.427 y Venezuela 1.104 (frente a 2.864 en 2015).", "Apuntes FOS, diap. 17");
 L("FOS", "fos-mercado", "Producción en toneladas", 3, "Con la producción mundial de 2025 (100.590 kb/d) y la equivalencia 1 barril = 0,1364 t, la producción anual de petróleo es aproximadamente…",
   ["5.000 Mt", "500 Mt", "36.700 Mt", "13,7 Mt"],
-  0, "100,59·10<sup>6</sup> barriles/día × 365 = 36.715·10<sup>6</sup> barriles/año (≈ 36.700 millones de barriles); × 0,1364 ≈ 5.008 Mt. 13,7 Mt es la producción de un solo día.", "Apuntes FOS, diap. 14 y 18");
+  0, "Se pasa de barriles diarios a toneladas anuales (Apuntes FOS, diap. 14 y 18): $$100.590\\ \\text{kb/d}=100{,}59\\cdot10^{6}\\ \\text{barriles/d}$$ $$100{,}59\\cdot10^{6}\\cdot365=36{,}7\\cdot10^{9}\\ \\text{barriles/año}$$ $$36{,}7\\cdot10^{9}\\cdot0{,}1364\\ \\text{t}\\approx5{,}0\\cdot10^{9}\\ \\text{t}=\\boxed{5000\\ \\text{Mt/año}}$$ 13,7 Mt es la producción de un solo día; 36.700 son millones de barriles, no de toneladas; 500 Mt es un error de un factor 10.", "Apuntes FOS, diap. 14 y 18");
 L("FOS", "fos-mercado", "Comercio de crudo", 1, "Según el diagrama de flujos de crudo de 2025, el mayor importador de crudo es…",
   ["China", "Europa", "EE. UU.", "India"],
   0, "China (581,2 Mt) por delante de Europa (442,5 Mt). EE. UU. importa sobre todo crudo canadiense (194,7 Mt).", "Apuntes FOS, diap. 20 y 28");
@@ -403,16 +403,16 @@ L("FOS", "fos-refino", "Fracciones", 2, "Según la clasificación de los apuntes
   0, "Ligeros: GLP, gasolina, nafta. Medios: queroseno, jet fuel, diésel. Pesados: fuelóleo pesado. Residuo: parafinas y asfaltos.", "Apuntes FOS, diap. 22");
 L("FOS", "fos-refino", "Cracking", 2, "Según los apuntes, ¿qué proceso permite modificar las proporciones de los productos que daría la simple destilación?",
   ["El cracking", "La destilación a vacío", "El proceso Claus", "La síntesis de hidrógeno"],
-  0, "«Otros procesos químicos (cracking) permiten modificar las proporciones». El proceso Claus recupera azufre y la síntesis de H<sub>2</sub> alimenta los hidrotratamientos.", "Apuntes FOS, diap. 22");
+  0, "«Otros procesos químicos (cracking) permiten modificar las proporciones». El proceso Claus recupera azufre y la síntesis de H₂ alimenta los hidrotratamientos.", "Apuntes FOS, diap. 22");
 L("FOS", "fos-refino", "Columna de destilación", 3, "En el esquema de la columna de destilación de los apuntes, ¿a qué temperatura aproximada se extrae el diésel?",
   ["≈ 300 ºC", "≈ 200 ºC", "≈ 370 ºC", "≈ 150 ºC"],
   0, "Butano y propano ≈ 20 ºC, gasolina ≈ 150 ºC, queroseno ≈ 200 ºC, diésel ≈ 300 ºC, fuelóleo ≈ 370 ºC y residuo ≈ 400 ºC.", "Apuntes FOS, diap. 22");
 L("FOS", "fos-refino", "Esquema de refinería", 3, "En el esquema de refinería de los apuntes, la planta Claus sirve para…",
-  ["obtener azufre a partir del H<sub>2</sub>S retirado de los gases",
+  ["obtener azufre a partir del H₂S retirado de los gases",
    "producir hidrógeno a partir de gas natural y vapor",
    "transformar el residuo de vacío en coque de petróleo",
    "eliminar mercaptanos del queroseno para obtener jet fuel"],
-  0, "El H<sub>2</sub>S del tratamiento con aminas y del stripper de aguas ácidas va a la planta Claus, que produce azufre. El H<sub>2</sub> sale de la unidad de síntesis de hidrógeno; el coque, del coquizador retardado; los mercaptanos se eliminan en el tratamiento Merox.", "Apuntes FOS, diap. 23");
+  0, "El H₂S del tratamiento con aminas y del stripper de aguas ácidas va a la planta Claus, que produce azufre. El H₂ sale de la unidad de síntesis de hidrógeno; el coque, del coquizador retardado; los mercaptanos se eliminan en el tratamiento Merox.", "Apuntes FOS, diap. 23");
 L("FOS", "fos-refino", "Capacidad de refino", 2, "Según la tabla de crudo procesado en refinerías (2025), el país con mayor capacidad de refino es…",
   ["EE. UU., seguido muy de cerca por China", "China, seguida muy de cerca por EE. UU.", "EE. UU., seguido muy de cerca por India", "Rusia, seguida muy de cerca por China"],
   0, "EE. UU. 16.371 kb/d (19,7 %), China 14.747 (17,8 %), India 5.468 (6,6 %), Rusia 4.900 (5,9 %).", "Apuntes FOS, diap. 24-25");
@@ -491,17 +491,17 @@ L("FOS", "fos-gas", "Hidrógeno", 3, "Según la tabla de producción de hidróge
    "El total mundial es de ≈ 1.082 Mt/año, de los que ≈ 71 % es hidrógeno azul"],
   0, "Total 1.082,3 kt (no Mt): azul 765,2 kt (70,7 %), verde 317,1 kt (29,3 %, +174,1 %). El verde se concentra en Asia-Pacífico (200,7 kt); Oriente Medio produce azul.", "Apuntes FOS, diap. 47");
 L("FOS", "fos-gas", "Hidrógeno azul", 1, "Según el esquema de los apuntes, el hidrógeno azul se obtiene mediante…",
-  ["reformado con vapor de gas natural, con captura, almacenamiento y uso del CO<sub>2</sub>",
-   "electrólisis del agua con electricidad renovable, almacenando después el O<sub>2</sub>",
-   "electrólisis del agua con electricidad de la red, con captura del CO<sub>2</sub>",
-   "gasificación de carbón, con captura, almacenamiento y uso del CO<sub>2</sub>"],
-  0, "Azul: gas natural → reformado con vapor → H<sub>2</sub> y CO<sub>2</sub> capturado. Verde: renovables → electrolizador (el O<sub>2</sub> se libera) → compresor → tanques.", "Apuntes FOS, diap. 48");
+  ["reformado con vapor de gas natural, con captura, almacenamiento y uso del CO₂",
+   "electrólisis del agua con electricidad renovable, almacenando después el O₂",
+   "electrólisis del agua con electricidad de la red, con captura del CO₂",
+   "gasificación de carbón, con captura, almacenamiento y uso del CO₂"],
+  0, "Azul: gas natural → reformado con vapor → H₂ y CO₂ capturado. Verde: renovables → electrolizador (el O₂ se libera) → compresor → tanques.", "Apuntes FOS, diap. 48");
 L("FOS", "fos-gas", "Precios del gas", 3, "En 2022 el precio del gas en el TTF neerlandés llegó a 37,09 $/MMBtu. Según la tabla de precios, ¿qué ocurrió ese año con el Henry Hub de EE. UU.?",
-  ["Subió hasta ≈ 6,4 $/MMBtu, muy por debajo del TTF",
-   "Subió por encima de 30 $/MMBtu, a la par que el TTF",
-   "Cayó por debajo de 2 $/MMBtu por exceso de oferta",
+  ["Subió hasta ≈ 6,4 $\\text{\\textdollar}$/MMBtu, muy por debajo del TTF",
+   "Subió por encima de 30 $\\text{\\textdollar}$/MMBtu, a la par que el TTF",
+   "Cayó por debajo de 2 $\\text{\\textdollar}$/MMBtu por exceso de oferta",
    "Ninguna de las otras opciones"],
-  0, "Henry Hub 2022: 6,38 $/MMBtu (frente a 3,84 en 2021 y 3,53 en 2025). El TTF (37,09) y el JKM (33,98) se multiplicaron; el gas estadounidense siguió siendo mucho más barato.", "Apuntes FOS, diap. 49");
+  0, "Henry Hub 2022: 6,38 $\\text{\\textdollar}$/MMBtu (frente a 3,84 en 2021 y 3,53 en 2025). El TTF (37,09) y el JKM (33,98) se multiplicaron; el gas estadounidense siguió siendo mucho más barato.", "Apuntes FOS, diap. 49");
 
 L("FOS", "fos-gnl", "Exportadores", 3, "Según las tablas de comercio de gas de 2025, el primer exportador de GNL y el primer exportador por gasoducto son, respectivamente…",
   ["EE. UU. y Noruega", "Catar y Rusia", "EE. UU. y Rusia", "Australia y Noruega"],
@@ -522,15 +522,15 @@ L("FOS", "fos-gnl", "Regasificación", 2, "Según el cuadro de capacidades de la
   ["Barcelona (544 GWh/día)", "Cartagena (377 GWh/día)", "Huelva (444 GWh/día)", "Sagunto (544 GWh/día)"],
   0, "Barcelona 544, Cartagena 377, Huelva 377, Sagunto 279 GWh/día. 444 GWh/día es la entrada por la conexión internacional de Tarifa.", "Apuntes FOS, diap. 62");
 L("FOS", "fos-gnl", "Metano", 3, "Con los potenciales de calentamiento de los apuntes, la emisión de 10 Mt de metano equivale, en un horizonte de 100 años, a…",
-  ["279 Mt de CO<sub>2</sub>-eq", "812 Mt de CO<sub>2</sub>-eq", "27,9 Mt de CO<sub>2</sub>-eq", "2.790 Mt de CO<sub>2</sub>-eq"],
-  0, "GWP-100 = 27,9 → 10 × 27,9 = 279 Mt CO<sub>2</sub>-eq. Con el GWP-20 (81,2) serían 812 Mt.", "Apuntes FOS, diap. 67");
+  ["279 Mt de CO₂-eq", "812 Mt de CO₂-eq", "27,9 Mt de CO₂-eq", "2.790 Mt de CO₂-eq"],
+  0, "El CO₂ equivalente es la masa de metano por su potencial de calentamiento a 100 años de los apuntes (GWP-100 = 27,9; Apuntes FOS, diap. 67): $$10\\ \\text{Mt}\\cdot27{,}9=\\boxed{279\\ \\text{Mt CO}_2\\text{-eq}}$$ Con el GWP-20 (81,2) serían 812 Mt; 27,9 y 2.790 Mt son errores de un factor 10.", "Apuntes FOS, diap. 67");
 
 L("FOS", "fos-carbon", "Clasificación", 1, "Un carbón con PCS (sin cenizas) inferior a 24 GJ/t, menos del 70 % de carbono, más del 20 % de materia volátil y humedad del orden del 40 % es…",
   ["lignito", "sub-bituminoso", "hulla", "antracita"],
-  0, "Es la descripción del lignito (brown coal). El sub-bituminoso está entre 20 y 24 GJ/t; hulla y antracita son hard coal (&gt; 24 GJ/t).", "Apuntes FOS, diap. 69");
+  0, "Es la descripción del lignito (brown coal). El sub-bituminoso está entre 20 y 24 GJ/t; hulla y antracita son hard coal (> 24 GJ/t).", "Apuntes FOS, diap. 69");
 L("FOS", "fos-carbon", "Clasificación", 2, "Un carbón con un 90 % de carbono y un 10 % de materia volátil se clasifica como…",
   ["antracita, dentro del hard coal", "hulla bituminosa, dentro del hard coal", "antracita, dentro del brown coal", "sub-bituminoso, entre el brown coal y el hard coal"],
-  0, "Antracita: C &gt; 85 % y volátiles &lt; 15 %. Hulla: C ~ 60-85 % y volátiles ~ 15-30 %. Ambas son hard coal (PCS &gt; 24 GJ/t).", "Apuntes FOS, diap. 69");
+  0, "Antracita: C > 85 % y volátiles < 15 %. Hulla: C ~ 60-85 % y volátiles ~ 15-30 %. Ambas son hard coal (PCS > 24 GJ/t).", "Apuntes FOS, diap. 69");
 L("FOS", "fos-carbon", "Reservas por tipo", 3, "Según el esquema de tipos de carbón, el reparto de las reservas mundiales es…",
   ["bajo rango 47 % (lignito 17 % y sub-bituminoso 30 %) y hard coal 53 % (bituminoso 52 % y antracita ~1 %)",
    "bajo rango 53 % (lignito 30 % y sub-bituminoso 23 %) y hard coal 47 % (bituminoso 46 % y antracita ~1 %)",
@@ -555,19 +555,19 @@ L("FOS", "fos-carbon", "Centrales en España", 2, "Según los apuntes, a 1-1-202
 
 L("FOS", "fos-co2", "Captura de carbono", 1, "Quemar el combustible en una atmósfera de oxígeno puro, de modo que los gases resultantes sean CO<sub>2</sub> y H<sub>2</sub>O, corresponde a la captura…",
   ["post-combustión", "pre-combustión", "por combustión oxy-fuel", "Ninguna de las otras opciones"],
-  2, "Oxy-fuel: quemado en O<sub>2</sub> puro → CO<sub>2</sub> + H<sub>2</sub>O. Post-combustión: el CO<sub>2</sub> se extrae de los gases de escape. Pre-combustión: se descarboniza el combustible.", "Apuntes FOS, diap. 87");
+  2, "Oxy-fuel: quemado en O₂ puro → CO₂ + H₂O. Post-combustión: el CO₂ se extrae de los gases de escape. Pre-combustión: se descarboniza el combustible.", "Apuntes FOS, diap. 87");
 L("FOS", "fos-co2", "Captura de carbono", 2, "Señale la afirmación correcta sobre las técnicas de captura de carbono de los apuntes:",
-  ["En pre-combustión se descarboniza el combustible y en post-combustión el CO<sub>2</sub> se extrae de los gases de escape",
-   "En pre-combustión el CO<sub>2</sub> se extrae de los gases de escape y en post-combustión se descarboniza el combustible",
+  ["En pre-combustión se descarboniza el combustible y en post-combustión el CO₂ se extrae de los gases de escape",
+   "En pre-combustión el CO₂ se extrae de los gases de escape y en post-combustión se descarboniza el combustible",
    "En pre-combustión el combustible se quema con oxígeno puro y en post-combustión se descarboniza",
-   "En post-combustión el combustible se quema con oxígeno puro y en pre-combustión se separa el CO<sub>2</sub> de los humos"],
-  0, "Pre = antes de quemar (descarbonizar el combustible); post = después (separar el CO<sub>2</sub> de los humos); oxy-fuel = quemar con O<sub>2</sub> puro.", "Apuntes FOS, diap. 87");
+   "En post-combustión el combustible se quema con oxígeno puro y en pre-combustión se separa el CO₂ de los humos"],
+  0, "Pre = antes de quemar (descarbonizar el combustible); post = después (separar el CO₂ de los humos); oxy-fuel = quemar con O₂ puro.", "Apuntes FOS, diap. 87");
 L("FOS", "fos-co2", "Almacenamiento geológico", 2, "En el esquema de almacenamiento geológico de CO<sub>2</sub> bajo una roca sello, ¿qué mecanismos de retención aparecen? (Puede haber varias correctas)",
   ["Trampa estructural", "Trampa residual", "Trampa de solubilidad y mineral", "Trampa por adsorción en la roca sello"],
-  [0, 1, 2], "El esquema muestra (a) trampa estructural, (b) trampa residual (CO<sub>2</sub> atrapado en los poros) y (c) trampa de solubilidad y mineral (CO<sub>2</sub> disuelto en la salmuera).", "Apuntes FOS, diap. 87");
+  [0, 1, 2], "El esquema muestra (a) trampa estructural, (b) trampa residual (CO₂ atrapado en los poros) y (c) trampa de solubilidad y mineral (CO₂ disuelto en la salmuera).", "Apuntes FOS, diap. 87");
 L("FOS", "fos-co2", "CCUS frente a emisiones", 3, "La capacidad mundial de captura de CO<sub>2</sub> en 2025 (258,9 Mt/año) frente a las emisiones de CO<sub>2</sub> de la energía de ese año (35.806 Mt) representa aproximadamente…",
   ["0,7 %", "7 %", "0,07 %", "14 %"],
-  0, "258,9 / 35.806 ≈ 0,0072 → 0,7 %. La capacidad de captura crece rápido (+25,4 % en 2025), pero sigue siendo marginal frente a las emisiones.", "Apuntes FOS, diap. 88");
+  0, "Fracción de las emisiones que cubriría la capacidad de captura de 2025 (Apuntes FOS, diap. 88): $$\\frac{258{,}9\\ \\text{Mt}}{35.806\\ \\text{Mt}}=0{,}0072\\Rightarrow\\boxed{\\approx0{,}7\\ \\%}$$ La capacidad de captura crece deprisa (+25,4 % en 2025), pero sigue siendo marginal frente a las emisiones. 7 % y 0,07 % son errores al pasar a porcentaje.", "Apuntes FOS, diap. 88");
 L("FOS", "fos-co2", "Mercado europeo de carbono", 3, "Según la tabla de precios del carbono, el EU ETS…",
   ["alcanzó su máximo en 2023 (85,27 €/t) y cerró 2025 en 74,91 €/t",
    "alcanzó su máximo en 2022 (81,17 €/t) y cerró 2025 en 74,91 €/t",
@@ -846,30 +846,30 @@ THEORY.FIS = {
 ` },
     { id: "fis-fisica", title: "3. Conceptos básicos de física nuclear y protección radiológica", slides: ["FIS", 27, 36], html: `
 <h4>Estabilidad nuclear</h4>
-<p>Los núcleos están formados por <b>Z protones</b> y <b>N neutrones</b> (Z = número atómico, N = número neutrónico); a ambos se les llama <b>nucleones</b>, y el número másico es <b>A = Z + N</b>. Un nucleido se escribe $^{A}_{Z}X$: por ejemplo $^{12}_{6}C$ o $^{235}_{92}U$ (diap. 28).</p>
+<p>Los núcleos están formados por <b>Z protones</b> y <b>N neutrones</b> (Z = número atómico, N = número neutrónico); a ambos se les llama <b>nucleones</b>, y el número másico es <b>$A = Z + N$</b>. Un nucleido se escribe $^{A}_{Z}X$: por ejemplo $^{12}_{6}C$ o $^{235}_{92}U$ (diap. 28).</p>
 <ul><li>Los protones se repelen (<b>repulsión coulombiana</b>); los nucleones se atraen (<b>interacción fuerte residual</b>).</li>
 <li>Núcleos ligeros estables: <b>Z ≈ N</b>; núcleos pesados: <b>Z &lt; N</b>. Demasiados neutrones hacen el núcleo inestable.</li>
 <li>La estabilidad depende de la <b>energía de ligadura nuclear</b>.</li></ul>
 <h4>Desintegraciones radiactivas</h4>
 <table class="tbl cmp"><thead><tr><th>Tipo</th><th>Qué ocurre (diap. 29)</th></tr></thead><tbody>
 <tr><td>Alfa</td><td>Emisión de una partícula α (He-4): $^{210}_{84}Po \\rightarrow\\, ^{206}_{82}Pb +\\, ^{4}_{2}He$ (A baja 4, Z baja 2)</td></tr>
-<tr><td>Beta<sup>−</sup></td><td>Neutrón → protón: n → p + e<sup>−</sup> + antineutrino (Z sube 1, A igual)</td></tr>
-<tr><td>Beta<sup>+</sup></td><td>Protón → neutrón: p → n + e<sup>+</sup> + neutrino (Z baja 1, A igual)</td></tr>
+<tr><td>Beta<sup>−</sup></td><td>Neutrón → protón: $n \\rightarrow p + e^{-} + \\bar{\\nu}_e$ (antineutrino; Z sube 1, A igual)</td></tr>
+<tr><td>Beta<sup>+</sup></td><td>Protón → neutrón: $p \\rightarrow n + e^{+} + \\nu_e$ (neutrino; Z baja 1, A igual)</td></tr>
 <tr><td>Gamma</td><td>Emisión de radiación electromagnética</td></tr>
 <tr><td>Emisión de nucleones</td><td>Emisión de protones o neutrones</td></tr>
 </tbody></table>
 <p>En una familia de <b>isóbaros</b> (mismo A) hay uno o dos nucleidos más estables y el resto tiende hacia ellos mediante desintegraciones β. El mapa de nucleidos de la diap. 29 marca los números de protones y neutrones especialmente estables (8, 20, 28, 50, 82 y N = 126).</p>
 <h4>Actividad</h4>
-<p>La actividad se mide en <b>bequerelios</b>: 1 Bq = 1 desintegración por segundo. Otra unidad es el <b>curio</b>: <b>1 Ci = 3,7·10<sup>10</sup> Bq</b> (diap. 30).</p>
+<p>La actividad se mide en <b>bequerelios</b>: 1 Bq = 1 desintegración por segundo. Otra unidad es el <b>curio</b>: <b>$1\\ \\text{Ci} = 3{,}7\\cdot10^{10}\\ \\text{Bq}$</b> (diap. 30).</p>
 <div class="formula">$$N(t)=N(0)\\,e^{-\\lambda t}\\qquad A(t)=\\left|\\frac{dN(t)}{dt}\\right|=\\lambda N(t)$$</div>
 <h4>Blindaje de radiación</h4>
 <p>Según el esquema de la diap. 32: las partículas <b>α</b> se detienen con una hoja de <b>papel</b>; las <b>β</b> atraviesan el papel pero se detienen en pocos milímetros (en el cuerpo humano, antes del aluminio); los <b>γ</b> atraviesan papel, cuerpo y aluminio y se frenan con <b>plomo</b>; los <b>neutrones</b> atraviesan incluso el plomo y se detienen con <b>hormigón</b>. Las diap. 31 y 33 (<i>What if?</i> de xkcd) plantean dos curiosidades: cuántos plátanos (radiactivos) harían falta para abastecer una casa y qué pasaría al nadar en una piscina de combustible gastado.</p>
 <h4>Magnitudes dosimétricas</h4>
 <p>Los efectos de la radiactividad dependen del <b>flujo</b>, del <b>tipo</b> (α, β, γ, neutrones…) y de la <b>energía</b> de las partículas (diap. 34).</p>
 <table class="tbl cmp"><thead><tr><th>Magnitud</th><th>Definición</th><th>Unidad</th></tr></thead><tbody>
-<tr><td>Dosis absorbida (D)</td><td>Energía depositada en el material por unidad de masa</td><td>Gy: 1 Gy = 1 J/kg = 100 rad (1 rad = 100 erg/g = 0,01 J/kg)</td></tr>
-<tr><td>Dosis equivalente (H)</td><td>H = D · W<sub>R</sub> (factor de calidad de la radiación)</td><td>Sv</td></tr>
-<tr><td>Dosis efectiva (E)</td><td>E = H · W<sub>T</sub> (factor de radiosensibilidad del tejido); <b>es la magnitud empleada para establecer límites</b></td><td><b>Sievert (Sv)</b></td></tr>
+<tr><td>Dosis absorbida (D)</td><td>Energía depositada en el material por unidad de masa</td><td>Gy: $1\\ \\text{Gy} = 1\\ \\text{J/kg} = 100\\ \\text{rad}$ ($1\\ \\text{rad} = 100\\ \\text{erg/g} = 0{,}01\\ \\text{J/kg}$)</td></tr>
+<tr><td>Dosis equivalente (H)</td><td>$H = D\\cdot W_R$ (factor de calidad de la radiación)</td><td>Sv</td></tr>
+<tr><td>Dosis efectiva (E)</td><td>$E = H\\cdot W_T$ (factor de radiosensibilidad del tejido); <b>es la magnitud empleada para establecer límites</b></td><td><b>Sievert (Sv)</b></td></tr>
 </tbody></table>
 <p><b>Dosis media por año y persona: 3,6 mSv</b> (diap. 35, NCRP 1987). Fuentes naturales <b>82 %</b>: radón 55 %, interna 11 %, terrestre 8 % y cósmica 8 %. Fuentes artificiales <b>18 %</b>: rayos X médicos 11 %, medicina nuclear 4 %, productos de consumo 3 % y otras &lt; 1 % (ocupacional 0,3 %, lluvia radiactiva &lt; 0,3 %, ciclo del combustible nuclear 0,1 %). La diap. 36 enlaza la tabla de dosis de xkcd, que compara dosis desde los µSv (comer un plátano) hasta los Sv.</p>
 ` },
@@ -1027,14 +1027,14 @@ L("FIS", "fis-mundo", "Seguridad", 2, "Según los apuntes, la tasa de mortalidad
    "2,8 muertes/TWh, del orden del gas natural, incluidos Chernóbil y Fukushima"],
   0, "Nuclear 0,03 (la infografía indica que incluye Chernóbil y Fukushima), eólica 0,04, solar 0,02. Gas 2,8; hidráulica 1,3; carbón 24,6.", "Apuntes FIS, diap. 20-21");
 L("FIS", "fis-mundo", "Emisiones de ciclo de vida", 3, "Según la infografía de fuentes más limpias, el orden de emisiones de ciclo de vida (t CO<sub>2</sub>-eq/GWh), de menor a mayor, es…",
-  ["nuclear (3) &lt; eólica (4) &lt; solar (5) &lt; hidráulica (34)",
-   "eólica (3) &lt; nuclear (4) &lt; solar (5) &lt; hidráulica (34)",
-   "solar (3) &lt; nuclear (4) &lt; eólica (5) &lt; hidráulica (34)",
-   "nuclear (3) &lt; solar (4) &lt; eólica (5) &lt; biomasa (34)"],
-  0, "Nuclear 3, eólica 4, solar 5, hidráulica 34, biomasa 78-230, gas 490, petróleo 720, carbón 820 t CO<sub>2</sub>-eq/GWh.", "Apuntes FIS, diap. 21");
+  ["nuclear (3) < eólica (4) < solar (5) < hidráulica (34)",
+   "eólica (3) < nuclear (4) < solar (5) < hidráulica (34)",
+   "solar (3) < nuclear (4) < eólica (5) < hidráulica (34)",
+   "nuclear (3) < solar (4) < eólica (5) < biomasa (34)"],
+  0, "Nuclear 3, eólica 4, solar 5, hidráulica 34, biomasa 78-230, gas 490, petróleo 720, carbón 820 t CO₂-eq/GWh.", "Apuntes FIS, diap. 21");
 L("FIS", "fis-mundo", "Emisiones de ciclo de vida", 3, "Con los datos de ciclo de vida de los apuntes, ¿cuántas veces más GEI emite el carbón que la nuclear por GWh?",
   ["≈ 273 veces", "≈ 820 veces", "≈ 27 veces", "≈ 1.230 veces"],
-  0, "820 / 3 ≈ 273 (la infografía lo indica así). 1.230 es el cociente de muertes por TWh entre el carbón y la solar.", "Apuntes FIS, diap. 21");
+  0, "Cociente de las emisiones de ciclo de vida de la infografía (Apuntes FIS, diap. 21): carbón ≈ 820 y nuclear ≈ 3 t CO₂-eq/GWh. $$\\frac{820}{3}\\approx\\boxed{273}$$ 1.230 es el cociente de muertes por TWh entre el carbón y la solar, no de emisiones.", "Apuntes FIS, diap. 21");
 
 L("FIS", "fis-espana", "Tipos de reactor", 1, "¿Cuál es el único reactor de agua en ebullición (BWR) en funcionamiento en España?",
   ["Cofrentes", "Trillo I", "Almaraz II", "Vandellós II"],
@@ -1044,7 +1044,7 @@ L("FIS", "fis-espana", "Suministradores", 2, "Según el cuadro de centrales espa
   0, "Trillo I: PWR de Siemens-KWU. Almaraz I-II, Ascó I-II y Vandellós II: PWR de Westinghouse. Cofrentes: BWR de General Electric.", "Apuntes FIS, diap. 24");
 L("FIS", "fis-espana", "Potencia instalada", 3, "Sumando la potencia eléctrica bruta actual de los siete reactores españoles del cuadro de los apuntes, se obtiene aproximadamente…",
   ["7.399 MW", "6.677 MW", "8.399 MW", "7.092 MW"],
-  0, "1.049,4 + 1.044,5 + 1.032,5 + 1.027,2 + 1.092,0 + 1.066,0 + 1.087,1 ≈ 7.398,7 MW. 6.677 MW es la suma de las potencias iniciales.", "Apuntes FIS, diap. 24");
+  0, "Suma de las potencias brutas actuales del cuadro (Apuntes FIS, diap. 24): $$1049{,}4+1044{,}5+1032{,}5+1027{,}2+1092{,}0+1066{,}0+1087{,}1=7398{,}7\\approx\\boxed{7399\\ \\text{MW}}$$ 6.677 MW es la suma de las potencias iniciales (930 · 4 + 975 + 1.000 + 982).", "Apuntes FIS, diap. 24");
 L("FIS", "fis-espana", "Centrales españolas", 3, "Sobre las centrales nucleares españolas en funcionamiento, ¿cuál de las siguientes afirmaciones es FALSA?",
   ["Ascó I pertenece al 100 % a Endesa",
    "Cofrentes pertenece al 100 % a Iberdrola",
@@ -1074,14 +1074,14 @@ L("FIS", "fis-espana", "Combustible ENUSA", 2, "Según el cuadro de producción 
   0, "2025: 691 elementos (475 PWR + 216 BWR); 245 para centrales nacionales y 446 para exportación (251,2 tU). 934 y 551 son los datos de 2010.", "Apuntes FIS, diap. 26");
 
 L("FIS", "fis-fisica", "Número másico", 1, "En un nucleido $^{A}_{Z}X$, el número másico A…",
-  ["es el número total de nucleones: A = Z + N", "es el número de protones: A = Z", "es el número de neutrones: A = N", "es el exceso de neutrones: A = N − Z"],
+  ["es el número total de nucleones: $A = Z + N$", "es el número de protones: $A = Z$", "es el número de neutrones: $A = N$", "es el exceso de neutrones: $A = N - Z$"],
   0, "Z = número atómico (protones), N = número neutrónico y A = Z + N. Por ejemplo, el U-235 tiene 92 protones y 143 neutrones.", "Apuntes FIS, diap. 28");
 L("FIS", "fis-fisica", "Estabilidad nuclear", 2, "Según los apuntes, sobre la estabilidad nuclear se cumple que…",
-  ["los núcleos ligeros estables tienen Z ≈ N y los pesados Z &lt; N; demasiados neutrones los hacen inestables",
-   "los núcleos ligeros estables tienen Z &lt; N y los pesados Z ≈ N; demasiados protones los hacen inestables",
+  ["los núcleos ligeros estables tienen Z ≈ N y los pesados Z < N; demasiados neutrones los hacen inestables",
+   "los núcleos ligeros estables tienen Z < N y los pesados Z ≈ N; demasiados protones los hacen inestables",
    "los núcleos ligeros y pesados estables tienen Z ≈ N; la estabilidad no depende de la energía de ligadura",
-   "los núcleos pesados estables tienen Z &gt; N porque la interacción fuerte compensa la repulsión coulombiana"],
-  0, "Ligeros: Z ≈ N. Pesados: Z &lt; N (hacen falta más neutrones frente a la repulsión coulombiana). Demasiados neutrones dan núcleos inestables y la estabilidad depende de la energía de ligadura.", "Apuntes FIS, diap. 28");
+   "los núcleos pesados estables tienen Z > N porque la interacción fuerte compensa la repulsión coulombiana"],
+  0, "Ligeros: Z ≈ N. Pesados: Z < N (hacen falta más neutrones frente a la repulsión coulombiana). Demasiados neutrones dan núcleos inestables y la estabilidad depende de la energía de ligadura.", "Apuntes FIS, diap. 28");
 L("FIS", "fis-fisica", "Isóbaros", 3, "Según los apuntes, en una familia de isóbaros (mismo número másico A)…",
   ["hay uno o dos nucleidos más estables y el resto tiende hacia ellos mediante desintegraciones β",
    "hay uno o dos nucleidos más estables y el resto tiende hacia ellos mediante desintegraciones α",
@@ -1095,20 +1095,20 @@ L("FIS", "fis-fisica", "Desintegración alfa", 2, "En la desintegración α de l
    "un número másico 4 unidades menor y un número atómico 2 unidades mayor"],
   0, "Se emite un núcleo de He-4: A baja 4 (210 → 206) y Z baja 2 (84 → 82). Con A constante y Z variando en 1 sería una desintegración β.", "Apuntes FIS, diap. 29");
 L("FIS", "fis-fisica", "Desintegración beta", 3, "Señale la descripción correcta de la desintegración β<sup>−</sup>:",
-  ["n → p + e<sup>−</sup> + antineutrino; Z aumenta en 1 y A no cambia",
-   "p → n + e<sup>+</sup> + neutrino; Z aumenta en 1 y A no cambia",
-   "n → p + e<sup>−</sup> + neutrino; Z disminuye en 1 y A no cambia",
-   "n → p + e<sup>−</sup> + antineutrino; Z aumenta en 1 y A aumenta en 1"],
-  0, "β<sup>−</sup>: un neutrón se convierte en protón con emisión de electrón y antineutrino. β<sup>+</sup>: p → n + e<sup>+</sup> + neutrino (Z baja 1). En ambas A se conserva.", "Apuntes FIS, diap. 29");
+  ["$n \\rightarrow p + e^{-} + \\text{antineutrino}$; Z aumenta en 1 y A no cambia",
+   "$p \\rightarrow n + e^{+} + \\text{neutrino}$; Z aumenta en 1 y A no cambia",
+   "$n \\rightarrow p + e^{-} + \\text{neutrino}$; Z disminuye en 1 y A no cambia",
+   "$n \\rightarrow p + e^{-} + \\text{antineutrino}$; Z aumenta en 1 y A aumenta en 1"],
+  0, "β⁻: un neutrón se convierte en protón con emisión de electrón y antineutrino. β⁺: p → n + e⁺ + neutrino (Z baja 1). En ambas A se conserva.", "Apuntes FIS, diap. 29");
 L("FIS", "fis-fisica", "Actividad", 3, "Una fuente radiactiva tiene una actividad de 2 mCi. Expresada en bequerelios es…",
-  ["7,4·10<sup>7</sup> Bq", "7,4·10<sup>10</sup> Bq", "1,85·10<sup>7</sup> Bq", "7,4·10<sup>4</sup> Bq"],
-  0, "1 Ci = 3,7·10<sup>10</sup> Bq → 2·10<sup>−3</sup> × 3,7·10<sup>10</sup> = 7,4·10<sup>7</sup> Bq. 7,4·10<sup>10</sup> correspondería a 2 Ci.", "Apuntes FIS, diap. 30");
+  ["7,4·10⁷ Bq", "7,4·10¹⁰ Bq", "1,85·10⁷ Bq", "7,4·10⁴ Bq"],
+  0, "Equivalencia de los apuntes (Apuntes FIS, diap. 30): 1 Ci = 3,7·10¹⁰ Bq y 1 mCi = 10⁻³ Ci. $$A=2\\cdot10^{-3}\\ \\text{Ci}\\cdot3{,}7\\cdot10^{10}\\ \\tfrac{\\text{Bq}}{\\text{Ci}}=\\boxed{7{,}4\\cdot10^{7}\\ \\text{Bq}}$$ 7,4·10¹⁰ Bq correspondería a 2 Ci; 1,85·10⁷ divide por 2 en lugar de multiplicar.", "Apuntes FIS, diap. 30");
 L("FIS", "fis-fisica", "Actividad", 2, "Según la expresión de la actividad de los apuntes, si el número de núcleos radiactivos de una muestra se reduce a la mitad, su actividad…",
-  ["se reduce a la mitad, porque A = λN",
-   "no cambia, porque solo depende de la constante λ",
-   "se reduce a la cuarta parte, porque A es proporcional a N²",
-   "se duplica, porque A = λ/N"],
-  0, "A(t) = |dN/dt| = λN(t): la actividad es proporcional al número de núcleos presentes.", "Apuntes FIS, diap. 30");
+  ["se reduce a la mitad, porque $A = \\lambda N$",
+   "no cambia, porque solo depende de la constante $\\lambda$",
+   "se reduce a la cuarta parte, porque A es proporcional a $N^2$",
+   "se duplica, porque $A = \\lambda/N$"],
+  0, "Según los apuntes (Apuntes FIS, diap. 30) la actividad es el número de desintegraciones por unidad de tiempo: $$A(t)=\\left|\\frac{dN}{dt}\\right|=\\lambda\\,N(t)$$ Como λ es constante para cada nucleido, A es proporcional a N: si N se reduce a la mitad, A también.", "Apuntes FIS, diap. 30");
 L("FIS", "fis-fisica", "Blindaje", 3, "Sobre el esquema de blindaje de radiación de los apuntes, ¿cuál de las siguientes afirmaciones es FALSA?",
   ["Las partículas α se detienen con una hoja de papel",
    "La radiación γ atraviesa el aluminio y se frena con plomo",
@@ -1116,17 +1116,17 @@ L("FIS", "fis-fisica", "Blindaje", 3, "Sobre el esquema de blindaje de radiació
    "Las partículas β atraviesan el papel pero no el aluminio"],
   2, "En el esquema, los neutrones atraviesan el plomo y solo se detienen con hormigón. α: papel; β: atraviesan el papel y se paran antes del aluminio; γ: plomo.", "Apuntes FIS, diap. 32");
 L("FIS", "fis-fisica", "Unidades de dosis", 2, "La equivalencia correcta entre unidades de dosis absorbida es…",
-  ["1 Gy = 1 J/kg = 100 rad", "1 Gy = 1 J/kg = 0,01 rad", "1 Gy = 100 J/kg = 1 rad", "1 Gy = 1 erg/g = 100 rad"],
+  ["$1\\ \\text{Gy} = 1\\ \\text{J/kg} = 100\\ \\text{rad}$", "$1\\ \\text{Gy} = 1\\ \\text{J/kg} = 0{,}01\\ \\text{rad}$", "$1\\ \\text{Gy} = 100\\ \\text{J/kg} = 1\\ \\text{rad}$", "$1\\ \\text{Gy} = 1\\ \\text{erg/g} = 100\\ \\text{rad}$"],
   0, "1 rad = 100 erg/g = 0,01 J/kg, así que 1 Gy = 1 J/kg = 100 rad.", "Apuntes FIS, diap. 34");
 L("FIS", "fis-fisica", "Dosis efectiva", 3, "Según los apuntes, la magnitud empleada para establecer límites de dosis y su unidad son…",
-  ["la dosis efectiva, E = H·W<sub>T</sub>, en sievert",
-   "la dosis equivalente, H = D·W<sub>R</sub>, en sievert",
-   "la dosis absorbida, D, en gray",
-   "la dosis efectiva, E = D·W<sub>R</sub>, en gray"],
-  0, "D (Gy) → H = D·W<sub>R</sub> (factor de calidad de la radiación) → E = H·W<sub>T</sub> (radiosensibilidad del tejido). La efectiva, en Sv, es la de los límites.", "Apuntes FIS, diap. 34");
+  ["la dosis efectiva, $E = H\\cdot W_T$, en sievert",
+   "la dosis equivalente, $H = D\\cdot W_R$, en sievert",
+   "la dosis absorbida, $D$, en gray",
+   "la dosis efectiva, $E = D\\cdot W_R$, en gray"],
+  0, "D (Gy) → H = D·$W_{R}$ (factor de calidad de la radiación) → E = H·$W_{T}$ (radiosensibilidad del tejido). La efectiva, en Sv, es la de los límites.", "Apuntes FIS, diap. 34");
 L("FIS", "fis-fisica", "Dosis equivalente", 3, "Un tejido recibe una dosis absorbida de 2 mGy de una radiación cuyo factor de calidad suponemos W<sub>R</sub> = 20. Su dosis equivalente es…",
   ["40 mSv", "0,1 mSv", "22 mSv", "2 mSv"],
-  0, "H = D·W<sub>R</sub> = 2 × 20 = 40 mSv. Dividir (2/20 = 0,1) o sumar (22) son errores típicos.", "Apuntes FIS, diap. 34");
+  0, "La dosis equivalente pondera la dosis absorbida con el factor de calidad de la radiación (Apuntes FIS, diap. 34): $$H=D\\cdot W_R=2\\ \\text{mGy}\\cdot20=\\boxed{40\\ \\text{mSv}}$$ Dividir (2/20 = 0,1) o sumar (22) son errores típicos; 2 mSv olvida el factor de calidad.", "Apuntes FIS, diap. 34");
 L("FIS", "fis-fisica", "Dosis media", 2, "Según el gráfico de exposición del público a la radiación ionizante, la dosis media por persona y año es de…",
   ["3,6 mSv, de los que ≈ 82 % es de origen natural (el radón aporta ≈ 55 %)",
    "3,6 mSv, de los que ≈ 82 % es de origen artificial (los rayos X médicos aportan ≈ 55 %)",
@@ -1135,7 +1135,7 @@ L("FIS", "fis-fisica", "Dosis media", 2, "Según el gráfico de exposición del 
   0, "3,6 mSv/año; fuentes naturales 82 % (radón 55 %, interna 11 %, terrestre 8 %, cósmica 8 %) y artificiales 18 %.", "Apuntes FIS, diap. 35");
 L("FIS", "fis-fisica", "Fuentes de exposición", 2, "Según el gráfico de exposición a la radiación, ¿cuáles de las siguientes son fuentes artificiales? (Puede haber varias correctas)",
   ["Los rayos X médicos", "La medicina nuclear", "Los productos de consumo", "La radiación interna del propio cuerpo"],
-  [0, 1, 2], "Artificiales (18 %): rayos X médicos 11 %, medicina nuclear 4 %, productos de consumo 3 % y otras &lt; 1 %. La radiación interna (11 %) es natural.", "Apuntes FIS, diap. 35");
+  [0, 1, 2], "Artificiales (18 %): rayos X médicos 11 %, medicina nuclear 4 %, productos de consumo 3 % y otras < 1 %. La radiación interna (11 %) es natural.", "Apuntes FIS, diap. 35");
 
 L("FIS", "fis-reacciones", "Reacciones neutrónicas", 2, "Según los apuntes, el tipo de reacción neutrónica que se produce, (n,γ), (n,α), (n,2n), (n,p), (n,fisión)…, depende de…",
   ["la masa del núcleo blanco y la energía cinética del neutrón",
@@ -1145,16 +1145,16 @@ L("FIS", "fis-reacciones", "Reacciones neutrónicas", 2, "Según los apuntes, el
   0, "«Reacciones neutrónicas: dependen de la masa del núcleo blanco y de la energía cinética del neutrón».", "Apuntes FIS, diap. 38");
 L("FIS", "fis-reacciones", "Conservación en la fisión", 3, "En la fisión del esquema de los apuntes, $^{1}_{0}n + ^{235}_{92}U \\rightarrow ^{91}_{36}Kr + ^{142}_{56}Ba + x\\,^{1}_{0}n$, el número de neutrones emitidos x es…",
   ["3", "2", "1", "4"],
-  0, "Conservación de A: 1 + 235 = 91 + 142 + x → x = 3. La carga se conserva: 92 = 36 + 56. El «≈ 2 neutrones por fisión» de la tabla de energías es un valor medio.", "Apuntes FIS, diap. 38");
+  0, "En una reacción nuclear se conservan el número másico (A, arriba) y la carga (Z, abajo): $$A:\\ 1+235=91+142+x\\cdot1\\Rightarrow\\boxed{x=3}$$ $$Z:\\ 0+92=36+56+x\\cdot0\\ \\checkmark$$ El «≈ 2 neutrones por fisión» de la tabla de energías es un valor medio de todas las fisiones, no de esta concreta.", "Apuntes FIS, diap. 38");
 L("FIS", "fis-reacciones", "Fisión inducida", 1, "Según los apuntes, la fisión inducida por neutrones es, con diferencia, la más estudiada y la de mayor aplicación tecnológica porque…",
   ["además de energía, produce más neutrones", "se produce sin ninguna intervención externa", "solo puede inducirse con neutrones rápidos", "no genera productos de fisión radiactivos"],
   0, "«…debido a la producción de energía y de más neutrones», que permiten mantener la reacción en cadena. La fisión espontánea es la que ocurre sin intervención externa.", "Apuntes FIS, diap. 39");
 L("FIS", "fis-reacciones", "Escala temporal de la fisión", 3, "Según el esquema temporal de la fisión del U-236, señale la afirmación correcta:",
-  ["Los neutrones y γ inmediatos se emiten en ≈ 10<sup>−14</sup> s; la desintegración de los fragmentos (β, γ y neutrones diferidos) se extiende de ≈ 1 s a 10<sup>8</sup> s",
-   "Los neutrones y γ inmediatos se emiten entre ≈ 1 s y 10<sup>8</sup> s; la desintegración de los fragmentos ocurre en ≈ 10<sup>−14</sup> s",
-   "Los neutrones diferidos se emiten en ≈ 10<sup>−14</sup> s y los inmediatos al cabo de ≈ 10<sup>8</sup> s",
-   "Toda la energía de la fisión, incluidos los neutrones diferidos, se libera en menos de 10<sup>−13</sup> s"],
-  0, "Fase de fisión (n y γ inmediatos) en 10<sup>−14</sup>-10<sup>−13</sup> s; fase de desintegración (β, γ y n diferidos) de 1 s a 10<sup>8</sup> s, hasta núcleos estables como Pr-141 o Nb-93.", "Apuntes FIS, diap. 40");
+  ["Los neutrones y γ inmediatos se emiten en ≈ 10⁻¹⁴ s; la desintegración de los fragmentos (β, γ y neutrones diferidos) se extiende de ≈ 1 s a 10⁸ s",
+   "Los neutrones y γ inmediatos se emiten entre ≈ 1 s y 10⁸ s; la desintegración de los fragmentos ocurre en ≈ 10⁻¹⁴ s",
+   "Los neutrones diferidos se emiten en ≈ 10⁻¹⁴ s y los inmediatos al cabo de ≈ 10⁸ s",
+   "Toda la energía de la fisión, incluidos los neutrones diferidos, se libera en menos de 10⁻¹³ s"],
+  0, "Fase de fisión (n y γ inmediatos) en 10⁻¹⁴-10⁻¹³ s; fase de desintegración (β, γ y n diferidos) de 1 s a 10⁸ s, hasta núcleos estables como Pr-141 o Nb-93.", "Apuntes FIS, diap. 40");
 L("FIS", "fis-reacciones", "Energía por fisión", 1, "En media, la energía liberada en cada fisión del U-235 es de unos…",
   ["200 MeV", "200 keV", "20 MeV", "2.000 MeV"],
   0, "≈ 200 MeV, aunque depende del isótopo y de la energía del neutrón.", "Apuntes FIS, diap. 41");
@@ -1166,7 +1166,7 @@ L("FIS", "fis-reacciones", "Reparto de la energía", 2, "De los ≈ 200 MeV libe
   0, "Productos de fisión 165 MeV; neutrones 5; γ inmediatos 6; radiactividad diferida 14; neutrinos 10.", "Apuntes FIS, diap. 41");
 L("FIS", "fis-reacciones", "Energía aprovechable", 3, "Con el reparto energético de los apuntes, ¿qué energía por fisión puede recuperarse como calor dentro del reactor?",
   ["≈ 190 MeV", "≈ 200 MeV", "≈ 176 MeV", "≈ 165 MeV"],
-  0, "Todo menos los neutrinos, que escapan: 200 − 10 = 190 MeV. 176 MeV serían solo los inmediatos (165 + 5 + 6), olvidando los 14 MeV de radiactividad diferida.", "Apuntes FIS, diap. 41");
+  0, "Reparto de los ≈ 200 MeV de una fisión (Apuntes FIS, diap. 41): todo se recupera como calor salvo la energía de los neutrinos (≈ 10 MeV), que escapan del reactor. $$E_{útil}=200-10=\\boxed{190\\ \\text{MeV}}$$ 176 MeV serían solo los términos inmediatos (165 + 5 + 6), olvidando los 14 MeV de radiactividad diferida; 165 MeV es solo la energía cinética de los fragmentos.", "Apuntes FIS, diap. 41");
 L("FIS", "fis-reacciones", "Neutrones de fisión", 2, "Según la tabla de energía de la fisión, los neutrones emitidos son…",
   ["≈ 2 por fisión y se llevan en total ≈ 5 MeV de energía cinética",
    "≈ 2 por fisión y se llevan en total ≈ 165 MeV de energía cinética",
@@ -1193,8 +1193,8 @@ L("FIS", "fis-reacciones", "Sección eficaz del U-238", 3, "Según el gráfico d
   0, "La curva U-238(n,f) solo aparece por encima de ≈ 1 MeV; la U-238(n,γ) muestra picos de resonancia entre ≈ 10 eV y 1 keV. El U-235 fisiona preferentemente con neutrones lentos.", "Apuntes FIS, diap. 43");
 
 L("FIS", "fis-reactores", "Componentes", 1, "Según los apuntes, el sistema de control de un reactor emplea materiales como…",
-  ["B, Cd, Gd", "H, D, C", "U, Pu, Th", "H<sub>2</sub>O, D<sub>2</sub>O, CO<sub>2</sub>, He"],
-  0, "Control: B, Cd, Gd. Moderador: H, D, C. Combustible: U, Pu, Th. Refrigerante: H<sub>2</sub>O, D<sub>2</sub>O, CO<sub>2</sub>, He.", "Apuntes FIS, diap. 45");
+  ["B, Cd, Gd", "H, D, C", "U, Pu, Th", "H₂O, D₂O, CO₂, He"],
+  0, "Control: B, Cd, Gd. Moderador: H, D, C. Combustible: U, Pu, Th. Refrigerante: H₂O, D₂O, CO₂, He.", "Apuntes FIS, diap. 45");
 L("FIS", "fis-reactores", "Componentes", 2, "En un reactor nuclear, el reflector…",
   ["evita las fugas de neutrones", "reduce la energía de los neutrones", "regula el número total de neutrones y de fisiones", "protege frente a la radiación γ y los neutrones"],
   0, "Reflector: evita fugas. Moderador: frena los neutrones. Control: regula su número. Blindaje: protege frente a γ y neutrones.", "Apuntes FIS, diap. 45");
@@ -1212,19 +1212,19 @@ L("FIS", "fis-reactores", "Tipos de reactores", 3, "Según la tabla de tipos de 
   0, "GCR/AGR/HTGR: UN o UE. HWR: UN o UE. LWR: solo UE. FBR (rápidos, sin moderador): UE o MOX.", "Apuntes FIS, diap. 46");
 L("FIS", "fis-reactores", "CANDU", 3, "¿Cuáles de las siguientes son características del reactor CANDU según los apuntes? (Puede haber varias correctas)",
   ["Recarga continua", "Moderador y refrigerante separados", "Puede usar el ciclo del torio", "Combustible enriquecido al ~5 % en una vasija a presión"],
-  [0, 1, 2], "CANDU: UN o U ligeramente enriquecido (&lt; 2 %), agua pesada, recarga continua, combustible en tubos de presión (no en vasija), consume ≈ 50 % del Pu generado, moderador y refrigerante separados y posible ciclo del torio.", "Apuntes FIS, diap. 50");
+  [0, 1, 2], "CANDU: UN o U ligeramente enriquecido (< 2 %), agua pesada, recarga continua, combustible en tubos de presión (no en vasija), consume ≈ 50 % del Pu generado, moderador y refrigerante separados y posible ciclo del torio.", "Apuntes FIS, diap. 50");
 L("FIS", "fis-reactores", "CANDU", 3, "Según los apuntes, el reactor CANDU…",
-  ["usa UN o U ligeramente enriquecido (&lt; 2 %) y consume ≈ 50 % del plutonio generado",
+  ["usa UN o U ligeramente enriquecido (< 2 %) y consume ≈ 50 % del plutonio generado",
    "usa U enriquecido hasta el 5 % y consume ≈ 50 % del plutonio generado",
-   "usa UN o U ligeramente enriquecido (&lt; 2 %) y consume ≈ 20 % del plutonio generado",
+   "usa UN o U ligeramente enriquecido (< 2 %) y consume ≈ 20 % del plutonio generado",
    "usa U enriquecido por encima del 20 % y consume todo el plutonio generado"],
-  0, "CANDU (Canadian Natural Deuterium Uranium): UN o &lt; 2 %, consumo de un 50 % del Pu generado. El 5 % es típico de los LWR y el &gt; 20 %, de los FBR.", "Apuntes FIS, diap. 50");
+  0, "CANDU (Canadian Natural Deuterium Uranium): UN o < 2 %, consumo de un 50 % del Pu generado. El 5 % es típico de los LWR y el > 20 %, de los FBR.", "Apuntes FIS, diap. 50");
 L("FIS", "fis-reactores", "Reactores rápidos", 2, "Según los apuntes, los reactores rápidos reproductores (FBR)…",
   ["no tienen moderador, usan combustible enriquecido por encima del 20 % y los que operan se refrigeran con sodio",
    "usan grafito como moderador, combustible enriquecido por encima del 20 % y se refrigeran con sodio",
    "no tienen moderador, usan uranio enriquecido al 5 % y se refrigeran con agua ligera a presión",
    "no tienen moderador, usan uranio natural y se refrigeran con plomo-bismuto en todos los casos"],
-  0, "FBR: sin moderador, &gt; 20 %, U o MOX; refrigerante sodio en los actualmente en operación (también podría ser gas, plomo-bismuto o plomo).", "Apuntes FIS, diap. 51");
+  0, "FBR: sin moderador, > 20 %, U o MOX; refrigerante sodio en los actualmente en operación (también podría ser gas, plomo-bismuto o plomo).", "Apuntes FIS, diap. 51");
 L("FIS", "fis-reactores", "PWR y BWR", 2, "Comparando los esquemas de los apuntes, señale la diferencia correcta entre PWR y BWR:",
   ["En el BWR el vapor se genera en la propia vasija y va directo a la turbina; el PWR tiene presionador y generador de vapor",
    "En el PWR el vapor se genera en la propia vasija y va directo a la turbina; el BWR tiene presionador y generador de vapor",
@@ -1232,8 +1232,8 @@ L("FIS", "fis-reactores", "PWR y BWR", 2, "Comparando los esquemas de los apunte
    "En el BWR las barras de control entran por arriba y en el PWR por abajo"],
   0, "PWR: circuito primario a presión (presionador) que cede calor al secundario en el generador de vapor. BWR: un solo circuito; además, sus barras de control entran por abajo.", "Apuntes FIS, diap. 47-48");
 L("FIS", "fis-reactores", "Reactor AGR", 2, "En el reactor avanzado refrigerado por gas (AGR) del esquema de los apuntes, el refrigerante y el moderador son…",
-  ["CO<sub>2</sub> y grafito", "Helio y agua pesada", "CO<sub>2</sub> y agua pesada", "Sodio y grafito"],
-  0, "AGR: CO<sub>2</sub> (impulsado por soplantes) y moderador de grafito, en una vasija de hormigón revestida de acero.", "Apuntes FIS, diap. 46 y 49");
+  ["CO₂ y grafito", "Helio y agua pesada", "CO₂ y agua pesada", "Sodio y grafito"],
+  0, "AGR: CO₂ (impulsado por soplantes) y moderador de grafito, en una vasija de hormigón revestida de acero.", "Apuntes FIS, diap. 46 y 49");
 L("FIS", "fis-reactores", "Tendencias", 2, "En el cuadro de tendencias de los apuntes, ¿qué concepto se describe como «la mejor opción para construcción inmediata»?",
   ["Los reactores modulares pequeños (SMR)", "Los microrreactores", "Los reactores de sales fundidas", "Los reactores de muy alta temperatura"],
   0, "SMR: más seguridad, menor coste, escalabilidad; «best chance for immediate construction». Microrreactores: proyecto Iceworm. Sales fundidas: opción de la Fuerza Aérea de EE. UU.", "Apuntes FIS, diap. 52");
