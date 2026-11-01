@@ -561,3 +561,4 @@ body.picking .mainnav,body.picking .tabbar,body.picking #acct,body.picking .subj
 .qt-wrap{text-align:center;margin-top:12px}
 .mb-s{margin-bottom:10px}
 .seg{max-width:100%;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}.seg::-webkit-scrollbar{display:none}.seg a{white-space:nowrap;flex:none}
+.exp-html p{margin:.4em 0}.exp-html ul{margin:.3em 0 .3em 1.1em;padding:0}.exp-html table{margin:8px 0}

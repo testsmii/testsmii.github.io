@@ -400,7 +400,7 @@ function route() {
       case "practicar": viewPracticeSetup(p1); break;
       case "quiz": viewQuiz(); break;
       case "falladas": viewFailed(); break;
-      case "examenes": viewExams(); break;
+      case "examenes": viewExams.tab = p1 === "mas" ? "mas" : ""; viewExams(); break;
       case "examen": viewExamRunner(); break;
       case "resultado": viewResult(p1); break;
       case "progreso": viewProgress(); break;
@@ -830,8 +830,8 @@ function startFailedQuiz() { const ids = failedIds(); if (!ids.length) return go
 // Escapa el texto pero respeta etiquetas inofensivas de formato (sub, sup, b, i, br) y entidades ya escritas en los datos
 const escF = t => esc(t).replace(/&lt;(\/?)(sub|sup|b|i|br)\s*\/?&gt;/g, "<$1$2>").replace(/&amp;(lt|gt|amp|nbsp|le|ge|middot|minus|asymp|deg);/g, "&$1;");
 const qText = t => escF(t).replace(/\b(incorrectas?|falsas?|INCORRECTAS?|FALSAS?|NO es|no es|no son|NO|no corresponde|excepto|EXCEPTO)\b/g, m => `<b class="neg">${m.toUpperCase()}</b>`);
-const explainHtml = q => `${q.official ? `<div class="official">${q.official}</div>` : ""}${q.bank === "exam" ? `<b>${q.official ? "Comentario" : "Explicación orientativa (no oficial)"}:</b> ` : ""}${escF(q.exp)}
-  <div class="src">${q.bank === "exam" ? (q.unofficial ? (q.noKey ? "<b>Sin solución oficial ni propuesta</b> · " : (q.keyBy === "doc" ? "<b>Respuesta marcada en el documento original (no oficial): " + esc(q.keyText) + "</b> · " : "<b>Solución PROPUESTA por IA (no oficial): " + esc(q.keyText) + " · confianza " + esc(q.conf) + "</b> · ")) : "Solución oficial: " + esc(q.keyText) + " · ") : ""}${esc(q.src)}</div>${q.sec && lessonById(q.sec) ? `<div class="slide-btns"><button class="btn sm soft" data-theory="${q.id}">📘 Ver la teoría de esta pregunta</button></div>` : ""}${slideButtons(q)}`;
+const explainHtml = q => `${q.official ? `<div class="official">${q.official}</div>` : ""}${q.expHtml ? `<div class="exp-html"><b>Explicación del recopilatorio:</b>${q.expHtml}</div>` : (q.bank === "exam" ? `<b>${q.official ? "Comentario" : "Explicación orientativa (no oficial)"}:</b> ` : "") + escF(q.exp)}
+  <div class="src">${q.bank === "exam" ? (q.unofficial ? (q.noKey ? "<b>Sin solución oficial ni propuesta</b> · " : (q.keyBy === "doc" ? "<b>Respuesta indicada en el documento original (no oficial): " + esc(q.keyText) + "</b> · " : "<b>Solución PROPUESTA por IA (no oficial): " + esc(q.keyText) + " · confianza " + esc(q.conf) + "</b> · ")) : "Solución oficial: " + esc(q.keyText) + " · ") : ""}${esc(q.src)}</div>${q.sec && lessonById(q.sec) ? `<div class="slide-btns"><button class="btn sm soft" data-theory="${q.id}">📘 Ver la teoría de esta pregunta</button></div>` : ""}${slideButtons(q)}`;
 function viewQuiz() {
   const Z = S.quiz;
   if (!Z) return go("#/aprender");
@@ -848,7 +848,7 @@ function viewQuiz() {
   let fb = "";
   if (answered) {
     const s = answered.status, showExp = Z.showExp != null ? Z.showExp : s !== "ok";
-    fb = `<div class="feedback ${s === "nokey" ? "partial" : s}">${s === "nokey" ? "Esta pregunta no tiene solución oficial ni propuesta" : s === "ok" ? ic("check") + " ¡Correcta!" : s === "partial" ? "Parcialmente correcta · " + fmt1(answered.score) + " / 0,5" : "Incorrecta"}${q.unofficial && !q.noKey ? " · según la solución propuesta (no oficial)" : ""}
+    fb = `<div class="feedback ${s === "nokey" ? "partial" : s}">${s === "nokey" ? "Esta pregunta no tiene solución oficial ni propuesta" : s === "ok" ? ic("check") + " ¡Correcta!" : s === "partial" ? "Parcialmente correcta · " + fmt1(answered.score) + " / 0,5" : "Incorrecta"}${q.unofficial && !q.noKey ? (q.keyBy === "doc" ? " · según la respuesta del documento (no oficial)" : " · según la solución propuesta (no oficial)") : ""}
       <button class="linkbtn" id="z-exp">${showExp ? "Ocultar explicación" : "Ver explicación"}</button></div>
       ${showExp ? `<div class="explain">${explainHtml(q)}</div>` : ""}`;
   }
@@ -858,7 +858,7 @@ function viewQuiz() {
     <div class="qmeta"><span class="tag" style="background:${t.color}1a;color:${t.color}">Tema ${t.num} · ${esc(q.apartado)}</span>
     ${q.bank === "exam" ? `<span class="tag brand">Examen real ${esc(exLabel(q))} · P${q.n}</span>${q.unofficial ? `<span class="tag warn">Sin solución oficial</span>` : ""}${q.part === "P2" ? `<span class="tag p2">2ª parte · no entra en la PEC1</span>` : ""}` : `<span class="tag">${DIFF[q.d]}</span>`}${q.multi ? `<span class="tag warn">Varias respuestas</span>` : ""}</div>
     <div class="qtext">${qText(q.q)}</div>
-    ${q.fig ? `<figure class="qfig"><img src="${q.fig}" alt="${esc(q.figAlt || "Figura")}" loading="lazy"><figcaption>Figura original del examen</figcaption></figure>` : ""}
+    ${q.fig ? `<figure class="qfig"><img src="${q.fig}" alt="${esc(q.figAlt || "Figura")}" loading="lazy"><figcaption>Figura original del examen</figcaption></figure>` : ""}${q.fig2 ? `<figure class="qfig"><img src="${q.fig2}" alt="${esc(q.figAlt || "Figura")}" loading="lazy"></figure>` : ""}
     <div class="opts">${optHtml}</div>
     ${!answered ? `<button class="linkbtn mt" id="z-idk">No lo sé · ver la solución explicada</button>` : ""}
     ${!answered && q.multi ? `<p class="tiny muted mt">Marca todas las que correspondan. Puntúa 0,5 × máx(0, (aciertos − fallos)/nº correctas).</p>` : ""}
@@ -914,7 +914,7 @@ function reviewItem(q, sel, n, order) {
   const tag = { ok: `<span class="tag ok">Correcta · ${fmt1(r.score)}</span>`, ko: `<span class="tag ko">Incorrecta · ${fmt1(r.score)}</span>`, partial: `<span class="tag warn">Parcial · ${fmt1(r.score)}</span>`, blank: `<span class="tag">En blanco · 0,00</span>`, nokey: `<span class="tag warn">Sin solución</span>` }[q.noKey && r.status === "blank" ? "nokey" : r.status];
   return `<div class="review-item"><div class="rh"><b>Pregunta ${n}</b>${tag}</div>
   <div style="font-weight:600;margin-bottom:8px;white-space:pre-line">${qText(q.q)}</div>
-  ${q.fig ? `<figure class="qfig"><img src="${q.fig}" alt="${esc(q.figAlt || "Figura")}" loading="lazy"></figure>` : ""}
+  ${q.fig ? `<figure class="qfig"><img src="${q.fig}" alt="${esc(q.figAlt || "Figura")}" loading="lazy"></figure>` : ""}${q.fig2 ? `<figure class="qfig"><img src="${q.fig2}" alt="" loading="lazy"></figure>` : ""}
   ${order.map((oi, k) => { const isC = q.a.includes(oi), isS = sel.includes(oi);
     return `<div class="ropt ${isC ? "correct" : isS ? "wrong" : ""}"><span class="k">${LET[k]}</span><span style="white-space:pre-line">${escF(q.o[oi])}</span><span class="who">${isS ? "Tu respuesta" + (isC ? " ✓" : " ✗") : isC ? "Correcta" : ""}</span></div>`; }).join("")}
   <details class="mt"><summary class="small linkish">Explicación</summary><div class="explain">${explainHtml(q)}</div></details></div>`;
@@ -944,12 +944,15 @@ function viewExams() {
   app.innerHTML = `<h1>Exámenes anteriores</h1>
   <p class="muted">${SUBJ.examIntro}</p>
   ${updatesBanner()}
-  ${SUBJ.examKinds.map(([kind, kt, kd]) => `<div class="kind-h"><h2>${kt}</h2><p class="small muted mb0">${kd}</p></div>` +
+  ${SUBJ.examKinds.some(k => k[3]) ? `<div class="seg">${[["", "Recientes"], ["mas", "Más exámenes"]].map(([k, l]) => `<a class="${(viewExams.tab || "") === k ? "on" : ""}" href="#/examenes${k ? "/" + k : ""}">${l}</a>`).join("")}</div>` : ""}
+  ${SUBJ.examKinds.filter(k => (k[3] || "") === (viewExams.tab || "")).map(([kind, kt, kd, , compact]) => `<div class="kind-h"><h2>${kt}</h2><p class="small muted mb0">${kd}</p></div>` + (compact ? `<div class="grid g4 mt">${EXAMS.filter(e => e.kind === kind).map(e => { const st = EXAM_SETS[e.set], att = hist.filter(h => h.examId === e.id), best = att.length ? Math.max(...att.map(h => h.grade)) : null;
+    return `<button class="card exam-tile" data-ex="${e.id}"><span class="v-badge">${e.version}</span><b>${esc(st.short)}</b><small>${EXAM_Q[e.id].length} preguntas · ${e.time} min</small>
+    <span class="score-line">${best != null ? `<span class="minibar"><i style="width:${best * 10}%;background:${best >= 5 ? "var(--ok)" : "var(--ko)"}"></i></span><span>${fmt1(best)}*</span>` : `<span class="muted">Sin intentos</span>`}</span></button>`; }).join("")}</div>` :
   Object.entries(EXAM_SETS).filter(([, st]) => st.kind === kind).map(([sk, st]) => `<div class="section-title"><h3 class="mb0">${esc(st.title)} · ${esc(st.date)}</h3>${st.official ? `<span class="tag ok">Solución oficial</span>` : `<span class="tag warn">Sin solución oficial</span>`}</div>
   ${st.official ? "" : `<p class="small muted">No hay hoja de soluciones de este examen. La app corrige con una <b>solución propuesta por IA (no oficial)</b>, razonada en cada pregunta y con su nivel de confianza (alta, media o baja). La nota es solo una estimación.</p>`}
   <div class="grid g4">${EXAMS.filter(e => e.set === sk).map(e => { const att = hist.filter(h => h.examId === e.id), best = att.length ? Math.max(...att.map(h => h.grade)) : null;
     return `<button class="card exam-tile" data-ex="${e.id}"><span class="v-badge">${e.version}</span><b>${esc(st.short)} · ${e.version}</b><small>${EXAM_Q[e.id].length} preguntas · ${e.time} min</small>
-    <span class="score-line">${best != null ? `<span class="minibar"><i style="width:${best * 10}%;background:${best >= 5 ? "var(--ok)" : "var(--ko)"}"></i></span><span>${fmt1(best)}${st.official ? "" : "*"}</span>` : `<span class="muted">Sin intentos</span>`}</span></button>`; }).join("")}</div>`).join("")).join("")}
+    <span class="score-line">${best != null ? `<span class="minibar"><i style="width:${best * 10}%;background:${best >= 5 ? "var(--ok)" : "var(--ko)"}"></i></span><span>${fmt1(best)}${st.official ? "" : "*"}</span>` : `<span class="muted">Sin intentos</span>`}</span></button>`; }).join("")}</div>`).join(""))).join("")}
   <p class="tiny muted">${SUBJ.examFoot}</p>
   <div class="grid g2 mt">
     <div class="card"><div class="card-h"><h3>Evolución de tus notas</h3><span class="small muted">${hist.length} intento${hist.length === 1 ? "" : "s"}</span></div>
@@ -990,10 +993,11 @@ function viewExamRunner() {
     <article class="qcard">
       <div class="qmeta"><span class="tag brand">Pregunta ${q.n} de ${qs.length}</span>${q.part === "P2" ? `<span class="tag p2">2ª parte · no entra en la PEC1</span>` : ""}${q.multi ? `<span class="tag warn">Puede haber más de una</span>` : ""}</div>
       <div class="qtext">${qText(q.q)}</div>
-      ${q.fig ? `<figure class="qfig"><img src="${q.fig}" alt="${esc(q.figAlt || "Figura")}"><figcaption>Figura original del examen</figcaption></figure>` : ""}
+      ${q.fig2 ? `<figure class="qfig"><img src="${q.fig2}" alt=""></figure>` : ""}${q.fig ? `<figure class="qfig"><img src="${q.fig}" alt="${esc(q.figAlt || "Figura")}"><figcaption>Figura original del examen</figcaption></figure>` : ""}
       <div class="opts">${q.o.map((o, i) => `<button class="opt ${sel.includes(i) ? "sel" : ""} ${peek && q.a.includes(i) ? "peek-ok" : ""}" data-i="${i}"><span class="k">${"abcd"[i]}</span><span class="t">${escF(o)}</span></button>`).join("")}</div>
-      <div class="row between mt">${sel.length ? `<button class="linkbtn" id="e-clear">Dejar en blanco</button>` : "<span></span>"}${q.noKey ? "" : `<button class="btn sm ${peek ? "ghost" : "soft"}" id="e-peek">${peek ? "Ocultar solución" : "💡 Ver solución explicada"}</button>`}</div>
-      ${peek ? `<div class="explain mt"><div class="peek-key">Respuesta${q.a.length > 1 ? "s" : ""} ${q.unofficial ? "propuesta" + (q.a.length > 1 ? "s" : "") + " (no oficial)" : "correcta" + (q.a.length > 1 ? "s" : "")}: <b>${q.a.map(i => "abcd"[i]).join(", ")}</b></div>${explainHtml(q)}</div>` : ""}
+      <div class="row between mt">${sel.length ? `<button class="linkbtn" id="e-clear">Dejar en blanco</button>` : "<span></span>"}${q.noKey && !q.expHtml ? "" : `<button class="btn sm ${peek ? "ghost" : "soft"}" id="e-peek">${peek ? "Ocultar solución" : "💡 Ver solución explicada"}</button>`}</div>
+      ${q.open ? `<p class="small muted mt">Pregunta de respuesta abierta (no es tipo test): piensa la respuesta y después mira la solución. No puntúa.</p>` : ""}
+      ${peek ? `<div class="explain mt">${q.open ? "" : `<div class="peek-key">Respuesta${q.a.length > 1 ? "s" : ""} ${q.unofficial ? "propuesta" + (q.a.length > 1 ? "s" : "") + " (no oficial)" : "correcta" + (q.a.length > 1 ? "s" : "")}: <b>${q.a.map(i => "abcd"[i]).join(", ")}</b></div>`}${explainHtml(q)}</div>` : ""}
     </article>
     <div class="lesson-nav">${E.cur > 0 ? `<button class="btn ghost" id="e-prev">${ic("back")} Anterior</button>` : "<span></span>"}${E.cur < qs.length - 1 ? `<button class="btn primary big" id="e-next">Siguiente ${ic("arrow")}</button>` : `<button class="btn primary big" id="e-submit2">Entregar examen</button>`}</div>
   </div>
@@ -1030,7 +1034,8 @@ function submitExam(auto) {
   qs.forEach(q => { const r = scoreQ(q, E.ans[q.n]); total += r.score; if (q.noKey) nokey++; else if (r.status === "ok") ok++; else if (r.status === "ko") ko++; else if (r.status === "partial") partial++; else blankN++; recordAnswer(q, r.status); });
   const ex = exById(E.examId), keyed = qs.length - nokey;
   if (ex.neg) total = Math.max(0, total);
-  if (!ex.official && keyed) total = total * qs.length / keyed;
+  if (ex.toTen) total = keyed ? total * 10 / (0.5 * keyed) : 0;
+  else if (!ex.official && keyed) total = total * qs.length / keyed;
   const dur = E.mode === "sim" ? Math.min((Date.now() - E.start) / 1000, (E.deadline - E.start) / 1000) : (Date.now() - E.start) / 1000;
   const h = { id: "h" + Date.now(), examId: E.examId, mode: E.mode, t: Date.now(), grade: Math.round(total * 1000) / 1000, ok, ko, partial, blank: blankN, nokey, official: ex.official, dur: Math.round(dur), ans: E.ans, auto: !!auto, peek: Object.keys(E.peek || {}).filter(k => E.peek[k]).map(Number) };
   S.history.push(h); S.exam = null; save(); if (window.CLOUD) CLOUD.recordAttempt(h, exById(h.examId));

@@ -2,7 +2,7 @@
 window.SUBJECT = {
   id: "est", lsKey: "cde_estructuras_v1",
   name: "Cálculo y Diseño de Estructuras", brand: "Estructuras", sub: "Cálculo y Diseño de Estructuras",
-  examPool: EQ => EQ["PA1-2025-T1"].map(q => q.id).concat(["PA1-2025-T3-P1"], EQ["PA1-2024-T1"].map(q => q.id), EQ["EF2-2026-T1"].filter(q => q.part !== "P2").map(q => q.id), EQ["EF2-2025-T1"].filter(q => !q.noKey && q.part !== "P2").map(q => q.id), EQ["EF1-2024-T1"].filter(q => q.part !== "P2").map(q => q.id)),
+  examPool: EQ => EQ["PA1-2025-T1"].map(q => q.id).concat(["PA1-2025-T3-P1"], EQ["PA1-2024-T1"].map(q => q.id), EQ["EF2-2026-T1"].filter(q => q.part !== "P2").map(q => q.id), EQ["EF2-2025-T1"].filter(q => !q.noKey && q.part !== "P2").map(q => q.id), EQ["EF1-2024-T1"].filter(q => q.part !== "P2").map(q => q.id), window.OLD_POOL ? OLD_POOL(EQ) : []),
   secRules: {
     T1: [[/Proyecto estructural/, "t1-proyecto"], [/Requisitos|Modos de fallo|elástico y plástico|Estabilidad|Fuego|Medio ambiente|Vida de servicio/, "t1-requisitos"], [/Estados límite|Parámetros/, "t1-el"], [/./, "t1-metodos"]],
     T2: [[/Introducción|Escala|Geometría|Proyecto/, "t2-intro"], [/Clasificación/, "t2-clasif"], [/Cables|Arcos|Compresión|Vigas/, "t2-mono"], [/Entramados|Losas|Láminas|Membranas/, "t2-bi"], [/Edificación|Estructuras$/, "t2-edif"], [/Puentes|Térmica|térmicas|Túneles/, "t2-civil"], [/./, "t2-ind"]],
@@ -20,6 +20,7 @@ window.SUBJECT = {
   p2: true,
   examsBlurb: "PA1 2025 y PA1 2024 (4 versiones cada una) con solución oficial, y exámenes finales. Simulacro de 40 min y revisión.",
   examIntro: "Preguntas originales y corrección con la hoja oficial. Cada pregunta vale 0,5; en las de varias respuestas, 0,5 × máx(0, (correctas − incorrectas marcadas)/nº de correctas).",
-  examKinds: [["PEC1", "PEC1 · Pruebas de la primera parte", "Corresponden a los temas de las diapositivas de clase (1, 2.1, 2.3, 3 y 4)."], ["Final", "Exámenes finales (toda la asignatura)", "Incluyen sobre todo preguntas de la PEC1. Las de la <b>2ª parte</b> están marcadas y no cuentan para tu preparación de la PEC1."]],
+  examKinds: [["PEC1", "PEC1 · Pruebas de la primera parte", "Corresponden a los temas de las diapositivas de clase (1, 2.1, 2.3, 3 y 4)."], ["Final", "Exámenes finales (toda la asignatura)", "Incluyen sobre todo preguntas de la PEC1. Las de la <b>2ª parte</b> están marcadas y no cuentan para tu preparación de la PEC1."],
+    ["Antiguas", "PEC de cursos anteriores (2014–2020) y recopilatorio", "Preguntas de las PEC de 2014 a 2020 de los temas 1 a 4, con la <b>respuesta y la explicación indicadas en el documento recopilatorio</b> (no son hojas oficiales). Muchas se repiten entre convocatorias. La nota se escala a 10.", "mas", true]],
   examFoot: "En cada convocatoria, las versiones T1–T4 tienen las mismas preguntas en distinto orden. * Nota estimada con solución no oficial."
 };
