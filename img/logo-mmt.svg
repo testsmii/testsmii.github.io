@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Máquinas y Motores Térmicos"><defs><linearGradient id="gm" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f97316"/><stop offset="1" stop-color="#9a3412"/></linearGradient></defs>
+  <rect width="64" height="64" rx="15" fill="url(#gm)"/>
+  <g fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20 10h24v6H20zM22 16v18h20V16" stroke-width="2.6"/>
+    <path d="M22 21h20M22 25h20" stroke-width="1.6" opacity=".8"/>
+    <circle cx="32" cy="28" r="2.6" stroke-width="2"/>
+    <path d="M32 30.6L26 45" stroke-width="3.2"/>
+    <circle cx="32" cy="47" r="8" stroke-width="2.4"/>
+    <circle cx="26" cy="45" r="2.2" fill="#fff" stroke="none"/>
+    <path d="M46 40c3-3 3-7 0-10M50 43c5-5 5-13 0-18" stroke-width="2" opacity=".85"/>
+  </g>
+</svg>

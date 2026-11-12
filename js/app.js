@@ -12,7 +12,7 @@
 const $ = (s, el = document) => el.querySelector(s);
 const $$ = (s, el = document) => Array.from(el.querySelectorAll(s));
 const esc = s => String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-const LET = ["A", "B", "C", "D", "E"];
+const LET = "ABCDEFGHIJKLMNOPQRST".split("");
 const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
 const pct = (a, b) => b ? Math.round(100 * a / b) : 0;
 const fmt1 = n => (Math.round(n * 100) / 100).toLocaleString("es-ES", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
@@ -994,10 +994,10 @@ function viewExamRunner() {
       <div class="qmeta"><span class="tag brand">Pregunta ${q.n} de ${qs.length}</span>${q.part === "P2" ? `<span class="tag p2">2ª parte · no entra en la PEC1</span>` : ""}${q.multi ? `<span class="tag warn">Puede haber más de una</span>` : ""}</div>
       <div class="qtext">${qText(q.q)}</div>
       ${q.fig2 ? `<figure class="qfig"><img src="${q.fig2}" alt=""></figure>` : ""}${q.fig ? `<figure class="qfig"><img src="${q.fig}" alt="${esc(q.figAlt || "Figura")}"><figcaption>Figura original del examen</figcaption></figure>` : ""}
-      <div class="opts">${q.o.map((o, i) => `<button class="opt ${sel.includes(i) ? "sel" : ""} ${peek && q.a.includes(i) ? "peek-ok" : ""}" data-i="${i}"><span class="k">${"abcd"[i]}</span><span class="t">${escF(o)}</span></button>`).join("")}</div>
+      <div class="opts">${q.o.map((o, i) => `<button class="opt ${sel.includes(i) ? "sel" : ""} ${peek && q.a.includes(i) ? "peek-ok" : ""}" data-i="${i}"><span class="k">${"abcdefghijklmnopqrst"[i]}</span><span class="t">${escF(o)}</span></button>`).join("")}</div>
       <div class="row between mt">${sel.length ? `<button class="linkbtn" id="e-clear">Dejar en blanco</button>` : "<span></span>"}${q.noKey && !q.expHtml ? "" : `<button class="btn sm ${peek ? "ghost" : "soft"}" id="e-peek">${peek ? "Ocultar solución" : "💡 Ver solución explicada"}</button>`}</div>
       ${q.open ? `<p class="small muted mt">Pregunta de respuesta abierta (no es tipo test): piensa la respuesta y después mira la solución. No puntúa.</p>` : ""}
-      ${peek ? `<div class="explain mt">${q.open ? "" : `<div class="peek-key">Respuesta${q.a.length > 1 ? "s" : ""} ${q.unofficial ? "propuesta" + (q.a.length > 1 ? "s" : "") + " (no oficial)" : "correcta" + (q.a.length > 1 ? "s" : "")}: <b>${q.a.map(i => "abcd"[i]).join(", ")}</b></div>`}${explainHtml(q)}</div>` : ""}
+      ${peek ? `<div class="explain mt">${q.open ? "" : `<div class="peek-key">Respuesta${q.a.length > 1 ? "s" : ""} ${q.unofficial ? "propuesta" + (q.a.length > 1 ? "s" : "") + " (no oficial)" : "correcta" + (q.a.length > 1 ? "s" : "")}: <b>${q.a.map(i => "abcdefghijklmnopqrst"[i]).join(", ")}</b></div>`}${explainHtml(q)}</div>` : ""}
     </article>
     <div class="lesson-nav">${E.cur > 0 ? `<button class="btn ghost" id="e-prev">${ic("back")} Anterior</button>` : "<span></span>"}${E.cur < qs.length - 1 ? `<button class="btn primary big" id="e-next">Siguiente ${ic("arrow")}</button>` : `<button class="btn primary big" id="e-submit2">Entregar examen</button>`}</div>
   </div>
