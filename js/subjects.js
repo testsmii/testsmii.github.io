@@ -13,8 +13,8 @@ const SUBJECTS = [
     desc: "Biomasa, biogás, fósiles, fisión, fusión, solar, eólica e hidráulica. Examen de 2018 con solución propuesta.",
     scripts: ["js/fe/base.js", "js/fe/biomasa.js", "js/fe/valorizacion.js", "js/fe/biogas.js", "js/fe/fosiles-fision.js", "js/fe/fusion-hidro.js", "js/fe/solar.js", "js/fe/eolica.js", "js/fe/general.js", "js/fe/figs.js", "js/fe/exam-2018.js", "js/fe/exam-2021.js", "js/fe/exam-2020.js", "js/fe/test-biomasa-2025.js", "js/fe/config.js"] },
   { id: "mmt", name: "Máquinas y Motores Térmicos", short: "Motores", color: "#c2410c", icon: "img/logo-mmt.svg",
-    desc: "Tema 1 (fundamentos de máquinas y motores térmicos) y tema 2 (MCIA). Ejemplos de examen de teoría y problemas.",
-    scripts: ["js/mmt/base.js", "js/mmt/t1.js", "js/mmt/t2.js", "js/mmt/figs.js", "js/mmt/exams.js", "js/mmt/config.js"] }
+    desc: "Temas 1 (fundamentos), 2 (MCIA) y 3 (turbomáquinas: turbinas de vapor). Ejemplos de examen de teoría y problemas.",
+    scripts: ["js/mmt/base.js", "js/mmt/t1.js", "js/mmt/t2.js", "js/mmt/t3.js", "js/mmt/figs.js", "js/mmt/exams.js", "js/mmt/config.js"] }
 ];
 const KEY = "testsmii_subject";
 const get = () => { try { return localStorage.getItem(KEY); } catch (e) { return null; } };

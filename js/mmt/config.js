@@ -19,7 +19,7 @@ window.SUBJECT = {
   name: "Máquinas y Motores Térmicos", logo: "img/logo-mmt.svg", brand: "Motores", sub: "Máquinas y Motores Térmicos · MII",
   examPool: EQ => Object.values(EQ).flat().map(q => q.id),
   secRules,
-  decks: { T1: D("T1", 54, "Tema 1", "Tema 1 · Fundamentos de máquinas y motores térmicos"), T2: D("T2", 66, "Tema 2", "Tema 2 · Fundamentos de los MCIA") },
+  decks: { T1: D("T1", 54, "Tema 1", "Tema 1 · Fundamentos de máquinas y motores térmicos"), T2: D("T2", 66, "Tema 2", "Tema 2 · Fundamentos de los MCIA"), T3: D("T3", 36, "Tema 3", "Tema 3 · Motores basados en turbomáquinas (parte 1)") },
   temaDeck: {}, secSlides: {}, slideDir: "slides/mmt/",
   p2: false,
   examsBlurb: "Ejemplos de examen de teoría (20 preguntas) y de problemas de MCIA (3 problemas) con la respuesta oficial marcada.",

@@ -7,7 +7,8 @@
    ===================================================================== */
 const TOPICS = [
   { id: "T1", num: "1", short: "Fundamentos", title: "Fundamentos de máquinas y motores térmicos", file: "T1_FundsMaqYMotTerm2026.pdf", color: "#c2410c" },
-  { id: "T2", num: "2", short: "MCIA", title: "Fundamentos de motores de combustión interna alternativos (MCIA)", file: "T2_FundsMCIA2026.pdf", color: "#1d4ed8" }
+  { id: "T2", num: "2", short: "MCIA", title: "Fundamentos de motores de combustión interna alternativos (MCIA)", file: "T2_FundsMCIA2026.pdf", color: "#1d4ed8" },
+  { id: "T3", num: "3", short: "Turbomáquinas", title: "Fundamentos de los motores térmicos basados en turbomáquinas (parte 1: introducción y turbinas de vapor)", file: "T3_FundsMotsTurboMaq2026_parte_1.pdf", color: "#0f766e" }
 ];
 const MISSING_TOPICS = [];
 const THEORY = {};
