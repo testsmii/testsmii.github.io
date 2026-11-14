@@ -417,7 +417,7 @@ function route() {
   if (!/^(quiz|examen|repaso)$/.test(p0)) window.scrollTo(0, 0);
 }
 function renderMath(el) {
-  if (window.renderMathInElement) { try { renderMathInElement(el, { delimiters: [{ left: "$$", right: "$$", display: true }, { left: "$", right: "$", display: false }], throwOnError: false }); } catch (e) { /* noop */ } }
+  if (window.renderMathInElement) { try { renderMathInElement(el, { delimiters: [{ left: "$$", right: "$$", display: true }, { left: "\\[", right: "\\]", display: true }, { left: "\\(", right: "\\)", display: false }, { left: "$", right: "$", display: false }], throwOnError: false }); } catch (e) { /* noop */ } }
 }
 function updateBanner() {
   const b = $("#resume-banner");
@@ -1148,7 +1148,7 @@ const AI_LS = "testsmii_ai_key";
 const aiKey = () => { try { return localStorage.getItem(AI_LS) || window.AI_KEY || null; } catch (e) { return window.AI_KEY || null; } };
 async function askAI(question, ctx) {
   const context = ctx.slice(0, 8).map((d, i) => `[${i + 1}] (${d.sub}) ${d.title}${d.q ? "\nOpciones: " + d.q.o.join(" | ") : ""}\n${d.html.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").slice(0, 1400)}`).join("\n\n");
-  const sys = `Eres un profesor de la asignatura «${SUBJ.name}» (Máster en Ingeniería Industrial, ETSII-UPM). Responde SIEMPRE en español de España, claro y breve (máximo unas 180 palabras). Apóyate SOBRE TODO en los fragmentos de los apuntes y exámenes que te doy y cítalos como [1], [2]… Si la respuesta no está en los fragmentos, dilo expresamente y responde con conocimiento general avisando de que no está en los apuntes. No inventes datos, cifras ni normativa.`;
+  const sys = `Eres un profesor de la asignatura «${SUBJ.name}» (Máster en Ingeniería Industrial, ETSII-UPM). Responde SIEMPRE en español de España, claro y breve (máximo unas 180 palabras). Apóyate SOBRE TODO en los fragmentos de los apuntes y exámenes que te doy y cítalos como [1], [2]… Si la respuesta no está en los fragmentos, dilo expresamente y responde con conocimiento general avisando de que no está en los apuntes. No inventes datos, cifras ni normativa. Escribe las fórmulas en LaTeX entre $...$ (en línea) o $$...$$ (en bloque), sin usar \\( \\) ni \\[ \\].`;
   const user = `Fragmentos de los apuntes y exámenes:\n${context || "(ninguno)"}\n\nPregunta del alumno: ${question}`;
   const key = aiKey();
   if (key) {
@@ -1170,7 +1170,19 @@ async function askAI(question, ctx) {
   if (!t) throw new Error("respuesta vacía");
   return { text: t, by: "IA gratuita (Pollinations · " + (j.model || "código abierto") + ")" };
 }
-const mdLite = t => esc(t).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>").replace(/(^|\n)\s*[-*] (.+)/g, "$1• $2").replace(/\[(\d+)\]/g, '<sup class="cite">[$1]</sup>').replace(/\n/g, "<br>");
+// Markdown mínimo para las respuestas de la IA, respetando las fórmulas LaTeX ($…$, $$…$$, \(…\), \[…\])
+function mdLite(t) {
+  const math = [];
+  let s = String(t || "").replace(/\$\$[\s\S]+?\$\$|\\\[[\s\S]+?\\\]|\\\([\s\S]+?\\\)|\$[^$\n]+?\$/g, m => {
+    let x = m;
+    if (x.startsWith("\\[")) x = "$$" + x.slice(2, -2) + "$$"; else if (x.startsWith("\\(")) x = "$" + x.slice(2, -2) + "$";
+    x = x.replace(/</g, "\\lt ").replace(/>/g, "\\gt ").replace(/&/g, "&amp;");
+    math.push(x); return "\u0000" + (math.length - 1) + "\u0000";
+  });
+  s = esc(s).replace(/^#{1,4}\s*(.+)$/gm, "<b>$1</b>").replace(/\*\*(.+?)\*\*/g, "<b>$1</b>").replace(/(^|\n)\s*[-*] (.+)/g, "$1• $2")
+    .replace(/\[(\d+)\]/g, '<sup class="cite">[$1]</sup>').replace(/\n/g, "<br>");
+  return s.replace(/\u0000(\d+)\u0000/g, (_, i) => math[+i]);
+}
 function askCard(d, i) {
   const slides = d.q ? slideButtons(d.q) : d.sec && SEC_SLIDES[d.sec] && d.kind === "teoria" ? `<div class="slide-btns">${secSlidesBtn(d.sec)}</div>` : "";
   const t = topicById(d.tema);
